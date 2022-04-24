@@ -1,0 +1,147 @@
+// Magic: fc131c2e
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Mon Apr 11 00:52:04 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+method.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Method", "method") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    method.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+edge_to_collapse.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ edge_to_collapse.label = PARM_LABEL("Edge to Collapse", "edge_to_collapse") WIDTH(1.5);
+ PARM(integer, 1, "edge_to_collapse", none, none) RANGE(0,2)
+	 LABELREF(edge_to_collapse.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+protect_silhouette.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("protect_silhouette", "Protect Silhouette") toggle VALUE(protect_silhouette.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+normal_angle.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ normal_angle.label = PARM_LABEL("Normal Angle", "normal_angle") WIDTH(1.5);
+ PARM(float, 1, "normal_angle", none, none) RANGE(0,10)
+	 LABELREF(normal_angle.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+refine_method.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Refine Method", "refine_method") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    refine_method.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+fillmode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Fallback Fill Mode", "fillmode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    fillmode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+edge_method.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Edge to Dissolve", "edge_method") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    edge_method.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+folder1.gad = 
+
+GROUP simple "Refine Method" flat 
+{ 
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    refine_method.gad;		
+	    fillmode.gad;		
+	    edge_method.gad;		
+} 
+
+folder0.gad = 
+
+GROUP simple "Reduction Method" flat 
+{ 
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    method.gad;		
+	    edge_to_collapse.gad;		
+	    protect_silhouette.gad;		
+	    normal_angle.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    folder0.gad; 
+    folder1.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

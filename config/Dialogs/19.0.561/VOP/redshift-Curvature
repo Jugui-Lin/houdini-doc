@@ -1,0 +1,398 @@
+// Magic: 46cca5cc
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Thu Apr 14 11:57:01 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+mode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Mode", "mode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    mode.menu;
+
+    { HSTRETCH }
+
+    mode.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(mode.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+radius.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ radius.label = PARM_LABEL("Radius", "radius") WIDTH(1.5);
+ PARM(float, 1, "radius", none, none) RANGE(0,10)
+	 LABELREF(radius.label) HSTRETCH;
+
+    radius.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(radius.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+numSamples.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ numSamples.label = PARM_LABEL("Num Samples", "numSamples") WIDTH(1.5);
+ PARM(integer, 1, "numSamples", none, none) RANGE(2,65535)
+	 LABELREF(numSamples.label) HSTRETCH;
+
+    numSamples.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(numSamples.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+sameObjectOnly.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("sameObjectOnly", "Consider Same Object Only") toggle VALUE(sameObjectOnly.val);
+
+    { HSTRETCH }
+
+    sameObjectOnly.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(sameObjectOnly.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+inputMin.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ inputMin.label = PARM_LABEL("Min", "inputMin") WIDTH(1.5);
+ PARM(float, 1, "inputMin", none, none) RANGE(0,1)
+	 LABELREF(inputMin.label) HSTRETCH;
+
+    inputMin.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(inputMin.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+inputMax.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ inputMax.label = PARM_LABEL("Max", "inputMax") WIDTH(1.5);
+ PARM(float, 1, "inputMax", none, none) RANGE(0,1)
+	 LABELREF(inputMax.label) HSTRETCH;
+
+    inputMax.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(inputMax.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+contrastVal.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ contrastVal.label = PARM_LABEL("Contrast", "contrastVal") WIDTH(1.5);
+ PARM(float, 1, "contrastVal", none, none) RANGE(0,1)
+	 LABELREF(contrastVal.label) HSTRETCH;
+
+    contrastVal.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(contrastVal.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+contrastPivot.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ contrastPivot.label = PARM_LABEL("Pivot", "contrastPivot") WIDTH(1.5);
+ PARM(float, 1, "contrastPivot", none, none) RANGE(0,1)
+	 LABELREF(contrastPivot.label) HSTRETCH;
+
+    contrastPivot.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(contrastPivot.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+bias.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ bias.label = PARM_LABEL("Bias", "bias") WIDTH(1.5);
+ PARM(float, 1, "bias", none, none) RANGE(0,1)
+	 LABELREF(bias.label) HSTRETCH;
+
+    bias.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(bias.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+gain.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ gain.label = PARM_LABEL("Gain", "gain") WIDTH(1.5);
+ PARM(float, 1, "gain", none, none) RANGE(0,1)
+	 LABELREF(gain.label) HSTRETCH;
+
+    gain.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(gain.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+outputMin.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ outputMin.label = PARM_LABEL("Min", "outputMin") WIDTH(1.5);
+ PARM(float, 1, "outputMin", none, none) RANGE(0,1)
+	 LABELREF(outputMin.label) HSTRETCH;
+
+    outputMin.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(outputMin.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+outputMax.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ outputMax.label = PARM_LABEL("Max", "outputMax") WIDTH(1.5);
+ PARM(float, 1, "outputMax", none, none) RANGE(0,1)
+	 LABELREF(outputMax.label) HSTRETCH;
+
+    outputMax.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(outputMax.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+clampEnable.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("clampEnable", "Clamp Enable") toggle VALUE(clampEnable.val);
+
+    { HSTRETCH }
+
+    clampEnable.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(clampEnable.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+clampExpand.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("clampExpand", "Clamp Expand") toggle VALUE(clampExpand.val);
+
+    { HSTRETCH }
+
+    clampExpand.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(clampExpand.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+clampMin.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ clampMin.label = PARM_LABEL("Clamp Min", "clampMin") WIDTH(1.5);
+ PARM(float, 1, "clampMin", none, none) RANGE(0,1)
+	 LABELREF(clampMin.label) HSTRETCH;
+
+    clampMin.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(clampMin.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+clampMax.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ clampMax.label = PARM_LABEL("Clamp Max", "clampMax") WIDTH(1.5);
+ PARM(float, 1, "clampMax", none, none) RANGE(0,1)
+	 LABELREF(clampMax.label) HSTRETCH;
+
+    clampMax.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(clampMax.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+shader_skipdefvalparms.gad = NULL { }
+
+Output_Range_3.gad = 
+
+GROUP simple "Output Range" flat 
+{ 
+    VALUE(Output_Range_3.gad.val) LAYOUT(vertical) HSTRETCH 
+	    outputMin.gad;		
+	    outputMax.gad;		
+	    clampEnable.gad;		
+	    clampExpand.gad;		
+	    clampMin.gad;		
+	    clampMax.gad;		
+} 
+
+Bias_2.gad = 
+
+GROUP simple "Bias" flat 
+{ 
+    VALUE(Bias_2.gad.val) LAYOUT(vertical) HSTRETCH 
+	    bias.gad;		
+	    gain.gad;		
+} 
+
+Contrast_1.gad = 
+
+GROUP simple "Contrast" flat 
+{ 
+    VALUE(Contrast_1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    contrastVal.gad;		
+	    contrastPivot.gad;		
+} 
+
+Input_Range_0.gad = 
+
+GROUP simple "Input Range" flat 
+{ 
+    VALUE(Input_Range_0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    inputMin.gad;		
+	    inputMax.gad;		
+} 
+
+RS_shaderNodeMainSwitcher.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "RS_shaderNodeMainSwitcher.gad"
+    { 
+	VALUE(RS_shaderNodeMainSwitcher.gad.val) STRETCH(1,0)
+
+	TAB "General"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    mode.gad;		
+	    radius.gad;		
+	    numSamples.gad;		
+	    sameObjectOnly.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Remap"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    Input_Range_0.gad;		
+	    Contrast_1.gad;		
+	    Bias_2.gad;		
+	    Output_Range_3.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    RS_shaderNodeMainSwitcher.gad; 
+    shader_skipdefvalparms.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

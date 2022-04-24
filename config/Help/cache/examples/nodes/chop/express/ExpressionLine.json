@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["ExpressionLine"]}, {"type": "para", "indent": 0, "text": ["This example demonstrates how to use an expression in an Expression CHOP."], "extent": [0, 74]}], "examplefor": "/nodes/chop/express", "examplefile": "/examples/nodes/chop/express/ExpressionLine.otl"}

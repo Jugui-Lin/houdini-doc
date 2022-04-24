@@ -1,0 +1,252 @@
+// Magic: 1842f929
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Sun Mar 20 12:50:03 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+GridLevel.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ GridLevel.label = PARM_LABEL("GridLevel", "GridLevel") WIDTH(1.5);
+ PARM(integer, 1, "GridLevel", none, none) RANGE(1,10)
+	 LABELREF(GridLevel.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+CeilSize.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ CeilSize.label = PARM_LABEL("CeilSize", "CeilSize") WIDTH(1.5);
+ PARM(float, 1, "CeilSize", none, none) RANGE(0,10)
+	 LABELREF(CeilSize.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+TypeNum.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ TypeNum.label = PARM_LABEL("TypeNum", "TypeNum") WIDTH(1.5);
+ PARM(integer, 1, "TypeNum", none, none) RANGE(0,50)
+	 LABELREF(TypeNum.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+Seed.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+Seed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ Seed.label = PARM_LABEL("Seed", "Seed") WIDTH(1.5);
+ PARM(integer, 1, "Seed", none, none) RANGE(0,10000)
+	 LABELREF(Seed.label) HSTRETCH;
+
+  {  }
+}
+
+RandomSeed.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    {  }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("RandomSeed", "RandomSeed")
+	push VALUE(RandomSeed.val);
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+AnimationData.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    AnimationData.label = PARM_LABEL("AnimationData", "AnimationData") WIDTH(1.5);
+    PARM_FIELD(string, "AnimationData") VALUE(AnimationData.val) 
+	LABELREF(AnimationData.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+HoverIndex.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ HoverIndex.label = PARM_LABEL("HoverIndex", "HoverIndex") WIDTH(1.5);
+ PARM(integer, 1, "HoverIndex", none, none) RANGE(0,10)
+	 LABELREF(HoverIndex.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+AnimationCurve.si_rampedit = FLOAT_RAMP VALUE(AnimationCurve.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+AnimationCurve.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) WIDTH(1.5)
+	    LABEL "Point No.";
+	}
+
+	AnimationCurve.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(AnimationCurve.pointno.val) HSTRETCH;
+    }
+}
+
+AnimationCurve.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(AnimationCurve.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(AnimationCurve.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    AnimationCurve.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(AnimationCurve.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    AnimationCurve.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(AnimationCurve.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+AnimationCurve.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    AnimationCurve.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	AnimationCurve.buttons.gad VSTRETCH;
+
+	AnimationCurve.si_rampedit HSTRETCH;
+    }
+}
+
+AnimationCurve.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("AnimationCurve", "AnimationCurve");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(AnimationCurve.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(AnimationCurve.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	AnimationCurve.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	AnimationCurve.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(AnimationCurve.hideparms.val) HSTRETCH
+	    AnimationCurve.multiramp;
+	    {}
+	}
+    }
+}
+
+folder0.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder0.gad"
+    { 
+	VALUE(folder0.gad.val) STRETCH(1,0)
+
+	TAB "Runtime"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    AnimationData.gad;		
+	    HoverIndex.gad;		
+	    AnimationCurve.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    GridLevel.gad; 
+    CeilSize.gad; 
+    TypeNum.gad; 
+    Seed.row.join; 
+    folder0.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

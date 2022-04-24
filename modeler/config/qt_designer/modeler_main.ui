@@ -1,0 +1,2466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>377</width>
+    <height>848</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <property name="spacing">
+    <number>3</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <layout class="QVBoxLayout" name="main">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <spacer name="verticalSpacer_5">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>16</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_17">
+       <item>
+        <widget class="QToolButton" name="create_at_sop_level">
+         <property name="focusPolicy">
+          <enum>Qt::TabFocus</enum>
+         </property>
+         <property name="toolTip">
+          <string>Turn this on to create new primitive objects at SOP level.
+This means that if a SOP container is active, a new node will be added to it.
+The template flag of the previous display SOP will be checked automatically.
+
+Note. Template flag activation can be disabled in the &quot;Setup&quot; tab.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_create_at_sop_level.svg</normaloff>../Icons/MODELER_create_at_sop_level.svg</iconset>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="qlight">
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_qlight.svg</normaloff>../Icons/MODELER_qlight.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="backdrop">
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_backdrop.svg</normaloff>../Icons/MODELER_backdrop.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="tgl_backdrop">
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_tgl_backdrop.svg</normaloff>../Icons/MODELER_tgl_backdrop.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="side_by_side_layout">
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_side_by_side_layout.svg</normaloff>../Icons/MODELER_side_by_side_layout.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="mini_ui">
+         <property name="toolTip">
+          <string>This tool frees up some space on the screen by hidding shelf dock and UI stowbars.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_mini_ui.svg</normaloff>../Icons/MODELER_mini_ui.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_14">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_9">
+       <item>
+        <widget class="QToolButton" name="freeze_transforms">
+         <property name="toolTip">
+          <string>Freeze Transforms. Moves object level transforms into a Transform SOP.</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_freeze_transform.svg</normaloff>../Icons/MODELER_freeze_transform.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="viewport_subd">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="toolTip">
+          <string>Toggle viewport subdivision for the selected objects.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_viewport_subd.svg</normaloff>../Icons/MODELER_viewport_subd.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="display_xray_display">
+         <property name="toolTip">
+          <string>Toggle the X-Ray viewport option for all display nodes.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_display_nodes_xray.svg</normaloff>../Icons/MODELER_display_nodes_xray.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="display_toggle_templates">
+         <property name="toolTip">
+          <string>Toggle template nodes viewport visibility.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_template_nodes_toggle.svg</normaloff>../Icons/MODELER_template_nodes_toggle.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="display_templates_shade_mode">
+         <property name="toolTip">
+          <string>Cyclically change template nodes shade mode.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_template_nodes_shade_mode.svg</normaloff>../Icons/MODELER_template_nodes_shade_mode.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="display_ghost_templates">
+         <property name="toolTip">
+          <string>Toggle template nodes viewport ghosting.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_ghost_template_nodes.svg</normaloff>../Icons/MODELER_ghost_template_nodes.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QToolButton" name="center_pivot">
+         <property name="toolTip">
+          <string>Center Pivot. Moves the pivot of an object to the center of the bounding box for that object.</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_center_pivot.svg</normaloff>../Icons/MODELER_center_pivot.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="show_all">
+         <property name="toolTip">
+          <string>Show all objects.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_combine.svg</normaloff>../Icons/MODELER_combine.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="ghost_others">
+         <property name="toolTip">
+          <string>Ghost other objects.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_extract.svg</normaloff>../Icons/MODELER_extract.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="hide_others">
+         <property name="toolTip">
+          <string>Hide other objects.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_box.svg</normaloff>../Icons/MODELER_box.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="isolate_object">
+         <property name="toolTip">
+          <string>Toggle active object isolation in the viewport.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_isolate_object.svg</normaloff>../Icons/MODELER_isolate_object.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="isolate_polygons">
+         <property name="toolTip">
+          <string>Toggle selected polygons isolation in the viewport.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_isolate_polygons.svg</normaloff>../Icons/MODELER_isolate_polygons.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_10">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>12</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QTabWidget" name="tab_widget">
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="tabPosition">
+        <enum>QTabWidget::North</enum>
+       </property>
+       <property name="elideMode">
+        <enum>Qt::ElideMiddle</enum>
+       </property>
+       <property name="usesScrollButtons">
+        <bool>false</bool>
+       </property>
+       <property name="tabBarAutoHide">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="filter_field">
+       <property name="focusPolicy">
+        <enum>Qt::ClickFocus</enum>
+       </property>
+       <property name="toolTip">
+        <string>Type text to filter items</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_6">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>10</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_8">
+       <item>
+        <widget class="QToolButton" name="sym_radial">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="toolTip">
+          <string>Create radial symmetry setup. Unavailable in this version.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_radial_symmetry.svg</normaloff>../Icons/MODELER_radial_symmetry.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="sym_origin">
+         <property name="toolTip">
+          <string>Set symmetry origin according to selected components bounding box center.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_sym_select_origin.svg</normaloff>../Icons/MODELER_sym_select_origin.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="sym_subd_instance">
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_subdivide.svg</normaloff>../Icons/MODELER_subdivide.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="sym_instance">
+         <property name="toolTip">
+          <string>Create an Instance object node according to symmetry setup.
+This allows to preview a half of the model before actual mirroring.
+Press the button again to delete the node.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_sym_instance.svg</normaloff>../Icons/MODELER_sym_instance.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="sym_full">
+         <property name="toolTip">
+          <string>Clip and mirror geometry according to symmetry setup.
+This tool allows you to periodically clean the result after applying asymmetric operations and get fully symmetric model.
+Use Parm Slider tool to sew components next to symmetry seam.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_resym_full.svg</normaloff>../Icons/MODELER_resym_full.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="sym_half">
+         <property name="toolTip">
+          <string>Clip geometry according to symmetry setup.
+This tool allows you to periodically clean the result after applying asymmetric operations and get symmetric half of model.
+Use Parm Slider tool to sew components next to the symmetry seam.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_resym_half.svg</normaloff>../Icons/MODELER_resym_half.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_7">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_7">
+       <item>
+        <widget class="QToolButton" name="sym_axis_x">
+         <property name="toolTip">
+          <string>Activate Symmetry. To select desired axis use RMB menu.</string>
+         </property>
+         <property name="text">
+          <string>X</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="autoRaise">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="sym_axis_y">
+         <property name="text">
+          <string>Y</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="sym_axis_z">
+         <property name="text">
+          <string>Z</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="sym_axis_neg_x">
+         <property name="text">
+          <string>-X</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="sym_axis_neg_y">
+         <property name="text">
+          <string>-Y</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="sym_axis_neg_z">
+         <property name="text">
+          <string>-Z</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_6">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_7">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>8</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="Line" name="line_6">
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="lineWidth">
+        <number>2</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_8">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>8</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_5">
+       <item>
+        <widget class="QToolButton" name="walk_selection_left">
+         <property name="toolTip">
+          <string>Walk Selection Left. Modify selection according to the viewport camera angle.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_walk_selection_left.svg</normaloff>../Icons/MODELER_walk_selection_left.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="walk_selection_right">
+         <property name="toolTip">
+          <string>Walk Selection Right. Modify selection according to the viewport camera angle.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_walk_selection_right.svg</normaloff>../Icons/MODELER_walk_selection_right.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="walk_selection_up">
+         <property name="toolTip">
+          <string>Walk Selection Up. Modify selection according to the viewport camera angle.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_walk_selection_up.svg</normaloff>../Icons/MODELER_walk_selection_up.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="walk_selection_down">
+         <property name="toolTip">
+          <string>Walk Selection Down. Modify selection according to the viewport camera angle.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_walk_selection_down.svg</normaloff>../Icons/MODELER_walk_selection_down.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="shrink">
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_shrink_selection.svg</normaloff>../Icons/MODELER_shrink_selection.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="grow">
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_grow_selection.svg</normaloff>../Icons/MODELER_grow_selection.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_9">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>8</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="Line" name="line_7">
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="lineWidth">
+        <number>2</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_10">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>8</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <item>
+        <widget class="QToolButton" name="flatten_left">
+         <property name="toolTip">
+          <string>Flatten selected components to the left based on the global horizontal axis.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_flatten_left.svg</normaloff>../Icons/MODELER_flatten_left.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="flatten_right">
+         <property name="toolTip">
+          <string>Flatten selected components to the right based on the global horizontal axis.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_flatten_right.svg</normaloff>../Icons/MODELER_flatten_right.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="flatten_up">
+         <property name="toolTip">
+          <string>Flatten selected components to the top based on the global vertical axis.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_flatten_up.svg</normaloff>../Icons/MODELER_flatten_up.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="flatten_down">
+         <property name="toolTip">
+          <string>Flatten selected components to the bottom based on the global vertical axis.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_flatten_down.svg</normaloff>../Icons/MODELER_flatten_down.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="flatten_by_normal">
+         <property name="toolTip">
+          <string>Flatten selected components by polygon normal.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_flatten_by_normal.svg</normaloff>../Icons/MODELER_flatten_by_normal.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="flatten_auto">
+         <property name="toolTip">
+          <string>Flatten selected components automatically based on thier normals.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_flatten_auto.svg</normaloff>../Icons/MODELER_flatten_auto.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_10">
+       <item>
+        <widget class="QToolButton" name="align">
+         <property name="toolTip">
+          <string>Align selected components.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_align.svg</normaloff>../Icons/MODELER_align.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="set_flow">
+         <property name="toolTip">
+          <string>Set Flow: Reconstruct edges curvature.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_set_flow.svg</normaloff>../Icons/MODELER_set_flow.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="mountain">
+         <property name="toolTip">
+          <string>Add noise to selected components using the Mountain SOP.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_deform_mountain.svg</normaloff>../Icons/MODELER_deform_mountain.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="deform">
+         <property name="toolTip">
+          <string>Deform selected components using the Bend SOP.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_deform.svg</normaloff>../Icons/MODELER_deform.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="falloff_xform">
+         <property name="toolTip">
+          <string>Transform geometry with smooth fading.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_deform_falloff_xform.svg</normaloff>../Icons/MODELER_deform_falloff_xform.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="lattice">
+         <property name="toolTip">
+          <string>Deform selected components with the Lattice SOP (FFD). To apply operation click this button again.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_deform_lattice.svg</normaloff>../Icons/MODELER_deform_lattice.svg</iconset>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_8">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_11">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>8</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="Line" name="line_8">
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="lineWidth">
+        <number>2</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_12">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>8</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_14">
+       <item>
+        <widget class="QToolButton" name="boolean_intersect">
+         <property name="toolTip">
+          <string>Boolean Intersect operation will cut one object from another.
+At SOP level, if nothing is selected, the tool will ask for the object you want to cut from.
+Selected polygons will be used to cut object itself. Use Duplicate tool to quickly clone this boolean action. </string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_boolean_intersect.svg</normaloff>../Icons/MODELER_boolean_intersect.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="boolean_union">
+         <property name="toolTip">
+          <string>Boolean Union operation will combine two polygonal objects.
+At SOP level, if nothing is selected, the tool will ask for the object you want to cut from.
+Selected polygons will be used to cut object itself. Use Duplicate tool to quickly clone this boolean action. </string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_boolean_union.svg</normaloff>../Icons/MODELER_boolean_union.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="boolean_subtract">
+         <property name="toolTip">
+          <string>Boolean Subtract operation will cut one object from another.
+At SOP level, if nothing is selected, the tool will ask for the object you want to cut from.
+Selected polygons will be used to cut object itself. Use Duplicate tool to quickly clone this boolean action. </string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_boolean_subtract.svg</normaloff>../Icons/MODELER_boolean_subtract.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="separate">
+         <property name="toolTip">
+          <string>Separate is a way to quickly detach some piece of geometry, edit it, and atach it back automatically.
+
+Usage:
+1. Select polygons
+2. Run this tool to delete unselected geometry
+3. Edit mesh with modeling tools
+4. Run this tool again to commit changes</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_separate.svg</normaloff>../Icons/MODELER_separate.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="extract">
+         <property name="toolTip">
+          <string>Extract selected polygons into a separate object.
+At SOP level, if nothing is selected, the tool will create new objects by connectivity.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_extract.svg</normaloff>../Icons/MODELER_extract.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="combine">
+         <property name="toolTip">
+          <string>Combine selected polygonal objects into one geometry container.
+At SOP level, if nothing is selected, the tool will ask for the object you want to cut from.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_combine.svg</normaloff>../Icons/MODELER_combine.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_11">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_19">
+       <item>
+        <widget class="QToolButton" name="copy_polygons">
+         <property name="toolTip">
+          <string>Copy selected polygons to clipboard.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_copy_polygons.svg</normaloff>../Icons/MODELER_copy_polygons.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="cut_polygons">
+         <property name="toolTip">
+          <string>Cut selected polygons to clipboard.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_cut_polygons.svg</normaloff>../Icons/MODELER_cut_polygons.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="paste_polygons">
+         <property name="toolTip">
+          <string>Paste selected polygons from clipboard.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_paste_polygons.svg</normaloff>../Icons/MODELER_paste_polygons.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="array">
+         <property name="toolTip">
+          <string>Duplicate selected polygons or whole model using radial or rectangular pattern.
+Construction plane (&quot;floor&quot; state) or polygon normal can be used to orient copies.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_array.svg</normaloff>../Icons/MODELER_array.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="duplicate">
+         <property name="toolTip">
+          <string>Duplicate selected polygons or edges to new curves.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_combine.svg</normaloff>../Icons/MODELER_combine.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="mirror">
+         <property name="toolTip">
+          <string>Mirror selected polygons.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_mirror.svg</normaloff>../Icons/MODELER_mirror.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_15">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_12">
+       <item>
+        <widget class="QToolButton" name="reduce">
+         <property name="toolTip">
+          <string>Reduces the number of polygons.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_reduce.svg</normaloff>../Icons/MODELER_reduce.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="subdivide">
+         <property name="toolTip">
+          <string>Subdivide selected polygons.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_subdivide.svg</normaloff>../Icons/MODELER_subdivide.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="fuse">
+         <property name="toolTip">
+          <string>Fuse selected components.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_fuse.svg</normaloff>../Icons/MODELER_fuse.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="split_by_edges">
+         <property name="toolTip">
+          <string>Split geometry by selected edges.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_split_by_edges.svg</normaloff>../Icons/MODELER_split_by_edges.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="clean_edges">
+         <property name="toolTip">
+          <string>Clean edges in flat areas.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_clean_edges.svg</normaloff>../Icons/MODELER_clean_edges.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="fix_overlaps">
+         <property name="toolTip">
+          <string>Fix overlapped polygons.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_fix_overlaps.svg</normaloff>../Icons/MODELER_fix_overlaps.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_13">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_16">
+       <item>
+        <widget class="QToolButton" name="vdb_remesh">
+         <property name="toolTip">
+          <string>Remesh current model using VDB.</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_vdb.svg</normaloff>../Icons/MODELER_vdb.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="hose">
+         <property name="toolTip">
+          <string>Make hose from selected polygons or edges.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_hose.svg</normaloff>../Icons/MODELER_hose.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="fix_curves">
+         <property name="toolTip">
+          <string>Fix polygonal curves issues.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_fix_curves.svg</normaloff>../Icons/MODELER_fix_curves.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="normals">
+         <property name="toolTip">
+          <string>Create normals for selected geometry components.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_normal.svg</normaloff>../Icons/MODELER_normal.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="bevel_pro">
+         <property name="toolTip">
+          <string>Bevel selected edges with a smoothly varying radius.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_bevel_pro.svg</normaloff>../Icons/MODELER_bevel_pro.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="fill">
+         <property name="toolTip">
+          <string>Remesh selected polygons or fill boundary edges.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_fill.svg</normaloff>../Icons/MODELER_fill.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_12">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_13">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>8</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="Line" name="line_9">
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="lineWidth">
+        <number>2</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_14">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>8</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_11">
+       <item>
+        <widget class="QToolButton" name="curve">
+         <property name="toolTip">
+          <string>Interactivelly create curve.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_curve.svg</normaloff>../Icons/MODELER_curve.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="edit_curve">
+         <property name="toolTip">
+          <string>Edit existing curves.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_edit_curve.svg</normaloff>../Icons/MODELER_edit_curve.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="grid">
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_prim_grid.svg</normaloff>../Icons/MODELER_prim_grid.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="sphere">
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_sphere.svg</normaloff>../Icons/MODELER_sphere.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="tube">
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_prim_tube.svg</normaloff>../Icons/MODELER_prim_tube.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="box">
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_prim_box.svg</normaloff>../Icons/MODELER_prim_box.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_9">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QToolButton" name="clear_materials">
+         <property name="toolTip">
+          <string>Clear materials from selected polygons or objects.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_clear_materials.svg</normaloff>../Icons/MODELER_clear_materials.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="select_material_node">
+         <property name="toolTip">
+          <string>Select material node based on selected polygons or objects.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_select_material_node.svg</normaloff>../Icons/MODELER_select_material_node.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="get_material">
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_get_material.svg</normaloff>../Icons/MODELER_get_material.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="sample_material_copy">
+         <property name="toolTip">
+          <string>Sample material from polygon and assign it's copy to selected polygons or objects.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_sample_material_copy.svg</normaloff>../Icons/MODELER_sample_material_copy.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="sample_material">
+         <property name="toolTip">
+          <string>Sample material from polygon and assign it to selected polygons or objects.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_sample_material.svg</normaloff>../Icons/MODELER_sample_material.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="assign_material">
+         <property name="toolTip">
+          <string>Assign new material to selected polygons or objects.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_assign_material.svg</normaloff>../Icons/MODELER_assign_material.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_6">
+       <item>
+        <widget class="QToolButton" name="network_frame_all">
+         <property name="toolTip">
+          <string>Show all nodes in the network view.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_frame_all_nodes.svg</normaloff>../Icons/MODELER_frame_all_nodes.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="network_frame">
+         <property name="toolTip">
+          <string>Show active node in the network view.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_frame_node.svg</normaloff>../Icons/MODELER_frame_node.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="delete_attributes">
+         <property name="toolTip">
+          <string>Delete all geometry attributes.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_delete_attributes.svg</normaloff>../Icons/MODELER_delete_attributes.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="delete_groups">
+         <property name="toolTip">
+          <string>Delete all geometry groups.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_delete_groups.svg</normaloff>../Icons/MODELER_delete_groups.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="merge_nodes">
+         <property name="toolTip">
+          <string>Wire selected nodes with Merge SOP.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_network.svg</normaloff>../Icons/MODELER_network.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="stash_history">
+         <property name="toolTip">
+          <string>Stash SOP nodes history to one node. The node will contain raw geometry and nothing more.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_stash_history.svg</normaloff>../Icons/MODELER_stash_history.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_5">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>16</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_13">
+       <item>
+        <widget class="QToolButton" name="cusp_angle_button">
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_normal.svg</normaloff>../Icons/MODELER_normal.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="cusp_angle">
+         <property name="maximum">
+          <number>180</number>
+         </property>
+         <property name="pageStep">
+          <number>1</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_15">
+       <item>
+        <widget class="QToolButton" name="opacity_button">
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Icons/MODELER_boolean_intersect.svg</normaloff>../Icons/MODELER_boolean_intersect.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="opacity_slider">
+         <property name="toolTip">
+          <string>Houdini opacity slider.</string>
+         </property>
+         <property name="minimum">
+          <number>29</number>
+         </property>
+         <property name="value">
+          <number>99</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_4">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>8</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="buttons">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QToolButton" name="modeler_mode">
+       <property name="toolTip">
+        <string>Toggle ViewBar.</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../Icons/MODELER_logo.svg</normaloff>../Icons/MODELER_logo.svg</iconset>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="reload">
+       <property name="toolTip">
+        <string>Reload Python Modeler Modules. Use it after adding new shelf tool or radial menu.</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../Icons/MODELER_reload.svg</normaloff>../Icons/MODELER_reload.svg</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="Line" name="line_3">
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="lineWidth">
+        <number>2</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="box_backface">
+       <property name="toolTip">
+        <string>Box Backface Selection. Combination of the box selection style and the frontface option disabled.</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../Icons/MODELER_box_backface_selection.svg</normaloff>../Icons/MODELER_box_backface_selection.svg</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="box_frontface">
+       <property name="toolTip">
+        <string>Box Frontface Selection. Combination of the box selection style and the frontface option enabled.</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../Icons/MODELER_box_frontface_selection.svg</normaloff>../Icons/MODELER_box_frontface_selection.svg</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="lasso_backface">
+       <property name="toolTip">
+        <string>Lasso Backface Selection. Combination of the lasso selection style and the frontface option disabled.</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../Icons/MODELER_lasso_backface_selection.svg</normaloff>../Icons/MODELER_lasso_backface_selection.svg</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="lasso_frontface">
+       <property name="toolTip">
+        <string>Lasso Frontface Selection. Combination of the lasso selection style and the frontface option enabled.</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../Icons/MODELER_lasso_frontface_selection.svg</normaloff>../Icons/MODELER_lasso_frontface_selection.svg</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="Line" name="line_4">
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="lineWidth">
+        <number>2</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="convert_to_shells">
+       <property name="toolTip">
+        <string>Convert selected components to polygonal shells.</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../Icons/MODELER_shells.svg</normaloff>../Icons/MODELER_shells.svg</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="convert_to_loops">
+       <property name="toolTip">
+        <string>Convert selected components to loops.</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../Icons/MODELER_convert_to_loops.svg</normaloff>../Icons/MODELER_convert_to_loops.svg</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="convert_to_edge_rings">
+       <property name="toolTip">
+        <string>Convert selected edges to rings.</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../Icons/MODELER_convert_to_edge_rings.svg</normaloff>../Icons/MODELER_convert_to_edge_rings.svg</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="convert_to_boundary">
+       <property name="toolTip">
+        <string>Convert selected components to boundary edges.</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../Icons/MODELER_convert_to_boundary_edges.svg</normaloff>../Icons/MODELER_convert_to_boundary_edges.svg</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="expand_selection_by_normal">
+       <property name="toolTip">
+        <string>Expand selection by the normal angle.</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../Icons/MODELER_normal.svg</normaloff>../Icons/MODELER_normal.svg</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="select_hard_edges">
+       <property name="toolTip">
+        <string>Select Hard Edges. Modify selection to get only hard edges.</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../Icons/MODELER_hard_edges.svg</normaloff>../Icons/MODELER_hard_edges.svg</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="Line" name="line_2">
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="lineWidth">
+        <number>2</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="delete">
+       <property name="toolTip">
+        <string>Delete selected geometry components or objects.
+To invert deletion of points or prims use Parm Slider tool.
+To toggle &quot;Remove Inline Points&quot; Dissolve SOP parameter use Parm Slider. </string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../Icons/MODELER_cancel.svg</normaloff>../Icons/MODELER_cancel.svg</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="delete_node">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="toolTip">
+        <string>Delete current node.</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../Icons/MODELER_delete_node.svg</normaloff>../Icons/MODELER_delete_node.svg</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="collapse">
+       <property name="toolTip">
+        <string>Collapse selected geometry components to one point.</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../Icons/MODELER_collapse.svg</normaloff>../Icons/MODELER_collapse.svg</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="connect">
+       <property name="toolTip">
+        <string>Connect selected points, edges or prims.</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../Icons/MODELER_connect.svg</normaloff>../Icons/MODELER_connect.svg</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="loop_cut">
+       <property name="toolTip">
+        <string>Cut selected edges by edge loops.</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../Icons/MODELER_loop_cut.svg</normaloff>../Icons/MODELER_loop_cut.svg</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="Line" name="line_5">
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="lineWidth">
+        <number>2</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="polypen">
+       <property name="toolTip">
+        <string>PolyPen allows to tweak geometry in different ways. Read the viewport tips for details.</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../Icons/MODELER_polypen.svg</normaloff>../Icons/MODELER_polypen.svg</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="knife">
+       <property name="toolTip">
+        <string>Knife tool allows to cut geometry with planes interactivelly. </string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../Icons/MODELER_knife.svg</normaloff>../Icons/MODELER_knife.svg</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="magnet">
+       <property name="toolTip">
+        <string>Magnet tool allows to move points smoothly.</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../Icons/MODELER_magnet.svg</normaloff>../Icons/MODELER_magnet.svg</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="loop">
+       <property name="toolTip">
+        <string>Insert edge loop.</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../Icons/MODELER_convert_to_loops.svg</normaloff>../Icons/MODELER_convert_to_loops.svg</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="topobuild_build">
+       <property name="toolTip">
+        <string>Build is an alternative way to draw and edit polygons. It uses TopoBuild SOP.</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../Icons/MODELER_topobuild.svg</normaloff>../Icons/MODELER_topobuild.svg</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="extrude">
+       <property name="toolTip">
+        <string>Extrude selected components using a special Modeler node.</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../Icons/MODELER_extrude.svg</normaloff>../Icons/MODELER_extrude.svg</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="extend">
+       <property name="toolTip">
+        <string>Extend is a to extrude edges or polygons using state handle.</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../Icons/MODELER_extend.svg</normaloff>../Icons/MODELER_extend.svg</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="thickness">
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../Icons/MODELER_thickness.svg</normaloff>../Icons/MODELER_thickness.svg</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="shift">
+       <property name="toolTip">
+        <string>Shift is a type of extrusion that cleans up intersections after itself. This allows you to cut out geometry in boolean manner by extruding its polygons.</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../Icons/MODELER_shift.svg</normaloff>../Icons/MODELER_shift.svg</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="bevel">
+       <property name="toolTip">
+        <string>Bevel selected components.</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../Icons/MODELER_bevel.svg</normaloff>../Icons/MODELER_bevel.svg</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="bridge">
+       <property name="toolTip">
+        <string>Bridge selected edges or polygons using a special Modeler node. Before using the tool, select one by one the edges (polygons) of one side, and then the other.</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../Icons/MODELER_bridge.svg</normaloff>../Icons/MODELER_bridge.svg</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="bridge_connected">
+       <property name="toolTip">
+        <string>Bridge Connected tool stitches selected edges while automatically looking for tangent edges.</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../Icons/MODELER_bridge_connected.svg</normaloff>../Icons/MODELER_bridge_connected.svg</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="Line" name="line">
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="lineWidth">
+        <number>2</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="topo_toggle">
+       <property name="toolTip">
+        <string>Topo Mode. When the mode is active, some of the modeling tools take this into account,
+and project points to the high-poly surface. You can model in space with any tools.
+When you need to project the latest changes, click on the &quot;Project&quot; toolbar button.
+Another way of projection is using the &quot;Smooth Brush&quot; toolbar button.
+
+
+Usage:
+1. Press this tool. It will prompt you to select high-poly source model. After getting source model it will be hidden and the tools will add template link to it wheen needed.
+2. Use &quot;Polygons&quot; toolbar button to draw polygons quickly. Another way is build mesh using &quot;Build&quot; button. This will create TopoBuild SOP and activate the Build mode.
+3. Edit mesh with modeling tools
+4. Periodically use &quot;Project&quot; toolbar button to commit changes
+5. When you have finished, jsut turn off this button
+
+</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../Icons/MODELER_topo.svg</normaloff>../Icons/MODELER_topo.svg</iconset>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="polygons">
+       <property name="toolTip">
+        <string>Polygons allows you to create mesh very quickly by drawing strokes.
+If Topo mode is off, the curves will be drawn in the screen plane.
+You can customize the projection in the Stroke SOP parameters.
+
+Usage:
+1. Click this button and draw some curves
+2. Press the button again to build the polygons
+3. Use the pen (mouse) button combinations to tweak the mesh.
+     Read the viewport tips for details.</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../Icons/MODELER_polygons.svg</normaloff>../Icons/MODELER_polygons.svg</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="topo_project">
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../Icons/MODELER_project.svg</normaloff>../Icons/MODELER_project.svg</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

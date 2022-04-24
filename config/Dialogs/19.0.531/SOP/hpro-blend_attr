@@ -1,0 +1,227 @@
+// Magic: 5bcf493e
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Sun Apr  3 01:23:28 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+info.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    info.label = PARM_LABEL("Info", "info") WIDTH(1.5);
+    PARM_FIELD(string, "info") VALUE(info.val) 
+	LABELREF(info.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+attr_class.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Attr Class / Group Type", "attr_class") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    attr_class.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+fore_group.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    fore_group.label = PARM_LABEL("Foreground Group", "fore_group") WIDTH(1.5);
+    PARM_FIELD(string, "fore_group") VALUE(fore_group.val) 
+	LABELREF(fore_group.label) HSTRETCH;
+
+    fore_group.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+back_group.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    back_group.label = PARM_LABEL("Background Group", "back_group") WIDTH(1.5);
+    PARM_FIELD(string, "back_group") VALUE(back_group.val) 
+	LABELREF(back_group.label) HSTRETCH;
+
+    back_group.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+sepparm3.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+attr_to_blend.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    attr_to_blend.label = PARM_LABEL("Float / Vector Attr", "attr_to_blend") WIDTH(1.5);
+    PARM_FIELD(string, "attr_to_blend") VALUE(attr_to_blend.val) 
+	LABELREF(attr_to_blend.label) HSTRETCH;
+
+    attr_to_blend.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+sepparm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+match_by_attr.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("match_by_attr", "Match by Attribute") toggle VALUE(match_by_attr.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+attr_to_match.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    attr_to_match.label = PARM_LABEL("Attribute to Match", "attr_to_match") WIDTH(1.5);
+    PARM_FIELD(string, "attr_to_match") VALUE(attr_to_match.val) 
+	LABELREF(attr_to_match.label) HSTRETCH;
+
+    attr_to_match.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+sepparm2.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+blend_mode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Blend Mode", "blend_mode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    blend_mode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+blend_origin.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    blend_origin.label = PARM_LABEL("Origin", "blend_origin") WIDTH(1.5);
+    PARM_FIELD(string, "blend_origin") VALUE(blend_origin.val) 
+	LABELREF(blend_origin.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+blend_target.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    blend_target.label = PARM_LABEL("Target", "blend_target") WIDTH(1.5);
+    PARM_FIELD(string, "blend_target") VALUE(blend_target.val) 
+	LABELREF(blend_target.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+blend_bias.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ blend_bias.label = PARM_LABEL("Opacity", "blend_bias") WIDTH(1.5);
+ PARM(float, 1, "blend_bias", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(blend_bias.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    info.gad; 
+    attr_class.gad; 
+    fore_group.gad; 
+    back_group.gad; 
+    sepparm3.gad; 
+    attr_to_blend.gad; 
+    sepparm.gad; 
+    match_by_attr.gad; 
+    attr_to_match.gad; 
+    sepparm2.gad; 
+    blend_mode.gad; 
+    blend_origin.gad; 
+    blend_target.gad; 
+    blend_bias.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

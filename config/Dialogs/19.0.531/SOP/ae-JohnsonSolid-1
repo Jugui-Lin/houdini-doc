@@ -1,0 +1,37 @@
+// Magic: ffc6e69b
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Sun Apr  3 01:24:38 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+johnsontype.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ johnsontype.label = PARM_LABEL("Jonhson Solid Choice", "johnsontype") WIDTH(1.5);
+ PARM(integer, 1, "johnsontype", none, none) RANGE(0,91)
+	LOCK_RANGE LABELREF(johnsontype.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    johnsontype.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

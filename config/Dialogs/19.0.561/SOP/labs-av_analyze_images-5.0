@@ -1,0 +1,655 @@
+// Magic: 9fb6efab
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Mon Apr 11 00:49:47 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+cook.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+cook.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("cook", "Cook")
+	push VALUE(cook.val);
+
+    {  }
+}
+
+manual_mode.gad = ROW
+{
+    
+    {  }
+
+    PARM_BUTTON("manual_mode", "Manual") toggle VALUE(manual_mode.val);
+
+    {  }
+
+    {  }
+}
+
+bExportLog.gad = ROW
+{
+    HSTRETCH
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("bExportLog", "Use Log") toggle VALUE(bExportLog.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+describerTypes.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    describerTypes.label = PARM_LABEL("Describer Types", "describerTypes") WIDTH(1.5);
+    PARM_FIELD(string, "describerTypes") VALUE(describerTypes.val) 
+	LABELREF(describerTypes.label) HSTRETCH;
+
+    describerTypes.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+describerPreset.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Describer Preset", "describerPreset") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    describerPreset.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+describerQuality.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Describer Quality", "describerQuality") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    describerQuality.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+gridFiltering.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("gridFiltering", "Grid Filtering") toggle VALUE(gridFiltering.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+maxNbFeatures.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ maxNbFeatures.label = PARM_LABEL("Maximum Number of Features", "maxNbFeatures") WIDTH(1.5);
+ PARM(integer, 1, "maxNbFeatures", none, LOGSCALE) RANGE(0,100000)
+	 LABELREF(maxNbFeatures.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+contrastFiltering.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Contrast Filtering", "contrastFiltering") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    contrastFiltering.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+relativePeakThreshold.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ relativePeakThreshold.label = PARM_LABEL("Relative Peak Threshold", "relativePeakThreshold") WIDTH(1.5);
+ PARM(float, 1, "relativePeakThreshold", none, none) RANGE(0.01,1)
+	 LABELREF(relativePeakThreshold.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+forceCpuExtraction.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("forceCpuExtraction", "Force CPU Extraction") toggle VALUE(forceCpuExtraction.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+maxThreads.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ maxThreads.label = PARM_LABEL("Max CPU Threads", "maxThreads") WIDTH(1.5);
+ PARM(integer, 1, "maxThreads", none, none) RANGE(0,20)
+	LOCK_RANGE_MIN LABELREF(maxThreads.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+rangeStart.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ rangeStart.label = PARM_LABEL("Range Start", "rangeStart") WIDTH(1.5);
+ PARM(integer, 1, "rangeStart", none, none) RANGE(0,10)
+	 LABELREF(rangeStart.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+rangeSize.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ rangeSize.label = PARM_LABEL("Range Size", "rangeSize") WIDTH(1.5);
+ PARM(integer, 1, "rangeSize", none, none) RANGE(0,10)
+	 LABELREF(rangeSize.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+minNbImages.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ minNbImages.label = PARM_LABEL("Min Number of Images", "minNbImages") WIDTH(1.5);
+ PARM(integer, 1, "minNbImages", none, none) RANGE(0,500)
+	 LABELREF(minNbImages.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+maxDescriptors.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ maxDescriptors.label = PARM_LABEL("Max Descriptors", "maxDescriptors") WIDTH(1.5);
+ PARM(integer, 1, "maxDescriptors", none, none) RANGE(0,10000)
+	 LABELREF(maxDescriptors.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+nbMatches.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ nbMatches.label = PARM_LABEL("Number of Matches", "nbMatches") WIDTH(1.5);
+ PARM(integer, 1, "nbMatches", none, none) RANGE(0,1000)
+	 LABELREF(nbMatches.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+nbNeighbors.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ nbNeighbors.label = PARM_LABEL("Number of Nighbors", "nbNeighbors") WIDTH(1.5);
+ PARM(integer, 1, "nbNeighbors", none, none) RANGE(0,1000)
+	 LABELREF(nbNeighbors.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+guidedMatching.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("guidedMatching", "Guided Matching") toggle VALUE(guidedMatching.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+crossMatching.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("crossMatching", "Cross Matching") toggle VALUE(crossMatching.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+photometricMatchingMethod.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Photometric Matching Method", "photometricMatchingMethod") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    photometricMatchingMethod.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+geometricEstimator.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Geometric Estimator", "geometricEstimator") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    geometricEstimator.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+geometricFilterType.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Geometric Filter type", "geometricFilterType") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    geometricFilterType.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+distanceRatio.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ distanceRatio.label = PARM_LABEL("Distance Ratio", "distanceRatio") WIDTH(1.5);
+ PARM(float, 1, "distanceRatio", none, none) RANGE(0,1)
+	 LABELREF(distanceRatio.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+maxIteration.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ maxIteration.label = PARM_LABEL("Max Iteration", "maxIteration") WIDTH(1.5);
+ PARM(integer, 1, "maxIteration", none, none) RANGE(1,20000)
+	 LABELREF(maxIteration.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+geometricError.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ geometricError.label = PARM_LABEL("Geometric Validation Error", "geometricError") WIDTH(1.5);
+ PARM(integer, 1, "geometricError", none, none) RANGE(0,10)
+	 LABELREF(geometricError.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+knownPosesGeometricErrorMax.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ knownPosesGeometricErrorMax.label = PARM_LABEL("Known Poses Geometric Error Max", "knownPosesGeometricErrorMax") WIDTH(1.5);
+ PARM(integer, 1, "knownPosesGeometricErrorMax", none, none) RANGE(1,20000)
+	 LABELREF(knownPosesGeometricErrorMax.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+maxMatches.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ maxMatches.label = PARM_LABEL("Max Matches", "maxMatches") WIDTH(1.5);
+ PARM(integer, 1, "maxMatches", none, none) RANGE(0,10000)
+	 LABELREF(maxMatches.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+matchFromKnownCameraPoses.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("matchFromKnownCameraPoses", "Match From Known Camera Poses") toggle VALUE(matchFromKnownCameraPoses.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+randomSeed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ randomSeed.label = PARM_LABEL("Random Seed", "randomSeed") WIDTH(1.5);
+ PARM(integer, 1, "randomSeed", none, none) RANGE(0,10)
+	 LABELREF(randomSeed.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+savePutativeMatches.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("savePutativeMatches", "Save Putative Matches") toggle VALUE(savePutativeMatches.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+matchFilePerImage.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("matchFilePerImage", "Match File Per Image") toggle VALUE(matchFilePerImage.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+useGridSort.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("useGridSort", "Use Grid Sort") toggle VALUE(useGridSort.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+exportDebugFiles.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("exportDebugFiles", "Export Debug Files") toggle VALUE(exportDebugFiles.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+rangeStartMatching.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ rangeStartMatching.label = PARM_LABEL("Range Start", "rangeStartMatching") WIDTH(1.5);
+ PARM(integer, 1, "rangeStartMatching", none, none) RANGE(0,10)
+	 LABELREF(rangeStartMatching.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+rangeSizeMatching.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ rangeSizeMatching.label = PARM_LABEL("Range Size", "rangeSizeMatching") WIDTH(1.5);
+ PARM(integer, 1, "rangeSizeMatching", none, none) RANGE(0,10)
+	 LABELREF(rangeSizeMatching.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+enablecustomenv.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+enablecustomenv.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+enablecustomenv.gad = PARM_BUTTON("enablecustomenv", "") toggle VALUE(enablecustomenv.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+customenv.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    customenv.label = PARM_LABEL("Environment", "customenv") WIDTH(1.32);
+    PARM_FIELD(string, "customenv") VALUE(customenv.val) 
+	LABELREF(customenv.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+folder4.gad = 
+GROUP collapsible "Environment" flat  
+{
+    VALUE(folder4.gad.val) LAYOUT(vertical) HSTRETCH
+	    enablecustomenv.row.join;		
+} 
+
+folder1.gad = 
+GROUP collapsible "Advanced" flat  
+{
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH
+	    crossMatching.gad;		
+	    photometricMatchingMethod.gad;		
+	    geometricEstimator.gad;		
+	    geometricFilterType.gad;		
+	    distanceRatio.gad;		
+	    maxIteration.gad;		
+	    geometricError.gad;		
+	    knownPosesGeometricErrorMax.gad;		
+	    maxMatches.gad;		
+	    matchFromKnownCameraPoses.gad;		
+	    randomSeed.gad;		
+	    savePutativeMatches.gad;		
+	    matchFilePerImage.gad;		
+	    useGridSort.gad;		
+	    exportDebugFiles.gad;		
+	    rangeStartMatching.gad;		
+	    rangeSizeMatching.gad;		
+} 
+
+folder3.gad = 
+GROUP collapsible "Advanced" flat  
+{
+    VALUE(folder3.gad.val) LAYOUT(vertical) HSTRETCH
+	    minNbImages.gad;		
+	    maxDescriptors.gad;		
+	    nbMatches.gad;		
+	    nbNeighbors.gad;		
+} 
+
+folder2.gad = 
+GROUP collapsible "Advanced" flat  
+{
+    VALUE(folder2.gad.val) LAYOUT(vertical) HSTRETCH
+	    forceCpuExtraction.gad;		
+	    maxThreads.gad;		
+	    rangeStart.gad;		
+	    rangeSize.gad;		
+} 
+
+folder0.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder0.gad"
+    { 
+	VALUE(folder0.gad.val) STRETCH(1,0)
+
+	TAB "Feature Extraction"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    describerTypes.gad;		
+	    describerPreset.gad;		
+	    describerQuality.gad;		
+	    gridFiltering.gad;		
+	    maxNbFeatures.gad;		
+	    contrastFiltering.gad;		
+	    relativePeakThreshold.gad;		
+	    folder2.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Image Matching"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    folder3.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Feature Matching"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    guidedMatching.gad;		
+	    folder1.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    cook.row.join; 
+    folder0.gad; 
+    folder4.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

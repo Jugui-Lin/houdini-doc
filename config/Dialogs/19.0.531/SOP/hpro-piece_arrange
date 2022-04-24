@@ -1,0 +1,544 @@
+// Magic: a1517676
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Mon Mar 14 11:33:02 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+detect_piece.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Detect Piece", "detect_piece") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    detect_piece.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+piece_attrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    piece_attrib.label = PARM_LABEL("Prim Piece Attr", "piece_attrib") WIDTH(1.5);
+    PARM_FIELD(string, "piece_attrib") VALUE(piece_attrib.val) 
+	LABELREF(piece_attrib.label) HSTRETCH;
+
+    piece_attrib.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "VIEW_visualization" VALUE(piece_attrib.script_action)
+	HELP("")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+sepparm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+dotranslate.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dotranslate", "Translate") toggle VALUE(dotranslate.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+justify_x.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Justify X", "justify_x") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    justify_x.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+justify_y.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Justify Y", "justify_y") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    justify_y.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+justify_z.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Justify Z", "justify_z") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    justify_z.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+sort_pieces.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Sort Pieces", "sort_pieces") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    sort_pieces.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+pointreverse.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("pointreverse", "Reverse Sort") toggle VALUE(pointreverse.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+output_sorted_piece_id.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+output_sorted_piece_id.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+output_sorted_piece_id.gad = PARM_BUTTON("output_sorted_piece_id", "") toggle VALUE(output_sorted_piece_id.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+sorted_piece_id.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    sorted_piece_id.label = PARM_LABEL("Sorted Piece Id", "sorted_piece_id") WIDTH(1.32);
+    PARM_FIELD(string, "sorted_piece_id") VALUE(sorted_piece_id.val) 
+	LABELREF(sorted_piece_id.label) HSTRETCH;
+
+    ACTION_ICONBUTTON "VIEW_visualization" VALUE(sorted_piece_id.script_action)
+	HELP("")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+arrange_mode.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+arrange_mode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Arrange Mode", "arrange_mode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    arrange_mode.menu;
+
+    {  }
+
+    {  }
+}
+
+show_grid_guide.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("show_grid_guide", "Show Guide") toggle VALUE(show_grid_guide.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+along_axis.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Along Axis", "along_axis") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    along_axis.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+match_by_attr.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("match_by_attr", "") toggle VALUE(match_by_attr.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+grid_orient.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Orientation", "grid_orient") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    grid_orient.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+piece_space.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ piece_space.label = PARM_LABEL("Piece Space", "piece_space") WIDTH(1.5);
+ PARM(float, 1, "piece_space", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(piece_space.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+vis_piece_attr.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("vis_piece_attr", "Visualize Piece Attribute") toggle VALUE(vis_piece_attr.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+font_file.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ font_file.label = PARM_LABEL("Font", "font_file") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "font_file") LABELREF(font_file.label)
+	VALUE(font_file.val) HSTRETCH;
+
+    font_file.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(font_file.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+font_lod.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ font_lod.label = PARM_LABEL("Level of Detail", "font_lod") WIDTH(1.5);
+ PARM(float, 1, "font_lod", none, none) RANGE(0.001,1)
+	LOCK_RANGE_MIN LABELREF(font_lod.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm3.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+font_pos.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Position", "font_pos") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    font_pos.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+font_offset.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ font_offset.label = PARM_LABEL("Offset", "font_offset") WIDTH(1.5);
+ PARM(float, 1, "font_offset", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(font_offset.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm2.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+font_rot.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ font_rot.label = PARM_LABEL("Rotate (x90)", "font_rot") WIDTH(1.5);
+ PARM(integer, 1, "font_rot", none, none) RANGE(-2,2)
+	 LABELREF(font_rot.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+font_scale.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   font_scale.label = PARM_LABEL("Scale", "font_scale") WIDTH(1.5);
+   PARM(float, 2, "font_scale", none, none, "X,Y")
+	RANGE(-1,1)  LABELREF(font_scale.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+font_uni_scale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ font_uni_scale.label = PARM_LABEL("Uniform Scale", "font_uni_scale") WIDTH(1.5);
+ PARM(float, 1, "font_uni_scale", none, none) RANGE(0,2)
+	LOCK_RANGE_MIN LABELREF(font_uni_scale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+font_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    font_color.label = PARM_LABEL("Color", "font_color") WIDTH(1.5);
+    PARM(float, 3, "font_color", none, COLOR, "R,G,B") 
+	LABELREF(font_color.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+sepparm4.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+output_font_group.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+output_font_group.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+output_font_group.gad = PARM_BUTTON("output_font_group", "") toggle VALUE(output_font_group.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+font_group.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    font_group.label = PARM_LABEL("Group", "font_group") WIDTH(1.32);
+    PARM_FIELD(string, "font_group") VALUE(font_group.val) 
+	LABELREF(font_group.label) HSTRETCH;
+
+    {  }
+}
+}	
+
+font_group_merge_op.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    font_group_merge_op.menu;
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+folder4.gad = 
+
+GROUP simple "Option" flat 
+{ 
+    VALUE(folder4.gad.val) LAYOUT(vertical) HSTRETCH 
+	    font_file.gad;		
+	    font_lod.gad;		
+	    sepparm3.gad;		
+	    font_pos.gad;		
+	    font_offset.gad;		
+	    sepparm2.gad;		
+	    font_rot.gad;		
+	    font_scale.gad;		
+	    font_uni_scale.gad;		
+	    font_color.gad;		
+	    sepparm4.gad;		
+	    output_font_group.row.join;		
+} 
+
+folder3.gad = 
+GROUP collapsible "Visualize" flat  
+{
+    VALUE(folder3.gad.val) LAYOUT(vertical) HSTRETCH
+	    vis_piece_attr.gad;		
+	    folder4.gad;		
+} 
+
+folder2.gad = 
+
+GROUP simple "Arrange" flat 
+{ 
+    VALUE(folder2.gad.val) LAYOUT(vertical) HSTRETCH 
+	    arrange_mode.row.join;		
+	    along_axis.gad;		
+	    match_by_attr.gad;		
+	    grid_orient.gad;		
+	    piece_space.gad;		
+} 
+
+folder0.gad = 
+
+GROUP simple "Sort Piece" flat 
+{ 
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    sort_pieces.gad;		
+	    pointreverse.gad;		
+	    output_sorted_piece_id.row.join;		
+} 
+
+folder1.gad = 
+
+GROUP simple "Pre-Align Axis" flat 
+{ 
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    dotranslate.gad;		
+	    justify_x.gad;		
+	    justify_y.gad;		
+	    justify_z.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    detect_piece.gad; 
+    piece_attrib.gad; 
+    sepparm.gad; 
+    folder1.gad; 
+    folder0.gad; 
+    folder2.gad; 
+    folder3.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

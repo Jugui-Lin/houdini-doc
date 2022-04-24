@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shelfDocument>
+  <!-- This file contains definitions of shelves, toolbars, and tools.
+ It should not be hand-edited when it is being used by the application.
+ Note, that two definitions of the same element are not allowed in
+ a single file. -->
+
+  <toolshelf name="shelf_1" label="New Shelf">
+    <memberTool name="tool_1"/>
+  </toolshelf>
+
+  <tool name="tool_1" label="New Tool" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[]]></script>
+  </tool>
+
+  <tool name="tool_2" label="OBJ_Loader" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[import os
+
+obj_dir = hou.ui.selectFile(title = 'Select OBJ Directoty', file_type = hou.fileType.Directory)
+
+obj_dir_expanded = hou.expandString(obj_dir)
+
+obj_file = os.listdir(obj_dir_expanded)
+
+file_nodes = []
+
+loader = hou.node('/obj').createNode('geo','OBJ_loader')
+
+for obj in obj_file:
+    obj_file_node = loader.createNode('file',obj)
+    obj_file_node.parm('file').set(obj_dir + obj)
+    obj_file_node.parm('missingframe').set(1)
+    
+    file_nodes.append(obj_file_node)
+    
+merge_objs = loader.createNode('merge','OBJ_Merger')
+
+for node in file_nodes:
+    merge_objs.setNextInput(node)
+    
+loader.layoutChildren()
+
+merge_objs.setDisplayFlag(1)
+merge_objs.setRenderFlag(1)]]></script>
+  </tool>
+
+  <tool name="tool_3" label="Mat_Convert" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[from multiprocessing.spawn import import_main_path
+from turtle import update
+import hou
+import os
+texture_path = '$HIP/geo/buildings/Textures/'
+
+
+materials = hou.selectedNodes()[0]
+materials_name = materials.name()
+
+
+
+# get all the shaders
+
+shaders = materials.children()
+
+redShaders = materials.parent().createNode('matnet')
+redShaders.moveToGoodPosition()
+
+
+for shd in shaders:
+    
+    shd_type = shd.type().name()
+
+    if shd_type == 'principledshader::2.0':
+        redVopNet = redShaders.createNode('redshift_vopnet',shd.name())
+        redMat = redVopNet.children()[1]
+
+    
+    #connect nodes
+    #redMatOutput.setInput()
+
+    #get the texture
+    texture = shd.evalParm('basecolor_texture')
+
+    #print(texture_name)
+    #create rs texture node 
+
+
+    
+
+    #set parm
+    redMat.parm('')
+
+    if texture != '':
+        texture_name = texture.split('Textures')[1][1:]
+        rsTex = redVopNet.createNode('redshift::TextureSampler')
+        rsTex.parm('tex0').set(texture_path + texture_name)
+        redMat.setInput(0,rsTex)
+    redShaders.layoutChildren()
+    redVopNet.layoutChildren()
+
+redShader_name = 'New_' + materials_name
+redShaders.setName(redShader_name)
+update_node = hou.ui.selectNode(initial_node = redShaders.parent())
+
+sel_update_node = hou.node(update_node)
+
+num_mats = sel_update_node.evalParm('num_materials')
+print(redShader_name)
+
+for num in range(num_mats):
+    num +=1
+    old_path = sel_update_node.evalParm(f'shop_materialpath{num}')
+    new_path = old_path.replace(f'{materials_name}',f'{redShader_name}')
+    print(new_path)
+    sel_update_node.parm(f'shop_materialpath{num}').set(new_path)
+]]></script>
+  </tool>
+
+  <toolshelf name="AttribMan" label="New Shelf">
+    <memberTool name="tool_2"/>
+    <memberTool name="tool_3"/>
+    <memberTool name="AttribMan"/>
+    <memberTool name="test12"/>
+  </toolshelf>
+
+  <tool name="AttribMan" label="AttribMan" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[from JGP.attribman import attribman
+from importlib import reload
+reload(attribman)
+
+]]></script>
+  </tool>
+
+  <tool name="test12" label="test123" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[import hou
+import os
+
+nodes = hou.selectedNodes()
+
+for node in nodes:
+    node_name = node.name()
+    print(node_name)
+
+]]></script>
+  </tool>
+
+  <toolshelf name="shelf_2" label="New Shelf"/>
+
+  <toolshelf name="shelf_3" label="New Shelf">
+    <memberTool name="tool_4"/>
+  </toolshelf>
+
+  <tool name="tool_4" label="New Tool" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[import hou
+import random
+
+node = hou.pwd()
+geo = node.geometry()
+
+# ç»å®ç§å­ ä¿è¯æ¯æ¬¡è¿è¡otlå¾å°çç»æç¸å
+random.seed(123)
+
+colorAttrib = geo.addAttrib(hou.attribTypr.Point, "Cd", (1.0, 1.0, 1.0))
+
+color = hou.Color()
+
+pointsNum = len(geo.points())
+
+for point in geo.points():
+    pos = point.position()
+
+    px = pos[0]
+    py = pos[1] + random.random() * random.choice([-1,1])
+    pz = pos[2]
+    
+    point.setPosition((px, py, pz))
+
+    value = float(point.number()) / pointsNum
+    color.setHSV((value * 255, 1.0, 1.0))
+    point.setAttribValue(colorAttrib, color.rgb())]]></script>
+  </tool>
+
+  <shelfSetEdit name="shelf_set_td" fileLocation="">
+    <addMemberToolshelf name="houdiniengine" inPosition="16"/>
+    <addMemberToolshelf name="labs_toolset" inPosition="17"/>
+  </shelfSetEdit>
+
+  <shelfSetEdit name="shelf_set_1" fileLocation="C:/PROGRA~1/SIDEEF~1/HOUDIN~1.561/houdini/toolbar/ShelfDefinitions.shelf">
+    <addMemberToolshelf name="Redshift" inPosition="15"/>
+    <addMemberToolshelf name="shelf_2" inPosition="16"/>
+    <addMemberToolshelf name="aelib_shelf" inPosition="17"/>
+    <addMemberToolshelf name="qLib" inPosition="18"/>
+    <addMemberToolshelf name="octane" inPosition="19"/>
+    <addMemberToolshelf name="qLib_update" inPosition="20"/>
+    <addMemberToolshelf name="shelf_3" inPosition="21"/>
+  </shelfSetEdit>
+</shelfDocument>

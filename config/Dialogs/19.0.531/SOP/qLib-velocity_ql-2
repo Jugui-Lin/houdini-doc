@@ -1,0 +1,1686 @@
+// Magic: adc6ce7b
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Mon Feb 28 18:04:40 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+op_label.gad = NULL { }
+editable.gad = NULL { }
+has_2nd.gad = NULL { }
+
+group.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    group.label = PARM_LABEL("Group", "group") WIDTH(1.5);
+    PARM_FIELD(string, "group") VALUE(group.val) 
+	LABELREF(group.label) HSTRETCH;
+
+    group.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "BUTTONS_reselect" VALUE(group.script_action)
+	HELP("Select geometry from an available viewport.\nShift-click to turn on Select Groups.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+grouptype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Group Type", "grouptype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    grouptype.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+attribv.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    attribv.label = PARM_LABEL("Linear Velocity", "attribv") WIDTH(1.5);
+    PARM_FIELD(string, "attribv") VALUE(attribv.val) 
+	LABELREF(attribv.label) HSTRETCH;
+
+    attribv.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "VIEW_visualization" VALUE(attribv.script_action)
+	HELP("")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+attribw.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    attribw.label = PARM_LABEL("Angular Velocity", "attribw") WIDTH(1.5);
+    PARM_FIELD(string, "attribw") VALUE(attribw.val) 
+	LABELREF(attribw.label) HSTRETCH;
+
+    attribw.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "VIEW_visualization" VALUE(attribw.script_action)
+	HELP("")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+initcleanv.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("initcleanv", "Discard Incoming Velocity Attributes") toggle VALUE(initcleanv.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+pointsfromvolume.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("pointsfromvolume", "Fill Volume with Points (Static Only) *") toggle VALUE(pointsfromvolume.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+note_pointsfromvolume.sval := 1;
+
+note_pointsfromvolume.gad = 
+{
+    LAYOUT(vertical) SPACING(1p) HSTRETCH VMARGIN(0.05, 0)
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    SWITCHER tight
+    {
+	VALUE(note_pointsfromvolume.sval) HSTRETCH
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(note_pointsfromvolume.val[0]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(note_pointsfromvolume.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[1]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(note_pointsfromvolume.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[2]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(note_pointsfromvolume.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[3]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(note_pointsfromvolume.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[4]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(note_pointsfromvolume.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[5]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(note_pointsfromvolume.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[6]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(note_pointsfromvolume.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[7]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(note_pointsfromvolume.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[8]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(note_pointsfromvolume.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[9]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(note_pointsfromvolume.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[10]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(note_pointsfromvolume.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[11]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(note_pointsfromvolume.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[12]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(note_pointsfromvolume.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[12]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[13]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(note_pointsfromvolume.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[12]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[13]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[14]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(note_pointsfromvolume.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[12]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[13]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[14]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_pointsfromvolume.val[15]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+    }
+}
+note_pointsfromvolume_2.gad = NULL { }
+
+inittype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Point Configuration", "inittype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    inittype.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+particlesep.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ particlesep.label = PARM_LABEL("Point Separation", "particlesep") WIDTH(1.5);
+ PARM(float, 1, "particlesep", none, LOGSCALE) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(particlesep.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+jitterseed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ jitterseed.label = PARM_LABEL("Jitter Seed", "jitterseed") WIDTH(1.5);
+ PARM(float, 1, "jitterseed", none, none) RANGE(0,10)
+	 LABELREF(jitterseed.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+jitterscale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ jitterscale.label = PARM_LABEL("Jitter Scale", "jitterscale") WIDTH(1.5);
+ PARM(float, 1, "jitterscale", none, none) RANGE(0,1)
+	 LABELREF(jitterscale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+invert.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("invert", "Invert Volume") toggle VALUE(invert.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+xfervolptattribs.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+xfervolptattribs.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+xfervolptattribs.gad = PARM_BUTTON("xfervolptattribs", "") toggle VALUE(xfervolptattribs.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+volptattribs.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    volptattribs.label = PARM_LABEL("Inherit Point Attrs", "volptattribs") WIDTH(1.32);
+    PARM_FIELD(string, "volptattribs") VALUE(volptattribs.val) 
+	LABELREF(volptattribs.label) HSTRETCH;
+
+    volptattribs.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+uselocalinitv.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("uselocalinitv", "VEXpressions: Initialize") toggle VALUE(uselocalinitv.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+initvexpression.gad = ROW
+{
+
+    HSTRETCH JUSTIFY(left, top) HMARGIN(0.18, 0.1)
+        NO_MARGIN_SPACING_SCALE
+
+    initvexpression.label = PARM_LABEL("initial/input v.", "initvexpression");
+
+    MULTILINE_PARM_FIELD ("initvexpression") 
+
+    	LABELREF(initvexpression.label) 
+
+    	VALUE(initvexpression.val) 
+    	SYNTAX("vex") 
+    	LINES(5,8) 
+    	HSTRETCH;
+
+    {
+
+	LAYOUT(vertical)
+	{
+	    SIZE(0, 0.26)
+	}
+
+    initvexpression.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "BUTTONS_create_parm_from_ch" VALUE(initvexpression.script_action)
+	HELP("Creates spare parameters for each unique call of ch()")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    }
+
+}
+
+dovelocityendpts.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dovelocityendpts", "Use 2nd Input Points") toggle VALUE(dovelocityendpts.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+endptsusepos.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("endptsusepos", "Linear Velocities from 'P' Differences") toggle VALUE(endptsusepos.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+endptsnormalize.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("endptsnormalize", "Normalize") toggle VALUE(endptsnormalize.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+endptsscale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ endptsscale.label = PARM_LABEL("Scale", "endptsscale") WIDTH(1.5);
+ PARM(float, 1, "endptsscale", none, none) RANGE(0,4)
+	 LABELREF(endptsscale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+endptsuseangle.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("endptsuseangle", "Angular Velocities from 'v' Angles") toggle VALUE(endptsuseangle.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+endptsangleamount.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ endptsangleamount.label = PARM_LABEL("Amount", "endptsangleamount") WIDTH(1.5);
+ PARM(float, 1, "endptsangleamount", none, none) RANGE(0,1)
+	 LABELREF(endptsangleamount.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+note_endpts_ptsfromvolume.sval := 1;
+
+note_endpts_ptsfromvolume.gad = 
+{
+    LAYOUT(vertical) SPACING(1p) HSTRETCH VMARGIN(0.05, 0)
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    SWITCHER tight
+    {
+	VALUE(note_endpts_ptsfromvolume.sval) HSTRETCH
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(note_endpts_ptsfromvolume.val[0]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(note_endpts_ptsfromvolume.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[1]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(note_endpts_ptsfromvolume.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[2]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(note_endpts_ptsfromvolume.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[3]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(note_endpts_ptsfromvolume.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[4]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(note_endpts_ptsfromvolume.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[5]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(note_endpts_ptsfromvolume.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[6]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(note_endpts_ptsfromvolume.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[7]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(note_endpts_ptsfromvolume.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[8]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(note_endpts_ptsfromvolume.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[9]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(note_endpts_ptsfromvolume.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[10]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(note_endpts_ptsfromvolume.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[11]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(note_endpts_ptsfromvolume.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[12]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(note_endpts_ptsfromvolume.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[12]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[13]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(note_endpts_ptsfromvolume.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[12]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[13]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[14]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(note_endpts_ptsfromvolume.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[12]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[13]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[14]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(note_endpts_ptsfromvolume.val[15]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+    }
+}
+
+dovelocityxform.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dovelocityxform", "Use Transformations") toggle VALUE(dovelocityxform.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+soppath.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ soppath.label = PARM_LABEL("Input SOP", "soppath") WIDTH(1.5);
+ PARM_FIELD(pathstring, "soppath") VALUE(soppath.val) 
+	LABELREF(soppath.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(soppath.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(soppath.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+peakdist.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ peakdist.label = PARM_LABEL("Peak", "peakdist") WIDTH(1.5);
+ PARM(float, 1, "peakdist", none, none) RANGE(-1,1)
+	 LABELREF(peakdist.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+peakattrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    peakattrib.label = PARM_LABEL("Peak Direction Attrib", "peakattrib") WIDTH(1.5);
+    PARM_FIELD(string, "peakattrib") VALUE(peakattrib.val) 
+	LABELREF(peakattrib.label) HSTRETCH;
+
+    peakattrib.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+t.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   t.label = PARM_LABEL("Translate", "t") WIDTH(1.5);
+   PARM(float, 3, "t", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(t.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+r.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   r.label = PARM_LABEL("Rotate", "r") WIDTH(1.5);
+   PARM(float, 3, "r", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(r.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+s.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   s.label = PARM_LABEL("Scale", "s") WIDTH(1.5);
+   PARM(float, 3, "s", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(s.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+shear.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   shear.label = PARM_LABEL("Shear", "shear") WIDTH(1.5);
+   PARM(float, 3, "shear", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(shear.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+p.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   p.label = PARM_LABEL("Pivot", "p") WIDTH(1.5);
+   PARM(float, 3, "p", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(p.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+scale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ scale.label = PARM_LABEL("Uniform Scale", "scale") WIDTH(1.5);
+ PARM(float, 1, "scale", none, none) RANGE(0,10)
+	 LABELREF(scale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+xformlinear.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("xformlinear", "Apply Linear Component (v)") toggle VALUE(xformlinear.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+endptblend.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ endptblend.label = PARM_LABEL("Trail Endpoint", "endptblend") WIDTH(1.5);
+ PARM(float, 1, "endptblend", none, none) RANGE(0,1)
+	 LABELREF(endptblend.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+xformangular.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("xformangular", "Apply Angular Component (w)") toggle VALUE(xformangular.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+xformangscale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ xformangscale.label = PARM_LABEL("Angular Scale", "xformangscale") WIDTH(1.5);
+ PARM(float, 1, "xformangscale", none, none) RANGE(0,4)
+	 LABELREF(xformangscale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+sep_xform_1.gad = NULL { }
+
+xformpreservelength.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ xformpreservelength.label = PARM_LABEL("Preserve Input Length", "xformpreservelength") WIDTH(1.5);
+ PARM(float, 1, "xformpreservelength", none, none) RANGE(0,1)
+	 LABELREF(xformpreservelength.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+xformnormalize.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("xformnormalize", "Normalize") toggle VALUE(xformnormalize.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+xformscale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ xformscale.label = PARM_LABEL("Scale", "xformscale") WIDTH(1.5);
+ PARM(float, 1, "xformscale", none, none) RANGE(0,4)
+	 LABELREF(xformscale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+uselocalpostprocv.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("uselocalpostprocv", "VEXpressions: Post-Process") toggle VALUE(uselocalpostprocv.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+postprocvexpression.gad = ROW
+{
+
+    HSTRETCH JUSTIFY(left, top) HMARGIN(0.18, 0.1)
+        NO_MARGIN_SPACING_SCALE
+
+    postprocvexpression.label = PARM_LABEL("Post-Process v.", "postprocvexpression");
+
+    MULTILINE_PARM_FIELD ("postprocvexpression") 
+
+    	LABELREF(postprocvexpression.label) 
+
+    	VALUE(postprocvexpression.val) 
+    	SYNTAX("vex") 
+    	LINES(5,8) 
+    	HSTRETCH;
+
+    {
+
+	LAYOUT(vertical)
+	{
+	    SIZE(0, 0.26)
+	}
+
+    postprocvexpression.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "BUTTONS_create_parm_from_ch" VALUE(postprocvexpression.script_action)
+	HELP("Creates spare parameters for each unique call of ch() ")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    }
+
+}
+
+sep_inputv2.sval := 1;
+
+sep_inputv2.gad = 
+{
+    LAYOUT(vertical) SPACING(1p) HSTRETCH VMARGIN(0.05, 0)
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    SWITCHER tight
+    {
+	VALUE(sep_inputv2.sval) HSTRETCH
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(sep_inputv2.val[0]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(sep_inputv2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[1]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(sep_inputv2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[2]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(sep_inputv2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[3]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(sep_inputv2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[4]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(sep_inputv2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[5]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(sep_inputv2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[6]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(sep_inputv2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[7]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(sep_inputv2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[8]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(sep_inputv2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[9]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(sep_inputv2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[10]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(sep_inputv2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[11]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(sep_inputv2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[12]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(sep_inputv2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[12]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[13]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(sep_inputv2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[12]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[13]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[14]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(sep_inputv2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[12]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[13]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[14]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_inputv2.val[15]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+    }
+}
+sep_misc.gad = NULL { }
+dooutvscale.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+dooutvscale.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+dooutvscale.gad = PARM_BUTTON("dooutvscale", "") toggle VALUE(dooutvscale.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+outvscale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ outvscale.label = PARM_LABEL("Output Scale (v)", "outvscale") WIDTH(1.32);
+ PARM(float, 1, "outvscale", none, none) RANGE(0,4)
+	 LABELREF(outvscale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+dooutwscale.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+dooutwscale.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+dooutwscale.gad = PARM_BUTTON("dooutwscale", "") toggle VALUE(dooutwscale.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+outwscale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ outwscale.label = PARM_LABEL("Output Scale (w)", "outwscale") WIDTH(1.32);
+ PARM(float, 1, "outwscale", none, none) RANGE(0,4)
+	 LABELREF(outwscale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+fps.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ fps.label = PARM_LABEL("Fps", "fps") WIDTH(1.5);
+ PARM(float, 1, "fps", none, none) RANGE(0,120)
+	 LABELREF(fps.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+guide.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+guide.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+guide.gad = PARM_BUTTON("guide", "") toggle VALUE(guide.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+guidescale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ guidescale.label = PARM_LABEL("Guide / Scale", "guidescale") WIDTH(1.32);
+ PARM(float, 1, "guidescale", none, none) RANGE(0,10)
+	 LABELREF(guidescale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+guidecolors.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+guidecolors.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+guidecolors.gad = PARM_BUTTON("guidecolors", "") toggle VALUE(guidecolors.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+colorrange.gad = ROW
+{
+   HSTRETCH
+   {  }
+
+   colorrange.label = PARM_LABEL("Color Range", "colorrange") WIDTH(1.32);
+   PARM(float, 2, "colorrange", none, none, "X,Y")
+	RANGE(0,10)  LABELREF(colorrange.label)
+	HSTRETCH;
+
+    {  }
+}
+}	
+
+guidecolorinvert.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("guidecolorinvert", "Invert") toggle VALUE(guidecolorinvert.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+guidegrouponly.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("guidegrouponly", "Show For Group Only") toggle VALUE(guidegrouponly.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+guideendpts.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("guideendpts", "Guide End Points") toggle VALUE(guideendpts.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+guidehidegeo.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("guidehidegeo", "Hide Geometry (Viewport-only)") toggle VALUE(guidehidegeo.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+sep_vis.gad = NULL { }
+
+vis.gad = 
+GROUP collapsible "Guide Display" flat  
+{
+    VALUE(vis.gad.val) LAYOUT(vertical) HSTRETCH
+	    guide.row.join;		
+	    guidecolors.row.join;		
+	    guidegrouponly.gad;		
+	    guideendpts.gad;		
+	    guidehidegeo.gad;		
+	    sep_vis.gad;		
+} 
+
+folder2.gad = 
+GROUP collapsible "Output" flat  
+{
+    VALUE(folder2.gad.val) LAYOUT(vertical) HSTRETCH
+	    dooutvscale.row.join;		
+	    dooutwscale.row.join;		
+	    fps.gad;		
+} 
+
+folder5.gad = 
+
+GROUP simple "Transformation" flat 
+{ 
+    VALUE(folder5.gad.val) LAYOUT(vertical) HSTRETCH 
+	    peakdist.gad;		
+	    peakattrib.gad;		
+	    t.gad;		
+	    r.gad;		
+	    s.gad;		
+	    shear.gad;		
+	    p.gad;		
+	    scale.gad;		
+} 
+
+folder3.gad = 
+
+GROUP simple "2nd Input Points" flat 
+{ 
+    VALUE(folder3.gad.val) LAYOUT(vertical) HSTRETCH 
+	    endptsusepos.gad;		
+	    endptsnormalize.gad;		
+	    endptsscale.gad;		
+	    endptsuseangle.gad;		
+	    endptsangleamount.gad;		
+} 
+
+folder0.gad = 
+
+GROUP simple "Fill Volume with Points" flat 
+{ 
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    note_pointsfromvolume.gad;		
+	    note_pointsfromvolume_2.gad;		
+	    inittype.gad;		
+	    particlesep.gad;		
+	    jitterseed.gad;		
+	    jitterscale.gad;		
+	    invert.gad;		
+	    xfervolptattribs.row.join;		
+} 
+
+params.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "params.gad"
+    { 
+	VALUE(params.gad.val) STRETCH(1,0)
+
+	TAB "Initialize"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    initcleanv.gad;		
+	    pointsfromvolume.gad;		
+	    folder0.gad;		
+	    uselocalinitv.gad;		
+	    initvexpression.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Endpoints (2nd)"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    dovelocityendpts.gad;		
+	    folder3.gad;		
+	    note_endpts_ptsfromvolume.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Transform"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    dovelocityxform.gad;		
+	    soppath.gad;		
+	    folder5.gad;		
+	    xformlinear.gad;		
+	    endptblend.gad;		
+	    xformangular.gad;		
+	    xformangscale.gad;		
+	    sep_xform_1.gad;		
+	    xformpreservelength.gad;		
+	    xformnormalize.gad;		
+	    xformscale.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Post-Process"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    uselocalpostprocv.gad;		
+	    postprocvexpression.gad;		
+	    sep_inputv2.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+folder4.gad = 
+GROUP collapsible "Velocity Attributes" flat  
+{
+    VALUE(folder4.gad.val) LAYOUT(vertical) HSTRETCH
+	    attribv.gad;		
+	    attribw.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    op_label.gad; 
+    editable.gad; 
+    has_2nd.gad; 
+    group.gad; 
+    grouptype.gad; 
+    folder4.gad; 
+    params.gad; 
+    sep_misc.gad; 
+    folder2.gad; 
+    vis.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

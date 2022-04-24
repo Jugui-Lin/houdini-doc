@@ -1,0 +1,193 @@
+// Magic: 7c7eadf1
+// Automatically generated PSI dialog (PSI version 19.0.455)
+// Tue Feb  8 20:39:40 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+group.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    group.label = PARM_LABEL("Group", "group") WIDTH(1.5);
+    PARM_FIELD(string, "group") VALUE(group.val) 
+	LABELREF(group.label) HSTRETCH;
+
+    group.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "BUTTONS_reselect" VALUE(group.script_action)
+	HELP("Select geometry from an available viewport.\nShift-click to turn on Select Groups.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+resolution.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ resolution.label = PARM_LABEL("Resolution", "resolution") WIDTH(1.5);
+ PARM(integer, 1, "resolution", none, none) RANGE(100,3000)
+	 LABELREF(resolution.label) HSTRETCH;
+
+    resolution.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+  { WIDTH(0.1) }
+}
+
+dilateerode.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dilateerode.label = PARM_LABEL("Dilate/Erode", "dilateerode") WIDTH(1.5);
+ PARM(float, 1, "dilateerode", none, none) RANGE(-0.20000000000000001,0.20000000000000001)
+	 LABELREF(dilateerode.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+smoothingiterations.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ smoothingiterations.label = PARM_LABEL("Smoothing Iterations", "smoothingiterations") WIDTH(1.5);
+ PARM(integer, 1, "smoothingiterations", none, none) RANGE(0,10)
+	 LABELREF(smoothingiterations.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+adaptivity.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ adaptivity.label = PARM_LABEL("Adaptivity", "adaptivity") WIDTH(1.5);
+ PARM(float, 1, "adaptivity", none, none) RANGE(0,1)
+	 LABELREF(adaptivity.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+transferattributes.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("transferattributes", "Transfer Surface Attributes") toggle VALUE(transferattributes.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+sharpenfeatures.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("sharpenfeatures", "Sharpen Features") toggle VALUE(sharpenfeatures.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+edgetolerance.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ edgetolerance.label = PARM_LABEL("Edge Tolerance", "edgetolerance") WIDTH(1.5);
+ PARM(float, 1, "edgetolerance", none, none) RANGE(0,1)
+	 LABELREF(edgetolerance.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+project.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("project", "Project to Original") toggle VALUE(project.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+postsmooth.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ postsmooth.label = PARM_LABEL("Post Smooth Iterations", "postsmooth") WIDTH(1.5);
+ PARM(integer, 1, "postsmooth", none, none) RANGE(0,10)
+	 LABELREF(postsmooth.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+folder1.gad = 
+
+GROUP simple "Meshing" flat 
+{ 
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    adaptivity.gad;		
+	    transferattributes.gad;		
+	    sharpenfeatures.gad;		
+	    edgetolerance.gad;		
+	    project.gad;		
+	    postsmooth.gad;		
+} 
+
+folder0.gad = 
+
+GROUP simple "VDB Smoothing" flat 
+{ 
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    dilateerode.gad;		
+	    smoothingiterations.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    group.gad; 
+    resolution.gad; 
+    folder0.gad; 
+    folder1.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

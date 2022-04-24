@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pythonPanelDocument>
+  <!-- This file contains definitions of Python interfaces and the
+ interfaces menu.  It should not be hand-edited when it is being
+ used by the application.  Note, that two definitions of the
+ same interface or of the interfaces menu are not allowed
+ in a single file. -->
+  <interface name="ProFOV" label="ProFOV" icon="MISC_python" showNetworkNavigationBar="false" help_url="">
+    <script><![CDATA[#################
+# ProFOV. A simple panel with a lsider that controls perspective FOV of current viewport.
+# jonathan@jdbgraphics.nl
+#################
+
+import math
+import hou
+import math
+import toolutils
+from PySide2 import QtCore, QtGui, QtWidgets
+
+uiscale = hou.ui.globalScaleFactor()
+
+class ProFOV(QtWidgets.QWidget):
+    
+    def update(self, event):
+        viewport = toolutils.sceneViewer().curViewport()
+        if viewport.camera()==None:
+            viewport.defaultCamera().setFocalLength( self.slider.value()*1.0 )
+            #viewport.defaultCamera().setClipPlanes([0.1,50])
+    #constructior
+    def __init__(self, paneTab):
+        QtWidgets.QWidget.__init__(self)
+        self.paneTab = paneTab
+         
+        self.slider = QtWidgets.QSlider( QtCore.Qt.Horizontal, self)
+        self.slider.setFocusPolicy(QtCore.Qt.StrongFocus)
+        self.slider.setTickPosition(QtWidgets.QSlider.TicksBothSides)
+        self.slider.setSingleStep(1)
+        self.slider.setMinimum(2)
+        self.slider.setMaximum(200)
+        self.slider.valueChanged.connect(self.update)
+        self.slider.move(QtCore.QPoint(20*uiscale,10*uiscale))
+        
+       
+        self.css='QSlider {  width: '+ str(self.paneTab.size()[0]-(30*uiscale)) +'px;  padding: 1px 5px; height '+str(int(20*uiscale))+'px;  min-height '+str(int(15*uiscale))+'px; max-height: '+str(int(15*uiscale))+'px} '
+        self.css += 'QSlider::handle:horizontal  { background-color: #888; margin: -'+str(int(8*uiscale))+'px 0px; width: '+str(int(4*uiscale))+'px; border-left: '+str(int(uiscale))+'px solid #bbb; border-top: '+str(int(uiscale))+'px solid #bbb;  } '
+        self.setStyleSheet(self.css )
+
+        
+    def resizeEvent(self, event):
+        self.css='QSlider {  width: '+ str(self.paneTab.size()[0]-(30*uiscale)) +'px;  padding: 1px 5px; height '+str(int(20*uiscale))+'px;  min-height '+str(int(15*uiscale))+'px; max-height: '+str(int(15*uiscale))+'px} '
+        self.css += 'QSlider::handle:horizontal  { background-color: #888; margin: -'+str(int(8*uiscale))+'px 0px; width: '+str(int(4*uiscale))+'px; border-left: '+str(int(uiscale))+'px solid #bbb; border-top: '+str(int(uiscale))+'px solid #bbb;  } '
+        self.setStyleSheet(self.css )  
+
+        
+    def enterEvent(self, event): 
+        viewport = toolutils.sceneViewer().curViewport()
+        if viewport.camera()==None:
+            self.slider.setValue( viewport.defaultCamera().focalLength() )
+
+            
+def onCreateInterface():
+    return ProFOV(kwargs['paneTab'])]]></script>
+    <includeInToolbarMenu menu_position="413" create_separator="false"/>
+    <help><![CDATA[]]></help>
+  </interface>
+</pythonPanelDocument>

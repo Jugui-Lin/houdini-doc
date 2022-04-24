@@ -1,0 +1,155 @@
+// Magic: e759816c
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Mon Apr 11 00:37:24 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+orient.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Orientation", "orient") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    orient.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+radius.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   radius.label = PARM_LABEL("Radius", "radius") WIDTH(1.5);
+   PARM(float, 2, "radius", none, none, "X,Y")
+	RANGE(-1,1)  LABELREF(radius.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+ct.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   ct.label = PARM_LABEL("Center", "ct") WIDTH(1.5);
+   PARM(float, 3, "ct", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(ct.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+scale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ scale.label = PARM_LABEL("Uniform Scale", "scale") WIDTH(1.5);
+ PARM(float, 1, "scale", none, none) RANGE(0,10)
+	 LABELREF(scale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sections.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ sections.label = PARM_LABEL("Sections", "sections") WIDTH(1.5);
+ PARM(integer, 1, "sections", none, none) RANGE(0,10)
+	 LABELREF(sections.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+gap.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   gap.label = PARM_LABEL("Gaps", "gap") WIDTH(1.5);
+   PARM(float, 2, "gap", none, none, "X,Y")
+	RANGE(0,1) LOCK_RANGE_MIN LABELREF(gap.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+segment.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   segment.label = PARM_LABEL("Gap Segments", "segment") WIDTH(1.5);
+   PARM(integer, 2, "segment", none, none, "X,Y")
+	RANGE(1,10) LOCK_RANGE_MIN LABELREF(segment.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+closed.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("closed", "Closed") toggle VALUE(closed.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+folder1.gad = 
+
+GROUP simple "Shape" flat 
+{ 
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    sections.gad;		
+	    gap.gad;		
+	    segment.gad;		
+	    closed.gad;		
+} 
+
+folder0.gad = 
+
+GROUP simple "Placement" flat 
+{ 
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    orient.gad;		
+	    radius.gad;		
+	    ct.gad;		
+	    scale.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    folder0.gad; 
+    folder1.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

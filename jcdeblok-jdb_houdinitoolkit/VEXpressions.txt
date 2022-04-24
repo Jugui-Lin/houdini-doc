@@ -1,0 +1,24 @@
+#JDB Graphics
+
+attribwrangle/snippet
+    [JDB] Groups from material
+    setprimgroup(0, re_replace("/", "_", s@shop_materialpath ), @primnum, 1, "set");
+
+attribwrangle/snippet
+	[JDB] Basic Scatter
+	vector up= {0,1,0};
+	vector4 orient2;
+
+	vector rot = set( rand(@ptnum+1)*ch('random_x')*360,rand(@ptnum+2)*ch('random_y')*360,rand(@ptnum)*ch('random_z')*360);
+
+	orient2 = eulertoquaternion(radians(rot), 0);
+
+	matrix3 m = maketransform(@N,up);
+	@orient = quaternion(m);
+
+	@orient=slerp(@orient, orient2, ch('mix'));
+
+	@pscale=ch('scale')+rand(@ptnum)*ch('random_scale');
+
+
+

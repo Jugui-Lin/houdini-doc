@@ -1,0 +1,178 @@
+// Magic: b0b93de8
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Sun Apr  3 03:33:15 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+info.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    info.label = PARM_LABEL("Info", "info") WIDTH(1.5);
+    PARM_FIELD(string, "info") VALUE(info.val) 
+	LABELREF(info.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+group.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    group.label = PARM_LABEL("Group", "group") WIDTH(1.5);
+    PARM_FIELD(string, "group") VALUE(group.val) 
+	LABELREF(group.label) HSTRETCH;
+
+    group.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "BUTTONS_reselect" VALUE(group.script_action)
+	HELP("")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+grouptype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Group Type", "grouptype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    grouptype.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+float_attr.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    float_attr.label = PARM_LABEL("Point Float Attr", "float_attr") WIDTH(1.5);
+    PARM_FIELD(string, "float_attr") VALUE(float_attr.val) 
+	LABELREF(float_attr.label) HSTRETCH;
+
+    float_attr.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "VIEW_visualization" VALUE(float_attr.script_action)
+	HELP("Toggle visualization Ctrl-LMB: Open the visualization editor")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+tmp_bind_attr.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    tmp_bind_attr.label = PARM_LABEL("Temp Binding", "tmp_bind_attr") WIDTH(1.5);
+    PARM_FIELD(string, "tmp_bind_attr") VALUE(tmp_bind_attr.val) 
+	LABELREF(tmp_bind_attr.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+sepparm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+layer_num.parm =
+{
+    LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+    PARM_LABEL_SIMPLE("Layer Num", "layer_num") WIDTH(1.5);
+    { WIDTH(0.1) }
+
+    ROW
+    {
+	HSTRETCH(0.5) JUSTIFY(left, center) VALUE(layer_num.val)
+
+        layer_num.field = PARM_FIELD (integer, "layer_num")
+				VALUE(layer_num.val) HSTRETCH(0.5)
+				 PREF_WIDTH(0.5);
+
+        ROW
+        {
+	     LOOK(lightline) VMARGIN(1p)
+
+   	     INCREMENT_ICONBUTTON VALUE(layer_num.more.val)	
+	    	HELP("Add Another Instance") SIZE(0.2, 0.24);
+	     DECREMENT_ICONBUTTON VALUE(layer_num.less.val)	
+	        HELP("Remove Last Instance") SIZE(0.2, 0.24);
+
+	}
+
+	ACTION_BUTTON "Clear" VALUE(layer_num.clear.val);
+    }
+
+    { HSTRETCH }
+}
+
+layer_num.multilist = 
+{
+    LAYOUT(vertical) HSTRETCH MARGIN(0.05)
+}
+
+layer_num.gad =
+{
+    LAYOUT(vertical) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    SWITCHER tight
+    {
+	LAYOUT(vertical) HSTRETCH
+
+	VALUE(layer_num.multilist_hide_buttons.val)
+	{
+	    LAYOUT(vertical) HSTRETCH
+	    layer_num.parm;
+	    {LOOK(none) HEIGHT(0.02)}
+	}
+	{
+	}
+    }
+    layer_num.multilist;
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    info.gad; 
+    group.gad; 
+    grouptype.gad; 
+    float_attr.gad; 
+    tmp_bind_attr.gad; 
+    sepparm.gad; 
+    layer_num.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

@@ -1,0 +1,263 @@
+// Magic: f231d89a
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Sun Mar 13 16:02:28 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+info.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    info.label = PARM_LABEL("Info", "info") WIDTH(1.5);
+    PARM_FIELD(string, "info") VALUE(info.val) 
+	LABELREF(info.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+create_new_name.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("create_new_name", "Create Name Attribute") toggle VALUE(create_new_name.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+new_name_preifx.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    new_name_preifx.label = PARM_LABEL("Output Prefix", "new_name_preifx") WIDTH(1.5);
+    PARM_FIELD(string, "new_name_preifx") VALUE(new_name_preifx.val) 
+	LABELREF(new_name_preifx.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+sort_name.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("sort_name", "Sort Name") toggle VALUE(sort_name.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+first_idx.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ first_idx.label = PARM_LABEL("First Index", "first_idx") WIDTH(1.5);
+ PARM(integer, 1, "first_idx", none, none) RANGE(0,10)
+	 LABELREF(first_idx.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pack_geo.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("pack_geo", "Create Packed Geometry") toggle VALUE(pack_geo.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+transfer_attributes.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    transfer_attributes.label = PARM_LABEL("Transfer Attributes", "transfer_attributes") WIDTH(1.5);
+    PARM_FIELD(string, "transfer_attributes") VALUE(transfer_attributes.val) 
+	LABELREF(transfer_attributes.label) HSTRETCH;
+
+    transfer_attributes.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+transfer_groups.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    transfer_groups.label = PARM_LABEL("Transfer Groups", "transfer_groups") WIDTH(1.5);
+    PARM_FIELD(string, "transfer_groups") VALUE(transfer_groups.val) 
+	LABELREF(transfer_groups.label) HSTRETCH;
+
+    transfer_groups.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+pivot.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Pivot Location", "pivot") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    pivot.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+viewport_lod.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Display As", "viewport_lod") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    viewport_lod.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+set_packs_to_group.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("set_packs_to_group", "Group Packs") toggle VALUE(set_packs_to_group.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+packs_group_name.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    packs_group_name.label = PARM_LABEL("Point Group Name", "packs_group_name") WIDTH(1.5);
+    PARM_FIELD(string, "packs_group_name") VALUE(packs_group_name.val) 
+	LABELREF(packs_group_name.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+mergeop.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Initial Merge", "mergeop") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    mergeop.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+folder1.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder1.gad"
+    { 
+	VALUE(folder1.gad.val) STRETCH(1,0)
+
+	TAB "Pack"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    pack_geo.gad;		
+	    transfer_attributes.gad;		
+	    transfer_groups.gad;		
+	    pivot.gad;		
+	    viewport_lod.gad;		
+	    set_packs_to_group.gad;		
+	    packs_group_name.gad;		
+	    mergeop.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+folder0.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder0.gad"
+    { 
+	VALUE(folder0.gad.val) STRETCH(1,0)
+
+	TAB "Name"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    create_new_name.gad;		
+	    new_name_preifx.gad;		
+	    sort_name.gad;		
+	    first_idx.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    info.gad; 
+    folder0.gad; 
+    folder1.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

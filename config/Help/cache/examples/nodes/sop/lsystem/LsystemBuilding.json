@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["LsystemBuilding"]}, {"type": "para", "indent": 0, "text": ["This example demonstrates how to use the L-System SOP to generate buildings with windows."], "extent": [0, 90]}], "examplefor": "/nodes/sop/lsystem", "examplefile": "/examples/nodes/sop/lsystem/LsystemBuilding.otl"}

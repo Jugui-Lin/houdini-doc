@@ -1,0 +1,301 @@
+// Magic: 50a45d28
+// Automatically generated PSI dialog (PSI version 19.0.455)
+// Sun Jan 30 20:56:31 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+has_3rd_input.gad = NULL { }
+
+mode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Mode", "mode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    mode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+padding_lo.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   padding_lo.label = PARM_LABEL("Padding, Low", "padding_lo") WIDTH(1.5);
+   PARM(float, 3, "padding_lo", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(padding_lo.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+padding_hi.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   padding_hi.label = PARM_LABEL("Padding, High", "padding_hi") WIDTH(1.5);
+   PARM(float, 3, "padding_hi", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(padding_hi.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+grp_inside.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+grp_inside.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+grp_inside.gad = PARM_BUTTON("grp_inside", "") toggle VALUE(grp_inside.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+grp_inside_name.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    grp_inside_name.label = PARM_LABEL("Inside Group", "grp_inside_name") WIDTH(1.32);
+    PARM_FIELD(string, "grp_inside_name") VALUE(grp_inside_name.val) 
+	LABELREF(grp_inside_name.label) HSTRETCH;
+
+    grp_inside_name.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+grp_outside.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+grp_outside.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+grp_outside.gad = PARM_BUTTON("grp_outside", "") toggle VALUE(grp_outside.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+grp_outside_name.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    grp_outside_name.label = PARM_LABEL("Outside Group", "grp_outside_name") WIDTH(1.32);
+    PARM_FIELD(string, "grp_outside_name") VALUE(grp_outside_name.val) 
+	LABELREF(grp_outside_name.label) HSTRETCH;
+
+    grp_outside_name.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+primgrp.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("primgrp", "Create Primitive Group(s)") toggle VALUE(primgrp.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+smaller_inside_grp.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("smaller_inside_grp", "Smaller Inside Group") toggle VALUE(smaller_inside_grp.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+grp_guide.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Show", "grp_guide") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    grp_guide.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+guide.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("guide", "Show Guides") toggle VALUE(guide.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+guide_fit_proxy.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("guide_fit_proxy", "Show Fit-Proxy Geometry") toggle VALUE(guide_fit_proxy.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+bbsize.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   bbsize.label = PARM_LABEL("BBox Size", "bbsize") WIDTH(1.5);
+   PARM(float, 3, "bbsize", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(bbsize.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+bbcenter.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   bbcenter.label = PARM_LABEL("BBox Center", "bbcenter") WIDTH(1.5);
+   PARM(float, 3, "bbcenter", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(bbcenter.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+bbmin.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   bbmin.label = PARM_LABEL("BBox Min", "bbmin") WIDTH(1.5);
+   PARM(float, 3, "bbmin", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(bbmin.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+bbmax.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   bbmax.label = PARM_LABEL("BBox Max", "bbmax") WIDTH(1.5);
+   PARM(float, 3, "bbmax", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(bbmax.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+bb_editable.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("bb_editable", "Editable") toggle VALUE(bb_editable.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+folder1.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder1.gad"
+    { 
+	VALUE(folder1.gad.val) STRETCH(1,0)
+
+	TAB "Output Values"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    bbsize.gad;		
+	    bbcenter.gad;		
+	    bbmin.gad;		
+	    bbmax.gad;		
+	    bb_editable.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    has_3rd_input.gad; 
+    mode.gad; 
+    padding_lo.gad; 
+    padding_hi.gad; 
+    grp_inside.row.join; 
+    grp_outside.row.join; 
+    primgrp.gad; 
+    smaller_inside_grp.gad; 
+    grp_guide.gad; 
+    guide.gad; 
+    guide_fit_proxy.gad; 
+    folder1.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

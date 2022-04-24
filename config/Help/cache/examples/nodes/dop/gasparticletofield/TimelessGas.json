@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["TimelessGas"]}, {"type": "para", "indent": 0, "text": ["This example demonstrates the use of gasParticleToField \nin Timeless mode."], "extent": [0, 75]}], "examplefor": "/nodes/dop/gasparticletofield", "examplefile": "/examples/nodes/dop/gasparticletofield/TimelessGas.otl"}

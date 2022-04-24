@@ -1,0 +1,396 @@
+// Magic: eb6640c7
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Mon Apr 11 00:37:11 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+keeppos.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+keeppos.gad = NULL { }
+pre_xform.gad = NULL { }
+}	// Template join.bot
+
+xOrd.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+xOrd.gad = NULL { }
+rOrd.gad = NULL { }
+}	// Template join.bot
+
+t.gad = NULL { }
+r.gad = NULL { }
+s.gad = NULL { }
+p.gad = NULL { }
+scale.gad = NULL { }
+lookatpath.gad = NULL { }
+lookup.gad = NULL { }
+pathobjpath.gad = NULL { }
+roll.gad = NULL { }
+pos.gad = NULL { }
+uparmtype.gad = NULL { }
+pathorient.gad = NULL { }
+up.gad = NULL { }
+bank.gad = NULL { }
+label1.gad = NULL { }
+label2.gad = NULL { }
+label3.gad = NULL { }
+label4.gad = NULL { }
+tdisplay.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+tdisplay.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+tdisplay.gad = NULL { }
+display.gad = NULL { }
+}	
+}	// Template join.bot
+
+outputobj.gad = NULL { }
+visibleobjects.gad = NULL { }
+picking.gad = NULL { }
+pickscript.gad = NULL { }
+caching.gad = NULL { }
+use_dcolor.gad = NULL { }
+dcolor.gad = NULL { }
+
+fileName.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ fileName.label = PARM_LABEL("File Name", "fileName") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "fileName") LABELREF(fileName.label)
+	VALUE(fileName.val) HSTRETCH;
+
+    fileName.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(fileName.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+objectPath.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+objectPath.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    objectPath.label = PARM_LABEL("Object Path", "objectPath") WIDTH(1.5);
+    PARM_FIELD(string, "objectPath") VALUE(objectPath.val) 
+	LABELREF(objectPath.label) HSTRETCH;
+
+    objectPath.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    {  }
+}
+
+pickObjectPath.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    {  }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("pickObjectPath", "Pick...")
+	push VALUE(pickObjectPath.val);
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+useParentPath.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+useParentPath.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+useParentPath.gad = PARM_BUTTON("useParentPath", "") toggle VALUE(useParentPath.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+parentPath.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    parentPath.label = PARM_LABEL("Parent Path", "parentPath") WIDTH(1.32);
+    PARM_FIELD(string, "parentPath") VALUE(parentPath.val) 
+	LABELREF(parentPath.label) HSTRETCH;
+
+    parentPath.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    {  }
+}
+}	
+
+pickParentPath.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    {  }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("pickParentPath", "Pick...")
+	push VALUE(pickParentPath.val);
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+frame.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ frame.label = PARM_LABEL("Frame", "frame") WIDTH(1.5);
+ PARM(float, 1, "frame", none, none) RANGE(0,10)
+	 LABELREF(frame.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+fps.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ fps.label = PARM_LABEL("FPS", "fps") WIDTH(1.5);
+ PARM(float, 1, "fps", none, none) RANGE(0,10)
+	 LABELREF(fps.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+useHouParent.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+useHouParent.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+useHouParent.gad = PARM_BUTTON("useHouParent", "") toggle VALUE(useHouParent.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+houParent.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ {  }
+
+ houParent.label = PARM_LABEL("Houdini Parent Obj", "houParent") WIDTH(1.32);
+ PARM_FIELD(pathstring, "houParent") VALUE(houParent.val) 
+	LABELREF(houParent.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(houParent.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(houParent.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+world.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("world", "World Space") toggle VALUE(world.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+invert.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("invert", "Invert Transform") toggle VALUE(invert.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+editable.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+editable.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+editable.gad = PARM_BUTTON("editable", "") toggle VALUE(editable.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+isConstant.gad = ROW
+{
+    HSTRETCH
+    {  }
+
+    { WIDTH(1.32) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("isConstant", "Constant Transform") toggle VALUE(isConstant.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+inherit.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("inherit", "Inherits Parent Transform") toggle VALUE(inherit.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+hasVisibleInfo.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("hasVisibleInfo", "Has Visibility Info") toggle VALUE(hasVisibleInfo.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+visible.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("visible", "Visible") toggle VALUE(visible.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+isConstantVisible.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("isConstantVisible", "Constant Visibility") toggle VALUE(isConstantVisible.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+childcomp.gad = NULL { }
+lookupobjpath.gad = NULL { }
+constraints_on.gad = NULL { }
+constraints_path.gad = NULL { }
+pr.gad = NULL { }
+
+folder0.gad = 
+
+GROUP simple "Information (Read Only)" flat 
+{ 
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    editable.row.join;		
+	    inherit.gad;		
+	    hasVisibleInfo.gad;		
+	    visible.gad;		
+	    isConstantVisible.gad;		
+} 
+
+stdswitcher3.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "stdswitcher3.gad"
+    { 
+	VALUE(stdswitcher3.gad.val) STRETCH(1,0)
+    } 
+}
+
+# warning cpp warning: "GenV3/subdialog.top.ui":5 Macro "PARMSPACING" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":6 Macro "LAYOUTDIR" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":7 Macro "DO_JUSTIFY" redefined.  Using later definition
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    fileName.gad; 
+    objectPath.row.join; 
+    useParentPath.row.join; 
+    frame.gad; 
+    fps.gad; 
+    useHouParent.row.join; 
+    world.gad; 
+    invert.gad; 
+    folder0.gad; 
+    childcomp.gad; 
+    lookupobjpath.gad; 
+    constraints_on.gad; 
+    constraints_path.gad; 
+    pr.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

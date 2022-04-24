@@ -1,0 +1,119 @@
+// Magic: d81983d8
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Wed Apr 20 02:18:18 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+groupname.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    groupname.label = PARM_LABEL("Group Name", "groupname") WIDTH(1.5);
+    PARM_FIELD(string, "groupname") VALUE(groupname.val) 
+	LABELREF(groupname.label) HSTRETCH;
+
+    groupname.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+mergeop.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Initial Merge", "mergeop") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    mergeop.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+mMeasureMode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Measure", "mMeasureMode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    mMeasureMode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+bInvertEccentricity.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+bInvertEccentricity.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("bInvertEccentricity", "Invert") toggle VALUE(bInvertEccentricity.val);
+
+    {  }
+
+    {  }
+}
+
+fSquaredness.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ fSquaredness.label = PARM_LABEL("Eccentricity", "fSquaredness") ;
+ PARM(float, 1, "fSquaredness", none, none) RANGE(0,0.25)
+	 LABELREF(fSquaredness.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+folder1.gad = 
+
+GROUP simple "Settings" flat 
+{ 
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    bInvertEccentricity.row.join;		
+} 
+
+folder0.gad = 
+
+GROUP simple "Group" flat 
+{ 
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    groupname.gad;		
+	    mergeop.gad;		
+	    mMeasureMode.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    folder0.gad; 
+    folder1.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

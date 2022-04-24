@@ -1,0 +1,58 @@
+{
+	"fileversion":"19.0.498",
+	"name":"modeler",
+	"categories":"Modeler",
+	"pane":"scene",
+	"label":"Modeler",
+	"type":"submenu",
+	"items":{
+		"0":{
+			"label":"PolyPen",
+			"type":"script_action",
+			"icon":"MODELER_polypen",
+			"script":"hou.modeler.states.PolyPen()"
+		},
+		"1":{
+			"label":"Topo Build",
+			"type":"script_action",
+			"icon":"MODELER_topobuild",
+			"script":"hou.modeler.ui.modeler.topo_build()"
+		},
+		"2":{
+			"label":"Topo Brush",
+			"type":"script_action",
+			"icon":"MODELER_grab",
+			"script":"hou.modeler.ui.modeler.topo_brush()"
+		},
+		"3":{
+			"label":"Topo Smooth",
+			"type":"script_action",
+			"icon":"MODELER_relax_",
+			"script":"hou.modeler.ui.modeler.topo_smooth()"
+		},
+		"4":{
+			"label":"Magnet",
+			"type":"script_action",
+			"icon":"MODELER_magnet",
+			"script":"hou.modeler.states.Magnet()"
+		},
+		"5":{
+			"label":"Topo Skin",
+			"type":"script_action",
+			"icon":"MODELER_topo_skin",
+			"script":"hou.modeler.ui.modeler.topo_skin()"
+		},
+		"6":{
+			"label":"Edge Loop",
+			"type":"script_action",
+			"icon":"MODELER_convert_to_loops",
+			"script":"hou.modeler.ui.VIEWER.runShelfTool(\"sop_edgeloop\")"
+		},
+		"7":{
+			"label":"Fill",
+			"type":"script_action",
+			"icon":"MODELER_fill",
+			"script":"hou.modeler.ui.modeler.fill()"
+		}
+	}
+}

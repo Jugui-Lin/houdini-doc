@@ -1,0 +1,841 @@
+// Magic: 2b5254ae
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Sat Apr  2 23:25:34 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+length.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ length.label = PARM_LABEL("Length", "length") WIDTH(1.5);
+ PARM(float, 1, "length", none, none) RANGE(0,10)
+	 LABELREF(length.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+origin.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   origin.label = PARM_LABEL("Origin", "origin") WIDTH(1.5);
+   PARM(float, 3, "origin", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(origin.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+direction.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   direction.label = PARM_LABEL("Direction", "direction") WIDTH(1.5);
+   PARM(float, 3, "direction", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(direction.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+innerradius.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ innerradius.label = PARM_LABEL("Inner Radius", "innerradius") WIDTH(1.5);
+ PARM(float, 1, "innerradius", none, none) RANGE(0,10)
+	 LABELREF(innerradius.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+outerradius.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ outerradius.label = PARM_LABEL("Outer Radius", "outerradius") WIDTH(1.5);
+ PARM(float, 1, "outerradius", none, none) RANGE(0,10)
+	 LABELREF(outerradius.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+arcstart.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ arcstart.label = PARM_LABEL("Arc Start", "arcstart") WIDTH(1.5);
+ PARM(float, 1, "arcstart", none, none) RANGE(0,360)
+	 LABELREF(arcstart.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+arcend.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ arcend.label = PARM_LABEL("Arc End", "arcend") WIDTH(1.5);
+ PARM(float, 1, "arcend", none, none) RANGE(0,360)
+	 LABELREF(arcend.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+addtwist.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("addtwist", "Add Twist") toggle VALUE(addtwist.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+twist.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ twist.label = PARM_LABEL("Twist", "twist") WIDTH(1.5);
+ PARM(float, 1, "twist", none, none) RANGE(0,10)
+	 LABELREF(twist.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+usegments.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ usegments.label = PARM_LABEL("U Segments", "usegments") WIDTH(1.5);
+ PARM(integer, 1, "usegments", none, none) RANGE(2,100)
+	 LABELREF(usegments.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+vsegments.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ vsegments.label = PARM_LABEL("V Segments", "vsegments") WIDTH(1.5);
+ PARM(integer, 1, "vsegments", none, none) RANGE(1,100)
+	 LABELREF(vsegments.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+normalcuspangle.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ normalcuspangle.label = PARM_LABEL("Normal Cusp Angle", "normalcuspangle") WIDTH(1.5);
+ PARM(float, 1, "normalcuspangle", none, none) RANGE(0,180)
+	 LABELREF(normalcuspangle.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+capends.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("capends", "Cap Ends") toggle VALUE(capends.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+triangulateCaps.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Cap Type", "triangulateCaps") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    triangulateCaps.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+softCaps.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("softCaps", "Soften Cap Normals") toggle VALUE(softCaps.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+smoothDist.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ smoothDist.label = PARM_LABEL("Smoothing Distance", "smoothDist") WIDTH(1.5);
+ PARM(float, 1, "smoothDist", none, none) RANGE(0,10)
+	 LABELREF(smoothDist.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+smoothStrength.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ smoothStrength.label = PARM_LABEL("Smoothing Strength", "smoothStrength") WIDTH(1.5);
+ PARM(float, 1, "smoothStrength", none, none) RANGE(0,10)
+	 LABELREF(smoothStrength.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+curveResample.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("curveResample", "Curvature Resample") toggle VALUE(curveResample.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+minSegLength.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ minSegLength.label = PARM_LABEL("Min Segment Length", "minSegLength") WIDTH(1.5);
+ PARM(float, 1, "minSegLength", none, none) RANGE(0,1)
+	 LABELREF(minSegLength.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+segmentDist.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ segmentDist.label = PARM_LABEL("Segment Distance", "segmentDist") WIDTH(1.5);
+ PARM(float, 1, "segmentDist", none, none) RANGE(0,0.29999999999999999)
+	 LABELREF(segmentDist.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+rampmult.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ rampmult.label = PARM_LABEL("Ramp Multiplier", "rampmult") WIDTH(1.5);
+ PARM(float, 1, "rampmult", none, none) RANGE(0,10)
+	 LABELREF(rampmult.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+curveramp.si_rampedit = FLOAT_RAMP VALUE(curveramp.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+curveramp.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) WIDTH(1.5)
+	    LABEL "Point No.";
+	}
+
+	curveramp.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(curveramp.pointno.val) HSTRETCH;
+    }
+}
+
+curveramp.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(curveramp.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(curveramp.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    curveramp.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(curveramp.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    curveramp.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(curveramp.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+curveramp.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    curveramp.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	curveramp.buttons.gad VSTRETCH;
+
+	curveramp.si_rampedit HSTRETCH;
+    }
+}
+
+curveramp.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Curve Ramp", "curveramp");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(curveramp.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(curveramp.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	curveramp.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	curveramp.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(curveramp.hideparms.val) HSTRETCH
+	    curveramp.multiramp;
+	    {}
+	}
+    }
+}
+
+rotateuv.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("rotateuv", "Rotate UVs 90") toggle VALUE(rotateuv.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+utiling.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ utiling.label = PARM_LABEL("U Tiling", "utiling") WIDTH(1.5);
+ PARM(float, 1, "utiling", none, none) RANGE(0,10)
+	 LABELREF(utiling.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+vtiling.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ vtiling.label = PARM_LABEL("V Tiling", "vtiling") WIDTH(1.5);
+ PARM(float, 1, "vtiling", none, none) RANGE(0,10)
+	 LABELREF(vtiling.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+urangepow.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   urangepow.label = PARM_LABEL("U Range And Bias", "urangepow") WIDTH(1.5);
+   PARM(float, 3, "urangepow", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(urangepow.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+vrangepow.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   vrangepow.label = PARM_LABEL("V Range And Bias", "vrangepow") WIDTH(1.5);
+   PARM(float, 3, "vrangepow", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(vrangepow.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+addnoise.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("addnoise", "Add Noise") toggle VALUE(addnoise.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+centernoise.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("centernoise", "Center Noise") toggle VALUE(centernoise.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+noiseintensity.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ noiseintensity.label = PARM_LABEL("Noise Intensity", "noiseintensity") WIDTH(1.5);
+ PARM(float, 1, "noiseintensity", none, none) RANGE(0,10)
+	 LABELREF(noiseintensity.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+noisescale.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   noisescale.label = PARM_LABEL("Noise Scale", "noisescale") WIDTH(1.5);
+   PARM(float, 3, "noisescale", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(noisescale.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+noiseoctaves.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ noiseoctaves.label = PARM_LABEL("Noise Octaves", "noiseoctaves") WIDTH(1.5);
+ PARM(integer, 1, "noiseoctaves", none, none) RANGE(0,10)
+	 LABELREF(noiseoctaves.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+adduvnoise.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("adduvnoise", "Add UV Noise") toggle VALUE(adduvnoise.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+uvfreq.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   uvfreq.label = PARM_LABEL("UV Frequency", "uvfreq") WIDTH(1.5);
+   PARM(float, 3, "uvfreq", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(uvfreq.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+uvoffset.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   uvoffset.label = PARM_LABEL("UV Offset", "uvoffset") WIDTH(1.5);
+   PARM(float, 3, "uvoffset", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(uvoffset.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+uvnoisemult.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ uvnoisemult.label = PARM_LABEL("UV Noise Intensity", "uvnoisemult") WIDTH(1.5);
+ PARM(float, 1, "uvnoisemult", none, none) RANGE(0,10)
+	 LABELREF(uvnoisemult.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+addcolour.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("addcolour", "Add Colour") toggle VALUE(addcolour.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+vcolourramp.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("vcolourramp", "V Color Ramp") toggle VALUE(vcolourramp.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+colourramp.si_rampedit = COLOR_RAMP VALUE(colourramp.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+colourramp.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) WIDTH(1.5)
+	    LABEL "Point No.";
+	}
+
+	colourramp.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(colourramp.pointno.val) HSTRETCH;
+    }
+}
+
+colourramp.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(colourramp.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(colourramp.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    colourramp.toggleparms.gad
+      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+	HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+	VALUE(colourramp.toggle.val)
+	LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+}
+
+colourramp.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    colourramp.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	colourramp.buttons.gad VSTRETCH;
+
+	colourramp.si_rampedit HSTRETCH;
+    }
+}
+
+colourramp.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Color Ramp", "colourramp");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(colourramp.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(colourramp.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	colourramp.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	colourramp.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(colourramp.hideparms.val) HSTRETCH
+	    colourramp.multiramp;
+	    {}
+	}
+    }
+}
+
+rampFolder.gad = 
+
+GROUP simple "Ramp" flat 
+{ 
+    VALUE(rampFolder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    rampmult.gad;		
+	    curveramp.gad;		
+} 
+
+advanced.gad = 
+GROUP collapsible "Advanced" flat  
+{
+    VALUE(advanced.gad.val) LAYOUT(vertical) HSTRETCH
+	    curveResample.gad;		
+	    minSegLength.gad;		
+	    segmentDist.gad;		
+} 
+
+creationFolder.gad = 
+
+GROUP simple "Creation" flat 
+{ 
+    VALUE(creationFolder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    innerradius.gad;		
+	    outerradius.gad;		
+	    arcstart.gad;		
+	    arcend.gad;		
+	    addtwist.gad;		
+	    twist.gad;		
+	    usegments.gad;		
+	    vsegments.gad;		
+	    normalcuspangle.gad;		
+	    capends.gad;		
+	    triangulateCaps.gad;		
+	    softCaps.gad;		
+	    smoothDist.gad;		
+	    smoothStrength.gad;		
+	    advanced.gad;		
+} 
+
+defaultCylinder.gad = 
+
+GROUP simple "Default Cylinder" flat 
+{ 
+    VALUE(defaultCylinder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    length.gad;		
+	    origin.gad;		
+	    direction.gad;		
+} 
+
+settingsfolder.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "settingsfolder.gad"
+    { 
+	VALUE(settingsfolder.gad.val) STRETCH(1,0)
+
+	TAB "Settings"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    defaultCylinder.gad;		
+	    creationFolder.gad;		
+	    rampFolder.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "UVs"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    rotateuv.gad;		
+	    utiling.gad;		
+	    vtiling.gad;		
+	    urangepow.gad;		
+	    vrangepow.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Noise"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    addnoise.gad;		
+	    centernoise.gad;		
+	    noiseintensity.gad;		
+	    noisescale.gad;		
+	    noiseoctaves.gad;		
+	    adduvnoise.gad;		
+	    uvfreq.gad;		
+	    uvoffset.gad;		
+	    uvnoisemult.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Vertex Color"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    addcolour.gad;		
+	    vcolourramp.gad;		
+	    colourramp.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    settingsfolder.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

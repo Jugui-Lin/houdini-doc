@@ -1,0 +1,130 @@
+// Magic: 692f22da
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Mon Mar 14 14:27:14 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+file_dir.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ file_dir.label = PARM_LABEL("File Directory", "file_dir") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "file_dir") LABELREF(file_dir.label)
+	VALUE(file_dir.val) HSTRETCH;
+
+    file_dir.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(file_dir.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+filename.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    filename.label = PARM_LABEL("Filename", "filename") WIDTH(1.5);
+    PARM_FIELD(string, "filename") VALUE(filename.val) 
+	LABELREF(filename.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+export_btn.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("export_btn", "Export Points")
+	push VALUE(export_btn.val);
+
+    { WIDTH(0.1) }
+}
+
+attrib.parm =
+{
+    LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+    PARM_LABEL_SIMPLE("Attribues", "attrib") WIDTH(1.5);
+    { WIDTH(0.1) }
+
+    ROW
+    {
+	HSTRETCH(0.5) JUSTIFY(left, center) VALUE(attrib.val)
+
+        attrib.field = PARM_FIELD (integer, "attrib")
+				VALUE(attrib.val) HSTRETCH(0.5)
+				 PREF_WIDTH(0.5);
+
+        ROW
+        {
+	     LOOK(lightline) VMARGIN(1p)
+
+   	     INCREMENT_ICONBUTTON VALUE(attrib.more.val)	
+	    	HELP("Add Another Instance") SIZE(0.2, 0.24);
+	     DECREMENT_ICONBUTTON VALUE(attrib.less.val)	
+	        HELP("Remove Last Instance") SIZE(0.2, 0.24);
+
+	}
+
+	ACTION_BUTTON "Clear" VALUE(attrib.clear.val);
+    }
+
+    { HSTRETCH }
+}
+
+attrib.multilist = 
+{
+    LAYOUT(vertical) HSTRETCH MARGIN(0.05)
+}
+
+attrib.gad =
+{
+    LAYOUT(vertical) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    SWITCHER tight
+    {
+	LAYOUT(vertical) HSTRETCH
+
+	VALUE(attrib.multilist_hide_buttons.val)
+	{
+	    LAYOUT(vertical) HSTRETCH
+	    attrib.parm;
+	    {LOOK(none) HEIGHT(0.02)}
+	}
+	{
+	}
+    }
+    attrib.multilist;
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    file_dir.gad; 
+    filename.gad; 
+    export_btn.gad; 
+    attrib.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pythonPanelDocument>
+  <!-- This file contains definitions of Python interfaces and the
+ interfaces menu.  It should not be hand-edited when it is being
+ used by the application.  Note, that two definitions of the
+ same interface or of the interfaces menu are not allowed
+ in a single file. -->
+  <interface name="modeler" label="Modeler" icon="MODELER_logo" showNetworkNavigationBar="false" help_url="">
+    <script><![CDATA[import modeler
+
+def init_viewers():
+    hou.modeler.ui.VIEWER = hou.ui.paneTabOfType(hou.paneTabType.SceneViewer)
+    hou.modeler.ui.VIEWER_WIDGET = hou.modeler.ui.get_scene_viewer_mouse_widget()
+    vp_settings = hou.modeler.ui.VIEWER.curViewport().settings()
+    hou.modeler.ui.modeler.widget.findChild(hou.modeler.ui.qtw.QSlider, "cusp_angle").setValue( int(vp_settings.vertexNormalCuspAngle()) )
+
+
+def onCreateInterface():
+    hou.modeler = modeler
+    hou.ui.postEventCallback(init_viewers)
+    return hou.modeler.ui.modeler.widget
+]]></script>
+    <includeInPaneTabMenu menu_position="0" create_separator="false"/>
+    <help><![CDATA[]]></help>
+  </interface>
+</pythonPanelDocument>

@@ -1,0 +1,225 @@
+// Magic: ab4a67d0
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Mon Feb 28 18:04:25 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+frange.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   frange.label = PARM_LABEL("Frame Range", "frange") WIDTH(1.5);
+   PARM(float, 2, "frange", none, none, "#1,#2")
+	RANGE(0,10)  LABELREF(frange.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+dopreroll.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+dopreroll.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+dopreroll.gad = PARM_BUTTON("dopreroll", "") toggle VALUE(dopreroll.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+prerolloffset.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ prerolloffset.label = PARM_LABEL("Offset Frame", "prerolloffset") WIDTH(1.32);
+ PARM(float, 1, "prerolloffset", none, none) RANGE(0,20)
+	 LABELREF(prerolloffset.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+prerollposweight.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ prerollposweight.label = PARM_LABEL("Translation %", "prerollposweight") WIDTH(1.5);
+ PARM(float, 1, "prerollposweight", none, none) RANGE(0,2)
+	 LABELREF(prerollposweight.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+prerollorientweight.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ prerollorientweight.label = PARM_LABEL("Orientation %", "prerollorientweight") WIDTH(1.5);
+ PARM(float, 1, "prerollorientweight", none, none) RANGE(0,1)
+	 LABELREF(prerollorientweight.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+dopostroll.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+dopostroll.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+dopostroll.gad = PARM_BUTTON("dopostroll", "") toggle VALUE(dopostroll.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+postrolloffset.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ postrolloffset.label = PARM_LABEL("Offset Frame", "postrolloffset") WIDTH(1.32);
+ PARM(float, 1, "postrolloffset", none, none) RANGE(0,20)
+	 LABELREF(postrolloffset.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+postrollposweight.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ postrollposweight.label = PARM_LABEL("Translation %", "postrollposweight") WIDTH(1.5);
+ PARM(float, 1, "postrollposweight", none, none) RANGE(0,2)
+	 LABELREF(postrollposweight.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+postrollorientationweight.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ postrollorientationweight.label = PARM_LABEL("Orientation %", "postrollorientationweight") WIDTH(1.5);
+ PARM(float, 1, "postrollorientationweight", none, none) RANGE(0,1)
+	 LABELREF(postrollorientationweight.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+usepieceattrib.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+usepieceattrib.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+usepieceattrib.gad = PARM_BUTTON("usepieceattrib", "") toggle VALUE(usepieceattrib.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+pieceattrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    pieceattrib.label = PARM_LABEL("Piece Attribute", "pieceattrib") WIDTH(1.32);
+    PARM_FIELD(string, "pieceattrib") VALUE(pieceattrib.val) 
+	LABELREF(pieceattrib.label) HSTRETCH;
+
+    pieceattrib.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+pieceattribclass.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Attribute Class", "pieceattribclass") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    pieceattribclass.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+perpiece_c.gad = 
+
+GROUP simple "Per-Piece Extrapolation" flat 
+{ 
+    VALUE(perpiece_c.gad.val) LAYOUT(vertical) HSTRETCH 
+	    usepieceattrib.row.join;		
+	    pieceattribclass.gad;		
+} 
+
+postroll_c.gad = 
+GROUP collapsible "Post-Roll" flat  
+{
+    VALUE(postroll_c.gad.val) LAYOUT(vertical) HSTRETCH
+	    dopostroll.row.join;		
+	    postrollposweight.gad;		
+	    postrollorientationweight.gad;		
+} 
+
+preroll_c.gad = 
+GROUP collapsible "Pre-Roll" flat  
+{
+    VALUE(preroll_c.gad.val) LAYOUT(vertical) HSTRETCH
+	    dopreroll.row.join;		
+	    prerollposweight.gad;		
+	    prerollorientweight.gad;		
+} 
+
+folder3.gad = 
+
+GROUP simple "Pre/Post-Roll" flat 
+{ 
+    VALUE(folder3.gad.val) LAYOUT(vertical) HSTRETCH 
+	    frange.gad;		
+	    preroll_c.gad;		
+	    postroll_c.gad;		
+	    perpiece_c.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    folder3.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

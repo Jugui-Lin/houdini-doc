@@ -1,0 +1,60 @@
+// Magic: 45868bb4
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Mon Apr 11 00:36:27 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+tdisplay.row.join =		
+{
+
+  LAYOUT(horizontal) JUSTIFY(left, center) UNSCALABLE
+tdisplay.join =		
+{
+
+  LAYOUT(horizontal) JUSTIFY(left, center) UNSCALABLE
+
+{  }
+tdisplay.gad = PARM_BUTTON("tdisplay", "") toggle VALUE(tdisplay.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+display.gad = 
+{
+
+ display.label = PARM_LABEL("Display", "display");
+ PARM(integer, 1, "display", none, field) RANGE(0,1)
+	LOCK_RANGE LABELREF(display.label) HSTRETCH;
+
+  {  }
+}
+}	
+}	// Template join.bot
+
+
+outputobj.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    PARM_LABEL_SIMPLE("Output Transform", "outputobj") ;
+    { WIDTH(0.09) }
+
+    outputobj.menu;
+
+    {  }
+
+    {  }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(horizontal) SPACING(0.05) HSTRETCH JUSTIFY(left, center) UNSCALABLE
+    tdisplay.row.join; 
+    outputobj.gad; 
+} 
+// dialog.bot.ui
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) VALUE(open.val_) HSTRETCH
+
+    dialog_norm.gad;
+}

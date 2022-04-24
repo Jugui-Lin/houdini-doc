@@ -1,0 +1,124 @@
+// Magic: 9b472178
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Tue Apr 19 17:51:36 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+on.row.join =		
+{
+
+  LAYOUT(horizontal) JUSTIFY(left, center) UNSCALABLE
+
+on.gad = ROW
+{
+    
+    {  }
+
+    PARM_BUTTON("on", "On") toggle VALUE(on.val);
+
+    {  }
+
+    {  }
+}
+
+vp.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    PARM_BUTTON("vp", "VP")
+	push VALUE(vp.val);
+
+    {  }
+}
+
+finish.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    PARM_BUTTON("finish", "Finish")
+	push VALUE(finish.val);
+
+    {  }
+}
+
+light_roll.gad = ROW
+{
+   HSTRETCH
+   {  }
+
+   light_roll.label = PARM_LABEL( "Light Roll", "light_roll" ) ;
+   PARM(float, 1, "light_roll", none, none) RANGE(-180, 180)
+	LABELREF( light_roll.label ) HSTRETCH;
+
+   {  }
+}
+}	// Template join.bot
+
+
+map_roll.gad = ROW
+{
+   HSTRETCH
+   {  }
+
+   map_roll.label = PARM_LABEL( "Map Roll", "map_roll" ) ;
+   PARM(float, 1, "map_roll", none, none) RANGE(-180, 180)
+	LABELREF( map_roll.label ) HSTRETCH;
+
+   {  }
+}
+
+map_intensity.gad = ROW
+{
+   HSTRETCH
+   {  }
+
+   map_intensity.label = PARM_LABEL( "Map Intesity", "map_intensity" ) ;
+   PARM(float, 1, "map_intensity", none, none) RANGE(0, 0.5)
+	LABELREF( map_intensity.label ) HSTRETCH;
+
+   {  }
+}
+
+map_exposure.gad = ROW
+{
+   HSTRETCH
+   {  }
+
+   map_exposure.label = PARM_LABEL( "Map Exposure", "map_exposure" ) ;
+   PARM(float, 1, "map_exposure", none, none) RANGE(-2, 2)
+	LABELREF( map_exposure.label ) HSTRETCH;
+
+   {  }
+}
+
+light_intensity.gad = ROW
+{
+   HSTRETCH
+   {  }
+
+   light_intensity.label = PARM_LABEL( "Light Intensity", "light_intensity" ) ;
+   PARM(float, 1, "light_intensity", none, none) RANGE(0, 2)
+	LABELREF( light_intensity.label ) HSTRETCH;
+
+   {  }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(horizontal) SPACING(0.05) HSTRETCH JUSTIFY(left, center) UNSCALABLE
+    on.row.join; 
+    map_roll.gad; 
+    map_intensity.gad; 
+    map_exposure.gad; 
+    light_intensity.gad; 
+} 
+// dialog.bot.ui
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) VALUE(open.val_) HSTRETCH
+
+    dialog_norm.gad;
+}

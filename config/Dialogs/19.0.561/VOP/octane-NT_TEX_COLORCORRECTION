@@ -1,0 +1,196 @@
+// Magic: 182cd39
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Thu Apr 14 20:18:59 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+brightness.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ brightness.label = PARM_LABEL("Brightness", "brightness") WIDTH(1.5);
+ PARM(float, 1, "brightness", none, none) RANGE(0,1)
+	 LABELREF(brightness.label) HSTRETCH;
+
+    brightness.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(brightness.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+invert.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("invert", "Invert") toggle VALUE(invert.val);
+
+    { HSTRETCH }
+
+    invert.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(invert.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+hue.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ hue.label = PARM_LABEL("Hue", "hue") WIDTH(1.5);
+ PARM(float, 1, "hue", none, none) RANGE(-1,1)
+	 LABELREF(hue.label) HSTRETCH;
+
+    hue.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(hue.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+saturation.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ saturation.label = PARM_LABEL("Saturation", "saturation") WIDTH(1.5);
+ PARM(float, 1, "saturation", none, none) RANGE(0,3)
+	 LABELREF(saturation.label) HSTRETCH;
+
+    saturation.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(saturation.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+gamma.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ gamma.label = PARM_LABEL("Gamma", "gamma") WIDTH(1.5);
+ PARM(float, 1, "gamma", none, LOGSCALE) RANGE(0.0099999997764825821,100)
+	 LABELREF(gamma.label) HSTRETCH;
+
+    gamma.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(gamma.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+contrast.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ contrast.label = PARM_LABEL("Contrast", "contrast") WIDTH(1.5);
+ PARM(float, 1, "contrast", none, LOGSCALE) RANGE(0,1000)
+	 LABELREF(contrast.label) HSTRETCH;
+
+    contrast.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(contrast.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+gain.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ gain.label = PARM_LABEL("Gain", "gain") WIDTH(1.5);
+ PARM(float, 1, "gain", none, none) RANGE(0,1)
+	 LABELREF(gain.label) HSTRETCH;
+
+    gain.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(gain.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+exposure.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ exposure.label = PARM_LABEL("Exposure", "exposure") WIDTH(1.5);
+ PARM(float, 1, "exposure", none, none) RANGE(-10,10)
+	 LABELREF(exposure.label) HSTRETCH;
+
+    exposure.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(exposure.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+mask.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ mask.label = PARM_LABEL("Mask", "mask") WIDTH(1.5);
+ PARM(float, 1, "mask", none, none) RANGE(0,1)
+	 LABELREF(mask.label) HSTRETCH;
+
+    mask.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(mask.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+octane_plugin_version.gad = NULL { }
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    brightness.gad; 
+    invert.gad; 
+    hue.gad; 
+    saturation.gad; 
+    gamma.gad; 
+    contrast.gad; 
+    gain.gad; 
+    exposure.gad; 
+    mask.gad; 
+    octane_plugin_version.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

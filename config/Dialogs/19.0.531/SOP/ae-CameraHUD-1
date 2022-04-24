@@ -1,0 +1,202 @@
+// Magic: 6cc40a8f
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Sun Mar 13 15:07:12 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+cam.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ cam.label = PARM_LABEL("Camera", "cam") WIDTH(1.5);
+ PARM_FIELD(pathstring, "cam") VALUE(cam.val) 
+	LABELREF(cam.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(cam.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(cam.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+zdepth.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ zdepth.label = PARM_LABEL("HUD Z-Depth", "zdepth") WIDTH(1.5);
+ PARM(float, 1, "zdepth", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(zdepth.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+output_guide.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("output_guide", "Output Guide (Useful when using 1st Input)") toggle VALUE(output_guide.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+use_centered.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("use_centered", "Input is centered on Z-Axis") toggle VALUE(use_centered.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+border.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ border.label = PARM_LABEL("Border Size", "border") WIDTH(1.5);
+ PARM(float, 1, "border", none, none) RANGE(0,1)
+	 LABELREF(border.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+quickstring.gad = ROW
+{
+
+    HSTRETCH JUSTIFY(left, top) HMARGIN(0.18, 0.1)
+        NO_MARGIN_SPACING_SCALE
+
+    quickstring.label = PARM_LABEL("Quick String", "quickstring");
+
+    MULTILINE_PARM_FIELD ("quickstring") 
+
+    	LABELREF(quickstring.label) 
+
+    	VALUE(quickstring.val) 
+    	SYNTAX("") 
+    	LINES(6,20) 
+    	HSTRETCH;
+
+    {
+
+	LAYOUT(vertical)
+	{
+	    SIZE(0, 0.26)
+	}
+
+    quickstring.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    }
+
+}
+
+fontsize.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ fontsize.label = PARM_LABEL("Font Size", "fontsize") WIDTH(1.5);
+ PARM(float, 1, "fontsize", none, none) RANGE(0,1)
+	 LABELREF(fontsize.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+location.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Position", "location") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    location.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+use_mat.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+use_mat.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("use_mat", "Set Material") toggle VALUE(use_mat.val);
+
+    {  }
+
+    {  }
+}
+
+shop_materialpath1.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ {  }
+
+ PARM_FIELD(pathstring, "shop_materialpath1") VALUE(shop_materialpath1.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(shop_materialpath1.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(shop_materialpath1.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    cam.gad; 
+    zdepth.gad; 
+    output_guide.gad; 
+    use_centered.gad; 
+    border.gad; 
+    quickstring.gad; 
+    fontsize.gad; 
+    location.gad; 
+    use_mat.row.join; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

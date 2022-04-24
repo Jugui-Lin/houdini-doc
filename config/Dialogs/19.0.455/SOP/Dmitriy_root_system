@@ -1,0 +1,522 @@
+// Magic: 18190822
+// Automatically generated PSI dialog (PSI version 19.0.455)
+// Sat Feb 26 23:42:03 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+initialamount.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ initialamount.label = PARM_LABEL("Initial Amount", "initialamount") WIDTH(1.5);
+ PARM(integer, 1, "initialamount", none, none) RANGE(0,30)
+	 LABELREF(initialamount.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+iters.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ iters.label = PARM_LABEL("Iterations", "iters") WIDTH(1.5);
+ PARM(integer, 1, "iters", none, none) RANGE(1,32)
+	 LABELREF(iters.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+preparegeo.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("preparegeo", "Prepare Geometry") toggle VALUE(preparegeo.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+details.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ details.label = PARM_LABEL("Edge Length (Details)", "details") WIDTH(1.5);
+ PARM(float, 1, "details", none, none) RANGE(0,0.98999999999999999)
+	LOCK_RANGE LABELREF(details.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+noisescale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ noisescale.label = PARM_LABEL("Noise Scale", "noisescale") WIDTH(1.5);
+ PARM(float, 1, "noisescale", none, none) RANGE(0,10)
+	 LABELREF(noisescale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+noisecontrast.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ noisecontrast.label = PARM_LABEL("Noise Contrast", "noisecontrast") WIDTH(1.5);
+ PARM(float, 1, "noisecontrast", none, none) RANGE(0,2)
+	 LABELREF(noisecontrast.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+shiftn.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ shiftn.label = PARM_LABEL("Shift By Normal", "shiftn") WIDTH(1.5);
+ PARM(float, 1, "shiftn", none, none) RANGE(-1,1)
+	 LABELREF(shiftn.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+isclean.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("isclean", "Clean Roots") toggle VALUE(isclean.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+visgeo.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("visgeo", "Visualise Geo") toggle VALUE(visgeo.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+outputpaths.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("outputpaths", "Output Paths") toggle VALUE(outputpaths.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+mode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Mode", "mode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    mode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+center.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   center.label = PARM_LABEL("Center", "center") WIDTH(1.5);
+   PARM(float, 3, "center", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(center.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+Start_seed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ Start_seed.label = PARM_LABEL("Global Seed", "Start_seed") WIDTH(1.5);
+ PARM(float, 1, "Start_seed", none, none) RANGE(0,1)
+	 LABELREF(Start_seed.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+dirseed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dirseed.label = PARM_LABEL("Direction Seed", "dirseed") WIDTH(1.5);
+ PARM(float, 1, "dirseed", none, none) RANGE(0,10)
+	 LABELREF(dirseed.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+Spread_threshold.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ Spread_threshold.label = PARM_LABEL("Branches Density", "Spread_threshold") WIDTH(1.5);
+ PARM(integer, 1, "Spread_threshold", none, none) RANGE(0,1000)
+	 LABELREF(Spread_threshold.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+Root_length.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ Root_length.label = PARM_LABEL("Basic Length", "Root_length") WIDTH(1.5);
+ PARM(float, 1, "Root_length", none, none) RANGE(0,1)
+	 LABELREF(Root_length.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+Roots_spread.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ Roots_spread.label = PARM_LABEL("Spread", "Roots_spread") WIDTH(1.5);
+ PARM(float, 1, "Roots_spread", none, none) RANGE(0,5)
+	 LABELREF(Roots_spread.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+spreadvariations.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ spreadvariations.label = PARM_LABEL("Spread Variations", "spreadvariations") WIDTH(1.5);
+ PARM(float, 1, "spreadvariations", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(spreadvariations.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+noiseon.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("noiseon", "Noise") toggle VALUE(noiseon.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+newparameter.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ newparameter.label = PARM_LABEL("Element Size", "newparameter") WIDTH(1.5);
+ PARM(float, 1, "newparameter", none, none) RANGE(0,10)
+	 LABELREF(newparameter.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+noisemin.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ noisemin.label = PARM_LABEL("Fade", "noisemin") WIDTH(1.5);
+ PARM(float, 1, "noisemin", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(noisemin.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+colorise.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("colorise", "Colorise") toggle VALUE(colorise.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+colorrandomseed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ colorrandomseed.label = PARM_LABEL("Random Seed", "colorrandomseed") WIDTH(1.5);
+ PARM(float, 1, "colorrandomseed", none, none) RANGE(0,10)
+	 LABELREF(colorrandomseed.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+brightness.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ brightness.label = PARM_LABEL("Brightness", "brightness") WIDTH(1.5);
+ PARM(float, 1, "brightness", none, none) RANGE(0,10)
+	 LABELREF(brightness.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+colorramp.si_rampedit = COLOR_RAMP VALUE(colorramp.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+colorramp.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) WIDTH(1.5)
+	    LABEL "Point No.";
+	}
+
+	colorramp.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(colorramp.pointno.val) HSTRETCH;
+    }
+}
+
+colorramp.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(colorramp.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(colorramp.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    colorramp.toggleparms.gad
+      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+	HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+	VALUE(colorramp.toggle.val)
+	LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+}
+
+colorramp.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    colorramp.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	colorramp.buttons.gad VSTRETCH;
+
+	colorramp.si_rampedit HSTRETCH;
+    }
+}
+
+colorramp.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Ramp", "colorramp");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(colorramp.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(colorramp.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	colorramp.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	colorramp.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(colorramp.hideparms.val) HSTRETCH
+	    colorramp.multiramp;
+	    {}
+	}
+    }
+}
+
+folder1.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder1.gad"
+    { 
+	VALUE(folder1.gad.val) STRETCH(1,0)
+
+	TAB "Roots"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    outputpaths.gad;		
+	    mode.gad;		
+	    center.gad;		
+	    Start_seed.gad;		
+	    dirseed.gad;		
+	    Spread_threshold.gad;		
+	    Root_length.gad;		
+	    Roots_spread.gad;		
+	    spreadvariations.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Noise"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    noiseon.gad;		
+	    newparameter.gad;		
+	    noisemin.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Colorise"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    colorise.gad;		
+	    colorrandomseed.gad;		
+	    brightness.gad;		
+	    colorramp.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+folder2.gad = 
+
+GROUP simple "Post Effects" flat 
+{ 
+    VALUE(folder2.gad.val) LAYOUT(vertical) HSTRETCH 
+	    shiftn.gad;		
+	    isclean.gad;		
+	    visgeo.gad;		
+} 
+
+folder0.gad = 
+
+GROUP simple "Geometry Preparation" flat 
+{ 
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    preparegeo.gad;		
+	    details.gad;		
+	    noisescale.gad;		
+	    noisecontrast.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    initialamount.gad; 
+    iters.gad; 
+    folder0.gad; 
+    folder2.gad; 
+    folder1.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

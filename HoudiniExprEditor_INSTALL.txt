@@ -1,0 +1,20 @@
+
+Extract HoudiniExprEditor.zip to $HOME/houdini16.0/ folder ( or your current version of Houdini ).
+Use "Extract here" function.
+
+File to install:
+----------------
+$HOME/houdiniXX.X/scripts => scripts
+$HOME/houdiniXX.X// => PARMmenu.xml
+$HOME/houdiniXX.X// => MainMenuCommon.xml
+$HOME/houdiniXX.X// => OPmenu.xml
+$HOME/houdiniXX.X// => ShelfToolMenu.xml
+
+----------------
+
+Extra infos on install:
+cgtoolbox.com/houdini-expression-editor/
+
+
+www.cgtoolbox.com
+contact@cgtoolbox.com

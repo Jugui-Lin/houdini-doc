@@ -1,0 +1,1619 @@
+// Magic: 2157a792
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Mon Apr  4 01:26:53 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+rad.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   rad.label = PARM_LABEL("Radius", "rad") WIDTH(1.5);
+   PARM(float, 3, "rad", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(rad.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+t.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   t.label = PARM_LABEL("Center", "t") WIDTH(1.5);
+   PARM(float, 3, "t", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(t.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+r.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   r.label = PARM_LABEL("Rotate", "r") WIDTH(1.5);
+   PARM(float, 3, "r", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(r.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+scale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ scale.label = PARM_LABEL("Uniform Scale", "scale") WIDTH(1.5);
+ PARM(float, 1, "scale", none, none) RANGE(0,10)
+	 LABELREF(scale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+freq.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ freq.label = PARM_LABEL("Frequency", "freq") WIDTH(1.5);
+ PARM(integer, 1, "freq", none, none) RANGE(1,10)
+	LOCK_RANGE_MIN LABELREF(freq.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm5.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+add_noise.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("add_noise", "Add Noise") toggle VALUE(add_noise.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+height.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ height.label = PARM_LABEL("Height", "height") WIDTH(1.5);
+ PARM(float, 1, "height", none, none) RANGE(0,10)
+	 LABELREF(height.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+elementsize.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ elementsize.label = PARM_LABEL("Element Size", "elementsize") WIDTH(1.5);
+ PARM(float, 1, "elementsize", none, none) RANGE(0,10)
+	 LABELREF(elementsize.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+rough.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ rough.label = PARM_LABEL("Roughness", "rough") WIDTH(1.5);
+ PARM(float, 1, "rough", none, none) RANGE(0,1)
+	 LABELREF(rough.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+lac.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ lac.label = PARM_LABEL("Lacunarity", "lac") WIDTH(1.5);
+ PARM(float, 1, "lac", none, none) RANGE(0,4)
+	 LABELREF(lac.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+oct.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ oct.label = PARM_LABEL("Max Octaves", "oct") WIDTH(1.5);
+ PARM(integer, 1, "oct", none, none) RANGE(0,16)
+	 LABELREF(oct.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+elementscale.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   elementscale.label = PARM_LABEL("Scale", "elementscale") WIDTH(1.5);
+   PARM(float, 3, "elementscale", none, none, "X,Y,Z")
+	RANGE(0,10)  LABELREF(elementscale.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+offset.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   offset.label = PARM_LABEL("Offset", "offset") WIDTH(1.5);
+   PARM(float, 3, "offset", none, none, "X,Y,Z")
+	RANGE(0,10)  LABELREF(offset.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+startframe.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ startframe.label = PARM_LABEL("Start Frame", "startframe") WIDTH(1.5);
+ PARM(integer, 1, "startframe", none, none) RANGE(1,240)
+	 LABELREF(startframe.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+particleseparation.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ particleseparation.label = PARM_LABEL("Particle Separation", "particleseparation") WIDTH(1.5);
+ PARM(float, 1, "particleseparation", none, none) RANGE(0,0.10000000000000001)
+	LOCK_RANGE_MIN LABELREF(particleseparation.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm4.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+impulseactiveate.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ impulseactiveate.label = PARM_LABEL("Impulse Activation", "impulseactiveate") WIDTH(1.5);
+ PARM(integer, 1, "impulseactiveate", none, none) RANGE(0,1)
+	 LABELREF(impulseactiveate.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+impulse_density.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ impulse_density.label = PARM_LABEL("Impulse Fluid Density", "impulse_density") WIDTH(1.5);
+ PARM(float, 1, "impulse_density", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(impulse_density.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm3.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+constantactivate.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ constantactivate.label = PARM_LABEL("Const. Activation", "constantactivate") WIDTH(1.5);
+ PARM(integer, 1, "constantactivate", none, none) RANGE(0,1)
+	 LABELREF(constantactivate.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+const_density.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ const_density.label = PARM_LABEL("Const. Fluid Density", "const_density") WIDTH(1.5);
+ PARM(float, 1, "const_density", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(const_density.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+defstiffness.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ defstiffness.label = PARM_LABEL("Stiffness", "defstiffness") WIDTH(1.5);
+ PARM(float, 1, "defstiffness", none, none) RANGE(0,10)
+	 LABELREF(defstiffness.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+viscosityc.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ viscosityc.label = PARM_LABEL("Viscosity", "viscosityc") WIDTH(1.5);
+ PARM(float, 1, "viscosityc", none, none) RANGE(0,1)
+	 LABELREF(viscosityc.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+maxacceleration.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ maxacceleration.label = PARM_LABEL("Maximum Acceleration", "maxacceleration") WIDTH(1.5);
+ PARM(float, 1, "maxacceleration", none, none) RANGE(0,100)
+	 LABELREF(maxacceleration.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+tensileq.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ tensileq.label = PARM_LABEL("Tensile Radius", "tensileq") WIDTH(1.5);
+ PARM(float, 1, "tensileq", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(tensileq.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+tensilek.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ tensilek.label = PARM_LABEL("Tensile Strength", "tensilek") WIDTH(1.5);
+ PARM(float, 1, "tensilek", none, none) RANGE(0,0.10000000000000001)
+	 LABELREF(tensilek.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+vorticitystrength.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ vorticitystrength.label = PARM_LABEL("Vorticity Confinement", "vorticitystrength") WIDTH(1.5);
+ PARM(float, 1, "vorticitystrength", none, none) RANGE(0,1)
+	 LABELREF(vorticitystrength.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+bounce.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ bounce.label = PARM_LABEL("Bounce", "bounce") WIDTH(1.5);
+ PARM(float, 1, "bounce", none, none) RANGE(0,1)
+	 LABELREF(bounce.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+bounceforward.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ bounceforward.label = PARM_LABEL("Bounce Forward", "bounceforward") WIDTH(1.5);
+ PARM(float, 1, "bounceforward", none, none) RANGE(0,1)
+	 LABELREF(bounceforward.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+friction.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ friction.label = PARM_LABEL("Friction", "friction") WIDTH(1.5);
+ PARM(float, 1, "friction", none, none) RANGE(0,1)
+	 LABELREF(friction.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+dynamicfriction.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dynamicfriction.label = PARM_LABEL("Dynamic Friction Scale", "dynamicfriction") WIDTH(1.5);
+ PARM(float, 1, "dynamicfriction", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(dynamicfriction.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+temperature.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ temperature.label = PARM_LABEL("Temperature", "temperature") WIDTH(1.5);
+ PARM(float, 1, "temperature", none, none) RANGE(0,100)
+	 LABELREF(temperature.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+cent.gad = NULL { }
+
+dir.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   dir.label = PARM_LABEL("Direction", "dir") WIDTH(1.5);
+   PARM(float, 3, "dir", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(dir.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+mag.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ mag.label = PARM_LABEL("Magnitude", "mag") WIDTH(1.5);
+ PARM(float, 1, "mag", none, none) RANGE(0,10)
+	 LABELREF(mag.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+var.gad = ROW 
+{
+    HSTRETCH
+   { WIDTH(0.18) }
+
+    var.label = PARM_LABEL("Variance", "var") WIDTH(1.5);
+    PARM(float, 3, "var", none, none) LABELREF(var.label)
+	HSTRETCH;
+
+   { WIDTH(0.1) }
+}
+
+enable_grav.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("enable_grav", "Enable Gravity") toggle VALUE(enable_grav.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+grav.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   grav.label = PARM_LABEL("Gravity", "grav") WIDTH(1.5);
+   PARM(float, 3, "grav", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(grav.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+enable_exp_force.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("enable_exp_force", "Enable Explosion Force") toggle VALUE(enable_exp_force.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+spread.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ spread.label = PARM_LABEL("Spread", "spread") WIDTH(1.5);
+ PARM(float, 1, "spread", none, none) RANGE(0,1)
+	 LABELREF(spread.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+Explosion_Direction.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   Explosion_Direction.label = PARM_LABEL("Explosion Direction", "Explosion_Direction") WIDTH(1.5);
+   PARM(float, 3, "Explosion_Direction", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(Explosion_Direction.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+exp_vis_.gad = NULL { }
+
+Magnitude.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ Magnitude.label = PARM_LABEL("Magnitude", "Magnitude") WIDTH(1.5);
+ PARM(float, 1, "Magnitude", none, none) RANGE(0,1)
+	 LABELREF(Magnitude.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+Variance.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ Variance.label = PARM_LABEL("Variance", "Variance") WIDTH(1.5);
+ PARM(float, 1, "Variance", none, none) RANGE(0,1)
+	 LABELREF(Variance.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+show_initial_geo.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+show_initial_geo.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+show_initial_geo.gad = PARM_BUTTON("show_initial_geo", "") toggle VALUE(show_initial_geo.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+src_geo_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    {  }
+
+    src_geo_color.label = PARM_LABEL("Source Wireframe", "src_geo_color") WIDTH(1.32);
+    PARM(float, 3, "src_geo_color", none, COLOR, "R,G,B") 
+	LABELREF(src_geo_color.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+enable_grid.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("enable_grid", "Enable Ground Plane") toggle VALUE(enable_grid.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+snapgrid.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("snapgrid", "Snap Ground Plane to Trajectory") toggle VALUE(snapgrid.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+grid_dist.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ grid_dist.label = PARM_LABEL("Distance", "grid_dist") WIDTH(1.5);
+ PARM(float, 1, "grid_dist", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(grid_dist.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+orient.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Orientation", "orient") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    orient.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+rows.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ rows.label = PARM_LABEL("Rows", "rows") WIDTH(1.5);
+ PARM(integer, 1, "rows", none, none) RANGE(1,50)
+	LOCK_RANGE_MIN LABELREF(rows.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+cols.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ cols.label = PARM_LABEL("Columns", "cols") WIDTH(1.5);
+ PARM(integer, 1, "cols", none, none) RANGE(1,50)
+	LOCK_RANGE_MIN LABELREF(cols.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+size.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   size.label = PARM_LABEL("Size", "size") WIDTH(1.5);
+   PARM(float, 2, "size", none, none, "X,Y")
+	RANGE(-1,1)  LABELREF(size.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+grid_vis.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+grid_vis.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+grid_vis.gad = PARM_BUTTON("grid_vis", "") toggle VALUE(grid_vis.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+grid_col.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    {  }
+
+    grid_col.label = PARM_LABEL("Grid Guide", "grid_col") WIDTH(1.32);
+    PARM(float, 3, "grid_col", none, COLOR, "R,G,B") 
+	LABELREF(grid_col.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+grid_trans.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   grid_trans.label = PARM_LABEL("Translate", "grid_trans") WIDTH(1.5);
+   PARM(float, 3, "grid_trans", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(grid_trans.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+grid_rot.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   grid_rot.label = PARM_LABEL("Rotate", "grid_rot") WIDTH(1.5);
+   PARM(float, 3, "grid_rot", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(grid_rot.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+grid_uni_scale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ grid_uni_scale.label = PARM_LABEL("Uniform Scale", "grid_uni_scale") WIDTH(1.5);
+ PARM(float, 1, "grid_uni_scale", none, none) RANGE(0,2)
+	LOCK_RANGE_MIN LABELREF(grid_uni_scale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+ground_bounce.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ ground_bounce.label = PARM_LABEL("Bounce", "ground_bounce") WIDTH(1.5);
+ PARM(float, 1, "ground_bounce", none, none) RANGE(0,10)
+	 LABELREF(ground_bounce.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+ground_bounceforward.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ ground_bounceforward.label = PARM_LABEL("Bounce Forward", "ground_bounceforward") WIDTH(1.5);
+ PARM(float, 1, "ground_bounceforward", none, none) RANGE(0,1)
+	 LABELREF(ground_bounceforward.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+ground_friction.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ ground_friction.label = PARM_LABEL("Friction", "ground_friction") WIDTH(1.5);
+ PARM(float, 1, "ground_friction", none, none) RANGE(0,1)
+	 LABELREF(ground_friction.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+ground_dynamicfriction.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ ground_dynamicfriction.label = PARM_LABEL("Dynamic Friction Scale", "ground_dynamicfriction") WIDTH(1.5);
+ PARM(float, 1, "ground_dynamicfriction", none, none) RANGE(0,1)
+	 LABELREF(ground_dynamicfriction.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+ground_temperature.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ ground_temperature.label = PARM_LABEL("Temperature", "ground_temperature") WIDTH(1.5);
+ PARM(float, 1, "ground_temperature", none, none) RANGE(0,100)
+	 LABELREF(ground_temperature.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+animategeo.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("animategeo", "Animated") toggle VALUE(animategeo.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+display2.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("display2", "Display Geometry") toggle VALUE(display2.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+static_bounce.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ static_bounce.label = PARM_LABEL("Bounce", "static_bounce") WIDTH(1.5);
+ PARM(float, 1, "static_bounce", none, none) RANGE(0,10)
+	 LABELREF(static_bounce.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+static_bounceforward.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ static_bounceforward.label = PARM_LABEL("Bounce Forward", "static_bounceforward") WIDTH(1.5);
+ PARM(float, 1, "static_bounceforward", none, none) RANGE(0,1)
+	 LABELREF(static_bounceforward.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+static_friction.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ static_friction.label = PARM_LABEL("Friction", "static_friction") WIDTH(1.5);
+ PARM(float, 1, "static_friction", none, none) RANGE(0,1)
+	 LABELREF(static_friction.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+static_dynamic_friction.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ static_dynamic_friction.label = PARM_LABEL("Dynamic Friction Scale", "static_dynamic_friction") WIDTH(1.5);
+ PARM(float, 1, "static_dynamic_friction", none, none) RANGE(0,1)
+	 LABELREF(static_dynamic_friction.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+static_temperature.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ static_temperature.label = PARM_LABEL("Temperature", "static_temperature") WIDTH(1.5);
+ PARM(float, 1, "static_temperature", none, none) RANGE(0,100)
+	 LABELREF(static_temperature.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+fluid_display.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Output", "fluid_display") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    fluid_display.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+voxelsize.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ voxelsize.label = PARM_LABEL("Voxel Scale", "voxelsize") WIDTH(1.5);
+ PARM(float, 1, "voxelsize", none, none) RANGE(0.01,10)
+	 LABELREF(voxelsize.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+influenceradius.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ influenceradius.label = PARM_LABEL("Influence Scale", "influenceradius") WIDTH(1.5);
+ PARM(float, 1, "influenceradius", none, none) RANGE(0.01,5)
+	 LABELREF(influenceradius.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+surfacedistance.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ surfacedistance.label = PARM_LABEL("Droplet Scale", "surfacedistance") WIDTH(1.5);
+ PARM(float, 1, "surfacedistance", none, none) RANGE(0.01,5)
+	 LABELREF(surfacedistance.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+fluidcolor.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    fluidcolor.label = PARM_LABEL("Fluid Color", "fluidcolor") WIDTH(1.5);
+    PARM(float, 3, "fluidcolor", none, COLOR, "R,G,B") 
+	LABELREF(fluidcolor.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+dodilate.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+dodilate.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+dodilate.gad = PARM_BUTTON("dodilate", "") toggle VALUE(dodilate.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+dilateoffset.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ dilateoffset.label = PARM_LABEL("Dilate", "dilateoffset") WIDTH(1.32);
+ PARM(float, 1, "dilateoffset", none, none) RANGE(0,10)
+	 LABELREF(dilateoffset.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+dosmooth.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+dosmooth.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+dosmooth.gad = PARM_BUTTON("dosmooth", "") toggle VALUE(dosmooth.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+smoothoperation.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    PARM_LABEL_SIMPLE("Smooth", "smoothoperation") WIDTH(1.32);
+    { WIDTH(0.09) }
+
+    smoothoperation.menu;
+
+    {  }
+
+    {  }
+}
+}	
+
+smoothiterations.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ PARM(integer, 1, "smoothiterations", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+doerode.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+doerode.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+doerode.gad = PARM_BUTTON("doerode", "") toggle VALUE(doerode.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+erodeoffset.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ erodeoffset.label = PARM_LABEL("Erode", "erodeoffset") WIDTH(1.32);
+ PARM(float, 1, "erodeoffset", none, none) RANGE(0,10)
+	 LABELREF(erodeoffset.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+dofinalsmooth.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+dofinalsmooth.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+dofinalsmooth.gad = PARM_BUTTON("dofinalsmooth", "") toggle VALUE(dofinalsmooth.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+finalsmoothoperation.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    PARM_LABEL_SIMPLE("Final Smooth", "finalsmoothoperation") WIDTH(1.32);
+    { WIDTH(0.09) }
+
+    finalsmoothoperation.menu;
+
+    {  }
+
+    {  }
+}
+}	
+
+finalsmoothiterations.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ PARM(integer, 1, "finalsmoothiterations", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+arrow_vis.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+arrow_vis.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+arrow_vis.gad = PARM_BUTTON("arrow_vis", "") toggle VALUE(arrow_vis.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+arrow_col.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    {  }
+
+    arrow_col.label = PARM_LABEL("Initial Velocity", "arrow_col") WIDTH(1.32);
+    PARM(float, 3, "arrow_col", none, COLOR, "R,G,B") 
+	LABELREF(arrow_col.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+sepparm2.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+traj_vis.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+traj_vis.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+traj_vis.gad = PARM_BUTTON("traj_vis", "") toggle VALUE(traj_vis.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+traj_col.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    {  }
+
+    traj_col.label = PARM_LABEL("Trajectory Curve", "traj_col") WIDTH(1.32);
+    PARM(float, 3, "traj_col", none, COLOR, "R,G,B") 
+	LABELREF(traj_col.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+trajlen_type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Length", "trajlen_type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    trajlen_type.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+time.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ time.label = PARM_LABEL("Time", "time") WIDTH(1.5);
+ PARM(float, 1, "time", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(time.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+resimulate.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("resimulate", "Reset Simulation")
+	push VALUE(resimulate.val);
+
+    { WIDTH(0.1) }
+}
+
+timescale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ timescale.label = PARM_LABEL("Time Scale", "timescale") WIDTH(1.5);
+ PARM(float, 1, "timescale", none, none) RANGE(0,10)
+	 LABELREF(timescale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+minimumsubsteps.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ minimumsubsteps.label = PARM_LABEL("Min Substeps", "minimumsubsteps") WIDTH(1.5);
+ PARM(integer, 1, "minimumsubsteps", none, none) RANGE(0,10)
+	 LABELREF(minimumsubsteps.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+substeps.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ substeps.label = PARM_LABEL("Max Substeps", "substeps") WIDTH(1.5);
+ PARM(integer, 1, "substeps", none, none) RANGE(0,10)
+	 LABELREF(substeps.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+doautosleep.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("doautosleep", "Enable Auto Sleep") toggle VALUE(doautosleep.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+useopencl.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("useopencl", "Use OpenCL") toggle VALUE(useopencl.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+grid_pos_on_traj.gad = NULL { }
+
+fluid_settings2_4.gad = 
+
+GROUP simple "Guides" flat 
+{ 
+    VALUE(fluid_settings2_4.gad.val) LAYOUT(vertical) HSTRETCH 
+	    arrow_vis.row.join;		
+	    sepparm2.gad;		
+	    traj_vis.row.join;		
+	    trajlen_type.gad;		
+	    time.gad;		
+} 
+
+folder4.gad = 
+GROUP collapsible "Advanced" flat  
+{
+    VALUE(folder4.gad.val) LAYOUT(vertical) HSTRETCH
+	    dodilate.row.join;		
+	    dosmooth.row.join;		
+	    doerode.row.join;		
+	    dofinalsmooth.row.join;		
+} 
+
+folder3.gad = 
+
+GROUP simple "Fluid Surface Options" flat 
+{ 
+    VALUE(folder3.gad.val) LAYOUT(vertical) HSTRETCH 
+	    voxelsize.gad;		
+	    influenceradius.gad;		
+	    surfacedistance.gad;		
+	    fluidcolor.gad;		
+	    folder4.gad;		
+} 
+
+folder9.gad = 
+
+GROUP simple "Physical Properties" flat 
+{ 
+    VALUE(folder9.gad.val) LAYOUT(vertical) HSTRETCH 
+	    static_bounce.gad;		
+	    static_bounceforward.gad;		
+	    static_friction.gad;		
+	    static_dynamic_friction.gad;		
+	    static_temperature.gad;		
+} 
+
+folder8.gad = 
+
+GROUP simple "Physical Properties" flat 
+{ 
+    VALUE(folder8.gad.val) LAYOUT(vertical) HSTRETCH 
+	    ground_bounce.gad;		
+	    ground_bounceforward.gad;		
+	    ground_friction.gad;		
+	    ground_dynamicfriction.gad;		
+	    ground_temperature.gad;		
+} 
+
+grid_xform.gad = 
+
+GROUP simple "Transform" flat 
+{ 
+    VALUE(grid_xform.gad.val) LAYOUT(vertical) HSTRETCH 
+	    grid_trans.gad;		
+	    grid_rot.gad;		
+	    grid_uni_scale.gad;		
+} 
+
+folder7.gad = 
+GROUP collapsible "Grid Settings" flat  
+{
+    VALUE(folder7.gad.val) LAYOUT(vertical) HSTRETCH
+	    orient.gad;		
+	    rows.gad;		
+	    cols.gad;		
+	    size.gad;		
+	    grid_vis.row.join;		
+} 
+
+exp_force_.gad = 
+
+GROUP simple "Explosion Force" flat 
+{ 
+    VALUE(exp_force_.gad.val) LAYOUT(vertical) HSTRETCH 
+	    enable_exp_force.gad;		
+	    spread.gad;		
+	    Explosion_Direction.gad;		
+	    exp_vis_.gad;		
+	    Magnitude.gad;		
+	    Variance.gad;		
+} 
+
+grav_force_.gad = 
+
+GROUP simple "Gravity" flat 
+{ 
+    VALUE(grav_force_.gad.val) LAYOUT(vertical) HSTRETCH 
+	    enable_grav.gad;		
+	    grav.gad;		
+} 
+
+init_vel_.gad = 
+
+GROUP simple "Initial Velocity" flat 
+{ 
+    VALUE(init_vel_.gad.val) LAYOUT(vertical) HSTRETCH 
+	    cent.gad;		
+	    dir.gad;		
+	    mag.gad;		
+	    var.gad;		
+} 
+
+folder1.gad = 
+
+GROUP simple "Physical Properties" flat 
+{ 
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    bounce.gad;		
+	    bounceforward.gad;		
+	    friction.gad;		
+	    dynamicfriction.gad;		
+	    temperature.gad;		
+} 
+
+folder5.gad = 
+GROUP collapsible "Advanced" flat  
+{
+    VALUE(folder5.gad.val) LAYOUT(vertical) HSTRETCH
+	    maxacceleration.gad;		
+	    tensileq.gad;		
+	    tensilek.gad;		
+	    vorticitystrength.gad;		
+} 
+
+folder2.gad = 
+
+GROUP simple "Fluid Properties" flat 
+{ 
+    VALUE(folder2.gad.val) LAYOUT(vertical) HSTRETCH 
+	    defstiffness.gad;		
+	    viscosityc.gad;		
+	    sepparm.gad;		
+	    folder5.gad;		
+} 
+
+sphere_settings_1.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "sphere_settings_1.gad"
+    { 
+	VALUE(sphere_settings_1.gad.val) STRETCH(1,0)
+
+	TAB "Birth"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    startframe.gad;		
+	    particleseparation.gad;		
+	    sepparm4.gad;		
+	    impulseactiveate.gad;		
+	    impulse_density.gad;		
+	    sepparm3.gad;		
+	    constantactivate.gad;		
+	    const_density.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Dynamic Properties"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    folder2.gad;		
+	    folder1.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Forces"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    init_vel_.gad;		
+	    grav_force_.gad;		
+	    exp_force_.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+fluid.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "fluid.gad"
+    { 
+	VALUE(fluid.gad.val) STRETCH(1,0)
+
+	TAB "Fluid"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    sphere_settings_1.gad;		
+	    show_initial_geo.row.join;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Ground Plane"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    enable_grid.gad;		
+	    snapgrid.gad;		
+	    grid_dist.gad;		
+	    folder7.gad;		
+	    grid_xform.gad;		
+	    folder8.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Collision Object"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    animategeo.gad;		
+	    display2.gad;		
+	    folder9.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Visualization"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    fluid_display.gad;		
+	    folder3.gad;		
+	    fluid_settings2_4.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Solver"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    resimulate.gad;		
+	    timescale.gad;		
+	    minimumsubsteps.gad;		
+	    substeps.gad;		
+	    doautosleep.gad;		
+	    useopencl.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+folder6.gad = 
+GROUP collapsible "Noise Settings" flat  
+{
+    VALUE(folder6.gad.val) LAYOUT(vertical) HSTRETCH
+	    add_noise.gad;		
+	    height.gad;		
+	    elementsize.gad;		
+	    rough.gad;		
+	    lac.gad;		
+	    oct.gad;		
+	    elementscale.gad;		
+	    offset.gad;		
+} 
+
+sphere_settings.gad = 
+GROUP collapsible "Default Fluid Source" flat  
+{
+    VALUE(sphere_settings.gad.val) LAYOUT(vertical) HSTRETCH
+	    rad.gad;		
+	    t.gad;		
+	    r.gad;		
+	    scale.gad;		
+	    freq.gad;		
+	    sepparm5.gad;		
+	    folder6.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    sphere_settings.gad; 
+    fluid.gad; 
+    grid_pos_on_traj.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "node", "context": "chop", "internal": "wedge_ql", "version": "1", "namespace": "qLib"}, "body": [{"type": "para", "indent": 0, "text": ["(note: the python code is slow for large amounts of channel data, ", {"type": "q", "text": ["use current frame"]}, " fetch is both recommended and sufficient)"], "extent": [0, 128]}]}

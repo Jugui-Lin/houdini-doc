@@ -1,0 +1,544 @@
+// Magic: ed2f384
+// Automatically generated PSI dialog (PSI version 19.0.455)
+// Tue Feb  8 15:44:25 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+fabric_rest_frame.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ fabric_rest_frame.label = PARM_LABEL("Rest Frame", "fabric_rest_frame") WIDTH(1.5);
+ PARM(float, 1, "fabric_rest_frame", none, none) RANGE(0,10)
+	 LABELREF(fabric_rest_frame.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+fabric_attribute_transfer_toggle.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("fabric_attribute_transfer_toggle", "Transfer Attributes") toggle VALUE(fabric_attribute_transfer_toggle.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+fabric_fiber_width.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ fabric_fiber_width.label = PARM_LABEL("Width", "fabric_fiber_width") WIDTH(1.5);
+ PARM(float, 1, "fabric_fiber_width", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(fabric_fiber_width.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+fabric_fiber_height.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ fabric_fiber_height.label = PARM_LABEL("Height", "fabric_fiber_height") WIDTH(1.5);
+ PARM(float, 1, "fabric_fiber_height", none, none) RANGE(0,10)
+	 LABELREF(fabric_fiber_height.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+fabric_fiber_resample_toggle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+fabric_fiber_resample_toggle.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("fabric_fiber_resample_toggle", "Resample") toggle VALUE(fabric_fiber_resample_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+fabric_fiber_resample_length.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ fabric_fiber_resample_length.label = PARM_LABEL("Edge Length", "fabric_fiber_resample_length") ;
+ PARM(float, 1, "fabric_fiber_resample_length", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(fabric_fiber_resample_length.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+fabric_fiber_detangle_toggle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+fabric_fiber_detangle_toggle.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("fabric_fiber_detangle_toggle", "Detangle Fiber") toggle VALUE(fabric_fiber_detangle_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+fabric_fiber_detangle_iterations.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ fabric_fiber_detangle_iterations.label = PARM_LABEL("Iterations", "fabric_fiber_detangle_iterations") ;
+ PARM(integer, 1, "fabric_fiber_detangle_iterations", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(fabric_fiber_detangle_iterations.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+fabric_fiber_smooth_toggle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+fabric_fiber_smooth_toggle.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("fabric_fiber_smooth_toggle", "Smooth") toggle VALUE(fabric_fiber_smooth_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+fabric_fiber_smooth_iterations.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ fabric_fiber_smooth_iterations.label = PARM_LABEL("Iterations", "fabric_fiber_smooth_iterations") ;
+ PARM(integer, 1, "fabric_fiber_smooth_iterations", none, none) RANGE(0,200)
+	LOCK_RANGE_MIN LABELREF(fabric_fiber_smooth_iterations.label) HSTRETCH;
+
+  {  }
+}
+
+fabric_fiber_smooth_cutofffrequency.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ fabric_fiber_smooth_cutofffrequency.label = PARM_LABEL("Cutoff Frequency", "fabric_fiber_smooth_cutofffrequency") ;
+ PARM(float, 1, "fabric_fiber_smooth_cutofffrequency", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(fabric_fiber_smooth_cutofffrequency.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+fabric_tile_unitScale.gad = NULL { }
+fabric_tile_repeat_x.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+fabric_tile_repeat_x.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ fabric_tile_repeat_x.label = PARM_LABEL("Repeat X", "fabric_tile_repeat_x") WIDTH(1.5);
+ PARM(float, 1, "fabric_tile_repeat_x", none, none) RANGE(1,100)
+	LOCK_RANGE_MIN LABELREF(fabric_tile_repeat_x.label) HSTRETCH;
+
+  {  }
+}
+
+fabric_tile_repeat_y.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ fabric_tile_repeat_y.label = PARM_LABEL("Repeat Y", "fabric_tile_repeat_y") ;
+ PARM(float, 1, "fabric_tile_repeat_y", none, none) RANGE(1,100)
+	LOCK_RANGE_MIN LABELREF(fabric_tile_repeat_y.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+fabric_tile_shift_x.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+fabric_tile_shift_x.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ fabric_tile_shift_x.label = PARM_LABEL("Shift X", "fabric_tile_shift_x") WIDTH(1.5);
+ PARM(float, 1, "fabric_tile_shift_x", none, none) RANGE(-1,1)
+	LOCK_RANGE LABELREF(fabric_tile_shift_x.label) HSTRETCH;
+
+  {  }
+}
+
+fabric_tile_shift_y.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ fabric_tile_shift_y.label = PARM_LABEL("Shift Y", "fabric_tile_shift_y") ;
+ PARM(float, 1, "fabric_tile_shift_y", none, none) RANGE(-1,1)
+	LOCK_RANGE LABELREF(fabric_tile_shift_y.label) HSTRETCH;
+
+  {  }
+}
+
+fabric_tile_align_toggle.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("fabric_tile_align_toggle", "Align Curve Ends Before Tiling") toggle VALUE(fabric_tile_align_toggle.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+fabric_tile_rotate.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+fabric_tile_rotate.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ fabric_tile_rotate.label = PARM_LABEL("Rotate", "fabric_tile_rotate") WIDTH(1.5);
+ PARM(float, 1, "fabric_tile_rotate", none, none) RANGE(-360,360)
+	 LABELREF(fabric_tile_rotate.label) HSTRETCH;
+
+  {  }
+}
+
+fabric_tile_rotate_normalize_uv.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("fabric_tile_rotate_normalize_uv", "Normalize UV Range") toggle VALUE(fabric_tile_rotate_normalize_uv.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+fabric_tile_offset_x.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+fabric_tile_offset_x.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ fabric_tile_offset_x.label = PARM_LABEL("Offset X", "fabric_tile_offset_x") WIDTH(1.5);
+ PARM(float, 1, "fabric_tile_offset_x", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(fabric_tile_offset_x.label) HSTRETCH;
+
+  {  }
+}
+
+fabric_tile_offset_y.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ fabric_tile_offset_y.label = PARM_LABEL("Offset Y", "fabric_tile_offset_y") ;
+ PARM(float, 1, "fabric_tile_offset_y", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(fabric_tile_offset_y.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+fabric_tile_offset_random_seed.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+fabric_tile_offset_random_seed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ fabric_tile_offset_random_seed.label = PARM_LABEL("Seed", "fabric_tile_offset_random_seed") WIDTH(1.5);
+ PARM(float, 1, "fabric_tile_offset_random_seed", none, none) RANGE(0,10)
+	 LABELREF(fabric_tile_offset_random_seed.label) HSTRETCH;
+
+  {  }
+}
+
+fabric_tile_offset_random_min.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ fabric_tile_offset_random_min.label = PARM_LABEL("Min", "fabric_tile_offset_random_min") ;
+ PARM(float, 1, "fabric_tile_offset_random_min", none, none) RANGE(-1,1)
+	LOCK_RANGE LABELREF(fabric_tile_offset_random_min.label) HSTRETCH;
+
+  {  }
+}
+
+fabric_tile_offset_random_max.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ fabric_tile_offset_random_max.label = PARM_LABEL("Max", "fabric_tile_offset_random_max") ;
+ PARM(float, 1, "fabric_tile_offset_random_max", none, none) RANGE(-1,1)
+	LOCK_RANGE LABELREF(fabric_tile_offset_random_max.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+fabric_tile_noise_strength.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ fabric_tile_noise_strength.label = PARM_LABEL("Strength", "fabric_tile_noise_strength") WIDTH(1.5);
+ PARM(float, 1, "fabric_tile_noise_strength", none, none) RANGE(-1,1)
+	 LABELREF(fabric_tile_noise_strength.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+fabric_tile_noise_scale_uniform.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+fabric_tile_noise_scale_uniform.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ fabric_tile_noise_scale_uniform.label = PARM_LABEL("Scale", "fabric_tile_noise_scale_uniform") WIDTH(1.5);
+ PARM(float, 1, "fabric_tile_noise_scale_uniform", none, none) RANGE(0,5)
+	LOCK_RANGE_MIN LABELREF(fabric_tile_noise_scale_uniform.label) HSTRETCH;
+
+  {  }
+}
+
+fabric_tile_noise_scale_automatic_toggle.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("fabric_tile_noise_scale_automatic_toggle", "Autoresize Scale To Tiling") toggle VALUE(fabric_tile_noise_scale_automatic_toggle.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+fabric_tile_noise_scale.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   fabric_tile_noise_scale.label = PARM_LABEL("Scale", "fabric_tile_noise_scale") WIDTH(1.5);
+   PARM(float, 3, "fabric_tile_noise_scale", none, none, "X,Y,Z")
+	RANGE(0,1) LOCK_RANGE_MIN LABELREF(fabric_tile_noise_scale.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+fabric_tile_noise_offset.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   fabric_tile_noise_offset.label = PARM_LABEL("Offset", "fabric_tile_noise_offset") WIDTH(1.5);
+   PARM(float, 3, "fabric_tile_noise_offset", none, none, "X,Y,Z")
+	RANGE(-10,10)  LABELREF(fabric_tile_noise_offset.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+fabric_tiling_noise_folder.gad = 
+
+GROUP simple "Noise" flat 
+{ 
+    VALUE(fabric_tiling_noise_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    fabric_tile_noise_strength.gad;		
+	    fabric_tile_noise_scale_uniform.row.join;		
+	    fabric_tile_noise_scale.gad;		
+	    fabric_tile_noise_offset.gad;		
+} 
+
+fabric_tile_offset_random_folder.gad = 
+
+GROUP simple "Randomize" flat 
+{ 
+    VALUE(fabric_tile_offset_random_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    fabric_tile_offset_random_seed.row.join;		
+} 
+
+fabric_tiling_offset_folder.gad = 
+
+GROUP simple "Offset" flat 
+{ 
+    VALUE(fabric_tiling_offset_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    fabric_tile_offset_x.row.join;		
+	    fabric_tile_offset_random_folder.gad;		
+} 
+
+fabric_tiling_rotate_folder.gad = 
+
+GROUP simple "Rotate" flat 
+{ 
+    VALUE(fabric_tiling_rotate_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    fabric_tile_rotate.row.join;		
+} 
+
+fabric_tiling_general_folder.gad = 
+
+GROUP simple "General" flat 
+{ 
+    VALUE(fabric_tiling_general_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    fabric_tile_unitScale.gad;		
+	    fabric_tile_repeat_x.row.join;		
+	    fabric_tile_shift_x.row.join;		
+} 
+
+fabric_tiling_folder.gad = 
+
+GROUP simple "Tiling" flat 
+{ 
+    VALUE(fabric_tiling_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    fabric_tiling_general_folder.gad;		
+	    fabric_tiling_rotate_folder.gad;		
+	    fabric_tiling_offset_folder.gad;		
+	    fabric_tiling_noise_folder.gad;		
+} 
+
+fabric_fiber_general.gad = 
+
+GROUP simple "General" flat 
+{ 
+    VALUE(fabric_fiber_general.gad.val) LAYOUT(vertical) HSTRETCH 
+	    fabric_fiber_width.gad;		
+	    fabric_fiber_height.gad;		
+	    fabric_fiber_resample_toggle.row.join;		
+	    fabric_fiber_detangle_toggle.row.join;		
+	    fabric_fiber_smooth_toggle.row.join;		
+} 
+
+fabric_fiber_folder.gad = 
+
+GROUP simple "Fiber" flat 
+{ 
+    VALUE(fabric_fiber_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    fabric_fiber_general.gad;		
+} 
+
+fabric_general_folder.gad = 
+
+GROUP simple "General" flat 
+{ 
+    VALUE(fabric_general_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    fabric_rest_frame.gad;		
+	    fabric_attribute_transfer_toggle.gad;		
+} 
+
+fabric_settings_folder.gad = 
+
+GROUP simple "Fabric" flat 
+{ 
+    VALUE(fabric_settings_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    fabric_general_folder.gad;		
+	    fabric_fiber_folder.gad;		
+	    fabric_tiling_folder.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    fabric_settings_folder.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

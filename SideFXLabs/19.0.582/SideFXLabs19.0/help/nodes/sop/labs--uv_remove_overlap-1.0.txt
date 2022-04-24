@@ -1,0 +1,49 @@
+#type:     node
+#context:  sop
+#internal: labs::uv_remove_overlap::1.0
+#icon:     SOP/labs::uv_remove_overlap::1.0
+
+= Labs UV Remove Overlap =
+
+"""Marks and optionally repairs UV overlaps."""
+
+The Labs UV Remove Overlap SOP checks the input UVs for any overlaps between different islands and within islands. Once overlaps are detected, the affected primitives can be assigned to an output group. The node can repair the overlaps by repacking the UVs of the affected primitives into the space between other islands.
+
+This node currently does not work with UDIM. But UDIM will be supported soon.
+
+
+@parameters
+
+    UV Attribute:
+        #id: uvattrib
+        The UV attribute to operate on.
+        
+    Detection Resolution:
+        #id: detectres
+        The texture resolution that the overlap detection is based on. Higher values yield more accurate results at the cost of longer cook times. There is no need to set this higher than your project's texture resolution.
+            
+    Create Group from Detected Overlaps:
+        #id: creategroup
+        Assigns primitives with overlapping UVs to an output primitive group. Turning this on also helps you visualize the overlaps in 3D and in the UV view. The group marks the primitives with overlaps in the original geometry. Even if you turn on *Repair Overlaps*, the repaired primitives are not removed from the group so you know which primitives have been repaired.
+        
+    Group Name:
+        #id: groupname
+        The name of the output primitive group with overlapping UVs.
+        
+    Repair Overlaps:
+        #id: repairoverlaps
+        Automatically repairs the UV overlaps. Overlapping sections of the islands are cut away along existing edges and repacked into the space between other islands.
+        <p>If an overlapping section still contains self-overlaps after it is cut away, the section is disintegrated into individual polygons before repacking.</p>
+        <p>The UV scales of the cut-away sections remain fixed.</p>
+        
+    Guide Position:
+        #id: guidepos
+        The position of the guide geometry that displays the UV layout in 3D.
+        
+    Guide Scale:
+        #id: guidescale
+        The scale of the guide geometry.
+        
+    Display Overlaps in Original UVs:
+        #id: displayorigoverlap
+        For comparison, displays in red the original UV overlaps before they are repaired. To be clear, the red parts no longer exist in the output UVs. The repacked islands that do exist in the output are displayed in white.

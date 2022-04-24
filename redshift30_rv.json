@@ -1,0 +1,42 @@
+{
+	"houdini_state" : 
+	{
+		"houdini_alwaysOnTop" : true,
+		"houdini_ropSelector" : true
+	},
+	"state" : 
+	{
+		"channelFilter" : 0,
+		"exrAutocrop" : false,
+		"exrCompression" : "zips",
+		"exrIsTiled" : false,
+		"fixedScale" : 100.0,
+		"hdrBfs" : true,
+		"hdrColorMgmt" : false,
+		"hdrPhotoExpo" : true,
+		"iprTextureReload" : true,
+		"jpegQuality" : 95,
+		"lastLocations" : 
+		[
+			"C:/Users/Jugui",
+			"",
+			"C:/ProgramData/Redshift/Data/LUT",
+			"C:/Users/Jugui",
+			"C:/ProgramData/Redshift/Data/Presets",
+			"C:/Users/Jugui"
+		],
+		"ldrBfs" : true,
+		"ldrColorMgmt" : true,
+		"ldrPhotoExpo" : true,
+		"notesFormat" : "Frame <frame>: <date> <time> (<frametime>)",
+		"notesHorizontalAlignment" : 1,
+		"notesVerticalAlignment" : 1,
+		"pixelSamplerRegion" : true,
+		"scaleMode" : 0,
+		"snapshotDir" : "",
+		"stateVersion" : 1,
+		"tiffCompression" : "lzw",
+		"tiffIsTiled" : false,
+		"undersampling" : 1
+	}
+}

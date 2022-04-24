@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "node", "context": "sop", "internal": "Subdividor", "version": "2", "namespace": "ae"}, "body": [{"level": 0, "type": "title", "indent": 0, "text": ["Subdividor"], "extent": [0, 15]}, {"type": "para", "indent": 0, "text": ["Performs Cracking/Subdivision of meshes"], "extent": [15, 55]}], "title": ["Subdividor"]}

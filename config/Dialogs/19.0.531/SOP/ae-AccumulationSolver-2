@@ -1,0 +1,259 @@
+// Magic: e8b05eb5
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Sun Apr  3 01:26:46 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+vis.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("vis", "Visualise") toggle VALUE(vis.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+resimulate.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("resimulate", "Reset Simulation")
+	push VALUE(resimulate.val);
+
+    { WIDTH(0.1) }
+}
+
+startframe.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ startframe.label = PARM_LABEL("Start Frame", "startframe") WIDTH(1.5);
+ PARM(integer, 1, "startframe", none, none) RANGE(1,240)
+	 LABELREF(startframe.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+attrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    attrib.label = PARM_LABEL("Attrib to Accumulate ", "attrib") WIDTH(1.5);
+    PARM_FIELD(string, "attrib") VALUE(attrib.val) 
+	LABELREF(attrib.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+accum_rate.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ accum_rate.label = PARM_LABEL("Accumulation rate", "accum_rate") WIDTH(1.5);
+ PARM(float, 1, "accum_rate", none, none) RANGE(0,1)
+	 LABELREF(accum_rate.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+use_id.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+use_id.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+use_id.gad = PARM_BUTTON("use_id", "") toggle VALUE(use_id.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+idattr.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    idattr.label = PARM_LABEL("Match by 'id' Attrib", "idattr") WIDTH(1.32);
+    PARM_FIELD(string, "idattr") VALUE(idattr.val) 
+	LABELREF(idattr.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+invert.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("invert", "Invert Accumulation (Subtract)") toggle VALUE(invert.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+blend_mode.gad = NULL { }
+clamp.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+clamp.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+clamp.gad = PARM_BUTTON("clamp", "") toggle VALUE(clamp.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+clamp_range.gad = ROW
+{
+   HSTRETCH
+   {  }
+
+   clamp_range.label = PARM_LABEL("Clamp Values", "clamp_range") WIDTH(1.32);
+   PARM(float, 2, "clamp_range", none, none, "X,Y")
+	RANGE(-1,1)  LABELREF(clamp_range.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+fade.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("fade", "Enable Fading") toggle VALUE(fade.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+faderate.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ faderate.label = PARM_LABEL("Fade Rate", "faderate") WIDTH(1.5);
+ PARM(float, 1, "faderate", none, none) RANGE(0,1)
+	 LABELREF(faderate.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+faderate_attr.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    faderate_attr.label = PARM_LABEL("Fade Rate Attr (Multiplier)", "faderate_attr") WIDTH(1.5);
+    PARM_FIELD(string, "faderate_attr") VALUE(faderate_attr.val) 
+	LABELREF(faderate_attr.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+parm.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("parm", "Quick Noise Accum (Preview effect)") toggle VALUE(parm.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+fold.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "fold.gad"
+    { 
+	VALUE(fold.gad.val) STRETCH(1,0)
+
+	TAB "Accumulate"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    attrib.gad;		
+	    accum_rate.gad;		
+	    use_id.row.join;		
+	    invert.gad;		
+	    blend_mode.gad;		
+	    clamp.row.join;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Fade"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    fade.gad;		
+	    faderate.gad;		
+	    faderate_attr.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    vis.gad; 
+    resimulate.gad; 
+    startframe.gad; 
+    fold.gad; 
+    parm.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

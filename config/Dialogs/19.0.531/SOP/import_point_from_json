@@ -1,0 +1,42 @@
+// Magic: 8a297beb
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Mon Mar 14 18:19:41 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+json_file.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ json_file.label = PARM_LABEL("Json File", "json_file") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "json_file") LABELREF(json_file.label)
+	VALUE(json_file.val) HSTRETCH;
+
+    json_file.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(json_file.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    json_file.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

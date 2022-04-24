@@ -1,0 +1,226 @@
+// Magic: 84a44bb7
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Tue Apr 12 19:42:58 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+lx.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ lx.label = PARM_LABEL("Low x", "lx") WIDTH(1.5);
+ PARM(float, 1, "lx", none, none) RANGE(0,1)
+	 LABELREF(lx.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+ly.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ ly.label = PARM_LABEL("Low y", "ly") WIDTH(1.5);
+ PARM(float, 1, "ly", none, none) RANGE(0,1)
+	 LABELREF(ly.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+lz.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ lz.label = PARM_LABEL("Low z", "lz") WIDTH(1.5);
+ PARM(float, 1, "lz", none, none) RANGE(0,1)
+	 LABELREF(lz.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+cx.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ cx.label = PARM_LABEL("Center x", "cx") WIDTH(1.5);
+ PARM(float, 1, "cx", none, none) RANGE(0,1)
+	 LABELREF(cx.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+cy.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ cy.label = PARM_LABEL("Center y", "cy") WIDTH(1.5);
+ PARM(float, 1, "cy", none, none) RANGE(0,1)
+	 LABELREF(cy.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+cz.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ cz.label = PARM_LABEL("Center z", "cz") WIDTH(1.5);
+ PARM(float, 1, "cz", none, none) RANGE(0,1)
+	 LABELREF(cz.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+ux.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ ux.label = PARM_LABEL("Upper x", "ux") WIDTH(1.5);
+ PARM(float, 1, "ux", none, none) RANGE(0,1)
+	 LABELREF(ux.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+uy.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ uy.label = PARM_LABEL("Upper y", "uy") WIDTH(1.5);
+ PARM(float, 1, "uy", none, none) RANGE(0,1)
+	 LABELREF(uy.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+uz.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ uz.label = PARM_LABEL("Upper z", "uz") WIDTH(1.5);
+ PARM(float, 1, "uz", none, none) RANGE(0,1)
+	 LABELREF(uz.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+type.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ type.label = PARM_LABEL("Anchor Type", "type") WIDTH(1.5);
+ PARM(integer, 1, "type", none, none) RANGE(0,1)
+	 LABELREF(type.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+enable_low.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ enable_low.label = PARM_LABEL("Enable Low Point", "enable_low") WIDTH(1.5);
+ PARM(integer, 1, "enable_low", none, none) RANGE(0,1)
+	 LABELREF(enable_low.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+enable_upper.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ enable_upper.label = PARM_LABEL("Enable Upper Point", "enable_upper") WIDTH(1.5);
+ PARM(integer, 1, "enable_upper", none, none) RANGE(0,1)
+	 LABELREF(enable_upper.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+last_interacted_pt.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ last_interacted_pt.label = PARM_LABEL("Last Interacted Point", "last_interacted_pt") WIDTH(1.5);
+ PARM(integer, 1, "last_interacted_pt", none, none) RANGE(0,1)
+	 LABELREF(last_interacted_pt.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+edit_picker_mode.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ edit_picker_mode.label = PARM_LABEL("Edit Picker Mode", "edit_picker_mode") WIDTH(1.5);
+ PARM(integer, 1, "edit_picker_mode", none, none) RANGE(0,1)
+	 LABELREF(edit_picker_mode.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+handle_parameter_group.gad = 
+GROUP collapsible "Handle parameters" flat  
+{
+    VALUE(handle_parameter_group.gad.val) LAYOUT(vertical) HSTRETCH
+	    lx.gad;		
+	    ly.gad;		
+	    lz.gad;		
+	    cx.gad;		
+	    cy.gad;		
+	    cz.gad;		
+	    ux.gad;		
+	    uy.gad;		
+	    uz.gad;		
+	    type.gad;		
+	    enable_low.gad;		
+	    enable_upper.gad;		
+	    last_interacted_pt.gad;		
+	    edit_picker_mode.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    handle_parameter_group.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

@@ -1,0 +1,426 @@
+// Magic: fb70da38
+// Automatically generated PSI dialog (PSI version 19.0.455)
+// Sun Jan 30 21:06:38 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+op_label.gad = NULL { }
+
+group.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    group.label = PARM_LABEL("Group", "group") WIDTH(1.5);
+    PARM_FIELD(string, "group") VALUE(group.val) 
+	LABELREF(group.label) HSTRETCH;
+
+    group.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "BUTTONS_reselect" VALUE(group.script_action)
+	HELP("Select geometry from an available viewport.\nShift-click to turn on Select Groups.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+grouptype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Group Type", "grouptype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    grouptype.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+has_range.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+has_range.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+has_range.gad = PARM_BUTTON("has_range", "") toggle VALUE(has_range.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+range.gad = ROW
+{
+   HSTRETCH
+   {  }
+
+   range.label = PARM_LABEL("Start/End/Inc", "range") WIDTH(1.32);
+   PARM(float, 3, "range", none, none, "X,Y,Z")
+	RANGE(0,240)  LABELREF(range.label)
+	HSTRETCH;
+
+    {  }
+}
+}	
+
+range_presets.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center)
+
+    range_presets.menu LOOK(menuiconbutton) SIZE(0.26, 0.26);
+
+}
+}	// Template join.bot
+
+has_subrange.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+has_subrange.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+has_subrange.gad = PARM_BUTTON("has_subrange", "") toggle VALUE(has_subrange.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+subrange.gad = ROW
+{
+   HSTRETCH
+   {  }
+
+   subrange.label = PARM_LABEL("Sub Range", "subrange") WIDTH(1.32);
+   PARM(float, 2, "subrange", none, none, "X,Y")
+	RANGE(0,240)  LABELREF(subrange.label)
+	HSTRETCH;
+
+    {  }
+}
+}	
+
+subrange_presets.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center)
+
+    subrange_presets.menu LOOK(menuiconbutton) SIZE(0.26, 0.26);
+
+}
+}	// Template join.bot
+
+
+lod.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Geometry Detail", "lod") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    lod.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+orientedbbox.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("orientedbbox", "Oriented Bounding Box") toggle VALUE(orientedbbox.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+output_type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Output Type", "output_type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    output_type.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+usepieceattrib.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+usepieceattrib.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+usepieceattrib.gad = PARM_BUTTON("usepieceattrib", "") toggle VALUE(usepieceattrib.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+pieceattrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    pieceattrib.label = PARM_LABEL("Piece Attribute", "pieceattrib") WIDTH(1.32);
+    PARM_FIELD(string, "pieceattrib") VALUE(pieceattrib.val) 
+	LABELREF(pieceattrib.label) HSTRETCH;
+
+    pieceattrib.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+pieceattribclass.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Piece Attrib Class", "pieceattribclass") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    pieceattribclass.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+minsize.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   minsize.label = PARM_LABEL("Minimum Size", "minsize") WIDTH(1.5);
+   PARM(float, 3, "minsize", none, none, "X,Y,Z")
+	RANGE(0,1) LOCK_RANGE_MIN LABELREF(minsize.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+minpad.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   minpad.label = PARM_LABEL("Lower Padding", "minpad") WIDTH(1.5);
+   PARM(float, 3, "minpad", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(minpad.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+maxpad.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   maxpad.label = PARM_LABEL("Upper Padding", "maxpad") WIDTH(1.5);
+   PARM(float, 3, "maxpad", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(maxpad.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+createempty.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("createempty", "Create When Bounds Empty") toggle VALUE(createempty.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+compute_bbox_info.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("compute_bbox_info", "Compute BBox Info") toggle VALUE(compute_bbox_info.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+bbsize.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   bbsize.label = PARM_LABEL("Size", "bbsize") WIDTH(1.5);
+   PARM(float, 3, "bbsize", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(bbsize.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+bbcenter.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   bbcenter.label = PARM_LABEL("Center", "bbcenter") WIDTH(1.5);
+   PARM(float, 3, "bbcenter", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(bbcenter.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+bbmin.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   bbmin.label = PARM_LABEL("Min", "bbmin") WIDTH(1.5);
+   PARM(float, 3, "bbmin", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(bbmin.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+bbmax.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   bbmax.label = PARM_LABEL("Max", "bbmax") WIDTH(1.5);
+   PARM(float, 3, "bbmax", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(bbmax.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+hasbb.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("hasbb", "Has Valid Bounding Box") toggle VALUE(hasbb.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+show_guide.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("show_guide", "Show Guide") toggle VALUE(show_guide.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+folder0.gad = 
+GROUP collapsible "Information" flat  
+{
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH
+	    compute_bbox_info.gad;		
+	    bbsize.gad;		
+	    bbcenter.gad;		
+	    bbmin.gad;		
+	    bbmax.gad;		
+	    hasbb.gad;		
+} 
+
+bounds_size_padding.gad = 
+GROUP collapsible "Final Bounding Box Settings" flat  
+{
+    VALUE(bounds_size_padding.gad.val) LAYOUT(vertical) HSTRETCH
+	    minsize.gad;		
+	    minpad.gad;		
+	    maxpad.gad;		
+	    createempty.gad;		
+} 
+
+per_piece_settings.gad = 
+GROUP collapsible "Pieces" flat  
+{
+    VALUE(per_piece_settings.gad.val) LAYOUT(vertical) HSTRETCH
+	    usepieceattrib.row.join;		
+	    pieceattribclass.gad;		
+} 
+
+folder2.gad = 
+
+GROUP simple "Output" flat 
+{ 
+    VALUE(folder2.gad.val) LAYOUT(vertical) HSTRETCH 
+	    output_type.gad;		
+	    per_piece_settings.gad;		
+	    bounds_size_padding.gad;		
+	    folder0.gad;		
+} 
+
+folder3.gad = 
+
+GROUP simple "Geometry and Frame Range" flat 
+{ 
+    VALUE(folder3.gad.val) LAYOUT(vertical) HSTRETCH 
+	    has_range.row.join;		
+	    has_subrange.row.join;		
+	    lod.gad;		
+	    orientedbbox.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    op_label.gad; 
+    group.gad; 
+    grouptype.gad; 
+    folder3.gad; 
+    folder2.gad; 
+    show_guide.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

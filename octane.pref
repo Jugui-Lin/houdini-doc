@@ -1,0 +1,71 @@
+plugin_version 20210100
+user_id user
+user_password password
+log_mode 0
+log_to_console 1
+log_to_file 0
+log_filename octane.log
+gpu_priority_level 1
+gpu_state 0 1 0
+gpu_state 1 1 0
+gpu_state 2 1 0
+gpu_state 3 1 0
+gpu_state 4 1 0
+gpu_state 5 1 0
+gpu_state 6 1 0
+gpu_state 7 1 0
+gpu_state 8 1 0
+gpu_state 9 1 0
+gpu_state 10 1 0
+gpu_state 11 1 0
+gpu_state 12 1 0
+gpu_state 13 1 0
+gpu_state 14 1 0
+gpu_state 15 1 0
+sys_ALLOW_STATISTICS_COLLECTION 1
+ooo_enable 0
+ooo_ramUsage 4
+ooo_localRoom 300
+ipr_init_size_mode 0
+ipr_init_size_w 1024
+ipr_init_size_h 576
+ipr_resolution_multiplier 2
+ipr_font_size 0
+ipr_display_mode 0
+livedb_texturesPath $JOB/tex
+livedb_localDbPath $JOB/localdb
+gpu_state_tonemap 0 1
+gpu_state_tonemap 1 1
+gpu_state_tonemap 2 1
+gpu_state_tonemap 3 1
+gpu_state_tonemap 4 1
+gpu_state_tonemap 5 1
+gpu_state_tonemap 6 1
+gpu_state_tonemap 7 1
+gpu_state_tonemap 8 1
+gpu_state_tonemap 9 1
+gpu_state_tonemap 10 1
+gpu_state_tonemap 11 1
+gpu_state_tonemap 12 1
+gpu_state_tonemap 13 1
+gpu_state_tonemap 14 1
+gpu_state_tonemap 15 1
+gpu_state_denoise 0 1
+gpu_state_denoise 1 1
+gpu_state_denoise 2 1
+gpu_state_denoise 3 1
+gpu_state_denoise 4 1
+gpu_state_denoise 5 1
+gpu_state_denoise 6 1
+gpu_state_denoise 7 1
+gpu_state_denoise 8 1
+gpu_state_denoise 9 1
+gpu_state_denoise 10 1
+gpu_state_denoise 11 1
+gpu_state_denoise 12 1
+gpu_state_denoise 13 1
+gpu_state_denoise 14 1
+gpu_state_denoise 15 1
+gpu_rtx_on 0
+gpu_nvlink_on 0
+cacheSize 32

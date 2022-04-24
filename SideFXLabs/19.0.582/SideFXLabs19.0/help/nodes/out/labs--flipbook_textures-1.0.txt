@@ -1,0 +1,512 @@
+#type:     node
+#context:  out
+#internal: labs::flipbook_textures::1.0
+#icon:     ROP/labs::flipbook_textures::1.0
+
+= Labs Flipbook Textures =
+
+"""Renders, composites, and exports flipbook textures."""
+
+Labs Flipbook Textures ROP renders, composites, and exports flipbook textures for real-time engines. You can render multiple passes to support fully dynamic re-lighting, smooth interframe interpolation, depth blending, etc. You do not have to bake a lighting scenario into the color passes. The tool also comes with real-time shaders, designed to work with the exported textures.
+
+Built around Houdini 19's high-quality viewport pyro rendering, Labs Flipbook Textures ROP can help you create beautiful volumetric FX. It is also capable of rendering particles and polygonal geometries, either separately on their own or together with volumes.
+
+
+@parameters
+
+    Render:
+        #id: execute
+        Renders, composites, and exports flipbook textures using current settings. Pressing this button is the equivalent of pressing *Render All Passes* and then *Export All Textures*.
+        
+    == Render Intermediate Images ==
+
+    === Render Pass Control ===
+
+    Render All Passes:
+        #id: render_all
+        Renders all passes except the ones that are currently skipped.
+            
+    Render Final Color:
+        #id: render_fc
+        Renders the final look of your scene, affected by any enabled lights. You may consider disabling all lights in your scene because without a baked-in lighting scenario, you can achieve fully dynamic re-lighting with the exported textures.
+
+    Render Separate Alphas:
+        #id: render_sa
+        When you are rendering volumetric and non-volumetric geometries at the same time, their alphas do not blend well together. This renders them in two separate passes so that the alphas can be blended correctly in the compositing step.
+        <p>Unless this pass is explicitly skipped (when this button is visible but disabled), *Render Final Color* always implicitly executes this pass after the final color pass is successfully completed.</p>
+
+    Render Non-emissive Color:
+        #id: render_nc
+        Renders the non-emissive look of your scene. affected by any enabled lights. This pass is necessary if you want to export a non-emissive color or emissive color map for ambient scatter or emissive scatter controls. You may consider disabling all lights in your scene because without a baked-in lighting scenario, you can achieve fully dynamic re-lighting with the exported textures.
+            
+    Render MDC / MDC Normal:
+        #id: render_mdc
+        Renders multi-directional contributions. MDC maps are essential for achieving high-quality dynamic lighting and shadowing in engine. They are also required for compositing MDC normals, a type of interpreted normals particularly good for low-density volumes.
+            
+    Render Surface Normal:
+        #id: render_sn
+        Renders the surface normals. For volumetric geometries, this renders voxel surface normals, which are good for higher-density volumes. For non-volumetric geometries with surfaces, this renders vertex normals. For points or wires without surfaces, this defaults to the front-facing normal.
+            
+    Render Motion Vector:
+        #id: render_mv
+        Renders the motion vectors. Motion vectors help to create smooth interpolation between frames and therefore reducing the resolutions of the flipbooks you need to export.
+            
+    Render Depth:
+        #id: render_d
+        Renders the depth image of your scene from the camera's point of view.
+
+    === ===
+        
+    Start/End/Inc:
+        #id: frange
+        The start frame, end frame, and frame increment. You can increase the frame increment to skip frames.
+        
+    Camera:
+        #id: camerapath
+        The path to the render camera.
+        
+    Pyro Bake Volume Path:
+        #id: bakevolpath1
+        The path to the main Pyro Bake Volume SOP. If you want to render more than one Pyro Bake Volume SOP at the same time, go to the *Interface* tab and turn on *Additional Volume Paths*.
+        
+    === Additional Volume Paths ===
+
+    Pyro Bake Volume 2:
+        #id: bakevolpath2
+        The path to a secondary Pyro Bake Volume SOP. The main volume path, *Pyro Bake Volume Path*, must be valid or this path will be ignored.
+        
+    Pyro Bake Volume 3:
+        #id: bakevolpath3
+        The path to a secondary Pyro Bake Volume SOP. The main volume path, *Pyro Bake Volume Path*, must be valid or this path will be ignored.
+        
+    Pyro Bake Volume 4:
+        #id: bakevolpath4
+        The path to a secondary Pyro Bake Volume SOP. The main volume path, *Pyro Bake Volume Path*, must be valid or this path will be ignored.
+        
+    Pyro Bake Volume 5:
+        #id: bakevolpath5
+        The path to a secondary Pyro Bake Volume SOP. The main volume path, *Pyro Bake Volume Path*, must be valid or this path will be ignored.
+        
+    === Non-volumetric Geometry Paths ===
+
+    Final Color Path:
+        #id: nonvolpath
+        The path to the final version of the non-volumetric geometries. If you have multiple non-volumetric geometries to render, merge them together first. For the merge, make sure the attributes from different geometries are initialized correctly or you may encounter unexpected color, normal, or alpha values.
+        
+    Emissive Property:
+        #id: nonvolemissive
+        Set this according to the overall emissive property of the non-volumetric geometries. This affects what will be rendered in the non-emissive pass. When this is set to "Partially Emissive", *Non-emissive Path* must be set.
+            
+    Non-emissive Path:
+        #id: nonvolncpath
+        The path to the non-emissive version of the non-volumetric geometries. If you have multiple non-volumetric geometries to render, merge them together first. For the merge, make sure the attributes from different geometries are initialized correctly or you may encounter unexpected color, normal, or alpha values.
+
+    === ===
+        
+    Resolution Per Frame:
+        #id: frameres
+        The render resolution of a single frame or tile. Normally, this should match the camera's aspect ratio but not necessary the camera resolution.
+            
+    Columns/Rows:
+        #id: gridsize
+        The grid layout of the flipbooks. This multiplied by *Resolution Per Frame* equals the total resolution of the flipbooks.
+        
+    Intermediate Directory:
+        #id: interdir
+        The folder to store the rendered images. These images are considered intermediate. They are not ready to be exported until after compositing. By default, the compositing step will look for images in this folder.
+        
+    3D Resolution Limit:
+        #id: texlimit3dlvl
+        Set this according to the dedicated GPU memory of your graphic card. Higher 3D resolution limit means higher maximum volume quality, but it may also cause Houdini to crash if the memory usage exceeds what your hardware can handle.
+
+    Max 3D Resolution:
+        #id: texlimit3d
+        The specified 3D resolution limit.
+        
+    Color Space:
+        #id: colspace
+        The color space of the final color map, non-emissive map, emissive map, and MDC maps.
+            
+    Set Up OCIO ACES:
+        #id: setupocio
+        OpenColorIO ACES is highly recommended for pyro rendering. Some artists recommend this for rendering in general in place of Gamma 2.2. Pressing this button will automatically configure the $OCIO environment variable to a minimal version of OCIO ACES 1.2 shipped with SideFX Labs. You will need to restart Houdini for the changes to take effect.
+        <p>Once $OCIO is set, the default viewport color space will change from Gamma 2.2 to ACES sRGB. You can unhide the Color Correction bar to switch between color spaces.</p>
+        <p>If this parameter is disabled, it means $OCIO is already set.</p>
+
+    === Advanced ===
+
+    === Performance ===
+
+    Warmup Time:
+        #id: warmuptime
+        Pauses the execution for this many seconds before the actual render starts for each pass. This help to ensure massive geometries are loaded properly for viewport renders. It may also prevent crashes.
+        
+    Shadow Map Resolution:
+        #id: shadowmapres
+        In pixels, the resolution of the shadow maps. Increasing this will improve the shadow quality but will consume more GPU memory. The default value prioritizes quality.
+        
+    Single Tex Mem Limit:
+        #id: singletexmemlimit
+        In megabytes, the maximum amount of memory a single texture can consume. If a texture exceeds this limit, it will be uniformly downscaled to meet the limit. The default value is very high.
+        
+    Minimum Near Clipping:
+        #id: nearcliplimit
+        When the camera's *Near Clipping* is too low, it often creates artifacts in the volume. This forces the camera to raise its *Near Clipping* to meet this miminum. (The change to the camera will persist after the render.)
+        
+    Antialias:
+        #id: aasamples
+        Smooths the edges of lines and polygons. Increasing this will proportionately increase the amount of framebuffer memory used. Higher values may also create noticeable and undesirable dark edges around non-volumetric geometries against a volumetric background.
+            
+    === Lit Passes ===
+
+    Point Size:
+        #id: pointsize_lit
+        In pixels, the size of particles and unconnected points in the lit passes.
+        
+    Wire Width:
+        #id: wirewidth_lit
+        In pixels, the thickness of polylines and wireframe lines in the lit passes.
+        
+    Lighting:
+        #id: lighting
+        The lighting mode in the lit passes.
+            
+    Specular in Color Passes:
+        #id: enablespecincols
+        Enables the specular component in the color passes. It is generally recommended to turn this off. The specular component is always disabled for the MDC pass regardless of this parameter.
+        
+    === Unlit Passes ===
+
+    Point Size:
+        #id: pointsize_unlit
+        In pixels, the size of particles and unconnected points in the unlit passes. It is generally recommended to set this slightly higher than its lit-pass counterpart so that the data are less affected by antialising and image scaling.
+        
+    Wire Width:
+        #id: wirewidth_unlit
+        In pixels, the thickness of polylines and wireframe lines in the unlit passes. It is generally recommended to set this slightly higher than its lit-pass counterpart so that the data are less affected by antialising and image scaling.
+        
+    === Non-volumetric Motion Vector ===
+
+    Motion Vector Source:
+        #id: nonvolmvsource
+        The method for computing motion vectors for non-volumetric geometries.
+        <p>*Transform Input Point Velocity*: Computes motion vectors by transforming the existing point attribute `v` on the input geometries to the texture space. This is useful when there is no good way to establish reliable point tracking between frames. </p>
+        <p>*Compute from Texture-Space Displacement*: Computes motion vectors from point displacements in texture space. This is the preferred method because it is precisely how motion vectors will be interpreted in engine. This method requires a reliable way to track which point in the current frame is which point in an adjacent frame. See *Point Tracking* for more information. </p>
+
+    Frame Range Clamp:
+        #id: nonvolmvclamp
+        Forward differences are used by default when computing motion vectors from point displacements. When the same point cannot be found on the next frame, the backward difference will be used as a fallback. This controls what to do on the two ends of the frame range.
+        <p>*Input Animation Unavailable after End Frame*: The input animation cannot be accessed after the end frame. Use backward differences on the end frame.</p>
+        <p>*Input Animation Available after End Frame*: The input animation can be accessed after the end frame. Use forward differences on the end frame by checking one increment beyond the frame range.</p>
+        <p>*Input Animation Loops Seamlessly*: The input animation loops from the end frame to the start frame. Use forward differences on the end frame, but treat the start frame as the next frame. When having to fall back to backward differences on the start frame, treat the end frame as the previous frame.</p>
+
+    Point Tracking:
+        #id: nonvolmvtracking
+        The method for tracking points between frames in order to measure point displacements.
+        <p>*Attempt to Track Point by ID Attribute*: The point with the same ID attribute on an adjacent frame is considered the same as the current point. If the attribute equals -1 or does not exist, then track by point number instead. If a point is connected to no more than one primitive, the point ID will be extended by the primitive vertex index of the vertex connected to this point; this resolves some cases of duplicated IDs, such as duplicates from Particle Trail SOPs, but it does not handle all cases.</p>
+        <p>*Track Point by Point Number*: The point with the same point number on an adjacent frame is considered the same point.</p>  
+        <p>*Track Point by 3D Proximity*: The closest point on an adjacent frame is considered the same as the current point.</p>
+
+    Detect Unresolved Duplicates after Auto ID-Serialization:
+        #id: detectidduplicates
+        Some duplicated IDs can be resolved with auto ID-serialization: if a point is connected to no more than one primitive, the point ID will be extended by the primitive vertex index of the vertex connected to this point. Turning on this parameter checks for unresolved duplicates after auto ID-serialization.
+        <p>It is a relatively slow operation, so turn this off if you know for certain that there will be no unresolvable duplicates.</p>
+            
+    Correction Scale:
+        #id: nonvolmvscale
+        When computing motion vectors from input point velocities, the input velocities may not be perfectly accurate. This uniformly scales the input velocities to correct any discrepancies if you know for certain what the correction factor should be.
+        
+    == Composite ==
+
+    Preview Image:
+        #id: previewimage
+        Sets the image to preview in a Composite View tab. This automatically sets the Composite View tab to linear color space.
+        <p>The images tagged with "Output" are the final images of their respective type. They are available on the channel packing menus on the Export tab.</p>
+        <p>The images tagged with "Export" are the channel-packed images ready to be saved to disk.</p>
+            
+    Single-Tile Preview:
+        #id: singletilepreview
+        Isolates a single tile for the preview. When this is on, it is faster to tweak compositing parameters and preview the results.
+        
+    Preview Tile:
+        #id: previewtile
+        The preview tile index. This is the tile index, going from 1 to the total tile count. This is not the frame number. The default value is near the middle of the tile sequence.
+
+    === Colors ===
+
+    Export Resolution:
+        #id: res_fc
+        The export resolution of the final color / non-emissive color / emissive color maps. Click on the drop-down menu on the right to set this as a percentage of the total render resolution.
+        
+    Down/Up Res Filters:
+        #id: filter_fc1
+        In general, use "Point" for data that should not be blended with the neighbouring texels, use "Mitchell" or "Catmull-Rom" for downscaling, and use "Gaussian" or "Mitchell" for upscaling.
+
+    Convert to Greyscale:
+        #id: greyscalemode
+        Converts color maps to greyscale. The greyscale value is a weighted sum of the RGB values. Relative luminance _Y_ follows the photometric definition of luminance _L_ including spectral weighting for human vision.
+        
+    === Multi-directional Contribution ===
+
+    Export Resolution:
+        #id: res_mdc
+        The export resolution of the MDC maps. Click on the drop-down menu on the right to set this as a percentage of the total render resolution.
+        
+    Down/Up Res Filters:
+        #id: filter_mdc1
+        In general, use "Point" for data that should not be blended with the neighbouring texels, use "Mitchell" or "Catmull-Rom" for downscaling, and use "Gaussian" or "Mitchell" for upscaling.
+
+    MDC Intensity:
+        #id: mdcintensity
+        The brightness of the MDC maps is influenced by how much light the geometries can actually reflect. In other words, if the albedo values of the non-emissive components of the geometries are low, the MDC maps will be relatively dark. A small value range may cause loss of precision when exporting in 8-bit image formats, such as PNG. Adjust this parameter to remap the MDC maps to a better value range.
+            
+    === Normal ===
+
+    Export Resolution:
+        #id: res_n
+        The export resolution of the normal map. Click on the drop-down menu on the right to set this as a percentage of the total render resolution.
+
+    Down/Up Res Filters:
+        #id: filter_n1
+        In general, use "Point" for data that should not be blended with the neighbouring texels, use "Mitchell" or "Catmull-Rom" for downscaling, and use "Gaussian" or "Mitchell" for upscaling.
+            
+    Output Normal:
+        #id: outputnormal
+        There are two possible types of normal maps. This sets what type(s) to use for the final normal output.
+        <p>*MDC Normal*: Use this for low-density volumes (or if the surface normal map is not rendered or provided).</p>
+        <p>*Surface Normal*: Use this for non-volumetric geometries and high-density volumes (or if the MDC (A/B/C) maps are not rendered or provided).</p>
+        <p>*Surface Normal Blended over MDC Normal*: Use this for the best of both worlds.</p>
+            
+    Surface Normal Blend Weight across Frame Range:
+        #id: snweight
+        Controls the surface normal map's blend weight over the MDC normal map from the start frame to the end frame. This allows the blend weight to vary over time because the volume density often change over time.
+        
+    MDC Normal Intensity:
+        #id: mdcnormalintensity
+        Adjusts the interpreted intensity of the MDC normal map. The surface normals are considered exact normals and therefore do not need adjustment. However, you can always make final overall adjustments directly in engine.
+        
+    Normal Axis System:
+        #id: normalaxes
+        There are two types of normal axis systems used by different software packages. Choose accordingly.
+            
+    === Motion Vector ===
+
+    Export Resolution:
+        #id: res_mv
+        The export resolution of the motion vector map. Click on the drop-down menu on the right to set this as a percentage of the total render resolution.
+        
+    Down/Up Res Filters:
+        #id: filter_mv1
+        In general, use "Point" for data that should not be blended with the neighbouring texels, use "Mitchell" or "Catmull-Rom" for downscaling, and use "Gaussian" or "Mitchell" for upscaling.
+
+            
+    Motion Vector Encoding:
+        #id: mvencoding
+        Sets the motion vector encoding format.
+        <p>*R8G8 Remapped to 0-1 (Faster Decoding)*: The standard 8-bit motion vector encoding. The components are remapped to 0-1 range.</p>
+        <p>*SideFX Labs R8G8 Encoding (Higher Accuracy)*: SideFX Labs R8G8 motion vector encoding. This achieves an accuracy close to that of 16-bit motion vectors, but it adds more shader instructions. This surpasses the standard 8-bit motion vectors in visual quality even at half of the latter's resolution, so it is recommended to downscale the motion vector *Export Resolution* to 50% when using this encoding format. In engine, this requires the compression setting to be RG(BA)8 and the filter setting to be "Unfiltered".</p> 
+        <p>*R16G16 (Highest Accuracy and Memory Footprint)*: The 16-bit unencoded motion vectors. You have to also export in a 16-bit image format, such as EXR. In engine, this requires the compression setting to be "HDR", which means it can be 2-4 times as memory-intensive as the other encoding formats.</p>
+            
+    Boundary Alpha:
+        #id: mvboundaryalpha
+        Defines where the boundaries of the motion vectors are. The boundaries are where the motion vector map's alpha values cross this threshould.
+
+    Padding Ratio:
+        #id: mvpaddingratio
+        Sets how much to pad the boundaries of motion vectors with boundary colors. This is expressed as a ratio of the padding radius to the longer side between the height and width of a single tile.
+
+    Max Speed Allowed:
+        #id: maxmvspeed
+        The motion vector speed is expressed as the length of the XY displacement in NDC space in one second. If the highest speed found in the flipbook is higher than 1.0, all the motion vectors will be uniformly slowed down so that they can all fit within the -1 to 1 range. If the original highest speed is higher than this value, it will be clamped to this value in order to prevent any high-speed outliers from slowing down everything else too much.
+        
+    === Depth ===
+
+    Export Resolution:
+        #id: res_d
+        The export resolution of the depth map. Click on the drop-down menu on the right to set this as a percentage of the total render resolution.
+        
+    Down/Up Res Filters:
+        #id: filter_d1
+        In general, use "Point" for data that should not be blended with the neighbouring texels, use "Mitchell" or "Catmull-Rom" for downscaling, and use "Gaussian" or "Mitchell" for upscaling.
+            
+    Max Depth Allowed:
+        #id: maxdepth
+        The background depth is either the camera's *Far Clipping* value or the maximum value the depth image can record, whichever is lower. If the original background depth is higher than this value, it will be clamped to this value in order to prevent numerical errors.
+
+    Background Position:
+        #id: bgpos
+        Expressed as a ratio to the background depth (see *Max Depth Allowed* for more information), this is the depth threshold below which everything is considered part of the foreground and will be remapped to a 0 to 1 depth range. Beyond this depth, everything is considered part of the empty background and will be set to a uniform depth value of 1.
+        
+    Bit Depth:
+        #id: depthbitdepth
+        The output bit depth of the depth map. The actual bit depth is still limited by the bit depth of the export image format.
+
+    === Intermediate Images ===
+
+    Final Color:
+        #id: img_fc
+        The path to the intermediate final color image. The compositing step references this path when it needs the final color image. The default value points to the image created in the rendering step, but you can change this path to provide a different image for the compositing step.
+        
+    Non-emissive Color:
+        #id: img_nc
+        The path to the intermediate non-emissive color image. The compositing step references this path when it needs the non-emissive color image. The default value points to the image created in the rendering step, but you can change this path to provide a different image for the compositing step.
+        
+    MDC A:
+        #id: img_mdc_a
+        The path to the intermediate MDC A image. The compositing step references this path when it needs the MDC A image. The default value points to the image created in the rendering step, but you can change this path to provide a different image for the compositing step.
+        
+    MDC B:
+        #id: img_mdc_b
+        The path to the intermediate MDC B image. The compositing step references this path when it needs the MDC B image. The default value points to the image created in the rendering step, but you can change this path to provide a different image for the compositing step.
+        
+    MDC C:
+        #id: img_mdc_c
+        The path to the intermediate MDC C image. The compositing step references this path when it needs the MDC C image. The default value points to the image created in the rendering step, but you can change this path to provide a different image for the compositing step.
+        
+    Surface Normal:
+        #id: img_sn
+        The path to the intermediate surface normal image. The compositing step references this path when it needs the surface normal image. The default value points to the image created in the rendering step, but you can change this path to provide a different image for the compositing step.
+        
+    Motion Vector:
+        #id: img_mv
+        The path to the intermediate motion vector image. The compositing step references this path when it needs the motion vector image. The default value points to the image created in the rendering step, but you can change this path to provide a different image for the compositing step.
+        
+    Depth:
+        #id: img_d
+        The path to the intermediate depth image. The compositing step references this path when it needs the depth image. The default value points to the image created in the rendering step, but you can change this path to provide a different image for the compositing step.
+        
+    Volume Alpha:
+        #id: img_va
+        The path to the intermediate volume alpha image. The compositing step references this path when it needs the volume alpha image. The default value points to the image created in the rendering step, but you can change this path to provide a different image for the compositing step.
+        
+    Non-volumetric Alpha:
+        #id: img_na
+        The path to the intermediate non-volumetric alpha image. The compositing step references this path when it needs the non-volumetric alpha image. The default value points to the image created in the rendering step, but you can change this path to provide a different image for the compositing step.
+        
+    == Export ==
+
+    Export All Textures:
+        #id: export_all
+        Exports all textures except the ones that are currently skipped.
+        
+    Tex 1:
+        #id: export_tex1
+        Exports texture 1.
+        
+    Tex 2:
+        #id: export_tex2
+        Exports texture 2.
+        
+    Tex 3:
+        #id: export_tex3
+        Exports texture 3.
+        
+    Tex 4:
+        #id: export_tex4
+        Exports texture 4.
+        
+    Tex 5:
+        #id: export_tex5
+        Exports texture 5.
+        
+    Export Directory:
+        #id: expdir
+        The folder to store the exported textures.
+        
+    Asset Name:
+        #id: asset
+        The name of the asset. By default, this will become part of the texture file name.
+
+    Texture 1:
+        #id: enabletex1
+        Allows texture 1 to be exported.
+        
+    Output Texture 1:
+        #id: output_tex1
+        The file path to texture 1.
+
+    Texture 2:
+        #id: enabletex2
+        Allows texture 2 to be exported.
+        
+    Output Texture 2:
+        #id: output_tex2
+        The file path to texture 2.
+
+    Texture 3:
+        #id: enabletex3
+        Allows texture 3 to be exported.
+        
+    Output Texture 3:
+        #id: output_tex3
+        The file path to texture 3.
+ 
+    Texture 4:
+        #id: enabletex4
+        Allows texture 4 to be exported.
+        
+    Output Texture 4:
+        #id: output_tex4
+        The file path to texture 4.
+ 
+    Texture 5:
+        #id: enabletex5
+        Allows texture 5 to be exported.
+        
+    Output Texture 5:
+        #id: output_tex5
+        The file path to texture 5.
+            
+    == Real-Time Shaders ==
+
+    Find Shaders For:
+        #id: shaderengine
+        Displays the shader resources for the selected engine.
+            
+    Unreal Engine Content Plugin and Guides:
+        #id: openunrealshaderpath
+        Press this button to go to the directory of SideFX Labs content plugin for Unreal Engine. Click on the folder matching the Unreal Engine version you need. Follow the guides inside.
+        
+    == Interface ==
+
+    Additional Volume Paths:
+        #id: enableextravolpaths
+        Turn this on if you want to include additional Pyro Bake Volume paths on the *Render Intermediate Images* tab.
+        
+    Explicit Render Control for Separate Alphas:
+        #id: explicitsacontrol
+        When you are rendering volumetric and non-volumetric geometries at the same time, the final color pass, by default, is chained together with an additional pass to render volumetric and non-volumetric alphas separately. This exposes the render control for that pass so that you can unchain the two passes (e.g., if you want to re-render only the final color or only the separate alphas).
+        
+    Floating Viewer Position:
+        #id: viewerpos
+        The on-screen position to create the floating scene viewers. This is a purely UI preference. It has no impact on the rendering.
+
+    Viewport Padding:
+        #id: viewportpadding
+        In pixels, the padding amount to the top and bottom of the viewport for certain passes. This pushes the "Indie Edition" tag out of the camera view. For color fidelity reasons, some viewport render passes use "Current Viewport" (instead of "Current Beauty Pass"), in which case UI elements in the camera view will be captured.
+        
+    Print Non-Viewport Render Progress:
+        #id: printprogressofrops
+        For non-viewport render passes, such as passes rendered with OpenGL ROPs, you may not see the render progress. This prints the render progress as a visual feedback.
+        
+    Record Render Completion Time:
+        #id: enabletimestamps
+        Records the current date and time when each render pass is successfully completed.
+        
+    Display Viewport Render Outputs in MPlay:
+        #id: outputtomplay
+        For viewport render passes, displays the output flipbooks in MPlay.
+        
+    Append Render Outputs in MPlay:
+        #id: appendrenders
+        When there is an existing MPlay session, appends new render outputs to the previous outputs instead of replacing them.
+        
+    === Scripts ===
+        
+    Pre-Render Script:
+        #id: prerender
+        The script to execute immediately after *Render* is pressed. This does not execute when *Render All Passes* or *Export All Textures* is pressed.
+        
+    Post-Render Script:
+        #id: postrender
+        The script to execute as the final step if *Render* is pressed. This does not execute when *Render All Passes* or *Export All Textures* is pressed.

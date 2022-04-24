@@ -1,0 +1,10 @@
+{
+	"env": [
+        {
+			"AELIB": "C:/Users/Jugui/Documents/houdini19.0/Aelib"
+        }
+	],
+	"path": [
+        "$AELIB"
+    ]
+}

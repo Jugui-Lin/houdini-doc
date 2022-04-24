@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menuDocument>
+     <menu>
+
+
+            <!--***********************************-->
+            <scriptItem id="copyOpPath">
+                <context>
+                    <expression>
+<![CDATA[
+return True
+]]>
+                    </expression>
+                </context>
+   <label>Copy Path</label>
+                <scriptCode>
+<![CDATA[ 
+import hou
+from PySide2 import QtCore, QtGui, QtWidgets
+clipboard = QtWidgets.QApplication.clipboard()
+
+clipboard.setText(kwargs["node"].path())
+
+
+]]>
+                </scriptCode>
+            </scriptItem>
+
+            <!--***********************************-->
+            <scriptItem id="selChildren">
+                <context>
+                    <expression>
+<![CDATA[
+return True
+]]>
+                    </expression>
+                </context>
+   <label>Select Downstream</label>
+                <scriptCode>
+<![CDATA[ 
+import hou
+
+start=hou.selectedNodes()
+hou.clearAllSelected()
+
+
+def getInputs(node):
+    for x in node.outputs():
+        getInputs(x)
+        x.setSelected(True, clear_all_selected=False)
+        
+for n in start:
+    n.setSelected(True, clear_all_selected=False)
+    getInputs(n)
+]]>
+                </scriptCode>
+            </scriptItem>
+
+            <!--***********************************-->
+            <scriptItem id="ogl_autotype">
+                <context>
+                    <expression>
+<![CDATA[
+import MatView
+#reload(MatView)
+return kwargs["node"].type().name()=="labs::sbs_archive"
+]]>
+                    </expression>
+                </context>
+   <label>Split planes</label>
+                <scriptCode>
+<![CDATA[ 
+import hou
+n=kwargs["node"]
+for item in n.planes():
+    
+    d=n.parent().createNode('delete', n.name()+"_"+item.replace(" ",""))
+    d.parm("delete").set(1)
+    d.parm("scope").set(item)
+    d.setInput(0,n)
+]]>
+                </scriptCode>
+            </scriptItem>
+
+
+            <!--***********************************-->
+            <scriptItem id="ogl_autotype">
+                <context>
+                    <expression>
+<![CDATA[
+import MatView
+#reload(MatView)
+if not kwargs["node"].type().name()=="redshift::TextureSampler" or len(kwargs['items'])!=1 :
+    return False
+try:    
+    return MatView.guessType( kwargs["node"].evalParm('tex0') ) != False
+except:
+    return False
+]]>
+                    </expression>
+                </context>
+                <labelExpression>
+<![CDATA[
+import MatView
+#reload(MatView)
+return "Set as OpenGL "+ MatView.guessType( kwargs["node"].evalParm('tex0'))[0]
+]]>
+                </labelExpression>
+                <scriptCode>
+<![CDATA[ 
+import MatView
+#reload(MatView)
+MatView.SetOGL(MatView.guessType( kwargs["node"].evalParm('tex0'))[0].lower() ,kwargs)
+]]>
+                </scriptCode>
+            </scriptItem>
+        <!--***********************************-->        
+        <subMenu id="ogl_matmultisub">
+            <label>Setup for OpenGL</label>
+            <expression>
+<![CDATA[
+tmp=  list(filter(lambda x:x.type().name()=="redshift::Material",  kwargs["node"].inputAncestors()))
+return len(tmp)>1 and len(kwargs['items'])==1
+]]>
+            </expression>
+            <scriptMenuStripDynamic id="ogl_matmultisub_strip">
+                <contentsScriptCode>
+<![CDATA[
+import MatView
+#reload(MatView)
+menu_items = []
+tmp =  list(filter(lambda x:x.type().name()=="redshift::Material",  kwargs["node"].inputAncestors()))
+
+for item in tmp:
+    menu_items.append(item.path())
+    menu_items.append(item.name())
+
+return menu_items
+]]>
+                </contentsScriptCode>
+                <scriptCode>
+<![CDATA[
+import hou
+import MatView
+#reload(MatView)
+
+selected_token = hou.node( kwargs["selectedtoken"])
+
+MatView.InitOGL(kwargs['node'], selected_token )
+
+for item in list(filter(lambda x:x.type().name()=="redshift::Material",  kwargs["node"].inputAncestors())):
+    if item.color() == kwargs['node'].color():
+        item.setColor(hou.Color(0.6,0.6,0.6))
+
+selected_token.setColor( kwargs['node'].color() )
+]]>
+                </scriptCode>
+            </scriptMenuStripDynamic>
+        </subMenu>
+
+        <!--***********************************-->        
+
+           
+        <subMenu id="ogl_removeMaps">
+            <label>Clear OpenGL Texture...</label>
+            <expression>
+<![CDATA[
+import MatView
+#reload(MatView)
+if not MatView.checkSel(kwargs, ['redshift_material']):
+    return False
+
+tmp=  MatView.usedMaps(kwargs)
+return len(tmp)>0
+]]>
+            </expression>
+            <scriptMenuStripDynamic id="ogl_removeMaps_strip">
+                <contentsScriptCode>
+<![CDATA[
+import MatView
+#reload(MatView)
+menu_items = ['all','All Textures']
+tmp =  MatView.usedMaps(kwargs)
+
+for item in tmp:
+    menu_items.append(item[1])
+    menu_items.append(item[0][0])
+
+return menu_items
+]]>
+                </contentsScriptCode>
+                <scriptCode>
+<![CDATA[
+import hou
+import MatView
+import os
+#reload(MatView)
+
+
+clear = [ kwargs["selectedtoken"] ]
+
+if kwargs["selectedtoken"]=='all':
+    tmp =  MatView.usedMaps(kwargs)
+    for item in tmp:
+        clear.append(item[1])
+
+for selected_token in clear:
+
+    for item in kwargs['items']:
+        try:
+            hou.parm(selected_token).deleteAllKeyframes()
+            hou.parm(selected_token).set('')
+
+            if os.path.basename(selected_token)=='n_diffuse':
+                hou.parm(selected_token.replace('/n_diffuse','/ogl_texuvset1')).deleteAllKeyframes()
+                hou.parm(selected_token.replace('/n_diffuse','/ogl_texuvset1')).set('')
+                hou.parm(selected_token.replace('/n_diffuse','/ogl_tex_wrap1')).deleteAllKeyframes()
+                hou.parm(selected_token.replace('/n_diffuse','/ogl_tex_wrap1')).set('repeat')
+                hou.parm(selected_token.replace('/n_diffuse','/ogl_tex_vwrap1')).deleteAllKeyframes()
+                hou.parm(selected_token.replace('/n_diffuse','/ogl_tex_vwrap1')).set('repeat')
+
+            if os.path.basename(selected_token)=='ogl_normalmap':
+                hou.parm(selected_token+"_scale").deleteAllKeyframes()
+                hou.parm(selected_token+"_scale").set(1)
+            
+            if os.path.basename(selected_token)=='ogl_displacemap':
+                hou.parm(selected_token.replace('/ogl_displacemap','/ogl_displacescale')).deleteAllKeyframes()
+                hou.parm(selected_token.replace('/ogl_displacemap','/ogl_displacescale')).set(1)
+
+        except:
+            pass
+
+ 
+]]>
+                </scriptCode>
+            </scriptMenuStripDynamic>
+        </subMenu>
+
+           <!--***********************************-->  
+        <subMenu id="ogl_subMenuGen">
+            <label>Setup as OpenGL..</label>
+            <expression>
+<![CDATA[
+import MatView
+#reload(MatView)
+
+if not MatView.checkSel(kwargs, ["redshift::TextureSampler"]):
+    return False
+
+tmp=0
+for item in kwargs['items']:
+   tmp=tmp + len( MatView.getRelatedMaterials(item))
+return tmp>0
+]]>
+            </expression>
+            <scriptMenuStripDynamic id="ogl_subMenuGenId">
+                <contentsScriptCode>
+<![CDATA[
+import MatView
+#reload(MatView)
+menu_items=[]
+maps= MatView.getMaps()
+
+for item in maps:
+    if ( item[0]!="Normal"):
+        menu_items.append(item[0].lower())
+        menu_items.append(item[3])
+
+return menu_items
+]]>
+                </contentsScriptCode>
+                <scriptCode>
+<![CDATA[
+import MatView
+MatView.SetOGL(kwargs["selectedtoken"],kwargs)
+]]>
+                </scriptCode>
+            </scriptMenuStripDynamic>
+        </subMenu>
+        <!--***********************************-->
+        <scriptItem id="texture_normal">
+            <context>
+                <expression>
+<![CDATA[
+import MatView
+return MatView.checkSel(kwargs, ['redshift::NormalMap'])
+]]>
+                </expression>
+            </context>
+            <label>Set as OpenGL NormalMap</label>
+            <scriptCode>
+<![CDATA[ 
+import MatView
+#reload(MatView)
+MatView.SetOGL("normal",kwargs)
+]]>
+            </scriptCode>
+        </scriptItem>
+
+
+        <!--***********************************-->
+
+ 
+
+        <!--***********************************-->
+
+
+        <scriptItem id="texture_rename">
+            <context>
+                <expression>
+<![CDATA[
+import MatView
+#reload(MatView)
+return MatView.checkSel(kwargs, ["redshift::TextureSampler", 'redshift::NormalMap'])
+]]>
+                </expression>
+            </context>
+            <label>Set Node Name from File</label>
+            <scriptCode>
+<![CDATA[ 
+import MatView
+#reload(MatView)
+MatView.SetNodeFromFile(kwargs)
+]]>
+            </scriptCode>
+        </scriptItem>
+        <!--***********************************-->
+        <scriptItem id="texture_autoload">
+            <context>
+                <expression>
+<![CDATA[
+import os.path
+return (kwargs["node"].type().name()=="redshift::TextureSampler" or  kwargs["node"].type().name()=='redshift::NormalMap')  and len(kwargs['items'])==1 and os.path.isdir(os.path.dirname(kwargs["node"].evalParm('tex0')))
+]]>
+                </expression>
+            </context>
+            <label>Load all from same Folder</label>
+            <scriptCode>
+<![CDATA[ 
+import MatView
+#reload(MatView)
+MatView.LoadAllFromFile(kwargs)
+]]>
+            </scriptCode>
+        </scriptItem>
+        <!--***********************************-->
+        <scriptItem id="texture_override">
+            <context>
+                <expression>
+<![CDATA[
+import MatView
+#reload(MatView)
+if (kwargs["node"].type().name()=="redshift::TextureSampler"   or  kwargs["node"].type().name()=='redshift::NormalMap'):
+    return MatView.EnableSolo(kwargs)
+return False
+]]>
+                </expression>
+            </context>
+            <label>Solo View Texture</label>
+            <scriptCode>
+<![CDATA[ 
+import MatView
+#reload(MatView)
+MatView.SetOGLOverride(kwargs)  
+]]>
+            </scriptCode>
+        </scriptItem>
+        <!--***********************************-->
+        <scriptItem id="texture_unoverride">
+            <context>
+                <expression>
+<![CDATA[
+import MatView
+#reload(MatView)
+if (kwargs["node"].type().name()=="redshift::TextureSampler"   or  kwargs["node"].type().name()=='redshift::NormalMap'): 
+    return MatView.EnableUnSolo(kwargs)
+return False
+]]>
+                </expression>
+            </context>
+            <label>Exit Solo Mode</label>
+            <scriptCode>
+<![CDATA[ 
+import MatView
+#reload(MatView)
+MatView.UnsetOGLOverride(kwargs)
+]]>
+            </scriptCode>
+        </scriptItem>
+        <!--***********************************-->
+        <scriptItem id="texture_to_cop">
+            <context>
+                <expression>
+<![CDATA[
+if (kwargs["node"].type().name()=="redshift::TextureSampler"   or  kwargs["node"].type().name()=='redshift::NormalMap'):
+    if kwargs["node"].evalParm('tex0')[0:3].lower()!="op:":
+        return True
+return False
+]]>
+                </expression>
+            </context>
+            <label>Convert File to COP</label>
+            <scriptCode>
+<![CDATA[ 
+import MatView
+#reload(MatView)
+MatView.ReplaceByCop(kwargs)
+]]>
+            </scriptCode>
+        </scriptItem>
+        <!--***********************************-->
+        <scriptItem id="ogl_initL">
+            <context>
+                <expression>
+<![CDATA[
+import MatView
+#reload(MatView)
+show=False
+for item in kwargs["items"]:
+    show=show or item.type().name()=='redshift_material'
+
+return show==1 and kwargs['node'].type().name()=='redshift_material'
+
+]]>
+                </expression>
+            </context>
+            <label>Setup for OpenGL</label>
+            <scriptCode>
+<![CDATA[ 
+import MatView
+#reload(MatView)
+
+for item in kwargs["items"]:
+    tmp = MatView.getBindTarget(item)
+    MatView.InitOGL(item, tmp )
+
+]]>
+            </scriptCode>
+        </scriptItem>
+        <!--***********************************-->
+        <scriptItem id="ogl_view">
+            <context>
+                <expression>
+                    <![CDATA[return kwargs["node"].type().name()=="redshift::TextureSampler" or  kwargs["node"].type().name()=='redshift::NormalMap']]>
+                </expression>
+            </context>
+            <label>View Texture (External) </label>
+            <scriptCode>
+<![CDATA[ 
+import MatView
+#reload(MatView)
+MatView.ExploreTexture(kwargs)
+]]>
+            </scriptCode>
+        </scriptItem>
+        <!--***********************************-->
+        <scriptItem id="color_pallete">
+            <context>
+                <expression>
+<![CDATA[
+import MatView
+#reload(MatView)
+
+if len(kwargs["items"])==5 and MatView.adobeColor(kwargs, True):
+    for item in kwargs["items"]:
+        if item.type().name()!="redshift::Material":
+            return False
+    return True
+return False
+
+]]>
+                </expression>
+            </context>
+            <label>Apply Color Pallete</label>
+            <scriptCode>
+<![CDATA[ 
+import MatView
+#reload(MatView)
+MatView.adobeColor(kwargs)
+]]>
+            </scriptCode>
+        </scriptItem>
+        <!--***********************************-->
+        <scriptItem id="autoconnect">
+            <context>
+                <expression>
+<![CDATA[
+import MatView
+#reload(MatView)
+
+return MatView.autoConnect(kwargs, True)
+]]>
+                </expression>
+            </context>
+            <label>AutoConnect</label>
+            <scriptCode>
+<![CDATA[ 
+import MatView
+#reload(MatView)
+MatView.autoConnect(kwargs)
+]]>
+            </scriptCode>
+        </scriptItem>
+
+
+
+    </menu>
+</menuDocument>

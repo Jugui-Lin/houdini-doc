@@ -1,0 +1,276 @@
+// Magic: 5e328193
+// Automatically generated PSI dialog (PSI version 19.0.455)
+// Tue Feb  8 15:45:32 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+fabric_fiber_custom_toggle.gad = NULL { }
+
+fabric_pattern_preset.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Preset", "fabric_pattern_preset") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    fabric_pattern_preset.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+fabric_fiber_resample_segments.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ fabric_fiber_resample_segments.label = PARM_LABEL("Fiber Segments", "fabric_fiber_resample_segments") WIDTH(1.5);
+ PARM(integer, 1, "fabric_fiber_resample_segments", none, none) RANGE(-1,64)
+	LOCK_RANGE_MIN LABELREF(fabric_fiber_resample_segments.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+fabric_fiber_width.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ fabric_fiber_width.label = PARM_LABEL("Fiber Width", "fabric_fiber_width") WIDTH(1.5);
+ PARM(float, 1, "fabric_fiber_width", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(fabric_fiber_width.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+fabric_fiber_height.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ fabric_fiber_height.label = PARM_LABEL("Fiber Height", "fabric_fiber_height") WIDTH(1.5);
+ PARM(float, 1, "fabric_fiber_height", none, none) RANGE(0,1)
+	 LABELREF(fabric_fiber_height.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+fabric_fiber_count_h.parm =
+{
+    LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+    PARM_LABEL_SIMPLE("Fibers Horizontal", "fabric_fiber_count_h") WIDTH(1.5);
+    { WIDTH(0.1) }
+
+    ROW
+    {
+	HSTRETCH(0.5) JUSTIFY(left, center) VALUE(fabric_fiber_count_h.val)
+
+        fabric_fiber_count_h.field = PARM_FIELD (integer, "fabric_fiber_count_h")
+				VALUE(fabric_fiber_count_h.val) HSTRETCH(0.5)
+				 PREF_WIDTH(0.5);
+
+        ROW
+        {
+	     LOOK(lightline) VMARGIN(1p)
+
+   	     INCREMENT_ICONBUTTON VALUE(fabric_fiber_count_h.more.val)	
+	    	HELP("Add Another Instance") SIZE(0.2, 0.24);
+	     DECREMENT_ICONBUTTON VALUE(fabric_fiber_count_h.less.val)	
+	        HELP("Remove Last Instance") SIZE(0.2, 0.24);
+
+	}
+
+	ACTION_BUTTON "Clear" VALUE(fabric_fiber_count_h.clear.val);
+    }
+
+    { HSTRETCH }
+}
+
+fabric_fiber_count_h.multilist = 
+{
+    LAYOUT(vertical) HSTRETCH MARGIN(0.05)
+}
+
+fabric_fiber_count_h.gad =
+{
+    LAYOUT(vertical) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    SWITCHER tight
+    {
+	LAYOUT(vertical) HSTRETCH
+
+	VALUE(fabric_fiber_count_h.multilist_hide_buttons.val)
+	{
+	    LAYOUT(vertical) HSTRETCH
+	    fabric_fiber_count_h.parm;
+	    {LOOK(none) HEIGHT(0.02)}
+	}
+	{
+	}
+    }
+    fabric_fiber_count_h.multilist;
+}
+
+fabric_fiber_count_v.parm =
+{
+    LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+    PARM_LABEL_SIMPLE("Fibers Vertical", "fabric_fiber_count_v") WIDTH(1.5);
+    { WIDTH(0.1) }
+
+    ROW
+    {
+	HSTRETCH(0.5) JUSTIFY(left, center) VALUE(fabric_fiber_count_v.val)
+
+        fabric_fiber_count_v.field = PARM_FIELD (integer, "fabric_fiber_count_v")
+				VALUE(fabric_fiber_count_v.val) HSTRETCH(0.5)
+				 PREF_WIDTH(0.5);
+
+        ROW
+        {
+	     LOOK(lightline) VMARGIN(1p)
+
+   	     INCREMENT_ICONBUTTON VALUE(fabric_fiber_count_v.more.val)	
+	    	HELP("Add Another Instance") SIZE(0.2, 0.24);
+	     DECREMENT_ICONBUTTON VALUE(fabric_fiber_count_v.less.val)	
+	        HELP("Remove Last Instance") SIZE(0.2, 0.24);
+
+	}
+
+	ACTION_BUTTON "Clear" VALUE(fabric_fiber_count_v.clear.val);
+    }
+
+    { HSTRETCH }
+}
+
+fabric_fiber_count_v.multilist = 
+{
+    LAYOUT(vertical) HSTRETCH MARGIN(0.05)
+}
+
+fabric_fiber_count_v.gad =
+{
+    LAYOUT(vertical) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    SWITCHER tight
+    {
+	LAYOUT(vertical) HSTRETCH
+
+	VALUE(fabric_fiber_count_v.multilist_hide_buttons.val)
+	{
+	    LAYOUT(vertical) HSTRETCH
+	    fabric_fiber_count_v.parm;
+	    {LOOK(none) HEIGHT(0.02)}
+	}
+	{
+	}
+    }
+    fabric_fiber_count_v.multilist;
+}
+
+fabric_fiber_count_custom.parm =
+{
+    LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+    PARM_LABEL_SIMPLE("Fibers Custom", "fabric_fiber_count_custom") WIDTH(1.5);
+    { WIDTH(0.1) }
+
+    ROW
+    {
+	HSTRETCH(0.5) JUSTIFY(left, center) VALUE(fabric_fiber_count_custom.val)
+
+        fabric_fiber_count_custom.field = PARM_FIELD (integer, "fabric_fiber_count_custom")
+				VALUE(fabric_fiber_count_custom.val) HSTRETCH(0.5)
+				 PREF_WIDTH(0.5);
+
+        ROW
+        {
+	     LOOK(lightline) VMARGIN(1p)
+
+   	     INCREMENT_ICONBUTTON VALUE(fabric_fiber_count_custom.more.val)	
+	    	HELP("Add Another Instance") SIZE(0.2, 0.24);
+	     DECREMENT_ICONBUTTON VALUE(fabric_fiber_count_custom.less.val)	
+	        HELP("Remove Last Instance") SIZE(0.2, 0.24);
+
+	}
+
+	ACTION_BUTTON "Clear" VALUE(fabric_fiber_count_custom.clear.val);
+    }
+
+    { HSTRETCH }
+}
+
+fabric_fiber_count_custom.multilist = 
+{
+    LAYOUT(vertical) HSTRETCH MARGIN(0.05)
+}
+
+fabric_fiber_count_custom.gad =
+{
+    LAYOUT(vertical) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    SWITCHER tight
+    {
+	LAYOUT(vertical) HSTRETCH
+
+	VALUE(fabric_fiber_count_custom.multilist_hide_buttons.val)
+	{
+	    LAYOUT(vertical) HSTRETCH
+	    fabric_fiber_count_custom.parm;
+	    {LOOK(none) HEIGHT(0.02)}
+	}
+	{
+	}
+    }
+    fabric_fiber_count_custom.multilist;
+}
+
+fabric_fiber_folder.gad = 
+
+GROUP simple "Fiber" flat 
+{ 
+    VALUE(fabric_fiber_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    fabric_pattern_preset.gad;		
+	    fabric_fiber_resample_segments.gad;		
+	    fabric_fiber_width.gad;		
+	    fabric_fiber_height.gad;		
+	    fabric_fiber_count_h.gad;		
+	    fabric_fiber_count_v.gad;		
+	    fabric_fiber_count_custom.gad;		
+} 
+
+fabric_settings_folder.gad = 
+
+GROUP simple "Fabric" flat 
+{ 
+    VALUE(fabric_settings_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    fabric_fiber_folder.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    fabric_fiber_custom_toggle.gad; 
+    fabric_settings_folder.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

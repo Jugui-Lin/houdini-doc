@@ -1,0 +1,80 @@
+HIP
+{
+C:/Users/Jugui/Desktop/Vellum_Rubber_Band_Ball_01/Rubberbands_simplified_03.hip
+D:/_Jugui/TDDownload/FFF Houdini Subject 071/_HIP/FFF_Subject_071.hip
+D:/_Project/Houdini/0420/testuv.hiplc
+C:/Users/Jugui/AppData/Local/Temp/BNZ.626062d12b7790/intersection.v005.hipnc
+C:/Users/Jugui/AppData/Local/Temp/BNZ.62606ea959bd92/tornado_v10.hip
+D:/video tutorail/Houdini/海啸教程 houdini/LZ0L106AC_Tsunami_Houdini/LZ0L106AC_Tsunami_18.5.351.hiplc
+D:/video tutorail/Houdini/vfx force/142 Houdini MG Stop Being Afraid of Houdini/Lesson_12/A/Lesson_12A_Infection_v01.hiplc
+D:/video tutorail/Houdini/vfx force/142 Houdini MG Stop Being Afraid of Houdini/Lesson_12/B/Lesson_12B_VOP_to_VEX_v01.hiplc
+D:/video tutorail/Houdini/vfx force/142 Houdini MG Stop Being Afraid of Houdini/Lesson_11_Revised/B/Lesson_11B_FLIP_Examples_v01.hiplc
+D:/video tutorail/Houdini/vfx force/142 Houdini MG Stop Being Afraid of Houdini/Lesson_11_Revised/C/Lesson_11C_FLIP_Morph_v01.hiplc
+D:/video tutorail/Houdini/vfx force/142 Houdini MG Stop Being Afraid of Houdini/Lesson_10_Revised/B/Lesson_10B_Advection_v03.hiplc
+D:/video tutorail/Houdini/vfx force/142 Houdini MG Stop Being Afraid of Houdini/Lesson_09/B/Lesson_09B_Balloons_v01.hiplc
+}
+PIC
+{
+$HIP/electricCircuit.png
+}
+GEO
+{
+/geo/$OS/$HIPNAME.$OS.bgeo.sc
+D:/_Cache/_Houdini_Caches/lesson08B/$OS.bgeo.sc
+$HIP/cache/$OS/$HIPNAME/aa
+D:/_Cache/_Houdini_Caches/lesson08B/aa
+D:/_Cache/_Houdini_Caches/lesson08B/$OS/$OS.$F.bgeo.sc
+D:/_Cache/_Houdini_Caches/lesson06/aa
+$HIP/Dress.mtl
+$HIP/models/model_3d_scan_001.obj
+$HIP/1
+$CCacheeo/$HIPNAME.$OS.$F.bgeo.sc
+$Cacheeo/$HIPNAME.$OS.$F.bgeo.sc
+$Cache/geo/$HIPNAME.$OS.$F.bgeo.sc
+}
+FONT
+{
+AIGDT
+Microsoft YaHei Bold
+Courier
+Courier Bold
+Helvetica Bold
+}
+OTL
+{
+C:/ProgramData/redshift/Plugins/Houdini/19.0.455/otls/rslight.hda
+C:/ProgramData/redshift/Plugins/Houdini/19.0.455/otls/redshift_ipr.hda
+C:/PROGRA~1/SIDEEF~1/HOUDIN~1.455/houdini/help/examples/nodes/chop/copy/CopyAnimation.otl
+D:/video tutorail/淘宝houdini工程文件/Houdini18.5大型流体细节模拟工程HDA/Houdini18.5大型流体细节模拟工程HDA/Houdini18.5流体细节模拟工程HDA/FlipAirField.hda
+C:/Users/Jugui/Documents/houdini19.0/otls/export.hda
+C:/Users/Jugui/Documents/houdini19.0/otls/OPcustom.hda
+C:/Users/Jugui/Documents/houdini19.0/otls/Jugui_export_point_json_file.hda
+C:/Users/Jugui/Documents/houdini19.0/otls/import_point_from_json.hda
+C:/Users/Jugui/Documents/houdini19.0/otls/Jugui_test11.hda
+C:/Users/Jugui/Documents/houdini19.0/otls/Jugui_jg_removepoint.hda
+C:/PROGRA~1/SIDEEF~1/HOUDIN~1.561/houdini/help/examples/nodes/sop/findshortestpath/DirectedEdgesPath.otl
+D:/_Project/test/00_Pipeline/HDAs/PrismTmpCache.hda
+}
+MISC
+{
+D:/_Cache/_Houdini_Caches/jsonFile/exportPoint/
+D:/_Cache/_Houdini_Caches/jsonFile/exportPoint/point_data.json
+$HIP/bucaneer_animation_v023.abc
+$HIP/buccaneer_simmed_shapefixed_v059_v2.abc
+D:/CRTubeGet Downloaded/houdini多层衣服布料解算案例教程/Houdini人物服饰布料从入门到精通技术视频教程/bucaneer_animation_v023.abc
+D:/CRTubeGet Downloaded/houdini多层衣服布料解算案例教程/Houdini人物服饰布料从入门到精通技术视频教程/chapter_8_v2/bucaneer_animation_v027.abc
+D:/video tutorail/Houdini/vfx force/第154期团购  魔法光束和能量飞溅Houdini Beams and Blasts Tutorial/formOfSorcery_assets/hero/hero_model.abc
+D:/video tutorail/Houdini/vfx force/第154期团购  魔法光束和能量飞溅Houdini Beams and Blasts Tutorial/formOfSorcery_assets/hero/hero_staff.abc
+D:/video tutorail/Houdini/vfx force/第154期团购  魔法光束和能量飞溅Houdini Beams and Blasts Tutorial/formOfSorcery_assets/villain/villain_wand.abc
+D:/video tutorail/Houdini/vfx force/第154期团购  魔法光束和能量飞溅Houdini Beams and Blasts Tutorial/formOfSorcery_assets/villain/villain_model.abc
+D:/video tutorail/Houdini/vfx force/第154期团购  魔法光束和能量飞溅Houdini Beams and Blasts Tutorial/formOfSorcery_assets/layout/ground.abc
+D:/video tutorail/Houdini/vfx force/第154期团购  魔法光束和能量飞溅Houdini Beams and Blasts Tutorial/formOfSorcery_assets/layout/bg_mountain.abc
+}
+FBX
+{
+D:/_Project/Houdini/0311/geo/buildings/Building_A11.FBX
+}
+DIRECTORY
+{
+$HIP/Desktop/
+}

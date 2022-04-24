@@ -1,0 +1,102 @@
+// Magic: abf0a241
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Tue Apr 19 17:56:50 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+ignore_backfacing.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ignore_backfacing", "Ignore Backfacing") toggle VALUE(ignore_backfacing.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+move_edges.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("move_edges", "Move Edges") toggle VALUE(move_edges.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+freeslide.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("freeslide", "Free Points Slide  |  Move Single Edge") toggle VALUE(freeslide.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+slide.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("slide", "Slide") toggle VALUE(slide.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+apply_to_loop.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("apply_to_loop", "Apply To Loop")
+	push VALUE(apply_to_loop.val);
+
+    {  }
+}
+
+# warning cpp warning: "GenV3/subdialog.top.ui":5 Macro "PARMSPACING" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":6 Macro "LAYOUTDIR" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":7 Macro "DO_JUSTIFY" redefined.  Using later definition
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    ignore_backfacing.gad; 
+    move_edges.gad; 
+    freeslide.gad; 
+    slide.gad; 
+    apply_to_loop.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

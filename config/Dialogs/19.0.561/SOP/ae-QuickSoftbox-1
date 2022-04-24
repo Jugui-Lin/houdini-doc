@@ -1,0 +1,430 @@
+// Magic: aaa0137b
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Mon Apr 11 19:35:44 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+size.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   size.label = PARM_LABEL("Scale", "size") WIDTH(1.5);
+   PARM(float, 3, "size", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(size.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+rad.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+rad.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ rad.label = PARM_LABEL("Rounding Radius", "rad") WIDTH(1.5);
+ PARM(float, 1, "rad", none, none) RANGE(0,3)
+	LOCK_RANGE_MIN LABELREF(rad.label) HSTRETCH;
+
+  {  }
+}
+
+limit_rounding.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("limit_rounding", "Limit Rounding") toggle VALUE(limit_rounding.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+iterations.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ iterations.label = PARM_LABEL("Subdivision Depth", "iterations") WIDTH(1.5);
+ PARM(integer, 1, "iterations", none, none) RANGE(0,3)
+	LOCK_RANGE_MIN LABELREF(iterations.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+strip_sides.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Enable Sides", "strip_sides") WIDTH(1.5);
+    { WIDTH(0.1) }
+
+    strip_sides.buttonstrip;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+left.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+left.gad = NULL { }
+right.gad = NULL { }
+front.gad = NULL { }
+back.gad = NULL { }
+top.gad = NULL { }
+bottom.gad = NULL { }
+}	// Template join.bot
+
+
+t.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   t.label = PARM_LABEL("Translate", "t") WIDTH(1.5);
+   PARM(float, 3, "t", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(t.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+r.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   r.label = PARM_LABEL("Rotate", "r") WIDTH(1.5);
+   PARM(float, 3, "r", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(r.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+s.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   s.label = PARM_LABEL("Scale", "s") WIDTH(1.5);
+   PARM(float, 3, "s", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(s.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+shear.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   shear.label = PARM_LABEL("Shear", "shear") WIDTH(1.5);
+   PARM(float, 3, "shear", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(shear.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+p.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   p.label = PARM_LABEL("Pivot", "p") WIDTH(1.5);
+   PARM(float, 3, "p", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(p.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+scale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ scale.label = PARM_LABEL("Uniform Scale", "scale") WIDTH(1.5);
+ PARM(float, 1, "scale", none, none) RANGE(0,10)
+	 LABELREF(scale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+xOrd.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+xOrd.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Transform Order", "xOrd") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    xOrd.menu;
+
+    {  }
+
+    {  }
+}
+
+rOrd.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    rOrd.menu;
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+facecam.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("facecam", "Face Camera") toggle VALUE(facecam.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+camera.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ camera.label = PARM_LABEL("Camera", "camera") WIDTH(1.5);
+ PARM_FIELD(pathstring, "camera") VALUE(camera.val) 
+	LABELREF(camera.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(camera.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(camera.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+group.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    group.label = PARM_LABEL("Group", "group") WIDTH(1.5);
+    PARM_FIELD(string, "group") VALUE(group.val) 
+	LABELREF(group.label) HSTRETCH;
+
+    group.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "BUTTONS_reselect" VALUE(group.script_action)
+	HELP("Select geometry from an available viewport.\nShift-click to turn on Select Groups.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+pr.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   pr.label = PARM_LABEL("Pivot Rotate", "pr") WIDTH(1.5);
+   PARM(float, 3, "pr", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(pr.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+prexform_t.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   prexform_t.label = PARM_LABEL("Pre-Translate", "prexform_t") WIDTH(1.5);
+   PARM(float, 3, "prexform_t", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(prexform_t.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+prexform_r.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   prexform_r.label = PARM_LABEL("Pre-Rotate", "prexform_r") WIDTH(1.5);
+   PARM(float, 3, "prexform_r", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(prexform_r.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+prexform_s.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   prexform_s.label = PARM_LABEL("Pre-Scale", "prexform_s") WIDTH(1.5);
+   PARM(float, 3, "prexform_s", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(prexform_s.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+prexform_shear.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   prexform_shear.label = PARM_LABEL("Pre-Shear", "prexform_shear") WIDTH(1.5);
+   PARM(float, 3, "prexform_shear", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(prexform_shear.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+prexform_xOrd.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+prexform_xOrd.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Pre-Transform Order", "prexform_xOrd") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    prexform_xOrd.menu;
+
+    {  }
+
+    {  }
+}
+
+prexform_rOrd.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    prexform_rOrd.menu;
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+folder0.gad = 
+GROUP collapsible "Pre Xform" flat  
+{
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH
+	    group.gad;		
+	    pr.gad;		
+	    prexform_t.gad;		
+	    prexform_r.gad;		
+	    prexform_s.gad;		
+	    prexform_shear.gad;		
+	    prexform_xOrd.row.join;		
+} 
+
+postrans.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "postrans.gad"
+    { 
+	VALUE(postrans.gad.val) STRETCH(1,0)
+
+	TAB "Post-Transform"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    t.gad;		
+	    r.gad;		
+	    s.gad;		
+	    shear.gad;		
+	    p.gad;		
+	    scale.gad;		
+	    xOrd.row.join;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Camera Face (TODO)"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    facecam.gad;		
+	    camera.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    size.gad; 
+    rad.row.join; 
+    iterations.gad; 
+    strip_sides.gad; 
+    left.row.join; 
+    postrans.gad; 
+    folder0.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

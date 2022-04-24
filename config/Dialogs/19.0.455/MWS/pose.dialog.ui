@@ -1,0 +1,133 @@
+// Magic: 2a7ddd35
+// Automatically generated PSI dialog (PSI version 19.0.455)
+// Fri Feb  4 21:51:32 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Handle Mode", "type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    type.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+xformtype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Handle Mode", "xformtype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    xformtype.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+stealthpick.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("stealthpick", "Use Surface Regions Controllers") toggle VALUE(stealthpick.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+stealthattrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    stealthattrib.label = PARM_LABEL("Surface Attribute", "stealthattrib") WIDTH(1.5);
+    PARM_FIELD(string, "stealthattrib") VALUE(stealthattrib.val) 
+	LABELREF(stealthattrib.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+motionpath.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("motionpath", "Motion Path") toggle VALUE(motionpath.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+keeppos.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("keeppos", "Keep Position When Parenting") toggle VALUE(keeppos.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+childcomp.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("childcomp", "Child Compensation") toggle VALUE(childcomp.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    type.gad; 
+    xformtype.gad; 
+    stealthpick.gad; 
+    stealthattrib.gad; 
+    motionpath.gad; 
+    keeppos.gad; 
+    childcomp.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

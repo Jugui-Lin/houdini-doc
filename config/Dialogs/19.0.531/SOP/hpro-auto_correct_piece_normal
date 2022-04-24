@@ -1,0 +1,167 @@
+// Magic: 3ecf60c6
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Wed Apr  6 17:11:57 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+detect_piece.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Detect Piece", "detect_piece") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    detect_piece.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+piece_attrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    piece_attrib.label = PARM_LABEL("Prim Piece Attr", "piece_attrib") WIDTH(1.5);
+    PARM_FIELD(string, "piece_attrib") VALUE(piece_attrib.val) 
+	LABELREF(piece_attrib.label) HSTRETCH;
+
+    piece_attrib.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "VIEW_visualization" VALUE(piece_attrib.script_action)
+	HELP("")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+poly_gap_threshold.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ poly_gap_threshold.label = PARM_LABEL("Poly Gap Threshold", "poly_gap_threshold") WIDTH(1.5);
+ PARM(float, 1, "poly_gap_threshold", none, none) RANGE(0.0001,0.001)
+	LOCK_RANGE_MIN LABELREF(poly_gap_threshold.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+do_reverse.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("do_reverse", "Correct Poly Normal") toggle VALUE(do_reverse.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+mark_reversed_poly.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("mark_reversed_poly", "Mark Reversed Poly") toggle VALUE(mark_reversed_poly.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+set_mode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Set To", "set_mode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    set_mode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+group_name.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+group_name.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    group_name.label = PARM_LABEL("Group Name", "group_name") WIDTH(1.5);
+    PARM_FIELD(string, "group_name") VALUE(group_name.val) 
+	LABELREF(group_name.label) HSTRETCH;
+
+    {  }
+}
+
+mergeop.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    mergeop.menu;
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+attr_name.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    attr_name.label = PARM_LABEL("Int Attr Name", "attr_name") WIDTH(1.5);
+    PARM_FIELD(string, "attr_name") VALUE(attr_name.val) 
+	LABELREF(attr_name.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    detect_piece.gad; 
+    piece_attrib.gad; 
+    poly_gap_threshold.gad; 
+    do_reverse.gad; 
+    mark_reversed_poly.gad; 
+    set_mode.gad; 
+    group_name.row.join; 
+    attr_name.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

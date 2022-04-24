@@ -1,0 +1,666 @@
+// Magic: 2335b122
+// Automatically generated PSI dialog (PSI version 19.0.455)
+// Tue Feb  8 15:47:44 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+velocity_edge_selection_solo_state.gad = NULL { }
+
+velocity_attribute_velocity.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    velocity_attribute_velocity.label = PARM_LABEL("Velocity Attribute Name", "velocity_attribute_velocity") WIDTH(1.5);
+    PARM_FIELD(string, "velocity_attribute_velocity") VALUE(velocity_attribute_velocity.val) 
+	LABELREF(velocity_attribute_velocity.label) HSTRETCH;
+
+    velocity_attribute_velocity.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+velocity_edge_enable.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+velocity_edge_enable.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("velocity_edge_enable", "Enable Velocity Via Edges") toggle VALUE(velocity_edge_enable.val);
+
+    {  }
+
+    {  }
+}
+
+velocity_edge_collaps_settings_folder.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    {  }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("velocity_edge_collaps_settings_folder", "Collapse All Settings")
+	push VALUE(velocity_edge_collaps_settings_folder.val);
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+velocity_edge_selections.parm =
+{
+    LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+    PARM_LABEL_SIMPLE("Edge Selections Sets", "velocity_edge_selections") WIDTH(1.5);
+    { WIDTH(0.1) }
+
+    ROW
+    {
+	HSTRETCH(0.5) JUSTIFY(left, center) VALUE(velocity_edge_selections.val)
+
+        velocity_edge_selections.field = PARM_FIELD (integer, "velocity_edge_selections")
+				VALUE(velocity_edge_selections.val) HSTRETCH(0.5)
+				 PREF_WIDTH(0.5);
+
+        ROW
+        {
+	     LOOK(lightline) VMARGIN(1p)
+
+   	     INCREMENT_ICONBUTTON VALUE(velocity_edge_selections.more.val)	
+	    	HELP("Add Another Instance") SIZE(0.2, 0.24);
+	     DECREMENT_ICONBUTTON VALUE(velocity_edge_selections.less.val)	
+	        HELP("Remove Last Instance") SIZE(0.2, 0.24);
+
+	}
+
+	ACTION_BUTTON "Clear" VALUE(velocity_edge_selections.clear.val);
+    }
+
+    { HSTRETCH }
+}
+
+velocity_edge_selections.multilist = 
+{
+    LAYOUT(vertical) HSTRETCH MARGIN(0.05)
+}
+
+velocity_edge_selections.gad =
+{
+    LAYOUT(vertical) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    SWITCHER tight
+    {
+	LAYOUT(vertical) HSTRETCH
+
+	VALUE(velocity_edge_selections.multilist_hide_buttons.val)
+	{
+	    LAYOUT(vertical) HSTRETCH
+	    velocity_edge_selections.parm;
+	    {LOOK(none) HEIGHT(0.02)}
+	}
+	{
+	}
+    }
+    velocity_edge_selections.multilist;
+}
+velocity_groom_enable.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+velocity_groom_enable.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("velocity_groom_enable", "Enable Velocity Grooming") toggle VALUE(velocity_groom_enable.val);
+
+    {  }
+
+    {  }
+}
+
+reset.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    PARM_BUTTON("reset", "Reset Strokes")
+	push VALUE(reset.val);
+
+    {  }
+}
+
+recache.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    {  }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("recache", "Recache Strokes")
+	push VALUE(recache.val);
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+stroke_tool.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Tool", "stroke_tool") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    stroke_tool.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+stroke_radius.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ stroke_radius.label = PARM_LABEL("Radius", "stroke_radius") WIDTH(1.5);
+ PARM(float, 1, "stroke_radius", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(stroke_radius.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+stroke_opacity.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ stroke_opacity.label = PARM_LABEL("Strength", "stroke_opacity") WIDTH(1.5);
+ PARM(float, 1, "stroke_opacity", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(stroke_opacity.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+stroke_lift.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ stroke_lift.label = PARM_LABEL("Lift", "stroke_lift") WIDTH(1.5);
+ PARM(float, 1, "stroke_lift", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(stroke_lift.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+stroke_smoothingradius.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ stroke_smoothingradius.label = PARM_LABEL("Smoothing Radius", "stroke_smoothingradius") WIDTH(1.5);
+ PARM(float, 1, "stroke_smoothingradius", none, none) RANGE(0,1)
+	 LABELREF(stroke_smoothingradius.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+stroke_randomstrength.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ stroke_randomstrength.label = PARM_LABEL("Randomize", "stroke_randomstrength") WIDTH(1.5);
+ PARM(float, 1, "stroke_randomstrength", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(stroke_randomstrength.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+stroke_constrainlength.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("stroke_constrainlength", "Constrain Length") toggle VALUE(stroke_constrainlength.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+stroke_lockroots.gad = NULL { }
+
+stroke_targetlengthrandom.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("stroke_targetlengthrandom", "Random Length") toggle VALUE(stroke_targetlengthrandom.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+stroke_targetlengthrange.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   stroke_targetlengthrange.label = PARM_LABEL("Target Length Range", "stroke_targetlengthrange") WIDTH(1.5);
+   PARM(float, 2, "stroke_targetlengthrange", none, none, "X,Y")
+	RANGE(-1,1)  LABELREF(stroke_targetlengthrange.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+stroke_targetlength.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ stroke_targetlength.label = PARM_LABEL("Target Length", "stroke_targetlength") WIDTH(1.5);
+ PARM(float, 1, "stroke_targetlength", none, none) RANGE(0.001,10)
+	LOCK_RANGE_MIN LABELREF(stroke_targetlength.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+stroke_raybias.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ stroke_raybias.label = PARM_LABEL("Ray Bias", "stroke_raybias") WIDTH(1.5);
+ PARM(float, 1, "stroke_raybias", none, none) RANGE(0,10)
+	 LABELREF(stroke_raybias.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+falloffpreset_linear.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+falloffpreset_linear.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("falloffpreset_linear", "Angled")
+	push VALUE(falloffpreset_linear.val);
+
+    {  }
+}
+
+falloffpreset_easein.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    PARM_BUTTON("falloffpreset_easein", "Round")
+	push VALUE(falloffpreset_easein.val);
+
+    {  }
+}
+
+falloffpreset_easeout.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    PARM_BUTTON("falloffpreset_easeout", "Sharp")
+	push VALUE(falloffpreset_easeout.val);
+
+    {  }
+}
+
+falloffpreset_constant.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    {  }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("falloffpreset_constant", "Flat")
+	push VALUE(falloffpreset_constant.val);
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+stroke_brushfalloff.si_rampedit = FLOAT_RAMP VALUE(stroke_brushfalloff.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+stroke_brushfalloff.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) WIDTH(1.5)
+	    LABEL "Point No.";
+	}
+
+	stroke_brushfalloff.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(stroke_brushfalloff.pointno.val) HSTRETCH;
+    }
+}
+
+stroke_brushfalloff.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(stroke_brushfalloff.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(stroke_brushfalloff.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    stroke_brushfalloff.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(stroke_brushfalloff.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    stroke_brushfalloff.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(stroke_brushfalloff.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+stroke_brushfalloff.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    stroke_brushfalloff.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	stroke_brushfalloff.buttons.gad VSTRETCH;
+
+	stroke_brushfalloff.si_rampedit HSTRETCH;
+    }
+}
+
+stroke_brushfalloff.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Ramp", "stroke_brushfalloff");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(stroke_brushfalloff.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(stroke_brushfalloff.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	stroke_brushfalloff.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	stroke_brushfalloff.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(stroke_brushfalloff.hideparms.val) HSTRETCH
+	    stroke_brushfalloff.multiramp;
+	    {}
+	}
+    }
+}
+stroke_brushfalloffdata.gad = NULL { }
+
+stroke_mirror.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("stroke_mirror", "Mirroring") toggle VALUE(stroke_mirror.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+stroke_mirrororigin.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   stroke_mirrororigin.label = PARM_LABEL("Origin", "stroke_mirrororigin") WIDTH(1.5);
+   PARM(float, 3, "stroke_mirrororigin", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(stroke_mirrororigin.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+stroke_mirrordir.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   stroke_mirrordir.label = PARM_LABEL("Direction", "stroke_mirrordir") WIDTH(1.5);
+   PARM(float, 3, "stroke_mirrordir", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(stroke_mirrordir.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+stroke_color.gad = NULL { }
+stroke_selection.gad = NULL { }
+stroke_projtype.gad = NULL { }
+stroke_projcenter.gad = NULL { }
+stroke_prompt.gad = NULL { }
+stroke_changedsel.gad = NULL { }
+prestroke.gad = NULL { }
+poststroke.gad = NULL { }
+stroke_projgeoinput.gad = NULL { }
+
+stroke_numstrokes.parm =
+{
+    LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+    PARM_LABEL_SIMPLE("Strokes", "stroke_numstrokes") WIDTH(1.5);
+    { WIDTH(0.1) }
+
+    ROW
+    {
+	HSTRETCH(0.5) JUSTIFY(left, center) VALUE(stroke_numstrokes.val)
+
+	stroke_numstrokes.field = PARM_FIELD(integer, "stroke_numstrokes") 
+		VALUE(stroke_numstrokes.val) HSTRETCH(0.5) PREF_WIDTH(0.5);
+
+        ROW
+        {
+	     LOOK(lightline) VMARGIN(1p)
+
+   	     INCREMENT_ICONBUTTON VALUE(stroke_numstrokes.more.val)	
+	    	HELP("Add Another Instance") SIZE(0.2, 0.24);
+	     DECREMENT_ICONBUTTON VALUE(stroke_numstrokes.less.val)	
+	        HELP("Remove Last Instance") SIZE(0.2, 0.24);
+	}
+	ACTION_BUTTON "Clear" VALUE(stroke_numstrokes.clear.val);
+    }
+
+    { HSTRETCH }
+}
+
+stroke_numstrokes.multiswitch =
+{
+    LAYOUT(vertical) STRETCH
+}
+
+stroke_numstrokes.gad =
+{
+    LAYOUT(vertical) STRETCH HMARGIN(0.18, 0.1)
+        NO_MARGIN_SPACING_SCALE
+
+    stroke_numstrokes.parm;
+    stroke_numstrokes.multiswitch;
+}
+
+Strokes_Invisible.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "Strokes_Invisible.gad"
+    { 
+	VALUE(Strokes_Invisible.gad.val) STRETCH(1,0)
+    } 
+}
+
+Mirroring.gad = 
+GROUP collapsible "Mirroring" flat  
+{
+    VALUE(Mirroring.gad.val) LAYOUT(vertical) HSTRETCH
+	    stroke_mirror.gad;		
+	    stroke_mirrororigin.gad;		
+	    stroke_mirrordir.gad;		
+} 
+
+Falloff.gad = 
+GROUP collapsible "Falloff" flat  
+{
+    VALUE(Falloff.gad.val) LAYOUT(vertical) HSTRETCH
+	    falloffpreset_linear.row.join;		
+	    stroke_brushfalloff.gad;		
+	    stroke_brushfalloffdata.gad;		
+} 
+
+Groom_Tool_Controls.gad = 
+
+GROUP simple "Groom Tool Controls" flat 
+{ 
+    VALUE(Groom_Tool_Controls.gad.val) LAYOUT(vertical) HSTRETCH 
+	    stroke_tool.gad;		
+	    stroke_radius.gad;		
+	    stroke_opacity.gad;		
+	    stroke_lift.gad;		
+	    stroke_smoothingradius.gad;		
+	    stroke_randomstrength.gad;		
+	    stroke_constrainlength.gad;		
+	    stroke_lockroots.gad;		
+	    stroke_targetlengthrandom.gad;		
+	    stroke_targetlengthrange.gad;		
+	    stroke_targetlength.gad;		
+	    stroke_raybias.gad;		
+	    Falloff.gad;		
+	    Mirroring.gad;		
+	    stroke_color.gad;		
+	    stroke_selection.gad;		
+	    stroke_projtype.gad;		
+	    stroke_projcenter.gad;		
+	    stroke_prompt.gad;		
+	    stroke_changedsel.gad;		
+	    prestroke.gad;		
+	    poststroke.gad;		
+	    stroke_projgeoinput.gad;		
+} 
+
+velocity_edge_folder.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "velocity_edge_folder.gad"
+    { 
+	VALUE(velocity_edge_folder.gad.val) STRETCH(1,0)
+
+	TAB "Velocity Via Edges"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    velocity_edge_enable.row.join;		
+	    velocity_edge_selections.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Velocity Groom"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    velocity_groom_enable.row.join;		
+	    Groom_Tool_Controls.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    velocity_edge_selection_solo_state.gad; 
+    velocity_attribute_velocity.gad; 
+    velocity_edge_folder.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

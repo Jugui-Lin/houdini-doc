@@ -1,0 +1,7238 @@
+// Magic: 44f45b87
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Thu Apr 14 12:12:00 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+RS_IPR.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+RS_IPR.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("RS_IPR", "IPR")
+	push VALUE(RS_IPR.val);
+
+    {  }
+}
+
+RS_IPRRV.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    PARM_BUTTON("RS_IPRRV", "RenderView")
+	push VALUE(RS_IPRRV.val);
+
+    {  }
+}
+
+RS_IPRVP.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    {  }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("RS_IPRVP", "Viewport IPR")
+	push VALUE(RS_IPRVP.val);
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+execute.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+execute.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("execute", "Render to Disk")
+	push VALUE(execute.val);
+
+    {  }
+}
+
+renderpreview.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    PARM_BUTTON("renderpreview", "Render to MPlay")
+	push VALUE(renderpreview.val);
+
+    {  }
+}
+
+renderdialog.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    { WIDTH(0) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("renderdialog", "Controls...")
+	push VALUE(renderdialog.val);
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+trange.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Valid Frame Range", "trange") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    trange.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+f.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   f.label = PARM_LABEL("Start/End/Inc", "f") WIDTH(1.5);
+   PARM(float, 3, "f", none, none, "#1,#2,#3")
+	RANGE(0,1)  LABELREF(f.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+take.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Render with Take", "take") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    take.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_separator_rrs2.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+RS_rrs2.sval := 0;
+
+RS_rrs2.gad = 
+{
+    LAYOUT(vertical) SPACING(1p) HSTRETCH VMARGIN(0.05, 0)
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    SWITCHER tight
+    {
+	VALUE(RS_rrs2.sval) HSTRETCH
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+	    LABEL "Redshift Settings" HSTRETCH;
+
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Redshift Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Redshift Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Redshift Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Redshift Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Redshift Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Redshift Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[5]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Redshift Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[6]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Redshift Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[7]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Redshift Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[8]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Redshift Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[9]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Redshift Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[10]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Redshift Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[11]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Redshift Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[12]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Redshift Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[12]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[13]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Redshift Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[12]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[13]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[14]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Redshift Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[12]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[13]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[14]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[15]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+    }
+}
+
+RS_renderCamera.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ RS_renderCamera.label = PARM_LABEL("Render Camera", "RS_renderCamera") WIDTH(1.5);
+ PARM_FIELD(pathstring, "RS_renderCamera") VALUE(RS_renderCamera.val) 
+	LABELREF(RS_renderCamera.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(RS_renderCamera.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_renderCamera.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+RS_overrideCameraRes.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_overrideCameraRes", "Override Camera Resolution") toggle VALUE(RS_overrideCameraRes.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_overrideResScale.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Resolution Scale", "RS_overrideResScale") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    RS_overrideResScale.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_overrideRes.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   RS_overrideRes.label = PARM_LABEL("Resolution", "RS_overrideRes") WIDTH(1.5);
+   PARM(integer, 2, "RS_overrideRes", none, none, "#1,#2")
+	RANGE(0,10)  LABELREF(RS_overrideRes.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+RS_overscanMode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Overscan Mode", "RS_overscanMode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    RS_overscanMode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_overscanData.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   RS_overscanData.label = PARM_LABEL("Overscan X/Y Value", "RS_overscanData") WIDTH(1.5);
+   PARM(float, 2, "RS_overscanData", none, none, "#1,#2")
+	RANGE(0,1)  LABELREF(RS_overscanData.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+RS_matOverride_enable.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_matOverride_enable", "Override Scene Materials") toggle VALUE(RS_matOverride_enable.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_matOverride_mat.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ RS_matOverride_mat.label = PARM_LABEL("Override Material", "RS_matOverride_mat") WIDTH(1.5);
+ PARM_FIELD(pathstring, "RS_matOverride_mat") VALUE(RS_matOverride_mat.val) 
+	LABELREF(RS_matOverride_mat.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(RS_matOverride_mat.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_matOverride_mat.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+RS_matOverride_exclude.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RS_matOverride_exclude.label = PARM_LABEL("Exclude Objects", "RS_matOverride_exclude") WIDTH(1.5);
+ PARM_FIELD (pathstring, "RS_matOverride_exclude") LABELREF(RS_matOverride_exclude.label) 
+	VALUE(RS_matOverride_exclude.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_matOverride_exclude.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+RS_defaultMaterialOverride.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ RS_defaultMaterialOverride.label = PARM_LABEL("Default Mat. Override", "RS_defaultMaterialOverride") WIDTH(1.5);
+ PARM_FIELD(pathstring, "RS_defaultMaterialOverride") VALUE(RS_defaultMaterialOverride.val) 
+	LABELREF(RS_defaultMaterialOverride.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(RS_defaultMaterialOverride.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_defaultMaterialOverride.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+RS_apply_stylesheets.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ RS_apply_stylesheets.label = PARM_LABEL("Apply Style Sheets", "RS_apply_stylesheets") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "RS_apply_stylesheets") LABELREF(RS_apply_stylesheets.label)
+	VALUE(RS_apply_stylesheets.val) HSTRETCH;
+
+    RS_apply_stylesheets.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(RS_apply_stylesheets.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+RS_updateMeshDeform.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_updateMeshDeform", "Sequence Rendering Full Scene Reload") toggle VALUE(RS_updateMeshDeform.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_updateMeshNoReload.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_updateMeshNoReload", "Sequence Rendering Update Mesh Geometry / Volumes") toggle VALUE(RS_updateMeshNoReload.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_updateMeshNoReload_list.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RS_updateMeshNoReload_list.label = PARM_LABEL("Update Objects", "RS_updateMeshNoReload_list") WIDTH(1.5);
+ PARM_FIELD (pathstring, "RS_updateMeshNoReload_list") LABELREF(RS_updateMeshNoReload_list.label) 
+	VALUE(RS_updateMeshNoReload_list.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_updateMeshNoReload_list.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+RS_initSimulations.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_initSimulations", "Initialize Simulation OPs") toggle VALUE(RS_initSimulations.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_multihreadLoader.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_multihreadLoader", "Multi-thread OBJ Nodes Extraction") toggle VALUE(RS_multihreadLoader.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+RS_multihreadPacked.gad = NULL { }
+
+RS_fastPackedGeoExpansion.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_fastPackedGeoExpansion", "Fast Packed Geo Expansion") toggle VALUE(RS_fastPackedGeoExpansion.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_fastAttrExtraction.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_fastAttrExtraction", "Discard the Not Used Attributes Extraction") toggle VALUE(RS_fastAttrExtraction.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_packedAgentShapePromo.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_packedAgentShapePromo", "Promote Packed Prims. 'agentshapename' to 'name'") toggle VALUE(RS_packedAgentShapePromo.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_nonBlockingRendering.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_nonBlockingRendering", "Non-blocking Current Frame Rendering") toggle VALUE(RS_nonBlockingRendering.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_reportErrorsToROP.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_reportErrorsToROP", "Report Errors/Warnings to the ROP Node") toggle VALUE(RS_reportErrorsToROP.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_arbitraryUVMapNames.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_arbitraryUVMapNames", "Extract Any UVW Type Attribute With Arbitrary Name As UV Map Attribute") toggle VALUE(RS_arbitraryUVMapNames.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_checkInstancefileFiles.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_checkInstancefileFiles", "Check and Skip the 'instancefile' Instance Files Availability") toggle VALUE(RS_checkInstancefileFiles.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_useAlembicProcedural.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_useAlembicProcedural", "(EXPERIMENTAL) Use Alembic Procedural") toggle VALUE(RS_useAlembicProcedural.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_outputEnable.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_outputEnable", "Enable Image File Output") toggle VALUE(RS_outputEnable.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_outputFileNamePrefix.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ RS_outputFileNamePrefix.label = PARM_LABEL("Common File Prefix", "RS_outputFileNamePrefix") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "RS_outputFileNamePrefix") LABELREF(RS_outputFileNamePrefix.label)
+	VALUE(RS_outputFileNamePrefix.val) HSTRETCH;
+
+    RS_outputFileNamePrefix.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(RS_outputFileNamePrefix.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+vm_picture.gad = NULL { }
+
+RS_outputBeautyAOVSuffix.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    RS_outputBeautyAOVSuffix.label = PARM_LABEL("Beauty AOV File Suffix", "RS_outputBeautyAOVSuffix") WIDTH(1.5);
+    PARM_FIELD(string, "RS_outputBeautyAOVSuffix") VALUE(RS_outputBeautyAOVSuffix.val) 
+	LABELREF(RS_outputBeautyAOVSuffix.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+RS_outputSkipRendered.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_outputSkipRendered", "Skip Rendered Frames") toggle VALUE(RS_outputSkipRendered.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_outputCreateDirs.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_outputCreateDirs", "Create Intermediate Directories") toggle VALUE(RS_outputCreateDirs.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_outputFileFormat.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("File Format", "RS_outputFileFormat") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    RS_outputFileFormat.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_outputBits.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Bits per Channel", "RS_outputBits") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    RS_outputBits.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_outputBitsTiff.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Bits per Channel", "RS_outputBitsTiff") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    RS_outputBitsTiff.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_outputBitsPNG.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Bits per Channel", "RS_outputBitsPNG") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    RS_outputBitsPNG.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_outputTiffCompression.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("TIFF Compression", "RS_outputTiffCompression") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    RS_outputTiffCompression.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_outputExrCompression.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("EXR Compression", "RS_outputExrCompression") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    RS_outputExrCompression.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_outputDwaCompression.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RS_outputDwaCompression.label = PARM_LABEL("DWA Compression", "RS_outputDwaCompression") WIDTH(1.5);
+ PARM(float, 1, "RS_outputDwaCompression", none, none) RANGE(0,400)
+	LOCK_RANGE LABELREF(RS_outputDwaCompression.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+RS_outputJpgCompression.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RS_outputJpgCompression.label = PARM_LABEL("JPG Compression", "RS_outputJpgCompression") WIDTH(1.5);
+ PARM(integer, 1, "RS_outputJpgCompression", none, none) RANGE(10,100)
+	LOCK_RANGE LABELREF(RS_outputJpgCompression.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+RS_outputStorageFormat.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Storage Format", "RS_outputStorageFormat") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    RS_outputStorageFormat.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_outputMultilayerMode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Multi-Layered EXR", "RS_outputMultilayerMode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    RS_outputMultilayerMode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_aovMultilayerBeauty.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_aovMultilayerBeauty", "Beauty Channel Included in the Multi-Layered EXR") toggle VALUE(RS_aovMultilayerBeauty.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_aovAutocrop.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_aovAutocrop", "Autocrop") toggle VALUE(RS_aovAutocrop.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_aovMultipart.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_aovMultipart", "Multipart EXR") toggle VALUE(RS_aovMultipart.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_outputDisableSuffixes.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_outputDisableSuffixes", "Disable AOVs File Names Suffixes") toggle VALUE(RS_outputDisableSuffixes.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_outputMetadata.parm =
+{
+    LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+    PARM_LABEL_SIMPLE("Metadata", "RS_outputMetadata") WIDTH(1.5);
+    { WIDTH(0.1) }
+
+    ROW
+    {
+	HSTRETCH(0.5) JUSTIFY(left, center) VALUE(RS_outputMetadata.val)
+
+        RS_outputMetadata.field = PARM_FIELD (integer, "RS_outputMetadata")
+				VALUE(RS_outputMetadata.val) HSTRETCH(0.5)
+				 PREF_WIDTH(0.5);
+
+        ROW
+        {
+	     LOOK(lightline) VMARGIN(1p)
+
+   	     INCREMENT_ICONBUTTON VALUE(RS_outputMetadata.more.val)	
+	    	HELP("Add Another Instance") SIZE(0.2, 0.24);
+	     DECREMENT_ICONBUTTON VALUE(RS_outputMetadata.less.val)	
+	        HELP("Remove Last Instance") SIZE(0.2, 0.24);
+
+	}
+
+	ACTION_BUTTON "Clear" VALUE(RS_outputMetadata.clear.val);
+    }
+
+    { HSTRETCH }
+}
+
+RS_outputMetadata.multilist = 
+{
+    LAYOUT(vertical) HSTRETCH MARGIN(0.05)
+}
+
+RS_outputMetadata.gad =
+{
+    LAYOUT(vertical) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    SWITCHER tight
+    {
+	LAYOUT(vertical) HSTRETCH
+
+	VALUE(RS_outputMetadata.multilist_hide_buttons.val)
+	{
+	    LAYOUT(vertical) HSTRETCH
+	    RS_outputMetadata.parm;
+	    {LOOK(none) HEIGHT(0.02)}
+	}
+	{
+	}
+    }
+    RS_outputMetadata.multilist;
+}
+
+RS_aovDeepEnabled.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_aovDeepEnabled", "Enable Deep Output") toggle VALUE(RS_aovDeepEnabled.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+AOVDeepMergeMode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Deep Merge Mode", "AOVDeepMergeMode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    AOVDeepMergeMode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+AOVDeepMergeZThreshold.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ AOVDeepMergeZThreshold.label = PARM_LABEL("Deep Merge Z Threshold", "AOVDeepMergeZThreshold") WIDTH(1.5);
+ PARM(float, 1, "AOVDeepMergeZThreshold", none, none) RANGE(0,100000)
+	 LABELREF(AOVDeepMergeZThreshold.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+AOVDeepMergeAlphaThreshold.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ AOVDeepMergeAlphaThreshold.label = PARM_LABEL("Deep Merge Alpha Threshold", "AOVDeepMergeAlphaThreshold") WIDTH(1.5);
+ PARM(float, 1, "AOVDeepMergeAlphaThreshold", none, none) RANGE(0.0010000000474974513,1)
+	 LABELREF(AOVDeepMergeAlphaThreshold.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+AOVMaxOverbrightEnable.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("AOVMaxOverbrightEnable", "Enable Clamping") toggle VALUE(AOVMaxOverbrightEnable.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+AOVMaxOverbright.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ AOVMaxOverbright.label = PARM_LABEL("Clamping Max Value", "AOVMaxOverbright") WIDTH(1.5);
+ PARM(float, 1, "AOVMaxOverbright", none, none) RANGE(1,100000)
+	 LABELREF(AOVMaxOverbright.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+AOVDisableImportanceOptimizations.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("AOVDisableImportanceOptimizations", "Disable Importance-based Optimization") toggle VALUE(AOVDisableImportanceOptimizations.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+AOVFixRawHaloArtifacts.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("AOVFixRawHaloArtifacts", "Adjust Raw AOVs To Fix Halo Artifacts") toggle VALUE(AOVFixRawHaloArtifacts.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_renderToMPlay.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_renderToMPlay", "Render to MPlay") toggle VALUE(RS_renderToMPlay.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_renderAOVsToMPlay.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_renderAOVsToMPlay", "Render AOVs to MPlay") toggle VALUE(RS_renderAOVsToMPlay.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_overwriteMPlayImage.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_overwriteMPlayImage", "Overwrite MPlay Image") toggle VALUE(RS_overwriteMPlayImage.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_MPlay_disabledNonGUI.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_MPlay_disabledNonGUI", "Disable MPlay in the non-GUI tools") toggle VALUE(RS_MPlay_disabledNonGUI.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_gammaPreview.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RS_gammaPreview.label = PARM_LABEL("MPlay Display Gamma", "RS_gammaPreview") WIDTH(1.5);
+ PARM(float, 1, "RS_gammaPreview", none, none) RANGE(1,2.2000000000000002)
+	 LABELREF(RS_gammaPreview.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+RS_copEnableCustomPath.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_copEnableCustomPath", "Extract COP and HDA Embedded Texture Files to a Custom Path") toggle VALUE(RS_copEnableCustomPath.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_copCustomPath.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ RS_copCustomPath.label = PARM_LABEL("COP and HDA Embedded Files Custom Path", "RS_copCustomPath") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "RS_copCustomPath") LABELREF(RS_copCustomPath.label)
+	VALUE(RS_copCustomPath.val) HSTRETCH;
+
+    RS_copCustomPath.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(RS_copCustomPath.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+RS_copCustomPathInterm.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_copCustomPathInterm", "Create Intermediate Directories") toggle VALUE(RS_copCustomPathInterm.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_aovGetFromNode.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ RS_aovGetFromNode.label = PARM_LABEL("Get AOVs Config. From", "RS_aovGetFromNode") WIDTH(1.5);
+ PARM_FIELD(pathstring, "RS_aovGetFromNode") VALUE(RS_aovGetFromNode.val) 
+	LABELREF(RS_aovGetFromNode.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(RS_aovGetFromNode.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_aovGetFromNode.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+RS_aovAllAOVsDisabled.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_aovAllAOVsDisabled", "Disable All AOVs") toggle VALUE(RS_aovAllAOVsDisabled.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_aovGUIHideOptions.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_aovGUIHideOptions", "Hide AOVs Options") toggle VALUE(RS_aovGUIHideOptions.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_aovGUIExpandTabs.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_aovGUIExpandTabs", "Expand/Collapse AOVs Tabs") toggle VALUE(RS_aovGUIExpandTabs.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_cryptomatteFullPaths.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_cryptomatteFullPaths", "Full Paths Cryptomatte IDs") toggle VALUE(RS_cryptomatteFullPaths.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_aov.parm =
+{
+    LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+    PARM_LABEL_SIMPLE("AOV", "RS_aov") WIDTH(1.5);
+    { WIDTH(0.1) }
+
+    ROW
+    {
+	HSTRETCH(0.5) JUSTIFY(left, center) VALUE(RS_aov.val)
+
+        RS_aov.field = PARM_FIELD (integer, "RS_aov")
+				VALUE(RS_aov.val) HSTRETCH(0.5)
+				 PREF_WIDTH(0.5);
+
+        ROW
+        {
+	     LOOK(lightline) VMARGIN(1p)
+
+   	     INCREMENT_ICONBUTTON VALUE(RS_aov.more.val)	
+	    	HELP("Add Another Instance") SIZE(0.2, 0.24);
+	     DECREMENT_ICONBUTTON VALUE(RS_aov.less.val)	
+	        HELP("Remove Last Instance") SIZE(0.2, 0.24);
+
+	}
+
+	ACTION_BUTTON "Clear" VALUE(RS_aov.clear.val);
+    }
+
+    { HSTRETCH }
+}
+
+RS_aov.multilist = 
+{
+    LAYOUT(vertical) HSTRETCH MARGIN(0.05)
+}
+
+RS_aov.gad =
+{
+    LAYOUT(vertical) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    SWITCHER tight
+    {
+	LAYOUT(vertical) HSTRETCH
+
+	VALUE(RS_aov.multilist_hide_buttons.val)
+	{
+	    LAYOUT(vertical) HSTRETCH
+	    RS_aov.parm;
+	    {LOOK(none) HEIGHT(0.02)}
+	}
+	{
+	}
+    }
+    RS_aov.multilist;
+}
+
+RS_PFX_MPL_color.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_PFX_MPL_color", "Color/LUT/Controls") toggle VALUE(RS_PFX_MPL_color.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_PFX_MPL_exposure.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_PFX_MPL_exposure", "Photographic Exposure") toggle VALUE(RS_PFX_MPL_exposure.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_PFX_MPL_effects.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_PFX_MPL_effects", "Bloom/Glare/Streak") toggle VALUE(RS_PFX_MPL_effects.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_PFX_HDR_color.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_PFX_HDR_color", "Color/LUT/Controls") toggle VALUE(RS_PFX_HDR_color.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_PFX_HDR_exposure.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_PFX_HDR_exposure", "Photographic Exposure") toggle VALUE(RS_PFX_HDR_exposure.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_PFX_HDR_effects.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_PFX_HDR_effects", "Bloom/Glare/Streak") toggle VALUE(RS_PFX_HDR_effects.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_PFX_LDR_color.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_PFX_LDR_color", "Color/LUT/Controls") toggle VALUE(RS_PFX_LDR_color.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_PFX_LDR_exposure.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_PFX_LDR_exposure", "Photographic Exposure") toggle VALUE(RS_PFX_LDR_exposure.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_PFX_LDR_effects.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_PFX_LDR_effects", "Bloom/Glare/Streak") toggle VALUE(RS_PFX_LDR_effects.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_easyMode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    RS_easyMode.buttonstrip;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+easyRenderingEngine.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Rendering Engine", "easyRenderingEngine") WIDTH(1.5);
+    { WIDTH(0.1) }
+
+    easyRenderingEngine.buttonstrip;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_easyBucketQuality.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Quality", "RS_easyBucketQuality") WIDTH(1.5);
+    { WIDTH(0.1) }
+
+    RS_easyBucketQuality.buttonstrip;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_easyThreshold.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RS_easyThreshold.label = PARM_LABEL("Threshold", "RS_easyThreshold") WIDTH(1.5);
+ PARM(float, 1, "RS_easyThreshold", none, LOGSCALE) RANGE(0,1)
+	 LABELREF(RS_easyThreshold.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+easyProgressiveRenderingNumPasses.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ easyProgressiveRenderingNumPasses.label = PARM_LABEL("Progressive Passes", "easyProgressiveRenderingNumPasses") WIDTH(1.5);
+ PARM(integer, 1, "easyProgressiveRenderingNumPasses", none, none) RANGE(0,65536)
+	 LABELREF(easyProgressiveRenderingNumPasses.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+RS_easyDenoisingEnabled.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_easyDenoisingEnabled", "Enabled") toggle VALUE(RS_easyDenoisingEnabled.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+easyDenoiseEngine2.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Denoise Engine", "easyDenoiseEngine2") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    easyDenoiseEngine2.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+easyMotionBlurEnabled.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("easyMotionBlurEnabled", "Enabled") toggle VALUE(easyMotionBlurEnabled.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+easyMotionBlurNumTransformationSteps.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ easyMotionBlurNumTransformationSteps.label = PARM_LABEL("Steps", "easyMotionBlurNumTransformationSteps") WIDTH(1.5);
+ PARM(integer, 1, "easyMotionBlurNumTransformationSteps", none, none) RANGE(2,31)
+	LOCK_RANGE LABELREF(easyMotionBlurNumTransformationSteps.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+easyMotionBlurDeformationEnabled.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("easyMotionBlurDeformationEnabled", "Deformation Blur") toggle VALUE(easyMotionBlurDeformationEnabled.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_easyGIEnabled.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_easyGIEnabled", "Enabled") toggle VALUE(RS_easyGIEnabled.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+easyMaxTraceDepthCombined.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ easyMaxTraceDepthCombined.label = PARM_LABEL("Combined", "easyMaxTraceDepthCombined") WIDTH(1.5);
+ PARM(integer, 1, "easyMaxTraceDepthCombined", none, none) RANGE(0,63)
+	LOCK_RANGE LABELREF(easyMaxTraceDepthCombined.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+easyNumGIBounces.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ easyNumGIBounces.label = PARM_LABEL("Global Illumination", "easyNumGIBounces") WIDTH(1.5);
+ PARM(integer, 1, "easyNumGIBounces", none, none) RANGE(1,63)
+	LOCK_RANGE LABELREF(easyNumGIBounces.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+easyMaxTraceDepthReflection.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ easyMaxTraceDepthReflection.label = PARM_LABEL("Reflection", "easyMaxTraceDepthReflection") WIDTH(1.5);
+ PARM(integer, 1, "easyMaxTraceDepthReflection", none, none) RANGE(0,63)
+	LOCK_RANGE LABELREF(easyMaxTraceDepthReflection.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+easyMaxTraceDepthRefraction.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ easyMaxTraceDepthRefraction.label = PARM_LABEL("Refraction", "easyMaxTraceDepthRefraction") WIDTH(1.5);
+ PARM(integer, 1, "easyMaxTraceDepthRefraction", none, none) RANGE(0,63)
+	LOCK_RANGE LABELREF(easyMaxTraceDepthRefraction.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+easyMaxTraceDepthTransparency.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ easyMaxTraceDepthTransparency.label = PARM_LABEL("Transparency", "easyMaxTraceDepthTransparency") WIDTH(1.5);
+ PARM(integer, 1, "easyMaxTraceDepthTransparency", none, none) RANGE(0,255)
+	LOCK_RANGE LABELREF(easyMaxTraceDepthTransparency.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+easyEnableOptiXRTOnSupportedGPUs.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("easyEnableOptiXRTOnSupportedGPUs", "Enabled") toggle VALUE(easyEnableOptiXRTOnSupportedGPUs.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+easyMessages.gad = ROW
+{
+
+    HSTRETCH JUSTIFY(left, top) HMARGIN(0.18, 0.1)
+        NO_MARGIN_SPACING_SCALE
+
+    MULTILINE_PARM_FIELD ("easyMessages") 
+
+    	VALUE(easyMessages.val) 
+    	SYNTAX("") 
+    	LINES(4,10) 
+    	HSTRETCH;
+
+    {
+
+    }
+
+}
+
+ProgressiveRenderingEnabled.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ProgressiveRenderingEnabled", "Progressive Final Rendering") toggle VALUE(ProgressiveRenderingEnabled.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+ProgressiveRenderingNumPasses.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ ProgressiveRenderingNumPasses.label = PARM_LABEL("Progressive Passes", "ProgressiveRenderingNumPasses") WIDTH(1.5);
+ PARM(integer, 1, "ProgressiveRenderingNumPasses", none, none) RANGE(1,65536)
+	 LABELREF(ProgressiveRenderingNumPasses.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+EnableAutomaticSampling.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("EnableAutomaticSampling", "Automatic Sampling") toggle VALUE(EnableAutomaticSampling.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+UnifiedAdaptiveErrorThreshold.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ UnifiedAdaptiveErrorThreshold.label = PARM_LABEL("Threshold", "UnifiedAdaptiveErrorThreshold") WIDTH(1.5);
+ PARM(float, 1, "UnifiedAdaptiveErrorThreshold", none, LOGSCALE) RANGE(0,1)
+	 LABELREF(UnifiedAdaptiveErrorThreshold.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+UnifiedMinSamples.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ UnifiedMinSamples.label = PARM_LABEL("Min Samples", "UnifiedMinSamples") WIDTH(1.5);
+ PARM(integer, 1, "UnifiedMinSamples", none, none) RANGE(1,8192)
+	 LABELREF(UnifiedMinSamples.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+UnifiedMaxSamples.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ UnifiedMaxSamples.label = PARM_LABEL("Max Samples", "UnifiedMaxSamples") WIDTH(1.5);
+ PARM(integer, 1, "UnifiedMaxSamples", none, none) RANGE(1,8192)
+	 LABELREF(UnifiedMaxSamples.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+UnifiedDebugDrawSamples.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("UnifiedDebugDrawSamples", "Show Samples") toggle VALUE(UnifiedDebugDrawSamples.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+UnifiedRandomizePattern.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("UnifiedRandomizePattern", "Random Noise Pattern") toggle VALUE(UnifiedRandomizePattern.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+UnifiedFilterType.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Filter", "UnifiedFilterType") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    UnifiedFilterType.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+UnifiedFilterSize.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ UnifiedFilterSize.label = PARM_LABEL("Size", "UnifiedFilterSize") WIDTH(1.5);
+ PARM(float, 1, "UnifiedFilterSize", none, none) RANGE(9.9999997473787516e-05,6)
+	 LABELREF(UnifiedFilterSize.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+UnifiedMaxOverbright.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ UnifiedMaxOverbright.label = PARM_LABEL("Max Subsample Intensity", "UnifiedMaxOverbright") WIDTH(1.5);
+ PARM(float, 1, "UnifiedMaxOverbright", none, none) RANGE(1,100000)
+	 LABELREF(UnifiedMaxOverbright.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+GlossyRayMaxOverbright.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ GlossyRayMaxOverbright.label = PARM_LABEL("Max Secondary Ray Intensity", "GlossyRayMaxOverbright") WIDTH(1.5);
+ PARM(float, 1, "GlossyRayMaxOverbright", none, none) RANGE(1,100000)
+	 LABELREF(GlossyRayMaxOverbright.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+ReflectSamplesEnabled.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ReflectSamplesEnabled", "Override Samples") toggle VALUE(ReflectSamplesEnabled.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+ReflectSamplesMode.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ReflectSamplesMode", "Scale Samples") toggle VALUE(ReflectSamplesMode.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+ReflectSamplesCount.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ ReflectSamplesCount.label = PARM_LABEL("Samples", "ReflectSamplesCount") WIDTH(1.5);
+ PARM(integer, 1, "ReflectSamplesCount", none, none) RANGE(0,65535)
+	 LABELREF(ReflectSamplesCount.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+ReflectSamplesScale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ ReflectSamplesScale.label = PARM_LABEL("Samples Scale", "ReflectSamplesScale") WIDTH(1.5);
+ PARM(float, 1, "ReflectSamplesScale", none, none) RANGE(0,65535)
+	 LABELREF(ReflectSamplesScale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+RefractSamplesEnabled.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RefractSamplesEnabled", "Override Samples") toggle VALUE(RefractSamplesEnabled.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RefractSamplesMode.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RefractSamplesMode", "Scale Samples") toggle VALUE(RefractSamplesMode.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RefractSamplesCount.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RefractSamplesCount.label = PARM_LABEL("Samples", "RefractSamplesCount") WIDTH(1.5);
+ PARM(integer, 1, "RefractSamplesCount", none, none) RANGE(0,65535)
+	 LABELREF(RefractSamplesCount.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+RefractSamplesScale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RefractSamplesScale.label = PARM_LABEL("Samples Scale", "RefractSamplesScale") WIDTH(1.5);
+ PARM(float, 1, "RefractSamplesScale", none, none) RANGE(0,65535)
+	 LABELREF(RefractSamplesScale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+AOSamplesEnabled.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("AOSamplesEnabled", "Override Samples") toggle VALUE(AOSamplesEnabled.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+AOSamplesMode.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("AOSamplesMode", "Scale Samples") toggle VALUE(AOSamplesMode.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+AOSamplesCount.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ AOSamplesCount.label = PARM_LABEL("Samples", "AOSamplesCount") WIDTH(1.5);
+ PARM(integer, 1, "AOSamplesCount", none, none) RANGE(0,65535)
+	 LABELREF(AOSamplesCount.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+AOSamplesScale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ AOSamplesScale.label = PARM_LABEL("Samples Scale", "AOSamplesScale") WIDTH(1.5);
+ PARM(float, 1, "AOSamplesScale", none, none) RANGE(0,65535)
+	 LABELREF(AOSamplesScale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+LightSamplesEnabled.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("LightSamplesEnabled", "Override Samples") toggle VALUE(LightSamplesEnabled.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+LightSamplesMode.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("LightSamplesMode", "Scale Samples") toggle VALUE(LightSamplesMode.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+LightSamplesCount.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ LightSamplesCount.label = PARM_LABEL("Samples", "LightSamplesCount") WIDTH(1.5);
+ PARM(integer, 1, "LightSamplesCount", none, none) RANGE(0,65535)
+	 LABELREF(LightSamplesCount.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+LightSamplesScale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ LightSamplesScale.label = PARM_LABEL("Samples Scale", "LightSamplesScale") WIDTH(1.5);
+ PARM(float, 1, "LightSamplesScale", none, none) RANGE(0,65535)
+	 LABELREF(LightSamplesScale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+VolumeSamplesEnabled.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("VolumeSamplesEnabled", "Override Samples") toggle VALUE(VolumeSamplesEnabled.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+VolumeSamplesMode.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("VolumeSamplesMode", "Scale Samples") toggle VALUE(VolumeSamplesMode.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+VolumeSamplesCount.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ VolumeSamplesCount.label = PARM_LABEL("Samples", "VolumeSamplesCount") WIDTH(1.5);
+ PARM(integer, 1, "VolumeSamplesCount", none, none) RANGE(0,65535)
+	 LABELREF(VolumeSamplesCount.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+VolumeSamplesScale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ VolumeSamplesScale.label = PARM_LABEL("Samples Scale", "VolumeSamplesScale") WIDTH(1.5);
+ PARM(float, 1, "VolumeSamplesScale", none, none) RANGE(0,65535)
+	 LABELREF(VolumeSamplesScale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+SingleScatteringSamplesEnabled.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("SingleScatteringSamplesEnabled", "Override Samples") toggle VALUE(SingleScatteringSamplesEnabled.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+SingleScatteringSamplesMode.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("SingleScatteringSamplesMode", "Scale Samples") toggle VALUE(SingleScatteringSamplesMode.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+SingleScatteringSamplesCount.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ SingleScatteringSamplesCount.label = PARM_LABEL("Samples", "SingleScatteringSamplesCount") WIDTH(1.5);
+ PARM(integer, 1, "SingleScatteringSamplesCount", none, none) RANGE(0,65535)
+	 LABELREF(SingleScatteringSamplesCount.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+SingleScatteringSamplesScale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ SingleScatteringSamplesScale.label = PARM_LABEL("Samples Scale", "SingleScatteringSamplesScale") WIDTH(1.5);
+ PARM(float, 1, "SingleScatteringSamplesScale", none, none) RANGE(0,65535)
+	 LABELREF(SingleScatteringSamplesScale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+MultipleScatteringSamplesEnabled.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("MultipleScatteringSamplesEnabled", "Override Samples") toggle VALUE(MultipleScatteringSamplesEnabled.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+MultipleScatteringSamplesMode.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("MultipleScatteringSamplesMode", "Scale Samples") toggle VALUE(MultipleScatteringSamplesMode.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+MultipleScatteringSamplesCount.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ MultipleScatteringSamplesCount.label = PARM_LABEL("Samples", "MultipleScatteringSamplesCount") WIDTH(1.5);
+ PARM(integer, 1, "MultipleScatteringSamplesCount", none, none) RANGE(0,65535)
+	 LABELREF(MultipleScatteringSamplesCount.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+MultipleScatteringSamplesScale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ MultipleScatteringSamplesScale.label = PARM_LABEL("Samples Scale", "MultipleScatteringSamplesScale") WIDTH(1.5);
+ PARM(float, 1, "MultipleScatteringSamplesScale", none, none) RANGE(0,65535)
+	 LABELREF(MultipleScatteringSamplesScale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+RS_denoisingEnabled.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_denoisingEnabled", "Enabled") toggle VALUE(RS_denoisingEnabled.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+DenoiseEngine2.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Denoise Engine", "DenoiseEngine2") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    DenoiseEngine2.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+DenoiseEnableDenoiseAOVs.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("DenoiseEnableDenoiseAOVs", "Denoise AOVs") toggle VALUE(DenoiseEnableDenoiseAOVs.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+DenoiseAutoCreateAovs.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("DenoiseAutoCreateAovs", "Automatically Create AOVs") toggle VALUE(DenoiseAutoCreateAovs.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+DenoiseShowBuffersInRenderView.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("DenoiseShowBuffersInRenderView", "Show Additional Buffers in RV") toggle VALUE(DenoiseShowBuffersInRenderView.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+DenoiseSaveBuffers.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("DenoiseSaveBuffers", "Save Additional Buffers (Altus Only)") toggle VALUE(DenoiseSaveBuffers.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+DenoiseAltusKC1.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ DenoiseAltusKC1.label = PARM_LABEL("Altus kc1", "DenoiseAltusKC1") WIDTH(1.5);
+ PARM(float, 1, "DenoiseAltusKC1", none, none) RANGE(0,5)
+	 LABELREF(DenoiseAltusKC1.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+DenoiseAltusKC2.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ DenoiseAltusKC2.label = PARM_LABEL("Altus kc2", "DenoiseAltusKC2") WIDTH(1.5);
+ PARM(float, 1, "DenoiseAltusKC2", none, none) RANGE(0,5)
+	 LABELREF(DenoiseAltusKC2.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+DenoiseAltusKC4.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ DenoiseAltusKC4.label = PARM_LABEL("Altus kc4", "DenoiseAltusKC4") WIDTH(1.5);
+ PARM(float, 1, "DenoiseAltusKC4", none, none) RANGE(0,5)
+	 LABELREF(DenoiseAltusKC4.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+DenoiseAltusKF.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ DenoiseAltusKF.label = PARM_LABEL("Altus kf", "DenoiseAltusKF") WIDTH(1.5);
+ PARM(float, 1, "DenoiseAltusKF", none, none) RANGE(0,5)
+	 LABELREF(DenoiseAltusKF.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+DenoiseIPRBypassAltus.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("DenoiseIPRBypassAltus", "Bypass IPR Denoising") toggle VALUE(DenoiseIPRBypassAltus.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+DenoiseOverheadBucket.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ DenoiseOverheadBucket.label = PARM_LABEL("Bucket Denoise Overhead", "DenoiseOverheadBucket") WIDTH(1.5);
+ PARM(float, 1, "DenoiseOverheadBucket", none, none) RANGE(0,100)
+	LOCK_RANGE LABELREF(DenoiseOverheadBucket.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+DenoiseOverheadProgressive.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ DenoiseOverheadProgressive.label = PARM_LABEL("Prog. Denoise Overhead", "DenoiseOverheadProgressive") WIDTH(1.5);
+ PARM(float, 1, "DenoiseOverheadProgressive", none, none) RANGE(0,100)
+	LOCK_RANGE LABELREF(DenoiseOverheadProgressive.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+TextureSamplingTechnique.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Primary Rays", "TextureSamplingTechnique") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    TextureSamplingTechnique.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+BumpMapBias.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ BumpMapBias.label = PARM_LABEL("Additional Bump Bias", "BumpMapBias") WIDTH(1.5);
+ PARM(float, 1, "BumpMapBias", none, none) RANGE(-8,8)
+	 LABELREF(BumpMapBias.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+CopyToTextureCache.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("CopyToTextureCache", "Copy Pre-Converted Textures to Cache Folder") toggle VALUE(CopyToTextureCache.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+MotionBlurEnabled.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("MotionBlurEnabled", "Enabled") toggle VALUE(MotionBlurEnabled.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+MotionBlurNumTransformationSteps.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ MotionBlurNumTransformationSteps.label = PARM_LABEL("Transf./Instances Steps", "MotionBlurNumTransformationSteps") WIDTH(1.5);
+ PARM(integer, 1, "MotionBlurNumTransformationSteps", none, none) RANGE(2,31)
+	LOCK_RANGE LABELREF(MotionBlurNumTransformationSteps.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+MotionBlurDeformationEnabled.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("MotionBlurDeformationEnabled", "Deformation Blur") toggle VALUE(MotionBlurDeformationEnabled.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_mbPoints.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_mbPoints", "Instances/Particles Blur") toggle VALUE(RS_mbPoints.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+MotionBlurNumDeformationSteps.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Deform./Particles Steps", "MotionBlurNumDeformationSteps") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    MotionBlurNumDeformationSteps.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+MotionBlurFrameDuration.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ MotionBlurFrameDuration.label = PARM_LABEL("Frame Duration", "MotionBlurFrameDuration") WIDTH(1.5);
+ PARM(float, 1, "MotionBlurFrameDuration", none, none) RANGE(0,10)
+	 LABELREF(MotionBlurFrameDuration.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+MotionBlurShutterStart.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ MotionBlurShutterStart.label = PARM_LABEL("Start", "MotionBlurShutterStart") WIDTH(1.5);
+ PARM(float, 1, "MotionBlurShutterStart", none, none) RANGE(0,1)
+	 LABELREF(MotionBlurShutterStart.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+MotionBlurShutterEnd.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ MotionBlurShutterEnd.label = PARM_LABEL("End", "MotionBlurShutterEnd") WIDTH(1.5);
+ PARM(float, 1, "MotionBlurShutterEnd", none, none) RANGE(0,1)
+	 LABELREF(MotionBlurShutterEnd.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+MotionBlurShutterPosition.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Frame Position", "MotionBlurShutterPosition") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    MotionBlurShutterPosition.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+MotionBlurShutterEfficiencyForTrapezoidal.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ MotionBlurShutterEfficiencyForTrapezoidal.label = PARM_LABEL("Efficiency", "MotionBlurShutterEfficiencyForTrapezoidal") WIDTH(1.5);
+ PARM(float, 1, "MotionBlurShutterEfficiencyForTrapezoidal", none, none) RANGE(0,1)
+	 LABELREF(MotionBlurShutterEfficiencyForTrapezoidal.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+RenderingEngine.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Rendering Engine", "RenderingEngine") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    RenderingEngine.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+EnableOptiXRTOnSupportedGPUs.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("EnableOptiXRTOnSupportedGPUs", "Hardware Ray-Tracing (if available)") toggle VALUE(EnableOptiXRTOnSupportedGPUs.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+MaxTraceDepthReflection.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ MaxTraceDepthReflection.label = PARM_LABEL("Reflection", "MaxTraceDepthReflection") WIDTH(1.5);
+ PARM(integer, 1, "MaxTraceDepthReflection", none, none) RANGE(0,63)
+	 LABELREF(MaxTraceDepthReflection.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+MaxTraceDepthRefraction.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ MaxTraceDepthRefraction.label = PARM_LABEL("Refraction", "MaxTraceDepthRefraction") WIDTH(1.5);
+ PARM(integer, 1, "MaxTraceDepthRefraction", none, none) RANGE(0,63)
+	 LABELREF(MaxTraceDepthRefraction.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+MaxTraceDepthCombined.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ MaxTraceDepthCombined.label = PARM_LABEL("Combined", "MaxTraceDepthCombined") WIDTH(1.5);
+ PARM(integer, 1, "MaxTraceDepthCombined", none, none) RANGE(0,63)
+	 LABELREF(MaxTraceDepthCombined.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+MaxTraceDepthTransparency.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ MaxTraceDepthTransparency.label = PARM_LABEL("Transparency", "MaxTraceDepthTransparency") WIDTH(1.5);
+ PARM(integer, 1, "MaxTraceDepthTransparency", none, none) RANGE(0,255)
+	 LABELREF(MaxTraceDepthTransparency.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+MPWHairEnabled.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("MPWHairEnabled", "Min Pixel Width") toggle VALUE(MPWHairEnabled.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+MPWHairAutoThreshold.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("MPWHairAutoThreshold", "Automatic Threshold") toggle VALUE(MPWHairAutoThreshold.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+MPWHairThreshold.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ MPWHairThreshold.label = PARM_LABEL("Threshold", "MPWHairThreshold") WIDTH(1.5);
+ PARM(float, 1, "MPWHairThreshold", none, none) RANGE(0,2)
+	 LABELREF(MPWHairThreshold.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+MPWHairTraceDepth.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ MPWHairTraceDepth.label = PARM_LABEL("Trace Depth", "MPWHairTraceDepth") WIDTH(1.5);
+ PARM(integer, 1, "MPWHairTraceDepth", none, none) RANGE(0,63)
+	 LABELREF(MPWHairTraceDepth.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+HairTessellationMode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Tessellation", "HairTessellationMode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    HairTessellationMode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_OCIOColorSpace.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("OCIO Rendering Space", "RS_OCIOColorSpace") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    RS_OCIOColorSpace.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_OCIOPath.sval := 1;
+
+RS_OCIOPath.gad = 
+{
+    LAYOUT(vertical) SPACING(1p) HSTRETCH VMARGIN(0.05, 0)
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    SWITCHER tight
+    {
+	VALUE(RS_OCIOPath.sval) HSTRETCH
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+	    LABEL "OCIO Config From" HSTRETCH;
+
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "OCIO Config From":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_OCIOPath.val[0]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "OCIO Config From":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_OCIOPath.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[1]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "OCIO Config From":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_OCIOPath.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[2]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "OCIO Config From":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_OCIOPath.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[3]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "OCIO Config From":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_OCIOPath.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[4]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "OCIO Config From":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_OCIOPath.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[5]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "OCIO Config From":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_OCIOPath.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[6]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "OCIO Config From":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_OCIOPath.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[7]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "OCIO Config From":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_OCIOPath.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[8]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "OCIO Config From":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_OCIOPath.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[9]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "OCIO Config From":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_OCIOPath.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[10]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "OCIO Config From":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_OCIOPath.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[11]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "OCIO Config From":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_OCIOPath.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[12]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "OCIO Config From":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_OCIOPath.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[12]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[13]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "OCIO Config From":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_OCIOPath.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[12]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[13]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[14]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "OCIO Config From":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_OCIOPath.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[12]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[13]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[14]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_OCIOPath.val[15]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+    }
+}
+
+UseOCIOFileRules.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("UseOCIOFileRules", "Use OCIO File Rules") toggle VALUE(UseOCIOFileRules.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_OCIOColorCorrection.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_OCIOColorCorrection", "Transform Input Colors to OCIO Rendering Space") toggle VALUE(RS_OCIOColorCorrection.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_addDefaultLight.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_addDefaultLight", "Default Light") toggle VALUE(RS_addDefaultLight.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RenderInCameraSpace.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RenderInCameraSpace", "Camera Space Render") toggle VALUE(RenderInCameraSpace.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+FreezeTessellation.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("FreezeTessellation", "Freeze Tessellation") toggle VALUE(FreezeTessellation.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+Do8BitQuantizationAndDithering.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("Do8BitQuantizationAndDithering", "8-bit Quantization and Dithering") toggle VALUE(Do8BitQuantizationAndDithering.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_globalEnvironment.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ RS_globalEnvironment.label = PARM_LABEL("Default Environment", "RS_globalEnvironment") WIDTH(1.5);
+ PARM_FIELD(pathstring, "RS_globalEnvironment") VALUE(RS_globalEnvironment.val) 
+	LABELREF(RS_globalEnvironment.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(RS_globalEnvironment.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_globalEnvironment.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+ReflectionsEnable.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ReflectionsEnable", "Reflections") toggle VALUE(ReflectionsEnable.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RefractionsEnable.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RefractionsEnable", "Refractions") toggle VALUE(RefractionsEnable.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+DomeLightsAffectedByRefractionEnable.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("DomeLightsAffectedByRefractionEnable", "Refraction Affects Dome Lights") toggle VALUE(DomeLightsAffectedByRefractionEnable.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+AreaLightsAffectedByRefractionEnable.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("AreaLightsAffectedByRefractionEnable", "Refraction Affects Area Lights") toggle VALUE(AreaLightsAffectedByRefractionEnable.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+SubsurfaceScatteringEnable.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("SubsurfaceScatteringEnable", "Subsurface Scattering") toggle VALUE(SubsurfaceScatteringEnable.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+EmissionEnable.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("EmissionEnable", "Emission") toggle VALUE(EmissionEnable.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+TessellationDisplacementEnable.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("TessellationDisplacementEnable", "Tessellation And Displacement") toggle VALUE(TessellationDisplacementEnable.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_GIEnabled.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_GIEnabled", "Enabled") toggle VALUE(RS_GIEnabled.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+PrimaryGIEngine2.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Primary GI Engine", "PrimaryGIEngine2") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    PrimaryGIEngine2.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+NumGIBounces2.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ NumGIBounces2.label = PARM_LABEL("Trace Depth", "NumGIBounces2") WIDTH(1.5);
+ PARM(integer, 1, "NumGIBounces2", none, none) RANGE(1,63)
+	LOCK_RANGE LABELREF(NumGIBounces2.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+SecondaryGIEngine2.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Secondary GI Engine", "SecondaryGIEngine2") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    SecondaryGIEngine2.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+BruteForceGINumRays.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ BruteForceGINumRays.label = PARM_LABEL("Brute Force Rays", "BruteForceGINumRays") WIDTH(1.5);
+ PARM(integer, 1, "BruteForceGINumRays", none, none) RANGE(1,16384)
+	 LABELREF(BruteForceGINumRays.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+ConserveGIReflectionEnergy.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ConserveGIReflectionEnergy", "Conserve Reflections Energy") toggle VALUE(ConserveGIReflectionEnergy.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+IrradianceCacheMode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Mode", "IrradianceCacheMode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    IrradianceCacheMode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+IrradianceCacheFilename.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ IrradianceCacheFilename.label = PARM_LABEL("File", "IrradianceCacheFilename") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "IrradianceCacheFilename") LABELREF(IrradianceCacheFilename.label)
+	VALUE(IrradianceCacheFilename.val) HSTRETCH;
+
+    IrradianceCacheFilename.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(IrradianceCacheFilename.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+IrradianceCacheFlythroughMode.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("IrradianceCacheFlythroughMode", "Flythrough Mode") toggle VALUE(IrradianceCacheFlythroughMode.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+IrradianceCacheFramesToBlend.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ IrradianceCacheFramesToBlend.label = PARM_LABEL("Frames to Blend", "IrradianceCacheFramesToBlend") WIDTH(1.5);
+ PARM(integer, 1, "IrradianceCacheFramesToBlend", none, none) RANGE(0,5)
+	LOCK_RANGE_MIN LABELREF(IrradianceCacheFramesToBlend.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+ShowIrradianceCacheCalculation.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ShowIrradianceCacheCalculation", "Show Calculation") toggle VALUE(ShowIrradianceCacheCalculation.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+IrradianceCacheUseSeparatePointsForSecondaryRays.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("IrradianceCacheUseSeparatePointsForSecondaryRays", "Separate Points for Secondary Rays") toggle VALUE(IrradianceCacheUseSeparatePointsForSecondaryRays.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+IrradianceCacheDebugDrawPoints.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("IrradianceCacheDebugDrawPoints", "Visualize Points") toggle VALUE(IrradianceCacheDebugDrawPoints.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+IrradianceCacheMinRate.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ IrradianceCacheMinRate.label = PARM_LABEL("Min Rate", "IrradianceCacheMinRate") WIDTH(1.5);
+ PARM(integer, 1, "IrradianceCacheMinRate", none, none) RANGE(-8,0)
+	 LABELREF(IrradianceCacheMinRate.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+IrradianceCacheMaxRate.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ IrradianceCacheMaxRate.label = PARM_LABEL("Max Rate", "IrradianceCacheMaxRate") WIDTH(1.5);
+ PARM(integer, 1, "IrradianceCacheMaxRate", none, none) RANGE(-8,2)
+	 LABELREF(IrradianceCacheMaxRate.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+IrradianceCacheColorThreshold.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ IrradianceCacheColorThreshold.label = PARM_LABEL("Color Threshold", "IrradianceCacheColorThreshold") WIDTH(1.5);
+ PARM(float, 1, "IrradianceCacheColorThreshold", none, none) RANGE(0.0010000000474974513,2)
+	 LABELREF(IrradianceCacheColorThreshold.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+IrradianceCacheDistanceThreshold.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ IrradianceCacheDistanceThreshold.label = PARM_LABEL("Distance Threshold", "IrradianceCacheDistanceThreshold") WIDTH(1.5);
+ PARM(float, 1, "IrradianceCacheDistanceThreshold", none, none) RANGE(0.10000000149011612,1)
+	 LABELREF(IrradianceCacheDistanceThreshold.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+IrradianceCacheNormalThreshold.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ IrradianceCacheNormalThreshold.label = PARM_LABEL("Normal Threshold", "IrradianceCacheNormalThreshold") WIDTH(1.5);
+ PARM(float, 1, "IrradianceCacheNormalThreshold", none, none) RANGE(2,16)
+	 LABELREF(IrradianceCacheNormalThreshold.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+IrradianceCacheMinDetail.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ IrradianceCacheMinDetail.label = PARM_LABEL("Min Detail", "IrradianceCacheMinDetail") WIDTH(1.5);
+ PARM(float, 1, "IrradianceCacheMinDetail", none, none) RANGE(0,8)
+	 LABELREF(IrradianceCacheMinDetail.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+IrradianceCacheRadiusFactor.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ IrradianceCacheRadiusFactor.label = PARM_LABEL("Radius Factor", "IrradianceCacheRadiusFactor") WIDTH(1.5);
+ PARM(float, 1, "IrradianceCacheRadiusFactor", none, none) RANGE(1,8)
+	 LABELREF(IrradianceCacheRadiusFactor.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+IrradianceCacheNumSmoothingPasses.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ IrradianceCacheNumSmoothingPasses.label = PARM_LABEL("Smoothing Passes", "IrradianceCacheNumSmoothingPasses") WIDTH(1.5);
+ PARM(integer, 1, "IrradianceCacheNumSmoothingPasses", none, none) RANGE(0,16)
+	 LABELREF(IrradianceCacheNumSmoothingPasses.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+IrradianceCacheNumRays.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ IrradianceCacheNumRays.label = PARM_LABEL("Rays", "IrradianceCacheNumRays") WIDTH(1.5);
+ PARM(integer, 1, "IrradianceCacheNumRays", none, none) RANGE(16,16384)
+	 LABELREF(IrradianceCacheNumRays.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+IrradianceCacheAdaptiveAmount.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ IrradianceCacheAdaptiveAmount.label = PARM_LABEL("Adaptive Amount", "IrradianceCacheAdaptiveAmount") WIDTH(1.5);
+ PARM(float, 1, "IrradianceCacheAdaptiveAmount", none, none) RANGE(0,1)
+	 LABELREF(IrradianceCacheAdaptiveAmount.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+IrradianceCacheAdaptiveErrorThreshold.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ IrradianceCacheAdaptiveErrorThreshold.label = PARM_LABEL("Adaptive Error Threshold", "IrradianceCacheAdaptiveErrorThreshold") WIDTH(1.5);
+ PARM(float, 1, "IrradianceCacheAdaptiveErrorThreshold", none, none) RANGE(0,1)
+	 LABELREF(IrradianceCacheAdaptiveErrorThreshold.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+IrradiancePointCloudMode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Mode", "IrradiancePointCloudMode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    IrradiancePointCloudMode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+IrradiancePointCloudFilename.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ IrradiancePointCloudFilename.label = PARM_LABEL("File", "IrradiancePointCloudFilename") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "IrradiancePointCloudFilename") LABELREF(IrradiancePointCloudFilename.label)
+	VALUE(IrradiancePointCloudFilename.val) HSTRETCH;
+
+    IrradiancePointCloudFilename.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(IrradiancePointCloudFilename.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+IrradiancePointCloudFramesToBlend.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ IrradiancePointCloudFramesToBlend.label = PARM_LABEL("Frames to Blend", "IrradiancePointCloudFramesToBlend") WIDTH(1.5);
+ PARM(integer, 1, "IrradiancePointCloudFramesToBlend", none, none) RANGE(0,5)
+	LOCK_RANGE_MIN LABELREF(IrradiancePointCloudFramesToBlend.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+IrradiancePointCloudScreenRadius2.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Screen Radius", "IrradiancePointCloudScreenRadius2") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    IrradiancePointCloudScreenRadius2.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+IrradiancePointCloudNumSamplesPerPixel.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ IrradiancePointCloudNumSamplesPerPixel.label = PARM_LABEL("Samples per Pixel", "IrradiancePointCloudNumSamplesPerPixel") WIDTH(1.5);
+ PARM(integer, 1, "IrradiancePointCloudNumSamplesPerPixel", none, none) RANGE(1,32768)
+	 LABELREF(IrradiancePointCloudNumSamplesPerPixel.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+IrradiancePointCloudFilterSize.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ IrradiancePointCloudFilterSize.label = PARM_LABEL("Filter Size", "IrradiancePointCloudFilterSize") WIDTH(1.5);
+ PARM(float, 1, "IrradiancePointCloudFilterSize", none, none) RANGE(2,8)
+	 LABELREF(IrradiancePointCloudFilterSize.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+IrradiancePointCloudRetraceThreshold.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ IrradiancePointCloudRetraceThreshold.label = PARM_LABEL("Retrace Threshold", "IrradiancePointCloudRetraceThreshold") WIDTH(1.5);
+ PARM(float, 1, "IrradiancePointCloudRetraceThreshold", none, none) RANGE(0,16)
+	 LABELREF(IrradiancePointCloudRetraceThreshold.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+ShowIrradiancePointCloudCalculation.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ShowIrradiancePointCloudCalculation", "Show Calculation") toggle VALUE(ShowIrradiancePointCloudCalculation.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+PhotonCausticsEnable.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("PhotonCausticsEnable", "Enable") toggle VALUE(PhotonCausticsEnable.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+PhotonMode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Mode", "PhotonMode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    PhotonMode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+PhotonFilename.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ PhotonFilename.label = PARM_LABEL("File", "PhotonFilename") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "PhotonFilename") LABELREF(PhotonFilename.label)
+	VALUE(PhotonFilename.val) HSTRETCH;
+
+    PhotonFilename.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(PhotonFilename.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+PhotonCausticsMaxNumToGather.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ PhotonCausticsMaxNumToGather.label = PARM_LABEL("Photons", "PhotonCausticsMaxNumToGather") WIDTH(1.5);
+ PARM(integer, 1, "PhotonCausticsMaxNumToGather", none, none) RANGE(0,4294967295)
+	 LABELREF(PhotonCausticsMaxNumToGather.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+PhotonCausticsSearchRadius.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ PhotonCausticsSearchRadius.label = PARM_LABEL("Blur Radius", "PhotonCausticsSearchRadius") WIDTH(1.5);
+ PARM(float, 1, "PhotonCausticsSearchRadius", none, none) RANGE(0,10)
+	 LABELREF(PhotonCausticsSearchRadius.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+PhotonUsePerPhotonIrradiance.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("PhotonUsePerPhotonIrradiance", "Fast Irradiance") toggle VALUE(PhotonUsePerPhotonIrradiance.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+PhotonMaxTraceDepthReflection.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ PhotonMaxTraceDepthReflection.label = PARM_LABEL("Reflection", "PhotonMaxTraceDepthReflection") WIDTH(1.5);
+ PARM(integer, 1, "PhotonMaxTraceDepthReflection", none, none) RANGE(0,10)
+	 LABELREF(PhotonMaxTraceDepthReflection.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+PhotonMaxTraceDepthRefraction.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ PhotonMaxTraceDepthRefraction.label = PARM_LABEL("Refraction", "PhotonMaxTraceDepthRefraction") WIDTH(1.5);
+ PARM(integer, 1, "PhotonMaxTraceDepthRefraction", none, none) RANGE(0,10)
+	 LABELREF(PhotonMaxTraceDepthRefraction.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+PhotonMaxTraceDepthCombined.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ PhotonMaxTraceDepthCombined.label = PARM_LABEL("Combined", "PhotonMaxTraceDepthCombined") WIDTH(1.5);
+ PARM(integer, 1, "PhotonMaxTraceDepthCombined", none, none) RANGE(0,10)
+	 LABELREF(PhotonMaxTraceDepthCombined.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+VolLightingEnabled.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("VolLightingEnabled", "Enable") toggle VALUE(VolLightingEnabled.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+VolLightingTint.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    VolLightingTint.label = PARM_LABEL("Tint", "VolLightingTint") WIDTH(1.5);
+    PARM(float, 3, "VolLightingTint", none, COLOR, "R,G,B") 
+	LABELREF(VolLightingTint.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+VolLightingTintShader.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ VolLightingTintShader.label = PARM_LABEL("Tint Shader", "VolLightingTintShader") WIDTH(1.5);
+ PARM_FIELD(pathstring, "VolLightingTintShader") VALUE(VolLightingTintShader.val) 
+	LABELREF(VolLightingTintShader.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(VolLightingTintShader.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(VolLightingTintShader.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+VolLightingScatteringCoefficient.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ VolLightingScatteringCoefficient.label = PARM_LABEL("Scattering", "VolLightingScatteringCoefficient") WIDTH(1.5);
+ PARM(float, 1, "VolLightingScatteringCoefficient", none, none) RANGE(0,10)
+	 LABELREF(VolLightingScatteringCoefficient.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+VolLightingExtinctionCoefficient.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ VolLightingExtinctionCoefficient.label = PARM_LABEL("Attenuation", "VolLightingExtinctionCoefficient") WIDTH(1.5);
+ PARM(float, 1, "VolLightingExtinctionCoefficient", none, none) RANGE(0,10)
+	 LABELREF(VolLightingExtinctionCoefficient.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+VolLightingPhase.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ VolLightingPhase.label = PARM_LABEL("Phase", "VolLightingPhase") WIDTH(1.5);
+ PARM(float, 1, "VolLightingPhase", none, none) RANGE(-1,1)
+	 LABELREF(VolLightingPhase.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+VolLightingFogAmbient.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    VolLightingFogAmbient.label = PARM_LABEL("Emission", "VolLightingFogAmbient") WIDTH(1.5);
+    PARM(float, 3, "VolLightingFogAmbient", none, COLOR, "R,G,B") 
+	LABELREF(VolLightingFogAmbient.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+VolLightingApplyExposureCompensation.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("VolLightingApplyExposureCompensation", "Camera Exposure Compensation") toggle VALUE(VolLightingApplyExposureCompensation.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+VolLightingFogHeight.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ VolLightingFogHeight.label = PARM_LABEL("Height", "VolLightingFogHeight") WIDTH(1.5);
+ PARM(float, 1, "VolLightingFogHeight", none, none) RANGE(0,10)
+	 LABELREF(VolLightingFogHeight.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+VolLightingFogHorizonBlur.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ VolLightingFogHorizonBlur.label = PARM_LABEL("Horizontal Blur", "VolLightingFogHorizonBlur") WIDTH(1.5);
+ PARM(float, 1, "VolLightingFogHorizonBlur", none, none) RANGE(0,10)
+	 LABELREF(VolLightingFogHorizonBlur.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+VolLightingFogOrigin.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   VolLightingFogOrigin.label = PARM_LABEL("Ground Point", "VolLightingFogOrigin") WIDTH(1.5);
+   PARM(float, 3, "VolLightingFogOrigin", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(VolLightingFogOrigin.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+VolLightingFogNormal.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   VolLightingFogNormal.label = PARM_LABEL("Ground Normal", "VolLightingFogNormal") WIDTH(1.5);
+   PARM(float, 3, "VolLightingFogNormal", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(VolLightingFogNormal.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+VolLightingRayContributionCamera.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ VolLightingRayContributionCamera.label = PARM_LABEL("Camera", "VolLightingRayContributionCamera") WIDTH(1.5);
+ PARM(float, 1, "VolLightingRayContributionCamera", none, none) RANGE(0,1)
+	 LABELREF(VolLightingRayContributionCamera.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+VolLightingRayContributionReflection.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ VolLightingRayContributionReflection.label = PARM_LABEL("Reflection", "VolLightingRayContributionReflection") WIDTH(1.5);
+ PARM(float, 1, "VolLightingRayContributionReflection", none, none) RANGE(0,1)
+	 LABELREF(VolLightingRayContributionReflection.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+VolLightingRayContributionGI.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ VolLightingRayContributionGI.label = PARM_LABEL("GI", "VolLightingRayContributionGI") WIDTH(1.5);
+ PARM(float, 1, "VolLightingRayContributionGI", none, none) RANGE(0,1)
+	 LABELREF(VolLightingRayContributionGI.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+VolLightingRayContributionEnvironment.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ VolLightingRayContributionEnvironment.label = PARM_LABEL("Environment Fog", "VolLightingRayContributionEnvironment") WIDTH(1.5);
+ PARM(float, 1, "VolLightingRayContributionEnvironment", none, none) RANGE(0,1)
+	 LABELREF(VolLightingRayContributionEnvironment.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+VolLightingReplaceAlphaOnEnvironment.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("VolLightingReplaceAlphaOnEnvironment", "Replace Alpha") toggle VALUE(VolLightingReplaceAlphaOnEnvironment.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+SubsurfaceScatteringOverrideMode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Override Mode", "SubsurfaceScatteringOverrideMode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    SubsurfaceScatteringOverrideMode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+SubsurfaceScatteringMode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Mode", "SubsurfaceScatteringMode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    SubsurfaceScatteringMode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+SubsurfaceScatteringFilename.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ SubsurfaceScatteringFilename.label = PARM_LABEL("File", "SubsurfaceScatteringFilename") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "SubsurfaceScatteringFilename") LABELREF(SubsurfaceScatteringFilename.label)
+	VALUE(SubsurfaceScatteringFilename.val) HSTRETCH;
+
+    SubsurfaceScatteringFilename.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(SubsurfaceScatteringFilename.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+SubsurfaceScatteringRate.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Rate", "SubsurfaceScatteringRate") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    SubsurfaceScatteringRate.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+SubsurfaceScatteringInterpolationQuality.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Interpolation Quality", "SubsurfaceScatteringInterpolationQuality") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    SubsurfaceScatteringInterpolationQuality.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+SubsurfaceScatteringNumGIRays.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ SubsurfaceScatteringNumGIRays.label = PARM_LABEL("GI Rays", "SubsurfaceScatteringNumGIRays") WIDTH(1.5);
+ PARM(integer, 1, "SubsurfaceScatteringNumGIRays", none, none) RANGE(1,4096)
+	 LABELREF(SubsurfaceScatteringNumGIRays.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+DiffuseSamplingCutOffThreshold.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ DiffuseSamplingCutOffThreshold.label = PARM_LABEL("Diffuse", "DiffuseSamplingCutOffThreshold") WIDTH(1.5);
+ PARM(float, 1, "DiffuseSamplingCutOffThreshold", none, none) RANGE(0,1)
+	 LABELREF(DiffuseSamplingCutOffThreshold.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+ReflectionSamplingCutOffThreshold.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ ReflectionSamplingCutOffThreshold.label = PARM_LABEL("Reflection", "ReflectionSamplingCutOffThreshold") WIDTH(1.5);
+ PARM(float, 1, "ReflectionSamplingCutOffThreshold", none, none) RANGE(0,1)
+	 LABELREF(ReflectionSamplingCutOffThreshold.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+RefractionSamplingCutOffThreshold.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RefractionSamplingCutOffThreshold.label = PARM_LABEL("Refraction", "RefractionSamplingCutOffThreshold") WIDTH(1.5);
+ PARM(float, 1, "RefractionSamplingCutOffThreshold", none, none) RANGE(0,1)
+	 LABELREF(RefractionSamplingCutOffThreshold.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+DirectLightingShadowCutOffThreshold.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ DirectLightingShadowCutOffThreshold.label = PARM_LABEL("Shadow", "DirectLightingShadowCutOffThreshold") WIDTH(1.5);
+ PARM(float, 1, "DirectLightingShadowCutOffThreshold", none, none) RANGE(0,1)
+	 LABELREF(DirectLightingShadowCutOffThreshold.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+DirectLightingCutOffThreshold.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ DirectLightingCutOffThreshold.label = PARM_LABEL("Direct Lighting", "DirectLightingCutOffThreshold") WIDTH(1.5);
+ PARM(float, 1, "DirectLightingCutOffThreshold", none, none) RANGE(0,1)
+	 LABELREF(DirectLightingCutOffThreshold.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+RussianRouletteImportanceThreshold.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RussianRouletteImportanceThreshold.label = PARM_LABEL("Importance Threshold", "RussianRouletteImportanceThreshold") WIDTH(1.5);
+ PARM(float, 1, "RussianRouletteImportanceThreshold", none, none) RANGE(0,1)
+	 LABELREF(RussianRouletteImportanceThreshold.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+RussianRouletteFalloff.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RussianRouletteFalloff.label = PARM_LABEL("Falloff", "RussianRouletteFalloff") WIDTH(1.5);
+ PARM(float, 1, "RussianRouletteFalloff", none, none) RANGE(0,1)
+	 LABELREF(RussianRouletteFalloff.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+DoCompleteRTHConstruction.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("DoCompleteRTHConstruction", "Complete Construction Before Rendering") toggle VALUE(DoCompleteRTHConstruction.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RTHMaxNumLeafPrimitives.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RTHMaxNumLeafPrimitives.label = PARM_LABEL("Max Leaf Primitives", "RTHMaxNumLeafPrimitives") WIDTH(1.5);
+ PARM(integer, 1, "RTHMaxNumLeafPrimitives", none, none) RANGE(2,32)
+	 LABELREF(RTHMaxNumLeafPrimitives.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+AbortOnLicenseFail.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("AbortOnLicenseFail", "License Failiure") toggle VALUE(AbortOnLicenseFail.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+AbortOnMissingResource.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("AbortOnMissingResource", "Missing Resource") toggle VALUE(AbortOnMissingResource.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+AbortOnAltusLicenseFail.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("AbortOnAltusLicenseFail", "Altus License Failiure") toggle VALUE(AbortOnAltusLicenseFail.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+AbortOnHoudiniCookingError.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("AbortOnHoudiniCookingError", "Houdini Cooking Errors") toggle VALUE(AbortOnHoudiniCookingError.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+BlockSize.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Bucket Size", "BlockSize") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    BlockSize.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+BlockRenderingOrder.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Bucket Order", "BlockRenderingOrder") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    BlockRenderingOrder.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+PhotometricUnitsToMeterScale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ PhotometricUnitsToMeterScale.label = PARM_LABEL("Photometric Units to Meters Scale", "PhotometricUnitsToMeterScale") WIDTH(1.5);
+ PARM(float, 1, "PhotometricUnitsToMeterScale", none, none) RANGE(0,10)
+	 LABELREF(PhotometricUnitsToMeterScale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+PhotometricCandelaMetersSquaredFactor.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ PhotometricCandelaMetersSquaredFactor.label = PARM_LABEL("Photometric cd/m^2 Factor", "PhotometricCandelaMetersSquaredFactor") WIDTH(1.5);
+ PARM(float, 1, "PhotometricCandelaMetersSquaredFactor", none, none) RANGE(0,10)
+	 LABELREF(PhotometricCandelaMetersSquaredFactor.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+RS_matOverrideEnable.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_matOverrideEnable", "Enable") toggle VALUE(RS_matOverrideEnable.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_matOverrideColor.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    RS_matOverrideColor.label = PARM_LABEL("Color", "RS_matOverrideColor") WIDTH(1.5);
+    PARM(float, 3, "RS_matOverrideColor", none, COLOR, "R,G,B") 
+	LABELREF(RS_matOverrideColor.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+EnableMaterialsMaxCombinedOverrides.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("EnableMaterialsMaxCombinedOverrides", "Enable Material's Max Combined Overrides") toggle VALUE(EnableMaterialsMaxCombinedOverrides.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+UnifiedDisableDivision2.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("UnifiedDisableDivision2", "Automatically Reduce Samples of Other Effects") toggle VALUE(UnifiedDisableDivision2.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+EnableLegacyVolumeGridEmission.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("EnableLegacyVolumeGridEmission", "Volume Grid Emission") toggle VALUE(EnableLegacyVolumeGridEmission.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+EnableLegacyCutOffsRules.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("EnableLegacyCutOffsRules", "Cut-Offs Rules") toggle VALUE(EnableLegacyCutOffsRules.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+EnableLegacyNonInverseSquareLightDecay.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("EnableLegacyNonInverseSquareLightDecay", "Non-Inverse-Square Light Decay") toggle VALUE(EnableLegacyNonInverseSquareLightDecay.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+EnableLegacyBumpSamplingTechnique.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("EnableLegacyBumpSamplingTechnique", "Bump Sampling Technique") toggle VALUE(EnableLegacyBumpSamplingTechnique.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+EnableLegacyNoGIFromVolumeScattering.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("EnableLegacyNoGIFromVolumeScattering", "No GI From Volume Scattering") toggle VALUE(EnableLegacyNoGIFromVolumeScattering.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+EnableLegacyNonScalingOfPointClouds.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("EnableLegacyNonScalingOfPointClouds", "Non Scaling Of Point Clouds") toggle VALUE(EnableLegacyNonScalingOfPointClouds.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+EnableLegacyRefractionAffectsAlphaChannel.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("EnableLegacyRefractionAffectsAlphaChannel", "Refraction Affects Alpha Channel") toggle VALUE(EnableLegacyRefractionAffectsAlphaChannel.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+EnableLegacyBlackBodyAndDispersionTechnique.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("EnableLegacyBlackBodyAndDispersionTechnique", "Black-Body And Dispersion Technique") toggle VALUE(EnableLegacyBlackBodyAndDispersionTechnique.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+DisableBumpSmoothingOnLightingSilhouettes2.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("DisableBumpSmoothingOnLightingSilhouettes2", "Bump Smoothing On Lighting Silhouettes") toggle VALUE(DisableBumpSmoothingOnLightingSilhouettes2.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+DisableShadowRayBiasing2.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("DisableShadowRayBiasing2", "Shadow Ray Biasing") toggle VALUE(DisableShadowRayBiasing2.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+EnableSecondaryRayClampingOnFirstBounce.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("EnableSecondaryRayClampingOnFirstBounce", "Enable Secondary Ray Clamping On First Bounce") toggle VALUE(EnableSecondaryRayClampingOnFirstBounce.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+DisableSamplingOptimizations2.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("DisableSamplingOptimizations2", "Sampling Optimizations") toggle VALUE(DisableSamplingOptimizations2.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+EnableDebugCapture.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("EnableDebugCapture", "Enable") toggle VALUE(EnableDebugCapture.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+EnableDebugCaptureShaderIntegrityCheck.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("EnableDebugCaptureShaderIntegrityCheck", "Shader Integrity Check (VERY SLOW)") toggle VALUE(EnableDebugCaptureShaderIntegrityCheck.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+AutomaticMemoryManagement.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("AutomaticMemoryManagement", "Automatic Memory Management") toggle VALUE(AutomaticMemoryManagement.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+PercentageOfGPUMemoryToUse.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ PercentageOfGPUMemoryToUse.label = PARM_LABEL("Used GPU Memory (%)", "PercentageOfGPUMemoryToUse") WIDTH(1.5);
+ PARM(integer, 1, "PercentageOfGPUMemoryToUse", none, none) RANGE(10,100)
+	 LABELREF(PercentageOfGPUMemoryToUse.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+GPUMemoryInactivityTimeout.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ GPUMemoryInactivityTimeout.label = PARM_LABEL("GPU Memory Release Timeout (sec)", "GPUMemoryInactivityTimeout") WIDTH(1.5);
+ PARM(integer, 1, "GPUMemoryInactivityTimeout", none, none) RANGE(1,1000)
+	 LABELREF(GPUMemoryInactivityTimeout.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+NVLinkModeForVolumeGrids.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("NVLink For Volume Grids", "NVLinkModeForVolumeGrids") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    NVLinkModeForVolumeGrids.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+NVLinkModeForGeometry.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("NVLink For Geometry", "NVLinkModeForGeometry") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    NVLinkModeForGeometry.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+MaxNumGPUMBForIrradiancePointCloudHierarchy.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ MaxNumGPUMBForIrradiancePointCloudHierarchy.label = PARM_LABEL("Irradiance Point Cloud Memory (MB)", "MaxNumGPUMBForIrradiancePointCloudHierarchy") WIDTH(1.5);
+ PARM(integer, 1, "MaxNumGPUMBForIrradiancePointCloudHierarchy", none, none) RANGE(16,4096)
+	 LABELREF(MaxNumGPUMBForIrradiancePointCloudHierarchy.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+MaxNumGPUMBForForICPHierarchy.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ MaxNumGPUMBForForICPHierarchy.label = PARM_LABEL("Irradiace Cache Memory (MB)", "MaxNumGPUMBForForICPHierarchy") WIDTH(1.5);
+ PARM(integer, 1, "MaxNumGPUMBForForICPHierarchy", none, none) RANGE(16,4096)
+	 LABELREF(MaxNumGPUMBForForICPHierarchy.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+PercentageOfFreeMemoryUsedForTextureCache.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ PercentageOfFreeMemoryUsedForTextureCache.label = PARM_LABEL("exture Cache Free Memory", "PercentageOfFreeMemoryUsedForTextureCache") WIDTH(1.5);
+ PARM(integer, 1, "PercentageOfFreeMemoryUsedForTextureCache", none, none) RANGE(10,90)
+	 LABELREF(PercentageOfFreeMemoryUsedForTextureCache.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+MaxNumGPUMBForTextureCache.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ MaxNumGPUMBForTextureCache.label = PARM_LABEL("GPU Texture Cache Max (MB)", "MaxNumGPUMBForTextureCache") WIDTH(1.5);
+ PARM(integer, 1, "MaxNumGPUMBForTextureCache", none, none) RANGE(64,4096)
+	 LABELREF(MaxNumGPUMBForTextureCache.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+MaxNumCPUMBForTextureCache.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ MaxNumCPUMBForTextureCache.label = PARM_LABEL("CPU Texture Cache Max (MB)", "MaxNumCPUMBForTextureCache") WIDTH(1.5);
+ PARM(integer, 1, "MaxNumCPUMBForTextureCache", none, none) RANGE(0,65536)
+	 LABELREF(MaxNumCPUMBForTextureCache.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+NumGPUMBToReserveForRays.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ NumGPUMBToReserveForRays.label = PARM_LABEL("Ray Memory (MB)", "NumGPUMBToReserveForRays") WIDTH(1.5);
+ PARM(integer, 1, "NumGPUMBToReserveForRays", none, none) RANGE(0,4096)
+	 LABELREF(NumGPUMBToReserveForRays.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+RS_archive_enable.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_archive_enable", "Enable") toggle VALUE(RS_archive_enable.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_archive_sopPath.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ RS_archive_sopPath.label = PARM_LABEL("SOP Path", "RS_archive_sopPath") WIDTH(1.5);
+ PARM_FIELD(pathstring, "RS_archive_sopPath") VALUE(RS_archive_sopPath.val) 
+	LABELREF(RS_archive_sopPath.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(RS_archive_sopPath.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_archive_sopPath.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+RS_archive_sopSubnet.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_archive_sopSubnet", "Export Parent Subnet") toggle VALUE(RS_archive_sopSubnet.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_archive_file.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ RS_archive_file.label = PARM_LABEL("Filename", "RS_archive_file") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "RS_archive_file") LABELREF(RS_archive_file.label)
+	VALUE(RS_archive_file.val) HSTRETCH;
+
+    RS_archive_file.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(RS_archive_file.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+RS_archive_createDirs.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_archive_createDirs", "Create Intermediate Directories") toggle VALUE(RS_archive_createDirs.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_archive_selected.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_archive_selected", "Export Only Selected Objects") toggle VALUE(RS_archive_selected.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_archive_removeAtt.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_archive_removeAtt", "Discard the Not Used Attributes") toggle VALUE(RS_archive_removeAtt.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_archive_exportConn.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_archive_exportConn", "Export Connectivity Data") toggle VALUE(RS_archive_exportConn.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_archive_compress.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_archive_compress", "Compress File") toggle VALUE(RS_archive_compress.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_archive_skipFiles.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_archive_skipFiles", "Skip Existing Files") toggle VALUE(RS_archive_skipFiles.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_archive_noXform.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_archive_noXform", "Ignore OBJ Level Transformations") toggle VALUE(RS_archive_noXform.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_archive_removeMat.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_archive_removeMat", "Discard the Not Used Materials") toggle VALUE(RS_archive_removeMat.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_archive_ignoreVis.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_archive_ignoreVis", "Ignore the OBJ Nodes Visibility/Exclusion Settings") toggle VALUE(RS_archive_ignoreVis.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_rendermap_enable.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_rendermap_enable", "Enable") toggle VALUE(RS_rendermap_enable.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_rendermap_objects.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RS_rendermap_objects.label = PARM_LABEL("Render Map Objects", "RS_rendermap_objects") WIDTH(1.5);
+ PARM_FIELD (pathstring, "RS_rendermap_objects") LABELREF(RS_rendermap_objects.label) 
+	VALUE(RS_rendermap_objects.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_rendermap_objects.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+RS_rendermap_uvmap.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    RS_rendermap_uvmap.label = PARM_LABEL("UV Map", "RS_rendermap_uvmap") WIDTH(1.5);
+    PARM_FIELD(string, "RS_rendermap_uvmap") VALUE(RS_rendermap_uvmap.val) 
+	LABELREF(RS_rendermap_uvmap.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+RS_rendermap_res.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   RS_rendermap_res.label = PARM_LABEL("Output Resolution", "RS_rendermap_res") WIDTH(1.5);
+   PARM(integer, 2, "RS_rendermap_res", none, none, "#1,#2")
+	RANGE(0,10)  LABELREF(RS_rendermap_res.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+RS_rendermap_ropname.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_rendermap_ropname", "Add ROP Name As Prefix") toggle VALUE(RS_rendermap_ropname.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_rendermap_tilingMode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("UV Tiling Mode", "RS_rendermap_tilingMode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    RS_rendermap_tilingMode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_rendermap_tilingU.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RS_rendermap_tilingU.label = PARM_LABEL("U Tiles", "RS_rendermap_tilingU") WIDTH(1.5);
+ PARM(integer, 1, "RS_rendermap_tilingU", none, none) RANGE(0,10)
+	 LABELREF(RS_rendermap_tilingU.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+RS_rendermap_tilingV.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RS_rendermap_tilingV.label = PARM_LABEL("V Tiles", "RS_rendermap_tilingV") WIDTH(1.5);
+ PARM(integer, 1, "RS_rendermap_tilingV", none, none) RANGE(0,10)
+	 LABELREF(RS_rendermap_tilingV.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+RS_objects_candidate.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RS_objects_candidate.label = PARM_LABEL("Candidate Objects", "RS_objects_candidate") WIDTH(1.5);
+ PARM_FIELD (pathstring, "RS_objects_candidate") LABELREF(RS_objects_candidate.label) 
+	VALUE(RS_objects_candidate.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_objects_candidate.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+RS_objects_force.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RS_objects_force.label = PARM_LABEL("Force Objects", "RS_objects_force") WIDTH(1.5);
+ PARM_FIELD (pathstring, "RS_objects_force") LABELREF(RS_objects_force.label) 
+	VALUE(RS_objects_force.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_objects_force.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+RS_objects_exclude.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RS_objects_exclude.label = PARM_LABEL("Exclude Objects", "RS_objects_exclude") WIDTH(1.5);
+ PARM_FIELD (pathstring, "RS_objects_exclude") LABELREF(RS_objects_exclude.label) 
+	VALUE(RS_objects_exclude.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_objects_exclude.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+RS_objects_forcePhantom.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RS_objects_forcePhantom.label = PARM_LABEL("Forced Phantom", "RS_objects_forcePhantom") WIDTH(1.5);
+ PARM_FIELD (pathstring, "RS_objects_forcePhantom") LABELREF(RS_objects_forcePhantom.label) 
+	VALUE(RS_objects_forcePhantom.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_objects_forcePhantom.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+RS_objects_forceMatte.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RS_objects_forceMatte.label = PARM_LABEL("Forced Matte", "RS_objects_forceMatte") WIDTH(1.5);
+ PARM_FIELD (pathstring, "RS_objects_forceMatte") LABELREF(RS_objects_forceMatte.label) 
+	VALUE(RS_objects_forceMatte.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_objects_forceMatte.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+RS_objects_forceMatteRef.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ RS_objects_forceMatteRef.label = PARM_LABEL("Matte Parms From", "RS_objects_forceMatteRef") WIDTH(1.5);
+ PARM_FIELD(pathstring, "RS_objects_forceMatteRef") VALUE(RS_objects_forceMatteRef.val) 
+	LABELREF(RS_objects_forceMatteRef.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(RS_objects_forceMatteRef.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_objects_forceMatteRef.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+RS_objects_forceFlags.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RS_objects_forceFlags.label = PARM_LABEL("Forced Visibility", "RS_objects_forceFlags") WIDTH(1.5);
+ PARM_FIELD (pathstring, "RS_objects_forceFlags") LABELREF(RS_objects_forceFlags.label) 
+	VALUE(RS_objects_forceFlags.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_objects_forceFlags.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+RS_objects_forceFlagsRef.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ RS_objects_forceFlagsRef.label = PARM_LABEL("Visibility Parms From", "RS_objects_forceFlagsRef") WIDTH(1.5);
+ PARM_FIELD(pathstring, "RS_objects_forceFlagsRef") VALUE(RS_objects_forceFlagsRef.val) 
+	LABELREF(RS_objects_forceFlagsRef.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(RS_objects_forceFlagsRef.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_objects_forceFlagsRef.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+RS_separator_objectCandidates.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+RS_lights_candidate.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RS_lights_candidate.label = PARM_LABEL("Candidate Lights", "RS_lights_candidate") WIDTH(1.5);
+ PARM_FIELD (pathstring, "RS_lights_candidate") LABELREF(RS_lights_candidate.label) 
+	VALUE(RS_lights_candidate.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_lights_candidate.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+RS_lights_force.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RS_lights_force.label = PARM_LABEL("Force Lights", "RS_lights_force") WIDTH(1.5);
+ PARM_FIELD (pathstring, "RS_lights_force") LABELREF(RS_lights_force.label) 
+	VALUE(RS_lights_force.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_lights_force.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+RS_lights_exclude.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RS_lights_exclude.label = PARM_LABEL("Exclude Lights", "RS_lights_exclude") WIDTH(1.5);
+ PARM_FIELD (pathstring, "RS_lights_exclude") LABELREF(RS_lights_exclude.label) 
+	VALUE(RS_lights_exclude.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_lights_exclude.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+tprerender.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+tprerender.gad = PARM_BUTTON("tprerender", "") toggle VALUE(tprerender.val) RETAIN_SIZE_WHEN_HIDDEN;
+prerender.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+prerender.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ {  }
+
+ prerender.label = PARM_LABEL("Pre-Render Script", "prerender") WIDTH(1.32);
+
+ PARM_FIELD (pathstring, "prerender") LABELREF(prerender.label)
+	VALUE(prerender.val) HSTRETCH;
+
+    prerender.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(prerender.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+}	
+
+lprerender.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    lprerender.menu;
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	
+tpreframe.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+tpreframe.gad = PARM_BUTTON("tpreframe", "") toggle VALUE(tpreframe.val) RETAIN_SIZE_WHEN_HIDDEN;
+preframe.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+preframe.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ {  }
+
+ preframe.label = PARM_LABEL("Pre-Frame Script", "preframe") WIDTH(1.32);
+
+ PARM_FIELD (pathstring, "preframe") LABELREF(preframe.label)
+	VALUE(preframe.val) HSTRETCH;
+
+    preframe.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(preframe.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+}	
+
+lpreframe.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    lpreframe.menu;
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	
+tpostframe.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+tpostframe.gad = PARM_BUTTON("tpostframe", "") toggle VALUE(tpostframe.val) RETAIN_SIZE_WHEN_HIDDEN;
+postframe.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+postframe.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ {  }
+
+ postframe.label = PARM_LABEL("Post-Frame Script", "postframe") WIDTH(1.32);
+
+ PARM_FIELD (pathstring, "postframe") LABELREF(postframe.label)
+	VALUE(postframe.val) HSTRETCH;
+
+    postframe.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(postframe.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+}	
+
+lpostframe.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    lpostframe.menu;
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	
+tpostrender.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+tpostrender.gad = PARM_BUTTON("tpostrender", "") toggle VALUE(tpostrender.val) RETAIN_SIZE_WHEN_HIDDEN;
+postrender.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+postrender.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ {  }
+
+ postrender.label = PARM_LABEL("Post-Render Script", "postrender") WIDTH(1.32);
+
+ PARM_FIELD (pathstring, "postrender") LABELREF(postrender.label)
+	VALUE(postrender.val) HSTRETCH;
+
+    postrender.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(postrender.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+}	
+
+lpostrender.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    lpostrender.menu;
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	
+
+RS_iprRenderCamera_enabled.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_iprRenderCamera_enabled", "Custom Render Camera") toggle VALUE(RS_iprRenderCamera_enabled.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_iprRenderCamera.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ RS_iprRenderCamera.label = PARM_LABEL("IPR Render Camera", "RS_iprRenderCamera") WIDTH(1.5);
+ PARM_FIELD(pathstring, "RS_iprRenderCamera") VALUE(RS_iprRenderCamera.val) 
+	LABELREF(RS_iprRenderCamera.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(RS_iprRenderCamera.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_iprRenderCamera.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+RS_separator_iprRenderCamera.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+RS_iprOverrideCameraRes.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_iprOverrideCameraRes", "Override Camera Resolution") toggle VALUE(RS_iprOverrideCameraRes.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_iprOverrideResScale.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Resolution Scale", "RS_iprOverrideResScale") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    RS_iprOverrideResScale.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_iprOverrideRes.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   RS_iprOverrideRes.label = PARM_LABEL("Resolution", "RS_iprOverrideRes") WIDTH(1.5);
+   PARM(integer, 2, "RS_iprOverrideRes", none, none, "#1,#2")
+	RANGE(0,10)  LABELREF(RS_iprOverrideRes.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+RS_iprProgressive.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_iprProgressive", "Progressive Rendering") toggle VALUE(RS_iprProgressive.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_iprUndersampling.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RS_iprUndersampling.label = PARM_LABEL("Undersampling", "RS_iprUndersampling") WIDTH(1.5);
+ PARM(integer, 1, "RS_iprUndersampling", none, none) RANGE(0,5)
+	LOCK_RANGE LABELREF(RS_iprUndersampling.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+RS_iprFreezeTesselation.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_iprFreezeTesselation", "Freeze Tessellation") toggle VALUE(RS_iprFreezeTesselation.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_iprOptixDenoising.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_iprOptixDenoising", "Viewport OptiX Denoising") toggle VALUE(RS_iprOptixDenoising.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_iprViewportPostFX.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_iprViewportPostFX", "Viewport PostFX") toggle VALUE(RS_iprViewportPostFX.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_iprWireframeOverlay.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_iprWireframeOverlay", "Viewport Wireframe Overlay") toggle VALUE(RS_iprWireframeOverlay.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_iprFastPreprocessing.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_iprFastPreprocessing", "Fast Preprocessing") toggle VALUE(RS_iprFastPreprocessing.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_iprRenderAOVsToMPlay.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_iprRenderAOVsToMPlay", "Render AOVs to MPlay") toggle VALUE(RS_iprRenderAOVsToMPlay.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_iprUpdateMeshDeform.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_iprUpdateMeshDeform", "Live SOP Level Updates (Deformations/Volumes/Instancers/Proxies)") toggle VALUE(RS_iprUpdateMeshDeform.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_iprUpdateStylesheets.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_iprUpdateStylesheets", "Live Update Stylesheets") toggle VALUE(RS_iprUpdateStylesheets.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_iprUpdateCOP2.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_iprUpdateCOP2", "Live Update COP2 Textures") toggle VALUE(RS_iprUpdateCOP2.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_iprUseTakes.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_iprUseTakes", "Use the ROP Take") toggle VALUE(RS_iprUseTakes.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+RS_iprAutoReloadScene.gad = NULL { }
+
+RS_iprAutoUpdateSOPMesh.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_iprAutoUpdateSOPMesh", "Auto Reload Object After Modify SOP Nodes") toggle VALUE(RS_iprAutoUpdateSOPMesh.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_iprMuteLog.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_iprMuteLog", "Mute Log File") toggle VALUE(RS_iprMuteLog.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_iprRunRenderScripts.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_iprRunRenderScripts", "Execute Pre-Render/Frame Scripts") toggle VALUE(RS_iprRunRenderScripts.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_iprRunPostRenderScripts.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_iprRunPostRenderScripts", "Execute Post-Render/Frame Scripts") toggle VALUE(RS_iprRunPostRenderScripts.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_iprRVOpenOnly.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_iprRVOpenOnly", "Open the Window Without Rendering") toggle VALUE(RS_iprRVOpenOnly.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RS_iprRVBucketsMode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Buckets Render Mode", "RS_iprRVBucketsMode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    RS_iprRVBucketsMode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+redshidt_plugin_version.gad = NULL { }
+
+RS_group_iprRenderView.gad = 
+
+GROUP simple "RS RenderView" flat 
+{ 
+    VALUE(RS_group_iprRenderView.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RS_iprRVOpenOnly.gad;		
+	    RS_iprRVBucketsMode.gad;		
+} 
+
+RS_group_iprPluginOptions.gad = 
+
+GROUP simple "IPR Plugin Options" flat 
+{ 
+    VALUE(RS_group_iprPluginOptions.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RS_iprRenderAOVsToMPlay.gad;		
+	    RS_iprUpdateMeshDeform.gad;		
+	    RS_iprUpdateStylesheets.gad;		
+	    RS_iprUpdateCOP2.gad;		
+	    RS_iprUseTakes.gad;		
+	    RS_iprAutoReloadScene.gad;		
+	    RS_iprAutoUpdateSOPMesh.gad;		
+	    RS_iprMuteLog.gad;		
+	    RS_iprRunRenderScripts.gad;		
+	    RS_iprRunPostRenderScripts.gad;		
+} 
+
+RS_group_iprOptions.gad = 
+
+GROUP simple "IPR Options" flat 
+{ 
+    VALUE(RS_group_iprOptions.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RS_iprProgressive.gad;		
+	    RS_iprUndersampling.gad;		
+	    RS_iprFreezeTesselation.gad;		
+	    RS_iprOptixDenoising.gad;		
+	    RS_iprViewportPostFX.gad;		
+	    RS_iprWireframeOverlay.gad;		
+	    RS_iprFastPreprocessing.gad;		
+} 
+
+RS_group_iprCamera.gad = 
+
+GROUP simple "IPR Camera" flat 
+{ 
+    VALUE(RS_group_iprCamera.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RS_iprRenderCamera_enabled.gad;		
+	    RS_iprRenderCamera.gad;		
+	    RS_separator_iprRenderCamera.gad;		
+	    RS_iprOverrideCameraRes.gad;		
+	    RS_iprOverrideResScale.gad;		
+	    RS_iprOverrideRes.gad;		
+} 
+
+RS_group_renderMapsBaking.gad = 
+
+GROUP simple "Render Maps Baking" flat 
+{ 
+    VALUE(RS_group_renderMapsBaking.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RS_rendermap_enable.gad;		
+	    RS_rendermap_objects.gad;		
+	    RS_rendermap_uvmap.gad;		
+	    RS_rendermap_res.gad;		
+	    RS_rendermap_ropname.gad;		
+	    RS_rendermap_tilingMode.gad;		
+	    RS_rendermap_tilingU.gad;		
+	    RS_rendermap_tilingV.gad;		
+} 
+
+RS_group_exportProxyFile.gad = 
+
+GROUP simple "Export .rs Proxy File" flat 
+{ 
+    VALUE(RS_group_exportProxyFile.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RS_archive_enable.gad;		
+	    RS_archive_sopPath.gad;		
+	    RS_archive_sopSubnet.gad;		
+	    RS_archive_file.gad;		
+	    RS_archive_createDirs.gad;		
+	    RS_archive_selected.gad;		
+	    RS_archive_removeAtt.gad;		
+	    RS_archive_exportConn.gad;		
+	    RS_archive_compress.gad;		
+	    RS_archive_skipFiles.gad;		
+	    RS_archive_noXform.gad;		
+	    RS_archive_removeMat.gad;		
+	    RS_archive_ignoreVis.gad;		
+} 
+
+RS_group_memoryOptions.gad = 
+
+GROUP simple "Memory" flat 
+{ 
+    VALUE(RS_group_memoryOptions.gad.val) LAYOUT(vertical) HSTRETCH 
+	    AutomaticMemoryManagement.gad;		
+	    PercentageOfGPUMemoryToUse.gad;		
+	    GPUMemoryInactivityTimeout.gad;		
+	    NVLinkModeForVolumeGrids.gad;		
+	    NVLinkModeForGeometry.gad;		
+	    MaxNumGPUMBForIrradiancePointCloudHierarchy.gad;		
+	    MaxNumGPUMBForForICPHierarchy.gad;		
+	    PercentageOfFreeMemoryUsedForTextureCache.gad;		
+	    MaxNumGPUMBForTextureCache.gad;		
+	    MaxNumCPUMBForTextureCache.gad;		
+	    NumGPUMBToReserveForRays.gad;		
+} 
+
+RS_group_debugCapture.gad = 
+
+GROUP simple "Debug Capture" flat 
+{ 
+    VALUE(RS_group_debugCapture.gad.val) LAYOUT(vertical) HSTRETCH 
+	    EnableDebugCapture.gad;		
+	    EnableDebugCaptureShaderIntegrityCheck.gad;		
+} 
+
+RS_group_experimentalOptions.gad = 
+
+GROUP simple "Experimental Options" flat 
+{ 
+    VALUE(RS_group_experimentalOptions.gad.val) LAYOUT(vertical) HSTRETCH 
+	    DisableBumpSmoothingOnLightingSilhouettes2.gad;		
+	    DisableShadowRayBiasing2.gad;		
+	    EnableSecondaryRayClampingOnFirstBounce.gad;		
+	    DisableSamplingOptimizations2.gad;		
+} 
+
+RS_group_materialOverrideLegacy.gad = 
+
+GROUP simple "Material Override" flat 
+{ 
+    VALUE(RS_group_materialOverrideLegacy.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RS_matOverrideEnable.gad;		
+	    RS_matOverrideColor.gad;		
+} 
+
+RS_group_legacyOptions.gad = 
+
+GROUP simple "Legacy" flat 
+{ 
+    VALUE(RS_group_legacyOptions.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RS_group_materialOverrideLegacy.gad;		
+	    EnableMaterialsMaxCombinedOverrides.gad;		
+	    UnifiedDisableDivision2.gad;		
+	    EnableLegacyVolumeGridEmission.gad;		
+	    EnableLegacyCutOffsRules.gad;		
+	    EnableLegacyNonInverseSquareLightDecay.gad;		
+	    EnableLegacyBumpSamplingTechnique.gad;		
+	    EnableLegacyNoGIFromVolumeScattering.gad;		
+	    EnableLegacyNonScalingOfPointClouds.gad;		
+	    EnableLegacyRefractionAffectsAlphaChannel.gad;		
+	    EnableLegacyBlackBodyAndDispersionTechnique.gad;		
+} 
+
+RS_group_units.gad = 
+
+GROUP simple "Units" flat 
+{ 
+    VALUE(RS_group_units.gad.val) LAYOUT(vertical) HSTRETCH 
+	    PhotometricUnitsToMeterScale.gad;		
+	    PhotometricCandelaMetersSquaredFactor.gad;		
+} 
+
+RS_group_bucketRendering.gad = 
+
+GROUP simple "Bucket Rendering" flat 
+{ 
+    VALUE(RS_group_bucketRendering.gad.val) LAYOUT(vertical) HSTRETCH 
+	    BlockSize.gad;		
+	    BlockRenderingOrder.gad;		
+} 
+
+RS_group_abortOn.gad = 
+
+GROUP simple "Abort Rendering on" flat 
+{ 
+    VALUE(RS_group_abortOn.gad.val) LAYOUT(vertical) HSTRETCH 
+	    AbortOnLicenseFail.gad;		
+	    AbortOnMissingResource.gad;		
+	    AbortOnAltusLicenseFail.gad;		
+	    AbortOnHoudiniCookingError.gad;		
+} 
+
+RS_group_rtaccel.gad = 
+
+GROUP simple "Ray Tracing Acceleration" flat 
+{ 
+    VALUE(RS_group_rtaccel.gad.val) LAYOUT(vertical) HSTRETCH 
+	    DoCompleteRTHConstruction.gad;		
+	    RTHMaxNumLeafPrimitives.gad;		
+} 
+
+RS_group_rroulette.gad = 
+
+GROUP simple "Russian Roulette" flat 
+{ 
+    VALUE(RS_group_rroulette.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RussianRouletteImportanceThreshold.gad;		
+	    RussianRouletteFalloff.gad;		
+} 
+
+RS_group_cutoffthreshold.gad = 
+
+GROUP simple "Cut-off Thresholds" flat 
+{ 
+    VALUE(RS_group_cutoffthreshold.gad.val) LAYOUT(vertical) HSTRETCH 
+	    DiffuseSamplingCutOffThreshold.gad;		
+	    ReflectionSamplingCutOffThreshold.gad;		
+	    RefractionSamplingCutOffThreshold.gad;		
+	    DirectLightingShadowCutOffThreshold.gad;		
+	    DirectLightingCutOffThreshold.gad;		
+} 
+
+RS_group_subsurfacescattering.gad = 
+
+GROUP simple "Sub-Surface Scattering" flat 
+{ 
+    VALUE(RS_group_subsurfacescattering.gad.val) LAYOUT(vertical) HSTRETCH 
+	    SubsurfaceScatteringOverrideMode.gad;		
+	    SubsurfaceScatteringMode.gad;		
+	    SubsurfaceScatteringFilename.gad;		
+	    SubsurfaceScatteringRate.gad;		
+	    SubsurfaceScatteringInterpolationQuality.gad;		
+	    SubsurfaceScatteringNumGIRays.gad;		
+} 
+
+RS_group_fogAlphaReplace.gad = 
+
+GROUP simple "Environment Alpha Replace" flat 
+{ 
+    VALUE(RS_group_fogAlphaReplace.gad.val) LAYOUT(vertical) HSTRETCH 
+	    VolLightingReplaceAlphaOnEnvironment.gad;		
+} 
+
+RS_group_fogScales.gad = 
+
+GROUP simple "Ray Contribution Scales" flat 
+{ 
+    VALUE(RS_group_fogScales.gad.val) LAYOUT(vertical) HSTRETCH 
+	    VolLightingRayContributionCamera.gad;		
+	    VolLightingRayContributionReflection.gad;		
+	    VolLightingRayContributionGI.gad;		
+	    VolLightingRayContributionEnvironment.gad;		
+} 
+
+RS_group_fogScattering.gad = 
+
+GROUP simple "Fog" flat 
+{ 
+    VALUE(RS_group_fogScattering.gad.val) LAYOUT(vertical) HSTRETCH 
+	    VolLightingFogAmbient.gad;		
+	    VolLightingApplyExposureCompensation.gad;		
+	    VolLightingFogHeight.gad;		
+	    VolLightingFogHorizonBlur.gad;		
+	    VolLightingFogOrigin.gad;		
+	    VolLightingFogNormal.gad;		
+} 
+
+RS_group_volScattering.gad = 
+
+GROUP simple "Volume Scattering" flat 
+{ 
+    VALUE(RS_group_volScattering.gad.val) LAYOUT(vertical) HSTRETCH 
+	    VolLightingEnabled.gad;		
+	    VolLightingTint.gad;		
+	    VolLightingTintShader.gad;		
+	    VolLightingScatteringCoefficient.gad;		
+	    VolLightingExtinctionCoefficient.gad;		
+	    VolLightingPhase.gad;		
+} 
+
+RS_group_causticsTraceDepths.gad = 
+
+GROUP simple "Trace Depths" flat 
+{ 
+    VALUE(RS_group_causticsTraceDepths.gad.val) LAYOUT(vertical) HSTRETCH 
+	    PhotonMaxTraceDepthReflection.gad;		
+	    PhotonMaxTraceDepthRefraction.gad;		
+	    PhotonMaxTraceDepthCombined.gad;		
+} 
+
+RS_group_caustics.gad = 
+
+GROUP simple "Caustics" flat 
+{ 
+    VALUE(RS_group_caustics.gad.val) LAYOUT(vertical) HSTRETCH 
+	    PhotonCausticsEnable.gad;		
+	    PhotonMode.gad;		
+	    PhotonFilename.gad;		
+	    PhotonCausticsMaxNumToGather.gad;		
+	    PhotonCausticsSearchRadius.gad;		
+	    PhotonUsePerPhotonIrradiance.gad;		
+	    RS_group_causticsTraceDepths.gad;		
+} 
+
+RS_group_irradiancePointCloud.gad = 
+
+GROUP simple "Irradiance Point Cloud" flat 
+{ 
+    VALUE(RS_group_irradiancePointCloud.gad.val) LAYOUT(vertical) HSTRETCH 
+	    IrradiancePointCloudMode.gad;		
+	    IrradiancePointCloudFilename.gad;		
+	    IrradiancePointCloudFramesToBlend.gad;		
+	    IrradiancePointCloudScreenRadius2.gad;		
+	    IrradiancePointCloudNumSamplesPerPixel.gad;		
+	    IrradiancePointCloudFilterSize.gad;		
+	    IrradiancePointCloudRetraceThreshold.gad;		
+	    ShowIrradiancePointCloudCalculation.gad;		
+} 
+
+RS_group_irradianceCachingSettings.gad = 
+GROUP collapsible "Settings" flat  
+{
+    VALUE(RS_group_irradianceCachingSettings.gad.val) LAYOUT(vertical) HSTRETCH
+	    IrradianceCacheMinRate.gad;		
+	    IrradianceCacheMaxRate.gad;		
+	    IrradianceCacheColorThreshold.gad;		
+	    IrradianceCacheDistanceThreshold.gad;		
+	    IrradianceCacheNormalThreshold.gad;		
+	    IrradianceCacheMinDetail.gad;		
+	    IrradianceCacheRadiusFactor.gad;		
+	    IrradianceCacheNumSmoothingPasses.gad;		
+} 
+
+RS_group_irradianceCaching.gad = 
+
+GROUP simple "Irradiance Caching" flat 
+{ 
+    VALUE(RS_group_irradianceCaching.gad.val) LAYOUT(vertical) HSTRETCH 
+	    IrradianceCacheMode.gad;		
+	    IrradianceCacheFilename.gad;		
+	    IrradianceCacheFlythroughMode.gad;		
+	    IrradianceCacheFramesToBlend.gad;		
+	    ShowIrradianceCacheCalculation.gad;		
+	    IrradianceCacheUseSeparatePointsForSecondaryRays.gad;		
+	    IrradianceCacheDebugDrawPoints.gad;		
+	    RS_group_irradianceCachingSettings.gad;		
+	    IrradianceCacheNumRays.gad;		
+	    IrradianceCacheAdaptiveAmount.gad;		
+	    IrradianceCacheAdaptiveErrorThreshold.gad;		
+} 
+
+RS_group_globalIllum.gad = 
+
+GROUP simple "Global Illumination" flat 
+{ 
+    VALUE(RS_group_globalIllum.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RS_GIEnabled.gad;		
+	    PrimaryGIEngine2.gad;		
+	    NumGIBounces2.gad;		
+	    SecondaryGIEngine2.gad;		
+	    BruteForceGINumRays.gad;		
+	    ConserveGIReflectionEnergy.gad;		
+} 
+
+RS_group_otherOverrides.gad = 
+
+GROUP simple "Other Overrides" flat 
+{ 
+    VALUE(RS_group_otherOverrides.gad.val) LAYOUT(vertical) HSTRETCH 
+	    ReflectionsEnable.gad;		
+	    RefractionsEnable.gad;		
+	    DomeLightsAffectedByRefractionEnable.gad;		
+	    AreaLightsAffectedByRefractionEnable.gad;		
+	    SubsurfaceScatteringEnable.gad;		
+	    EmissionEnable.gad;		
+	    TessellationDisplacementEnable.gad;		
+} 
+
+RS_group_mainglobals.gad = 
+
+GROUP simple "Globals" flat 
+{ 
+    VALUE(RS_group_mainglobals.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RS_addDefaultLight.gad;		
+	    RenderInCameraSpace.gad;		
+	    FreezeTessellation.gad;		
+	    Do8BitQuantizationAndDithering.gad;		
+	    RS_globalEnvironment.gad;		
+} 
+
+RS_group_colorSpace.gad = 
+
+GROUP simple "Rendering Color Space" flat 
+{ 
+    VALUE(RS_group_colorSpace.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RS_OCIOColorSpace.gad;		
+	    RS_OCIOPath.gad;		
+	    UseOCIOFileRules.gad;		
+	    RS_OCIOColorCorrection.gad;		
+} 
+
+RS_group_hminpixel.gad = 
+
+GROUP simple "Hair" flat 
+{ 
+    VALUE(RS_group_hminpixel.gad.val) LAYOUT(vertical) HSTRETCH 
+	    MPWHairEnabled.gad;		
+	    MPWHairAutoThreshold.gad;		
+	    MPWHairThreshold.gad;		
+	    MPWHairTraceDepth.gad;		
+	    HairTessellationMode.gad;		
+} 
+
+RS_group_mtrace.gad = 
+
+GROUP simple "Trace Depths" flat 
+{ 
+    VALUE(RS_group_mtrace.gad.val) LAYOUT(vertical) HSTRETCH 
+	    MaxTraceDepthReflection.gad;		
+	    MaxTraceDepthRefraction.gad;		
+	    MaxTraceDepthCombined.gad;		
+	    MaxTraceDepthTransparency.gad;		
+} 
+
+RS_group_renderingEngine.gad = 
+
+GROUP simple "" flat 
+{ 
+    VALUE(RS_group_renderingEngine.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RenderingEngine.gad;		
+	    EnableOptiXRTOnSupportedGPUs.gad;		
+} 
+
+RS_group_shutter.gad = 
+
+GROUP simple "Shutter" flat 
+{ 
+    VALUE(RS_group_shutter.gad.val) LAYOUT(vertical) HSTRETCH 
+	    MotionBlurShutterStart.gad;		
+	    MotionBlurShutterEnd.gad;		
+	    MotionBlurShutterPosition.gad;		
+	    MotionBlurShutterEfficiencyForTrapezoidal.gad;		
+} 
+
+RS_group_motionBlur.gad = 
+
+GROUP simple "Motion Blur" flat 
+{ 
+    VALUE(RS_group_motionBlur.gad.val) LAYOUT(vertical) HSTRETCH 
+	    MotionBlurEnabled.gad;		
+	    MotionBlurNumTransformationSteps.gad;		
+	    MotionBlurDeformationEnabled.gad;		
+	    RS_mbPoints.gad;		
+	    MotionBlurNumDeformationSteps.gad;		
+	    MotionBlurFrameDuration.gad;		
+} 
+
+RS_group_textureSampling.gad = 
+
+GROUP simple "Texture Sampling" flat 
+{ 
+    VALUE(RS_group_textureSampling.gad.val) LAYOUT(vertical) HSTRETCH 
+	    TextureSamplingTechnique.gad;		
+	    BumpMapBias.gad;		
+	    CopyToTextureCache.gad;		
+} 
+
+RS_group_optix.gad = 
+GROUP collapsible "Optix" flat  
+{
+    VALUE(RS_group_optix.gad.val) LAYOUT(vertical) HSTRETCH
+	    DenoiseOverheadBucket.gad;		
+	    DenoiseOverheadProgressive.gad;		
+} 
+
+RS_group_altus.gad = 
+GROUP collapsible "Altus" flat  
+{
+    VALUE(RS_group_altus.gad.val) LAYOUT(vertical) HSTRETCH
+	    DenoiseAltusKC1.gad;		
+	    DenoiseAltusKC2.gad;		
+	    DenoiseAltusKC4.gad;		
+	    DenoiseAltusKF.gad;		
+	    DenoiseIPRBypassAltus.gad;		
+} 
+
+RS_group_ddenoise.gad = 
+
+GROUP simple "Denoising" flat 
+{ 
+    VALUE(RS_group_ddenoise.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RS_denoisingEnabled.gad;		
+	    DenoiseEngine2.gad;		
+	    DenoiseEnableDenoiseAOVs.gad;		
+	    DenoiseAutoCreateAovs.gad;		
+	    DenoiseShowBuffersInRenderView.gad;		
+	    DenoiseSaveBuffers.gad;		
+	    RS_group_altus.gad;		
+	    RS_group_optix.gad;		
+} 
+
+RS_group_multipleScattering.gad = 
+GROUP collapsible "Sub-Surface Multiple Scattering" flat  
+{
+    VALUE(RS_group_multipleScattering.gad.val) LAYOUT(vertical) HSTRETCH
+	    MultipleScatteringSamplesEnabled.gad;		
+	    MultipleScatteringSamplesMode.gad;		
+	    MultipleScatteringSamplesCount.gad;		
+	    MultipleScatteringSamplesScale.gad;		
+} 
+
+RS_group_singleScattering.gad = 
+GROUP collapsible "Single Scattering" flat  
+{
+    VALUE(RS_group_singleScattering.gad.val) LAYOUT(vertical) HSTRETCH
+	    SingleScatteringSamplesEnabled.gad;		
+	    SingleScatteringSamplesMode.gad;		
+	    SingleScatteringSamplesCount.gad;		
+	    SingleScatteringSamplesScale.gad;		
+} 
+
+RS_group_volume.gad = 
+GROUP collapsible "Volume" flat  
+{
+    VALUE(RS_group_volume.gad.val) LAYOUT(vertical) HSTRETCH
+	    VolumeSamplesEnabled.gad;		
+	    VolumeSamplesMode.gad;		
+	    VolumeSamplesCount.gad;		
+	    VolumeSamplesScale.gad;		
+} 
+
+RS_group_light.gad = 
+GROUP collapsible "Light" flat  
+{
+    VALUE(RS_group_light.gad.val) LAYOUT(vertical) HSTRETCH
+	    LightSamplesEnabled.gad;		
+	    LightSamplesMode.gad;		
+	    LightSamplesCount.gad;		
+	    LightSamplesScale.gad;		
+} 
+
+RS_group_ao.gad = 
+GROUP collapsible "AO" flat  
+{
+    VALUE(RS_group_ao.gad.val) LAYOUT(vertical) HSTRETCH
+	    AOSamplesEnabled.gad;		
+	    AOSamplesMode.gad;		
+	    AOSamplesCount.gad;		
+	    AOSamplesScale.gad;		
+} 
+
+RS_group_refraction.gad = 
+GROUP collapsible "Refraction" flat  
+{
+    VALUE(RS_group_refraction.gad.val) LAYOUT(vertical) HSTRETCH
+	    RefractSamplesEnabled.gad;		
+	    RefractSamplesMode.gad;		
+	    RefractSamplesCount.gad;		
+	    RefractSamplesScale.gad;		
+} 
+
+RS_group_reflection.gad = 
+GROUP collapsible "Reflection" flat  
+{
+    VALUE(RS_group_reflection.gad.val) LAYOUT(vertical) HSTRETCH
+	    ReflectSamplesEnabled.gad;		
+	    ReflectSamplesMode.gad;		
+	    ReflectSamplesCount.gad;		
+	    ReflectSamplesScale.gad;		
+} 
+
+RS_group_overrides.gad = 
+
+GROUP simple "Overrides" flat 
+{ 
+    VALUE(RS_group_overrides.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RS_group_reflection.gad;		
+	    RS_group_refraction.gad;		
+	    RS_group_ao.gad;		
+	    RS_group_light.gad;		
+	    RS_group_volume.gad;		
+	    RS_group_singleScattering.gad;		
+	    RS_group_multipleScattering.gad;		
+} 
+
+RS_group_sfiltering.gad = 
+GROUP collapsible "Sample Filtering" flat  
+{
+    VALUE(RS_group_sfiltering.gad.val) LAYOUT(vertical) HSTRETCH
+	    UnifiedFilterType.gad;		
+	    UnifiedFilterSize.gad;		
+	    UnifiedMaxOverbright.gad;		
+	    GlossyRayMaxOverbright.gad;		
+} 
+
+RS_group_usampling.gad = 
+
+GROUP simple "Unified Sampling" flat 
+{ 
+    VALUE(RS_group_usampling.gad.val) LAYOUT(vertical) HSTRETCH 
+	    EnableAutomaticSampling.gad;		
+	    UnifiedAdaptiveErrorThreshold.gad;		
+	    UnifiedMinSamples.gad;		
+	    UnifiedMaxSamples.gad;		
+	    UnifiedDebugDrawSamples.gad;		
+	    UnifiedRandomizePattern.gad;		
+	    RS_group_sfiltering.gad;		
+} 
+
+RS_group_progSampling.gad = 
+
+GROUP simple "Progressive Sampling" flat 
+{ 
+    VALUE(RS_group_progSampling.gad.val) LAYOUT(vertical) HSTRETCH 
+	    ProgressiveRenderingEnabled.gad;		
+	    ProgressiveRenderingNumPasses.gad;		
+} 
+
+RS_redshiftSwitcher.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "RS_redshiftSwitcher.gad"
+    { 
+	VALUE(RS_redshiftSwitcher.gad.val) STRETCH(1,0)
+
+	TAB "Sampling"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    RS_group_progSampling.gad;		
+	    RS_group_usampling.gad;		
+	    RS_group_overrides.gad;		
+	    RS_group_ddenoise.gad;		
+	    RS_group_textureSampling.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Motion Blur"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    RS_group_motionBlur.gad;		
+	    RS_group_shutter.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Globals"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    RS_group_renderingEngine.gad;		
+	    RS_group_mtrace.gad;		
+	    RS_group_hminpixel.gad;		
+	    RS_group_colorSpace.gad;		
+	    RS_group_mainglobals.gad;		
+	    RS_group_otherOverrides.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Global Illumination"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    RS_group_globalIllum.gad;		
+	    RS_group_irradianceCaching.gad;		
+	    RS_group_irradiancePointCloud.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Caustics"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    RS_group_caustics.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Volume Scattering"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    RS_group_volScattering.gad;		
+	    RS_group_fogScattering.gad;		
+	    RS_group_fogScales.gad;		
+	    RS_group_fogAlphaReplace.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Optimizations"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    RS_group_subsurfacescattering.gad;		
+	    RS_group_cutoffthreshold.gad;		
+	    RS_group_rroulette.gad;		
+	    RS_group_rtaccel.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "System"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    RS_group_abortOn.gad;		
+	    RS_group_bucketRendering.gad;		
+	    RS_group_units.gad;		
+	    RS_group_legacyOptions.gad;		
+	    RS_group_experimentalOptions.gad;		
+	    RS_group_debugCapture.gad;		
+	    RS_group_memoryOptions.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+RS_group_easyMessagesTab.gad = 
+
+GROUP simple "Modified Advanced Settings" flat 
+{ 
+    VALUE(RS_group_easyMessagesTab.gad.val) LAYOUT(vertical) HSTRETCH 
+	    easyMessages.gad;		
+} 
+
+RS_group_easyRTX.gad = 
+
+GROUP simple "Hardware Ray-Tracing (if available)" flat 
+{ 
+    VALUE(RS_group_easyRTX.gad.val) LAYOUT(vertical) HSTRETCH 
+	    easyEnableOptiXRTOnSupportedGPUs.gad;		
+} 
+
+RS_group_easyTraceDepths.gad = 
+
+GROUP simple "Trace Depths" flat 
+{ 
+    VALUE(RS_group_easyTraceDepths.gad.val) LAYOUT(vertical) HSTRETCH 
+	    easyMaxTraceDepthCombined.gad;		
+	    easyNumGIBounces.gad;		
+	    easyMaxTraceDepthReflection.gad;		
+	    easyMaxTraceDepthRefraction.gad;		
+	    easyMaxTraceDepthTransparency.gad;		
+} 
+
+RS_group_easyGI.gad = 
+
+GROUP simple "Global Illumination" flat 
+{ 
+    VALUE(RS_group_easyGI.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RS_easyGIEnabled.gad;		
+} 
+
+RS_group_easyMotionBlur.gad = 
+
+GROUP simple "Motion Blur" flat 
+{ 
+    VALUE(RS_group_easyMotionBlur.gad.val) LAYOUT(vertical) HSTRETCH 
+	    easyMotionBlurEnabled.gad;		
+	    easyMotionBlurNumTransformationSteps.gad;		
+	    easyMotionBlurDeformationEnabled.gad;		
+} 
+
+RS_group_easyDenoising.gad = 
+
+GROUP simple "Denoising" flat 
+{ 
+    VALUE(RS_group_easyDenoising.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RS_easyDenoisingEnabled.gad;		
+	    easyDenoiseEngine2.gad;		
+} 
+
+RS_group_easyBucketQuality.gad = 
+
+GROUP simple "Bucket Quality" flat 
+{ 
+    VALUE(RS_group_easyBucketQuality.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RS_easyBucketQuality.gad;		
+	    RS_easyThreshold.gad;		
+	    easyProgressiveRenderingNumPasses.gad;		
+} 
+
+RS_group_easyRE.gad = 
+
+GROUP simple "" flat 
+{ 
+    VALUE(RS_group_easyRE.gad.val) LAYOUT(vertical) HSTRETCH 
+	    easyRenderingEngine.gad;		
+} 
+
+RS_group_basicRenderSettings.gad = 
+
+GROUP simple "Render Settings" flat 
+{ 
+    VALUE(RS_group_basicRenderSettings.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RS_group_easyRE.gad;		
+	    RS_group_easyBucketQuality.gad;		
+	    RS_group_easyDenoising.gad;		
+	    RS_group_easyMotionBlur.gad;		
+	    RS_group_easyGI.gad;		
+	    RS_group_easyTraceDepths.gad;		
+	    RS_group_easyRTX.gad;		
+	    RS_group_easyMessagesTab.gad;		
+} 
+
+RS_group_easyModeSwitcher.gad = 
+
+GROUP simple "Mode" flat 
+{ 
+    VALUE(RS_group_easyModeSwitcher.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RS_easyMode.gad;		
+} 
+
+PFXLabel3.gad = 
+
+GROUP simple "LDR Files Color Management and Post Effects" flat 
+{ 
+    VALUE(PFXLabel3.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RS_PFX_LDR_color.gad;		
+	    RS_PFX_LDR_exposure.gad;		
+	    RS_PFX_LDR_effects.gad;		
+} 
+
+PFXLabel2.gad = 
+
+GROUP simple "HDR Files Color Management and Post Effects" flat 
+{ 
+    VALUE(PFXLabel2.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RS_PFX_HDR_color.gad;		
+	    RS_PFX_HDR_exposure.gad;		
+	    RS_PFX_HDR_effects.gad;		
+} 
+
+PFXLabel1.gad = 
+
+GROUP simple "MPlay Preview Color Management and Post Effects" flat 
+{ 
+    VALUE(PFXLabel1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RS_PFX_MPL_color.gad;		
+	    RS_PFX_MPL_exposure.gad;		
+	    RS_PFX_MPL_effects.gad;		
+} 
+
+RS_group_aovsManagerOptions.gad = 
+
+GROUP simple "AOVs Manager Options" flat 
+{ 
+    VALUE(RS_group_aovsManagerOptions.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RS_aovAllAOVsDisabled.gad;		
+	    RS_aovGUIHideOptions.gad;		
+	    RS_aovGUIExpandTabs.gad;		
+	    RS_cryptomatteFullPaths.gad;		
+} 
+
+RS_group_aovsFromNode.gad = 
+
+GROUP simple "AOVs From Node" flat 
+{ 
+    VALUE(RS_group_aovsFromNode.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RS_aovGetFromNode.gad;		
+} 
+
+RS_group_copTexturesExtraction.gad = 
+GROUP collapsible "COP and HDA Embedded Textures" flat  
+{
+    VALUE(RS_group_copTexturesExtraction.gad.val) LAYOUT(vertical) HSTRETCH
+	    RS_copEnableCustomPath.gad;		
+	    RS_copCustomPath.gad;		
+	    RS_copCustomPathInterm.gad;		
+} 
+
+RS_group_mplayPreview.gad = 
+GROUP collapsible "MPlay Preview" flat  
+{
+    VALUE(RS_group_mplayPreview.gad.val) LAYOUT(vertical) HSTRETCH
+	    RS_renderToMPlay.gad;		
+	    RS_renderAOVsToMPlay.gad;		
+	    RS_overwriteMPlayImage.gad;		
+	    RS_MPlay_disabledNonGUI.gad;		
+	    RS_gammaPreview.gad;		
+} 
+
+RS_group_aovsProcessing.gad = 
+GROUP collapsible "Processing" flat  
+{
+    VALUE(RS_group_aovsProcessing.gad.val) LAYOUT(vertical) HSTRETCH
+	    RS_aovDeepEnabled.gad;		
+	    AOVDeepMergeMode.gad;		
+	    AOVDeepMergeZThreshold.gad;		
+	    AOVDeepMergeAlphaThreshold.gad;		
+	    AOVMaxOverbrightEnable.gad;		
+	    AOVMaxOverbright.gad;		
+	    AOVDisableImportanceOptimizations.gad;		
+	    AOVFixRawHaloArtifacts.gad;		
+} 
+
+RS_group_exrMetadata.gad = 
+GROUP collapsible "EXR Metadata" flat  
+{
+    VALUE(RS_group_exrMetadata.gad.val) LAYOUT(vertical) HSTRETCH
+	    RS_outputMetadata.gad;		
+} 
+
+RS_group_aovOptions.gad = 
+
+GROUP simple "AOV Options" flat 
+{ 
+    VALUE(RS_group_aovOptions.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RS_outputEnable.gad;		
+	    RS_outputFileNamePrefix.gad;		
+	    vm_picture.gad;		
+	    RS_outputBeautyAOVSuffix.gad;		
+	    RS_outputSkipRendered.gad;		
+	    RS_outputCreateDirs.gad;		
+	    RS_outputFileFormat.gad;		
+	    RS_outputBits.gad;		
+	    RS_outputBitsTiff.gad;		
+	    RS_outputBitsPNG.gad;		
+	    RS_outputTiffCompression.gad;		
+	    RS_outputExrCompression.gad;		
+	    RS_outputDwaCompression.gad;		
+	    RS_outputJpgCompression.gad;		
+	    RS_outputStorageFormat.gad;		
+	    RS_outputMultilayerMode.gad;		
+	    RS_aovMultilayerBeauty.gad;		
+	    RS_aovAutocrop.gad;		
+	    RS_aovMultipart.gad;		
+	    RS_outputDisableSuffixes.gad;		
+} 
+
+RS_outputSwitcher.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "RS_outputSwitcher.gad"
+    { 
+	VALUE(RS_outputSwitcher.gad.val) STRETCH(1,0)
+
+	TAB "Common"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    RS_group_aovOptions.gad;		
+	    RS_group_exrMetadata.gad;		
+	    RS_group_aovsProcessing.gad;		
+	    RS_group_mplayPreview.gad;		
+	    RS_group_copTexturesExtraction.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "AOV Manager"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    RS_group_aovsFromNode.gad;		
+	    RS_group_aovsManagerOptions.gad;		
+	    RS_aov.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Post Effects"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    PFXLabel1.gad;		
+	    PFXLabel2.gad;		
+	    PFXLabel3.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+RS_group_mainTabSwitcherOptions.gad = 
+
+GROUP simple "Plugin Options" flat 
+{ 
+    VALUE(RS_group_mainTabSwitcherOptions.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RS_initSimulations.gad;		
+	    RS_multihreadLoader.gad;		
+	    RS_multihreadPacked.gad;		
+	    RS_fastPackedGeoExpansion.gad;		
+	    RS_fastAttrExtraction.gad;		
+	    RS_packedAgentShapePromo.gad;		
+	    RS_nonBlockingRendering.gad;		
+	    RS_reportErrorsToROP.gad;		
+	    RS_arbitraryUVMapNames.gad;		
+	    RS_checkInstancefileFiles.gad;		
+	    RS_useAlembicProcedural.gad;		
+} 
+
+RS_group_mainTabSwitcherSeqRendering.gad = 
+
+GROUP simple "Sequence Rendering" flat 
+{ 
+    VALUE(RS_group_mainTabSwitcherSeqRendering.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RS_updateMeshDeform.gad;		
+	    RS_updateMeshNoReload.gad;		
+	    RS_updateMeshNoReload_list.gad;		
+} 
+
+RS_group_mainTabSwitcherMaterialsOvr.gad = 
+
+GROUP simple "Materials Override" flat 
+{ 
+    VALUE(RS_group_mainTabSwitcherMaterialsOvr.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RS_matOverride_enable.gad;		
+	    RS_matOverride_mat.gad;		
+	    RS_matOverride_exclude.gad;		
+	    RS_defaultMaterialOverride.gad;		
+	    RS_apply_stylesheets.gad;		
+} 
+
+RS_group_mainTabSwitcherCamerasOver.gad = 
+GROUP collapsible "Overscan" flat  
+{
+    VALUE(RS_group_mainTabSwitcherCamerasOver.gad.val) LAYOUT(vertical) HSTRETCH
+	    RS_overscanMode.gad;		
+	    RS_overscanData.gad;		
+} 
+
+RS_group_mainTabSwitcherCamerasRO.gad = 
+GROUP collapsible "Resolution Override" flat  
+{
+    VALUE(RS_group_mainTabSwitcherCamerasRO.gad.val) LAYOUT(vertical) HSTRETCH
+	    RS_overrideCameraRes.gad;		
+	    RS_overrideResScale.gad;		
+	    RS_overrideRes.gad;		
+} 
+
+RS_group_mainTabSwitcherCameras.gad = 
+
+GROUP simple "Render Camera" flat 
+{ 
+    VALUE(RS_group_mainTabSwitcherCameras.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RS_renderCamera.gad;		
+	    RS_group_mainTabSwitcherCamerasRO.gad;		
+	    RS_group_mainTabSwitcherCamerasOver.gad;		
+} 
+
+RS_mainSwitcher.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "RS_mainSwitcher.gad"
+    { 
+	VALUE(RS_mainSwitcher.gad.val) STRETCH(1,0)
+
+	TAB "Main"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    RS_group_mainTabSwitcherCameras.gad;		
+	    RS_group_mainTabSwitcherMaterialsOvr.gad;		
+	    RS_group_mainTabSwitcherSeqRendering.gad;		
+	    RS_group_mainTabSwitcherOptions.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Output"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    RS_outputSwitcher.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Redshift"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    RS_group_easyModeSwitcher.gad;		
+	    RS_group_basicRenderSettings.gad;		
+	    RS_redshiftSwitcher.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Archive"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    RS_group_exportProxyFile.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "RenderMaps"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    RS_group_renderMapsBaking.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Objects"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    RS_objects_candidate.gad;		
+	    RS_objects_force.gad;		
+	    RS_objects_exclude.gad;		
+	    RS_objects_forcePhantom.gad;		
+	    RS_objects_forceMatte.gad;		
+	    RS_objects_forceMatteRef.gad;		
+	    RS_objects_forceFlags.gad;		
+	    RS_objects_forceFlagsRef.gad;		
+	    RS_separator_objectCandidates.gad;		
+	    RS_lights_candidate.gad;		
+	    RS_lights_force.gad;		
+	    RS_lights_exclude.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Scripts"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    tprerender.join;		
+	    tpreframe.join;		
+	    tpostframe.join;		
+	    tpostrender.join;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "IPR"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    RS_group_iprCamera.gad;		
+	    RS_group_iprOptions.gad;		
+	    RS_group_iprPluginOptions.gad;		
+	    RS_group_iprRenderView.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    RS_IPR.row.join; 
+    execute.row.join; 
+    trange.gad; 
+    f.gad; 
+    take.gad; 
+    RS_separator_rrs2.gad; 
+    RS_rrs2.gad; 
+    RS_mainSwitcher.gad; 
+    redshidt_plugin_version.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

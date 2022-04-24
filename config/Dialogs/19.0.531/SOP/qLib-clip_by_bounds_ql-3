@@ -1,0 +1,260 @@
+// Magic: 6aeea67f
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Fri Mar 25 21:22:57 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+convert_all_to_poly.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("convert_all_to_poly", "Convert Input to Polygons") toggle VALUE(convert_all_to_poly.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+do_delete.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+do_delete.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+do_delete.gad = PARM_BUTTON("do_delete", "") toggle VALUE(do_delete.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+delete_type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    {  }
+
+    PARM_LABEL_SIMPLE("Type", "delete_type") WIDTH(1.32);
+    { WIDTH(0.09) }
+
+    delete_type.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+del_offset.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ del_offset.label = PARM_LABEL("Offset", "del_offset") WIDTH(1.5);
+ PARM(float, 1, "del_offset", none, none) RANGE(0,10)
+	 LABELREF(del_offset.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+delete_inside.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("delete_inside", "Invert (Delete Inside)") toggle VALUE(delete_inside.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+do_clipbybounds.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+do_clipbybounds.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+do_clipbybounds.gad = PARM_BUTTON("do_clipbybounds", "") toggle VALUE(do_clipbybounds.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+do_clip.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    {  }
+
+    PARM_LABEL_SIMPLE("Clip using", "do_clip") WIDTH(1.32);
+    { WIDTH(0.09) }
+
+    do_clip.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+do_xmin.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("do_xmin", "X-") toggle VALUE(do_xmin.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+do_xmax.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("do_xmax", "X+") toggle VALUE(do_xmax.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+do_ymin.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("do_ymin", "Y-") toggle VALUE(do_ymin.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+do_ymax.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("do_ymax", "Y+") toggle VALUE(do_ymax.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+do_zmin.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("do_zmin", "Z-") toggle VALUE(do_zmin.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+do_zmax.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("do_zmax", "Z+") toggle VALUE(do_zmax.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+flippolydir.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("flippolydir", "Flip Polygon(s)") toggle VALUE(flippolydir.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+folder1.gad = 
+
+GROUP simple "Clip by Bounds" flat 
+{ 
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    do_clipbybounds.row.join;		
+	    do_xmin.gad;		
+	    do_xmax.gad;		
+	    do_ymin.gad;		
+	    do_ymax.gad;		
+	    do_zmin.gad;		
+	    do_zmax.gad;		
+	    flippolydir.gad;		
+} 
+
+folder0.gad = 
+
+GROUP simple "Delete Outside Components" flat 
+{ 
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    do_delete.row.join;		
+	    del_offset.gad;		
+	    delete_inside.gad;		
+} 
+
+# warning cpp warning: "GenV3/subdialog.top.ui":5 Macro "PARMSPACING" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":6 Macro "LAYOUTDIR" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":7 Macro "DO_JUSTIFY" redefined.  Using later definition
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    convert_all_to_poly.gad; 
+    folder0.gad; 
+    folder1.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

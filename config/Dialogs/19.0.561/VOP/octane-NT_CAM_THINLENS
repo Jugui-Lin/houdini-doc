@@ -1,0 +1,328 @@
+// Magic: f4fb5f13
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Mon Apr 11 19:30:45 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+orthographic.gad = NULL { }
+sensorWidth.gad = NULL { }
+focalLength.gad = NULL { }
+fstop.gad = NULL { }
+fov.gad = NULL { }
+scale.gad = NULL { }
+
+distortion.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ distortion.label = PARM_LABEL("Distortion", "distortion") WIDTH(1.5);
+ PARM(float, 1, "distortion", none, none) RANGE(0,1)
+	 LABELREF(distortion.label) HSTRETCH;
+
+    distortion.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(distortion.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+lensShift.gad = NULL { }
+
+perspectiveCorrection.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("perspectiveCorrection", "Perspective correction") toggle VALUE(perspectiveCorrection.val);
+
+    { HSTRETCH }
+
+    perspectiveCorrection.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(perspectiveCorrection.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+pixelAspectRatio.gad = NULL { }
+nearClipDepth.gad = NULL { }
+farClipDepth.gad = NULL { }
+
+autofocus.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("autofocus", "Auto-focus") toggle VALUE(autofocus.val);
+
+    { HSTRETCH }
+
+    autofocus.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(autofocus.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+focalDepth.gad = NULL { }
+aperture.gad = NULL { }
+
+apertureAspectRatio.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ apertureAspectRatio.label = PARM_LABEL("Aperture aspect ratio", "apertureAspectRatio") WIDTH(1.5);
+ PARM(float, 1, "apertureAspectRatio", none, LOGSCALE) RANGE(0.10000000149011612,10)
+	 LABELREF(apertureAspectRatio.label) HSTRETCH;
+
+    apertureAspectRatio.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(apertureAspectRatio.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+aperture_edge.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ aperture_edge.label = PARM_LABEL("Aperture edge", "aperture_edge") WIDTH(1.5);
+ PARM(float, 1, "aperture_edge", none, none) RANGE(0,3)
+	 LABELREF(aperture_edge.label) HSTRETCH;
+
+    aperture_edge.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(aperture_edge.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+bokehSidecount.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ bokehSidecount.label = PARM_LABEL("Bokeh side count", "bokehSidecount") WIDTH(1.5);
+ PARM(integer, 1, "bokehSidecount", none, none) RANGE(3,12)
+	 LABELREF(bokehSidecount.label) HSTRETCH;
+
+    bokehSidecount.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(bokehSidecount.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+bokehRotation.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ bokehRotation.label = PARM_LABEL("Bokeh rotation", "bokehRotation") WIDTH(1.5);
+ PARM(float, 1, "bokehRotation", none, none) RANGE(0,1)
+	 LABELREF(bokehRotation.label) HSTRETCH;
+
+    bokehRotation.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(bokehRotation.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+bokehRoundedness.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ bokehRoundedness.label = PARM_LABEL("Bokeh roundedness", "bokehRoundedness") WIDTH(1.5);
+ PARM(float, 1, "bokehRoundedness", none, none) RANGE(0,1)
+	 LABELREF(bokehRoundedness.label) HSTRETCH;
+
+    bokehRoundedness.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(bokehRoundedness.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+pos.gad = NULL { }
+target.gad = NULL { }
+up.gad = NULL { }
+
+stereoOutput.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Stereo output", "stereoOutput") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    stereoOutput.menu;
+
+    { HSTRETCH }
+
+    stereoOutput.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(stereoOutput.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+stereoMode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Stereo mode", "stereoMode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    stereoMode.menu;
+
+    { HSTRETCH }
+
+    stereoMode.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(stereoMode.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+stereodist.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ stereodist.label = PARM_LABEL("Eye distance", "stereodist") WIDTH(1.5);
+ PARM(float, 1, "stereodist", none, none) RANGE(-1,1)
+	 LABELREF(stereodist.label) HSTRETCH;
+
+    stereodist.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(stereodist.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+stereoSwitchEyes.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("stereoSwitchEyes", "Swap eyes") toggle VALUE(stereoSwitchEyes.val);
+
+    { HSTRETCH }
+
+    stereoSwitchEyes.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(stereoSwitchEyes.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+leftFilter.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    leftFilter.label = PARM_LABEL("Left stereo filter", "leftFilter") WIDTH(1.5);
+    PARM(float, 3, "leftFilter", none, COLOR, "R,G,B") 
+	LABELREF(leftFilter.label) HSTRETCH;
+
+    leftFilter.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(leftFilter.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+rightFilter.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    rightFilter.label = PARM_LABEL("Right stereo filter", "rightFilter") WIDTH(1.5);
+    PARM(float, 3, "rightFilter", none, COLOR, "R,G,B") 
+	LABELREF(rightFilter.label) HSTRETCH;
+
+    rightFilter.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(rightFilter.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+octane_plugin_version.gad = NULL { }
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    orthographic.gad; 
+    sensorWidth.gad; 
+    focalLength.gad; 
+    fstop.gad; 
+    fov.gad; 
+    scale.gad; 
+    distortion.gad; 
+    lensShift.gad; 
+    perspectiveCorrection.gad; 
+    pixelAspectRatio.gad; 
+    nearClipDepth.gad; 
+    farClipDepth.gad; 
+    autofocus.gad; 
+    focalDepth.gad; 
+    aperture.gad; 
+    apertureAspectRatio.gad; 
+    aperture_edge.gad; 
+    bokehSidecount.gad; 
+    bokehRotation.gad; 
+    bokehRoundedness.gad; 
+    pos.gad; 
+    target.gad; 
+    up.gad; 
+    stereoOutput.gad; 
+    stereoMode.gad; 
+    stereodist.gad; 
+    stereoSwitchEyes.gad; 
+    leftFilter.gad; 
+    rightFilter.gad; 
+    octane_plugin_version.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

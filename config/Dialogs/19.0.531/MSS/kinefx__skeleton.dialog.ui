@@ -1,0 +1,380 @@
+// Magic: e2f6010d
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Sun Mar 13 16:12:43 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+point_name.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    point_name.label = PARM_LABEL("Name", "point_name") WIDTH(1.5);
+    PARM_FIELD(string, "point_name") VALUE(point_name.val) 
+	LABELREF(point_name.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+child_compensate.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("child_compensate", "Child Compensate") toggle VALUE(child_compensate.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+mode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Mode", "mode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    mode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+scaleinheritance.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Scale Inheritance", "scaleinheritance") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    scaleinheritance.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+jointplacement.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Joint Placement", "jointplacement") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    jointplacement.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+primaryaxis.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Primary Axis", "primaryaxis") WIDTH(1.5);
+    { WIDTH(0.1) }
+
+    primaryaxis.buttonstrip;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+secondaryaxisx.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Secondary Axis", "secondaryaxisx") WIDTH(1.5);
+    { WIDTH(0.1) }
+
+    secondaryaxisx.buttonstrip;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+secondaryaxisy.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Secondary Axis", "secondaryaxisy") WIDTH(1.5);
+    { WIDTH(0.1) }
+
+    secondaryaxisy.buttonstrip;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+secondaryaxisz.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Secondary Axis", "secondaryaxisz") WIDTH(1.5);
+    { WIDTH(0.1) }
+
+    secondaryaxisz.buttonstrip;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+autoalign.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("autoalign", "Auto Align Parent to Child") toggle VALUE(autoalign.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+enabletweak.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("enabletweak", "Tweak Mode") toggle VALUE(enabletweak.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+tweak_along_parent_dir.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("tweak_along_parent_dir", "Tweak Along Parent Dir") toggle VALUE(tweak_along_parent_dir.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+t.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   t.label = PARM_LABEL("Translate", "t") WIDTH(1.5);
+   PARM(float, 3, "t", none, none, "#1,#2,#3")
+	RANGE(0,1)  LABELREF(t.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+r.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   r.label = PARM_LABEL("Rotate", "r") WIDTH(1.5);
+   PARM(float, 3, "r", none, none, "#1,#2,#3")
+	RANGE(0,1)  LABELREF(r.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+s.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   s.label = PARM_LABEL("Scale", "s") WIDTH(1.5);
+   PARM(float, 3, "s", none, none, "#1,#2,#3")
+	RANGE(0,1)  LABELREF(s.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+local_t.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   local_t.label = PARM_LABEL("Local Translate", "local_t") WIDTH(1.5);
+   PARM(float, 3, "local_t", none, none, "#1,#2,#3")
+	RANGE(0,1)  LABELREF(local_t.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+local_r.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   local_r.label = PARM_LABEL("Local Rotate", "local_r") WIDTH(1.5);
+   PARM(float, 3, "local_r", none, none, "#1,#2,#3")
+	RANGE(0,1)  LABELREF(local_r.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+local_s.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   local_s.label = PARM_LABEL("Local Scale", "local_s") WIDTH(1.5);
+   PARM(float, 3, "local_s", none, none, "#1,#2,#3")
+	RANGE(0,1)  LABELREF(local_s.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+show_joints.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("show_joints", "Display Joints") toggle VALUE(show_joints.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+show_axes.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("show_axes", "Display Joint Axes") toggle VALUE(show_axes.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+show_links.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("show_links", "Display Links") toggle VALUE(show_links.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+solid_links.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("solid_links", "Solid Links") toggle VALUE(solid_links.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+show_scene_geo.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("show_scene_geo", "Show Geometry") toggle VALUE(show_scene_geo.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+# warning cpp warning: "GenV3/subdialog.top.ui":5 Macro "PARMSPACING" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":6 Macro "LAYOUTDIR" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":7 Macro "DO_JUSTIFY" redefined.  Using later definition
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    point_name.gad; 
+    child_compensate.gad; 
+    mode.gad; 
+    scaleinheritance.gad; 
+    jointplacement.gad; 
+    primaryaxis.gad; 
+    secondaryaxisx.gad; 
+    secondaryaxisy.gad; 
+    secondaryaxisz.gad; 
+    autoalign.gad; 
+    enabletweak.gad; 
+    tweak_along_parent_dir.gad; 
+    t.gad; 
+    r.gad; 
+    s.gad; 
+    local_t.gad; 
+    local_r.gad; 
+    local_s.gad; 
+    show_joints.gad; 
+    show_axes.gad; 
+    show_links.gad; 
+    solid_links.gad; 
+    show_scene_geo.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

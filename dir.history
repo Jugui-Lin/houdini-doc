@@ -1,0 +1,65 @@
+HIP
+{
+D:/video tutorail/Houdini/vfx force/第60期团购  韩国dokak全13套教程大合集/H17.5升级教程/
+C:/Users/Jugui/Desktop/Vellum_Rubber_Band_Ball_01/
+D:/_Jugui/TDDownload/FFF Houdini Subject 071/_HIP/
+D:/_Project/Houdini/0420/
+C:/Users/Jugui/AppData/Local/Temp/BNZ.626062d12b7790/
+D:/video tutorail/Houdini/海啸教程 houdini/LZ0L106AC_Tsunami_Houdini/
+D:/video tutorail/Houdini/vfx force/142 Houdini MG Stop Being Afraid of Houdini/Lesson_12/A/
+D:/video tutorail/Houdini/vfx force/142 Houdini MG Stop Being Afraid of Houdini/Lesson_12/B/
+D:/video tutorail/Houdini/vfx force/142 Houdini MG Stop Being Afraid of Houdini/Lesson_11_Revised/B/
+D:/video tutorail/Houdini/vfx force/142 Houdini MG Stop Being Afraid of Houdini/Lesson_11_Revised/C/
+D:/video tutorail/Houdini/vfx force/142 Houdini MG Stop Being Afraid of Houdini/Lesson_10_Revised/B/
+D:/video tutorail/Houdini/vfx force/142 Houdini MG Stop Being Afraid of Houdini/Lesson_09/B/
+}
+PIC
+{
+$HIP/
+}
+GEO
+{
+$HIP/geo/buildings/
+$cache/
+/geo/$OS/
+$HIP/cache/$OS/$HIPNAME/
+D:/_Cache/_Houdini_Caches/lesson08B/
+D:/_Cache/_Houdini_Caches/lesson08B/$OS/
+D:/_Cache/_Houdini_Caches/lesson06/
+$HIP/models/
+$HIP/
+$CCacheeo/
+$Cacheeo/
+$Cache/geo/
+}
+OTL
+{
+C:/PROGRA~1/SIDEEF~1/HOUDIN~1.455/houdini/otls/
+C:/Users/Jugui/Documents/houdini19.0/SideFXLabs/19.0.514/SideFXLabs19.0/otls/
+C:/PROGRA~1/SIDEEF~1/HOUDIN~1.455/packages/kinefx/otls/
+C:/Program Files/Side Effects Software/sidefx_packages/SideFXLabs19.0/otls/
+C:/ProgramData/redshift/Plugins/Houdini/19.0.455/otls/
+C:/PROGRA~1/SIDEEF~1/HOUDIN~1.455/houdini/help/examples/nodes/chop/copy/
+D:/video tutorail/淘宝houdini工程文件/Houdini18.5大型流体细节模拟工程HDA/Houdini18.5大型流体细节模拟工程HDA/Houdini18.5流体细节模拟工程HDA/
+C:/Users/Jugui/Documents/houdini19.0/otls/
+C:/PROGRA~1/SIDEEF~1/HOUDIN~1.561/houdini/help/examples/nodes/sop/findshortestpath/
+D:/_Project/test/00_Pipeline/HDAs/
+}
+MISC
+{
+D:/_Cache/_Houdini_Caches/jsonFile/exportPoint/
+$HIP/
+D:/CRTubeGet Downloaded/houdini多层衣服布料解算案例教程/Houdini人物服饰布料从入门到精通技术视频教程/
+D:/CRTubeGet Downloaded/houdini多层衣服布料解算案例教程/Houdini人物服饰布料从入门到精通技术视频教程/chapter_8_v2/
+D:/video tutorail/Houdini/vfx force/第154期团购  魔法光束和能量飞溅Houdini Beams and Blasts Tutorial/formOfSorcery_assets/hero/
+D:/video tutorail/Houdini/vfx force/第154期团购  魔法光束和能量飞溅Houdini Beams and Blasts Tutorial/formOfSorcery_assets/villain/
+D:/video tutorail/Houdini/vfx force/第154期团购  魔法光束和能量飞溅Houdini Beams and Blasts Tutorial/formOfSorcery_assets/layout/
+}
+FBX
+{
+D:/_Project/Houdini/0311/geo/buildings/
+}
+DIRECTORY
+{
+$HIP/Desktop/
+}

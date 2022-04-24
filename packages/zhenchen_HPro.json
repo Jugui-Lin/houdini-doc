@@ -1,0 +1,19 @@
+{
+    "path": "$HPro",
+    "env": 
+    [
+          {
+              "HPro": "C:/Users/Jugui/Documents/houdini19.0/zeng_chen_HDA"
+          },
+          {
+              "PATH": 
+            	{
+                  "method": "prepend",
+                  "value": 
+                	[
+                      "$HPro/bin"
+                  ]
+              }
+          }
+      ]
+  }

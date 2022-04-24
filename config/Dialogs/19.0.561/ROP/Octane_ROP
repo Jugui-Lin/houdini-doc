@@ -1,0 +1,1894 @@
+// Magic: 9308c0e6
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Mon Apr 11 19:26:40 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+HO_IPR.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+HO_IPR.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("HO_IPR", "Open IPR")
+	push VALUE(HO_IPR.val);
+
+    {  }
+}
+
+HO_networkOptions.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    PARM_BUTTON("HO_networkOptions", "Network Options")
+	push VALUE(HO_networkOptions.val);
+
+    {  }
+}
+
+execute.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    PARM_BUTTON("execute", "Render to Disk")
+	push VALUE(execute.val);
+
+    {  }
+}
+
+renderdialog.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    { WIDTH(0) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("renderdialog", "Controls...")
+	push VALUE(renderdialog.val);
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+trange.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Valid Frame Range", "trange") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    trange.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+f.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   f.label = PARM_LABEL("Start/End/Inc", "f") WIDTH(1.5);
+   PARM(float, 3, "f", none, none, "#1,#2,#3")
+	RANGE(0,1)  LABELREF(f.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+take.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Render with Take", "take") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    take.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_rrs1.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+HO_rrs2.sval := 0;
+
+HO_rrs2.gad = 
+{
+    LAYOUT(vertical) SPACING(1p) HSTRETCH VMARGIN(0.05, 0)
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    SWITCHER tight
+    {
+	VALUE(HO_rrs2.sval) HSTRETCH
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+	    LABEL "Octane Plugin Settings" HSTRETCH;
+
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Octane Plugin Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(HO_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Octane Plugin Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(HO_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Octane Plugin Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(HO_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Octane Plugin Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(HO_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Octane Plugin Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(HO_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Octane Plugin Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(HO_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[5]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Octane Plugin Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(HO_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[6]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Octane Plugin Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(HO_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[7]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Octane Plugin Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(HO_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[8]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Octane Plugin Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(HO_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[9]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Octane Plugin Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(HO_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[10]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Octane Plugin Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(HO_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[11]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Octane Plugin Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(HO_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[12]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Octane Plugin Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(HO_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[12]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[13]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Octane Plugin Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(HO_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[12]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[13]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[14]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Octane Plugin Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(HO_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[12]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[13]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[14]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(HO_rrs2.val[15]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+    }
+}
+
+HO_renderCamera.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ HO_renderCamera.label = PARM_LABEL("Render camera", "HO_renderCamera") WIDTH(1.5);
+ PARM_FIELD(pathstring, "HO_renderCamera") VALUE(HO_renderCamera.val) 
+	LABELREF(HO_renderCamera.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(HO_renderCamera.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(HO_renderCamera.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+HO_iprCamera.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ HO_iprCamera.label = PARM_LABEL("IPR camera", "HO_iprCamera") WIDTH(1.5);
+ PARM_FIELD(pathstring, "HO_iprCamera") VALUE(HO_iprCamera.val) 
+	LABELREF(HO_iprCamera.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(HO_iprCamera.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(HO_iprCamera.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+HO_renderTarget.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ HO_renderTarget.label = PARM_LABEL("Render target", "HO_renderTarget") WIDTH(1.5);
+ PARM_FIELD(pathstring, "HO_renderTarget") VALUE(HO_renderTarget.val) 
+	LABELREF(HO_renderTarget.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(HO_renderTarget.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(HO_renderTarget.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+HO_mainSep1.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+HO_overrideCameraRes.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_overrideCameraRes", "Override Camera Resolution") toggle VALUE(HO_overrideCameraRes.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_overrideResScale.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Resolution Scale", "HO_overrideResScale") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    HO_overrideResScale.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_overrideRes.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   HO_overrideRes.label = PARM_LABEL("Resolution", "HO_overrideRes") WIDTH(1.5);
+   PARM(integer, 2, "HO_overrideRes", none, none, "#1,#2")
+	RANGE(0,10)  LABELREF(HO_overrideRes.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+HO_mainSep2.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+HO_renderMode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Rendering mode", "HO_renderMode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    HO_renderMode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_updateMesh.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_updateMesh", "Update mesh deformations") toggle VALUE(HO_updateMesh.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_updateMaterials.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_updateMaterials", "Update materials") toggle VALUE(HO_updateMaterials.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_updateInstances.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_updateInstances", "Update instances") toggle VALUE(HO_updateInstances.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_updateVolumes.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_updateVolumes", "Update volume objects") toggle VALUE(HO_updateVolumes.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_updateSpareParms.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_updateSpareParms", "Update OBJ spare parms") toggle VALUE(HO_updateSpareParms.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_updateMeshNoReload_list.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ HO_updateMeshNoReload_list.label = PARM_LABEL("Update Objects", "HO_updateMeshNoReload_list") WIDTH(1.5);
+ PARM_FIELD (pathstring, "HO_updateMeshNoReload_list") LABELREF(HO_updateMeshNoReload_list.label) 
+	VALUE(HO_updateMeshNoReload_list.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(HO_updateMeshNoReload_list.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+HO_updateMaterialsNoReload_list.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ HO_updateMaterialsNoReload_list.label = PARM_LABEL("Update Materials", "HO_updateMaterialsNoReload_list") WIDTH(1.5);
+ PARM_FIELD (pathstring, "HO_updateMaterialsNoReload_list") LABELREF(HO_updateMaterialsNoReload_list.label) 
+	VALUE(HO_updateMaterialsNoReload_list.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(HO_updateMaterialsNoReload_list.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+HO_initSimulations.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_initSimulations", "Initialize simulation OPs") toggle VALUE(HO_initSimulations.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_multihreadLoader.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Multithread extraction", "HO_multihreadLoader") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    HO_multihreadLoader.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_renderToMPlay.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_renderToMPlay", "Render to MPlay") toggle VALUE(HO_renderToMPlay.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_statisticsMPlay.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_statisticsMPlay", "Overlay render stats while rendering") toggle VALUE(HO_statisticsMPlay.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_statisticsFinalMPlay.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_statisticsFinalMPlay", "Overlay render stats in the final image") toggle VALUE(HO_statisticsFinalMPlay.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_overwriteMPlay.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_overwriteMPlay", "Overwrite MPlay frame") toggle VALUE(HO_overwriteMPlay.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_MPlay_gamma.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ HO_MPlay_gamma.label = PARM_LABEL("MPlay Gamma", "HO_MPlay_gamma") WIDTH(1.5);
+ PARM(float, 1, "HO_MPlay_gamma", none, none) RANGE(1,3)
+	 LABELREF(HO_MPlay_gamma.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+HO_img_saveOnAbort.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_img_saveOnAbort", "Save image files after aborting the rendering") toggle VALUE(HO_img_saveOnAbort.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_img_pauseBetween.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_img_pauseBetween", "Pause between frames to avoid duplicated files") toggle VALUE(HO_img_pauseBetween.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_img_sep1.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+HO_img_colorSpaceAuto.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_img_colorSpaceAuto", "Automatic intermediate color space") toggle VALUE(HO_img_colorSpaceAuto.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_img_colorSpaceInterm.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Intermediate Octane color space", "HO_img_colorSpaceInterm") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    HO_img_colorSpaceInterm.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_img_colorSpace.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Color space", "HO_img_colorSpace") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    HO_img_colorSpace.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_img_ocioColorSpace.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Ocio color space role", "HO_img_ocioColorSpace") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    HO_img_ocioColorSpace.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_img_ocioLook.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Ocio look", "HO_img_ocioLook") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    HO_img_ocioLook.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_img_forceTonemap.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_img_forceTonemap", "Force tone mapping") toggle VALUE(HO_img_forceTonemap.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_img_sep3.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+HO_img_enable.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_img_enable", "Output image files") toggle VALUE(HO_img_enable.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_img_createDir.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_img_createDir", "Create intermediate directories") toggle VALUE(HO_img_createDir.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_img_fileName.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ HO_img_fileName.label = PARM_LABEL("Image file path/prefix", "HO_img_fileName") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "HO_img_fileName") LABELREF(HO_img_fileName.label)
+	VALUE(HO_img_fileName.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(HO_img_fileName.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+HO_img_fileFormat.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("File format", "HO_img_fileFormat") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    HO_img_fileFormat.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_img_deepImage.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_img_deepImage", "Deep image") toggle VALUE(HO_img_deepImage.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_img_exrCompression.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("EXR compression", "HO_img_exrCompression") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    HO_img_exrCompression.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_img_layeredEXR.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_img_layeredEXR", "Save layered EXR") toggle VALUE(HO_img_layeredEXR.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_img_deep.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_img_deep", "Save EXR deep file") toggle VALUE(HO_img_deep.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_img_deepFile.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ HO_img_deepFile.label = PARM_LABEL("Deep file", "HO_img_deepFile") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "HO_img_deepFile") LABELREF(HO_img_deepFile.label)
+	VALUE(HO_img_deepFile.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(HO_img_deepFile.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+HO_img_async.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_img_async", "Asynchronous file save") toggle VALUE(HO_img_async.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_img_saveNoisy.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_img_saveNoisy", "Save noisy image when the denoiser is enabled") toggle VALUE(HO_img_saveNoisy.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_img_shortLayerNames.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_img_shortLayerNames", "EXR layers short names without spaces") toggle VALUE(HO_img_shortLayerNames.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_img_sep2.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+HO_layers_enable.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_layers_enable", "Render object layers") toggle VALUE(HO_layers_enable.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_layers_range.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    HO_layers_range.label = PARM_LABEL("Layers to render", "HO_layers_range") WIDTH(1.5);
+    PARM_FIELD(string, "HO_layers_range") VALUE(HO_layers_range.val) 
+	LABELREF(HO_layers_range.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+HO_layers_visOnly.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Layers mode", "HO_layers_visOnly") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    HO_layers_visOnly.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+vm_picture.gad = NULL { }
+
+HO_clayrender.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Clay Rendering", "HO_clayrender") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    HO_clayrender.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_prop_disableDOF.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_prop_disableDOF", "Disable DOF for Disk Rendering") toggle VALUE(HO_prop_disableDOF.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_prop_sep1.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+HO_matOverride_enable.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_matOverride_enable", "Override Scene Materials") toggle VALUE(HO_matOverride_enable.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_matOverride_shop.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ HO_matOverride_shop.label = PARM_LABEL("Override Material", "HO_matOverride_shop") WIDTH(1.5);
+ PARM_FIELD(pathstring, "HO_matOverride_shop") VALUE(HO_matOverride_shop.val) 
+	LABELREF(HO_matOverride_shop.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(HO_matOverride_shop.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(HO_matOverride_shop.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+HO_matOverride_exclude.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ HO_matOverride_exclude.label = PARM_LABEL("Exclude Objects", "HO_matOverride_exclude") WIDTH(1.5);
+ PARM_FIELD (pathstring, "HO_matOverride_exclude") LABELREF(HO_matOverride_exclude.label) 
+	VALUE(HO_matOverride_exclude.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(HO_matOverride_exclude.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+HO_mbEnable.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_mbEnable", "Enable Motion Blur") toggle VALUE(HO_mbEnable.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_mbCamera.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_mbCamera", "Enable Camera MB") toggle VALUE(HO_mbCamera.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_mbObjects.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_mbObjects", "Enable Objects MB") toggle VALUE(HO_mbObjects.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_mbLights.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_mbLights", "Enable Lights MB") toggle VALUE(HO_mbLights.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_mbDeformations.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_mbDeformations", "Enable Deformations MB") toggle VALUE(HO_mbDeformations.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_mbFur.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_mbFur", "Enable Fur MB") toggle VALUE(HO_mbFur.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_mbInstances.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_mbInstances", "Enable Instances MB") toggle VALUE(HO_mbInstances.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_mbParticles.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_mbParticles", "Enable Particles MB") toggle VALUE(HO_mbParticles.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_mbCameraSteps.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ HO_mbCameraSteps.label = PARM_LABEL("Camera MB steps", "HO_mbCameraSteps") WIDTH(1.5);
+ PARM(integer, 1, "HO_mbCameraSteps", none, none) RANGE(2,64)
+	LOCK_RANGE_MIN LABELREF(HO_mbCameraSteps.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+HO_mbTransformationsSteps.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ HO_mbTransformationsSteps.label = PARM_LABEL("Transform. MB steps", "HO_mbTransformationsSteps") WIDTH(1.5);
+ PARM(integer, 1, "HO_mbTransformationsSteps", none, none) RANGE(2,64)
+	LOCK_RANGE_MIN LABELREF(HO_mbTransformationsSteps.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+HO_mbInstancesSteps.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ HO_mbInstancesSteps.label = PARM_LABEL("Instances MB steps", "HO_mbInstancesSteps") WIDTH(1.5);
+ PARM(integer, 1, "HO_mbInstancesSteps", none, none) RANGE(2,32)
+	LOCK_RANGE_MIN LABELREF(HO_mbInstancesSteps.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+HO_mbOverrideShutterTime.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_mbOverrideShutterTime", "Override Camera Shutter Time") toggle VALUE(HO_mbOverrideShutterTime.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_mbShutterTime.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ HO_mbShutterTime.label = PARM_LABEL("Shutter Time", "HO_mbShutterTime") WIDTH(1.5);
+ PARM(float, 1, "HO_mbShutterTime", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(HO_mbShutterTime.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+HO_abc_exportEnabled.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_abc_exportEnabled", "Export ORBX and Alembic files") toggle VALUE(HO_abc_exportEnabled.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_abc_exportMode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Export Mode", "HO_abc_exportMode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    HO_abc_exportMode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_abc_exportFileName.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ HO_abc_exportFileName.label = PARM_LABEL("Base file name", "HO_abc_exportFileName") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "HO_abc_exportFileName") LABELREF(HO_abc_exportFileName.label)
+	VALUE(HO_abc_exportFileName.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(HO_abc_exportFileName.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+HO_abc_exportNoRender.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_abc_exportNoRender", "Export without render scene") toggle VALUE(HO_abc_exportNoRender.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_abc_legacyFPS.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("HO_abc_legacyFPS", "Legace 1 fps orbx timing") toggle VALUE(HO_abc_legacyFPS.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+HO_objects_candidate.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ HO_objects_candidate.label = PARM_LABEL("Candidate Objects", "HO_objects_candidate") WIDTH(1.5);
+ PARM_FIELD (pathstring, "HO_objects_candidate") LABELREF(HO_objects_candidate.label) 
+	VALUE(HO_objects_candidate.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(HO_objects_candidate.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+HO_objects_force.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ HO_objects_force.label = PARM_LABEL("Force Objects", "HO_objects_force") WIDTH(1.5);
+ PARM_FIELD (pathstring, "HO_objects_force") LABELREF(HO_objects_force.label) 
+	VALUE(HO_objects_force.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(HO_objects_force.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+HO_objects_exclude.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ HO_objects_exclude.label = PARM_LABEL("Exclude Objects", "HO_objects_exclude") WIDTH(1.5);
+ PARM_FIELD (pathstring, "HO_objects_exclude") LABELREF(HO_objects_exclude.label) 
+	VALUE(HO_objects_exclude.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(HO_objects_exclude.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+HO_objects_phantom.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ HO_objects_phantom.label = PARM_LABEL("Forced Phantom", "HO_objects_phantom") WIDTH(1.5);
+ PARM_FIELD (pathstring, "HO_objects_phantom") LABELREF(HO_objects_phantom.label) 
+	VALUE(HO_objects_phantom.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(HO_objects_phantom.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+HO_objects_shadowless.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ HO_objects_shadowless.label = PARM_LABEL("Forced Shadowless", "HO_objects_shadowless") WIDTH(1.5);
+ PARM_FIELD (pathstring, "HO_objects_shadowless") LABELREF(HO_objects_shadowless.label) 
+	VALUE(HO_objects_shadowless.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(HO_objects_shadowless.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+tprerender.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+tprerender.gad = PARM_BUTTON("tprerender", "") toggle VALUE(tprerender.val) RETAIN_SIZE_WHEN_HIDDEN;
+prerender.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+prerender.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ {  }
+
+ prerender.label = PARM_LABEL("Pre-Render Script", "prerender") WIDTH(1.32);
+
+ PARM_FIELD (pathstring, "prerender") LABELREF(prerender.label)
+	VALUE(prerender.val) HSTRETCH;
+
+    prerender.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(prerender.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+}	
+
+lprerender.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    lprerender.menu;
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	
+tpreframe.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+tpreframe.gad = PARM_BUTTON("tpreframe", "") toggle VALUE(tpreframe.val) RETAIN_SIZE_WHEN_HIDDEN;
+preframe.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+preframe.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ {  }
+
+ preframe.label = PARM_LABEL("Pre-Frame Script", "preframe") WIDTH(1.32);
+
+ PARM_FIELD (pathstring, "preframe") LABELREF(preframe.label)
+	VALUE(preframe.val) HSTRETCH;
+
+    preframe.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(preframe.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+}	
+
+lpreframe.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    lpreframe.menu;
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	
+tpostframe.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+tpostframe.gad = PARM_BUTTON("tpostframe", "") toggle VALUE(tpostframe.val) RETAIN_SIZE_WHEN_HIDDEN;
+postframe.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+postframe.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ {  }
+
+ postframe.label = PARM_LABEL("Post-Frame Script", "postframe") WIDTH(1.32);
+
+ PARM_FIELD (pathstring, "postframe") LABELREF(postframe.label)
+	VALUE(postframe.val) HSTRETCH;
+
+    postframe.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(postframe.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+}	
+
+lpostframe.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    lpostframe.menu;
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	
+tpostrender.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+tpostrender.gad = PARM_BUTTON("tpostrender", "") toggle VALUE(tpostrender.val) RETAIN_SIZE_WHEN_HIDDEN;
+postrender.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+postrender.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ {  }
+
+ postrender.label = PARM_LABEL("Post-Render Script", "postrender") WIDTH(1.32);
+
+ PARM_FIELD (pathstring, "postrender") LABELREF(postrender.label)
+	VALUE(postrender.val) HSTRETCH;
+
+    postrender.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(postrender.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+}	
+
+lpostrender.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    lpostrender.menu;
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	
+octane_plugin_version.gad = NULL { }
+octane_cloud_data.gad = NULL { }
+
+HO_OctaneSwitcher.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "HO_OctaneSwitcher.gad"
+    { 
+	VALUE(HO_OctaneSwitcher.gad.val) STRETCH(1,0)
+
+	TAB "Main"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    HO_renderCamera.gad;		
+	    HO_iprCamera.gad;		
+	    HO_renderTarget.gad;		
+	    HO_mainSep1.gad;		
+	    HO_overrideCameraRes.gad;		
+	    HO_overrideResScale.gad;		
+	    HO_overrideRes.gad;		
+	    HO_mainSep2.gad;		
+	    HO_renderMode.gad;		
+	    HO_updateMesh.gad;		
+	    HO_updateMaterials.gad;		
+	    HO_updateInstances.gad;		
+	    HO_updateVolumes.gad;		
+	    HO_updateSpareParms.gad;		
+	    HO_updateMeshNoReload_list.gad;		
+	    HO_updateMaterialsNoReload_list.gad;		
+	    HO_initSimulations.gad;		
+	    HO_multihreadLoader.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Output"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    HO_renderToMPlay.gad;		
+	    HO_statisticsMPlay.gad;		
+	    HO_statisticsFinalMPlay.gad;		
+	    HO_overwriteMPlay.gad;		
+	    HO_MPlay_gamma.gad;		
+	    HO_img_saveOnAbort.gad;		
+	    HO_img_pauseBetween.gad;		
+	    HO_img_sep1.gad;		
+	    HO_img_colorSpaceAuto.gad;		
+	    HO_img_colorSpaceInterm.gad;		
+	    HO_img_colorSpace.gad;		
+	    HO_img_ocioColorSpace.gad;		
+	    HO_img_ocioLook.gad;		
+	    HO_img_forceTonemap.gad;		
+	    HO_img_sep3.gad;		
+	    HO_img_enable.gad;		
+	    HO_img_createDir.gad;		
+	    HO_img_fileName.gad;		
+	    HO_img_fileFormat.gad;		
+	    HO_img_deepImage.gad;		
+	    HO_img_exrCompression.gad;		
+	    HO_img_layeredEXR.gad;		
+	    HO_img_deep.gad;		
+	    HO_img_deepFile.gad;		
+	    HO_img_async.gad;		
+	    HO_img_saveNoisy.gad;		
+	    HO_img_shortLayerNames.gad;		
+	    HO_img_sep2.gad;		
+	    HO_layers_enable.gad;		
+	    HO_layers_range.gad;		
+	    HO_layers_visOnly.gad;		
+	    vm_picture.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Properties"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    HO_clayrender.gad;		
+	    HO_prop_disableDOF.gad;		
+	    HO_prop_sep1.gad;		
+	    HO_matOverride_enable.gad;		
+	    HO_matOverride_shop.gad;		
+	    HO_matOverride_exclude.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "MotionBlur"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    HO_mbEnable.gad;		
+	    HO_mbCamera.gad;		
+	    HO_mbObjects.gad;		
+	    HO_mbLights.gad;		
+	    HO_mbDeformations.gad;		
+	    HO_mbFur.gad;		
+	    HO_mbInstances.gad;		
+	    HO_mbParticles.gad;		
+	    HO_mbCameraSteps.gad;		
+	    HO_mbTransformationsSteps.gad;		
+	    HO_mbInstancesSteps.gad;		
+	    HO_mbOverrideShutterTime.gad;		
+	    HO_mbShutterTime.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Archive"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    HO_abc_exportEnabled.gad;		
+	    HO_abc_exportMode.gad;		
+	    HO_abc_exportFileName.gad;		
+	    HO_abc_exportNoRender.gad;		
+	    HO_abc_legacyFPS.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Objects"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    HO_objects_candidate.gad;		
+	    HO_objects_force.gad;		
+	    HO_objects_exclude.gad;		
+	    HO_objects_phantom.gad;		
+	    HO_objects_shadowless.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Scripts"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    tprerender.join;		
+	    tpreframe.join;		
+	    tpostframe.join;		
+	    tpostrender.join;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    HO_IPR.row.join; 
+    trange.gad; 
+    f.gad; 
+    take.gad; 
+    HO_rrs1.gad; 
+    HO_rrs2.gad; 
+    HO_OctaneSwitcher.gad; 
+    octane_plugin_version.gad; 
+    octane_cloud_data.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

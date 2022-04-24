@@ -1,0 +1,176 @@
+// Magic: 7c2b2d0
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Sun Feb 27 17:41:44 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+op_label.gad = NULL { }
+
+stashinput.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("stashinput", "Stash Input")
+	push VALUE(stashinput.val);
+
+    { WIDTH(0.1) }
+}
+
+clearstash.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("clearstash", "Clear Stash")
+	push VALUE(clearstash.val);
+
+    { WIDTH(0.1) }
+}
+hasinfo.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+hasinfo.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+hasinfo.gad = PARM_BUTTON("hasinfo", "") toggle VALUE(hasinfo.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+username.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    username.label = PARM_LABEL("Username", "username") WIDTH(1.32);
+    PARM_FIELD(string, "username") VALUE(username.val) 
+	LABELREF(username.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+datetime.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    datetime.label = PARM_LABEL("Date/Time", "datetime") WIDTH(1.5);
+    PARM_FIELD(string, "datetime") VALUE(datetime.val) 
+	LABELREF(datetime.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+hipname.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    hipname.label = PARM_LABEL("hip Name", "hipname") WIDTH(1.5);
+    PARM_FIELD(string, "hipname") VALUE(hipname.val) 
+	LABELREF(hipname.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+hipfile.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    hipfile.label = PARM_LABEL("hip File", "hipfile") WIDTH(1.5);
+    PARM_FIELD(string, "hipfile") VALUE(hipfile.val) 
+	LABELREF(hipfile.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+oppath.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    oppath.label = PARM_LABEL("OP Path", "oppath") WIDTH(1.5);
+    PARM_FIELD(string, "oppath") VALUE(oppath.val) 
+	LABELREF(oppath.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+comment.gad = ROW
+{
+
+    HSTRETCH JUSTIFY(left, top) HMARGIN(0.18, 0.1)
+        NO_MARGIN_SPACING_SCALE
+
+    comment.label = PARM_LABEL("Comment", "comment");
+
+    MULTILINE_PARM_FIELD ("comment") 
+
+    	LABELREF(comment.label) 
+
+    	VALUE(comment.val) 
+    	SYNTAX("") 
+    	LINES(5,8) 
+    	HSTRETCH;
+
+    {
+
+	LAYOUT(vertical)
+	{
+	    SIZE(0, 0.26)
+	}
+
+    }
+
+}
+
+folder0.gad = 
+
+GROUP simple "Stash Info" flat 
+{ 
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    hasinfo.row.join;		
+	    datetime.gad;		
+	    hipname.gad;		
+	    hipfile.gad;		
+	    oppath.gad;		
+	    comment.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    op_label.gad; 
+    stashinput.gad; 
+    clearstash.gad; 
+    folder0.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

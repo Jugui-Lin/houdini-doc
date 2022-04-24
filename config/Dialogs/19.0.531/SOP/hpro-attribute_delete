@@ -1,0 +1,205 @@
+// Magic: e026cc5e
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Sun Mar 13 16:02:37 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+info.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    info.label = PARM_LABEL("Info", "info") WIDTH(1.5);
+    PARM_FIELD(string, "info") VALUE(info.val) 
+	LABELREF(info.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+usereference.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("usereference", "Prepend with Attributes from Reference Geometry") toggle VALUE(usereference.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+negate.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("negate", "Delete Non Selected") toggle VALUE(negate.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+doptdel.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+doptdel.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+doptdel.gad = PARM_BUTTON("doptdel", "") toggle VALUE(doptdel.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+ptdel.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    ptdel.label = PARM_LABEL("Point Attributes", "ptdel") WIDTH(1.32);
+    PARM_FIELD(string, "ptdel") VALUE(ptdel.val) 
+	LABELREF(ptdel.label) HSTRETCH;
+
+    ptdel.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+dovtxdel.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+dovtxdel.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+dovtxdel.gad = PARM_BUTTON("dovtxdel", "") toggle VALUE(dovtxdel.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+vtxdel.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    vtxdel.label = PARM_LABEL("Vertex Attributes", "vtxdel") WIDTH(1.32);
+    PARM_FIELD(string, "vtxdel") VALUE(vtxdel.val) 
+	LABELREF(vtxdel.label) HSTRETCH;
+
+    vtxdel.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+doprimdel.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+doprimdel.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+doprimdel.gad = PARM_BUTTON("doprimdel", "") toggle VALUE(doprimdel.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+primdel.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    primdel.label = PARM_LABEL("Primitive Attributes", "primdel") WIDTH(1.32);
+    PARM_FIELD(string, "primdel") VALUE(primdel.val) 
+	LABELREF(primdel.label) HSTRETCH;
+
+    primdel.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+dodtldel.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+dodtldel.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+dodtldel.gad = PARM_BUTTON("dodtldel", "") toggle VALUE(dodtldel.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+dtldel.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    dtldel.label = PARM_LABEL("Detail Attributes", "dtldel") WIDTH(1.32);
+    PARM_FIELD(string, "dtldel") VALUE(dtldel.val) 
+	LABELREF(dtldel.label) HSTRETCH;
+
+    dtldel.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+updatevar.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("updatevar", "Update Local Variables") toggle VALUE(updatevar.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    info.gad; 
+    usereference.gad; 
+    negate.gad; 
+    doptdel.row.join; 
+    dovtxdel.row.join; 
+    doprimdel.row.join; 
+    dodtldel.row.join; 
+    updatevar.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

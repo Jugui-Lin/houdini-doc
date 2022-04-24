@@ -1,0 +1,187 @@
+// Magic: 335a620a
+// Automatically generated PSI dialog (PSI version 19.0.455)
+// Sun Jan 30 21:03:19 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+group.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    group.label = PARM_LABEL("Point Group", "group") WIDTH(1.5);
+    PARM_FIELD(string, "group") VALUE(group.val) 
+	LABELREF(group.label) HSTRETCH;
+
+    group.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+targets.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    targets.label = PARM_LABEL("Target Points", "targets") WIDTH(1.5);
+    PARM_FIELD(string, "targets") VALUE(targets.val) 
+	LABELREF(targets.label) HSTRETCH;
+
+    targets.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+guide.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("guide", "Guide Geometry Display") toggle VALUE(guide.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dist.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dist.label = PARM_LABEL("Distance", "dist") WIDTH(1.5);
+ PARM(float, 1, "dist", none, none) RANGE(0,10)
+	 LABELREF(dist.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+falloff.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+falloff.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+falloff.gad = PARM_BUTTON("falloff", "") toggle VALUE(falloff.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+exp.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ exp.label = PARM_LABEL("Falloff Exponent", "exp") WIDTH(1.32);
+ PARM(float, 1, "exp", none, LOGSCALE) RANGE(0,4)
+	 LABELREF(exp.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+envelope.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ envelope.label = PARM_LABEL("Envelope", "envelope") WIDTH(1.5);
+ PARM(float, 1, "envelope", none, none) RANGE(0,1)
+	 LABELREF(envelope.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+use_weight.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+use_weight.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+use_weight.gad = PARM_BUTTON("use_weight", "") toggle VALUE(use_weight.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+weight_name.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    weight_name.label = PARM_LABEL("Weight Name", "weight_name") WIDTH(1.32);
+    PARM_FIELD(string, "weight_name") VALUE(weight_name.val) 
+	LABELREF(weight_name.label) HSTRETCH;
+
+    weight_name.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    {  }
+}
+}	
+
+weight_invert.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("weight_invert", "Invert") toggle VALUE(weight_invert.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+folder1.gad = 
+
+GROUP simple "Envelope" flat 
+{ 
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    envelope.gad;		
+	    use_weight.row.join;		
+} 
+
+folder0.gad = 
+
+GROUP simple "Snap (Magnet) Settings" flat 
+{ 
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    dist.gad;		
+	    falloff.row.join;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    group.gad; 
+    targets.gad; 
+    guide.gad; 
+    folder0.gad; 
+    folder1.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

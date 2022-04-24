@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["Delete01"]}, {"type": "para", "indent": 0, "text": ["This example demonstrates how the Delete CHOP can remove or extract input channels by index number and pattern. "], "extent": [0, 113]}], "examplefor": "/nodes/chop/delete", "examplefile": "/examples/nodes/chop/delete/Delete01.otl"}

@@ -1,0 +1,79 @@
+// Magic: 4d2b0ca1
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Mon Mar 14 02:56:07 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+label1.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    label1.label = PARM_LABEL("Input #1 Label", "label1") WIDTH(1.5);
+    PARM_FIELD(string, "label1") VALUE(label1.val) 
+	LABELREF(label1.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+label2.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    label2.label = PARM_LABEL("Input #2 Label", "label2") WIDTH(1.5);
+    PARM_FIELD(string, "label2") VALUE(label2.val) 
+	LABELREF(label2.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+label3.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    label3.label = PARM_LABEL("Input #3 Label", "label3") WIDTH(1.5);
+    PARM_FIELD(string, "label3") VALUE(label3.val) 
+	LABELREF(label3.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+label4.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    label4.label = PARM_LABEL("Input #4 Label", "label4") WIDTH(1.5);
+    PARM_FIELD(string, "label4") VALUE(label4.val) 
+	LABELREF(label4.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    label1.gad; 
+    label2.gad; 
+    label3.gad; 
+    label4.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

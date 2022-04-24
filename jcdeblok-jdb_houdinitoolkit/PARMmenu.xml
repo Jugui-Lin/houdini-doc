@@ -1,0 +1,772 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menuDocument>
+    <menu>
+    <subMenu id="proaces">
+    <label>ACES</label>
+            <expression>
+<![CDATA[
+import ProAces
+#reload(ProAces)
+try:
+    if kwargs["parms"][0].parmTemplate().stringType().name()=='FileReference' or kwargs["parms"][0].parmTemplate().stringType().name()=='Regular':
+        for parm in kwargs['parms']:
+            if ProAces.isImage(parm):
+                return True
+    return False
+
+except:
+    return False
+]]>
+            </expression>
+
+<separatorItem/>
+
+
+<scriptItem id="acesrevert">
+<context>
+<expression>
+<![CDATA[
+import ProAces
+#reload(ProAces) 
+for parm in kwargs['parms']:
+    if ProAces.GetOrigFile(parm, True):
+        return True
+return False
+]]>
+</expression>
+</context>
+<labelExpression>
+<![CDATA[
+return "Revert to Original File"
+]]></labelExpression> s
+<scriptCode>
+<![CDATA[ 
+import ProAces
+#reload(ProAces) 
+for parm in kwargs['parms']:
+    ProAces.Revert(parm)
+
+
+]]>
+</scriptCode>
+</scriptItem>
+
+<separatorItem/>
+
+<scriptItem id="LRtex">
+<context>
+<expression>
+<![CDATA[
+try:
+    return kwargs["parms"][0].parmTemplate().stringType().name()=='FileReference' or kwargs["parms"][0].parmTemplate().stringType().name()=='Regular'
+except:
+    return False
+]]>
+</expression>
+</context>
+<label>LDR Texture (Utility - sRGB - Texture)</label>
+<scriptCode>
+<![CDATA[ 
+import ProAces
+#reload(ProAces) 
+for parm in kwargs['parms']:
+    ProAces.SetAutoAces(parm, False)
+    ProAces.Convert(parm, ProAces.TexType.Manual, ["Utility - sRGB - Texture","Utility - sRGB - Texture"])
+
+]]>
+</scriptCode>
+</scriptItem>
+
+
+<scriptItem id="HDRtex">
+<context>
+<expression>
+<![CDATA[
+try:
+    return kwargs["parms"][0].parmTemplate().stringType().name()=='FileReference' or kwargs["parms"][0].parmTemplate().stringType().name()=='Regular'
+except:
+    return False
+]]>
+</expression>
+</context>
+<label>HDR Texture (Utility - Linear - sRGB)</label>
+<scriptCode>
+<![CDATA[ 
+import ProAces
+#reload(ProAces) 
+for parm in kwargs['parms']:
+    ProAces.SetAutoAces(parm, False)
+    ProAces.Convert(parm, ProAces.TexType.Manual, ["Utility - Linear - sRGB","Utility - Linear - sRGB"])
+
+]]>
+</scriptCode>
+</scriptItem>
+
+
+
+
+<scriptItem id="ExactTex">
+<context>
+<expression>
+<![CDATA[
+try:
+    return kwargs["parms"][0].parmTemplate().stringType().name()=='FileReference' or kwargs["parms"][0].parmTemplate().stringType().name()=='Regular'
+except:
+    return False
+]]>
+</expression>
+</context>
+<label>Exact Colors on sRGB view</label>
+<scriptCode>
+<![CDATA[ 
+import ProAces
+#reload(ProAces) 
+for parm in kwargs['parms']:
+    ProAces.SetAutoAces(parm, False)
+    ProAces.Convert(parm, ProAces.TexType.Exact, ["Output - sRGB","Exact Colors on sRGB view"])
+]]>
+</scriptCode>
+</scriptItem>
+
+
+
+<scriptItem id="ExactTexRec709">
+<context>
+<expression>
+<![CDATA[
+try:
+    return kwargs["parms"][0].parmTemplate().stringType().name()=='FileReference' or kwargs["parms"][0].parmTemplate().stringType().name()=='Regular'
+except:
+    return False
+]]>
+</expression>
+</context>
+<label>Exact Colors on Rec.709 view</label>
+<scriptCode>
+<![CDATA[ 
+import ProAces
+#reload(ProAces) 
+for parm in kwargs['parms']:
+    ProAces.SetAutoAces(parm, False)
+    ProAces.Convert(parm, ProAces.TexType.Exact, ["Output - Rec.709","Exact Colors on Rec.709 view"])
+]]>
+</scriptCode>
+</scriptItem>
+
+
+
+<scriptItem id="ExactTexP3-DCI ">
+<context>
+<expression>
+<![CDATA[
+try:
+    return kwargs["parms"][0].parmTemplate().stringType().name()=='FileReference' or kwargs["parms"][0].parmTemplate().stringType().name()=='Regular'
+except:
+    return False
+]]>
+</expression>
+</context>
+<label>Exact Colors on P3-DCI view</label>
+<scriptCode>
+<![CDATA[ 
+import ProAces
+#reload(ProAces) 
+for parm in kwargs['parms']:
+    ProAces.SetAutoAces(parm, False)
+    ProAces.Convert(parm, ProAces.TexType.Exact, ["Output - P3-DCI","Exact Colors on P3-DCI view"])
+]]>
+</scriptCode>
+</scriptItem>
+
+<separatorItem/>
+
+
+<scriptItem id="autoaces">
+<context>
+<expression>
+<![CDATA[
+import ProAces
+#reload(ProAces) 
+try:
+    return (kwargs["parms"][0].parmTemplate().stringType().name()=='FileReference' or kwargs["parms"][0].parmTemplate().stringType().name()=='Regular') and not ProAces.GetAutoAces(kwargs["parms"][0]) and kwargs["parms"][0].node().type().name()=="redshift::TextureSampler"
+except:
+    pass
+return False
+]]>
+</expression>
+</context>
+<label>Enable Auto Convert</label>
+<scriptCode>
+<![CDATA[ 
+import ProAces
+#reload(ProAces) 
+for parm in kwargs['parms']:
+    ProAces.SetAutoAces(parm, True)
+    ProAces.Convert(parm, ProAces.GetAutoSpace(parm))
+]]>
+</scriptCode>
+</scriptItem>
+
+
+<scriptItem id="autoaces_dis">
+<context>
+<expression>
+<![CDATA[
+import ProAces
+#reload(ProAces) 
+try:
+    return (kwargs["parms"][0].parmTemplate().stringType().name()=='FileReference' or kwargs["parms"][0].parmTemplate().stringType().name()=='Regular') and ProAces.GetAutoAces(kwargs["parms"][0])  and kwargs["parms"][0].node().type().name()=="redshift::TextureSampler"
+except:
+    return False
+return False
+]]>
+</expression>
+</context>
+<label>Disable Auto Convert</label>
+<scriptCode>
+<![CDATA[ 
+import ProAces
+#reload(ProAces) 
+for parm in kwargs['parms']:
+    ProAces.SetAutoAces(parm, False)
+     
+]]>
+</scriptCode>
+</scriptItem>
+
+<separatorItem/>
+
+<scriptItem id="color_picking">
+<context>
+<expression>
+<![CDATA[
+try:
+    return kwargs["parms"][0].parmTemplate().stringType().name()=='FileReference' or kwargs["parms"][0].parmTemplate().stringType().name()=='Regular'
+except:
+    return False
+
+]]>
+</expression>
+</context>
+<label>Role: Color Picking</label>
+<scriptCode>
+<![CDATA[ 
+import ProAces
+#reload(ProAces) 
+for parm in kwargs['parms']:
+    ProAces.Convert(parm, ProAces.TexType.Manual, ["color_picking","Role: Color Picking"] )
+]]>
+</scriptCode>
+</scriptItem>
+
+
+<scriptItem id="color_timing">
+<context>
+<expression>
+<![CDATA[
+try:
+    return kwargs["parms"][0].parmTemplate().stringType().name()=='FileReference' or kwargs["parms"][0].parmTemplate().stringType().name()=='Regular'
+except:
+    return False
+]]>
+</expression>
+</context>
+<label>Role: Color Timing</label>
+<scriptCode>
+<![CDATA[ 
+import ProAces
+#reload(ProAces) 
+for parm in kwargs['parms']:
+    ProAces.Convert(parm, ProAces.TexType.Manual, ["color_timing","Role: Color Timing"] )
+]]>
+</scriptCode>
+</scriptItem>
+
+<scriptItem id="compositing_linear">
+<context>
+<expression>
+<![CDATA[
+try:
+    return kwargs["parms"][0].parmTemplate().stringType().name()=='FileReference' or kwargs["parms"][0].parmTemplate().stringType().name()=='Regular'
+except:
+    return False
+]]>
+</expression>
+</context>
+<label>Role: Compositing Linear</label>
+<scriptCode>
+<![CDATA[ 
+import ProAces
+#reload(ProAces) 
+for parm in kwargs['parms']:
+    ProAces.Convert(parm, ProAces.TexType.Manual, ["compositing_linear","Role: Compositing Linear"] )
+]]>
+</scriptCode>
+</scriptItem>
+
+<scriptItem id="compositing_log">
+<context>
+<expression>
+<![CDATA[
+try:
+    return kwargs["parms"][0].parmTemplate().stringType().name()=='FileReference' or kwargs["parms"][0].parmTemplate().stringType().name()=='Regular'
+except:
+    return False
+]]>
+</expression>
+</context>
+<label>Role: Compositing Log</label>
+<scriptCode>
+<![CDATA[ 
+import ProAces
+#reload(ProAces) 
+for parm in kwargs['parms']:
+    ProAces.Convert(parm, ProAces.TexType.Manual, ["compositing_log","Role: Compositing Log"] )
+]]>
+</scriptCode>
+</scriptItem>
+
+<scriptItem id="data">
+<context>
+<expression>
+<![CDATA[
+try:
+    return kwargs["parms"][0].parmTemplate().stringType().name()=='FileReference' or kwargs["parms"][0].parmTemplate().stringType().name()=='Regular'
+except:
+    return False
+]]>
+</expression>
+</context>
+<label>Role: Data</label>
+<scriptCode>
+<![CDATA[ 
+import ProAces
+#reload(ProAces) 
+for parm in kwargs['parms']:
+    ProAces.Convert(parm, ProAces.TexType.Manual, ["data","Role: Data"] )
+]]>
+</scriptCode>
+</scriptItem>
+
+<scriptItem id="default">
+<context>
+<expression>
+<![CDATA[
+try:
+    return kwargs["parms"][0].parmTemplate().stringType().name()=='FileReference' or kwargs["parms"][0].parmTemplate().stringType().name()=='Regular'
+except:
+    return False
+]]>
+</expression>
+</context>
+<label>Role: Default</label>
+<scriptCode>
+<![CDATA[ 
+import ProAces
+#reload(ProAces) 
+for parm in kwargs['parms']:
+    ProAces.Convert(parm, ProAces.TexType.Manual, ["default","Role: Default"] )
+]]>
+</scriptCode>
+</scriptItem>
+
+<scriptItem id="matte_paint">
+<context>
+<expression>
+<![CDATA[
+try:
+    return kwargs["parms"][0].parmTemplate().stringType().name()=='FileReference' or kwargs["parms"][0].parmTemplate().stringType().name()=='Regular'
+except:
+    return False
+]]>
+</expression>
+</context>
+<label>Role: Matte Paint</label>
+<scriptCode>
+<![CDATA[ 
+import ProAces
+#reload(ProAces) 
+for parm in kwargs['parms']:
+    ProAces.Convert(parm, ProAces.TexType.Manual, ["matte_paint","Role: Matte Paint"] )
+]]>
+</scriptCode>
+</scriptItem>
+
+<scriptItem id="reference">
+<context>
+<expression>
+<![CDATA[
+try:
+    return kwargs["parms"][0].parmTemplate().stringType().name()=='FileReference' or kwargs["parms"][0].parmTemplate().stringType().name()=='Regular'
+except:
+    return False
+]]>
+</expression>
+</context>
+<label>Role: Reference</label>
+<scriptCode>
+<![CDATA[ 
+import ProAces
+#reload(ProAces) 
+for parm in kwargs['parms']:
+    ProAces.Convert(parm, ProAces.TexType.Manual, ["reference","Role: Reference"] )
+]]>
+</scriptCode>
+</scriptItem>
+
+<scriptItem id="rendering">
+<context>
+<expression>
+<![CDATA[
+try:
+    return kwargs["parms"][0].parmTemplate().stringType().name()=='FileReference' or kwargs["parms"][0].parmTemplate().stringType().name()=='Regular'
+except:
+    return False
+]]>
+</expression>
+</context>
+<label>Role: Rendering</label>
+<scriptCode>
+<![CDATA[ 
+import ProAces
+#reload(ProAces) 
+for parm in kwargs['parms']:
+    ProAces.Convert(parm, ProAces.TexType.Manual, ["rendering","Role: Rendering"] )
+]]>
+</scriptCode>
+</scriptItem>
+
+<scriptItem id="scene_linear">
+<context>
+<expression>
+<![CDATA[
+try:
+    return kwargs["parms"][0].parmTemplate().stringType().name()=='FileReference' or kwargs["parms"][0].parmTemplate().stringType().name()=='Regular'
+except:
+    return False
+]]>
+</expression>
+</context>
+<label>Role: Scene Linear</label>
+<scriptCode>
+<![CDATA[ 
+import ProAces
+#reload(ProAces) 
+for parm in kwargs['parms']:
+    ProAces.Convert(parm, ProAces.TexType.Manual, ["rendering","Role: Scene Linear"] )
+]]>
+</scriptCode>
+</scriptItem>
+
+<scriptItem id="texture_paint">
+<context>
+<expression>
+<![CDATA[
+try:
+    return kwargs["parms"][0].parmTemplate().stringType().name()=='FileReference' or kwargs["parms"][0].parmTemplate().stringType().name()=='Regular'
+except:
+    return False
+]]>
+</expression>
+</context>
+<label>Role: Texture Paint</label>
+<scriptCode>
+<![CDATA[ 
+import ProAces
+#reload(ProAces) 
+for parm in kwargs['parms']:
+    ProAces.Convert(parm, ProAces.TexType.Manual, ["texture_paint","Role: Texture Paint"] )
+]]>
+</scriptCode>
+</scriptItem>
+
+</subMenu>
+
+
+	    <scriptItem id="ps_copy_active_parm">
+        	<context>
+                <expression>
+<![CDATA[
+out=False
+if len(kwargs["parms"]) == 1 and kwargs["parms"][0].node().parm('sequencerTime')!=None:
+	out=True
+if len(kwargs["locked_parms"]) ==1 and kwargs["locked_parms"][0].node().parm('sequencerTime') != None:
+	out=True
+return out
+]]>
+	
+				</expression>
+            </context>
+			<label>Copy Parm Ref Expession for ActiveTrack</label>
+            <scriptCode>
+<![CDATA[ 
+from PySide2 import QtCore, QtGui, QtWidgets
+p=None
+if len(kwargs["parms"])==1:
+	p=kwargs["parms"][0]
+if len(kwargs["locked_parms"])==1:
+	p=kwargs["locked_parms"][0]
+
+out=""
+n=p.node().outputs()[0]
+if n!=None:
+    at = hou.node( n.evalParm('activetrack')).name()
+    type='ch'
+    if  p.parmTemplate().type().name()=="String":
+        type='chs'
+    out= type+'(chs("'+n.path()+'/activetrack")+"/'+p.name()+'")'
+
+clipboard = QtWidgets.QApplication.clipboard()
+
+clipboard.setText(out)
+]]>
+			</scriptCode>
+        </scriptItem>
+
+
+<scriptItem id="OpenFile">
+<context>
+<expression>
+<![CDATA[
+import os
+try:
+    file=hou.expandString(kwargs["parms"][0].eval())
+    os.path.exists(file)
+    return kwargs["parms"][0].parmTemplate().stringType().name()=='FileReference'  
+except:
+    return False
+]]>
+</expression>
+</context>
+<label>Open File (+Alt Opens Folder)</label>
+<scriptCode>
+<![CDATA[ 
+import sys
+import os
+
+file=hou.expandString(kwargs["parms"][0].eval())
+if not kwargs["altclick"]:
+    if os.path.exists(file):
+        os.startfile(file)   
+else:
+    os.startfile(os.path.dirname(file))
+]]>
+</scriptCode>
+</scriptItem>
+
+
+<scriptItem id="PickFileNative">
+<context>
+<expression>
+<![CDATA[
+try:
+    return kwargs["parms"][0].parmTemplate().stringType().name()=='FileReference'
+except:
+    return False
+]]>
+</expression>
+</context>
+<label>Pick File</label>
+<scriptCode>
+<![CDATA[ 
+import sys
+import os
+from PySide2 import QtCore, QtGui, QtWidgets
+
+path=os.getcwd()
+try:
+    path=(os.environ['hip'])
+except:
+    pass
+
+try:
+    if os.path.dirname(kwargs["parms"][0].eval())!='':
+        path=os.path.dirname(kwargs["parms"][0].eval())
+except:
+    pass
+
+filename = QtWidgets.QFileDialog.getOpenFileName(None, 'Pick a File', path, 'All Files(*.*)')
+if  (filename[0]!=''):
+    kwargs["parms"][0].set(filename[0])
+]]>
+</scriptCode>
+</scriptItem>
+
+<scriptItem id="fixSlashes">
+<context>
+<expression>
+<![CDATA[
+try:
+    return kwargs["parms"][0].parmTemplate().stringType().name()=='FileReference' or kwargs["parms"][0].parmTemplate().stringType().name()=='Regular'
+except:
+    return False
+]]>
+</expression>
+</context>
+<label>Fix Slashes</label>
+<scriptCode>
+<![CDATA[ 
+ 
+ 
+kwargs["parms"][0].set(kwargs["parms"][0].eval().replace('/','/'))
+
+]]>
+</scriptCode>
+</scriptItem>
+
+        <scriptItem id="Distrubute_values">
+        <context>
+                <expression>
+<![CDATA[
+ 
+out=False
+if len(kwargs["parms"]) >2  and isinstance( kwargs["parms"][0].eval()  , float):
+    out=True
+return out
+]]>
+    
+                </expression>
+            </context>
+            <label>Distribute Value</label>
+            <scriptCode>
+<![CDATA[ 
+
+import random
+r_min=float('inf') 
+r_max=float('inf') *-1 
+
+nodes=[]
+for item in kwargs["parms"]:
+    nodes.append(item)
+
+nodes.sort(key=lambda x: x.eval())
+
+
+
+
+for i, item in enumerate(nodes):
+    val = item.eval()
+    r_min= min(r_min, val)
+    r_max= max(r_max, val)
+
+delta=(r_max-r_min) / (len(nodes)-1)
+start=nodes[0].eval()
+
+
+tmp=nodes[1:]
+random.shuffle(tmp)
+
+for i, item in enumerate(tmp):
+    item.set(start+(((i+1))*delta))
+]]>
+            </scriptCode>
+        </scriptItem>
+
+         
+        <scriptItem id="copy_parmname">
+            <context>
+                <expression>
+<![CDATA[
+return True
+]]>
+    
+                </expression>
+            </context>
+            <label>Copy Parm Name</label>
+            <scriptCode>
+<![CDATA[ 
+p=None
+if len(kwargs["parms"])==1:
+    p=kwargs["parms"][0]
+if len(kwargs["locked_parms"])==1:
+    p=kwargs["locked_parms"][0]
+
+out=p.name()
+ 
+from PySide2 import QtCore, QtGui, QtWidgets
+
+clipboard = QtWidgets.QApplication.clipboard()
+clipboard.setText(out)
+]]>
+            </scriptCode>
+        </scriptItem>
+   <scriptItem id="select_nodes">
+            <context>
+                <expression>
+<![CDATA[
+try:
+    tmp=[]
+    for item in kwargs["parms"]:
+        if not item.evalAsNode():
+            return False
+except:
+    return False
+return True
+]]>
+    
+                </expression>
+            </context>
+            <label>Select Nodes</label>
+            <scriptCode>
+<![CDATA[ 
+try:
+    kwargs["parms"][0].evalAsNode().setSelected(True,True)
+    for item in kwargs["parms"]:
+        item.evalAsNode().setSelected(True)
+except:
+    print("Could not select nodes")
+
+]]>
+            </scriptCode>
+        </scriptItem>
+                
+        <scriptItem id="create_material">
+            <context>
+                <expression>
+<![CDATA[
+try:
+    if len(kwargs["parms"])==1:
+            return (kwargs["parms"][0].parmTemplate().stringType().name()=='NodeReference' or kwargs["parms"][0].parmTemplate().stringType().name()=='Regular' or "material" in kwargs["parms"][0].name().lower() ) and not '/' in kwargs["parms"][0].eval()
+except:
+    return False
+return False
+]]>
+    
+                </expression>
+            </context>
+            <label>Create Material</label>
+            <scriptCode>
+<![CDATA[ 
+ 
+import hou
+
+
+matnet=kwargs["parms"][0].node().parent().node("matnet1")
+
+if matnet==None:
+    matnet=hou.node('/obj/matnet')
+
+if matnet==None:
+    matnet=hou.node('/obj').createNode("matnet","matnet")
+
+str=kwargs["parms"][0].eval();
+
+n=matnet.node(str)
+m=matnet.node("mat_"+str)
+
+if n==None:
+    n=matnet.createNode("redshift_material",str)
+    n.moveToGoodPosition()
+if matnet.node("mat_"+str)==None:
+    m=matnet.createNode("redshift::Material","mat_"+str)
+    m.moveToGoodPosition()
+n.setInput(0,m);    
+
+kwargs["parms"][0].set(n.path());
+
+
+]]>
+            </scriptCode>
+        </scriptItem>
+    </menu>
+</menuDocument>

@@ -1,0 +1,55 @@
+// Magic: 777afd14
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Mon Apr 11 02:08:17 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+t.gad = ROW
+{
+   HSTRETCH
+   {  }
+
+   t.label = PARM_LABEL("Translate", "t") ;
+   PARM(float, 3, "t", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(t.label)
+	HSTRETCH;
+
+    ACTION_ICONBUTTON "BUTTONS_match_transform" VALUE(t.script_action)
+	HELP("Select an object to match the translation with.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    {  }
+}
+
+r.gad = ROW
+{
+   HSTRETCH
+   {  }
+
+   r.label = PARM_LABEL("Rotate", "r") ;
+   PARM(float, 3, "r", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(r.label)
+	HSTRETCH;
+
+    ACTION_ICONBUTTON "BUTTONS_match_rotation" VALUE(r.script_action)
+	HELP("Select an object to match the rotation with.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    {  }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(horizontal) SPACING(0.05) HSTRETCH JUSTIFY(left, center) UNSCALABLE
+    t.gad; 
+    r.gad; 
+} 
+// dialog.bot.ui
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) VALUE(open.val_) HSTRETCH
+
+    dialog_norm.gad;
+}

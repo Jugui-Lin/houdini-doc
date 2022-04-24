@@ -1,0 +1,145 @@
+// Magic: a0db1557
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Thu Apr  7 17:56:26 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+radius.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   radius.label = PARM_LABEL("Radius", "radius") WIDTH(1.5);
+   PARM(float, 2, "radius", none, none, "X,Y")
+	RANGE(-1,1)  LABELREF(radius.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+height.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ height.label = PARM_LABEL("Height", "height") WIDTH(1.5);
+ PARM(float, 1, "height", none, none) RANGE(0,10)
+	 LABELREF(height.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+loops.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ loops.label = PARM_LABEL("Loops", "loops") WIDTH(1.5);
+ PARM(float, 1, "loops", none, none) RANGE(0,1)
+	 LABELREF(loops.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+rotation.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ rotation.label = PARM_LABEL("Rotation", "rotation") WIDTH(1.5);
+ PARM(float, 1, "rotation", none, none) RANGE(0,360)
+	 LABELREF(rotation.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+scale.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   scale.label = PARM_LABEL("Scale", "scale") WIDTH(1.5);
+   PARM(float, 2, "scale", none, none, "X,Y")
+	RANGE(-1,1)  LABELREF(scale.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+points.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ points.label = PARM_LABEL("Points", "points") WIDTH(1.5);
+ PARM(integer, 1, "points", none, none) RANGE(0,500)
+	LOCK_RANGE_MIN LABELREF(points.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+helix_count.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ helix_count.label = PARM_LABEL("Helix Count", "helix_count") WIDTH(1.5);
+ PARM(integer, 1, "helix_count", none, none) RANGE(1,10)
+	LOCK_RANGE_MIN LABELREF(helix_count.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+folder0.gad = 
+
+GROUP simple "Advanced Settings" flat 
+{ 
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    points.gad;		
+	    helix_count.gad;		
+} 
+
+folder2.gad = 
+
+GROUP simple "Transform Settings" flat 
+{ 
+    VALUE(folder2.gad.val) LAYOUT(vertical) HSTRETCH 
+	    rotation.gad;		
+	    scale.gad;		
+} 
+
+folder1.gad = 
+
+GROUP simple "Base Settings" flat 
+{ 
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    radius.gad;		
+	    height.gad;		
+	    loops.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    folder1.gad; 
+    folder2.gad; 
+    folder0.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

@@ -1,0 +1,96 @@
+// Magic: 4e422042
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Sun Mar 13 18:53:18 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+wedgecount.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ wedgecount.label = PARM_LABEL("Wedge Count", "wedgecount") WIDTH(1.5);
+ PARM(integer, 1, "wedgecount", none, none) RANGE(1,50)
+	LOCK_RANGE_MIN LABELREF(wedgecount.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+nwedgeattribs.parm =
+{
+    LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+    PARM_LABEL_SIMPLE("Number of Attributes", "nwedgeattribs") WIDTH(1.5);
+    { WIDTH(0.1) }
+
+    ROW
+    {
+	HSTRETCH(0.5) JUSTIFY(left, center) VALUE(nwedgeattribs.val)
+
+        nwedgeattribs.field = PARM_FIELD (integer, "nwedgeattribs")
+				VALUE(nwedgeattribs.val) HSTRETCH(0.5)
+				 PREF_WIDTH(0.5);
+
+        ROW
+        {
+	     LOOK(lightline) VMARGIN(1p)
+
+   	     INCREMENT_ICONBUTTON VALUE(nwedgeattribs.more.val)	
+	    	HELP("Add Another Instance") SIZE(0.2, 0.24);
+	     DECREMENT_ICONBUTTON VALUE(nwedgeattribs.less.val)	
+	        HELP("Remove Last Instance") SIZE(0.2, 0.24);
+
+	}
+
+	ACTION_BUTTON "Clear" VALUE(nwedgeattribs.clear.val);
+    }
+
+    { HSTRETCH }
+}
+
+nwedgeattribs.multilist = 
+{
+    LAYOUT(vertical) HSTRETCH MARGIN(0.05)
+}
+
+nwedgeattribs.gad =
+{
+    LAYOUT(vertical) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    SWITCHER tight
+    {
+	LAYOUT(vertical) HSTRETCH
+
+	VALUE(nwedgeattribs.multilist_hide_buttons.val)
+	{
+	    LAYOUT(vertical) HSTRETCH
+	    nwedgeattribs.parm;
+	    {LOOK(none) HEIGHT(0.02)}
+	}
+	{
+	}
+    }
+    nwedgeattribs.multilist;
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    wedgecount.gad; 
+    nwedgeattribs.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

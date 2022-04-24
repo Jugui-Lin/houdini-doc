@@ -1,0 +1,281 @@
+// Magic: 6ae47fb4
+// Automatically generated PSI dialog (PSI version 19.0.455)
+// Sun Jan 30 21:03:07 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+op_label.gad = NULL { }
+
+group.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    group.label = PARM_LABEL("Group", "group") WIDTH(1.5);
+    PARM_FIELD(string, "group") VALUE(group.val) 
+	LABELREF(group.label) HSTRETCH;
+
+    group.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "BUTTONS_reselect" VALUE(group.script_action)
+	HELP("Select geometry from an available viewport.\nShift-click to turn on Select Groups.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+grouptype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Group Type", "grouptype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    grouptype.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+guide.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("guide", "Show Guide Geometry") toggle VALUE(guide.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+xformpath.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ xformpath.label = PARM_LABEL("Transform Object", "xformpath") WIDTH(1.5);
+ PARM_FIELD(pathstring, "xformpath") VALUE(xformpath.val) 
+	LABELREF(xformpath.label) HSTRETCH;
+
+    xformpath.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(xformpath.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(xformpath.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+useparentpath.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+useparentpath.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+useparentpath.gad = PARM_BUTTON("useparentpath", "") toggle VALUE(useparentpath.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+parentpath.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ {  }
+
+ parentpath.label = PARM_LABEL("Parent Object", "parentpath") WIDTH(1.32);
+ PARM_FIELD(pathstring, "parentpath") VALUE(parentpath.val) 
+	LABELREF(parentpath.label) HSTRETCH;
+
+    parentpath.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(parentpath.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(parentpath.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+useframe.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+useframe.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+useframe.gad = PARM_BUTTON("useframe", "") toggle VALUE(useframe.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+frame.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ frame.label = PARM_LABEL("Frame", "frame") WIDTH(1.32);
+ PARM(float, 1, "frame", none, none) RANGE(0,10)
+	 LABELREF(frame.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+apply.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("apply", "Apply Transformation") toggle VALUE(apply.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+invert.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("invert", "Invert Transformation") toggle VALUE(invert.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+attribs.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    attribs.label = PARM_LABEL("Attributes to Transform", "attribs") WIDTH(1.5);
+    PARM_FIELD(string, "attribs") VALUE(attribs.val) 
+	LABELREF(attribs.label) HSTRETCH;
+
+    attribs.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+updateaffectednmls.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("updateaffectednmls", "Recompute Affected Normals") toggle VALUE(updateaffectednmls.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+vlength.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("vlength", "Preserve Normal Length") toggle VALUE(vlength.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+addattrib.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+addattrib.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+addattrib.gad = PARM_BUTTON("addattrib", "") toggle VALUE(addattrib.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+outattrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    outattrib.label = PARM_LABEL("Output Attribute", "outattrib") WIDTH(1.32);
+    PARM_FIELD(string, "outattrib") VALUE(outattrib.val) 
+	LABELREF(outattrib.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+folder0.gad = 
+
+GROUP simple "Transformation" flat 
+{ 
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    xformpath.gad;		
+	    useparentpath.row.join;		
+	    useframe.row.join;		
+	    apply.gad;		
+	    invert.gad;		
+	    attribs.gad;		
+	    updateaffectednmls.gad;		
+	    vlength.gad;		
+	    addattrib.row.join;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    op_label.gad; 
+    group.gad; 
+    grouptype.gad; 
+    guide.gad; 
+    folder0.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pythonPanelDocument>
+  <!-- This file contains definitions of Python interfaces and the
+ interfaces menu.  It should not be hand-edited when it is being
+ used by the application.  Note, that two definitions of the
+ same interface or of the interfaces menu are not allowed
+ in a single file. -->
+  <interface name="Navigator" label="Navigator" icon="MISC_python" showNetworkNavigationBar="false" help_url="">
+    <script><![CDATA[######################################################################### 
+#  ProNavigator for Houdini
+#  Jonathan de Blok - jonathan@jdbgraphics.nl
+#  
+#  17-mar-2018 initial release
+#########################################################################
+
+import math
+import hou
+import math
+import toolutils
+
+from PySide2 import QtCore, QtGui, QtWidgets
+
+def Enum(**enums):
+    return type('Enum', (), enums)
+
+#extend Pushbutton wit extra features    
+class PnBut(QtWidgets.QPushButton):
+    def __init__(self, *args, **kwargs):
+        super(PnBut, self).__init__(*args, **kwargs)
+        
+        self.dragType = Enum(No=-1, Left=0, Center=1, Right=2)
+        self.winx=0
+        self.winy=0
+        self.winsizex=1
+        self.winsizey=1
+        self.zoom=1
+        
+        #look and feel:
+        self.setFlat(True);
+        css= "background-color: #444; border: 1px solid #666; padding: 0px"
+        self.setStyleSheet(css)
+        self.setCursor(QtCore.Qt.SizeAllCursor)
+        
+    #set navigator to current cam/persp settings  
+    def reinit(self):
+        viewer=toolutils.sceneViewer()
+        viewport = viewer.curViewport()
+        cam=viewport.camera()
+     
+        if cam==None:
+            #handle perspective view
+            dc = viewport.defaultCamera()
+            self.winx = dc.windowOffset()[0]
+            self.winy = dc.windowOffset()[1]
+            self.winsizex=  dc.windowSize()[0]
+            self.winsizey=  dc.windowSize()[1]
+            self.setText("Persp")
+           
+        else:
+            #handle cam view
+            self.winx = cam.evalParm("winx") 
+            self.winy = cam.evalParm("winy") * -1
+            self.winsizex = cam.evalParm("winsizex") 
+            self.winsizey = cam.evalParm("winsizey") 
+            self.setText(cam.name())
+
+        self.zoom = 1/self.winsizex
+        self.reCalc()
+        
+    #double click to reset to full view        
+    def mouseDoubleClickEvent(self, event):
+        if QtWidgets.QApplication.keyboardModifiers() == QtCore.Qt.NoModifier:
+           self.winx=0
+           self.winy=0
+           self.winsizex=1
+           self.winsizey=1
+           
+           self.move(QtCore.QPoint(0,0))
+           self.resize(self.parent().width(),self.parent().height()  )
+           self.zoom=.6
+           
+           self.updateViewport()
+     
+    #handle mouse button events            
+    def mousePressEvent(self, event):
+        
+    
+        if QtWidgets.QApplication.keyboardModifiers() == QtCore.Qt.ControlModifier:
+            viewer=toolutils.sceneViewer()
+            viewport = viewer.curViewport()
+            cam=viewport.camera()                 
+            if cam != None:
+                cam.setSelected(True, clear_all_selected=True)   
+     
+        self.__mousePressPos = None
+        self.__mouseMovePos = None
+        self.drag=self.dragType.No 
+        
+        self.__tmpZoom = 1        
+        globalPos = event.globalPos()
+          
+        localpos = globalPos - self.pos() 
+        if event.button() == QtCore.Qt.LeftButton or event.button() == QtCore.Qt.RightButton:
+            self.__mousePressPos = event.globalPos()
+            self.__mouseMovePos = event.globalPos()
+            self.__tmpZoom = self.zoom
+
+        super(PnBut, self).mousePressEvent(event)
+
+    #handle mouse move events, drag action happens here        
+    def mouseMoveEvent(self, event):
+        
+        modified=False
+        globalPos = event.globalPos()
+        localpos = event.pos()   
+        
+        if (self.drag==self.dragType.No):
+    
+            #assume center drag
+            if (event.buttons() == QtCore.Qt.LeftButton ):
+                self.drag=self.dragType.Center
+               
+        #Handle LEFT mousebutton actions        
+        if event.buttons() == QtCore.Qt.LeftButton:
+
+            #get mouse move distance as a QPoint vector
+            currPos = self.mapToGlobal(self.pos())
+            diff = globalPos - self.__mousePressPos
+            
+            if self.drag==self.dragType.Center:
+                p=self.pos() + diff  
+                self.updatePos(p)
+                self.__mousePressPos = globalPos
+                modified=True
+        
+        if event.buttons() == QtCore.Qt.RightButton:
+            currPos = self.mapToGlobal(self.pos())
+            diff = globalPos - self.__mousePressPos
+            if (diff.y()!=0):
+                self.zoom = self.__tmpZoom + (diff.y()*diff.y())/-1800.0*(diff.y()/abs(diff.y()))
+                self.zoom = max(1, self.zoom)
+                self.updateSize(self.pos())
+            
+        super(PnBut, self).mouseMoveEvent(event)
+   
+    #calculate/set size/positions    
+    def reCalc(self):
+        self.updateSize()
+        self.updatePos()
+    
+    #set navigator size    
+    def updateSize(self, center=False):
+         
+        [w,h]=[self.parent().width() / self.zoom , self.parent().height() / self.zoom]
+ 
+        
+        if self.zoom == 1:
+            self.winsizex = 1
+            self.winsizey = 1
+        
+        if not center: 
+            center =  self.pos() +  QtCore.QPoint(w, h) * 0.5
+        
+        self.resize(w,h)
+        
+        pw= self.parent().width()
+        ph =self.parent().height()
+        
+        if pw==0: 
+            pw=100
+        
+        w= self.width()
+        h =self.height()
+        
+        x= self.pos().x()
+        y =self.pos().y()
+        
+        self.winsizex = self.winsizey =  float(w) / pw
+      
+        px = (self.winx *  pw * 0.5) + pw * 0.5  - (w * 0.5 )  
+        py = (self.winy *  ph * 0.5) + ph * 0.5  - (h * 0.5 )  
+        
+        if self.zoom == 1:
+            self.winx = 0
+            self.winy = 0
+            px=0
+            py=0
+
+        self.move(  QtCore.QPoint(px,py) )
+        
+        self.updateViewport() 
+    
+    #set navigator position    
+    def updatePos(self, p=False, rel=False):
+        
+        #relative position adjust
+        if rel:
+            p=p+self.pos()
+        
+        #if not position is given use current position    
+        if not p:
+           p=self.pos()
+       
+        #limits   
+        if p.x() < 0:
+            p.setX(0)
+                    
+        if p.y() < 0:
+            p.setY(0)
+ 
+        if p.x()+self.width()  > self.parent().width():
+            p.setX( self.parent().width() - self.width() )   
+         
+        if p.y()+self.height()  > self.parent().height():
+            p.setY( self.parent().height() - self.height() )   
+        
+        self.move(p)
+    
+        pw= self.parent().width() * 0.5
+        ph =self.parent().height() * 0.5
+        
+        w= self.width()
+        h =self.height()
+    
+        x= self.pos().x()
+        y =self.pos().y()
+        
+        #calculate values to camera node
+        self.winx= ((x + w / 2.0 ) -  pw )  /  pw 
+        self.winy= ((y + h / 2.0 ) -  ph )  /  ph 
+        
+        self.updateViewport()
+    
+    #set viewport pan/zoom    
+    def  updateViewport(self):
+        
+        viewport = toolutils.sceneViewer().curViewport()
+        cam=viewport.camera()
+        
+        if cam==None:
+            #handle perspective view
+            dc = viewport.defaultCamera()
+            dc.setWindowOffset([self.winx,self.winy])
+            dc.setWindowSize([self.winsizex,self.winsizey])
+            
+        else:
+            #handle cam view
+            cam.parm("winx").set(self.winx)
+            cam.parm("winy").set(self.winy * -1 )
+            cam.parm("winsizex").set(self.winsizex)
+            cam.parm("winsizey").set(self.winsizey)
+        
+        
+    def leaveEvent(self, event):
+        pass 
+        
+    #event for mousebutton release        
+    def mouseReleaseEvent(self, event):
+      
+        self.drag=self.dragType.No
+        
+        if self.__mousePressPos is not None:
+            moved = event.globalPos() - self.__mousePressPos 
+            if moved.manhattanLength() > 3:
+                event.ignore()
+                return
+       
+        if QtWidgets.QApplication.keyboardModifiers() != QtCore.Qt.ControlModifier:
+            pass
+            
+        super(PnBut, self).mouseReleaseEvent(event)
+         
+        
+def clicked():
+    pass
+
+#main panel     
+class ProNavigator(QtWidgets.QWidget):
+
+    #constructior
+    def __init__(self, paneTab):
+        QtWidgets.QWidget.__init__(self)
+        self.paneTab = paneTab
+        self.navbut=PnBut(self)
+        
+    def paintEvent(self, event):
+        painter = QtGui.QPainter(self).fillRect(0, 0, self.width(), self.height(), hou.qt.getColor("BackColor"))
+       
+    def resizeEvent(self, event):
+        self.navbut.reCalc()
+    
+    #adjust zoom on mousewheel evemt    
+    def wheelEvent(self,event):
+        self.navbut.zoom += event.delta()/ (500.0 * ((self.navbut.zoom-1) * 2.0 +1) )
+        self.navbut.zoom = max(1, self.navbut.zoom)
+        self.navbut.updateSize(event.pos())
+    
+    #when mouse enters panel set navigator to current cam/pers settings    
+    def enterEvent(self, event):
+        self.navbut.reinit()
+
+        
+def onCreateInterface():
+    return ProNavigator(kwargs['paneTab'])    
+    ]]></script>
+    <includeInPaneTabMenu menu_position="0" create_separator="false"/>
+    <includeInToolbarMenu menu_position="101" create_separator="false"/>
+    <help><![CDATA[]]></help>
+  </interface>
+</pythonPanelDocument>

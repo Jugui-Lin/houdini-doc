@@ -1,0 +1,96 @@
+// Magic: 154167ac
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Mon Mar 14 02:55:49 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+vex_group.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    vex_group.label = PARM_LABEL("Point Group", "vex_group") WIDTH(1.5);
+    PARM_FIELD(string, "vex_group") VALUE(vex_group.val) 
+	LABELREF(vex_group.label) HSTRETCH;
+
+    vex_group.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "BUTTONS_reselect" VALUE(vex_group.script_action)
+	HELP("Select geometry from an available viewport.\nShift-click to turn on Select Groups.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+vex_numthreads.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Number of Threads", "vex_numthreads") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    vex_numthreads.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+vex_edit.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+vex_edit.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+vex_edit.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("vex_edit", "Edit VEX Function")
+	push VALUE(vex_edit.val);
+
+    {  }
+}
+
+vex_reload.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    {  }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("vex_reload", "Re-load VEX Functions")
+	push VALUE(vex_reload.val);
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    vex_group.gad; 
+    vex_numthreads.gad; 
+    vex_edit.row.join; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

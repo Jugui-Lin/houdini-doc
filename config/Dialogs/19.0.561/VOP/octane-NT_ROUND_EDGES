@@ -1,0 +1,123 @@
+// Magic: 40aa624a
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Thu Apr 14 20:19:10 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+roundEdgesMode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Mode", "roundEdgesMode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    roundEdgesMode.menu;
+
+    { HSTRETCH }
+
+    roundEdgesMode.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(roundEdgesMode.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+roundEdgesRadius.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ roundEdgesRadius.label = PARM_LABEL("Radius", "roundEdgesRadius") WIDTH(1.5);
+ PARM(float, 1, "roundEdgesRadius", none, LOGSCALE) RANGE(0,1)
+	 LABELREF(roundEdgesRadius.label) HSTRETCH;
+
+    roundEdgesRadius.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(roundEdgesRadius.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+roundEdgesCurvatureRoundness.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ roundEdgesCurvatureRoundness.label = PARM_LABEL("Roundness", "roundEdgesCurvatureRoundness") WIDTH(1.5);
+ PARM(float, 1, "roundEdgesCurvatureRoundness", none, none) RANGE(0,1)
+	 LABELREF(roundEdgesCurvatureRoundness.label) HSTRETCH;
+
+    roundEdgesCurvatureRoundness.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(roundEdgesCurvatureRoundness.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+roundEdgesSampleCount.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ roundEdgesSampleCount.label = PARM_LABEL("Samples", "roundEdgesSampleCount") WIDTH(1.5);
+ PARM(integer, 1, "roundEdgesSampleCount", none, none) RANGE(4,16)
+	 LABELREF(roundEdgesSampleCount.label) HSTRETCH;
+
+    roundEdgesSampleCount.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(roundEdgesSampleCount.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+roundEdgesConsiderOtherObjects.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("roundEdgesConsiderOtherObjects", "Consider other objects") toggle VALUE(roundEdgesConsiderOtherObjects.val);
+
+    { HSTRETCH }
+
+    roundEdgesConsiderOtherObjects.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(roundEdgesConsiderOtherObjects.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+octane_plugin_version.gad = NULL { }
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    roundEdgesMode.gad; 
+    roundEdgesRadius.gad; 
+    roundEdgesCurvatureRoundness.gad; 
+    roundEdgesSampleCount.gad; 
+    roundEdgesConsiderOtherObjects.gad; 
+    octane_plugin_version.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

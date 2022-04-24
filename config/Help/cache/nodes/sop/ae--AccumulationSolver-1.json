@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "node", "context": "sop", "internal": "AccumulationSolver", "version": "1", "namespace": "ae"}, "body": [{"type": "para", "indent": 0, "text": ["Simple accumulation of an attribute. Saves a few seconds of setup.."], "extent": [0, 67]}]}

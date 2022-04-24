@@ -1,0 +1,234 @@
+// Magic: caba2380
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Mon Apr  4 01:23:08 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+group.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    group.label = PARM_LABEL("Group", "group") WIDTH(1.5);
+    PARM_FIELD(string, "group") VALUE(group.val) 
+	LABELREF(group.label) HSTRETCH;
+
+    group.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "BUTTONS_reselect" VALUE(group.script_action)
+	HELP("Select geometry from an available viewport.\nShift-click to turn on Select Groups.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+step.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ step.label = PARM_LABEL("Step Size", "step") WIDTH(1.5);
+ PARM(float, 1, "step", none, none) RANGE(0,0.5)
+	 LABELREF(step.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+iterations.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ iterations.label = PARM_LABEL("Iterations", "iterations") WIDTH(1.5);
+ PARM(integer, 1, "iterations", none, none) RANGE(0,1000)
+	 LABELREF(iterations.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pin_borders.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("pin_borders", "Pin Borders") toggle VALUE(pin_borders.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+iterations2.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ iterations2.label = PARM_LABEL("Iterations", "iterations2") WIDTH(1.5);
+ PARM(integer, 1, "iterations2", none, none) RANGE(0,100)
+	LOCK_RANGE_MIN LABELREF(iterations2.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+stepsize.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ stepsize.label = PARM_LABEL("Step Size", "stepsize") WIDTH(1.5);
+ PARM(float, 1, "stepsize", none, none) RANGE(0,1)
+	 LABELREF(stepsize.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+input.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("input", "Use OpenCL") toggle VALUE(input.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+curvaturetype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Curvature Type", "curvaturetype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    curvaturetype.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+principaltype.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+principaltype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Report", "principaltype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    principaltype.menu;
+
+    {  }
+
+    {  }
+}
+
+principalsign.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    principalsign.menu;
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+scalenormalize.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("scalenormalize", "Make Scale Independent") toggle VALUE(scalenormalize.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+exponet.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ exponet.label = PARM_LABEL("Curvature Exponent", "exponet") WIDTH(1.5);
+ PARM(float, 1, "exponet", none, none) RANGE(0,1)
+	 LABELREF(exponet.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+curvatrue.gad = 
+GROUP collapsible "Advanced" flat  
+{
+    VALUE(curvatrue.gad.val) LAYOUT(vertical) HSTRETCH
+	    input.gad;		
+	    curvaturetype.gad;		
+	    principaltype.row.join;		
+	    scalenormalize.gad;		
+	    exponet.gad;		
+} 
+
+folder0.gad = 
+
+GROUP simple "Smoothing" flat 
+{ 
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    iterations2.gad;		
+	    stepsize.gad;		
+} 
+
+folder1.gad = 
+
+GROUP simple "Sharpening" flat 
+{ 
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    step.gad;		
+	    iterations.gad;		
+	    pin_borders.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    group.gad; 
+    folder1.gad; 
+    folder0.gad; 
+    curvatrue.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

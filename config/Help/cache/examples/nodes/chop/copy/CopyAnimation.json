@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["CopyAnimation"]}, {"type": "para", "indent": 0, "text": ["This file demonstrates how the Copy CHOP can be used to copy channels and apply them to geometry."], "extent": [0, 98]}], "examplefor": "/nodes/chop/copy", "examplefile": "/examples/nodes/chop/copy/CopyAnimation.otl"}

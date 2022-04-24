@@ -1,0 +1,15 @@
+# backup dirs
+otls/backup
+gallery/backup
+examples/backup
+.vs
+
+# backup files
+*_bak*.hip
+
+.DS_Store
+.vs
+Thumbs.db
+
+# compiled python files
+*.pyc

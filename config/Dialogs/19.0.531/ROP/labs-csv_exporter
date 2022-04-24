@@ -1,0 +1,290 @@
+// Magic: e646dbdc
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Mon Apr  4 01:24:02 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+execute.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+execute.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("execute", "Render")
+	push VALUE(execute.val);
+
+    {  }
+}
+
+renderdialog.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    { WIDTH(0) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("renderdialog", "Controls...")
+	push VALUE(renderdialog.val);
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+export_node.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ export_node.label = PARM_LABEL("Export Node", "export_node") WIDTH(1.5);
+ PARM_FIELD(pathstring, "export_node") VALUE(export_node.val) 
+	LABELREF(export_node.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(export_node.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(export_node.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+csv_path.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ csv_path.label = PARM_LABEL("CSV Path", "csv_path") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "csv_path") LABELREF(csv_path.label)
+	VALUE(csv_path.val) HSTRETCH;
+
+    csv_path.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(csv_path.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+export_header.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("export_header", "Export Header") toggle VALUE(export_header.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+use_custom_header.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+use_custom_header.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+use_custom_header.gad = PARM_BUTTON("use_custom_header", "") toggle VALUE(use_custom_header.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+custom_header_data.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    custom_header_data.label = PARM_LABEL("Custom Header", "custom_header_data") WIDTH(1.32);
+    PARM_FIELD(string, "custom_header_data") VALUE(custom_header_data.val) 
+	LABELREF(custom_header_data.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+separate_components.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("separate_components", "Separate Vector Components") toggle VALUE(separate_components.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+suff_x.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+suff_x.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    suff_x.label = PARM_LABEL("Component Suffixes", "suff_x") WIDTH(1.5);
+    PARM_FIELD(string, "suff_x") VALUE(suff_x.val) 
+	LABELREF(suff_x.label) HSTRETCH;
+
+    {  }
+}
+
+suff_y.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    PARM_FIELD(string, "suff_y") VALUE(suff_y.val) HSTRETCH;
+
+    {  }
+}
+
+suff_z.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    PARM_FIELD(string, "suff_z") VALUE(suff_z.val) HSTRETCH;
+
+    {  }
+}
+
+suff_w.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    PARM_FIELD(string, "suff_w") VALUE(suff_w.val) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+bFilteredExport.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("bFilteredExport", "Filtered Export") toggle VALUE(bFilteredExport.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+mAttributes.parm =
+{
+    LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+    PARM_LABEL_SIMPLE("Export Attributes", "mAttributes") WIDTH(1.5);
+    { WIDTH(0.1) }
+
+    ROW
+    {
+	HSTRETCH(0.5) JUSTIFY(left, center) VALUE(mAttributes.val)
+
+        mAttributes.field = PARM_FIELD (integer, "mAttributes")
+				VALUE(mAttributes.val) HSTRETCH(0.5)
+				 PREF_WIDTH(0.5);
+
+        ROW
+        {
+	     LOOK(lightline) VMARGIN(1p)
+
+   	     INCREMENT_ICONBUTTON VALUE(mAttributes.more.val)	
+	    	HELP("Add Another Instance") SIZE(0.2, 0.24);
+	     DECREMENT_ICONBUTTON VALUE(mAttributes.less.val)	
+	        HELP("Remove Last Instance") SIZE(0.2, 0.24);
+
+	}
+
+	ACTION_BUTTON "Clear" VALUE(mAttributes.clear.val);
+    }
+
+    { HSTRETCH }
+}
+
+mAttributes.multilist = 
+{
+    LAYOUT(vertical) HSTRETCH MARGIN(0.05)
+}
+
+mAttributes.gad =
+{
+    LAYOUT(vertical) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    SWITCHER tight
+    {
+	LAYOUT(vertical) HSTRETCH
+
+	VALUE(mAttributes.multilist_hide_buttons.val)
+	{
+	    LAYOUT(vertical) HSTRETCH
+	    mAttributes.parm;
+	    {LOOK(none) HEIGHT(0.02)}
+	}
+	{
+	}
+    }
+    mAttributes.multilist;
+}
+
+folder0.gad = 
+GROUP collapsible "Advanced" flat  
+{
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH
+	    export_header.gad;		
+	    use_custom_header.row.join;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    execute.row.join; 
+    export_node.gad; 
+    csv_path.gad; 
+    folder0.gad; 
+    separate_components.gad; 
+    suff_x.row.join; 
+    bFilteredExport.gad; 
+    mAttributes.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

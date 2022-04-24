@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["NoiseTransform"]}, {"type": "para", "indent": 0, "text": ["This example demonstrates using the Noise CHOP to generate animation and apply it to geometry."], "extent": [0, 95]}], "examplefor": "/nodes/chop/noise", "examplefile": "/examples/nodes/chop/noise/NoiseTransform.otl"}

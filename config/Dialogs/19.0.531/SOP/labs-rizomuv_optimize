@@ -1,0 +1,235 @@
+// Magic: ad8dc402
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Mon Apr  4 01:25:56 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+cook.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+cook.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("cook", "Cook")
+	push VALUE(cook.val);
+
+    {  }
+}
+
+auto_cook.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("auto_cook", "Auto Cook") toggle VALUE(auto_cook.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+outgoingUV.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    outgoingUV.label = PARM_LABEL("UV Attrib to Rizom", "outgoingUV") WIDTH(1.5);
+    PARM_FIELD(string, "outgoingUV") VALUE(outgoingUV.val) 
+	LABELREF(outgoingUV.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+uv_tiles_offset.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   uv_tiles_offset.label = PARM_LABEL("UDIM Tile Offset (x/y)", "uv_tiles_offset") WIDTH(1.5);
+   PARM(integer, 2, "uv_tiles_offset", none, none, "#1,#2")
+	RANGE(0,10)  LABELREF(uv_tiles_offset.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+iterations.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ iterations.label = PARM_LABEL("Iterations", "iterations") WIDTH(1.5);
+ PARM(integer, 1, "iterations", none, none) RANGE(0,10)
+	 LABELREF(iterations.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+optimization_force.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ optimization_force.label = PARM_LABEL("Power", "optimization_force") WIDTH(1.5);
+ PARM(float, 1, "optimization_force", none, none) RANGE(0,1)
+	 LABELREF(optimization_force.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+angle_distance_mix.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ angle_distance_mix.label = PARM_LABEL("Angles/Lengths", "angle_distance_mix") WIDTH(1.5);
+ PARM(float, 1, "angle_distance_mix", none, none) RANGE(0,1)
+	 LABELREF(angle_distance_mix.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+fill_holes.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("fill_holes", "Fill Holes") toggle VALUE(fill_holes.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+prevent_flips.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("prevent_flips", "Prevent Flips") toggle VALUE(prevent_flips.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+prevent_overlaps.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("prevent_overlaps", "Prevent Self Overlaps") toggle VALUE(prevent_overlaps.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+rizomloc.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ rizomloc.label = PARM_LABEL("Rizom Location", "rizomloc") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "rizomloc") LABELREF(rizomloc.label)
+	VALUE(rizomloc.val) HSTRETCH;
+
+    rizomloc.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(rizomloc.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+templocation.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ templocation.label = PARM_LABEL("Temp Obj Location", "templocation") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "templocation") LABELREF(templocation.label)
+	VALUE(templocation.val) HSTRETCH;
+
+    templocation.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(templocation.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+folder2.gad = 
+GROUP collapsible "Settings" flat  
+{
+    VALUE(folder2.gad.val) LAYOUT(vertical) HSTRETCH
+	    rizomloc.gad;		
+	    templocation.gad;		
+} 
+
+folder1.gad = 
+
+GROUP simple "Optimize Options" flat 
+{ 
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    iterations.gad;		
+	    optimization_force.gad;		
+	    angle_distance_mix.gad;		
+	    fill_holes.gad;		
+	    prevent_flips.gad;		
+	    prevent_overlaps.gad;		
+} 
+
+folder0.gad = 
+
+GROUP simple "UV Settings" flat 
+{ 
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    outgoingUV.gad;		
+	    uv_tiles_offset.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    cook.row.join; 
+    folder0.gad; 
+    folder1.gad; 
+    folder2.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

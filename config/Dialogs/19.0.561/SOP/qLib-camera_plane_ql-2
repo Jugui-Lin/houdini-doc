@@ -1,0 +1,586 @@
+// Magic: 27c24034
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Mon Apr 11 00:35:48 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+editable.gad = NULL { }
+
+camera.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ camera.label = PARM_LABEL("Camera", "camera") WIDTH(1.5);
+ PARM_FIELD(pathstring, "camera") VALUE(camera.val) 
+	LABELREF(camera.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(camera.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(camera.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+guide.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("guide", "Show Guide Geometry") toggle VALUE(guide.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+space.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Space", "space") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    space.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+plane_distance.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+plane_distance.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ plane_distance.label = PARM_LABEL("Plane Distance", "plane_distance") WIDTH(1.5);
+ PARM(float, 1, "plane_distance", none, none) RANGE(1,100)
+	 LABELREF(plane_distance.label) HSTRETCH;
+
+  {  }
+}
+
+plane_distance_presets.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center)
+
+    plane_distance_presets.menu LOOK(menuiconbutton) SIZE(0.26, 0.26);
+
+}
+}	// Template join.bot
+
+
+center.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   center.label = PARM_LABEL("Center", "center") WIDTH(1.5);
+   PARM(float, 2, "center", none, none, "X,Y")
+	RANGE(-1,1)  LABELREF(center.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+overscan.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   overscan.label = PARM_LABEL("Overscan", "overscan") WIDTH(1.5);
+   PARM(float, 2, "overscan", none, none, "X,Y")
+	RANGE(-1,1)  LABELREF(overscan.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+use_screenwindow.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("use_screenwindow", "Use Screen Window Settings") toggle VALUE(use_screenwindow.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+gl_wireframe.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Wireframe Mode", "gl_wireframe") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    gl_wireframe.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+material.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+material.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+material.gad = PARM_BUTTON("material", "") toggle VALUE(material.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+material_mode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    {  }
+
+    PARM_LABEL_SIMPLE("Material Mode", "material_mode") WIDTH(1.32);
+    { WIDTH(0.09) }
+
+    material_mode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+material_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    material_color.label = PARM_LABEL("Tint", "material_color") WIDTH(1.5);
+    PARM(float, 4, "material_color", none, COLOR, "R,G,B,A") 
+	LABELREF(material_color.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+texture.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ texture.label = PARM_LABEL("Texture", "texture") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "texture") LABELREF(texture.label)
+	VALUE(texture.val) HSTRETCH;
+
+    texture.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(texture.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+fr_enable.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("fr_enable", "Enable Retiming") toggle VALUE(fr_enable.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+fr_range.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+fr_range.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   fr_range.label = PARM_LABEL("Sequence Range", "fr_range") WIDTH(1.5);
+   PARM(integer, 2, "fr_range", none, none, "X,Y")
+	RANGE(-1,1)  LABELREF(fr_range.label)
+	HSTRETCH;
+
+    {  }
+}
+
+fr_clamp.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("fr_clamp", "Clamp") toggle VALUE(fr_clamp.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+fr_startframeat.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ fr_startframeat.label = PARM_LABEL("Start at", "fr_startframeat") WIDTH(1.5);
+ PARM(integer, 1, "fr_startframeat", none, none) RANGE(1,240)
+	 LABELREF(fr_startframeat.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+fr_currentframe.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ fr_currentframe.label = PARM_LABEL("Current Frame \\#", "fr_currentframe") WIDTH(1.5);
+ PARM(integer, 1, "fr_currentframe", none, none) RANGE(0,9999)
+	 LABELREF(fr_currentframe.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+fr_editable.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+fr_editable.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+fr_editable.gad = PARM_BUTTON("fr_editable", "") toggle VALUE(fr_editable.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+fr_texture.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ {  }
+
+ fr_texture.label = PARM_LABEL("Current Texture", "fr_texture") WIDTH(1.32);
+
+ PARM_FIELD (pathstring, "fr_texture") LABELREF(fr_texture.label)
+	VALUE(fr_texture.val) HSTRETCH;
+
+    fr_texture.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(fr_texture.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+type.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Primitive Type", "type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    type.menu;
+
+    {  }
+
+    {  }
+}
+
+surftype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    surftype.menu;
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+rows.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ rows.label = PARM_LABEL("Rows [Y divs]", "rows") WIDTH(1.5);
+ PARM(integer, 1, "rows", none, none) RANGE(1,50)
+	LOCK_RANGE_MIN LABELREF(rows.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+cols.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ cols.label = PARM_LABEL("Columns [X divs]", "cols") WIDTH(1.5);
+ PARM(integer, 1, "cols", none, none) RANGE(1,50)
+	LOCK_RANGE_MIN LABELREF(cols.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+orderu.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ orderu.label = PARM_LABEL("U Order", "orderu") WIDTH(1.5);
+ PARM(integer, 1, "orderu", none, none) RANGE(2,11)
+	LOCK_RANGE LABELREF(orderu.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+orderv.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ orderv.label = PARM_LABEL("V Order", "orderv") WIDTH(1.5);
+ PARM(integer, 1, "orderv", none, none) RANGE(2,11)
+	LOCK_RANGE LABELREF(orderv.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+cam_crop.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("cam_crop", "Use Camera Crop") toggle VALUE(cam_crop.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+cropl.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ cropl.label = PARM_LABEL("Left Crop", "cropl") WIDTH(1.5);
+ PARM(float, 1, "cropl", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(cropl.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+cropr.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ cropr.label = PARM_LABEL("Right Crop", "cropr") WIDTH(1.5);
+ PARM(float, 1, "cropr", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(cropr.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+cropb.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ cropb.label = PARM_LABEL("Bottom Crop", "cropb") WIDTH(1.5);
+ PARM(float, 1, "cropb", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(cropb.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+cropt.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ cropt.label = PARM_LABEL("Top Crop", "cropt") WIDTH(1.5);
+ PARM(float, 1, "cropt", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(cropt.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+__is_subasset.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("__is_subasset", "__is_subasset") toggle VALUE(__is_subasset.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+__ogl_texparm_path.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    __ogl_texparm_path.label = PARM_LABEL("__ogl_texparm_path", "__ogl_texparm_path") WIDTH(1.5);
+    PARM_FIELD(string, "__ogl_texparm_path") VALUE(__ogl_texparm_path.val) 
+	LABELREF(__ogl_texparm_path.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+misc.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "misc.gad"
+    { 
+	VALUE(misc.gad.val) STRETCH(1,0)
+    } 
+}
+
+folder0_2.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder0_2.gad"
+    { 
+	VALUE(folder0_2.gad.val) STRETCH(1,0)
+
+	TAB "Shading"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    gl_wireframe.gad;		
+	    material.row.join;		
+	    material_color.gad;		
+	    texture.gad;		
+	    fr_enable.gad;		
+	    fr_range.row.join;		
+	    fr_startframeat.gad;		
+	    fr_currentframe.gad;		
+	    fr_editable.row.join;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Geometry"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    type.row.join;		
+	    rows.gad;		
+	    cols.gad;		
+	    orderu.gad;		
+	    orderv.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Cropping"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    cam_crop.gad;		
+	    cropl.gad;		
+	    cropr.gad;		
+	    cropb.gad;		
+	    cropt.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+folder0.gad = 
+
+GROUP simple "Plane Settings" flat 
+{ 
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    space.gad;		
+	    plane_distance.row.join;		
+	    center.gad;		
+	    overscan.gad;		
+	    use_screenwindow.gad;		
+	    folder0_2.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    editable.gad; 
+    camera.gad; 
+    guide.gad; 
+    folder0.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

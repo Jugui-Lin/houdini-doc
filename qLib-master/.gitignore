@@ -1,0 +1,22 @@
+# vim swap files
+*.swp
+
+# python compiled
+*.pyc
+
+# backup dirs
+examples/backup
+otls/*/backup
+gallery/backup
+
+# backup files
+*_bak*.hip
+*.bak
+
+# pycharm workspace stuff
+.idea/*
+
+# waf
+.lock*
+build/*
+

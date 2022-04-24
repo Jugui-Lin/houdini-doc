@@ -1,0 +1,402 @@
+// Magic: 6a3c8503
+// Automatically generated PSI dialog (PSI version 19.0.455)
+// Fri Feb 25 17:48:41 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+xn__karmaglobalengine_q3ag.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Rendering Engine", "xn__karmaglobalengine_q3ag") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    xn__karmaglobalengine_q3ag.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+xn__karmahydradisablelighting_rhbf.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("xn__karmahydradisablelighting_rhbf", "Disable Lighting") toggle VALUE(xn__karmahydradisablelighting_rhbf.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+xn__karmahydradenoise_q3af.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("xn__karmahydradenoise_q3af", "Enable Denoising") toggle VALUE(xn__karmahydradenoise_q3af.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+xn__karmaglobalsamplesperpixel_ejbg.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ xn__karmaglobalsamplesperpixel_ejbg.label = PARM_LABEL("Pixel Samples", "xn__karmaglobalsamplesperpixel_ejbg") WIDTH(1.5);
+ PARM(integer, 1, "xn__karmaglobalsamplesperpixel_ejbg", none, none) RANGE(1,256)
+	LOCK_RANGE_MIN LABELREF(xn__karmaglobalsamplesperpixel_ejbg.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+xn__karmaglobalconvergence_mode_0kbg.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Convergence Mode", "xn__karmaglobalconvergence_mode_0kbg") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    xn__karmaglobalconvergence_mode_0kbg.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+xn__karmaglobalimagemode_m8ag.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Image Mode", "xn__karmaglobalimagemode_m8ag") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    xn__karmaglobalimagemode_m8ag.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+xn__karmaglobalprogressivepasses_nmbg.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ xn__karmaglobalprogressivepasses_nmbg.label = PARM_LABEL("Progressive Passes", "xn__karmaglobalprogressivepasses_nmbg") WIDTH(1.5);
+ PARM(integer, 1, "xn__karmaglobalprogressivepasses_nmbg", none, none) RANGE(0,10)
+	 LABELREF(xn__karmaglobalprogressivepasses_nmbg.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+xn__karmaglobalipr_proxydepth_rhbg.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ xn__karmaglobalipr_proxydepth_rhbg.label = PARM_LABEL("IPR Bucket Size", "xn__karmaglobalipr_proxydepth_rhbg") WIDTH(1.5);
+ PARM(integer, 1, "xn__karmaglobalipr_proxydepth_rhbg", none, none) RANGE(0,6)
+	LOCK_RANGE_MIN LABELREF(xn__karmaglobalipr_proxydepth_rhbg.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+xn__karmaglobalipr_reserve_threads_wpbg.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ xn__karmaglobalipr_reserve_threads_wpbg.label = PARM_LABEL("IPR Reserve Threads", "xn__karmaglobalipr_reserve_threads_wpbg") WIDTH(1.5);
+ PARM(integer, 1, "xn__karmaglobalipr_reserve_threads_wpbg", none, none) RANGE(0,8)
+	LOCK_RANGE_MIN LABELREF(xn__karmaglobalipr_reserve_threads_wpbg.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+xn__karmaglobalipr_proxy_for_imagefilter_ozbg.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ xn__karmaglobalipr_proxy_for_imagefilter_ozbg.label = PARM_LABEL("IPR Denoise Bucket Size", "xn__karmaglobalipr_proxy_for_imagefilter_ozbg") WIDTH(1.5);
+ PARM(integer, 1, "xn__karmaglobalipr_proxy_for_imagefilter_ozbg", none, none) RANGE(0,6)
+	LOCK_RANGE_MIN LABELREF(xn__karmaglobalipr_proxy_for_imagefilter_ozbg.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+xn__karmaglobalhead_ao_samples_ejbg.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ xn__karmaglobalhead_ao_samples_ejbg.label = PARM_LABEL("Headlight AO Samples", "xn__karmaglobalhead_ao_samples_ejbg") WIDTH(1.5);
+ PARM(integer, 1, "xn__karmaglobalhead_ao_samples_ejbg", none, none) RANGE(0,4)
+	LOCK_RANGE_MIN LABELREF(xn__karmaglobalhead_ao_samples_ejbg.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+xn__karmaglobalhead_ao_distance_0kbg.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ xn__karmaglobalhead_ao_distance_0kbg.label = PARM_LABEL("Headlight AO Distance", "xn__karmaglobalhead_ao_distance_0kbg") WIDTH(1.5);
+ PARM(float, 1, "xn__karmaglobalhead_ao_distance_0kbg", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(xn__karmaglobalhead_ao_distance_0kbg.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+xn__karmaglobalhead_depthcue_color_wpbg.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    xn__karmaglobalhead_depthcue_color_wpbg.label = PARM_LABEL("Headlight Fog Color", "xn__karmaglobalhead_depthcue_color_wpbg") WIDTH(1.5);
+    PARM(float, 3, "xn__karmaglobalhead_depthcue_color_wpbg", none, COLOR, "R,G,B") 
+	LABELREF(xn__karmaglobalhead_depthcue_color_wpbg.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+xn__karmaglobalhead_depthcue_alpha_wpbg.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ xn__karmaglobalhead_depthcue_alpha_wpbg.label = PARM_LABEL("Headlight Fog Alpha", "xn__karmaglobalhead_depthcue_alpha_wpbg") WIDTH(1.5);
+ PARM(float, 1, "xn__karmaglobalhead_depthcue_alpha_wpbg", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(xn__karmaglobalhead_depthcue_alpha_wpbg.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+xn__karmaglobalhead_depthcue_z_ejbg.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   xn__karmaglobalhead_depthcue_z_ejbg.label = PARM_LABEL("Headlight Fog Distance", "xn__karmaglobalhead_depthcue_z_ejbg") WIDTH(1.5);
+   PARM(float, 2, "xn__karmaglobalhead_depthcue_z_ejbg", none, none, "#1,#2")
+	RANGE(0,1000) LOCK_RANGE_MIN LABELREF(xn__karmaglobalhead_depthcue_z_ejbg.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+xn__karmagloballight_sampling_mode_wpbg.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Light Sampling Mode", "xn__karmagloballight_sampling_mode_wpbg") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    xn__karmagloballight_sampling_mode_wpbg.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+xn__karmagloballight_sampling_quality_subg.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ xn__karmagloballight_sampling_quality_subg.label = PARM_LABEL("Light Sampling Quality", "xn__karmagloballight_sampling_quality_subg") WIDTH(1.5);
+ PARM(float, 1, "xn__karmagloballight_sampling_quality_subg", none, none) RANGE(0,4)
+	LOCK_RANGE_MIN LABELREF(xn__karmagloballight_sampling_quality_subg.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+xn__karmaglobalcolorlimit_89ag.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ xn__karmaglobalcolorlimit_89ag.label = PARM_LABEL("Color Limit", "xn__karmaglobalcolorlimit_89ag") WIDTH(1.5);
+ PARM(float, 1, "xn__karmaglobalcolorlimit_89ag", none, none) RANGE(1,10)
+	 LABELREF(xn__karmaglobalcolorlimit_89ag.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+xn__karmaglobaldicingqualityscale_9nbg.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ xn__karmaglobaldicingqualityscale_9nbg.label = PARM_LABEL("Dicing Quality Scale", "xn__karmaglobaldicingqualityscale_9nbg") WIDTH(1.5);
+ PARM(float, 1, "xn__karmaglobaldicingqualityscale_9nbg", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(xn__karmaglobaldicingqualityscale_9nbg.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+instantaneousShutter.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("instantaneousShutter", "Disable Motion Blur") toggle VALUE(instantaneousShutter.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+xn__karmaglobalenable_dof_89ag.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("xn__karmaglobalenable_dof_89ag", "Enable Depth of Field") toggle VALUE(xn__karmaglobalenable_dof_89ag.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+xn__primvarskarmaobjectdiffuselimit_mrbfg.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ xn__primvarskarmaobjectdiffuselimit_mrbfg.label = PARM_LABEL("Diffuse Limit", "xn__primvarskarmaobjectdiffuselimit_mrbfg") WIDTH(1.5);
+ PARM(float, 1, "xn__primvarskarmaobjectdiffuselimit_mrbfg", none, none) RANGE(0,32)
+	LOCK_RANGE_MIN LABELREF(xn__primvarskarmaobjectdiffuselimit_mrbfg.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+xn__primvarskarmaobjectreflectlimit_mrbfg.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ xn__primvarskarmaobjectreflectlimit_mrbfg.label = PARM_LABEL("Reflection Limit", "xn__primvarskarmaobjectreflectlimit_mrbfg") WIDTH(1.5);
+ PARM(float, 1, "xn__primvarskarmaobjectreflectlimit_mrbfg", none, none) RANGE(0,32)
+	LOCK_RANGE_MIN LABELREF(xn__primvarskarmaobjectreflectlimit_mrbfg.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+xn__primvarskarmaobjectrefractlimit_mrbfg.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ xn__primvarskarmaobjectrefractlimit_mrbfg.label = PARM_LABEL("Refraction Limit", "xn__primvarskarmaobjectrefractlimit_mrbfg") WIDTH(1.5);
+ PARM(float, 1, "xn__primvarskarmaobjectrefractlimit_mrbfg", none, none) RANGE(0,32)
+	LOCK_RANGE_MIN LABELREF(xn__primvarskarmaobjectrefractlimit_mrbfg.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+xn__primvarskarmaobjectvolumesteprate_vubfg.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ xn__primvarskarmaobjectvolumesteprate_vubfg.label = PARM_LABEL("Volume Step Rate", "xn__primvarskarmaobjectvolumesteprate_vubfg") WIDTH(1.5);
+ PARM(float, 1, "xn__primvarskarmaobjectvolumesteprate_vubfg", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(xn__primvarskarmaobjectvolumesteprate_vubfg.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+xn__karmahydravariance_d5af.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ xn__karmahydravariance_d5af.label = PARM_LABEL("Variance Antialising", "xn__karmahydravariance_d5af") WIDTH(1.5);
+ PARM(float, 1, "xn__karmahydravariance_d5af", none, none) RANGE(0,0.10000000000000001)
+	LOCK_RANGE_MIN LABELREF(xn__karmahydravariance_d5af.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    xn__karmaglobalengine_q3ag.gad; 
+    xn__karmahydradisablelighting_rhbf.gad; 
+    xn__karmahydradenoise_q3af.gad; 
+    xn__karmaglobalsamplesperpixel_ejbg.gad; 
+    xn__karmaglobalconvergence_mode_0kbg.gad; 
+    xn__karmaglobalimagemode_m8ag.gad; 
+    xn__karmaglobalprogressivepasses_nmbg.gad; 
+    xn__karmaglobalipr_proxydepth_rhbg.gad; 
+    xn__karmaglobalipr_reserve_threads_wpbg.gad; 
+    xn__karmaglobalipr_proxy_for_imagefilter_ozbg.gad; 
+    xn__karmaglobalhead_ao_samples_ejbg.gad; 
+    xn__karmaglobalhead_ao_distance_0kbg.gad; 
+    xn__karmaglobalhead_depthcue_color_wpbg.gad; 
+    xn__karmaglobalhead_depthcue_alpha_wpbg.gad; 
+    xn__karmaglobalhead_depthcue_z_ejbg.gad; 
+    xn__karmagloballight_sampling_mode_wpbg.gad; 
+    xn__karmagloballight_sampling_quality_subg.gad; 
+    xn__karmaglobalcolorlimit_89ag.gad; 
+    xn__karmaglobaldicingqualityscale_9nbg.gad; 
+    instantaneousShutter.gad; 
+    xn__karmaglobalenable_dof_89ag.gad; 
+    xn__primvarskarmaobjectdiffuselimit_mrbfg.gad; 
+    xn__primvarskarmaobjectreflectlimit_mrbfg.gad; 
+    xn__primvarskarmaobjectrefractlimit_mrbfg.gad; 
+    xn__primvarskarmaobjectvolumesteprate_vubfg.gad; 
+    xn__karmahydravariance_d5af.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

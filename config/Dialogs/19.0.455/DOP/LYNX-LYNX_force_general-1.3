@@ -1,0 +1,5021 @@
+// Magic: 7669ff0d
+// Automatically generated PSI dialog (PSI version 19.0.455)
+// Tue Feb  8 16:02:41 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+debug.gad = NULL { }
+
+force_preset.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Preset", "force_preset") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    force_preset.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+force_toggle.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ force_toggle.label = PARM_LABEL("Activation", "force_toggle") WIDTH(1.5);
+ PARM(integer, 1, "force_toggle", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(force_toggle.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+force_binding.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_binding.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Binding", "force_binding") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    force_binding.menu;
+
+    {  }
+
+    {  }
+}
+
+force_binding_geometry_group.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    force_binding_geometry_group.label = PARM_LABEL("Group", "force_binding_geometry_group") ;
+    PARM_FIELD(string, "force_binding_geometry_group") VALUE(force_binding_geometry_group.val) 
+	LABELREF(force_binding_geometry_group.label) HSTRETCH;
+
+    force_binding_geometry_group.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+force_binding_geometry_toggle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_binding_geometry_toggle.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("force_binding_geometry_toggle", " ") toggle VALUE(force_binding_geometry_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_binding_geometry.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    force_binding_geometry.label = PARM_LABEL("Geometry", "force_binding_geometry") ;
+    PARM_FIELD(string, "force_binding_geometry") VALUE(force_binding_geometry.val) 
+	LABELREF(force_binding_geometry.label) HSTRETCH;
+
+    {  }
+}
+
+force_binding_geometry_attribute.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    force_binding_geometry_attribute.label = PARM_LABEL("Velocity Attribute", "force_binding_geometry_attribute") ;
+    PARM_FIELD(string, "force_binding_geometry_attribute") VALUE(force_binding_geometry_attribute.val) 
+	LABELREF(force_binding_geometry_attribute.label) HSTRETCH;
+
+    {  }
+}
+
+force_binding_field_toggle.gad = ROW
+{
+    
+    {  }
+
+    PARM_BUTTON("force_binding_field_toggle", " ") toggle VALUE(force_binding_field_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_binding_field.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    force_binding_field.label = PARM_LABEL("Fields", "force_binding_field") ;
+    PARM_FIELD(string, "force_binding_field") VALUE(force_binding_field.val) 
+	LABELREF(force_binding_field.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+force_mass_toggle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_mass_toggle.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("force_mass_toggle", "Enable Mass/Density") toggle VALUE(force_mass_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_seed_attribute.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    force_seed_attribute.label = PARM_LABEL("Seed Attribute", "force_seed_attribute") ;
+    PARM_FIELD(string, "force_seed_attribute") VALUE(force_seed_attribute.val) 
+	LABELREF(force_seed_attribute.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+force_wind_toggle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_wind_toggle.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("force_wind_toggle", "Enable Wind") toggle VALUE(force_wind_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_wind_airresist.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ force_wind_airresist.label = PARM_LABEL("Wind Speed Matching", "force_wind_airresist") ;
+ PARM(float, 1, "force_wind_airresist", none, none) RANGE(0,50)
+	LOCK_RANGE_MIN LABELREF(force_wind_airresist.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+force_guide_toggle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_guide_toggle.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("force_guide_toggle", "Enable") toggle VALUE(force_guide_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_guide_playback_hide_toggle.gad = ROW
+{
+    
+    {  }
+
+    PARM_BUTTON("force_guide_playback_hide_toggle", "Hide On Playback") toggle VALUE(force_guide_playback_hide_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_guide_general_toggle.gad = ROW
+{
+    
+    {  }
+
+    PARM_BUTTON("force_guide_general_toggle", "Show General Guides") toggle VALUE(force_guide_general_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_guide_streamers_toggle.gad = ROW
+{
+    HSTRETCH
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("force_guide_streamers_toggle", "Show Streamer Guides   ") toggle VALUE(force_guide_streamers_toggle.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+force_guide_general_mask.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    force_guide_general_mask.label = PARM_LABEL("Guide Mask", "force_guide_general_mask") WIDTH(1.5);
+    PARM_FIELD(string, "force_guide_general_mask") VALUE(force_guide_general_mask.val) 
+	LABELREF(force_guide_general_mask.label) HSTRETCH;
+
+    force_guide_general_mask.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+force_guide_general_color_.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_guide_general_color_.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    force_guide_general_color_.label = PARM_LABEL("Color", "force_guide_general_color_") WIDTH(1.5);
+    PARM(float, 3, "force_guide_general_color_", none, COLOR, "R,G,B") 
+	LABELREF(force_guide_general_color_.label) HSTRETCH;
+
+    {  }
+}
+
+force_guide_general_strength_max.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ force_guide_general_strength_max.label = PARM_LABEL("Viz Max", "force_guide_general_strength_max") ;
+ PARM(float, 1, "force_guide_general_strength_max", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(force_guide_general_strength_max.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+force_guide_general_vdb_resolution_scale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ force_guide_general_vdb_resolution_scale.label = PARM_LABEL("Vdb Resolution Scale", "force_guide_general_vdb_resolution_scale") WIDTH(1.5);
+ PARM(float, 1, "force_guide_general_vdb_resolution_scale", none, none) RANGE(0.01,5)
+	LOCK_RANGE_MIN LABELREF(force_guide_general_vdb_resolution_scale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+force_guide_general_curve_resample_scale.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_guide_general_curve_resample_scale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ force_guide_general_curve_resample_scale.label = PARM_LABEL("Curve Resample Scale", "force_guide_general_curve_resample_scale") WIDTH(1.5);
+ PARM(float, 1, "force_guide_general_curve_resample_scale", none, none) RANGE(0.01,5)
+	LOCK_RANGE_MIN LABELREF(force_guide_general_curve_resample_scale.label) HSTRETCH;
+
+  {  }
+}
+
+force_guide_general_curve_marker_count.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ force_guide_general_curve_marker_count.label = PARM_LABEL("Marker Count", "force_guide_general_curve_marker_count") ;
+ PARM(integer, 1, "force_guide_general_curve_marker_count", none, none) RANGE(3,25)
+	LOCK_RANGE_MIN LABELREF(force_guide_general_curve_marker_count.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+force_guide_streamers_mode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Mode", "force_guide_streamers_mode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    force_guide_streamers_mode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+force_guide_streamers_color_.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_guide_streamers_color_.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    force_guide_streamers_color_.label = PARM_LABEL("Color", "force_guide_streamers_color_") WIDTH(1.5);
+    PARM(float, 3, "force_guide_streamers_color_", none, COLOR, "R,G,B") 
+	LABELREF(force_guide_streamers_color_.label) HSTRETCH;
+
+    {  }
+}
+
+force_guide_streamers_length.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ force_guide_streamers_length.label = PARM_LABEL("Viz Scale", "force_guide_streamers_length") ;
+ PARM(float, 1, "force_guide_streamers_length", none, none) RANGE(0,2)
+	LOCK_RANGE_MIN LABELREF(force_guide_streamers_length.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+force_guide_streamers_grid_transform_r.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_guide_streamers_grid_transform_r.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Grid", "force_guide_streamers_grid_transform_r") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    force_guide_streamers_grid_transform_r.menu;
+
+    {  }
+
+    {  }
+}
+
+force_guide_streamers_grid_transform_t.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ force_guide_streamers_grid_transform_t.label = PARM_LABEL("Offset", "force_guide_streamers_grid_transform_t") ;
+ PARM(float, 1, "force_guide_streamers_grid_transform_t", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(force_guide_streamers_grid_transform_t.label) HSTRETCH;
+
+  {  }
+}
+
+force_guide_streamers_grid_resolution_scale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ force_guide_streamers_grid_resolution_scale.label = PARM_LABEL("Resolution Scale", "force_guide_streamers_grid_resolution_scale") ;
+ PARM(float, 1, "force_guide_streamers_grid_resolution_scale", none, none) RANGE(0.01,5)
+	LOCK_RANGE_MIN LABELREF(force_guide_streamers_grid_resolution_scale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+force_transform_t_.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   force_transform_t_.label = PARM_LABEL("Translate", "force_transform_t_") WIDTH(1.5);
+   PARM(float, 3, "force_transform_t_", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(force_transform_t_.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+force_transform_r_.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   force_transform_r_.label = PARM_LABEL("Rotate", "force_transform_r_") WIDTH(1.5);
+   PARM(float, 3, "force_transform_r_", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(force_transform_r_.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+force_transform_s_.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   force_transform_s_.label = PARM_LABEL("Scale", "force_transform_s_") WIDTH(1.5);
+   PARM(float, 3, "force_transform_s_", none, none, "X,Y,Z")
+	RANGE(0,1) LOCK_RANGE_MIN LABELREF(force_transform_s_.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+force_transform_s_uniform.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ force_transform_s_uniform.label = PARM_LABEL("Uniform Scale", "force_transform_s_uniform") WIDTH(1.5);
+ PARM(float, 1, "force_transform_s_uniform", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(force_transform_s_uniform.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+force_transform_pivot_.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   force_transform_pivot_.label = PARM_LABEL("Pivot", "force_transform_pivot_") WIDTH(1.5);
+   PARM(float, 3, "force_transform_pivot_", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(force_transform_pivot_.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+force_transform_pin_toggle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_transform_pin_toggle.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("force_transform_pin_toggle", "Pin Transform") toggle VALUE(force_transform_pin_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_transform_pin_type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    {  }
+
+    PARM_LABEL_SIMPLE("To", "force_transform_pin_type") ;
+    { WIDTH(0.09) }
+
+    force_transform_pin_type.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+force_transform_pin_polygon_geo_path.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ force_transform_pin_polygon_geo_path.label = PARM_LABEL("Polygon", "force_transform_pin_polygon_geo_path") WIDTH(1.5);
+ PARM_FIELD(pathstring, "force_transform_pin_polygon_geo_path") VALUE(force_transform_pin_polygon_geo_path.val) 
+	LABELREF(force_transform_pin_polygon_geo_path.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(force_transform_pin_polygon_geo_path.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(force_transform_pin_polygon_geo_path.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+force_transform_pin_polygon_rest_frame.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ force_transform_pin_polygon_rest_frame.label = PARM_LABEL("Snap Frame", "force_transform_pin_polygon_rest_frame") WIDTH(1.5);
+ PARM(float, 1, "force_transform_pin_polygon_rest_frame", none, none) RANGE(0,10)
+	 LABELREF(force_transform_pin_polygon_rest_frame.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+force_transform_pin_curve_geo_path.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ force_transform_pin_curve_geo_path.label = PARM_LABEL("Curve", "force_transform_pin_curve_geo_path") WIDTH(1.5);
+ PARM_FIELD(pathstring, "force_transform_pin_curve_geo_path") VALUE(force_transform_pin_curve_geo_path.val) 
+	LABELREF(force_transform_pin_curve_geo_path.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(force_transform_pin_curve_geo_path.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(force_transform_pin_curve_geo_path.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+force_transform_pin_curve_carve.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_transform_pin_curve_carve.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ force_transform_pin_curve_carve.label = PARM_LABEL("Position Along Curve", "force_transform_pin_curve_carve") WIDTH(1.5);
+ PARM(float, 1, "force_transform_pin_curve_carve", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(force_transform_pin_curve_carve.label) HSTRETCH;
+
+  {  }
+}
+
+force_transform_pin_curve_reverse_toggle.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("force_transform_pin_curve_reverse_toggle", "Reverse Curve") toggle VALUE(force_transform_pin_curve_reverse_toggle.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+force_transform_pin_curve_resample_toggle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_transform_pin_curve_resample_toggle.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("force_transform_pin_curve_resample_toggle", "Resample") toggle VALUE(force_transform_pin_curve_resample_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_transform_pin_curve_resample_length.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ force_transform_pin_curve_resample_length.label = PARM_LABEL("Length", "force_transform_pin_curve_resample_length") ;
+ PARM(float, 1, "force_transform_pin_curve_resample_length", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(force_transform_pin_curve_resample_length.label) HSTRETCH;
+
+  {  }
+}
+
+force_transform_pin_curve_attribute_normal.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    force_transform_pin_curve_attribute_normal.label = PARM_LABEL("Normal Attribute", "force_transform_pin_curve_attribute_normal") ;
+    PARM_FIELD(string, "force_transform_pin_curve_attribute_normal") VALUE(force_transform_pin_curve_attribute_normal.val) 
+	LABELREF(force_transform_pin_curve_attribute_normal.label) HSTRETCH;
+
+    {  }
+}
+
+force_transform_pin_curve_attribute_uv.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    force_transform_pin_curve_attribute_uv.label = PARM_LABEL("UV Attribute", "force_transform_pin_curve_attribute_uv") ;
+    PARM_FIELD(string, "force_transform_pin_curve_attribute_uv") VALUE(force_transform_pin_curve_attribute_uv.val) 
+	LABELREF(force_transform_pin_curve_attribute_uv.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+force_transform_pin_curve_twist_.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_transform_pin_curve_twist_.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   force_transform_pin_curve_twist_.label = PARM_LABEL("Twist Min/Max", "force_transform_pin_curve_twist_") WIDTH(1.5);
+   PARM(float, 2, "force_transform_pin_curve_twist_", none, none, "X,Y")
+	RANGE(-360,360)  LABELREF(force_transform_pin_curve_twist_.label)
+	HSTRETCH;
+
+    {  }
+}
+
+force_transform_pin_curve_twist_offset.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ force_transform_pin_curve_twist_offset.label = PARM_LABEL("Offset", "force_transform_pin_curve_twist_offset") ;
+ PARM(float, 1, "force_transform_pin_curve_twist_offset", none, none) RANGE(-360,360)
+	 LABELREF(force_transform_pin_curve_twist_offset.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+force_transform_pin_curve_twist_remap_reverse_toggle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_transform_pin_curve_twist_remap_reverse_toggle.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("force_transform_pin_curve_twist_remap_reverse_toggle", "Reverse") toggle VALUE(force_transform_pin_curve_twist_remap_reverse_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_transform_pin_curve_twist_remap.si_rampedit = FLOAT_RAMP VALUE(force_transform_pin_curve_twist_remap.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+force_transform_pin_curve_twist_remap.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) 
+	    LABEL "Point No.";
+	}
+
+	force_transform_pin_curve_twist_remap.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(force_transform_pin_curve_twist_remap.pointno.val) HSTRETCH;
+    }
+}
+
+force_transform_pin_curve_twist_remap.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(force_transform_pin_curve_twist_remap.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(force_transform_pin_curve_twist_remap.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    force_transform_pin_curve_twist_remap.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(force_transform_pin_curve_twist_remap.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    force_transform_pin_curve_twist_remap.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(force_transform_pin_curve_twist_remap.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+force_transform_pin_curve_twist_remap.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    force_transform_pin_curve_twist_remap.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	force_transform_pin_curve_twist_remap.buttons.gad VSTRETCH;
+
+	force_transform_pin_curve_twist_remap.si_rampedit HSTRETCH;
+    }
+}
+
+force_transform_pin_curve_twist_remap.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Twist Along Curve", "force_transform_pin_curve_twist_remap");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(force_transform_pin_curve_twist_remap.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(force_transform_pin_curve_twist_remap.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	force_transform_pin_curve_twist_remap.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	force_transform_pin_curve_twist_remap.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(force_transform_pin_curve_twist_remap.hideparms.val) HSTRETCH
+	    force_transform_pin_curve_twist_remap.multiramp;
+	    {}
+	}
+    }
+}
+}	// Template join.bot
+
+force_shape_data_isInternal2.gad = NULL { }
+force_transform_order.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_transform_order.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Transform Order", "force_transform_order") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    force_transform_order.menu;
+
+    {  }
+
+    {  }
+}
+
+force_transform_data_time_interpolate_toggle.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("force_transform_data_time_interpolate_toggle", "Time Interpolate Data") toggle VALUE(force_transform_data_time_interpolate_toggle.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+force_transform_pin_t_.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   force_transform_pin_t_.label = PARM_LABEL("force_transform_pin_t", "force_transform_pin_t_") WIDTH(1.5);
+   PARM(float, 3, "force_transform_pin_t_", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(force_transform_pin_t_.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+force_transform_pin_r_.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   force_transform_pin_r_.label = PARM_LABEL("force_transform_pin_r", "force_transform_pin_r_") WIDTH(1.5);
+   PARM(float, 3, "force_transform_pin_r_", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(force_transform_pin_r_.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+force_transform_data_path_relative.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ force_transform_data_path_relative.label = PARM_LABEL("Data Path", "force_transform_data_path_relative") WIDTH(1.5);
+ PARM_FIELD(pathstring, "force_transform_data_path_relative") VALUE(force_transform_data_path_relative.val) 
+	LABELREF(force_transform_data_path_relative.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(force_transform_data_path_relative.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(force_transform_data_path_relative.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+force_transform_data_path_absolute.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    force_transform_data_path_absolute.label = PARM_LABEL("force_transform_data_path_absolute", "force_transform_data_path_absolute") WIDTH(1.5);
+    PARM_FIELD(string, "force_transform_data_path_absolute") VALUE(force_transform_data_path_absolute.val) 
+	LABELREF(force_transform_data_path_absolute.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+force_transform_data_path_calculation.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    force_transform_data_path_calculation.label = PARM_LABEL("force_transform_data_path_calculation", "force_transform_data_path_calculation") WIDTH(1.5);
+    PARM_FIELD(string, "force_transform_data_path_calculation") VALUE(force_transform_data_path_calculation.val) 
+	LABELREF(force_transform_data_path_calculation.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+force_transform_data_path_objid.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    force_transform_data_path_objid.label = PARM_LABEL("force_transform_data_path_objid", "force_transform_data_path_objid") WIDTH(1.5);
+    PARM_FIELD(string, "force_transform_data_path_objid") VALUE(force_transform_data_path_objid.val) 
+	LABELREF(force_transform_data_path_objid.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+force_transform_data_path_objname.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    force_transform_data_path_objname.label = PARM_LABEL("force_transform_data_path_objname", "force_transform_data_path_objname") WIDTH(1.5);
+    PARM_FIELD(string, "force_transform_data_path_objname") VALUE(force_transform_data_path_objname.val) 
+	LABELREF(force_transform_data_path_objname.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+force_transform_data_path_subpath.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    force_transform_data_path_subpath.label = PARM_LABEL("force_transform_data_path_subpath", "force_transform_data_path_subpath") WIDTH(1.5);
+    PARM_FIELD(string, "force_transform_data_path_subpath") VALUE(force_transform_data_path_subpath.val) 
+	LABELREF(force_transform_data_path_subpath.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+force_transform_data_path_name.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    force_transform_data_path_name.label = PARM_LABEL("force_transform_data_path_name", "force_transform_data_path_name") WIDTH(1.5);
+    PARM_FIELD(string, "force_transform_data_path_name") VALUE(force_transform_data_path_name.val) 
+	LABELREF(force_transform_data_path_name.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+force_shape_toggle.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("force_shape_toggle", "Enable") toggle VALUE(force_shape_toggle.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+force_shape_type.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_shape_type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Shape", "force_shape_type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    force_shape_type.menu;
+
+    {  }
+
+    {  }
+}
+
+force_shape_custom_geo_path.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ {  }
+
+ PARM_FIELD(pathstring, "force_shape_custom_geo_path") VALUE(force_shape_custom_geo_path.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(force_shape_custom_geo_path.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(force_shape_custom_geo_path.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ {  }
+}
+
+force_shape_curve_geo_path.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ {  }
+
+ PARM_FIELD(pathstring, "force_shape_curve_geo_path") VALUE(force_shape_curve_geo_path.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(force_shape_curve_geo_path.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(force_shape_curve_geo_path.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+force_shape_vdb_size.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ force_shape_vdb_size.label = PARM_LABEL("Vdb Size", "force_shape_vdb_size") WIDTH(1.5);
+ PARM(float, 1, "force_shape_vdb_size", none, none) RANGE(0,0.10000000000000001)
+	LOCK_RANGE_MIN LABELREF(force_shape_vdb_size.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+force_shape_invert_toggle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_shape_invert_toggle.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("force_shape_invert_toggle", "Invert Shape") toggle VALUE(force_shape_invert_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_shape_distance_remap_toggle.gad = ROW
+{
+    
+    {  }
+
+    PARM_BUTTON("force_shape_distance_remap_toggle", "Remap Distance") toggle VALUE(force_shape_distance_remap_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_shape_distance_sdf_remap_.gad = ROW
+{
+   HSTRETCH
+   {  }
+
+   force_shape_distance_sdf_remap_.label = PARM_LABEL("Min/Max", "force_shape_distance_sdf_remap_") ;
+   PARM(float, 2, "force_shape_distance_sdf_remap_", none, none, "X,Y")
+	RANGE(-0.5,0.5) LOCK_RANGE_MIN LABELREF(force_shape_distance_sdf_remap_.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+force_shape_custom_attribute_tan_u.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    force_shape_custom_attribute_tan_u.label = PARM_LABEL("Tan U Attribute", "force_shape_custom_attribute_tan_u") WIDTH(1.5);
+    PARM_FIELD(string, "force_shape_custom_attribute_tan_u") VALUE(force_shape_custom_attribute_tan_u.val) 
+	LABELREF(force_shape_custom_attribute_tan_u.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+force_shape_torus_width.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ force_shape_torus_width.label = PARM_LABEL("Width", "force_shape_torus_width") WIDTH(1.5);
+ PARM(float, 1, "force_shape_torus_width", none, none) RANGE(0,0.5)
+	LOCK_RANGE LABELREF(force_shape_torus_width.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+force_shape_tube_width_.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   force_shape_tube_width_.label = PARM_LABEL("Width Bottom/Top", "force_shape_tube_width_") WIDTH(1.5);
+   PARM(float, 2, "force_shape_tube_width_", none, none, "#1,#2")
+	RANGE(0,1) LOCK_RANGE LABELREF(force_shape_tube_width_.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+force_shape_tube_width_remap_reverse_toggle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_shape_tube_width_remap_reverse_toggle.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("force_shape_tube_width_remap_reverse_toggle", "Reverse") toggle VALUE(force_shape_tube_width_remap_reverse_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_shape_tube_width_remap.si_rampedit = FLOAT_RAMP VALUE(force_shape_tube_width_remap.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+force_shape_tube_width_remap.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) 
+	    LABEL "Point No.";
+	}
+
+	force_shape_tube_width_remap.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(force_shape_tube_width_remap.pointno.val) HSTRETCH;
+    }
+}
+
+force_shape_tube_width_remap.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(force_shape_tube_width_remap.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(force_shape_tube_width_remap.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    force_shape_tube_width_remap.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(force_shape_tube_width_remap.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    force_shape_tube_width_remap.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(force_shape_tube_width_remap.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+force_shape_tube_width_remap.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    force_shape_tube_width_remap.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	force_shape_tube_width_remap.buttons.gad VSTRETCH;
+
+	force_shape_tube_width_remap.si_rampedit HSTRETCH;
+    }
+}
+
+force_shape_tube_width_remap.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Width Remap", "force_shape_tube_width_remap");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(force_shape_tube_width_remap.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(force_shape_tube_width_remap.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	force_shape_tube_width_remap.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	force_shape_tube_width_remap.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(force_shape_tube_width_remap.hideparms.val) HSTRETCH
+	    force_shape_tube_width_remap.multiramp;
+	    {}
+	}
+    }
+}
+}	// Template join.bot
+
+force_shape_curve_reverse_toggle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_shape_curve_reverse_toggle.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("force_shape_curve_reverse_toggle", "Reverse Curve") toggle VALUE(force_shape_curve_reverse_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_shape_curve_interpolate_toggle.gad = ROW
+{
+    
+    {  }
+
+    PARM_BUTTON("force_shape_curve_interpolate_toggle", "Interpolate Neighbours") toggle VALUE(force_shape_curve_interpolate_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_shape_curve_resample_toggle.gad = ROW
+{
+    
+    {  }
+
+    PARM_BUTTON("force_shape_curve_resample_toggle", "Resample") toggle VALUE(force_shape_curve_resample_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_shape_curve_resample_length.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ force_shape_curve_resample_length.label = PARM_LABEL("Length", "force_shape_curve_resample_length") ;
+ PARM(float, 1, "force_shape_curve_resample_length", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(force_shape_curve_resample_length.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+force_shape_curve_carve_toggle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_shape_curve_carve_toggle.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("force_shape_curve_carve_toggle", "Carve") toggle VALUE(force_shape_curve_carve_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_shape_curve_carve_.gad = ROW
+{
+   HSTRETCH
+   {  }
+
+   force_shape_curve_carve_.label = PARM_LABEL("Length", "force_shape_curve_carve_") ;
+   PARM(float, 2, "force_shape_curve_carve_", none, none, "#1,#2")
+	RANGE(0,1) LOCK_RANGE LABELREF(force_shape_curve_carve_.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+force_shape_curve_attribute_direction.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_shape_curve_attribute_direction.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    force_shape_curve_attribute_direction.label = PARM_LABEL("Custom Direction", "force_shape_curve_attribute_direction") WIDTH(1.5);
+    PARM_FIELD(string, "force_shape_curve_attribute_direction") VALUE(force_shape_curve_attribute_direction.val) 
+	LABELREF(force_shape_curve_attribute_direction.label) HSTRETCH;
+
+    {  }
+}
+
+force_shape_curve_attribute_normal.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    force_shape_curve_attribute_normal.label = PARM_LABEL("Normal Attribute", "force_shape_curve_attribute_normal") ;
+    PARM_FIELD(string, "force_shape_curve_attribute_normal") VALUE(force_shape_curve_attribute_normal.val) 
+	LABELREF(force_shape_curve_attribute_normal.label) HSTRETCH;
+
+    {  }
+}
+
+force_shape_curve_attribute_uv.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    force_shape_curve_attribute_uv.label = PARM_LABEL("UV Attribute", "force_shape_curve_attribute_uv") ;
+    PARM_FIELD(string, "force_shape_curve_attribute_uv") VALUE(force_shape_curve_attribute_uv.val) 
+	LABELREF(force_shape_curve_attribute_uv.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+force_shape_curve_global_radius.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ force_shape_curve_global_radius.label = PARM_LABEL("Radius", "force_shape_curve_global_radius") WIDTH(1.5);
+ PARM(float, 1, "force_shape_curve_global_radius", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(force_shape_curve_global_radius.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+force_shape_curve_global_radius_remap_reverse_toggle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_shape_curve_global_radius_remap_reverse_toggle.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("force_shape_curve_global_radius_remap_reverse_toggle", "Reverse") toggle VALUE(force_shape_curve_global_radius_remap_reverse_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_shape_curve_global_radius_remap.si_rampedit = FLOAT_RAMP VALUE(force_shape_curve_global_radius_remap.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+force_shape_curve_global_radius_remap.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) 
+	    LABEL "Point No.";
+	}
+
+	force_shape_curve_global_radius_remap.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(force_shape_curve_global_radius_remap.pointno.val) HSTRETCH;
+    }
+}
+
+force_shape_curve_global_radius_remap.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(force_shape_curve_global_radius_remap.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(force_shape_curve_global_radius_remap.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    force_shape_curve_global_radius_remap.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(force_shape_curve_global_radius_remap.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    force_shape_curve_global_radius_remap.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(force_shape_curve_global_radius_remap.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+force_shape_curve_global_radius_remap.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    force_shape_curve_global_radius_remap.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	force_shape_curve_global_radius_remap.buttons.gad VSTRETCH;
+
+	force_shape_curve_global_radius_remap.si_rampedit HSTRETCH;
+    }
+}
+
+force_shape_curve_global_radius_remap.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Radius Along Curve", "force_shape_curve_global_radius_remap");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(force_shape_curve_global_radius_remap.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(force_shape_curve_global_radius_remap.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	force_shape_curve_global_radius_remap.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	force_shape_curve_global_radius_remap.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(force_shape_curve_global_radius_remap.hideparms.val) HSTRETCH
+	    force_shape_curve_global_radius_remap.multiramp;
+	    {}
+	}
+    }
+}
+}	// Template join.bot
+
+
+force_shape_curve_along_radius.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ force_shape_curve_along_radius.label = PARM_LABEL("Radius", "force_shape_curve_along_radius") WIDTH(1.5);
+ PARM(float, 1, "force_shape_curve_along_radius", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(force_shape_curve_along_radius.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+force_shape_curve_along_radius_remap_reverse_toggle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_shape_curve_along_radius_remap_reverse_toggle.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("force_shape_curve_along_radius_remap_reverse_toggle", "Reverse") toggle VALUE(force_shape_curve_along_radius_remap_reverse_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_shape_curve_along_radius_remap.si_rampedit = FLOAT_RAMP VALUE(force_shape_curve_along_radius_remap.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+force_shape_curve_along_radius_remap.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) 
+	    LABEL "Point No.";
+	}
+
+	force_shape_curve_along_radius_remap.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(force_shape_curve_along_radius_remap.pointno.val) HSTRETCH;
+    }
+}
+
+force_shape_curve_along_radius_remap.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(force_shape_curve_along_radius_remap.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(force_shape_curve_along_radius_remap.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    force_shape_curve_along_radius_remap.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(force_shape_curve_along_radius_remap.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    force_shape_curve_along_radius_remap.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(force_shape_curve_along_radius_remap.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+force_shape_curve_along_radius_remap.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    force_shape_curve_along_radius_remap.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	force_shape_curve_along_radius_remap.buttons.gad VSTRETCH;
+
+	force_shape_curve_along_radius_remap.si_rampedit HSTRETCH;
+    }
+}
+
+force_shape_curve_along_radius_remap.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Radius Along Curve", "force_shape_curve_along_radius_remap");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(force_shape_curve_along_radius_remap.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(force_shape_curve_along_radius_remap.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	force_shape_curve_along_radius_remap.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	force_shape_curve_along_radius_remap.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(force_shape_curve_along_radius_remap.hideparms.val) HSTRETCH
+	    force_shape_curve_along_radius_remap.multiramp;
+	    {}
+	}
+    }
+}
+}	// Template join.bot
+
+
+force_shape_curve_suction_radius.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ force_shape_curve_suction_radius.label = PARM_LABEL("Radius", "force_shape_curve_suction_radius") WIDTH(1.5);
+ PARM(float, 1, "force_shape_curve_suction_radius", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(force_shape_curve_suction_radius.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+force_shape_curve_suction_radius_remap_reverse_toggle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_shape_curve_suction_radius_remap_reverse_toggle.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("force_shape_curve_suction_radius_remap_reverse_toggle", "Reverse") toggle VALUE(force_shape_curve_suction_radius_remap_reverse_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_shape_curve_suction_radius_remap.si_rampedit = FLOAT_RAMP VALUE(force_shape_curve_suction_radius_remap.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+force_shape_curve_suction_radius_remap.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) 
+	    LABEL "Point No.";
+	}
+
+	force_shape_curve_suction_radius_remap.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(force_shape_curve_suction_radius_remap.pointno.val) HSTRETCH;
+    }
+}
+
+force_shape_curve_suction_radius_remap.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(force_shape_curve_suction_radius_remap.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(force_shape_curve_suction_radius_remap.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    force_shape_curve_suction_radius_remap.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(force_shape_curve_suction_radius_remap.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    force_shape_curve_suction_radius_remap.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(force_shape_curve_suction_radius_remap.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+force_shape_curve_suction_radius_remap.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    force_shape_curve_suction_radius_remap.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	force_shape_curve_suction_radius_remap.buttons.gad VSTRETCH;
+
+	force_shape_curve_suction_radius_remap.si_rampedit HSTRETCH;
+    }
+}
+
+force_shape_curve_suction_radius_remap.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Radius Along Curve", "force_shape_curve_suction_radius_remap");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(force_shape_curve_suction_radius_remap.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(force_shape_curve_suction_radius_remap.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	force_shape_curve_suction_radius_remap.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	force_shape_curve_suction_radius_remap.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(force_shape_curve_suction_radius_remap.hideparms.val) HSTRETCH
+	    force_shape_curve_suction_radius_remap.multiramp;
+	    {}
+	}
+    }
+}
+}	// Template join.bot
+
+
+force_shape_curve_orbit_radius.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ force_shape_curve_orbit_radius.label = PARM_LABEL("Radius", "force_shape_curve_orbit_radius") WIDTH(1.5);
+ PARM(float, 1, "force_shape_curve_orbit_radius", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(force_shape_curve_orbit_radius.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+force_shape_curve_orbit_radius_remap_reverse_toggle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_shape_curve_orbit_radius_remap_reverse_toggle.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("force_shape_curve_orbit_radius_remap_reverse_toggle", "Reverse") toggle VALUE(force_shape_curve_orbit_radius_remap_reverse_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_shape_curve_orbit_radius_remap.si_rampedit = FLOAT_RAMP VALUE(force_shape_curve_orbit_radius_remap.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+force_shape_curve_orbit_radius_remap.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) 
+	    LABEL "Point No.";
+	}
+
+	force_shape_curve_orbit_radius_remap.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(force_shape_curve_orbit_radius_remap.pointno.val) HSTRETCH;
+    }
+}
+
+force_shape_curve_orbit_radius_remap.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(force_shape_curve_orbit_radius_remap.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(force_shape_curve_orbit_radius_remap.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    force_shape_curve_orbit_radius_remap.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(force_shape_curve_orbit_radius_remap.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    force_shape_curve_orbit_radius_remap.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(force_shape_curve_orbit_radius_remap.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+force_shape_curve_orbit_radius_remap.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    force_shape_curve_orbit_radius_remap.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	force_shape_curve_orbit_radius_remap.buttons.gad VSTRETCH;
+
+	force_shape_curve_orbit_radius_remap.si_rampedit HSTRETCH;
+    }
+}
+
+force_shape_curve_orbit_radius_remap.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Radius Along Curve", "force_shape_curve_orbit_radius_remap");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(force_shape_curve_orbit_radius_remap.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(force_shape_curve_orbit_radius_remap.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	force_shape_curve_orbit_radius_remap.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	force_shape_curve_orbit_radius_remap.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(force_shape_curve_orbit_radius_remap.hideparms.val) HSTRETCH
+	    force_shape_curve_orbit_radius_remap.multiramp;
+	    {}
+	}
+    }
+}
+}	// Template join.bot
+
+
+force_shape_curve_direction_radius.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ force_shape_curve_direction_radius.label = PARM_LABEL("Radius", "force_shape_curve_direction_radius") WIDTH(1.5);
+ PARM(float, 1, "force_shape_curve_direction_radius", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(force_shape_curve_direction_radius.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+force_shape_curve_direction_radius_remap_reverse_toggle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_shape_curve_direction_radius_remap_reverse_toggle.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("force_shape_curve_direction_radius_remap_reverse_toggle", "Reverse") toggle VALUE(force_shape_curve_direction_radius_remap_reverse_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_shape_curve_direction_radius_remap.si_rampedit = FLOAT_RAMP VALUE(force_shape_curve_direction_radius_remap.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+force_shape_curve_direction_radius_remap.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) 
+	    LABEL "Point No.";
+	}
+
+	force_shape_curve_direction_radius_remap.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(force_shape_curve_direction_radius_remap.pointno.val) HSTRETCH;
+    }
+}
+
+force_shape_curve_direction_radius_remap.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(force_shape_curve_direction_radius_remap.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(force_shape_curve_direction_radius_remap.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    force_shape_curve_direction_radius_remap.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(force_shape_curve_direction_radius_remap.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    force_shape_curve_direction_radius_remap.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(force_shape_curve_direction_radius_remap.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+force_shape_curve_direction_radius_remap.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    force_shape_curve_direction_radius_remap.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	force_shape_curve_direction_radius_remap.buttons.gad VSTRETCH;
+
+	force_shape_curve_direction_radius_remap.si_rampedit HSTRETCH;
+    }
+}
+
+force_shape_curve_direction_radius_remap.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Radius Along Curve", "force_shape_curve_direction_radius_remap");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(force_shape_curve_direction_radius_remap.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(force_shape_curve_direction_radius_remap.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	force_shape_curve_direction_radius_remap.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	force_shape_curve_direction_radius_remap.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(force_shape_curve_direction_radius_remap.hideparms.val) HSTRETCH
+	    force_shape_curve_direction_radius_remap.multiramp;
+	    {}
+	}
+    }
+}
+}	// Template join.bot
+
+
+force_shape_sweep_angle.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ force_shape_sweep_angle.label = PARM_LABEL("Angle", "force_shape_sweep_angle") WIDTH(1.5);
+ PARM(float, 1, "force_shape_sweep_angle", none, none) RANGE(0,360)
+	LOCK_RANGE LABELREF(force_shape_sweep_angle.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+force_shape_sweep_transform_r_.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   force_shape_sweep_transform_r_.label = PARM_LABEL("Rotate", "force_shape_sweep_transform_r_") WIDTH(1.5);
+   PARM(float, 3, "force_shape_sweep_transform_r_", none, none, "X,Y,Z")
+	RANGE(-360,360)  LABELREF(force_shape_sweep_transform_r_.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+force_shape_data_isInternal.gad = NULL { }
+
+force_shape_data_time_interpolate_toggle.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("force_shape_data_time_interpolate_toggle", "Time Interpolate Data") toggle VALUE(force_shape_data_time_interpolate_toggle.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+force_shape_data_path_relative.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ force_shape_data_path_relative.label = PARM_LABEL("Data Path", "force_shape_data_path_relative") WIDTH(1.5);
+ PARM_FIELD(pathstring, "force_shape_data_path_relative") VALUE(force_shape_data_path_relative.val) 
+	LABELREF(force_shape_data_path_relative.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(force_shape_data_path_relative.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(force_shape_data_path_relative.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+force_shape_data_path_absolute.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    force_shape_data_path_absolute.label = PARM_LABEL("force_shape_data_path_absolute", "force_shape_data_path_absolute") WIDTH(1.5);
+    PARM_FIELD(string, "force_shape_data_path_absolute") VALUE(force_shape_data_path_absolute.val) 
+	LABELREF(force_shape_data_path_absolute.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+force_shape_data_path_calculation.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    force_shape_data_path_calculation.label = PARM_LABEL("force_shape_data_path_calculation", "force_shape_data_path_calculation") WIDTH(1.5);
+    PARM_FIELD(string, "force_shape_data_path_calculation") VALUE(force_shape_data_path_calculation.val) 
+	LABELREF(force_shape_data_path_calculation.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+force_shape_data_path_objid.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    force_shape_data_path_objid.label = PARM_LABEL("force_shape_data_path_objid", "force_shape_data_path_objid") WIDTH(1.5);
+    PARM_FIELD(string, "force_shape_data_path_objid") VALUE(force_shape_data_path_objid.val) 
+	LABELREF(force_shape_data_path_objid.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+force_shape_data_path_objname.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    force_shape_data_path_objname.label = PARM_LABEL("force_shape_data_path_objname", "force_shape_data_path_objname") WIDTH(1.5);
+    PARM_FIELD(string, "force_shape_data_path_objname") VALUE(force_shape_data_path_objname.val) 
+	LABELREF(force_shape_data_path_objname.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+force_shape_data_path_subpath.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    force_shape_data_path_subpath.label = PARM_LABEL("force_shape_data_path_subpath", "force_shape_data_path_subpath") WIDTH(1.5);
+    PARM_FIELD(string, "force_shape_data_path_subpath") VALUE(force_shape_data_path_subpath.val) 
+	LABELREF(force_shape_data_path_subpath.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+force_shape_data_path_name.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    force_shape_data_path_name.label = PARM_LABEL("force_shape_data_path_name", "force_shape_data_path_name") WIDTH(1.5);
+    PARM_FIELD(string, "force_shape_data_path_name") VALUE(force_shape_data_path_name.val) 
+	LABELREF(force_shape_data_path_name.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+force_global_strength.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ force_global_strength.label = PARM_LABEL("Strength Global", "force_global_strength") WIDTH(1.5);
+ PARM(float, 1, "force_global_strength", none, none) RANGE(-10,10)
+	 LABELREF(force_global_strength.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+force_global_strength_geometry.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_global_strength_geometry.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ force_global_strength_geometry.label = PARM_LABEL("Strength Geometry", "force_global_strength_geometry") WIDTH(1.5);
+ PARM(float, 1, "force_global_strength_geometry", none, none) RANGE(-10,10)
+	 LABELREF(force_global_strength_geometry.label) HSTRETCH;
+
+  {  }
+}
+
+force_global_strength_volume.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ force_global_strength_volume.label = PARM_LABEL("Strength Volume", "force_global_strength_volume") ;
+ PARM(float, 1, "force_global_strength_volume", none, none) RANGE(-10,10)
+	 LABELREF(force_global_strength_volume.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+force_global_strength_rand_toggle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_global_strength_rand_toggle.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("force_global_strength_rand_toggle", "Randomize") toggle VALUE(force_global_strength_rand_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_global_strength_rand_.gad = ROW
+{
+   HSTRETCH
+   {  }
+
+   PARM(float, 2, "force_global_strength_rand_", none, none, "X,Y")
+	RANGE(-1,1)  HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+force_global_strength_shape_general_falloff_reverse_toggle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_global_strength_shape_general_falloff_reverse_toggle.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("force_global_strength_shape_general_falloff_reverse_toggle", "Reverse") toggle VALUE(force_global_strength_shape_general_falloff_reverse_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_global_strength_shape_general_falloff_remap.si_rampedit = FLOAT_RAMP VALUE(force_global_strength_shape_general_falloff_remap.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+force_global_strength_shape_general_falloff_remap.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) 
+	    LABEL "Point No.";
+	}
+
+	force_global_strength_shape_general_falloff_remap.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(force_global_strength_shape_general_falloff_remap.pointno.val) HSTRETCH;
+    }
+}
+
+force_global_strength_shape_general_falloff_remap.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(force_global_strength_shape_general_falloff_remap.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(force_global_strength_shape_general_falloff_remap.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    force_global_strength_shape_general_falloff_remap.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(force_global_strength_shape_general_falloff_remap.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    force_global_strength_shape_general_falloff_remap.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(force_global_strength_shape_general_falloff_remap.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+force_global_strength_shape_general_falloff_remap.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    force_global_strength_shape_general_falloff_remap.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	force_global_strength_shape_general_falloff_remap.buttons.gad VSTRETCH;
+
+	force_global_strength_shape_general_falloff_remap.si_rampedit HSTRETCH;
+    }
+}
+
+force_global_strength_shape_general_falloff_remap.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Falloff", "force_global_strength_shape_general_falloff_remap");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(force_global_strength_shape_general_falloff_remap.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(force_global_strength_shape_general_falloff_remap.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	force_global_strength_shape_general_falloff_remap.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	force_global_strength_shape_general_falloff_remap.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(force_global_strength_shape_general_falloff_remap.hideparms.val) HSTRETCH
+	    force_global_strength_shape_general_falloff_remap.multiramp;
+	    {}
+	}
+    }
+}
+}	// Template join.bot
+
+force_global_strength_shape_curve_falloff_remap_reverse_toggle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_global_strength_shape_curve_falloff_remap_reverse_toggle.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("force_global_strength_shape_curve_falloff_remap_reverse_toggle", "Reverse") toggle VALUE(force_global_strength_shape_curve_falloff_remap_reverse_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_global_strength_shape_curve_falloff_remap.si_rampedit = FLOAT_RAMP VALUE(force_global_strength_shape_curve_falloff_remap.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+force_global_strength_shape_curve_falloff_remap.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) 
+	    LABEL "Point No.";
+	}
+
+	force_global_strength_shape_curve_falloff_remap.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(force_global_strength_shape_curve_falloff_remap.pointno.val) HSTRETCH;
+    }
+}
+
+force_global_strength_shape_curve_falloff_remap.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(force_global_strength_shape_curve_falloff_remap.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(force_global_strength_shape_curve_falloff_remap.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    force_global_strength_shape_curve_falloff_remap.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(force_global_strength_shape_curve_falloff_remap.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    force_global_strength_shape_curve_falloff_remap.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(force_global_strength_shape_curve_falloff_remap.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+force_global_strength_shape_curve_falloff_remap.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    force_global_strength_shape_curve_falloff_remap.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	force_global_strength_shape_curve_falloff_remap.buttons.gad VSTRETCH;
+
+	force_global_strength_shape_curve_falloff_remap.si_rampedit HSTRETCH;
+    }
+}
+
+force_global_strength_shape_curve_falloff_remap.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Strength Falloff", "force_global_strength_shape_curve_falloff_remap");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(force_global_strength_shape_curve_falloff_remap.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(force_global_strength_shape_curve_falloff_remap.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	force_global_strength_shape_curve_falloff_remap.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	force_global_strength_shape_curve_falloff_remap.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(force_global_strength_shape_curve_falloff_remap.hideparms.val) HSTRETCH
+	    force_global_strength_shape_curve_falloff_remap.multiramp;
+	    {}
+	}
+    }
+}
+}	// Template join.bot
+
+force_global_strength_shape_curve_along_remap_reverse_toggle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_global_strength_shape_curve_along_remap_reverse_toggle.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("force_global_strength_shape_curve_along_remap_reverse_toggle", "Reverse") toggle VALUE(force_global_strength_shape_curve_along_remap_reverse_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_global_strength_shape_curve_along_remap.si_rampedit = FLOAT_RAMP VALUE(force_global_strength_shape_curve_along_remap.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+force_global_strength_shape_curve_along_remap.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) 
+	    LABEL "Point No.";
+	}
+
+	force_global_strength_shape_curve_along_remap.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(force_global_strength_shape_curve_along_remap.pointno.val) HSTRETCH;
+    }
+}
+
+force_global_strength_shape_curve_along_remap.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(force_global_strength_shape_curve_along_remap.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(force_global_strength_shape_curve_along_remap.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    force_global_strength_shape_curve_along_remap.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(force_global_strength_shape_curve_along_remap.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    force_global_strength_shape_curve_along_remap.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(force_global_strength_shape_curve_along_remap.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+force_global_strength_shape_curve_along_remap.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    force_global_strength_shape_curve_along_remap.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	force_global_strength_shape_curve_along_remap.buttons.gad VSTRETCH;
+
+	force_global_strength_shape_curve_along_remap.si_rampedit HSTRETCH;
+    }
+}
+
+force_global_strength_shape_curve_along_remap.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Strength Along Curve", "force_global_strength_shape_curve_along_remap");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(force_global_strength_shape_curve_along_remap.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(force_global_strength_shape_curve_along_remap.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	force_global_strength_shape_curve_along_remap.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	force_global_strength_shape_curve_along_remap.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(force_global_strength_shape_curve_along_remap.hideparms.val) HSTRETCH
+	    force_global_strength_shape_curve_along_remap.multiramp;
+	    {}
+	}
+    }
+}
+}	// Template join.bot
+
+
+force_noise_toggle.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("force_noise_toggle", "Enable") toggle VALUE(force_noise_toggle.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+force_noise_type.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_noise_type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Type", "force_noise_type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    force_noise_type.menu;
+
+    {  }
+
+    {  }
+}
+
+force_noise_strength.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ force_noise_strength.label = PARM_LABEL("Strength", "force_noise_strength") ;
+ PARM(float, 1, "force_noise_strength", none, none) RANGE(-10,10)
+	 LABELREF(force_noise_strength.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+force_noise_attenuation.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_noise_attenuation.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ force_noise_attenuation.label = PARM_LABEL("Attenuation", "force_noise_attenuation") WIDTH(1.5);
+ PARM(float, 1, "force_noise_attenuation", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(force_noise_attenuation.label) HSTRETCH;
+
+  {  }
+}
+
+force_noise_roughness.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ force_noise_roughness.label = PARM_LABEL("Roughness", "force_noise_roughness") ;
+ PARM(float, 1, "force_noise_roughness", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(force_noise_roughness.label) HSTRETCH;
+
+  {  }
+}
+
+force_noise_turbulence.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ force_noise_turbulence.label = PARM_LABEL("Turbulence", "force_noise_turbulence") ;
+ PARM(integer, 1, "force_noise_turbulence", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(force_noise_turbulence.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+force_noise_mask_toggle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_noise_mask_toggle.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("force_noise_mask_toggle", "Influence Strength Only") toggle VALUE(force_noise_mask_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_noise_mask_sign_toggle.gad = ROW
+{
+    
+    {  }
+
+    PARM_BUTTON("force_noise_mask_sign_toggle", "Allow Negativ Values") toggle VALUE(force_noise_mask_sign_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_noise_mask_sign_clamp_.gad = ROW
+{
+   HSTRETCH
+   {  }
+
+   force_noise_mask_sign_clamp_.label = PARM_LABEL("Clamp to Min/Max", "force_noise_mask_sign_clamp_") ;
+   PARM(float, 2, "force_noise_mask_sign_clamp_", none, none, "X,Y")
+	RANGE(0,10)  LABELREF(force_noise_mask_sign_clamp_.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+force_noise_scale_uniform.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_noise_scale_uniform.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ force_noise_scale_uniform.label = PARM_LABEL("Scale", "force_noise_scale_uniform") WIDTH(1.5);
+ PARM(float, 1, "force_noise_scale_uniform", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(force_noise_scale_uniform.label) HSTRETCH;
+
+  {  }
+}
+
+force_noise_local_toggle.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("force_noise_local_toggle", "Transform Noise By Force Transform") toggle VALUE(force_noise_local_toggle.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+force_noise_scale_.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   force_noise_scale_.label = PARM_LABEL("Size", "force_noise_scale_") WIDTH(1.5);
+   PARM(float, 3, "force_noise_scale_", none, none, "X,Y,Z")
+	RANGE(0,1) LOCK_RANGE_MIN LABELREF(force_noise_scale_.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+force_noise_offset_.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   force_noise_offset_.label = PARM_LABEL("Offset", "force_noise_offset_") WIDTH(1.5);
+   PARM(float, 3, "force_noise_offset_", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(force_noise_offset_.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+force_noise_time.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_noise_time.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ force_noise_time.label = PARM_LABEL("Time", "force_noise_time") WIDTH(1.5);
+ PARM(float, 1, "force_noise_time", none, none) RANGE(0,10)
+	 LABELREF(force_noise_time.label) HSTRETCH;
+
+  {  }
+}
+
+force_noise_time_offset.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ force_noise_time_offset.label = PARM_LABEL("Time Offset", "force_noise_time_offset") ;
+ PARM(float, 1, "force_noise_time_offset", none, none) RANGE(0,10)
+	 LABELREF(force_noise_time_offset.label) HSTRETCH;
+
+  {  }
+}
+
+force_noise_time_scale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ force_noise_time_scale.label = PARM_LABEL("Time Scale", "force_noise_time_scale") ;
+ PARM(float, 1, "force_noise_time_scale", none, none) RANGE(0,2)
+	 LABELREF(force_noise_time_scale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+force_noise_sdf_toggle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_noise_sdf_toggle.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("force_noise_sdf_toggle", "Curl Noise Around Sdf") toggle VALUE(force_noise_sdf_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_noise_sdf_influence.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ force_noise_sdf_influence.label = PARM_LABEL("Influence Strength", "force_noise_sdf_influence") ;
+ PARM(float, 1, "force_noise_sdf_influence", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(force_noise_sdf_influence.label) HSTRETCH;
+
+  {  }
+}
+
+force_noise_sdf_bounce_toggle.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("force_noise_sdf_bounce_toggle", "Push Outwards") toggle VALUE(force_noise_sdf_bounce_toggle.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+force_flow_toggle.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("force_flow_toggle", "Enable") toggle VALUE(force_flow_toggle.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+force_flow_axis_along_strength.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ force_flow_axis_along_strength.label = PARM_LABEL("Along Axis", "force_flow_axis_along_strength") WIDTH(1.5);
+ PARM(float, 1, "force_flow_axis_along_strength", none, none) RANGE(-10,10)
+	 LABELREF(force_flow_axis_along_strength.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+force_flow_axis_suction_strength.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ force_flow_axis_suction_strength.label = PARM_LABEL("Away From Axis", "force_flow_axis_suction_strength") WIDTH(1.5);
+ PARM(float, 1, "force_flow_axis_suction_strength", none, none) RANGE(-10,10)
+	 LABELREF(force_flow_axis_suction_strength.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+force_flow_axis_orbit_strength.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ force_flow_axis_orbit_strength.label = PARM_LABEL("Orbit Around Axis", "force_flow_axis_orbit_strength") WIDTH(1.5);
+ PARM(float, 1, "force_flow_axis_orbit_strength", none, none) RANGE(-10,10)
+	 LABELREF(force_flow_axis_orbit_strength.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+force_flow_vector_strength.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ force_flow_vector_strength.label = PARM_LABEL("Strength", "force_flow_vector_strength") WIDTH(1.5);
+ PARM(float, 1, "force_flow_vector_strength", none, none) RANGE(-10,10)
+	 LABELREF(force_flow_vector_strength.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+force_flow_vector_direction_.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   force_flow_vector_direction_.label = PARM_LABEL("Direction", "force_flow_vector_direction_") WIDTH(1.5);
+   PARM(float, 3, "force_flow_vector_direction_", none, none, "X,Y,Z")
+	RANGE(-10,10)  LABELREF(force_flow_vector_direction_.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+force_flow_center_suction_strength.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ force_flow_center_suction_strength.label = PARM_LABEL("Away From Center", "force_flow_center_suction_strength") WIDTH(1.5);
+ PARM(float, 1, "force_flow_center_suction_strength", none, none) RANGE(-10,10)
+	 LABELREF(force_flow_center_suction_strength.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+force_shape_curve_toggle.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("force_shape_curve_toggle", "Enable") toggle VALUE(force_shape_curve_toggle.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+force_shape_curve_along_toggle.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("force_shape_curve_along_toggle", "Enable") toggle VALUE(force_shape_curve_along_toggle.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+force_shape_curve_along_strength.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ force_shape_curve_along_strength.label = PARM_LABEL("Strength", "force_shape_curve_along_strength") WIDTH(1.5);
+ PARM(float, 1, "force_shape_curve_along_strength", none, none) RANGE(-10,10)
+	 LABELREF(force_shape_curve_along_strength.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+force_shape_curve_along_strength_falloff_remap_reverse_toggle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_shape_curve_along_strength_falloff_remap_reverse_toggle.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("force_shape_curve_along_strength_falloff_remap_reverse_toggle", "Reverse") toggle VALUE(force_shape_curve_along_strength_falloff_remap_reverse_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_shape_curve_along_strength_falloff_remap.si_rampedit = FLOAT_RAMP VALUE(force_shape_curve_along_strength_falloff_remap.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+force_shape_curve_along_strength_falloff_remap.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) 
+	    LABEL "Point No.";
+	}
+
+	force_shape_curve_along_strength_falloff_remap.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(force_shape_curve_along_strength_falloff_remap.pointno.val) HSTRETCH;
+    }
+}
+
+force_shape_curve_along_strength_falloff_remap.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(force_shape_curve_along_strength_falloff_remap.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(force_shape_curve_along_strength_falloff_remap.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    force_shape_curve_along_strength_falloff_remap.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(force_shape_curve_along_strength_falloff_remap.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    force_shape_curve_along_strength_falloff_remap.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(force_shape_curve_along_strength_falloff_remap.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+force_shape_curve_along_strength_falloff_remap.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    force_shape_curve_along_strength_falloff_remap.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	force_shape_curve_along_strength_falloff_remap.buttons.gad VSTRETCH;
+
+	force_shape_curve_along_strength_falloff_remap.si_rampedit HSTRETCH;
+    }
+}
+
+force_shape_curve_along_strength_falloff_remap.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Strength Falloff", "force_shape_curve_along_strength_falloff_remap");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(force_shape_curve_along_strength_falloff_remap.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(force_shape_curve_along_strength_falloff_remap.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	force_shape_curve_along_strength_falloff_remap.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	force_shape_curve_along_strength_falloff_remap.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(force_shape_curve_along_strength_falloff_remap.hideparms.val) HSTRETCH
+	    force_shape_curve_along_strength_falloff_remap.multiramp;
+	    {}
+	}
+    }
+}
+}	// Template join.bot
+
+force_shape_curve_along_strength_along_remap_reverse_toggle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_shape_curve_along_strength_along_remap_reverse_toggle.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("force_shape_curve_along_strength_along_remap_reverse_toggle", "Reverse") toggle VALUE(force_shape_curve_along_strength_along_remap_reverse_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_shape_curve_along_strength_along_remap.si_rampedit = FLOAT_RAMP VALUE(force_shape_curve_along_strength_along_remap.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+force_shape_curve_along_strength_along_remap.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) 
+	    LABEL "Point No.";
+	}
+
+	force_shape_curve_along_strength_along_remap.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(force_shape_curve_along_strength_along_remap.pointno.val) HSTRETCH;
+    }
+}
+
+force_shape_curve_along_strength_along_remap.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(force_shape_curve_along_strength_along_remap.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(force_shape_curve_along_strength_along_remap.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    force_shape_curve_along_strength_along_remap.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(force_shape_curve_along_strength_along_remap.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    force_shape_curve_along_strength_along_remap.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(force_shape_curve_along_strength_along_remap.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+force_shape_curve_along_strength_along_remap.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    force_shape_curve_along_strength_along_remap.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	force_shape_curve_along_strength_along_remap.buttons.gad VSTRETCH;
+
+	force_shape_curve_along_strength_along_remap.si_rampedit HSTRETCH;
+    }
+}
+
+force_shape_curve_along_strength_along_remap.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Strength Along Curve", "force_shape_curve_along_strength_along_remap");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(force_shape_curve_along_strength_along_remap.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(force_shape_curve_along_strength_along_remap.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	force_shape_curve_along_strength_along_remap.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	force_shape_curve_along_strength_along_remap.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(force_shape_curve_along_strength_along_remap.hideparms.val) HSTRETCH
+	    force_shape_curve_along_strength_along_remap.multiramp;
+	    {}
+	}
+    }
+}
+}	// Template join.bot
+
+
+force_shape_curve_suction_toggle.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("force_shape_curve_suction_toggle", "Enable") toggle VALUE(force_shape_curve_suction_toggle.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+force_shape_curve_suction_strength.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ force_shape_curve_suction_strength.label = PARM_LABEL("Strength", "force_shape_curve_suction_strength") WIDTH(1.5);
+ PARM(float, 1, "force_shape_curve_suction_strength", none, none) RANGE(-10,10)
+	 LABELREF(force_shape_curve_suction_strength.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+force_shape_curve_suction_strength_falloff_remap_reverse_toggle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_shape_curve_suction_strength_falloff_remap_reverse_toggle.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("force_shape_curve_suction_strength_falloff_remap_reverse_toggle", "Reverse") toggle VALUE(force_shape_curve_suction_strength_falloff_remap_reverse_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_shape_curve_suction_strength_falloff_remap.si_rampedit = FLOAT_RAMP VALUE(force_shape_curve_suction_strength_falloff_remap.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+force_shape_curve_suction_strength_falloff_remap.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) 
+	    LABEL "Point No.";
+	}
+
+	force_shape_curve_suction_strength_falloff_remap.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(force_shape_curve_suction_strength_falloff_remap.pointno.val) HSTRETCH;
+    }
+}
+
+force_shape_curve_suction_strength_falloff_remap.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(force_shape_curve_suction_strength_falloff_remap.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(force_shape_curve_suction_strength_falloff_remap.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    force_shape_curve_suction_strength_falloff_remap.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(force_shape_curve_suction_strength_falloff_remap.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    force_shape_curve_suction_strength_falloff_remap.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(force_shape_curve_suction_strength_falloff_remap.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+force_shape_curve_suction_strength_falloff_remap.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    force_shape_curve_suction_strength_falloff_remap.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	force_shape_curve_suction_strength_falloff_remap.buttons.gad VSTRETCH;
+
+	force_shape_curve_suction_strength_falloff_remap.si_rampedit HSTRETCH;
+    }
+}
+
+force_shape_curve_suction_strength_falloff_remap.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Strength Falloff", "force_shape_curve_suction_strength_falloff_remap");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(force_shape_curve_suction_strength_falloff_remap.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(force_shape_curve_suction_strength_falloff_remap.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	force_shape_curve_suction_strength_falloff_remap.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	force_shape_curve_suction_strength_falloff_remap.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(force_shape_curve_suction_strength_falloff_remap.hideparms.val) HSTRETCH
+	    force_shape_curve_suction_strength_falloff_remap.multiramp;
+	    {}
+	}
+    }
+}
+}	// Template join.bot
+
+force_shape_curve_suction_strength_along_remap_reverse_toggle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_shape_curve_suction_strength_along_remap_reverse_toggle.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("force_shape_curve_suction_strength_along_remap_reverse_toggle", "Reverse") toggle VALUE(force_shape_curve_suction_strength_along_remap_reverse_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_shape_curve_suction_strength_along_remap.si_rampedit = FLOAT_RAMP VALUE(force_shape_curve_suction_strength_along_remap.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+force_shape_curve_suction_strength_along_remap.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) 
+	    LABEL "Point No.";
+	}
+
+	force_shape_curve_suction_strength_along_remap.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(force_shape_curve_suction_strength_along_remap.pointno.val) HSTRETCH;
+    }
+}
+
+force_shape_curve_suction_strength_along_remap.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(force_shape_curve_suction_strength_along_remap.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(force_shape_curve_suction_strength_along_remap.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    force_shape_curve_suction_strength_along_remap.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(force_shape_curve_suction_strength_along_remap.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    force_shape_curve_suction_strength_along_remap.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(force_shape_curve_suction_strength_along_remap.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+force_shape_curve_suction_strength_along_remap.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    force_shape_curve_suction_strength_along_remap.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	force_shape_curve_suction_strength_along_remap.buttons.gad VSTRETCH;
+
+	force_shape_curve_suction_strength_along_remap.si_rampedit HSTRETCH;
+    }
+}
+
+force_shape_curve_suction_strength_along_remap.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Strength Along Curve", "force_shape_curve_suction_strength_along_remap");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(force_shape_curve_suction_strength_along_remap.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(force_shape_curve_suction_strength_along_remap.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	force_shape_curve_suction_strength_along_remap.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	force_shape_curve_suction_strength_along_remap.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(force_shape_curve_suction_strength_along_remap.hideparms.val) HSTRETCH
+	    force_shape_curve_suction_strength_along_remap.multiramp;
+	    {}
+	}
+    }
+}
+}	// Template join.bot
+
+
+force_shape_curve_orbit_toggle.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("force_shape_curve_orbit_toggle", "Enable") toggle VALUE(force_shape_curve_orbit_toggle.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+force_shape_curve_orbit_strength.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ force_shape_curve_orbit_strength.label = PARM_LABEL("Strength", "force_shape_curve_orbit_strength") WIDTH(1.5);
+ PARM(float, 1, "force_shape_curve_orbit_strength", none, none) RANGE(-10,10)
+	 LABELREF(force_shape_curve_orbit_strength.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+force_shape_curve_orbit_strength_falloff_remap_reverse_toggle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_shape_curve_orbit_strength_falloff_remap_reverse_toggle.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("force_shape_curve_orbit_strength_falloff_remap_reverse_toggle", "Reverse") toggle VALUE(force_shape_curve_orbit_strength_falloff_remap_reverse_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_shape_curve_orbit_strength_falloff_remap.si_rampedit = FLOAT_RAMP VALUE(force_shape_curve_orbit_strength_falloff_remap.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+force_shape_curve_orbit_strength_falloff_remap.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) 
+	    LABEL "Point No.";
+	}
+
+	force_shape_curve_orbit_strength_falloff_remap.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(force_shape_curve_orbit_strength_falloff_remap.pointno.val) HSTRETCH;
+    }
+}
+
+force_shape_curve_orbit_strength_falloff_remap.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(force_shape_curve_orbit_strength_falloff_remap.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(force_shape_curve_orbit_strength_falloff_remap.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    force_shape_curve_orbit_strength_falloff_remap.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(force_shape_curve_orbit_strength_falloff_remap.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    force_shape_curve_orbit_strength_falloff_remap.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(force_shape_curve_orbit_strength_falloff_remap.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+force_shape_curve_orbit_strength_falloff_remap.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    force_shape_curve_orbit_strength_falloff_remap.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	force_shape_curve_orbit_strength_falloff_remap.buttons.gad VSTRETCH;
+
+	force_shape_curve_orbit_strength_falloff_remap.si_rampedit HSTRETCH;
+    }
+}
+
+force_shape_curve_orbit_strength_falloff_remap.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Strength Falloff", "force_shape_curve_orbit_strength_falloff_remap");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(force_shape_curve_orbit_strength_falloff_remap.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(force_shape_curve_orbit_strength_falloff_remap.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	force_shape_curve_orbit_strength_falloff_remap.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	force_shape_curve_orbit_strength_falloff_remap.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(force_shape_curve_orbit_strength_falloff_remap.hideparms.val) HSTRETCH
+	    force_shape_curve_orbit_strength_falloff_remap.multiramp;
+	    {}
+	}
+    }
+}
+}	// Template join.bot
+
+force_shape_curve_orbit_strength_along_remap_reverse_toggle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_shape_curve_orbit_strength_along_remap_reverse_toggle.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("force_shape_curve_orbit_strength_along_remap_reverse_toggle", "Reverse") toggle VALUE(force_shape_curve_orbit_strength_along_remap_reverse_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_shape_curve_orbit_strength_along_remap.si_rampedit = FLOAT_RAMP VALUE(force_shape_curve_orbit_strength_along_remap.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+force_shape_curve_orbit_strength_along_remap.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) 
+	    LABEL "Point No.";
+	}
+
+	force_shape_curve_orbit_strength_along_remap.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(force_shape_curve_orbit_strength_along_remap.pointno.val) HSTRETCH;
+    }
+}
+
+force_shape_curve_orbit_strength_along_remap.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(force_shape_curve_orbit_strength_along_remap.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(force_shape_curve_orbit_strength_along_remap.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    force_shape_curve_orbit_strength_along_remap.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(force_shape_curve_orbit_strength_along_remap.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    force_shape_curve_orbit_strength_along_remap.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(force_shape_curve_orbit_strength_along_remap.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+force_shape_curve_orbit_strength_along_remap.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    force_shape_curve_orbit_strength_along_remap.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	force_shape_curve_orbit_strength_along_remap.buttons.gad VSTRETCH;
+
+	force_shape_curve_orbit_strength_along_remap.si_rampedit HSTRETCH;
+    }
+}
+
+force_shape_curve_orbit_strength_along_remap.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Strength Along Curve", "force_shape_curve_orbit_strength_along_remap");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(force_shape_curve_orbit_strength_along_remap.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(force_shape_curve_orbit_strength_along_remap.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	force_shape_curve_orbit_strength_along_remap.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	force_shape_curve_orbit_strength_along_remap.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(force_shape_curve_orbit_strength_along_remap.hideparms.val) HSTRETCH
+	    force_shape_curve_orbit_strength_along_remap.multiramp;
+	    {}
+	}
+    }
+}
+}	// Template join.bot
+
+
+force_shape_curve_direction_toggle.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("force_shape_curve_direction_toggle", "Enable") toggle VALUE(force_shape_curve_direction_toggle.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+force_shape_curve_direction_strength.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ force_shape_curve_direction_strength.label = PARM_LABEL("Strength", "force_shape_curve_direction_strength") WIDTH(1.5);
+ PARM(float, 1, "force_shape_curve_direction_strength", none, none) RANGE(-10,10)
+	 LABELREF(force_shape_curve_direction_strength.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+force_shape_curve_direction_strength_falloff_remap_reverse_toggle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_shape_curve_direction_strength_falloff_remap_reverse_toggle.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("force_shape_curve_direction_strength_falloff_remap_reverse_toggle", "Reverse") toggle VALUE(force_shape_curve_direction_strength_falloff_remap_reverse_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_shape_curve_direction_strength_falloff_remap.si_rampedit = FLOAT_RAMP VALUE(force_shape_curve_direction_strength_falloff_remap.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+force_shape_curve_direction_strength_falloff_remap.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) 
+	    LABEL "Point No.";
+	}
+
+	force_shape_curve_direction_strength_falloff_remap.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(force_shape_curve_direction_strength_falloff_remap.pointno.val) HSTRETCH;
+    }
+}
+
+force_shape_curve_direction_strength_falloff_remap.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(force_shape_curve_direction_strength_falloff_remap.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(force_shape_curve_direction_strength_falloff_remap.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    force_shape_curve_direction_strength_falloff_remap.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(force_shape_curve_direction_strength_falloff_remap.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    force_shape_curve_direction_strength_falloff_remap.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(force_shape_curve_direction_strength_falloff_remap.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+force_shape_curve_direction_strength_falloff_remap.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    force_shape_curve_direction_strength_falloff_remap.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	force_shape_curve_direction_strength_falloff_remap.buttons.gad VSTRETCH;
+
+	force_shape_curve_direction_strength_falloff_remap.si_rampedit HSTRETCH;
+    }
+}
+
+force_shape_curve_direction_strength_falloff_remap.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Strength Falloff", "force_shape_curve_direction_strength_falloff_remap");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(force_shape_curve_direction_strength_falloff_remap.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(force_shape_curve_direction_strength_falloff_remap.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	force_shape_curve_direction_strength_falloff_remap.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	force_shape_curve_direction_strength_falloff_remap.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(force_shape_curve_direction_strength_falloff_remap.hideparms.val) HSTRETCH
+	    force_shape_curve_direction_strength_falloff_remap.multiramp;
+	    {}
+	}
+    }
+}
+}	// Template join.bot
+
+force_shape_curve_direction_strength_along_remap_reverse_toggle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_shape_curve_direction_strength_along_remap_reverse_toggle.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("force_shape_curve_direction_strength_along_remap_reverse_toggle", "Reverse") toggle VALUE(force_shape_curve_direction_strength_along_remap_reverse_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_shape_curve_direction_strength_along_remap.si_rampedit = FLOAT_RAMP VALUE(force_shape_curve_direction_strength_along_remap.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+force_shape_curve_direction_strength_along_remap.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) 
+	    LABEL "Point No.";
+	}
+
+	force_shape_curve_direction_strength_along_remap.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(force_shape_curve_direction_strength_along_remap.pointno.val) HSTRETCH;
+    }
+}
+
+force_shape_curve_direction_strength_along_remap.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(force_shape_curve_direction_strength_along_remap.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(force_shape_curve_direction_strength_along_remap.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    force_shape_curve_direction_strength_along_remap.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(force_shape_curve_direction_strength_along_remap.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    force_shape_curve_direction_strength_along_remap.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(force_shape_curve_direction_strength_along_remap.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+force_shape_curve_direction_strength_along_remap.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    force_shape_curve_direction_strength_along_remap.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	force_shape_curve_direction_strength_along_remap.buttons.gad VSTRETCH;
+
+	force_shape_curve_direction_strength_along_remap.si_rampedit HSTRETCH;
+    }
+}
+
+force_shape_curve_direction_strength_along_remap.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Strength Along Curve", "force_shape_curve_direction_strength_along_remap");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(force_shape_curve_direction_strength_along_remap.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(force_shape_curve_direction_strength_along_remap.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	force_shape_curve_direction_strength_along_remap.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	force_shape_curve_direction_strength_along_remap.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(force_shape_curve_direction_strength_along_remap.hideparms.val) HSTRETCH
+	    force_shape_curve_direction_strength_along_remap.multiramp;
+	    {}
+	}
+    }
+}
+}	// Template join.bot
+
+
+force_shape_gradient_toggle.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("force_shape_gradient_toggle", "Enable") toggle VALUE(force_shape_gradient_toggle.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+force_shape_gradient_axis.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_shape_gradient_axis.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Gradient Along", "force_shape_gradient_axis") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    force_shape_gradient_axis.menu;
+
+    {  }
+
+    {  }
+}
+
+force_shape_gradient_strength.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ force_shape_gradient_strength.label = PARM_LABEL("Strength", "force_shape_gradient_strength") ;
+ PARM(float, 1, "force_shape_gradient_strength", none, none) RANGE(-10,10)
+	 LABELREF(force_shape_gradient_strength.label) HSTRETCH;
+
+  {  }
+}
+
+force_shape_gradient_rotate.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ force_shape_gradient_rotate.label = PARM_LABEL("Rotate", "force_shape_gradient_rotate") ;
+ PARM(float, 1, "force_shape_gradient_rotate", none, none) RANGE(-180,180)
+	 LABELREF(force_shape_gradient_rotate.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+force_shape_vol_toggle.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("force_shape_vol_toggle", "Enable") toggle VALUE(force_shape_vol_toggle.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+force_shape_vol_N_strength.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ force_shape_vol_N_strength.label = PARM_LABEL("Along Normal", "force_shape_vol_N_strength") WIDTH(1.5);
+ PARM(float, 1, "force_shape_vol_N_strength", none, none) RANGE(-10,10)
+	 LABELREF(force_shape_vol_N_strength.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+force_shape_vol_tan_u_strength.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ force_shape_vol_tan_u_strength.label = PARM_LABEL("Along Tangent", "force_shape_vol_tan_u_strength") WIDTH(1.5);
+ PARM(float, 1, "force_shape_vol_tan_u_strength", none, none) RANGE(-10,10)
+	 LABELREF(force_shape_vol_tan_u_strength.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+force_shape_vol_tan_v_strength.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ force_shape_vol_tan_v_strength.label = PARM_LABEL("Along BiTangent", "force_shape_vol_tan_v_strength") WIDTH(1.5);
+ PARM(float, 1, "force_shape_vol_tan_v_strength", none, none) RANGE(-10,10)
+	 LABELREF(force_shape_vol_tan_v_strength.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+force_vex_pre_toggle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_vex_pre_toggle.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("force_vex_pre_toggle", "Pre Force Calculation") toggle VALUE(force_vex_pre_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_vex_post_toggle.gad = ROW
+{
+    
+    {  }
+
+    PARM_BUTTON("force_vex_post_toggle", "Post Force Calculation") toggle VALUE(force_vex_post_toggle.val);
+
+    {  }
+
+    {  }
+}
+
+force_vex_binding_export.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    force_vex_binding_export.label = PARM_LABEL("Additional Bindings", "force_vex_binding_export") ;
+    PARM_FIELD(string, "force_vex_binding_export") VALUE(force_vex_binding_export.val) 
+	LABELREF(force_vex_binding_export.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+force_vex_input_3_type.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+force_vex_input_3_type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("   Additional Input (Idx 3)", "force_vex_input_3_type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    force_vex_input_3_type.menu;
+
+    {  }
+
+    {  }
+}
+
+force_vex_input_3_path_sop.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ {  }
+
+ PARM_FIELD(pathstring, "force_vex_input_3_path_sop") VALUE(force_vex_input_3_path_sop.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(force_vex_input_3_path_sop.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(force_vex_input_3_path_sop.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ {  }
+}
+
+force_vex_input_3_path_dop.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    PARM_FIELD(string, "force_vex_input_3_path_dop") VALUE(force_vex_input_3_path_dop.val) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+force_vex_pre_code.gad = ROW
+{
+
+    HSTRETCH JUSTIFY(left, top) HMARGIN(0.18, 0.1)
+        NO_MARGIN_SPACING_SCALE
+
+    force_vex_pre_code.label = PARM_LABEL("Pre Force Calculation Vex Code", "force_vex_pre_code");
+
+    MULTILINE_PARM_FIELD ("force_vex_pre_code") 
+
+    	LABELREF(force_vex_pre_code.label) 
+
+    	VALUE(force_vex_pre_code.val) 
+    	SYNTAX("vex") 
+    	LINES(10,25) 
+    	HSTRETCH;
+
+    {
+
+	LAYOUT(vertical)
+	{
+	    SIZE(0, 0.26)
+	}
+
+    }
+
+}
+
+force_vex_post_code.gad = ROW
+{
+
+    HSTRETCH JUSTIFY(left, top) HMARGIN(0.18, 0.1)
+        NO_MARGIN_SPACING_SCALE
+
+    force_vex_post_code.label = PARM_LABEL("Post Force Calculation Vex Code", "force_vex_post_code");
+
+    MULTILINE_PARM_FIELD ("force_vex_post_code") 
+
+    	LABELREF(force_vex_post_code.label) 
+
+    	VALUE(force_vex_post_code.val) 
+    	SYNTAX("vex") 
+    	LINES(10,25) 
+    	HSTRETCH;
+
+    {
+
+	LAYOUT(vertical)
+	{
+	    SIZE(0, 0.26)
+	}
+
+    }
+
+}
+
+force_vex_advanced_settings.gad = 
+GROUP collapsible "Advanced Settings" flat  
+{
+    VALUE(force_vex_advanced_settings.gad.val) LAYOUT(vertical) HSTRETCH
+	    force_vex_input_3_type.row.join;		
+} 
+
+force_vex_strength_folder.gad = 
+
+GROUP simple "Vex" flat 
+{ 
+    VALUE(force_vex_strength_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    force_vex_pre_toggle.row.join;		
+	    force_vex_advanced_settings.gad;		
+	    force_vex_pre_code.gad;		
+	    force_vex_post_code.gad;		
+} 
+
+force_shape_volume_folder.gad = 
+
+GROUP simple "Volume" flat 
+{ 
+    VALUE(force_shape_volume_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    force_shape_vol_toggle.gad;		
+	    force_shape_vol_N_strength.gad;		
+	    force_shape_vol_tan_u_strength.gad;		
+	    force_shape_vol_tan_v_strength.gad;		
+} 
+
+force_shape_gradient_folder.gad = 
+
+GROUP simple "Gradient" flat 
+{ 
+    VALUE(force_shape_gradient_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    force_shape_gradient_toggle.gad;		
+	    force_shape_gradient_axis.row.join;		
+} 
+
+force_shape_curve_direction_strength_falloff_folder2.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "force_shape_curve_direction_strength_falloff_folder2.gad"
+    { 
+	VALUE(force_shape_curve_direction_strength_falloff_folder2.gad.val) STRETCH(1,0)
+
+	TAB "Strength Falloff"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    force_shape_curve_direction_strength_falloff_remap_reverse_toggle.row.join;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Strength Along Curve"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    force_shape_curve_direction_strength_along_remap_reverse_toggle.row.join;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+force_shape_curve_direction_strength_folder.gad = 
+
+GROUP simple "Custom Direction" flat 
+{ 
+    VALUE(force_shape_curve_direction_strength_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    force_shape_curve_direction_toggle.gad;		
+	    force_shape_curve_direction_strength.gad;		
+	    force_shape_curve_direction_strength_falloff_folder2.gad;		
+} 
+
+force_shape_curve_orbit_strength_falloff_folder.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "force_shape_curve_orbit_strength_falloff_folder.gad"
+    { 
+	VALUE(force_shape_curve_orbit_strength_falloff_folder.gad.val) STRETCH(1,0)
+
+	TAB "Strength Falloff"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    force_shape_curve_orbit_strength_falloff_remap_reverse_toggle.row.join;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Strength Along Curve"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    force_shape_curve_orbit_strength_along_remap_reverse_toggle.row.join;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+force_shape_curve_orbit_strength_folder.gad = 
+
+GROUP simple "Orbit" flat 
+{ 
+    VALUE(force_shape_curve_orbit_strength_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    force_shape_curve_orbit_toggle.gad;		
+	    force_shape_curve_orbit_strength.gad;		
+	    force_shape_curve_orbit_strength_falloff_folder.gad;		
+} 
+
+force_shape_curve_suction_strength_falloff_folder.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "force_shape_curve_suction_strength_falloff_folder.gad"
+    { 
+	VALUE(force_shape_curve_suction_strength_falloff_folder.gad.val) STRETCH(1,0)
+
+	TAB "Strength Falloff"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    force_shape_curve_suction_strength_falloff_remap_reverse_toggle.row.join;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Strength Along Curve"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    force_shape_curve_suction_strength_along_remap_reverse_toggle.row.join;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+force_shape_curve_suction_strength_folder.gad = 
+
+GROUP simple "Away From" flat 
+{ 
+    VALUE(force_shape_curve_suction_strength_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    force_shape_curve_suction_toggle.gad;		
+	    force_shape_curve_suction_strength.gad;		
+	    force_shape_curve_suction_strength_falloff_folder.gad;		
+} 
+
+force_shape_curve_along_strength_falloff_folder.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "force_shape_curve_along_strength_falloff_folder.gad"
+    { 
+	VALUE(force_shape_curve_along_strength_falloff_folder.gad.val) STRETCH(1,0)
+
+	TAB "Strength Falloff"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    force_shape_curve_along_strength_falloff_remap_reverse_toggle.row.join;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Strength Along Curve"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    force_shape_curve_along_strength_along_remap_reverse_toggle.row.join;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+force_shape_curve_along_strength_folder.gad = 
+
+GROUP simple "Along" flat 
+{ 
+    VALUE(force_shape_curve_along_strength_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    force_shape_curve_along_toggle.gad;		
+	    force_shape_curve_along_strength.gad;		
+	    force_shape_curve_along_strength_falloff_folder.gad;		
+} 
+
+force_shape_curve_strength_folder.gad = 
+
+GROUP simple "Curve" flat 
+{ 
+    VALUE(force_shape_curve_strength_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    force_shape_curve_toggle.gad;		
+	    force_shape_curve_along_strength_folder.gad;		
+	    force_shape_curve_suction_strength_folder.gad;		
+	    force_shape_curve_orbit_strength_folder.gad;		
+	    force_shape_curve_direction_strength_folder.gad;		
+} 
+
+force_shape_folder.gad = 
+
+GROUP simple "Shape" flat 
+{ 
+    VALUE(force_shape_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    force_shape_curve_strength_folder.gad;		
+	    force_shape_gradient_folder.gad;		
+	    force_shape_volume_folder.gad;		
+} 
+
+force_flow_center_strength_folder.gad = 
+
+GROUP simple "Center" flat 
+{ 
+    VALUE(force_flow_center_strength_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    force_flow_center_suction_strength.gad;		
+} 
+
+force_flow_vector_strength_folder.gad = 
+
+GROUP simple "Vector" flat 
+{ 
+    VALUE(force_flow_vector_strength_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    force_flow_vector_strength.gad;		
+	    force_flow_vector_direction_.gad;		
+} 
+
+force_flow_axis_strength_folder.gad = 
+
+GROUP simple "Axis" flat 
+{ 
+    VALUE(force_flow_axis_strength_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    force_flow_axis_along_strength.gad;		
+	    force_flow_axis_suction_strength.gad;		
+	    force_flow_axis_orbit_strength.gad;		
+} 
+
+force_flow_strength_folder.gad = 
+
+GROUP simple "Flow" flat 
+{ 
+    VALUE(force_flow_strength_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    force_flow_toggle.gad;		
+	    force_flow_axis_strength_folder.gad;		
+	    force_flow_vector_strength_folder.gad;		
+	    force_flow_center_strength_folder.gad;		
+} 
+
+force_noise_strength_type_settings_folder.gad = 
+
+GROUP simple "Type Settings" flat 
+{ 
+    VALUE(force_noise_strength_type_settings_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    force_noise_time.row.join;		
+	    force_noise_sdf_toggle.row.join;		
+} 
+
+force_noise_strength_transform_settings_folder.gad = 
+
+GROUP simple "Transform Settings" flat 
+{ 
+    VALUE(force_noise_strength_transform_settings_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    force_noise_scale_uniform.row.join;		
+	    force_noise_scale_.gad;		
+	    force_noise_offset_.gad;		
+} 
+
+force_noise_strength_general_settings_folder.gad = 
+
+GROUP simple "General Settings" flat 
+{ 
+    VALUE(force_noise_strength_general_settings_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    force_noise_attenuation.row.join;		
+	    force_noise_mask_toggle.row.join;		
+} 
+
+force_noise_strength_folder.gad = 
+
+GROUP simple "Noise" flat 
+{ 
+    VALUE(force_noise_strength_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    force_noise_toggle.gad;		
+	    force_noise_type.row.join;		
+	    force_noise_strength_general_settings_folder.gad;		
+	    force_noise_strength_transform_settings_folder.gad;		
+	    force_noise_strength_type_settings_folder.gad;		
+} 
+
+force_global_strength_shape_curve_falloff_folder.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "force_global_strength_shape_curve_falloff_folder.gad"
+    { 
+	VALUE(force_global_strength_shape_curve_falloff_folder.gad.val) STRETCH(1,0)
+
+	TAB "Strength Falloff"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    force_global_strength_shape_curve_falloff_remap_reverse_toggle.row.join;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Strength Along Curve"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    force_global_strength_shape_curve_along_remap_reverse_toggle.row.join;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+force_global_strength_folder.gad = 
+
+GROUP simple "Global" flat 
+{ 
+    VALUE(force_global_strength_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    force_global_strength.gad;		
+	    force_global_strength_geometry.row.join;		
+	    force_global_strength_rand_toggle.row.join;		
+	    force_global_strength_shape_general_falloff_reverse_toggle.row.join;		
+	    force_global_strength_shape_curve_falloff_folder.gad;		
+} 
+
+force_shape_advanced_settings_folder.gad = 
+GROUP collapsible "Advanced Settings" flat  
+{
+    VALUE(force_shape_advanced_settings_folder.gad.val) LAYOUT(vertical) HSTRETCH
+	    force_shape_data_isInternal.gad;		
+	    force_shape_data_time_interpolate_toggle.gad;		
+	    force_shape_data_path_relative.gad;		
+	    force_shape_data_path_absolute.gad;		
+	    force_shape_data_path_calculation.gad;		
+	    force_shape_data_path_objid.gad;		
+	    force_shape_data_path_objname.gad;		
+	    force_shape_data_path_subpath.gad;		
+	    force_shape_data_path_name.gad;		
+} 
+
+force_shape_sweep_folder.gad = 
+
+GROUP simple "Sweep Settings" flat 
+{ 
+    VALUE(force_shape_sweep_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    force_shape_sweep_angle.gad;		
+	    force_shape_sweep_transform_r_.gad;		
+} 
+
+force_shape_curve_direction_radius_folder.gad = 
+
+GROUP simple "Custom Direction" flat 
+{ 
+    VALUE(force_shape_curve_direction_radius_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    force_shape_curve_direction_radius.gad;		
+	    force_shape_curve_direction_radius_remap_reverse_toggle.row.join;		
+} 
+
+force_shape_curve_orbit_radius_folder.gad = 
+
+GROUP simple "Orbit" flat 
+{ 
+    VALUE(force_shape_curve_orbit_radius_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    force_shape_curve_orbit_radius.gad;		
+	    force_shape_curve_orbit_radius_remap_reverse_toggle.row.join;		
+} 
+
+force_shape_curve_suction_radius_folder.gad = 
+
+GROUP simple "Away From" flat 
+{ 
+    VALUE(force_shape_curve_suction_radius_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    force_shape_curve_suction_radius.gad;		
+	    force_shape_curve_suction_radius_remap_reverse_toggle.row.join;		
+} 
+
+force_shape_curve_along_radius_folder.gad = 
+
+GROUP simple "Along" flat 
+{ 
+    VALUE(force_shape_curve_along_radius_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    force_shape_curve_along_radius.gad;		
+	    force_shape_curve_along_radius_remap_reverse_toggle.row.join;		
+} 
+
+force_shape_curve_global_radius_folder.gad = 
+
+GROUP simple "Global" flat 
+{ 
+    VALUE(force_shape_curve_global_radius_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    force_shape_curve_global_radius.gad;		
+	    force_shape_curve_global_radius_remap_reverse_toggle.row.join;		
+} 
+
+force_shape_settings_folder.gad = 
+
+GROUP simple "Shape Settings" flat 
+{ 
+    VALUE(force_shape_settings_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    force_shape_vdb_size.gad;		
+	    force_shape_invert_toggle.row.join;		
+	    force_shape_custom_attribute_tan_u.gad;		
+	    force_shape_torus_width.gad;		
+	    force_shape_tube_width_.gad;		
+	    force_shape_tube_width_remap_reverse_toggle.row.join;		
+	    force_shape_curve_reverse_toggle.row.join;		
+	    force_shape_curve_carve_toggle.row.join;		
+	    force_shape_curve_attribute_direction.row.join;		
+	    force_shape_curve_global_radius_folder.gad;		
+	    force_shape_curve_along_radius_folder.gad;		
+	    force_shape_curve_suction_radius_folder.gad;		
+	    force_shape_curve_orbit_radius_folder.gad;		
+	    force_shape_curve_direction_radius_folder.gad;		
+	    force_shape_sweep_folder.gad;		
+} 
+
+force_transform_advanced_settings_folder.gad = 
+GROUP collapsible "Advanced Settings" flat  
+{
+    VALUE(force_transform_advanced_settings_folder.gad.val) LAYOUT(vertical) HSTRETCH
+	    force_shape_data_isInternal2.gad;		
+	    force_transform_order.row.join;		
+	    force_transform_pin_t_.gad;		
+	    force_transform_pin_r_.gad;		
+	    force_transform_data_path_relative.gad;		
+	    force_transform_data_path_absolute.gad;		
+	    force_transform_data_path_calculation.gad;		
+	    force_transform_data_path_objid.gad;		
+	    force_transform_data_path_objname.gad;		
+	    force_transform_data_path_subpath.gad;		
+	    force_transform_data_path_name.gad;		
+} 
+
+force_transform_pin_curve_settings.gad = 
+
+GROUP simple "Pin To Curve Settings" flat 
+{ 
+    VALUE(force_transform_pin_curve_settings.gad.val) LAYOUT(vertical) HSTRETCH 
+	    force_transform_pin_curve_geo_path.gad;		
+	    force_transform_pin_curve_carve.row.join;		
+	    force_transform_pin_curve_resample_toggle.row.join;		
+	    force_transform_pin_curve_twist_.row.join;		
+	    force_transform_pin_curve_twist_remap_reverse_toggle.row.join;		
+} 
+
+force_transform_pin_polygon_settings.gad = 
+
+GROUP simple "Pin To Polygon Settings" flat 
+{ 
+    VALUE(force_transform_pin_polygon_settings.gad.val) LAYOUT(vertical) HSTRETCH 
+	    force_transform_pin_polygon_geo_path.gad;		
+	    force_transform_pin_polygon_rest_frame.gad;		
+} 
+
+force_transform_pin_settings.gad = 
+
+GROUP simple "Pin" flat 
+{ 
+    VALUE(force_transform_pin_settings.gad.val) LAYOUT(vertical) HSTRETCH 
+	    force_transform_pin_toggle.row.join;		
+	    force_transform_pin_polygon_settings.gad;		
+	    force_transform_pin_curve_settings.gad;		
+} 
+
+force_transform_folder.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "force_transform_folder.gad"
+    { 
+	VALUE(force_transform_folder.gad.val) STRETCH(1,0)
+
+	TAB "Transform"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    force_transform_t_.gad;		
+	    force_transform_r_.gad;		
+	    force_transform_s_.gad;		
+	    force_transform_s_uniform.gad;		
+	    force_transform_pivot_.gad;		
+	    force_transform_pin_settings.gad;		
+	    force_transform_advanced_settings_folder.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Shape"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    force_shape_toggle.gad;		
+	    force_shape_type.row.join;		
+	    force_shape_settings_folder.gad;		
+	    force_shape_advanced_settings_folder.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Strength"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    force_global_strength_folder.gad;		
+	    force_noise_strength_folder.gad;		
+	    force_flow_strength_folder.gad;		
+	    force_shape_folder.gad;		
+	    force_vex_strength_folder.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+force_guide_streamers_settings_folder.gad = 
+
+GROUP simple "Streamer Guides Settings" flat 
+{ 
+    VALUE(force_guide_streamers_settings_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    force_guide_streamers_mode.gad;		
+	    force_guide_streamers_color_.row.join;		
+	    force_guide_streamers_grid_transform_r.row.join;		
+} 
+
+force_guide_general_settings_folder.gad = 
+
+GROUP simple "General Guides Settings" flat 
+{ 
+    VALUE(force_guide_general_settings_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    force_guide_general_mask.gad;		
+	    force_guide_general_color_.row.join;		
+	    force_guide_general_vdb_resolution_scale.gad;		
+	    force_guide_general_curve_resample_scale.row.join;		
+} 
+
+force_guide_folder.gad = 
+
+GROUP simple "Guides" flat 
+{ 
+    VALUE(force_guide_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    force_guide_toggle.row.join;		
+	    force_guide_general_settings_folder.gad;		
+	    force_guide_streamers_settings_folder.gad;		
+} 
+
+force_general_folder.gad = 
+
+GROUP simple "General" flat 
+{ 
+    VALUE(force_general_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    force_preset.gad;		
+	    force_toggle.gad;		
+	    force_binding.row.join;		
+	    force_binding_geometry_toggle.row.join;		
+	    force_mass_toggle.row.join;		
+	    force_wind_toggle.row.join;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    debug.gad; 
+    force_general_folder.gad; 
+    force_guide_folder.gad; 
+    force_transform_folder.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}
