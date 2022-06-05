@@ -1,0 +1,27 @@
+{
+
+    "env":[
+        {
+            "HOUDINI_DSO_ERROR":"2"
+        },
+        {
+            "REDSHIFT_COREDATAPATH":"c:/ProgramData/Redshift"
+        },
+        {
+            "PATH":"$REDSHIFT_COREDATAPATH/bin"   
+        },
+        {
+            "HOUDINI_PATH":"$REDSHIFT_COREDATAPATH/Plugins/Houdini/19.0.622"
+        },
+        {
+            "REDSHIFT_RV_ALWAYSONTOP" : "0"
+        },
+        {
+            "REDSHIFT_RV_OPEN_ONLY" : "1"
+        }
+       
+        
+       
+    ]
+
+}
