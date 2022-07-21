@@ -1,0 +1,30 @@
+// Magic: 9add741a
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Fri Apr 29 19:25:45 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+dimmer.gad = 
+{
+
+ dimmer.label = PARM_LABEL("Dimmer", "dimmer");
+ PARM(float, 1, "dimmer", none, field) RANGE(0,1)
+	 LABELREF(dimmer.label) HSTRETCH;
+
+  {  }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(horizontal) SPACING(0.05) HSTRETCH JUSTIFY(left, center) UNSCALABLE
+    dimmer.gad; 
+} 
+// dialog.bot.ui
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) VALUE(open.val_) HSTRETCH
+
+    dialog_norm.gad;
+}

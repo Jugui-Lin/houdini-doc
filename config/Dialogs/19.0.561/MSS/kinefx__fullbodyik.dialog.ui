@@ -1,0 +1,103 @@
+// Magic: 9fef2e9
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Thu May 12 02:23:01 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+show_joints.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("show_joints", "Display Joints") toggle VALUE(show_joints.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+show_axes.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("show_axes", "Display Joint Axes") toggle VALUE(show_axes.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+show_links.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("show_links", "Display Links") toggle VALUE(show_links.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+solid_links.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("solid_links", "Solid Links") toggle VALUE(solid_links.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+show_scene_geo.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("show_scene_geo", "Show Geometry") toggle VALUE(show_scene_geo.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    show_joints.gad; 
+    show_axes.gad; 
+    show_links.gad; 
+    solid_links.gad; 
+    show_scene_geo.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

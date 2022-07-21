@@ -1,0 +1,197 @@
+// Magic: d8a0b8f3
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Sat May 28 15:53:34 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+mode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Mode", "mode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    mode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+__pre_rot.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+__pre_rot.gad = ROW 
+{
+    HSTRETCH
+   { WIDTH(0.18) }
+
+    __pre_rot.label = PARM_LABEL("Pre Rotate", "__pre_rot") WIDTH(1.5);
+    PARM(float, 3, "__pre_rot", none, none) LABELREF(__pre_rot.label)
+	HSTRETCH;
+
+   {  }
+}
+
+__pre_xyz.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    PARM_LABEL_SIMPLE("Pre Rotation Order", "__pre_xyz") ;
+    { WIDTH(0.09) }
+
+    __pre_xyz.menu;
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+attr_N.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+attr_N.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    attr_N.label = PARM_LABEL("Normal Attr Name", "attr_N") WIDTH(1.5);
+    PARM_FIELD(string, "attr_N") VALUE(attr_N.val) 
+	LABELREF(attr_N.label) HSTRETCH;
+
+    {  }
+}
+
+default_aim.gad = ROW
+{
+   HSTRETCH
+   {  }
+
+   default_aim.label = PARM_LABEL("Default", "default_aim") ;
+   PARM(float, 3, "default_aim", none, none, "X,Y,Z")
+	RANGE(0,10)  LABELREF(default_aim.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+attr_up.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+attr_up.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    attr_up.label = PARM_LABEL("Up Attr Name", "attr_up") WIDTH(1.5);
+    PARM_FIELD(string, "attr_up") VALUE(attr_up.val) 
+	LABELREF(attr_up.label) HSTRETCH;
+
+    {  }
+}
+
+default_up.gad = ROW
+{
+   HSTRETCH
+   {  }
+
+   default_up.label = PARM_LABEL("Default", "default_up") ;
+   PARM(float, 3, "default_up", none, none, "X,Y,Z")
+	RANGE(0,10)  LABELREF(default_up.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+attrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    attrib.label = PARM_LABEL("Attribute Name", "attrib") WIDTH(1.5);
+    PARM_FIELD(string, "attrib") VALUE(attrib.val) 
+	LABELREF(attrib.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+del_attrs.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("del_attrs", "Delete Source Attributes") toggle VALUE(del_attrs.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+unit_aim.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   unit_aim.label = PARM_LABEL("Aim Unit Vector", "unit_aim") WIDTH(1.5);
+   PARM(float, 3, "unit_aim", none, none, "X,Y,Z")
+	RANGE(0,10)  LABELREF(unit_aim.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+unit_up.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   unit_up.label = PARM_LABEL("Up Unit Vector", "unit_up") WIDTH(1.5);
+   PARM(float, 3, "unit_up", none, none, "X,Y,Z")
+	RANGE(0,10)  LABELREF(unit_up.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    mode.gad; 
+    __pre_rot.row.join; 
+    attr_N.row.join; 
+    attr_up.row.join; 
+    attrib.gad; 
+    del_attrs.gad; 
+    unit_aim.gad; 
+    unit_up.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

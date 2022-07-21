@@ -1,0 +1,14 @@
+
+    {
+	"env": [
+		{
+			"SPIO": "C:/Users/Jugui/AppData/Roaming/Blender Foundation/Blender/3.3/scripts/addons/super_io/ops/../third_party_addons/Super IO for Houdini v0.3"
+		},
+		{
+			"HOUDINI_PYTHONWARNINGS": "ignore"
+		}
+	],
+	"path": "$SPIO"
+	
+    }
+    

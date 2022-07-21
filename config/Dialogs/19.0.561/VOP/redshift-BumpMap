@@ -1,0 +1,243 @@
+// Magic: e6b853f0
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Sun May 29 10:23:38 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+inuse.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("inuse", "Enabled") toggle VALUE(inuse.val);
+
+    { HSTRETCH }
+
+    inuse.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(inuse.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+inputType.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Input Map Type", "inputType") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    inputType.menu;
+
+    { HSTRETCH }
+
+    inputType.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(inputType.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+input.gad = NULL { }
+
+scale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ scale.label = PARM_LABEL("Height Scale", "scale") WIDTH(1.5);
+ PARM(float, 1, "scale", none, none) RANGE(-2,2)
+	 LABELREF(scale.label) HSTRETCH;
+
+    scale.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(scale.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+factorInObjScale.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("factorInObjScale", "Affected By Object Scale") toggle VALUE(factorInObjScale.val);
+
+    { HSTRETCH }
+
+    factorInObjScale.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(factorInObjScale.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+oldrange_min.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ oldrange_min.label = PARM_LABEL("Old Range Min", "oldrange_min") WIDTH(1.5);
+ PARM(float, 1, "oldrange_min", none, none) RANGE(-2,2)
+	 LABELREF(oldrange_min.label) HSTRETCH;
+
+    oldrange_min.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(oldrange_min.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+oldrange_max.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ oldrange_max.label = PARM_LABEL("Old Range Max", "oldrange_max") WIDTH(1.5);
+ PARM(float, 1, "oldrange_max", none, none) RANGE(-2,2)
+	 LABELREF(oldrange_max.label) HSTRETCH;
+
+    oldrange_max.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(oldrange_max.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+newrange_min.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ newrange_min.label = PARM_LABEL("New Range Min", "newrange_min") WIDTH(1.5);
+ PARM(float, 1, "newrange_min", none, none) RANGE(-2,2)
+	 LABELREF(newrange_min.label) HSTRETCH;
+
+    newrange_min.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(newrange_min.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+newrange_max.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ newrange_max.label = PARM_LABEL("New Range Max", "newrange_max") WIDTH(1.5);
+ PARM(float, 1, "newrange_max", none, none) RANGE(-2,2)
+	 LABELREF(newrange_max.label) HSTRETCH;
+
+    newrange_max.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(newrange_max.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+unbiasedNormalMap.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("unbiasedNormalMap", "Unbiased Normals") toggle VALUE(unbiasedNormalMap.val);
+
+    { HSTRETCH }
+
+    unbiasedNormalMap.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(unbiasedNormalMap.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+flipY.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("flipY", "Flip Normal Y") toggle VALUE(flipY.val);
+
+    { HSTRETCH }
+
+    flipY.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(flipY.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+shader_skipdefvalparms.gad = NULL { }
+
+Remap_1.gad = 
+
+GROUP simple "Remap" flat 
+{ 
+    VALUE(Remap_1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    oldrange_min.gad;		
+	    oldrange_max.gad;		
+	    newrange_min.gad;		
+	    newrange_max.gad;		
+	    unbiasedNormalMap.gad;		
+	    flipY.gad;		
+} 
+
+Texture_0.gad = 
+
+GROUP simple "Texture" flat 
+{ 
+    VALUE(Texture_0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    inuse.gad;		
+	    inputType.gad;		
+	    input.gad;		
+	    scale.gad;		
+	    factorInObjScale.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    Texture_0.gad; 
+    Remap_1.gad; 
+    shader_skipdefvalparms.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

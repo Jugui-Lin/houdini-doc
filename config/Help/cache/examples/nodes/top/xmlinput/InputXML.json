@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["InputXML"]}, {"type": "para", "indent": 0, "text": ["This example demonstrates how to create work items from XML data using the XML Input TOP node."], "extent": [0, 96]}], "examplefor": "/nodes/top/xmlinput", "examplefile": "/examples/nodes/top/xmlinput/InputXML.hda"}

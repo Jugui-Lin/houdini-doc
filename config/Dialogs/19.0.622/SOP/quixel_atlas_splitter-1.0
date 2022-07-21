@@ -1,0 +1,235 @@
+// Magic: a7d54043
+// Automatically generated PSI dialog (PSI version 19.0.622)
+// Wed Jun  1 15:01:30 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+filename.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ filename.label = PARM_LABEL("File", "filename") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "filename") LABELREF(filename.label)
+	VALUE(filename.val) HSTRETCH;
+
+    filename.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(filename.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+outside_group.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    outside_group.label = PARM_LABEL("Output Prefix", "outside_group") WIDTH(1.5);
+    PARM_FIELD(string, "outside_group") VALUE(outside_group.val) 
+	LABELREF(outside_group.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+sort.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Sorting", "sort") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    sort.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+is_leaf.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("is_leaf", "treat as leaf") toggle VALUE(is_leaf.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+distribute.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("distribute", "distribute") toggle VALUE(distribute.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+bend.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("bend", "bend") toggle VALUE(bend.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+bend_min.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ bend_min.label = PARM_LABEL("bend min", "bend_min") WIDTH(1.5);
+ PARM(float, 1, "bend_min", none, none) RANGE(-90,90)
+	 LABELREF(bend_min.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+bend_max.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ bend_max.label = PARM_LABEL("bend max", "bend_max") WIDTH(1.5);
+ PARM(float, 1, "bend_max", none, none) RANGE(-90,90)
+	 LABELREF(bend_max.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+bend_seed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ bend_seed.label = PARM_LABEL("bend seed", "bend_seed") WIDTH(1.5);
+ PARM(float, 1, "bend_seed", none, none) RANGE(0,10)
+	 LABELREF(bend_seed.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+tr.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("tr", "Attempt to fix leaf rotation") toggle VALUE(tr.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+input.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("input", "Attempt to identify up direction automatically") toggle VALUE(input.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+th.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ th.label = PARM_LABEL("rotation fix threshold", "th") WIDTH(1.5);
+ PARM(float, 1, "th", none, none) RANGE(-1,1)
+	 LABELREF(th.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+folder1.gad = 
+
+GROUP simple "rotation" flat 
+{ 
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    tr.gad;		
+	    input.gad;		
+	    th.gad;		
+} 
+
+folder0.gad = 
+
+GROUP simple "bend" flat 
+{ 
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    bend.gad;		
+	    bend_min.gad;		
+	    bend_max.gad;		
+	    bend_seed.gad;		
+} 
+
+folder2.gad = 
+
+GROUP simple "main" flat 
+{ 
+    VALUE(folder2.gad.val) LAYOUT(vertical) HSTRETCH 
+	    filename.gad;		
+	    outside_group.gad;		
+	    sort.gad;		
+	    is_leaf.gad;		
+	    distribute.gad;		
+} 
+
+# warning cpp warning: "GenV3/subdialog.top.ui":5 Macro "PARMSPACING" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":6 Macro "LAYOUTDIR" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":7 Macro "DO_JUSTIFY" redefined.  Using later definition
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    folder2.gad; 
+    folder0.gad; 
+    folder1.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

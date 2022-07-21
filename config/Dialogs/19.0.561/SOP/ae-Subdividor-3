@@ -1,0 +1,248 @@
+// Magic: c78c2e6
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Wed May  4 11:49:10 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+basegroup.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    basegroup.label = PARM_LABEL("Primtive Group", "basegroup") WIDTH(1.5);
+    PARM_FIELD(string, "basegroup") VALUE(basegroup.val) 
+	LABELREF(basegroup.label) HSTRETCH;
+
+    basegroup.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "BUTTONS_reselect" VALUE(basegroup.script_action)
+	HELP("Select geometry from an available viewport.\nShift-click to turn on Select Groups.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+group.gad = NULL { }
+
+level.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ level.label = PARM_LABEL("Subdivision Levels", "level") WIDTH(1.5);
+ PARM(integer, 1, "level", none, none) RANGE(1,5)
+	 LABELREF(level.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+prob.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ prob.label = PARM_LABEL("Subdivision Probability", "prob") WIDTH(1.5);
+ PARM(float, 1, "prob", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(prob.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+seed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ seed.label = PARM_LABEL("Seed", "seed") WIDTH(1.5);
+ PARM(float, 1, "seed", none, none) RANGE(0,10)
+	 LABELREF(seed.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Subdivision Method", "type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    type.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+index.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ index.label = PARM_LABEL("Index", "index") WIDTH(1.5);
+ PARM(integer, 1, "index", none, none) RANGE(0,10)
+	 LABELREF(index.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+scale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ scale.label = PARM_LABEL("Scale", "scale") WIDTH(1.5);
+ PARM(float, 1, "scale", none, none) RANGE(0,1)
+	 LABELREF(scale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+offset.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+offset.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ offset.label = PARM_LABEL("Normal Offset", "offset") WIDTH(1.5);
+ PARM(float, 1, "offset", none, none) RANGE(-1,1)
+	 LABELREF(offset.label) HSTRETCH;
+
+  {  }
+}
+
+offset_area.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("offset_area", "Scale by Prim Area") toggle VALUE(offset_area.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+frontname.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    frontname.label = PARM_LABEL("Front Group name", "frontname") WIDTH(1.5);
+    PARM_FIELD(string, "frontname") VALUE(frontname.val) 
+	LABELREF(frontname.label) HSTRETCH;
+
+    frontname.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+edgename.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    edgename.label = PARM_LABEL("Edge Group name", "edgename") WIDTH(1.5);
+    PARM_FIELD(string, "edgename") VALUE(edgename.val) 
+	LABELREF(edgename.label) HSTRETCH;
+
+    edgename.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+usevex.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("usevex", "Use VEXpression") toggle VALUE(usevex.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+vex.gad = ROW
+{
+
+    HSTRETCH JUSTIFY(left, top) HMARGIN(0.18, 0.1)
+        NO_MARGIN_SPACING_SCALE
+
+    MULTILINE_PARM_FIELD ("vex") 
+
+    	VALUE(vex.val) 
+    	SYNTAX("vex") 
+    	LINES(8,40) 
+    	HSTRETCH;
+
+    {
+
+    vex.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    }
+
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    basegroup.gad; 
+    group.gad; 
+    level.gad; 
+    prob.gad; 
+    seed.gad; 
+    type.gad; 
+    index.gad; 
+    scale.gad; 
+    sepparm.gad; 
+    offset.row.join; 
+    frontname.gad; 
+    edgename.gad; 
+    usevex.gad; 
+    vex.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

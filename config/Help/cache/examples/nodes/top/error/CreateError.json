@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["CreateError"]}, {"type": "para", "indent": 0, "text": ["This example demonstrates how to use the Error TOP node to create warnings or errors based on an expression."], "extent": [0, 109]}], "examplefor": "/nodes/top/error", "examplefile": "/examples/nodes/top/error/CreateError.hda"}

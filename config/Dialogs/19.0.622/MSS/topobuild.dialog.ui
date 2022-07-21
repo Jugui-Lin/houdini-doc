@@ -1,0 +1,145 @@
+// Magic: c72379db
+// Automatically generated PSI dialog (PSI version 19.0.622)
+// Wed Jul 20 09:41:21 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+mode.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+mode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Mode", "mode") WIDTH(1.5);
+    { WIDTH(0.1) }
+
+    mode.buttonstrip;
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+
+mode2.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    mode2.buttonstrip;
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	
+
+slide_modes.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Slide Mode", "slide_modes") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    slide_modes.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+opacity.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ opacity.label = PARM_LABEL("Opacity", "opacity") WIDTH(1.5);
+ PARM(float, 1, "opacity", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(opacity.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+flood.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("flood", "Smooth All")
+	push VALUE(flood.val);
+
+    { WIDTH(0.1) }
+}
+
+edgesnap.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("edgesnap", "Edge Snap") toggle VALUE(edgesnap.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+divisions.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ divisions.label = PARM_LABEL("Divisions", "divisions") WIDTH(1.5);
+ PARM(integer, 1, "divisions", none, none) RANGE(2,50)
+	LOCK_RANGE_MIN LABELREF(divisions.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+spans.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ spans.label = PARM_LABEL("Spans", "spans") WIDTH(1.5);
+ PARM(integer, 1, "spans", none, none) RANGE(-20,20)
+	LOCK_RANGE_MIN LABELREF(spans.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    mode.join; 
+    slide_modes.gad; 
+    opacity.gad; 
+    flood.gad; 
+    edgesnap.gad; 
+    divisions.gad; 
+    spans.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

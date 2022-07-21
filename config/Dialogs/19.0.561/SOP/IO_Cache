@@ -1,0 +1,452 @@
+// Magic: a60ba62a
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Sat May 28 10:00:49 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+execute.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+execute.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("execute", "Save to Disk")
+	push VALUE(execute.val);
+
+    {  }
+}
+
+executebackground.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    PARM_BUTTON("executebackground", "Save to Disk in Background")
+	push VALUE(executebackground.val);
+
+    {  }
+}
+
+renderdialog.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    {  }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("renderdialog", "Controls...")
+	push VALUE(renderdialog.val);
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+trange.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Valid Frame Range", "trange") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    trange.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+output.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   output.label = PARM_LABEL("Start/End/Inc", "output") WIDTH(1.5);
+   PARM(float, 3, "output", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(output.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+take.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Render With Take", "take") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    take.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+soppath.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ soppath.label = PARM_LABEL("SOP Path", "soppath") WIDTH(1.5);
+ PARM_FIELD(pathstring, "soppath") VALUE(soppath.val) 
+	LABELREF(soppath.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(soppath.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(soppath.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+folder_name.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    folder_name.label = PARM_LABEL("Folder Name", "folder_name") WIDTH(1.5);
+    PARM_FIELD(string, "folder_name") VALUE(folder_name.val) 
+	LABELREF(folder_name.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+folder_name2.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    folder_name2.label = PARM_LABEL("Second Folder Name", "folder_name2") WIDTH(1.5);
+    PARM_FIELD(string, "folder_name2") VALUE(folder_name2.val) 
+	LABELREF(folder_name2.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+cache_file_name.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    cache_file_name.label = PARM_LABEL("Cache File Name", "cache_file_name") WIDTH(1.5);
+    PARM_FIELD(string, "cache_file_name") VALUE(cache_file_name.val) 
+	LABELREF(cache_file_name.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+write_outputpath.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ write_outputpath.label = PARM_LABEL("Output File", "write_outputpath") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "write_outputpath") LABELREF(write_outputpath.label)
+	VALUE(write_outputpath.val) HSTRETCH;
+
+    write_outputpath.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(write_outputpath.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+xformtype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Transform", "xformtype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    xformtype.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+mkpath.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("mkpath", "Create Intermediate Directories") toggle VALUE(mkpath.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+initsim.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("initsim", "Initialize Simulation OPs") toggle VALUE(initsim.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+alfprogress.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("alfprogress", "Alfred Style Progress") toggle VALUE(alfprogress.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+reportnetwork.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("reportnetwork", "Report Network Use") toggle VALUE(reportnetwork.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+sepparm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+file.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ file.label = PARM_LABEL("Geometry File", "file") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "file") LABELREF(file.label)
+	VALUE(file.val) HSTRETCH;
+
+    file.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(file.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+reload.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("reload", "Reload Geometry")
+	push VALUE(reload.val);
+
+    { WIDTH(0.1) }
+}
+
+objpattern.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    objpattern.label = PARM_LABEL("Object Mask", "objpattern") WIDTH(1.5);
+    PARM_FIELD(string, "objpattern") VALUE(objpattern.val) 
+	LABELREF(objpattern.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+geodatapath.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    geodatapath.label = PARM_LABEL("Geometry Data Path", "geodatapath") WIDTH(1.5);
+    PARM_FIELD(string, "geodatapath") VALUE(geodatapath.val) 
+	LABELREF(geodatapath.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+missingframe.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Missing Frame", "missingframe") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    missingframe.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+loadtype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Load", "loadtype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    loadtype.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+packedviewedit.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Display Packed As", "packedviewedit") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    packedviewedit.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+delayload.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("delayload", "Delay Load Geometry") toggle VALUE(delayload.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+write_1.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "write_1.gad"
+    { 
+	VALUE(write_1.gad.val) STRETCH(1,0)
+
+	TAB "Read"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    file.gad;		
+	    reload.gad;		
+	    objpattern.gad;		
+	    geodatapath.gad;		
+	    missingframe.gad;		
+	    loadtype.gad;		
+	    packedviewedit.gad;		
+	    delayload.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+write.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "write.gad"
+    { 
+	VALUE(write.gad.val) STRETCH(1,0)
+
+	TAB "Write"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    execute.row.join;		
+	    trange.gad;		
+	    output.gad;		
+	    take.gad;		
+	    soppath.gad;		
+	    folder_name.gad;		
+	    folder_name2.gad;		
+	    cache_file_name.gad;		
+	    write_outputpath.gad;		
+	    xformtype.gad;		
+	    mkpath.gad;		
+	    initsim.gad;		
+	    alfprogress.gad;		
+	    reportnetwork.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    write.gad; 
+    sepparm.gad; 
+    write_1.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

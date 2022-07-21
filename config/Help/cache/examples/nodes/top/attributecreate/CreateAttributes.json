@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["CreateAttributes"]}, {"type": "para", "indent": 0, "text": ["This example demonstrates how to create attributes on work items."], "extent": [0, 67]}], "examplefor": "/nodes/top/attributecreate", "examplefile": "/examples/nodes/top/attributecreate/CreateAttributes.hda"}

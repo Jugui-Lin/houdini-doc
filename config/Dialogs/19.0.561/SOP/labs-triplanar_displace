@@ -1,0 +1,460 @@
+// Magic: 2dd1acdd
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Tue May 31 14:26:35 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+bDisplacement.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+bDisplacement.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+bDisplacement.gad = PARM_BUTTON("bDisplacement", "") toggle VALUE(bDisplacement.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+texture.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ {  }
+
+ texture.label = PARM_LABEL("Displacement", "texture") WIDTH(1.32);
+
+ PARM_FIELD (pathstring, "texture") LABELREF(texture.label)
+	VALUE(texture.val) HSTRETCH;
+
+    texture.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(texture.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+bColor.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+bColor.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+bColor.gad = PARM_BUTTON("bColor", "") toggle VALUE(bColor.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+texture2.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ {  }
+
+ texture2.label = PARM_LABEL("Color", "texture2") WIDTH(1.32);
+
+ PARM_FIELD (pathstring, "texture2") LABELREF(texture2.label)
+	VALUE(texture2.val) HSTRETCH;
+
+    texture2.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(texture2.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+scale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ scale.label = PARM_LABEL("Texture Scale", "scale") WIDTH(1.5);
+ PARM(float, 1, "scale", none, none) RANGE(0.001,2)
+	 LABELREF(scale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+strength.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ strength.label = PARM_LABEL("Displacement Amount", "strength") WIDTH(1.5);
+ PARM(float, 1, "strength", none, none) RANGE(-1,1)
+	 LABELREF(strength.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+exp.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ exp.label = PARM_LABEL("Axis Blend", "exp") WIDTH(1.5);
+ PARM(float, 1, "exp", none, none) RANGE(0,3)
+	 LABELREF(exp.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+xn__projectionoffset_mpa.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   xn__projectionoffset_mpa.label = PARM_LABEL("Axis Offset", "xn__projectionoffset_mpa") WIDTH(1.5);
+   PARM(float, 3, "xn__projectionoffset_mpa", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(xn__projectionoffset_mpa.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+xn__DisplaceY_dja.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("xn__DisplaceY_dja", "Displace Y") toggle VALUE(xn__DisplaceY_dja.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+rest_switch.gad = NULL { }
+
+smooth_normals.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("smooth_normals", "Smooth Normals") toggle VALUE(smooth_normals.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+mirror_x.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("mirror_x", "Mirror X Axis") toggle VALUE(mirror_x.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+mirror_z.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("mirror_z", "Mirror Z Axis") toggle VALUE(mirror_z.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+use_noise.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("use_noise", "Use Noise Projection Offset") toggle VALUE(use_noise.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Noise Type", "type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    type.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+freq.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   freq.label = PARM_LABEL("Frequency", "freq") WIDTH(1.5);
+   PARM(float, 3, "freq", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(freq.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+offset.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   offset.label = PARM_LABEL("Offset", "offset") WIDTH(1.5);
+   PARM(float, 3, "offset", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(offset.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+amp.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ amp.label = PARM_LABEL("Amplitude", "amp") WIDTH(1.5);
+ PARM(float, 1, "amp", none, none) RANGE(-1,1)
+	 LABELREF(amp.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+rough.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ rough.label = PARM_LABEL("Roughness", "rough") WIDTH(1.5);
+ PARM(float, 1, "rough", none, none) RANGE(0,1)
+	 LABELREF(rough.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+atten.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ atten.label = PARM_LABEL("Attenuation", "atten") WIDTH(1.5);
+ PARM(float, 1, "atten", none, none) RANGE(0,1)
+	 LABELREF(atten.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+turb.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ turb.label = PARM_LABEL("Turbulence", "turb") WIDTH(1.5);
+ PARM(integer, 1, "turb", none, none) RANGE(0,10)
+	 LABELREF(turb.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+use_attrib.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("use_attrib", "Use Displacement Scale Attribute") toggle VALUE(use_attrib.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+displace_scale.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    displace_scale.label = PARM_LABEL("Displace Scale Attrib", "displace_scale") WIDTH(1.5);
+    PARM_FIELD(string, "displace_scale") VALUE(displace_scale.val) 
+	LABELREF(displace_scale.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+xn__invertattribute_moa.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("xn__invertattribute_moa", "Invert Attribute") toggle VALUE(xn__invertattribute_moa.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+srcmin.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ srcmin.label = PARM_LABEL("Minimum Value In Source Range", "srcmin") WIDTH(1.5);
+ PARM(float, 1, "srcmin", none, none) RANGE(0,1)
+	 LABELREF(srcmin.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+srcmax.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ srcmax.label = PARM_LABEL("Maximum Value In Source Range", "srcmax") WIDTH(1.5);
+ PARM(float, 1, "srcmax", none, none) RANGE(0,1)
+	 LABELREF(srcmax.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+destmin.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ destmin.label = PARM_LABEL("Minimum Value In Destination Range", "destmin") WIDTH(1.5);
+ PARM(float, 1, "destmin", none, none) RANGE(0,1)
+	 LABELREF(destmin.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+destmax.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ destmax.label = PARM_LABEL("Maximum Value In Destination Range", "destmax") WIDTH(1.5);
+ PARM(float, 1, "destmax", none, none) RANGE(0,1)
+	 LABELREF(destmax.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+folder0.gad = 
+
+GROUP simple "Displacement Scale Attribute" flat 
+{ 
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    use_attrib.gad;		
+	    displace_scale.gad;		
+	    xn__invertattribute_moa.gad;		
+	    srcmin.gad;		
+	    srcmax.gad;		
+	    destmin.gad;		
+	    destmax.gad;		
+} 
+
+noise.gad = 
+
+GROUP simple "Noise Projection Offset " flat 
+{ 
+    VALUE(noise.gad.val) LAYOUT(vertical) HSTRETCH 
+	    use_noise.gad;		
+	    type.gad;		
+	    freq.gad;		
+	    offset.gad;		
+	    amp.gad;		
+	    rough.gad;		
+	    atten.gad;		
+	    turb.gad;		
+} 
+
+folder1.gad = 
+GROUP collapsible "Advanced" flat  
+{
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH
+	    xn__projectionoffset_mpa.gad;		
+	    xn__DisplaceY_dja.gad;		
+	    rest_switch.gad;		
+	    smooth_normals.gad;		
+	    mirror_x.gad;		
+	    mirror_z.gad;		
+	    noise.gad;		
+	    folder0.gad;		
+} 
+
+basics.gad = 
+
+GROUP simple "Settings" flat 
+{ 
+    VALUE(basics.gad.val) LAYOUT(vertical) HSTRETCH 
+	    bDisplacement.row.join;		
+	    bColor.row.join;		
+	    scale.gad;		
+	    strength.gad;		
+	    exp.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    basics.gad; 
+    folder1.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

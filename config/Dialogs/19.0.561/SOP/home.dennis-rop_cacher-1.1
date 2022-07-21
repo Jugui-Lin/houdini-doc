@@ -1,0 +1,281 @@
+// Magic: d7fbab4a
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Sun May 22 14:33:10 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+execute.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+execute.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("execute", "Save to Disk")
+	push VALUE(execute.val);
+
+    {  }
+}
+
+executebackground.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    PARM_BUTTON("executebackground", "Save to Disk in Background")
+	push VALUE(executebackground.val);
+
+    {  }
+}
+
+cache_storage.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("cache_storage", "Cache on Storage") toggle VALUE(cache_storage.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+trange.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+trange.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Valid Frame Range", "trange") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    trange.menu;
+
+    {  }
+
+    {  }
+}
+
+single_frame.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("single_frame", "Single Frame") toggle VALUE(single_frame.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+f.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   f.label = PARM_LABEL("Start/End/Inc", "f") WIDTH(1.5);
+   PARM(float, 3, "f", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(f.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+write.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ write.label = PARM_LABEL("Write", "write") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "write") LABELREF(write.label)
+	VALUE(write.val) HSTRETCH;
+
+    write.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(write.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+version.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ version.label = PARM_LABEL("Version", "version") WIDTH(1.5);
+ PARM(integer, 1, "version", none, none) RANGE(1,10)
+	LOCK_RANGE_MIN LABELREF(version.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+naming.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    naming.label = PARM_LABEL("Naming", "naming") WIDTH(1.5);
+    PARM_FIELD(string, "naming") VALUE(naming.val) 
+	LABELREF(naming.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+reload.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("reload", "Reload Geometry")
+	push VALUE(reload.val);
+
+    { WIDTH(0.1) }
+}
+
+loadtype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Load", "loadtype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    loadtype.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+packedviewedit.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Display Packed As", "packedviewedit") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    packedviewedit.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+viewportlod.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Display As", "viewportlod") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    viewportlod.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+read.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ read.label = PARM_LABEL("Read", "read") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "read") LABELREF(read.label)
+	VALUE(read.val) HSTRETCH;
+
+    read.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(read.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+create_path.gad = NULL { }
+create_path_single.gad = NULL { }
+create_path_frames.gad = NULL { }
+cache_dir.gad = NULL { }
+job.gad = NULL { }
+
+read_folder.gad = 
+
+GROUP simple "READ" flat 
+{ 
+    VALUE(read_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    reload.gad;		
+	    loadtype.gad;		
+	    packedviewedit.gad;		
+	    viewportlod.gad;		
+	    read.gad;		
+} 
+
+write_folder.gad = 
+
+GROUP simple "WRITE" flat 
+{ 
+    VALUE(write_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    trange.row.join;		
+	    f.gad;		
+	    write.gad;		
+	    version.gad;		
+	    naming.gad;		
+} 
+
+settings.gad = 
+
+GROUP simple "SETTINGS" flat 
+{ 
+    VALUE(settings.gad.val) LAYOUT(vertical) HSTRETCH 
+	    write_folder.gad;		
+	    read_folder.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    execute.row.join; 
+    settings.gad; 
+    create_path.gad; 
+    create_path_single.gad; 
+    create_path_frames.gad; 
+    cache_dir.gad; 
+    job.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

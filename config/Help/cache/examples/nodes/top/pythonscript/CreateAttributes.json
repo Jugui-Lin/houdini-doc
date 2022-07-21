@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["CreateAttributes"]}, {"type": "para", "indent": 0, "text": ["This example file demonstrates creates work item attributes using a Python Script node."], "extent": [0, 88]}], "examplefor": "/nodes/top/pythonscript", "examplefile": "/examples/nodes/top/pythonscript/CreateAttributes.hda"}

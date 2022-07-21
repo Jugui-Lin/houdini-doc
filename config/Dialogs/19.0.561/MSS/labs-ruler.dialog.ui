@@ -1,0 +1,39 @@
+// Magic: ac7a84ed
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Tue Apr 26 05:32:32 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+text_size_menu.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Text Size", "text_size_menu") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    text_size_menu.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    text_size_menu.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

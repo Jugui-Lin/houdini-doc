@@ -1,0 +1,781 @@
+// Magic: f08d2b31
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Sun May  8 19:31:46 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+cook.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+cook.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("cook", "Cook")
+	push VALUE(cook.val);
+
+    {  }
+}
+
+reload.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    PARM_BUTTON("reload", "Reload")
+	push VALUE(reload.val);
+
+    {  }
+}
+
+manual_mode.gad = ROW
+{
+    
+    {  }
+
+    PARM_BUTTON("manual_mode", "Manual Mode") toggle VALUE(manual_mode.val);
+
+    {  }
+
+    {  }
+}
+
+bExportLog.gad = ROW
+{
+    HSTRETCH
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("bExportLog", "Use Log") toggle VALUE(bExportLog.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+estimateSpaceMinObservationAngle.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ estimateSpaceMinObservationAngle.label = PARM_LABEL("Min Observations Angle For SfM Space Estimation", "estimateSpaceMinObservationAngle") WIDTH(1.5);
+ PARM(integer, 1, "estimateSpaceMinObservationAngle", none, none) RANGE(0,120)
+	LOCK_RANGE LABELREF(estimateSpaceMinObservationAngle.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+maxInputPoints.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ maxInputPoints.label = PARM_LABEL("Max Input Points", "maxInputPoints") WIDTH(1.5);
+ PARM(integer, 1, "maxInputPoints", none, none) RANGE(500000,500000000)
+	 LABELREF(maxInputPoints.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+maxPoints.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ maxPoints.label = PARM_LABEL("Max Points", "maxPoints") WIDTH(1.5);
+ PARM(integer, 1, "maxPoints", none, none) RANGE(100000,10000000)
+	 LABELREF(maxPoints.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+colorizeOutput.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("colorizeOutput", "Vertex Colors") toggle VALUE(colorizeOutput.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+estimateSpaceFromSfM.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("estimateSpaceFromSfM", "Estimate Space From SfM") toggle VALUE(estimateSpaceFromSfM.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+helperPointsGridSize.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ helperPointsGridSize.label = PARM_LABEL("Helper Point Grid Size", "helperPointsGridSize") WIDTH(1.5);
+ PARM(integer, 1, "helperPointsGridSize", none, none) RANGE(0,10)
+	 LABELREF(helperPointsGridSize.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+densifyNbFront.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ densifyNbFront.label = PARM_LABEL("Densify Number Front", "densifyNbFront") WIDTH(1.5);
+ PARM(integer, 1, "densifyNbFront", none, none) RANGE(0,10)
+	 LABELREF(densifyNbFront.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+densifyNbBack.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ densifyNbBack.label = PARM_LABEL("Densify Number Back", "densifyNbBack") WIDTH(1.5);
+ PARM(integer, 1, "densifyNbBack", none, none) RANGE(0,10)
+	 LABELREF(densifyNbBack.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+densifyScale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ densifyScale.label = PARM_LABEL("Density Scale", "densifyScale") WIDTH(1.5);
+ PARM(integer, 1, "densifyScale", none, none) RANGE(0,10)
+	 LABELREF(densifyScale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+maskHelperPointsWeight.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ maskHelperPointsWeight.label = PARM_LABEL("Mask Helper Point Weight", "maskHelperPointsWeight") WIDTH(1.5);
+ PARM(integer, 1, "maskHelperPointsWeight", none, none) RANGE(0,10)
+	 LABELREF(maskHelperPointsWeight.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+maskBorderSize.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ maskBorderSize.label = PARM_LABEL("Mask Border Size", "maskBorderSize") WIDTH(1.5);
+ PARM(integer, 1, "maskBorderSize", none, none) RANGE(0,10)
+	 LABELREF(maskBorderSize.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+nPixelSizeBehind.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ nPixelSizeBehind.label = PARM_LABEL("Number Pixel Size Full", "nPixelSizeBehind") WIDTH(1.5);
+ PARM(integer, 1, "nPixelSizeBehind", none, none) RANGE(0,10)
+	 LABELREF(nPixelSizeBehind.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+fullWeight.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ fullWeight.label = PARM_LABEL("Full Cell Weighting", "fullWeight") WIDTH(1.5);
+ PARM(integer, 1, "fullWeight", none, none) RANGE(0,10)
+	 LABELREF(fullWeight.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+estimateSpaceMinObservations.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ estimateSpaceMinObservations.label = PARM_LABEL("Min Observations For SfM Space Estimation", "estimateSpaceMinObservations") WIDTH(1.5);
+ PARM(integer, 1, "estimateSpaceMinObservations", none, none) RANGE(0,100)
+	LOCK_RANGE LABELREF(estimateSpaceMinObservations.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+maxPointsPerVoxel.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ maxPointsPerVoxel.label = PARM_LABEL("Max Points per Voxel", "maxPointsPerVoxel") WIDTH(1.5);
+ PARM(integer, 1, "maxPointsPerVoxel", none, none) RANGE(500000,30000000)
+	 LABELREF(maxPointsPerVoxel.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+minStep.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ minStep.label = PARM_LABEL("Min Step", "minStep") WIDTH(1.5);
+ PARM(integer, 1, "minStep", none, none) RANGE(1,20)
+	 LABELREF(minStep.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+minVis.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ minVis.label = PARM_LABEL("Min Visibility", "minVis") WIDTH(1.5);
+ PARM(integer, 1, "minVis", none, none) RANGE(0,10)
+	 LABELREF(minVis.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+partitioning.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Partitioning", "partitioning") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    partitioning.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+repartition.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Repartition", "repartition") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    repartition.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+angleFactor.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ angleFactor.label = PARM_LABEL("Angle Factor", "angleFactor") WIDTH(1.5);
+ PARM(integer, 1, "angleFactor", none, none) RANGE(0,200)
+	 LABELREF(angleFactor.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+simFactor.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ simFactor.label = PARM_LABEL("Sim Factor", "simFactor") WIDTH(1.5);
+ PARM(integer, 1, "simFactor", none, none) RANGE(0,200)
+	 LABELREF(simFactor.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+voteFilteringForWeaklySupportedSurfaces.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("voteFilteringForWeaklySupportedSurfaces", "Filter Weakly Defined Surfaces") toggle VALUE(voteFilteringForWeaklySupportedSurfaces.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+minSolidAngleRatio.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ minSolidAngleRatio.label = PARM_LABEL("Minimum Solid Angle Ratio", "minSolidAngleRatio") WIDTH(1.5);
+ PARM(float, 1, "minSolidAngleRatio", none, none) RANGE(0,10)
+	 LABELREF(minSolidAngleRatio.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pixSizeMarginInitCoef.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pixSizeMarginInitCoef.label = PARM_LABEL("Initial Pixel Marigin Coef Size", "pixSizeMarginInitCoef") WIDTH(1.5);
+ PARM(float, 1, "pixSizeMarginInitCoef", none, none) RANGE(0,10)
+	 LABELREF(pixSizeMarginInitCoef.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pixSizeMarginFinalCoef.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pixSizeMarginFinalCoef.label = PARM_LABEL("Final Pixel Size Marigin Coef", "pixSizeMarginFinalCoef") WIDTH(1.5);
+ PARM(float, 1, "pixSizeMarginFinalCoef", none, none) RANGE(0,10)
+	 LABELREF(pixSizeMarginFinalCoef.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+voteMarginFactor.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ voteMarginFactor.label = PARM_LABEL("Vote Marigin Factor", "voteMarginFactor") WIDTH(1.5);
+ PARM(float, 1, "voteMarginFactor", none, none) RANGE(0.10000000000000001,10)
+	 LABELREF(voteMarginFactor.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+contributeMarginFactor.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ contributeMarginFactor.label = PARM_LABEL("Contribute Marigin Factor", "contributeMarginFactor") WIDTH(1.5);
+ PARM(float, 1, "contributeMarginFactor", none, none) RANGE(0.10000000000000001,10)
+	 LABELREF(contributeMarginFactor.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+simGaussianSizeInit.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ simGaussianSizeInit.label = PARM_LABEL("Initial Gaussian Size", "simGaussianSizeInit") WIDTH(1.5);
+ PARM(float, 1, "simGaussianSizeInit", none, none) RANGE(0,50)
+	 LABELREF(simGaussianSizeInit.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+simGaussianSize.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ simGaussianSize.label = PARM_LABEL("Gaussian Sim Size", "simGaussianSize") WIDTH(1.5);
+ PARM(float, 1, "simGaussianSize", none, none) RANGE(0,50)
+	 LABELREF(simGaussianSize.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+minAngleThreshold.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ minAngleThreshold.label = PARM_LABEL("Minimum Angle Threshold", "minAngleThreshold") WIDTH(1.5);
+ PARM(float, 1, "minAngleThreshold", none, none) RANGE(0,10)
+	 LABELREF(minAngleThreshold.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+refineFuse.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("refineFuse", "Refine Fuse") toggle VALUE(refineFuse.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+addLandmarksToTheDensePointCloud.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("addLandmarksToTheDensePointCloud", "Add Landmarks To The Dense Point Cloud") toggle VALUE(addLandmarksToTheDensePointCloud.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+seed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ seed.label = PARM_LABEL("Seed", "seed") WIDTH(1.5);
+ PARM(integer, 1, "seed", none, none) RANGE(1,20)
+	 LABELREF(seed.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+universePercentile.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ universePercentile.label = PARM_LABEL("Universe Percentile", "universePercentile") WIDTH(1.5);
+ PARM(float, 1, "universePercentile", none, none) RANGE(0.01,0.20000000000000001)
+	LOCK_RANGE_MIN LABELREF(universePercentile.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+saveRawDensePointCloud.gad = NULL { }
+
+filterLargeTrianglesFactor.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ filterLargeTrianglesFactor.label = PARM_LABEL("Filter Large Triangles Factor", "filterLargeTrianglesFactor") WIDTH(1.5);
+ PARM(float, 1, "filterLargeTrianglesFactor", none, none) RANGE(1,100)
+	 LABELREF(filterLargeTrianglesFactor.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+keepLargestMeshOnly.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("keepLargestMeshOnly", "Keep Only the Largest Mesh") toggle VALUE(keepLargestMeshOnly.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+smoothingIterations.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ smoothingIterations.label = PARM_LABEL("Smoothing Iterations", "smoothingIterations") WIDTH(1.5);
+ PARM(integer, 1, "smoothingIterations", none, none) RANGE(0,50)
+	 LABELREF(smoothingIterations.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+smoothingLambda.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ smoothingLambda.label = PARM_LABEL("Lambda", "smoothingLambda") WIDTH(1.5);
+ PARM(float, 1, "smoothingLambda", none, none) RANGE(0,10)
+	 LABELREF(smoothingLambda.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+filterTrianglesRatio.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ filterTrianglesRatio.label = PARM_LABEL("Filter Triangles Ratio", "filterTrianglesRatio") WIDTH(1.5);
+ PARM(float, 1, "filterTrianglesRatio", none, none) RANGE(1,50)
+	 LABELREF(filterTrianglesRatio.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+smoothingSubset.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Smoothing Subset", "smoothingSubset") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    smoothingSubset.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+smoothingBoundariesNeighbours.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ smoothingBoundariesNeighbours.label = PARM_LABEL("Smoothing Boundaries Neighbours", "smoothingBoundariesNeighbours") WIDTH(1.5);
+ PARM(integer, 1, "smoothingBoundariesNeighbours", none, none) RANGE(0,20)
+	 LABELREF(smoothingBoundariesNeighbours.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+filteringSubset.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Filtering Subset", "filteringSubset") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    filteringSubset.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+filteringIterations.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ filteringIterations.label = PARM_LABEL("Filtering Iterations", "filteringIterations") WIDTH(1.5);
+ PARM(integer, 1, "filteringIterations", none, none) RANGE(0,20)
+	 LABELREF(filteringIterations.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+enablecustomenv.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+enablecustomenv.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+enablecustomenv.gad = PARM_BUTTON("enablecustomenv", "") toggle VALUE(enablecustomenv.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+customenv.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    customenv.label = PARM_LABEL("Environment", "customenv") WIDTH(1.32);
+    PARM_FIELD(string, "customenv") VALUE(customenv.val) 
+	LABELREF(customenv.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+folder3.gad = 
+GROUP collapsible "Environment" flat  
+{
+    VALUE(folder3.gad.val) LAYOUT(vertical) HSTRETCH
+	    enablecustomenv.row.join;		
+} 
+
+folder2.gad = 
+GROUP collapsible "Advanced" flat  
+{
+    VALUE(folder2.gad.val) LAYOUT(vertical) HSTRETCH
+	    smoothingLambda.gad;		
+	    filterTrianglesRatio.gad;		
+	    smoothingSubset.gad;		
+	    smoothingBoundariesNeighbours.gad;		
+	    filteringSubset.gad;		
+	    filteringIterations.gad;		
+} 
+
+folder1.gad = 
+GROUP collapsible "Advanced" flat  
+{
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH
+	    estimateSpaceFromSfM.gad;		
+	    helperPointsGridSize.gad;		
+	    densifyNbFront.gad;		
+	    densifyNbBack.gad;		
+	    densifyScale.gad;		
+	    maskHelperPointsWeight.gad;		
+	    maskBorderSize.gad;		
+	    nPixelSizeBehind.gad;		
+	    fullWeight.gad;		
+	    estimateSpaceMinObservations.gad;		
+	    maxPointsPerVoxel.gad;		
+	    minStep.gad;		
+	    minVis.gad;		
+	    partitioning.gad;		
+	    repartition.gad;		
+	    angleFactor.gad;		
+	    simFactor.gad;		
+	    voteFilteringForWeaklySupportedSurfaces.gad;		
+	    minSolidAngleRatio.gad;		
+	    pixSizeMarginInitCoef.gad;		
+	    pixSizeMarginFinalCoef.gad;		
+	    voteMarginFactor.gad;		
+	    contributeMarginFactor.gad;		
+	    simGaussianSizeInit.gad;		
+	    simGaussianSize.gad;		
+	    minAngleThreshold.gad;		
+	    refineFuse.gad;		
+	    addLandmarksToTheDensePointCloud.gad;		
+	    seed.gad;		
+	    universePercentile.gad;		
+	    saveRawDensePointCloud.gad;		
+} 
+
+folder0.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder0.gad"
+    { 
+	VALUE(folder0.gad.val) STRETCH(1,0)
+
+	TAB "Meshing"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    estimateSpaceMinObservationAngle.gad;		
+	    maxInputPoints.gad;		
+	    maxPoints.gad;		
+	    colorizeOutput.gad;		
+	    folder1.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Mesh Filtering"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    filterLargeTrianglesFactor.gad;		
+	    keepLargestMeshOnly.gad;		
+	    smoothingIterations.gad;		
+	    folder2.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    cook.row.join; 
+    folder0.gad; 
+    folder3.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

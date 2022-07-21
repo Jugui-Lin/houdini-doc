@@ -1,0 +1,161 @@
+// Magic: 792af8d1
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Sun May 29 10:23:22 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+input.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    input.label = PARM_LABEL("Input", "input") WIDTH(1.5);
+    PARM(float, 4, "input", none, COLOR, "R,G,B,A") 
+	LABELREF(input.label) HSTRETCH;
+
+    input.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(input.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+gamma.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ gamma.label = PARM_LABEL("Gamma", "gamma") WIDTH(1.5);
+ PARM(float, 1, "gamma", none, none) RANGE(0,4)
+	 LABELREF(gamma.label) HSTRETCH;
+
+    gamma.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(gamma.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+contrast.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ contrast.label = PARM_LABEL("Contrast", "contrast") WIDTH(1.5);
+ PARM(float, 1, "contrast", none, none) RANGE(0,1)
+	 LABELREF(contrast.label) HSTRETCH;
+
+    contrast.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(contrast.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+hue.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ hue.label = PARM_LABEL("Hue Shift", "hue") WIDTH(1.5);
+ PARM(float, 1, "hue", none, none) RANGE(0,360)
+	 LABELREF(hue.label) HSTRETCH;
+
+    hue.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(hue.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+saturation.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ saturation.label = PARM_LABEL("Saturation Scale", "saturation") WIDTH(1.5);
+ PARM(float, 1, "saturation", none, none) RANGE(0,1)
+	 LABELREF(saturation.label) HSTRETCH;
+
+    saturation.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(saturation.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+level.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ level.label = PARM_LABEL("Level Scale", "level") WIDTH(1.5);
+ PARM(float, 1, "level", none, none) RANGE(0,1)
+	 LABELREF(level.label) HSTRETCH;
+
+    level.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(level.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+updatedMode.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("updatedMode", "Use HSV Conversion") toggle VALUE(updatedMode.val);
+
+    { HSTRETCH }
+
+    updatedMode.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(updatedMode.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+xsiMode.gad = NULL { }
+shader_skipdefvalparms.gad = NULL { }
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    input.gad; 
+    gamma.gad; 
+    contrast.gad; 
+    hue.gad; 
+    saturation.gad; 
+    level.gad; 
+    updatedMode.gad; 
+    xsiMode.gad; 
+    shader_skipdefvalparms.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

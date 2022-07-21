@@ -1,0 +1,557 @@
+// Magic: 931b3bcc
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Wed May  4 20:45:55 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+appearance.sval := 0;
+
+appearance.gad = 
+{
+    LAYOUT(vertical) SPACING(1p) HSTRETCH VMARGIN(0.15, 0.05)
+
+    SWITCHER tight
+    {
+	VALUE(appearance.sval) LAYOUT(overlap) HSTRETCH
+
+	{
+	    LAYOUT(horizontal) HSTRETCH
+
+	    LABEL "Appearance" HSTRETCH;
+
+	}
+
+	{
+	    LAYOUT(horizontal) HSTRETCH
+
+	    LABEL "Appearance":1.5;
+
+	    LABEL VALUE(appearance.val[0]) JUSTIFY(center, center) HSTRETCH;
+	}
+
+	{
+	    LAYOUT(horizontal) HSTRETCH
+
+	    LABEL "Appearance":1.5;
+
+	    LABEL VALUE(appearance.val[0]) JUSTIFY(center, center) HSTRETCH;
+	    LABEL VALUE(appearance.val[1]) JUSTIFY(center, center) HSTRETCH;
+	}
+	{
+	    LAYOUT(horizontal) HSTRETCH
+
+	    LABEL "Appearance":1.5;
+
+	    LABEL VALUE(appearance.val[0]) JUSTIFY(center, center) HSTRETCH;
+	    LABEL VALUE(appearance.val[1]) JUSTIFY(center, center) HSTRETCH;
+	    LABEL VALUE(appearance.val[2]) JUSTIFY(center, center) HSTRETCH;
+	}
+	{
+	    LAYOUT(horizontal) HSTRETCH 
+
+	    LABEL "Appearance":1.5;
+
+	    LABEL VALUE(appearance.val[0]) JUSTIFY(center, center) HSTRETCH;
+	    LABEL VALUE(appearance.val[1]) JUSTIFY(center, center) HSTRETCH;
+	    LABEL VALUE(appearance.val[2]) JUSTIFY(center, center) HSTRETCH;
+	    LABEL VALUE(appearance.val[3]) JUSTIFY(center, center) HSTRETCH;
+	}
+    }
+    SEPARATOR;
+}
+
+handle_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    handle_color.label = PARM_LABEL("Handle Color", "handle_color") WIDTH(1.5);
+    PARM(float, 3, "handle_color", none, COLOR, "R,G,B") 
+	LABELREF(handle_color.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+color_mode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Visualization", "color_mode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    color_mode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+velocity_ramp.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Velocity Ramp", "velocity_ramp") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    velocity_ramp.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+accel_ramp.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Acceleration Ramp", "accel_ramp") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    accel_ramp.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+keyframe_numbers.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("keyframe_numbers", "Show Keyframe Numbers") toggle VALUE(keyframe_numbers.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+current_key_pos.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("current_key_pos", "Highlight Current Frame") toggle VALUE(current_key_pos.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+ribbon.sval := 0;
+
+ribbon.gad = 
+{
+    LAYOUT(vertical) SPACING(1p) HSTRETCH VMARGIN(0.15, 0.05)
+
+    SWITCHER tight
+    {
+	VALUE(ribbon.sval) LAYOUT(overlap) HSTRETCH
+
+	{
+	    LAYOUT(horizontal) HSTRETCH
+
+	    LABEL "Ribbon" HSTRETCH;
+
+	}
+
+	{
+	    LAYOUT(horizontal) HSTRETCH
+
+	    LABEL "Ribbon":1.5;
+
+	    LABEL VALUE(ribbon.val[0]) JUSTIFY(center, center) HSTRETCH;
+	}
+
+	{
+	    LAYOUT(horizontal) HSTRETCH
+
+	    LABEL "Ribbon":1.5;
+
+	    LABEL VALUE(ribbon.val[0]) JUSTIFY(center, center) HSTRETCH;
+	    LABEL VALUE(ribbon.val[1]) JUSTIFY(center, center) HSTRETCH;
+	}
+	{
+	    LAYOUT(horizontal) HSTRETCH
+
+	    LABEL "Ribbon":1.5;
+
+	    LABEL VALUE(ribbon.val[0]) JUSTIFY(center, center) HSTRETCH;
+	    LABEL VALUE(ribbon.val[1]) JUSTIFY(center, center) HSTRETCH;
+	    LABEL VALUE(ribbon.val[2]) JUSTIFY(center, center) HSTRETCH;
+	}
+	{
+	    LAYOUT(horizontal) HSTRETCH 
+
+	    LABEL "Ribbon":1.5;
+
+	    LABEL VALUE(ribbon.val[0]) JUSTIFY(center, center) HSTRETCH;
+	    LABEL VALUE(ribbon.val[1]) JUSTIFY(center, center) HSTRETCH;
+	    LABEL VALUE(ribbon.val[2]) JUSTIFY(center, center) HSTRETCH;
+	    LABEL VALUE(ribbon.val[3]) JUSTIFY(center, center) HSTRETCH;
+	}
+    }
+    SEPARATOR;
+}
+
+ribbon_mode.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ribbon_mode", "Show Wide Path") toggle VALUE(ribbon_mode.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+ribbon_wireframe_flag.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ribbon_wireframe_flag", "Show as Wireframe") toggle VALUE(ribbon_wireframe_flag.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+ribbon_path_width.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ ribbon_path_width.label = PARM_LABEL("Path Width", "ribbon_path_width") WIDTH(1.5);
+ PARM(integer, 1, "ribbon_path_width", none, none) RANGE(1,30)
+	LOCK_RANGE_MIN LABELREF(ribbon_path_width.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+frames.sval := 0;
+
+frames.gad = 
+{
+    LAYOUT(vertical) SPACING(1p) HSTRETCH VMARGIN(0.15, 0.05)
+
+    SWITCHER tight
+    {
+	VALUE(frames.sval) LAYOUT(overlap) HSTRETCH
+
+	{
+	    LAYOUT(horizontal) HSTRETCH
+
+	    LABEL "Frames" HSTRETCH;
+
+	}
+
+	{
+	    LAYOUT(horizontal) HSTRETCH
+
+	    LABEL "Frames":1.5;
+
+	    LABEL VALUE(frames.val[0]) JUSTIFY(center, center) HSTRETCH;
+	}
+
+	{
+	    LAYOUT(horizontal) HSTRETCH
+
+	    LABEL "Frames":1.5;
+
+	    LABEL VALUE(frames.val[0]) JUSTIFY(center, center) HSTRETCH;
+	    LABEL VALUE(frames.val[1]) JUSTIFY(center, center) HSTRETCH;
+	}
+	{
+	    LAYOUT(horizontal) HSTRETCH
+
+	    LABEL "Frames":1.5;
+
+	    LABEL VALUE(frames.val[0]) JUSTIFY(center, center) HSTRETCH;
+	    LABEL VALUE(frames.val[1]) JUSTIFY(center, center) HSTRETCH;
+	    LABEL VALUE(frames.val[2]) JUSTIFY(center, center) HSTRETCH;
+	}
+	{
+	    LAYOUT(horizontal) HSTRETCH 
+
+	    LABEL "Frames":1.5;
+
+	    LABEL VALUE(frames.val[0]) JUSTIFY(center, center) HSTRETCH;
+	    LABEL VALUE(frames.val[1]) JUSTIFY(center, center) HSTRETCH;
+	    LABEL VALUE(frames.val[2]) JUSTIFY(center, center) HSTRETCH;
+	    LABEL VALUE(frames.val[3]) JUSTIFY(center, center) HSTRETCH;
+	}
+    }
+    SEPARATOR;
+}
+
+limit_before_after_frames.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("limit_before_after_frames", "Limit Number of Frames") toggle VALUE(limit_before_after_frames.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+limit_before_frames.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ limit_before_frames.label = PARM_LABEL("Frames Before", "limit_before_frames") WIDTH(1.5);
+ PARM(integer, 1, "limit_before_frames", none, none) RANGE(0,20)
+	LOCK_RANGE_MIN LABELREF(limit_before_frames.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+limit_after_frames.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ limit_after_frames.label = PARM_LABEL("Frames After", "limit_after_frames") WIDTH(1.5);
+ PARM(integer, 1, "limit_after_frames", none, none) RANGE(0,20)
+	LOCK_RANGE_MIN LABELREF(limit_after_frames.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+frame_tick_flag.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("frame_tick_flag", "Show Frame Ticks") toggle VALUE(frame_tick_flag.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+frame_tick_width.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ frame_tick_width.label = PARM_LABEL("Tick Size", "frame_tick_width") WIDTH(1.5);
+ PARM(integer, 1, "frame_tick_width", none, none) RANGE(1,30)
+	LOCK_RANGE_MIN LABELREF(frame_tick_width.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+frames_between_ticks.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ frames_between_ticks.label = PARM_LABEL("Frames Between Ticks", "frames_between_ticks") WIDTH(1.5);
+ PARM(integer, 1, "frames_between_ticks", none, none) RANGE(1,20)
+	LOCK_RANGE_MIN LABELREF(frames_between_ticks.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+falloff_flag.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("falloff_flag", "Variable Tick Size") toggle VALUE(falloff_flag.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+falloff_frames.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ falloff_frames.label = PARM_LABEL("Falloff Distance", "falloff_frames") WIDTH(1.5);
+ PARM(integer, 1, "falloff_frames", none, none) RANGE(1,50)
+	LOCK_RANGE_MIN LABELREF(falloff_frames.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sample_between_frames.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("sample_between_frames", "Sample Between Frames") toggle VALUE(sample_between_frames.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+number_samples.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ number_samples.label = PARM_LABEL("Number of Samples", "number_samples") WIDTH(1.5);
+ PARM(integer, 1, "number_samples", none, none) RANGE(1,30)
+	LOCK_RANGE_MIN LABELREF(number_samples.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+tangents.sval := 0;
+
+tangents.gad = 
+{
+    LAYOUT(vertical) SPACING(1p) HSTRETCH VMARGIN(0.15, 0.05)
+
+    SWITCHER tight
+    {
+	VALUE(tangents.sval) LAYOUT(overlap) HSTRETCH
+
+	{
+	    LAYOUT(horizontal) HSTRETCH
+
+	    LABEL "Tangents" HSTRETCH;
+
+	}
+
+	{
+	    LAYOUT(horizontal) HSTRETCH
+
+	    LABEL "Tangents":1.5;
+
+	    LABEL VALUE(tangents.val[0]) JUSTIFY(center, center) HSTRETCH;
+	}
+
+	{
+	    LAYOUT(horizontal) HSTRETCH
+
+	    LABEL "Tangents":1.5;
+
+	    LABEL VALUE(tangents.val[0]) JUSTIFY(center, center) HSTRETCH;
+	    LABEL VALUE(tangents.val[1]) JUSTIFY(center, center) HSTRETCH;
+	}
+	{
+	    LAYOUT(horizontal) HSTRETCH
+
+	    LABEL "Tangents":1.5;
+
+	    LABEL VALUE(tangents.val[0]) JUSTIFY(center, center) HSTRETCH;
+	    LABEL VALUE(tangents.val[1]) JUSTIFY(center, center) HSTRETCH;
+	    LABEL VALUE(tangents.val[2]) JUSTIFY(center, center) HSTRETCH;
+	}
+	{
+	    LAYOUT(horizontal) HSTRETCH 
+
+	    LABEL "Tangents":1.5;
+
+	    LABEL VALUE(tangents.val[0]) JUSTIFY(center, center) HSTRETCH;
+	    LABEL VALUE(tangents.val[1]) JUSTIFY(center, center) HSTRETCH;
+	    LABEL VALUE(tangents.val[2]) JUSTIFY(center, center) HSTRETCH;
+	    LABEL VALUE(tangents.val[3]) JUSTIFY(center, center) HSTRETCH;
+	}
+    }
+    SEPARATOR;
+}
+
+tangent_flag.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("tangent_flag", "Show Tangent Handles") toggle VALUE(tangent_flag.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+# warning cpp warning: "GenV3/subdialog.top.ui":5 Macro "PARMSPACING" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":6 Macro "LAYOUTDIR" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":7 Macro "DO_JUSTIFY" redefined.  Using later definition
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    appearance.gad; 
+    handle_color.gad; 
+    color_mode.gad; 
+    velocity_ramp.gad; 
+    accel_ramp.gad; 
+    keyframe_numbers.gad; 
+    current_key_pos.gad; 
+    ribbon.gad; 
+    ribbon_mode.gad; 
+    ribbon_wireframe_flag.gad; 
+    ribbon_path_width.gad; 
+    frames.gad; 
+    limit_before_after_frames.gad; 
+    limit_before_frames.gad; 
+    limit_after_frames.gad; 
+    frame_tick_flag.gad; 
+    frame_tick_width.gad; 
+    frames_between_ticks.gad; 
+    falloff_flag.gad; 
+    falloff_frames.gad; 
+    sample_between_frames.gad; 
+    number_samples.gad; 
+    tangents.gad; 
+    tangent_flag.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

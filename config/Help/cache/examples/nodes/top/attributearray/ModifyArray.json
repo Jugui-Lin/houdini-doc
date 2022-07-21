@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["ModifyArray"]}, {"type": "para", "indent": 0, "text": ["This example demonstrates how to modify or update an existing array attribute."], "extent": [0, 79]}], "examplefor": "/nodes/top/attributearray", "examplefile": "/examples/nodes/top/attributearray/ModifyArray.hda"}

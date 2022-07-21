@@ -1,0 +1,215 @@
+// Magic: beed874f
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Mon Apr 25 22:21:24 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+input_type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Input Type", "input_type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    input_type.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+do_normal.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("do_normal", "Compute Normals") toggle VALUE(do_normal.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+cuspangle.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ cuspangle.label = PARM_LABEL("Cusp Angle", "cuspangle") WIDTH(1.5);
+ PARM(float, 1, "cuspangle", none, none) RANGE(0,180)
+	LOCK_RANGE LABELREF(cuspangle.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+name_method.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Partition Method", "name_method") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    name_method.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+name_attr.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    name_attr.label = PARM_LABEL("Piece Attribute", "name_attr") WIDTH(1.5);
+    PARM_FIELD(string, "name_attr") VALUE(name_attr.val) 
+	LABELREF(name_attr.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+transfer_attributes.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    transfer_attributes.label = PARM_LABEL("Transfer Attributes", "transfer_attributes") WIDTH(1.5);
+    PARM_FIELD(string, "transfer_attributes") VALUE(transfer_attributes.val) 
+	LABELREF(transfer_attributes.label) HSTRETCH;
+
+    transfer_attributes.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+packedfragments.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("packedfragments", "Create Packed Fragments") toggle VALUE(packedfragments.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+pivot.gad = NULL { }
+
+do_id.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("do_id", "Override ID Attr") toggle VALUE(do_id.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+startindex.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ startindex.label = PARM_LABEL("ID Start Number", "startindex") WIDTH(1.5);
+ PARM(integer, 1, "startindex", none, none) RANGE(0,100)
+	LOCK_RANGE_MIN LABELREF(startindex.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+do_name.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("do_name", "Override Name Attr") toggle VALUE(do_name.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+name_prefix.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    name_prefix.label = PARM_LABEL("Name Prefix", "name_prefix") WIDTH(1.5);
+    PARM_FIELD(string, "name_prefix") VALUE(name_prefix.val) 
+	LABELREF(name_prefix.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+rest_frame.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ rest_frame.label = PARM_LABEL("Rest Frame", "rest_frame") WIDTH(1.5);
+ PARM(float, 1, "rest_frame", none, none) RANGE(0,10)
+	 LABELREF(rest_frame.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+folder1.gad = 
+
+GROUP simple "Packing Options" flat 
+{ 
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    do_normal.gad;		
+	    cuspangle.gad;		
+	    name_method.gad;		
+	    name_attr.gad;		
+	    transfer_attributes.gad;		
+	    packedfragments.gad;		
+	    pivot.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    input_type.gad; 
+    folder1.gad; 
+    do_id.gad; 
+    startindex.gad; 
+    do_name.gad; 
+    name_prefix.gad; 
+    rest_frame.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

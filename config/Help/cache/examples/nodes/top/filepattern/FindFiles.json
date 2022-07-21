@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["FindFiles"]}, {"type": "para", "indent": 0, "text": ["This example demonstrates how to use File Pattern to load files using a match expression."], "extent": [0, 90]}], "examplefor": "/nodes/top/filepattern", "examplefile": "/examples/nodes/top/filepattern/FindFiles.hda"}

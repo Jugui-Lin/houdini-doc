@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["Sort"]}, {"type": "para", "indent": 0, "text": ["This example demonstrates how to use the Sort TOP to reorder work items based on an attribute value."], "extent": [0, 102]}], "examplefor": "/nodes/top/sort", "examplefile": "/examples/nodes/top/sort/Sort.hda"}

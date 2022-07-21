@@ -1,0 +1,101 @@
+// Magic: 1d0940b4
+// Automatically generated PSI dialog (PSI version 19.0.622)
+// Thu Jun  2 11:20:34 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+reselect.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("reselect", "Reselect")
+	push VALUE(reselect.val);
+
+    { WIDTH(0.1) }
+}
+
+cleargroup.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("cleargroup", "Clear Group")
+	push VALUE(cleargroup.val);
+
+    { WIDTH(0.1) }
+}
+
+showfillet.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("showfillet", "Highlight Fillet") toggle VALUE(showfillet.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+showautoslides.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("showautoslides", "Highlight Auto-slides") toggle VALUE(showautoslides.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+showprofiledir.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("showprofiledir", "Show Asymmetric Profile Direction") toggle VALUE(showprofiledir.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    reselect.gad; 
+    cleargroup.gad; 
+    showfillet.gad; 
+    showautoslides.gad; 
+    showprofiledir.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

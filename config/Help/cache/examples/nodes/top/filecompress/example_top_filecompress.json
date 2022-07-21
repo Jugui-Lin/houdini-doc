@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["example_top_filecompress"]}, {"type": "para", "indent": 0, "text": ["This example demonstrates how to compress files using TOPs / PDG."], "extent": [0, 66]}], "examplefor": "/nodes/top/filecompress", "examplefile": "/examples/nodes/top/filecompress/example_top_filecompress.hda"}

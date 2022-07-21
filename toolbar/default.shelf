@@ -5,178 +5,525 @@
  Note, that two definitions of the same element are not allowed in
  a single file. -->
 
-  <toolshelf name="shelf_1" label="New Shelf">
-    <memberTool name="tool_1"/>
+  <tool name="opHipFolder" label="HipFolder" icon="SOP_file">
+    <script scriptType="python"><![CDATA[import os
+import hou
+import sys
+import subprocess
+
+hip = hou.getenv('HIP')
+
+platform = sys.platform
+if platform == "win32":
+    # subprocess.Popen(["explorer", self.job])
+    os.startfile(hip)
+elif platform == "darwin": #osx
+    subprocess.Popen(["open", hip])
+else: #linux
+    subprocess.Popen(["xdg-open", hip])
+]]></script>
+  </tool>
+
+  <tool name="CahceFolder" label="CahceFolder" icon="SOP_file">
+    <script scriptType="python"><![CDATA[import os
+import hou
+import sys
+import subprocess
+
+hip = hou.getenv('cache')
+
+platform = sys.platform
+if platform == "win32":
+    # subprocess.Popen(["explorer", self.job])
+    os.startfile(hip)
+elif platform == "darwin": #osx
+    subprocess.Popen(["open", hip])
+else: #linux
+    subprocess.Popen(["xdg-open", hip])
+]]></script>
+  </tool>
+
+  <toolshelf name="customize tool" label="customize tool">
+    <memberTool name="drop file"/>
+    <memberTool name="shaderoutput"/>
   </toolshelf>
 
-  <tool name="tool_1" label="New Tool" icon="PLASMA_App">
-    <script scriptType="python"><![CDATA[]]></script>
+  <tool name="drop file" label="drop file" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[# drag and drop to import file in Houdini
+# by Lewis Orton
+# https://vimeo.com/lewisorton
+
+import hou, re, os, sys, platform
+
+if sys.version_info.major < 3:
+    from urllib import unquote
+else:
+    from urllib.parse import unquote
+#decode urlpath on windows
+
+def dropAccept(files):
+    pane = hou.ui.paneTabUnderCursor() 
+    if (pane.type().name() != "NetworkEditor"):
+        return False
+    hversion = hou.applicationVersion()
+    
+    for i, file in enumerate(files):
+        if (hversion[0] < 18) or (hversion[0] == 18 and hversion[1] == 0):
+            
+            #print("hversion < 18.5")
+            if platform.system() == "Windows":
+                file_path = file[8:]
+            elif platform.system() == "Linux":
+                file_path = file[7:]
+        else:
+            file_path = file
+            #print(file)
+
+
+        file_path = unquote(file_path) #decode urlpath
+
+        file_basename = os.path.splitext(os.path.basename(file_path))
+        file_ext = file_basename[1].lower()
+
+        #convert to relative path
+        file_path = rel_path(file_path)
+        
+        cursor_position = pane.cursorPosition() + hou.Vector2(i *3, 0)
+
+        network_node = pane.pwd()
+
+        #opening hip
+        if re.match(".hip", file_ext) != None:
+            hou.hipFile.load(file_path)
+            return True
+
+        #adding nodes
+        try:
+            import_file(network_node, file_path, file_basename, file_ext, cursor_position)
+        except:
+            print(sys.exc_info()[1])
+            return False
+
+    return True
+
+def rel_path(fullpath):
+    hippath = hou.getenv("HIP")
+    if re.match(hippath, fullpath):
+        fullpath = "$HIP" +  re.sub(hippath, "", fullpath)
+    return fullpath
+
+def import_file(network_node, file_path, file_basename, file_ext, cursor_position):
+    #validate node name
+    file_name = re.sub(r"[^0-9a-zA-Z\.]+", "_", file_basename[0])
+    #create new geo node in obj network if none exists
+    if network_node.type().name() == "obj":
+        network_node = network_node.createNode("geo", "GEO_" + file_name)
+        network_node.setPosition(cursor_position)
+
+    if network_node.type().name() == "geo":
+        if file_ext == ".abc":
+            create_new_node(network_node, file_path, "alembic", "fileName", cursor_position, name = file_name)
+            return True
+        elif file_ext == ".rs":
+            create_new_node(network_node, file_path, "redshift_packedProxySOP", "RS_proxy_file", cursor_position, name = file_name)
+            return True
+        elif file_ext == ".ass":
+            create_new_node(network_node, file_path, "arnold_asstoc", "ass_file", cursor_position, name = file_name)
+            return True
+        elif file_ext in {".usd", ".usda", ".usdc"}:
+            create_new_node(network_node, file_path, "usdimport", "filepath1", cursor_position, name = file_name)
+        else:
+            create_new_node(network_node, file_path, "file", "file", cursor_position, name = file_name)
+            return True
+    elif network_node.type().name() in {"mat","materialbuilder", "materiallibrary"}:
+        create_new_node(network_node, file_path, "texture::2.0", "map", cursor_position, name = file_name)
+        return True
+    elif network_node.type().name() == "redshift_vopnet":
+        create_new_node(network_node, file_path, "redshift::TextureSampler", "tex0", cursor_position, name = file_name)
+        return True
+    elif network_node.type().name() == "chopnet":
+        create_new_node(network_node, file_path, "file", "file", cursor_position, name = file_name)
+        return True
+    elif network_node.type().name() in {"arnold_materialbuilder", "arnold_vopnet"}:
+        create_new_node(network_node, file_path, "arnold::image", "filename", cursor_position, name = file_name)
+        return True
+    elif network_node.type().name() in {"cop2net", "img"}:
+        create_new_node(network_node, file_path, "file", "filename1", cursor_position, name = file_name)
+        return True
+    elif network_node.type().name() in {"lopnet","stage"}:
+        create_new_node(network_node, file_path, "reference", "filepath1", cursor_position, name = file_name)
+        return True
+    return False
+
+def create_new_node(network_node, file_path, node_name, parm_path_name, cursor_position, **kwargs):
+    name =  kwargs.get('name', None)
+    if name:
+        new_node = network_node.createNode(node_name, name)
+    else:
+        new_node = network_node.createNode(node_name)
+    new_node.setPosition(cursor_position)
+    new_node.setParms({parm_path_name:file_path})
+    return new_node
+]]></script>
   </tool>
 
-  <tool name="tool_2" label="OBJ_Loader" icon="PLASMA_App">
-    <script scriptType="python"><![CDATA[import os
+  <tool name="shaderoutput" label="shaderoutput" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[# a quick shortcut for shader builder, connecting selected node to output directly
+# by Lewis Orton
+# https://vimeo.com/lewisorton
 
-obj_dir = hou.ui.selectFile(title = 'Select OBJ Directoty', file_type = hou.fileType.Directory)
+# instruction: create a new shelftool, copy the code below (not including hashtag) to script tab, then assign a hotkey to the tool
+# ____copy code below____
 
-obj_dir_expanded = hou.expandString(obj_dir)
+# import shaderoutput
+# shaderoutput.connect()
 
-obj_file = os.listdir(obj_dir_expanded)
+# ____copy code above____
 
-file_nodes = []
 
-loader = hou.node('/obj').createNode('geo','OBJ_loader')
+import hou, sys, nodesearch, operator
 
-for obj in obj_file:
-    obj_file_node = loader.createNode('file',obj)
-    obj_file_node.parm('file').set(obj_dir + obj)
-    obj_file_node.parm('missingframe').set(1)
+def connect():
+    node_output = None
+    nodes = hou.selectedNodes()
+    if len(nodes) == 0:
+        return False
+        
+    node = nodes[0]
+    network = node.parent()
+    renderer = node.type().name().split("::")[0]
+    if renderer == "redshift":
+        matcher = nodesearch.NodeType("redshift_material",typecat=None, exact=True)
+    elif renderer == "arnold":
+        matcher = nodesearch.NodeType("arnold_material",typecat=None, exact=True)
+    else:
+        matcher = nodesearch.NodeType("output",typecat=None, exact=True)
+        
+
+    if len(matcher.nodes(network)) == 0:
+        print("No output node found")
+        return False
+    elif len(matcher.nodes(network)) == 1:
+        node_output = matcher.nodes(network)[0]
+        if node == node_output:
+            print("No recursive connection allowed")
+            return False
+    else:
+        #sort all output nodes by distance
+        nodes_output = {}
+        for node_candidate in matcher.nodes(network):
+            distance = (node_candidate.position() - node.position()).lengthSquared()
+            nodes_output[node_candidate] = distance
+
+        #python version compatibility
+        if sys.version_info[0] < 3:
+            nodes_sorted = sorted(nodes_output.items(), key = operator.itemgetter(1))
+        else:
+            nodes_sorted = sorted(nodes_output.items(), key = lambda kv: kv[1])
+
+        #find output if any node on the right, which should be considered first
+        for node_candidate, distance in nodes_sorted:
+            if node_candidate.position().x() > node.position().x():
+                node_output = node_candidate
+                break
+        if node_output == None:
+            node_output = nodes_sorted[0][0]
     
-    file_nodes.append(obj_file_node)
-    
-merge_objs = loader.createNode('merge','OBJ_Merger')
+    node_output.setInput(0, node)
 
-for node in file_nodes:
-    merge_objs.setNextInput(node)
     
-loader.layoutChildren()
-
-merge_objs.setDisplayFlag(1)
-merge_objs.setRenderFlag(1)]]></script>
+connect()
+]]></script>
   </tool>
 
-  <tool name="tool_3" label="Mat_Convert" icon="PLASMA_App">
-    <script scriptType="python"><![CDATA[from multiprocessing.spawn import import_main_path
-from turtle import update
+  <tool name="spio_import" label="spio_import" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[# log
+# v1.0
+# initial win
+# v2.0
+# add more ext support, add abc/usd node support
+
+from __future__ import annotations
+
+import sys
+import ctypes
+import ctypes.wintypes as w
+
+from locale import getdefaultlocale
+
+import hou
+import numpy as np
+
+# change it to 'True' if your system encode if utf-8 (win)
+FORCE_UNICORE = False
+
+# Extension Config
+ext_config = {
+    'obj': 'file',
+    'fbx': 'file',
+    'stl': 'file',
+    'dae': 'file',
+    'abc': 'alembic',
+    'usd': 'usdimport',
+    'usda': 'usdimport',
+    'usdc': 'usdimport',
+}
+
+# file node parm config
+node_parm_config = {
+    'file': 'file',
+    'alembic': 'fileName',
+    'usdimport': 'filepath1',
+}
+
+
+def main():
+    if sys.platform != "win32":
+        return print("Not Support this platform!")
+
+    clipboard = WintypesClipboard()
+    file_list = clipboard.pull(force_unicode=FORCE_UNICORE)
+    del clipboard  # release clipboard
+
+    if len(file_list) == 0:
+        return print('No files found!')
+    # remove extra files
+    file_list = [file for file in file_list if file.split('.')[-1] in ext_config]
+
+    # get context editor and mouse pos
+    net_editor = hou.ui.paneTabOfType(hou.paneTabType.NetworkEditor)
+    cursor_pos = net_editor.cursorPosition()
+
+    # create or set nodes
+    if len(hou.selectedNodes()) == 0:
+        paneTabObj = hou.ui.paneTabUnderCursor()
+        parent = paneTabObj.pwd()
+        create_node_from_path_list(parent, file_list, cursor_pos)
+
+    elif len(hou.selectedNodes()) == 1:
+        node = hou.selectedNodes()[-1]
+
+        set_node_path(node, file_list[0])
+        file_list = file_list[1:]
+        node.setSelected(True, clear_all_selected=True)
+
+        parent = node.parent()
+
+        create_node_from_path_list(parent, file_list, cursor_pos)
+
+
+def create_node_from_path_list(obj, file_list, start_pos):
+    for i, file in enumerate(file_list):
+        node = obj.createNode(ext_config.get(file.split('.')[-1]))
+        pos = np.subtract(start_pos, [-0.5, 1 * i])
+        node.setPosition(pos)
+        set_node_path(node, file)
+        node.setSelected(True, clear_all_selected=True)
+
+
+def set_node_path(node, path):
+    for type, node_parm in node_parm_config.items():
+        try:
+            if node.type() == hou.sopNodeTypeCategory().nodeTypes()[type]:
+                node.parm(node_parm).set(path)
+                break
+        except Exception:
+            print(f'Config {type}:{node_parm} Error!')
+
+
+class WintypesClipboard():
+    def __init__(self, file_urls=None):
+        # file_urls: list[str] = None
+        self.file_urls = file_urls
+
+        self.CF_HDROP = 15
+
+        u32 = ctypes.windll.user32
+        k32 = ctypes.windll.kernel32
+        s32 = ctypes.windll.shell32
+
+        self.OpenClipboard = u32.OpenClipboard
+        self.OpenClipboard.argtypes = w.HWND,
+        self.OpenClipboard.restype = w.BOOL
+
+        self.GetClipboardData = u32.GetClipboardData
+        self.GetClipboardData.argtypes = w.UINT,
+        self.GetClipboardData.restype = w.HANDLE
+
+        self.SetClipboardData = u32.SetClipboardData
+
+        self.CloseClipboard = u32.CloseClipboard
+        self.CloseClipboard.argtypes = None
+        self.CloseClipboard.restype = w.BOOL
+
+        self.DragQueryFile = s32.DragQueryFile
+        self.DragQueryFile.argtypes = [w.HANDLE, w.UINT, ctypes.c_void_p, w.UINT]
+
+    def pull(self, force_unicode=False):
+        self.file_urls = []
+
+        if self.OpenClipboard(None):
+            h_hdrop = self.GetClipboardData(self.CF_HDROP)
+
+            if h_hdrop:
+                # expose force unicode to preferences(if enabled unicode beta setting)
+                FS_ENCODING = getdefaultlocale()[1] if not force_unicode else 'utf-8'
+                file_count = self.DragQueryFile(h_hdrop, -1, None, 0)
+
+                for index in range(file_count):
+                    buf = ctypes.c_buffer(260)
+                    self.DragQueryFile(h_hdrop, index, buf, ctypes.sizeof(buf))
+                    self.file_urls.append(buf.value.decode(FS_ENCODING))
+
+        self.CloseClipboard()
+        return self.file_urls
+
+
+main()
+]]></script>
+  </tool>
+
+  <tool name="spio_export" label="spio_export" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[# log
+# v1.0
+# initial win
+# v2.0
+# add export format menu
+
+from __future__ import annotations
+
+import sys
+
 import hou
 import os
-texture_path = '$HIP/geo/buildings/Textures/'
+import numpy as np
+
+# Custom Temp Path
+TEMP_DIR = ''
+
+export_labels = [
+    'Wavefront (.obj)',
+    'Alembic (.abc)',
+    'OpenVDB (.vdb)',
+    'Stl (.stl)',
+    'AutoCAD DXF(.dxf)',
+    'Stanford (.ply)',
+]
+
+export_formats = [
+    'obj', 'abc', 'vdb', 'stl', 'dxf', 'ply'
+]
 
 
-materials = hou.selectedNodes()[0]
-materials_name = materials.name()
+def get_dir():
+    global TEMP_DIR
+    if TEMP_DIR == '':
+        TEMP_DIR = os.path.join(os.path.expanduser('~'), 'spio_temp')
+        if not "spio_temp" in os.listdir(os.path.expanduser('~')):
+            os.makedirs(TEMP_DIR)
+    return TEMP_DIR
 
 
-
-# get all the shaders
-
-shaders = materials.children()
-
-redShaders = materials.parent().createNode('matnet')
-redShaders.moveToGoodPosition()
-
-
-for shd in shaders:
-    
-    shd_type = shd.type().name()
-
-    if shd_type == 'principledshader::2.0':
-        redVopNet = redShaders.createNode('redshift_vopnet',shd.name())
-        redMat = redVopNet.children()[1]
-
-    
-    #connect nodes
-    #redMatOutput.setInput()
-
-    #get the texture
-    texture = shd.evalParm('basecolor_texture')
-
-    #print(texture_name)
-    #create rs texture node 
+def get_export_config():
+    index = hou.ui.selectFromList(export_labels,
+                                  default_choices=(), exclusive=True, message="Select a format to export",
+                                  title='Super Export',
+                                  column_header=None,
+                                  num_visible_rows=10, clear_on_cancel=False, width=250, height=300)
+    return index[0] if len(index) != 0 else None
 
 
-    
+def main():
+    if sys.platform != "win32":
+        return print("Not Support this platform!")
 
-    #set parm
-    redMat.parm('')
+    # create or set nodes
+    if len(hou.selectedNodes()) == 0:
+        return
 
-    if texture != '':
-        texture_name = texture.split('Textures')[1][1:]
-        rsTex = redVopNet.createNode('redshift::TextureSampler')
-        rsTex.parm('tex0').set(texture_path + texture_name)
-        redMat.setInput(0,rsTex)
-    redShaders.layoutChildren()
-    redVopNet.layoutChildren()
+    file_list = list()
 
-redShader_name = 'New_' + materials_name
-redShaders.setName(redShader_name)
-update_node = hou.ui.selectNode(initial_node = redShaders.parent())
+    res = get_export_config()
+    if res is None: return
 
-sel_update_node = hou.node(update_node)
+    ext = export_formats[res]
 
-num_mats = sel_update_node.evalParm('num_materials')
-print(redShader_name)
+    for node in hou.selectedNodes():
+        name = node.path().split('/')[-1]
+        filepath = os.path.join(get_dir(), name + '.' + ext)
+        node.geometry().saveToFile(filepath)
+        file_list.append(filepath)
 
-for num in range(num_mats):
-    num +=1
-    old_path = sel_update_node.evalParm(f'shop_materialpath{num}')
-    new_path = old_path.replace(f'{materials_name}',f'{redShader_name}')
-    print(new_path)
-    sel_update_node.parm(f'shop_materialpath{num}').set(new_path)
+    clipboard = PowerShellClipboard()
+    clipboard.push_to_clipboard(paths=file_list)
+
+
+def set_node_path(node, path):
+    node.parm('file').set(path)
+
+
+import subprocess
+
+
+class PowerShellClipboard():
+    def __init__(self, file_urls=None):
+        pass
+
+    def get_args(self, script):
+        powershell_args = [
+            os.path.join(
+                os.getenv("SystemRoot"),
+                "System32",
+                "WindowsPowerShell",
+                "v1.0",
+                "powershell.exe",
+            ),
+            "-NoProfile",
+            "-NoLogo",
+            "-NonInteractive",
+            "-WindowStyle",
+            "Hidden",
+        ]
+        script = (
+                "$OutputEncoding = "
+                "[System.Console]::OutputEncoding = "
+                "[System.Console]::InputEncoding = "
+                "[System.Text.Encoding]::UTF8; "
+                + "$PSDefaultParameterValues['*:Encoding'] = 'utf8'; "
+                + script
+        )
+        args = powershell_args + ["& { " + script + " }"]
+        return args
+
+    def push(self, script):
+        parms = {
+            'args': self.get_args(script),
+            'encoding': 'utf-8',
+            'stdout': subprocess.PIPE,
+            'stderr': subprocess.PIPE,
+        }
+
+        subprocess.Popen(**parms)
+
+    def push_to_clipboard(self, paths):
+        join_s = ""
+
+        for path in paths:
+            join_s += f", '{path}'"
+
+        script = (
+            f"$filelist = {join_s};"
+            "$col = New-Object Collections.Specialized.StringCollection; "
+            "foreach($file in $filelist){$col.add($file)}; "
+            "Add-Type -Assembly System.Windows.Forms; "
+            "[System.Windows.Forms.Clipboard]::SetFileDropList($col); "
+        )
+
+        self.push(script)
+
+
+main()
 ]]></script>
-  </tool>
-
-  <toolshelf name="AttribMan" label="New Shelf">
-    <memberTool name="tool_2"/>
-    <memberTool name="tool_3"/>
-    <memberTool name="AttribMan"/>
-    <memberTool name="test12"/>
-  </toolshelf>
-
-  <tool name="AttribMan" label="AttribMan" icon="PLASMA_App">
-    <script scriptType="python"><![CDATA[from JGP.attribman import attribman
-from importlib import reload
-reload(attribman)
-
-]]></script>
-  </tool>
-
-  <tool name="test12" label="test123" icon="PLASMA_App">
-    <script scriptType="python"><![CDATA[import hou
-import os
-
-nodes = hou.selectedNodes()
-
-for node in nodes:
-    node_name = node.name()
-    print(node_name)
-
-]]></script>
-  </tool>
-
-  <toolshelf name="shelf_2" label="New Shelf"/>
-
-  <toolshelf name="shelf_3" label="New Shelf">
-    <memberTool name="tool_4"/>
-  </toolshelf>
-
-  <tool name="tool_4" label="New Tool" icon="PLASMA_App">
-    <script scriptType="python"><![CDATA[import hou
-import random
-
-node = hou.pwd()
-geo = node.geometry()
-
-# ç»å®ç§å­ ä¿è¯æ¯æ¬¡è¿è¡otlå¾å°çç»æç¸å
-random.seed(123)
-
-colorAttrib = geo.addAttrib(hou.attribTypr.Point, "Cd", (1.0, 1.0, 1.0))
-
-color = hou.Color()
-
-pointsNum = len(geo.points())
-
-for point in geo.points():
-    pos = point.position()
-
-    px = pos[0]
-    py = pos[1] + random.random() * random.choice([-1,1])
-    pz = pos[2]
-    
-    point.setPosition((px, py, pz))
-
-    value = float(point.number()) / pointsNum
-    color.setHSV((value * 255, 1.0, 1.0))
-    point.setAttribValue(colorAttrib, color.rgb())]]></script>
   </tool>
 
   <shelfSetEdit name="shelf_set_td" fileLocation="">
@@ -184,13 +531,15 @@ for point in geo.points():
     <addMemberToolshelf name="labs_toolset" inPosition="17"/>
   </shelfSetEdit>
 
-  <shelfSetEdit name="shelf_set_1" fileLocation="C:/PROGRA~1/SIDEEF~1/HOUDIN~1.561/houdini/toolbar/ShelfDefinitions.shelf">
-    <addMemberToolshelf name="Redshift" inPosition="15"/>
-    <addMemberToolshelf name="shelf_2" inPosition="16"/>
-    <addMemberToolshelf name="aelib_shelf" inPosition="17"/>
-    <addMemberToolshelf name="qLib" inPosition="18"/>
-    <addMemberToolshelf name="octane" inPosition="19"/>
-    <addMemberToolshelf name="qLib_update" inPosition="20"/>
-    <addMemberToolshelf name="shelf_3" inPosition="21"/>
+  <shelfSetEdit name="shelf_set_1" fileLocation="C:/PROGRA~1/SIDEEF~1/HOUDIN~1.622/houdini/toolbar/ShelfDefinitions.shelf">
+    <addMemberToolshelf name="qLib" inPosition="15"/>
+    <addMemberToolshelf name="aelib_shelf" inPosition="16"/>
+    <addMemberToolshelf name="labs_toolset" inPosition="17"/>
+    <addMemberToolshelf name="SPIO" inPosition="18"/>
+  </shelfSetEdit>
+
+  <shelfSetEdit name="shelf_set_2" fileLocation="C:/PROGRA~1/SIDEEF~1/HOUDIN~1.622/houdini/toolbar/ShelfDefinitions.master_shelf">
+    <addMemberToolshelf name="Redshift" inPosition="1"/>
+    <addMemberToolshelf name="arnold" inPosition="1"/>
   </shelfSetEdit>
 </shelfDocument>

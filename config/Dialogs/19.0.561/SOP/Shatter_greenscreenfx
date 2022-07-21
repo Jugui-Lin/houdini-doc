@@ -1,0 +1,67 @@
+// Magic: 3ee62ff8
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Fri May  6 02:26:44 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+nameSuffix.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    nameSuffix.label = PARM_LABEL("Name Suffix", "nameSuffix") WIDTH(1.5);
+    PARM_FIELD(string, "nameSuffix") VALUE(nameSuffix.val) 
+	LABELREF(nameSuffix.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+detriangulate.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Detriangulate", "detriangulate") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    detriangulate.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+intCuspAngle.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ intCuspAngle.label = PARM_LABEL("Interior Cusp Angle", "intCuspAngle") WIDTH(1.5);
+ PARM(float, 1, "intCuspAngle", none, none) RANGE(0,10)
+	 LABELREF(intCuspAngle.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    nameSuffix.gad; 
+    detriangulate.gad; 
+    intCuspAngle.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

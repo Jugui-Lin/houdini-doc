@@ -1,0 +1,387 @@
+// Magic: 7ddc913f
+// Automatically generated PSI dialog (PSI version 19.0.622)
+// Wed Jun  1 01:02:29 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+channel.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    channel.label = PARM_LABEL("Channel", "channel") WIDTH(1.5);
+    PARM_FIELD(string, "channel") VALUE(channel.val) 
+	LABELREF(channel.label) HSTRETCH;
+
+    channel.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(channel.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+position_offset.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   position_offset.label = PARM_LABEL("Position Offset", "position_offset") WIDTH(1.5);
+   PARM(float, 3, "position_offset", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(position_offset.label)
+	HSTRETCH;
+
+    position_offset.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(position_offset.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+interpolation.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Interpolation", "interpolation") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    interpolation.menu;
+
+    { HSTRETCH }
+
+    interpolation.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(interpolation.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+volume_type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Volume Type", "volume_type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    volume_type.menu;
+
+    { HSTRETCH }
+
+    volume_type.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(volume_type.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+sdf_offset.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ sdf_offset.label = PARM_LABEL("SDF Offset", "sdf_offset") WIDTH(1.5);
+ PARM(float, 1, "sdf_offset", none, none) RANGE(-1,1)
+	 LABELREF(sdf_offset.label) HSTRETCH;
+
+    sdf_offset.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(sdf_offset.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+sdf_blend.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ sdf_blend.label = PARM_LABEL("SDF Blend", "sdf_blend") WIDTH(1.5);
+ PARM(float, 1, "sdf_blend", none, none) RANGE(0,1)
+	 LABELREF(sdf_blend.label) HSTRETCH;
+
+    sdf_blend.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(sdf_blend.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+sdf_invert.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("sdf_invert", "Invert SDF") toggle VALUE(sdf_invert.val);
+
+    { HSTRETCH }
+
+    sdf_invert.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(sdf_invert.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+input_min.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ input_min.label = PARM_LABEL("Input Min", "input_min") WIDTH(1.5);
+ PARM(float, 1, "input_min", none, none) RANGE(0,2)
+	 LABELREF(input_min.label) HSTRETCH;
+
+    input_min.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(input_min.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+input_max.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ input_max.label = PARM_LABEL("Input Max", "input_max") WIDTH(1.5);
+ PARM(float, 1, "input_max", none, none) RANGE(0,2)
+	 LABELREF(input_max.label) HSTRETCH;
+
+    input_max.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(input_max.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+contrast.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ contrast.label = PARM_LABEL("Contrast", "contrast") WIDTH(1.5);
+ PARM(float, 1, "contrast", none, none) RANGE(0,2)
+	 LABELREF(contrast.label) HSTRETCH;
+
+    contrast.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(contrast.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+contrast_pivot.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ contrast_pivot.label = PARM_LABEL("Contrast Pivot", "contrast_pivot") WIDTH(1.5);
+ PARM(float, 1, "contrast_pivot", none, none) RANGE(0,1)
+	 LABELREF(contrast_pivot.label) HSTRETCH;
+
+    contrast_pivot.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(contrast_pivot.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+bias.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ bias.label = PARM_LABEL("Bias", "bias") WIDTH(1.5);
+ PARM(float, 1, "bias", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(bias.label) HSTRETCH;
+
+    bias.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(bias.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+gain.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ gain.label = PARM_LABEL("Gain", "gain") WIDTH(1.5);
+ PARM(float, 1, "gain", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(gain.label) HSTRETCH;
+
+    gain.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(gain.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+output_min.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ output_min.label = PARM_LABEL("Output Min", "output_min") WIDTH(1.5);
+ PARM(float, 1, "output_min", none, none) RANGE(0,2)
+	 LABELREF(output_min.label) HSTRETCH;
+
+    output_min.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(output_min.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+output_max.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ output_max.label = PARM_LABEL("Output Max", "output_max") WIDTH(1.5);
+ PARM(float, 1, "output_max", none, none) RANGE(0,2)
+	 LABELREF(output_max.label) HSTRETCH;
+
+    output_max.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(output_max.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+clamp_min.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("clamp_min", "Clamp Min") toggle VALUE(clamp_min.val);
+
+    { HSTRETCH }
+
+    clamp_min.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(clamp_min.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+clamp_max.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("clamp_max", "Clamp Max") toggle VALUE(clamp_max.val);
+
+    { HSTRETCH }
+
+    clamp_max.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(clamp_max.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+float.gad = NULL { }
+
+folder1.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder1.gad"
+    { 
+	VALUE(folder1.gad.val) STRETCH(1,0)
+
+	TAB "Sampling"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    channel.gad;		
+	    position_offset.gad;		
+	    interpolation.gad;		
+	    volume_type.gad;		
+	    sdf_offset.gad;		
+	    sdf_blend.gad;		
+	    sdf_invert.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Remap"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    input_min.gad;		
+	    input_max.gad;		
+	    contrast.gad;		
+	    contrast_pivot.gad;		
+	    bias.gad;		
+	    gain.gad;		
+	    output_min.gad;		
+	    output_max.gad;		
+	    clamp_min.gad;		
+	    clamp_max.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    folder1.gad; 
+    float.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

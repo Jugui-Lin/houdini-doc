@@ -1,0 +1,365 @@
+// Magic: 7e8cf7bc
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Thu May 12 03:56:38 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+active.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("active", "Active") toggle VALUE(active.val);
+
+    { HSTRETCH }
+
+    active.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(active.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+use_obj.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("use_obj", "Use Object Transform") toggle VALUE(use_obj.val);
+
+    { HSTRETCH }
+
+    use_obj.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(use_obj.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+xform_obj.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ xform_obj.label = PARM_LABEL("Object", "xform_obj") WIDTH(1.5);
+ PARM_FIELD(pathstring, "xform_obj") VALUE(xform_obj.val) 
+	LABELREF(xform_obj.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(xform_obj.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(xform_obj.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+use_rest.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+use_rest.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+use_rest.gad = PARM_BUTTON("use_rest", "") toggle VALUE(use_rest.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+rest_obj.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ {  }
+
+ rest_obj.label = PARM_LABEL("Rest/Parent Obj.", "rest_obj") WIDTH(1.32);
+ PARM_FIELD(pathstring, "rest_obj") VALUE(rest_obj.val) 
+	LABELREF(rest_obj.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(rest_obj.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(rest_obj.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+xformtype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Transform", "xformtype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    xformtype.menu;
+
+    { HSTRETCH }
+
+    xformtype.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(xformtype.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+xformpath.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ xformpath.label = PARM_LABEL("Transform Object", "xformpath") WIDTH(1.5);
+ PARM_FIELD(pathstring, "xformpath") VALUE(xformpath.val) 
+	LABELREF(xformpath.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(xformpath.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(xformpath.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+trs.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+trs.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Transform Order", "trs") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    trs.menu;
+
+    {  }
+
+    trs.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(trs.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    {  }
+}
+
+xyz.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    xyz.menu;
+
+    {  }
+
+    xyz.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(xyz.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+t.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   t.label = PARM_LABEL("trans", "t") WIDTH(1.5);
+   PARM(float, 3, "t", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(t.label)
+	HSTRETCH;
+
+    t.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(t.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+r.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   r.label = PARM_LABEL("rot", "r") WIDTH(1.5);
+   PARM(float, 3, "r", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(r.label)
+	HSTRETCH;
+
+    r.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(r.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+s.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   s.label = PARM_LABEL("scale", "s") WIDTH(1.5);
+   PARM(float, 3, "s", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(s.label)
+	HSTRETCH;
+
+    s.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(s.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+p.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   p.label = PARM_LABEL("pivot", "p") WIDTH(1.5);
+   PARM(float, 3, "p", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(p.label)
+	HSTRETCH;
+
+    p.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(p.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+scale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ scale.label = PARM_LABEL("scale (uniform)", "scale") WIDTH(1.5);
+ PARM(float, 1, "scale", none, none) RANGE(0,10)
+	 LABELREF(scale.label) HSTRETCH;
+
+    scale.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(scale.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+invert.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("invert", "Invert Transform") toggle VALUE(invert.val);
+
+    { HSTRETCH }
+
+    invert.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(invert.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+out_xform.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("out_xform", "Output Xform") toggle VALUE(out_xform.val);
+
+    { HSTRETCH }
+
+    out_xform.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(out_xform.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+out_invxform.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("out_invxform", "Output Inverse Xform") toggle VALUE(out_invxform.val);
+
+    { HSTRETCH }
+
+    out_invxform.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(out_invxform.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    active.gad; 
+    use_obj.gad; 
+    xform_obj.gad; 
+    use_rest.row.join; 
+    xformtype.gad; 
+    xformpath.gad; 
+    trs.row.join; 
+    t.gad; 
+    r.gad; 
+    s.gad; 
+    p.gad; 
+    scale.gad; 
+    invert.gad; 
+    out_xform.gad; 
+    out_invxform.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

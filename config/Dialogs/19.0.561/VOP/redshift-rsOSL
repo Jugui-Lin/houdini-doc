@@ -1,0 +1,466 @@
+// Magic: 84dfe66a
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Thu May 26 08:58:31 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+RS_osl_source.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Source", "RS_osl_source") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    RS_osl_source.menu;
+
+    { HSTRETCH }
+
+    RS_osl_source.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(RS_osl_source.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+RS_osl_file.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ RS_osl_file.label = PARM_LABEL("OSL File", "RS_osl_file") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "RS_osl_file") LABELREF(RS_osl_file.label)
+	VALUE(RS_osl_file.val) HSTRETCH;
+
+    RS_osl_file.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(RS_osl_file.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    RS_osl_file.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(RS_osl_file.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+RS_osl_code.gad = ROW
+{
+
+    HSTRETCH JUSTIFY(left, top) HMARGIN(0.18, 0.1)
+        NO_MARGIN_SPACING_SCALE
+
+    RS_osl_code.label = PARM_LABEL("OSL Code", "RS_osl_code");
+
+    MULTILINE_PARM_FIELD ("RS_osl_code") 
+
+    	LABELREF(RS_osl_code.label) 
+
+    	VALUE(RS_osl_code.val) 
+    	SYNTAX("vex") 
+    	LINES(8,40) 
+    	HSTRETCH;
+
+    {
+
+	LAYOUT(vertical)
+	{
+	    SIZE(0, 0.26)
+	}
+
+    RS_osl_code.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(RS_osl_code.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+}
+RS_osl_codeLoad.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+RS_osl_codeLoad.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("RS_osl_codeLoad", "Load")
+	push VALUE(RS_osl_codeLoad.val);
+
+    {  }
+}
+
+RS_osl_codeSave.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    {  }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("RS_osl_codeSave", "Save")
+	push VALUE(RS_osl_codeSave.val);
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+RS_osl_sep1.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+RS_osl_compile.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+RS_osl_compile.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("RS_osl_compile", "Compile and Build GUI")
+	push VALUE(RS_osl_compile.val);
+
+    {  }
+}
+
+RS_osl_messages.sval := 1;
+
+RS_osl_messages.gad = 
+{
+    LAYOUT(vertical) SPACING(1p) HSTRETCH VMARGIN(0.05, 0)
+    HMARGIN(0, 0.1) NO_MARGIN_SPACING_SCALE
+
+    SWITCHER tight
+    {
+	VALUE(RS_osl_messages.sval) HSTRETCH
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+	    LABEL "" HSTRETCH;
+
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_osl_messages.val[0]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_osl_messages.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[1]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_osl_messages.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[2]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_osl_messages.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[3]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_osl_messages.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[4]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_osl_messages.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[5]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_osl_messages.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[6]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_osl_messages.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[7]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_osl_messages.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[8]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_osl_messages.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[9]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_osl_messages.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[10]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_osl_messages.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[11]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_osl_messages.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[12]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_osl_messages.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[12]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[13]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_osl_messages.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[12]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[13]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[14]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_osl_messages.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[12]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[13]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[14]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_osl_messages.val[15]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+    }
+}
+}	// Template join.bot
+
+
+RS_osl_logToConsole.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_osl_logToConsole", "Output Errors to Console") toggle VALUE(RS_osl_logToConsole.val);
+
+    { HSTRETCH }
+
+    RS_osl_logToConsole.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(RS_osl_logToConsole.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+RS_osl_sep2.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    RS_osl_source.gad; 
+    RS_osl_file.gad; 
+    RS_osl_code.gad; 
+    RS_osl_codeLoad.row.join; 
+    RS_osl_sep1.gad; 
+    RS_osl_compile.row.join; 
+    RS_osl_logToConsole.gad; 
+    RS_osl_sep2.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

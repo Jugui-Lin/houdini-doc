@@ -1,0 +1,67 @@
+// Magic: b1e8d660
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Sat May 21 17:46:34 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+jointmarkersize.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ jointmarkersize.label = PARM_LABEL("Joint Marker Size", "jointmarkersize") WIDTH(1.5);
+ PARM(integer, 1, "jointmarkersize", none, none) RANGE(2,10)
+	LOCK_RANGE_MIN LABELREF(jointmarkersize.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+layerfilter.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("layerfilter", "Limit Selection to Current Layer") toggle VALUE(layerfilter.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+minbonelength.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ minbonelength.label = PARM_LABEL("Minimum Bone Length", "minbonelength") WIDTH(1.5);
+ PARM(float, 1, "minbonelength", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(minbonelength.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    jointmarkersize.gad; 
+    layerfilter.gad; 
+    minbonelength.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

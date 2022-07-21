@@ -1,0 +1,341 @@
+// Magic: 64580683
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Thu May 12 05:57:31 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+translatestep.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ translatestep.label = PARM_LABEL("Translate Step", "translatestep") WIDTH(1.5);
+ PARM(float, 1, "translatestep", none, none) RANGE(0.001,5)
+	 LABELREF(translatestep.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pivot_comp_tx.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pivot_comp_tx.label = PARM_LABEL("Pivot Comp Tx", "pivot_comp_tx") WIDTH(1.5);
+ PARM(float, 1, "pivot_comp_tx", none, none) RANGE(-10,10)
+	 LABELREF(pivot_comp_tx.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pivot_comp_ty.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pivot_comp_ty.label = PARM_LABEL("Pivot Comp Ty", "pivot_comp_ty") WIDTH(1.5);
+ PARM(float, 1, "pivot_comp_ty", none, none) RANGE(-10,10)
+	 LABELREF(pivot_comp_ty.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pivot_comp_tz.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pivot_comp_tz.label = PARM_LABEL("Pivot Comp Tz", "pivot_comp_tz") WIDTH(1.5);
+ PARM(float, 1, "pivot_comp_tz", none, none) RANGE(-10,10)
+	 LABELREF(pivot_comp_tz.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pivot_comp_rx.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pivot_comp_rx.label = PARM_LABEL("Pivot Comp Rx", "pivot_comp_rx") WIDTH(1.5);
+ PARM(float, 1, "pivot_comp_rx", none, none) RANGE(-360,360)
+	 LABELREF(pivot_comp_rx.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pivot_comp_ry.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pivot_comp_ry.label = PARM_LABEL("Pivot Comp Ry", "pivot_comp_ry") WIDTH(1.5);
+ PARM(float, 1, "pivot_comp_ry", none, none) RANGE(-360,360)
+	 LABELREF(pivot_comp_ry.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pivot_comp_rz.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pivot_comp_rz.label = PARM_LABEL("Pivot Comp Rz", "pivot_comp_rz") WIDTH(1.5);
+ PARM(float, 1, "pivot_comp_rz", none, none) RANGE(-360,360)
+	 LABELREF(pivot_comp_rz.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pivot_comp_x_ty.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pivot_comp_x_ty.label = PARM_LABEL("Pivot Comp X Ty", "pivot_comp_x_ty") WIDTH(1.5);
+ PARM(float, 1, "pivot_comp_x_ty", none, none) RANGE(-10,10)
+	 LABELREF(pivot_comp_x_ty.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pivot_comp_x_tz.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pivot_comp_x_tz.label = PARM_LABEL("Pivot Comp X Tz", "pivot_comp_x_tz") WIDTH(1.5);
+ PARM(float, 1, "pivot_comp_x_tz", none, none) RANGE(-10,10)
+	 LABELREF(pivot_comp_x_tz.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pivot_comp_y_tx.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pivot_comp_y_tx.label = PARM_LABEL("Pivot Comp Y Tx", "pivot_comp_y_tx") WIDTH(1.5);
+ PARM(float, 1, "pivot_comp_y_tx", none, none) RANGE(-10,10)
+	 LABELREF(pivot_comp_y_tx.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pivot_comp_y_tz.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pivot_comp_y_tz.label = PARM_LABEL("Pivot Comp Y Tz", "pivot_comp_y_tz") WIDTH(1.5);
+ PARM(float, 1, "pivot_comp_y_tz", none, none) RANGE(-10,10)
+	 LABELREF(pivot_comp_y_tz.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pivot_comp_z_tx.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pivot_comp_z_tx.label = PARM_LABEL("Pivot Comp Z Tx", "pivot_comp_z_tx") WIDTH(1.5);
+ PARM(float, 1, "pivot_comp_z_tx", none, none) RANGE(-10,10)
+	 LABELREF(pivot_comp_z_tx.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pivot_comp_z_ty.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pivot_comp_z_ty.label = PARM_LABEL("Pivot Comp Z Ty", "pivot_comp_z_ty") WIDTH(1.5);
+ PARM(float, 1, "pivot_comp_z_ty", none, none) RANGE(-10,10)
+	 LABELREF(pivot_comp_z_ty.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+show_xaxis.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ show_xaxis.label = PARM_LABEL("Show X Axis", "show_xaxis") WIDTH(1.5);
+ PARM(integer, 1, "show_xaxis", none, none) RANGE(0,1)
+	 LABELREF(show_xaxis.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+show_yaxis.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ show_yaxis.label = PARM_LABEL("Show Y Axis", "show_yaxis") WIDTH(1.5);
+ PARM(integer, 1, "show_yaxis", none, none) RANGE(0,1)
+	 LABELREF(show_yaxis.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+show_zaxis.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ show_zaxis.label = PARM_LABEL("Show Z Axis", "show_zaxis") WIDTH(1.5);
+ PARM(integer, 1, "show_zaxis", none, none) RANGE(0,1)
+	 LABELREF(show_zaxis.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+t_positivexaxis.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ t_positivexaxis.label = PARM_LABEL("Translate Positive XAxis", "t_positivexaxis") WIDTH(1.5);
+ PARM(float, 1, "t_positivexaxis", none, none) RANGE(-10,10)
+	 LABELREF(t_positivexaxis.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+t_negativexaxis.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ t_negativexaxis.label = PARM_LABEL("Translate Negative XAxis", "t_negativexaxis") WIDTH(1.5);
+ PARM(float, 1, "t_negativexaxis", none, none) RANGE(-10,10)
+	 LABELREF(t_negativexaxis.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+t_positiveyaxis.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ t_positiveyaxis.label = PARM_LABEL("Translate Positive YAxis", "t_positiveyaxis") WIDTH(1.5);
+ PARM(float, 1, "t_positiveyaxis", none, none) RANGE(-10,10)
+	 LABELREF(t_positiveyaxis.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+t_negativeyaxis.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ t_negativeyaxis.label = PARM_LABEL("Translate Negative YAxis", "t_negativeyaxis") WIDTH(1.5);
+ PARM(float, 1, "t_negativeyaxis", none, none) RANGE(-10,10)
+	 LABELREF(t_negativeyaxis.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+t_positivezaxis.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ t_positivezaxis.label = PARM_LABEL("Translate Positive ZAxis", "t_positivezaxis") WIDTH(1.5);
+ PARM(float, 1, "t_positivezaxis", none, none) RANGE(-10,10)
+	 LABELREF(t_positivezaxis.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+t_negativezaxis.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ t_negativezaxis.label = PARM_LABEL("Translate Negative ZAxis", "t_negativezaxis") WIDTH(1.5);
+ PARM(float, 1, "t_negativezaxis", none, none) RANGE(-10,10)
+	 LABELREF(t_negativezaxis.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+handle_parameter_group.gad = 
+GROUP collapsible "Handle parameters" flat  
+{
+    VALUE(handle_parameter_group.gad.val) LAYOUT(vertical) HSTRETCH
+	    pivot_comp_tx.gad;		
+	    pivot_comp_ty.gad;		
+	    pivot_comp_tz.gad;		
+	    pivot_comp_rx.gad;		
+	    pivot_comp_ry.gad;		
+	    pivot_comp_rz.gad;		
+	    pivot_comp_x_ty.gad;		
+	    pivot_comp_x_tz.gad;		
+	    pivot_comp_y_tx.gad;		
+	    pivot_comp_y_tz.gad;		
+	    pivot_comp_z_tx.gad;		
+	    pivot_comp_z_ty.gad;		
+	    show_xaxis.gad;		
+	    show_yaxis.gad;		
+	    show_zaxis.gad;		
+	    t_positivexaxis.gad;		
+	    t_negativexaxis.gad;		
+	    t_positiveyaxis.gad;		
+	    t_negativeyaxis.gad;		
+	    t_positivezaxis.gad;		
+	    t_negativezaxis.gad;		
+} 
+
+# warning cpp warning: "GenV3/subdialog.top.ui":5 Macro "PARMSPACING" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":6 Macro "LAYOUTDIR" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":7 Macro "DO_JUSTIFY" redefined.  Using later definition
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    translatestep.gad; 
+    handle_parameter_group.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

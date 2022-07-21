@@ -1,0 +1,166 @@
+// Magic: 1f655bfa
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Tue May 10 19:42:35 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+group.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    group.label = PARM_LABEL("Group", "group") WIDTH(1.5);
+    PARM_FIELD(string, "group") VALUE(group.val) 
+	LABELREF(group.label) HSTRETCH;
+
+    group.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "BUTTONS_reselect" VALUE(group.script_action)
+	HELP("Select geometry from an available viewport.\nShift-click to turn on Select Groups.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+sepparm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+offset.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   offset.label = PARM_LABEL( "Offset", "offset" ) WIDTH(1.5);
+   PARM(float, 1, "offset", none, none) RANGE(-0.25, 0.25)
+	LABELREF( offset.label ) HSTRETCH;
+
+   { WIDTH(0.1) }
+}
+
+thickness.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   thickness.label = PARM_LABEL( "Thickness", "thickness" ) WIDTH(1.5);
+   PARM(float, 1, "thickness", none, none) RANGE(0, 1)
+	LABELREF( thickness.label ) HSTRETCH;
+
+   { WIDTH(0.1) }
+}
+
+keep.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("keep", "Keep Source") toggle VALUE(keep.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+sepparm2.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+scale.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   scale.label = PARM_LABEL( "Scale", "scale" ) WIDTH(1.5);
+   PARM(float, 1, "scale", none, none) RANGE(0.001, 2)
+	LABELREF( scale.label ) HSTRETCH;
+
+   { WIDTH(0.1) }
+}
+
+divisions.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ divisions.label = PARM_LABEL("Divisions", "divisions") WIDTH(1.5);
+ PARM(integer, 1, "divisions", none, none) RANGE(1,10)
+	LOCK_RANGE_MIN LABELREF(divisions.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+crease.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   crease.label = PARM_LABEL( "Crease", "crease" ) WIDTH(1.5);
+   PARM(float, 1, "crease", none, none) RANGE(0, 0.10000000000000001)
+	LABELREF( crease.label ) HSTRETCH;
+
+   { WIDTH(0.1) }
+}
+
+crease_flatness_angle.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ crease_flatness_angle.label = PARM_LABEL("Flatness Angle", "crease_flatness_angle") WIDTH(1.5);
+ PARM(float, 1, "crease_flatness_angle", none, none) RANGE(0,180)
+	LOCK_RANGE LABELREF(crease_flatness_angle.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+# warning cpp warning: "GenV3/subdialog.top.ui":5 Macro "PARMSPACING" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":6 Macro "LAYOUTDIR" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":7 Macro "DO_JUSTIFY" redefined.  Using later definition
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    group.gad; 
+    sepparm.gad; 
+    offset.gad; 
+    thickness.gad; 
+    keep.gad; 
+    sepparm2.gad; 
+    scale.gad; 
+    divisions.gad; 
+    crease.gad; 
+    crease_flatness_angle.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

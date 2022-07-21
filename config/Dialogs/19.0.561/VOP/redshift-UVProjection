@@ -1,0 +1,273 @@
+// Magic: 88693b1f
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Sun May 29 10:22:18 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+isLeftHanded.gad = NULL { }
+yIsUp.gad = NULL { }
+
+color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    color.label = PARM_LABEL("Color", "color") WIDTH(1.5);
+    PARM(float, 4, "color", none, COLOR, "R,G,B,A") 
+	LABELREF(color.label) HSTRETCH;
+
+    color.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(color.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+proj_type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Projection Type", "proj_type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    proj_type.menu;
+
+    { HSTRETCH }
+
+    proj_type.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(proj_type.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+coord_space.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Coord Space", "coord_space") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    coord_space.menu;
+
+    { HSTRETCH }
+
+    coord_space.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(coord_space.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+angle_u.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ angle_u.label = PARM_LABEL("U Angle", "angle_u") WIDTH(1.5);
+ PARM(float, 1, "angle_u", none, none) RANGE(0,360)
+	 LABELREF(angle_u.label) HSTRETCH;
+
+    angle_u.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(angle_u.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+angle_v.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ angle_v.label = PARM_LABEL("V Angle", "angle_v") WIDTH(1.5);
+ PARM(float, 1, "angle_v", none, none) RANGE(0,360)
+	 LABELREF(angle_v.label) HSTRETCH;
+
+    angle_v.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(angle_v.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+coord_scale.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   coord_scale.label = PARM_LABEL("Scale", "coord_scale") WIDTH(1.5);
+   PARM(float, 3, "coord_scale", none, none, "#1,#2,#3")
+	RANGE(1.1754943508222875e-38,3.4028234663852886e+38)  LABELREF(coord_scale.label)
+	HSTRETCH;
+
+    coord_scale.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(coord_scale.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+coord_rotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   coord_rotate.label = PARM_LABEL("Rotate", "coord_rotate") WIDTH(1.5);
+   PARM(float, 3, "coord_rotate", none, none, "#1,#2,#3")
+	RANGE(1.1754943508222875e-38,3.4028234663852886e+38)  LABELREF(coord_rotate.label)
+	HSTRETCH;
+
+    coord_rotate.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(coord_rotate.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+coord_offset.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   coord_offset.label = PARM_LABEL("Offset", "coord_offset") WIDTH(1.5);
+   PARM(float, 3, "coord_offset", none, none, "#1,#2,#3")
+	RANGE(1.1754943508222875e-38,3.4028234663852886e+38)  LABELREF(coord_offset.label)
+	HSTRETCH;
+
+    coord_offset.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(coord_offset.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+uv_scale.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   uv_scale.label = PARM_LABEL("Scale", "uv_scale") WIDTH(1.5);
+   PARM(float, 2, "uv_scale", none, none, "#1,#2")
+	RANGE(1.1754943508222875e-38,3.4028234663852886e+38)  LABELREF(uv_scale.label)
+	HSTRETCH;
+
+    uv_scale.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(uv_scale.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+uv_offset.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   uv_offset.label = PARM_LABEL("Offset", "uv_offset") WIDTH(1.5);
+   PARM(float, 2, "uv_offset", none, none, "#1,#2")
+	RANGE(1.1754943508222875e-38,3.4028234663852886e+38)  LABELREF(uv_offset.label)
+	HSTRETCH;
+
+    uv_offset.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(uv_offset.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+uv_rotate.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ uv_rotate.label = PARM_LABEL("Rotate", "uv_rotate") WIDTH(1.5);
+ PARM(float, 1, "uv_rotate", none, none) RANGE(0,360)
+	 LABELREF(uv_rotate.label) HSTRETCH;
+
+    uv_rotate.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(uv_rotate.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+shader_skipdefvalparms.gad = NULL { }
+
+UV_Remap_3.gad = 
+
+GROUP simple "UV Remap" flat 
+{ 
+    VALUE(UV_Remap_3.gad.val) LAYOUT(vertical) HSTRETCH 
+	    uv_scale.gad;		
+	    uv_offset.gad;		
+	    uv_rotate.gad;		
+} 
+
+Transform_2.gad = 
+
+GROUP simple "Transform" flat 
+{ 
+    VALUE(Transform_2.gad.val) LAYOUT(vertical) HSTRETCH 
+	    coord_scale.gad;		
+	    coord_rotate.gad;		
+	    coord_offset.gad;		
+} 
+
+Coordinates_1.gad = 
+
+GROUP simple "Coordinates" flat 
+{ 
+    VALUE(Coordinates_1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    proj_type.gad;		
+	    coord_space.gad;		
+	    angle_u.gad;		
+	    angle_v.gad;		
+	    Transform_2.gad;		
+} 
+
+Texture_0.gad = 
+
+GROUP simple "Texture" flat 
+{ 
+    VALUE(Texture_0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    color.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    isLeftHanded.gad; 
+    yIsUp.gad; 
+    Texture_0.gad; 
+    Coordinates_1.gad; 
+    UV_Remap_3.gad; 
+    shader_skipdefvalparms.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

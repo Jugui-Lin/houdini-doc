@@ -1,0 +1,63 @@
+// Magic: 5bd053d0
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Tue May 31 17:58:46 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+attribute.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    attribute.label = PARM_LABEL("Attribute", "attribute") WIDTH(1.5);
+    PARM_FIELD(string, "attribute") VALUE(attribute.val) 
+	LABELREF(attribute.label) HSTRETCH;
+
+    attribute.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(attribute.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+default.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ default.label = PARM_LABEL("Default", "default") WIDTH(1.5);
+ PARM(float, 1, "default", none, none) RANGE(0,1)
+	 LABELREF(default.label) HSTRETCH;
+
+    default.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(default.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+float.gad = NULL { }
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    attribute.gad; 
+    default.gad; 
+    float.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

@@ -1,0 +1,387 @@
+// Magic: 8b02538
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Tue May 24 19:21:38 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+ptgroup.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    ptgroup.label = PARM_LABEL("Point Group", "ptgroup") WIDTH(1.5);
+    PARM_FIELD(string, "ptgroup") VALUE(ptgroup.val) 
+	LABELREF(ptgroup.label) HSTRETCH;
+
+    ptgroup.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "BUTTONS_reselect" VALUE(ptgroup.script_action)
+	HELP("Select geometry from an available viewport.\nShift-click to turn on Select Groups.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+ptsort.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Point Sort", "ptsort") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    ptsort.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+pointseed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pointseed.label = PARM_LABEL("Seed", "pointseed") WIDTH(1.5);
+ PARM(integer, 1, "pointseed", none, none) RANGE(0,200)
+	 LABELREF(pointseed.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pointoffset.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pointoffset.label = PARM_LABEL("Offset", "pointoffset") WIDTH(1.5);
+ PARM(integer, 1, "pointoffset", none, none) RANGE(0,200)
+	 LABELREF(pointoffset.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pointprox.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   pointprox.label = PARM_LABEL("Point", "pointprox") WIDTH(1.5);
+   PARM(float, 3, "pointprox", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(pointprox.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+pointobjpath.gad = NULL { }
+
+pointdir.gad = ROW 
+{
+    HSTRETCH
+   { WIDTH(0.18) }
+
+    pointdir.label = PARM_LABEL("Vector", "pointdir") WIDTH(1.5);
+    PARM(float, 3, "pointdir", none, none) LABELREF(pointdir.label)
+	HSTRETCH;
+
+   { WIDTH(0.1) }
+}
+
+pointangleoffset.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   pointangleoffset.label = PARM_LABEL( "Angle Offset", "pointangleoffset" ) WIDTH(1.5);
+   PARM(float, 1, "pointangleoffset", none, none) RANGE(-360, 360)
+	LABELREF( pointangleoffset.label ) HSTRETCH;
+
+   { WIDTH(0.1) }
+}
+
+pointexpr.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pointexpr.label = PARM_LABEL("Expression", "pointexpr") WIDTH(1.5);
+ PARM(float, 1, "pointexpr", none, none) RANGE(0,200)
+	 LABELREF(pointexpr.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pointattrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    pointattrib.label = PARM_LABEL("Attribute", "pointattrib") WIDTH(1.5);
+    PARM_FIELD(string, "pointattrib") VALUE(pointattrib.val) 
+	LABELREF(pointattrib.label) HSTRETCH;
+
+    pointattrib.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+pointattribcomp.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pointattribcomp.label = PARM_LABEL("Component", "pointattribcomp") WIDTH(1.5);
+ PARM(integer, 1, "pointattribcomp", none, none) RANGE(0,10)
+	 LABELREF(pointattribcomp.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pointreverse.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("pointreverse", "Reverse Point Sort") toggle VALUE(pointreverse.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+primgroup.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    primgroup.label = PARM_LABEL("Primitive Group", "primgroup") WIDTH(1.5);
+    PARM_FIELD(string, "primgroup") VALUE(primgroup.val) 
+	LABELREF(primgroup.label) HSTRETCH;
+
+    primgroup.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "BUTTONS_reselect" VALUE(primgroup.script_action)
+	HELP("Select geometry from an available viewport.\nShift-click to turn on Select Groups.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+primsort.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Primitive Sort", "primsort") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    primsort.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+primseed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ primseed.label = PARM_LABEL("Seed", "primseed") WIDTH(1.5);
+ PARM(integer, 1, "primseed", none, none) RANGE(0,200)
+	 LABELREF(primseed.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+primoffset.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ primoffset.label = PARM_LABEL("Offset", "primoffset") WIDTH(1.5);
+ PARM(integer, 1, "primoffset", none, none) RANGE(0,200)
+	 LABELREF(primoffset.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+primprox.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   primprox.label = PARM_LABEL("Point", "primprox") WIDTH(1.5);
+   PARM(float, 3, "primprox", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(primprox.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+primobjpath.gad = NULL { }
+
+primdir.gad = ROW 
+{
+    HSTRETCH
+   { WIDTH(0.18) }
+
+    primdir.label = PARM_LABEL("Vector", "primdir") WIDTH(1.5);
+    PARM(float, 3, "primdir", none, none) LABELREF(primdir.label)
+	HSTRETCH;
+
+   { WIDTH(0.1) }
+}
+
+primangleoffset.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   primangleoffset.label = PARM_LABEL( "Angle Offset", "primangleoffset" ) WIDTH(1.5);
+   PARM(float, 1, "primangleoffset", none, none) RANGE(-360, 360)
+	LABELREF( primangleoffset.label ) HSTRETCH;
+
+   { WIDTH(0.1) }
+}
+
+primexpr.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ primexpr.label = PARM_LABEL("Expression", "primexpr") WIDTH(1.5);
+ PARM(float, 1, "primexpr", none, none) RANGE(0,200)
+	 LABELREF(primexpr.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+primattrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    primattrib.label = PARM_LABEL("Attribute", "primattrib") WIDTH(1.5);
+    PARM_FIELD(string, "primattrib") VALUE(primattrib.val) 
+	LABELREF(primattrib.label) HSTRETCH;
+
+    primattrib.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+primattribcomp.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ primattribcomp.label = PARM_LABEL("Component", "primattribcomp") WIDTH(1.5);
+ PARM(integer, 1, "primattribcomp", none, none) RANGE(0,10)
+	 LABELREF(primattribcomp.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+primreverse.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("primreverse", "Reverse Primitive Sort") toggle VALUE(primreverse.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+vertexprimorder.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("vertexprimorder", "Sort Vertices by Order in Primitives") toggle VALUE(vertexprimorder.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+primitivesFolder2.gad = 
+
+GROUP simple "Primitives" flat 
+{ 
+    VALUE(primitivesFolder2.gad.val) LAYOUT(vertical) HSTRETCH 
+	    primgroup.gad;		
+	    primsort.gad;		
+	    primseed.gad;		
+	    primoffset.gad;		
+	    primprox.gad;		
+	    primobjpath.gad;		
+	    primdir.gad;		
+	    primangleoffset.gad;		
+	    primexpr.gad;		
+	    primattrib.gad;		
+	    primattribcomp.gad;		
+	    primreverse.gad;		
+	    vertexprimorder.gad;		
+} 
+
+pointsFolder.gad = 
+
+GROUP simple "Points" flat 
+{ 
+    VALUE(pointsFolder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    ptgroup.gad;		
+	    ptsort.gad;		
+	    pointseed.gad;		
+	    pointoffset.gad;		
+	    pointprox.gad;		
+	    pointobjpath.gad;		
+	    pointdir.gad;		
+	    pointangleoffset.gad;		
+	    pointexpr.gad;		
+	    pointattrib.gad;		
+	    pointattribcomp.gad;		
+	    pointreverse.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    pointsFolder.gad; 
+    primitivesFolder2.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

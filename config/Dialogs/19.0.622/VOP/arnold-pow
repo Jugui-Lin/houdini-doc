@@ -1,0 +1,67 @@
+// Magic: 83f38d13
+// Automatically generated PSI dialog (PSI version 19.0.622)
+// Sat Jun  4 23:29:42 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+base.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    base.label = PARM_LABEL("Base", "base") WIDTH(1.5);
+    PARM(float, 3, "base", none, COLOR, "R,G,B") 
+	LABELREF(base.label) HSTRETCH;
+
+    base.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(base.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+exponent.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    exponent.label = PARM_LABEL("Exponent", "exponent") WIDTH(1.5);
+    PARM(float, 3, "exponent", none, COLOR, "R,G,B") 
+	LABELREF(exponent.label) HSTRETCH;
+
+    exponent.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(exponent.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+rgb.gad = NULL { }
+r.gad = NULL { }
+g.gad = NULL { }
+b.gad = NULL { }
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    base.gad; 
+    exponent.gad; 
+    rgb.gad; 
+    r.gad; 
+    g.gad; 
+    b.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

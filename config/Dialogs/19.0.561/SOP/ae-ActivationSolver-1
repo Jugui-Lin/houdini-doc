@@ -1,0 +1,213 @@
+// Magic: 1559c15c
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Wed May  4 11:34:33 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+vis.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("vis", "Visualise") toggle VALUE(vis.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+resimulate.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("resimulate", "Reset Simulation")
+	push VALUE(resimulate.val);
+
+    { WIDTH(0.1) }
+}
+
+output_type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Output", "output_type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    output_type.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+match_id.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+match_id.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+match_id.gad = PARM_BUTTON("match_id", "") toggle VALUE(match_id.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+id_attr.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    id_attr.label = PARM_LABEL("Match by \"id\" Attrib", "id_attr") WIDTH(1.32);
+    PARM_FIELD(string, "id_attr") VALUE(id_attr.val) 
+	LABELREF(id_attr.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+fstart.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ fstart.label = PARM_LABEL("Start Frame", "fstart") WIDTH(1.5);
+ PARM(integer, 1, "fstart", none, none) RANGE(0,10)
+	 LABELREF(fstart.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+fdur2.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ fdur2.label = PARM_LABEL("Max Frame Delay", "fdur2") WIDTH(1.5);
+ PARM(integer, 1, "fdur2", none, none) RANGE(0,10)
+	 LABELREF(fdur2.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+seed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ seed.label = PARM_LABEL("Random Seed", "seed") WIDTH(1.5);
+ PARM(integer, 1, "seed", none, none) RANGE(0,10)
+	 LABELREF(seed.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+seed_attrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    seed_attrib.label = PARM_LABEL("Seed Attribute", "seed_attrib") WIDTH(1.5);
+    PARM_FIELD(string, "seed_attrib") VALUE(seed_attrib.val) 
+	LABELREF(seed_attrib.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+attr.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    attr.label = PARM_LABEL("Attribute", "attr") WIDTH(1.5);
+    PARM_FIELD(string, "attr") VALUE(attr.val) 
+	LABELREF(attr.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+thresh.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ thresh.label = PARM_LABEL("Activate Above Value", "thresh") WIDTH(1.5);
+ PARM(float, 1, "thresh", none, none) RANGE(0,1)
+	 LABELREF(thresh.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+random.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    { LOOK(none) SIZE(0, 0.05) }	
+
+    TABDIALOG radio
+    { 
+	VALUE(random.gad.val) STRETCH(1,0)
+
+	TAB "Random Activation"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    fstart.gad;		
+	    fdur2.gad;		
+	    seed.gad;		
+	    seed_attrib.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Activate by Attribute Value"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    attr.gad;		
+	    thresh.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    vis.gad; 
+    resimulate.gad; 
+    output_type.gad; 
+    match_id.row.join; 
+    random.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

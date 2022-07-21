@@ -1,0 +1,1936 @@
+// Magic: d2dfc969
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Sat May 28 09:57:53 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+mastertranslate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   mastertranslate.label = PARM_LABEL("Master Translate", "mastertranslate") WIDTH(1.5);
+   PARM(float, 3, "mastertranslate", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(mastertranslate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+masterrotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   masterrotate.label = PARM_LABEL("Master Rotate", "masterrotate") WIDTH(1.5);
+   PARM(float, 3, "masterrotate", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(masterrotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+masterscale.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   masterscale.label = PARM_LABEL("Master Scale", "masterscale") WIDTH(1.5);
+   PARM(float, 3, "masterscale", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(masterscale.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+masteruniformscale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ masteruniformscale.label = PARM_LABEL("Master Uniform Scale", "masteruniformscale") WIDTH(1.5);
+ PARM(float, 1, "masteruniformscale", none, none) RANGE(0,10)
+	 LABELREF(masteruniformscale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+ctrlmasterspace.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ ctrlmasterspace.label = PARM_LABEL("Custom Space", "ctrlmasterspace") WIDTH(1.5);
+ PARM_FIELD(pathstring, "ctrlmasterspace") VALUE(ctrlmasterspace.val) 
+	LABELREF(ctrlmasterspace.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(ctrlmasterspace.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(ctrlmasterspace.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+ctrlmasterspaceblend.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ ctrlmasterspaceblend.label = PARM_LABEL("Custom Space Blend", "ctrlmasterspaceblend") WIDTH(1.5);
+ PARM(float, 1, "ctrlmasterspaceblend", none, none) RANGE(0,10)
+	 LABELREF(ctrlmasterspaceblend.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+cogtranslate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   cogtranslate.label = PARM_LABEL("COG Translate", "cogtranslate") WIDTH(1.5);
+   PARM(float, 3, "cogtranslate", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(cogtranslate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+cogrotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   cogrotate.label = PARM_LABEL("COG Rotate", "cogrotate") WIDTH(1.5);
+   PARM(float, 3, "cogrotate", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(cogrotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+hipstranslate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   hipstranslate.label = PARM_LABEL("Hips Translate", "hipstranslate") WIDTH(1.5);
+   PARM(float, 3, "hipstranslate", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(hipstranslate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+hipsrotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   hipsrotate.label = PARM_LABEL("Hips Rotate", "hipsrotate") WIDTH(1.5);
+   PARM(float, 3, "hipsrotate", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(hipsrotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+spinerotate1.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   spinerotate1.label = PARM_LABEL("Spine 1 Rotate", "spinerotate1") WIDTH(1.5);
+   PARM(float, 3, "spinerotate1", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(spinerotate1.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+spinerotate2.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   spinerotate2.label = PARM_LABEL("Spine 2 Rotate", "spinerotate2") WIDTH(1.5);
+   PARM(float, 3, "spinerotate2", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(spinerotate2.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+spinerotate3.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   spinerotate3.label = PARM_LABEL("Spine 3 Rotate", "spinerotate3") WIDTH(1.5);
+   PARM(float, 3, "spinerotate3", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(spinerotate3.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+neckrotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   neckrotate.label = PARM_LABEL("Neck Rotate", "neckrotate") WIDTH(1.5);
+   PARM(float, 3, "neckrotate", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(neckrotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+headrotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   headrotate.label = PARM_LABEL("Head Rotate", "headrotate") WIDTH(1.5);
+   PARM(float, 3, "headrotate", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(headrotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+ctrlheadspaceblend.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ ctrlheadspaceblend.label = PARM_LABEL("Head World Space Blend", "ctrlheadspaceblend") WIDTH(1.5);
+ PARM(float, 1, "ctrlheadspaceblend", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(ctrlheadspaceblend.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+eyeslookattranslate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   eyeslookattranslate.label = PARM_LABEL("Eyes Lookat Translate", "eyeslookattranslate") WIDTH(1.5);
+   PARM(float, 3, "eyeslookattranslate", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(eyeslookattranslate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+eyeleftlookattranslate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   eyeleftlookattranslate.label = PARM_LABEL("Eye Left Lookat Translate", "eyeleftlookattranslate") WIDTH(1.5);
+   PARM(float, 3, "eyeleftlookattranslate", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(eyeleftlookattranslate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+eyerightlookattranslate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   eyerightlookattranslate.label = PARM_LABEL("Eye Right Lookat Translate", "eyerightlookattranslate") WIDTH(1.5);
+   PARM(float, 3, "eyerightlookattranslate", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(eyerightlookattranslate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+eyeleftlidrotate.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ eyeleftlidrotate.label = PARM_LABEL("Eyelid Left Rotate", "eyeleftlidrotate") WIDTH(1.5);
+ PARM(float, 1, "eyeleftlidrotate", none, none) RANGE(-180,180)
+	LOCK_RANGE LABELREF(eyeleftlidrotate.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+eyerightlidrotate.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ eyerightlidrotate.label = PARM_LABEL("Eyelid Right Rotate", "eyerightlidrotate") WIDTH(1.5);
+ PARM(float, 1, "eyerightlidrotate", none, none) RANGE(-180,180)
+	LOCK_RANGE LABELREF(eyerightlidrotate.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+eyelookatcustomspace.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ eyelookatcustomspace.label = PARM_LABEL("Eyes Lookat Custom Space", "eyelookatcustomspace") WIDTH(1.5);
+ PARM_FIELD(pathstring, "eyelookatcustomspace") VALUE(eyelookatcustomspace.val) 
+	LABELREF(eyelookatcustomspace.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(eyelookatcustomspace.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(eyelookatcustomspace.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+eyelookatcustomspaceblend.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ eyelookatcustomspaceblend.label = PARM_LABEL("Custom Space Blend", "eyelookatcustomspaceblend") WIDTH(1.5);
+ PARM(float, 1, "eyelookatcustomspaceblend", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(eyelookatcustomspaceblend.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+fkikleftarm.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ fkikleftarm.label = PARM_LABEL("FKIK Blend Left Arm", "fkikleftarm") WIDTH(1.5);
+ PARM(float, 1, "fkikleftarm", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(fkikleftarm.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm5.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+shoulderlefttranslate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   shoulderlefttranslate.label = PARM_LABEL("Shoulder Translate", "shoulderlefttranslate") WIDTH(1.5);
+   PARM(float, 3, "shoulderlefttranslate", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(shoulderlefttranslate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+ikwristlefttranslate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   ikwristlefttranslate.label = PARM_LABEL("IK Wrist Translate", "ikwristlefttranslate") WIDTH(1.5);
+   PARM(float, 3, "ikwristlefttranslate", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(ikwristlefttranslate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+ikwristleftrotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   ikwristleftrotate.label = PARM_LABEL("IK Wrist Rotate", "ikwristleftrotate") WIDTH(1.5);
+   PARM(float, 3, "ikwristleftrotate", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(ikwristleftrotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+ikwristleftspace.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ ikwristleftspace.label = PARM_LABEL("Local-World Blend", "ikwristleftspace") WIDTH(1.5);
+ PARM(float, 1, "ikwristleftspace", none, none) RANGE(0,1)
+	 LABELREF(ikwristleftspace.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+ikleftarmtwist.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   ikleftarmtwist.label = PARM_LABEL("IK Twist Translate", "ikleftarmtwist") WIDTH(1.5);
+   PARM(float, 3, "ikleftarmtwist", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(ikleftarmtwist.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+upperarmleftrotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   upperarmleftrotate.label = PARM_LABEL("FK Upperarm Rotate", "upperarmleftrotate") WIDTH(1.5);
+   PARM(float, 3, "upperarmleftrotate", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(upperarmleftrotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+forearmleftrotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   forearmleftrotate.label = PARM_LABEL("FK Forearm Rotate", "forearmleftrotate") WIDTH(1.5);
+   PARM(float, 3, "forearmleftrotate", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(forearmleftrotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+handleftrotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   handleftrotate.label = PARM_LABEL("FK Hand Rotate", "handleftrotate") WIDTH(1.5);
+   PARM(float, 3, "handleftrotate", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(handleftrotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+ctrlikwristleftspace.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ ctrlikwristleftspace.label = PARM_LABEL("Custom Space", "ctrlikwristleftspace") WIDTH(1.5);
+ PARM_FIELD(pathstring, "ctrlikwristleftspace") VALUE(ctrlikwristleftspace.val) 
+	LABELREF(ctrlikwristleftspace.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(ctrlikwristleftspace.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(ctrlikwristleftspace.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+ctrlikwristleftspaceblend.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ ctrlikwristleftspaceblend.label = PARM_LABEL("Custom Space Blend", "ctrlikwristleftspaceblend") WIDTH(1.5);
+ PARM(float, 1, "ctrlikwristleftspaceblend", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(ctrlikwristleftspaceblend.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+fkikrightarm.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ fkikrightarm.label = PARM_LABEL("FKIK Blend Right Arm", "fkikrightarm") WIDTH(1.5);
+ PARM(float, 1, "fkikrightarm", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(fkikrightarm.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm6.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+rightshouldertranslate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   rightshouldertranslate.label = PARM_LABEL("Shoulder Translate", "rightshouldertranslate") WIDTH(1.5);
+   PARM(float, 3, "rightshouldertranslate", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(rightshouldertranslate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+ikwristrighttranslate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   ikwristrighttranslate.label = PARM_LABEL("IK Wrist Translate", "ikwristrighttranslate") WIDTH(1.5);
+   PARM(float, 3, "ikwristrighttranslate", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(ikwristrighttranslate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+ikwristrightrotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   ikwristrightrotate.label = PARM_LABEL("IK Wrist Rotate", "ikwristrightrotate") WIDTH(1.5);
+   PARM(float, 3, "ikwristrightrotate", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(ikwristrightrotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+ikwristrightspace.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ ikwristrightspace.label = PARM_LABEL("Local-World Blend", "ikwristrightspace") WIDTH(1.5);
+ PARM(float, 1, "ikwristrightspace", none, none) RANGE(0,1)
+	 LABELREF(ikwristrightspace.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+ikrightarmtwist.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   ikrightarmtwist.label = PARM_LABEL("IK Twist Translate", "ikrightarmtwist") WIDTH(1.5);
+   PARM(float, 3, "ikrightarmtwist", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(ikrightarmtwist.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+upperarmrightrotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   upperarmrightrotate.label = PARM_LABEL("FK Upperarm Rotate", "upperarmrightrotate") WIDTH(1.5);
+   PARM(float, 3, "upperarmrightrotate", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(upperarmrightrotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+forearmrightrotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   forearmrightrotate.label = PARM_LABEL("FK Forearm Rotate", "forearmrightrotate") WIDTH(1.5);
+   PARM(float, 3, "forearmrightrotate", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(forearmrightrotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+handrightrotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   handrightrotate.label = PARM_LABEL("FK Hand Rotate", "handrightrotate") WIDTH(1.5);
+   PARM(float, 3, "handrightrotate", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(handrightrotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+ctrlikwristrightspace.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ ctrlikwristrightspace.label = PARM_LABEL("Custom Space", "ctrlikwristrightspace") WIDTH(1.5);
+ PARM_FIELD(pathstring, "ctrlikwristrightspace") VALUE(ctrlikwristrightspace.val) 
+	LABELREF(ctrlikwristrightspace.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(ctrlikwristrightspace.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(ctrlikwristrightspace.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+ctrlikwristrightspaceblend.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ ctrlikwristrightspaceblend.label = PARM_LABEL("Custom Space Blend", "ctrlikwristrightspaceblend") WIDTH(1.5);
+ PARM(float, 1, "ctrlikwristrightspaceblend", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(ctrlikwristrightspaceblend.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+leftthumb2rotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   leftthumb2rotate.label = PARM_LABEL("Thumb 1 Rotate", "leftthumb2rotate") WIDTH(1.5);
+   PARM(float, 3, "leftthumb2rotate", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(leftthumb2rotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+leftthumb3rotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   leftthumb3rotate.label = PARM_LABEL("Thumb 2 Rotate", "leftthumb3rotate") WIDTH(1.5);
+   PARM(float, 3, "leftthumb3rotate", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(leftthumb3rotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+leftmiddle1rotate.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ leftmiddle1rotate.label = PARM_LABEL("Middle 1 Rotate", "leftmiddle1rotate") WIDTH(1.5);
+ PARM(float, 1, "leftmiddle1rotate", none, none) RANGE(0,360)
+	 LABELREF(leftmiddle1rotate.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+leftmiddle2rotate.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ leftmiddle2rotate.label = PARM_LABEL("Middle 2 Rotate", "leftmiddle2rotate") WIDTH(1.5);
+ PARM(float, 1, "leftmiddle2rotate", none, none) RANGE(0,360)
+	 LABELREF(leftmiddle2rotate.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+leftmiddle3rotate.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ leftmiddle3rotate.label = PARM_LABEL("Middle 3 Rotate", "leftmiddle3rotate") WIDTH(1.5);
+ PARM(float, 1, "leftmiddle3rotate", none, none) RANGE(0,360)
+	 LABELREF(leftmiddle3rotate.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+rightthumb2rotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   rightthumb2rotate.label = PARM_LABEL("Thumb 1 Rotate", "rightthumb2rotate") WIDTH(1.5);
+   PARM(float, 3, "rightthumb2rotate", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(rightthumb2rotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+rightthumb3rotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   rightthumb3rotate.label = PARM_LABEL("Thumb 2 Rotate", "rightthumb3rotate") WIDTH(1.5);
+   PARM(float, 3, "rightthumb3rotate", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(rightthumb3rotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+rightmiddle1rotate.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ rightmiddle1rotate.label = PARM_LABEL("Middle 1 Rotate", "rightmiddle1rotate") WIDTH(1.5);
+ PARM(float, 1, "rightmiddle1rotate", none, none) RANGE(0,360)
+	 LABELREF(rightmiddle1rotate.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+rightmiddle2rotate.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ rightmiddle2rotate.label = PARM_LABEL("Middle 2 Rotate", "rightmiddle2rotate") WIDTH(1.5);
+ PARM(float, 1, "rightmiddle2rotate", none, none) RANGE(0,360)
+	 LABELREF(rightmiddle2rotate.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+rightmiddle3rotate.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ rightmiddle3rotate.label = PARM_LABEL("Middle 3 Rotate", "rightmiddle3rotate") WIDTH(1.5);
+ PARM(float, 1, "rightmiddle3rotate", none, none) RANGE(0,360)
+	 LABELREF(rightmiddle3rotate.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+fkikleftleg.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ fkikleftleg.label = PARM_LABEL("FKIK Blend Leg", "fkikleftleg") WIDTH(1.5);
+ PARM(float, 1, "fkikleftleg", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(fkikleftleg.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm2.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+lefthiptranslate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   lefthiptranslate.label = PARM_LABEL("Hip Translate", "lefthiptranslate") WIDTH(1.5);
+   PARM(float, 3, "lefthiptranslate", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(lefthiptranslate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+ikfootlefttranslate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   ikfootlefttranslate.label = PARM_LABEL("IK Foot Translate", "ikfootlefttranslate") WIDTH(1.5);
+   PARM(float, 3, "ikfootlefttranslate", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(ikfootlefttranslate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+ikfootleftrotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   ikfootleftrotate.label = PARM_LABEL("IK Foot Rotate", "ikfootleftrotate") WIDTH(1.5);
+   PARM(float, 3, "ikfootleftrotate", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(ikfootleftrotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+iktoetiplefttranslate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   iktoetiplefttranslate.label = PARM_LABEL("IK Toetip Translate", "iktoetiplefttranslate") WIDTH(1.5);
+   PARM(float, 3, "iktoetiplefttranslate", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(iktoetiplefttranslate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+iktoetipleftrotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   iktoetipleftrotate.label = PARM_LABEL("IK Toetip Rotate", "iktoetipleftrotate") WIDTH(1.5);
+   PARM(float, 3, "iktoetipleftrotate", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(iktoetipleftrotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+ikfootballleftrotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   ikfootballleftrotate.label = PARM_LABEL("IK Football Rotate", "ikfootballleftrotate") WIDTH(1.5);
+   PARM(float, 3, "ikfootballleftrotate", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(ikfootballleftrotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+iktoeleftrotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   iktoeleftrotate.label = PARM_LABEL("IK Toe Rotate", "iktoeleftrotate") WIDTH(1.5);
+   PARM(float, 3, "iktoeleftrotate", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(iktoeleftrotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+ikleglefttwisttranslate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   ikleglefttwisttranslate.label = PARM_LABEL("IK Twist Translate", "ikleglefttwisttranslate") WIDTH(1.5);
+   PARM(float, 3, "ikleglefttwisttranslate", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(ikleglefttwisttranslate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+ikleglefttwistblend.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ ikleglefttwistblend.label = PARM_LABEL("IK Twist Hip Foot Blend", "ikleglefttwistblend") WIDTH(1.5);
+ PARM(float, 1, "ikleglefttwistblend", none, none) RANGE(0,1)
+	 LABELREF(ikleglefttwistblend.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm7.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+fkthighleftrotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   fkthighleftrotate.label = PARM_LABEL("FK Thigh Rotate", "fkthighleftrotate") WIDTH(1.5);
+   PARM(float, 3, "fkthighleftrotate", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(fkthighleftrotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+fkcalfleftrotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   fkcalfleftrotate.label = PARM_LABEL("FK Calf Rotate", "fkcalfleftrotate") WIDTH(1.5);
+   PARM(float, 3, "fkcalfleftrotate", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(fkcalfleftrotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+fkfootleftrotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   fkfootleftrotate.label = PARM_LABEL("FK Foot Rotate", "fkfootleftrotate") WIDTH(1.5);
+   PARM(float, 3, "fkfootleftrotate", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(fkfootleftrotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+fktoeleftrotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   fktoeleftrotate.label = PARM_LABEL("FK Toe Rotate", "fktoeleftrotate") WIDTH(1.5);
+   PARM(float, 3, "fktoeleftrotate", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(fktoeleftrotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+ctrlikfootleftspace.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ ctrlikfootleftspace.label = PARM_LABEL("Custom Space", "ctrlikfootleftspace") WIDTH(1.5);
+ PARM_FIELD(pathstring, "ctrlikfootleftspace") VALUE(ctrlikfootleftspace.val) 
+	LABELREF(ctrlikfootleftspace.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(ctrlikfootleftspace.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(ctrlikfootleftspace.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+ctrlikfootleftspaceblend.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ ctrlikfootleftspaceblend.label = PARM_LABEL("Custom Space Blend", "ctrlikfootleftspaceblend") WIDTH(1.5);
+ PARM(float, 1, "ctrlikfootleftspaceblend", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(ctrlikfootleftspaceblend.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+fkikrightleg.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ fkikrightleg.label = PARM_LABEL("FIKIK Blend Leg", "fkikrightleg") WIDTH(1.5);
+ PARM(float, 1, "fkikrightleg", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(fkikrightleg.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm3.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+righthiptranslate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   righthiptranslate.label = PARM_LABEL("Hip Translate", "righthiptranslate") WIDTH(1.5);
+   PARM(float, 3, "righthiptranslate", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(righthiptranslate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+ikfootrighttranslate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   ikfootrighttranslate.label = PARM_LABEL("IK Foot Translate", "ikfootrighttranslate") WIDTH(1.5);
+   PARM(float, 3, "ikfootrighttranslate", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(ikfootrighttranslate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+ikfootrightrotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   ikfootrightrotate.label = PARM_LABEL("IK Foot Rotate", "ikfootrightrotate") WIDTH(1.5);
+   PARM(float, 3, "ikfootrightrotate", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(ikfootrightrotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+iktoetiprighttranslate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   iktoetiprighttranslate.label = PARM_LABEL("IK Toetip Translate", "iktoetiprighttranslate") WIDTH(1.5);
+   PARM(float, 3, "iktoetiprighttranslate", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(iktoetiprighttranslate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+iktoetiprightrotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   iktoetiprightrotate.label = PARM_LABEL("IK Toetip Rotate", "iktoetiprightrotate") WIDTH(1.5);
+   PARM(float, 3, "iktoetiprightrotate", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(iktoetiprightrotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+ikfootballrightrotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   ikfootballrightrotate.label = PARM_LABEL("IK Football Rotate", "ikfootballrightrotate") WIDTH(1.5);
+   PARM(float, 3, "ikfootballrightrotate", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(ikfootballrightrotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+iktoerightrotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   iktoerightrotate.label = PARM_LABEL("IK Toe Rotate", "iktoerightrotate") WIDTH(1.5);
+   PARM(float, 3, "iktoerightrotate", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(iktoerightrotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+iklegrighttwisttranslate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   iklegrighttwisttranslate.label = PARM_LABEL("IK Twist Translate", "iklegrighttwisttranslate") WIDTH(1.5);
+   PARM(float, 3, "iklegrighttwisttranslate", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(iklegrighttwisttranslate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+iklegrighttwistblend.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ iklegrighttwistblend.label = PARM_LABEL("IK Twist Hip Foot Blend", "iklegrighttwistblend") WIDTH(1.5);
+ PARM(float, 1, "iklegrighttwistblend", none, none) RANGE(0,1)
+	 LABELREF(iklegrighttwistblend.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm4.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+fkthighrightrotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   fkthighrightrotate.label = PARM_LABEL("FK Thigh Rotate", "fkthighrightrotate") WIDTH(1.5);
+   PARM(float, 3, "fkthighrightrotate", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(fkthighrightrotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+fkcalfrightrotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   fkcalfrightrotate.label = PARM_LABEL("FK Calf Rotate", "fkcalfrightrotate") WIDTH(1.5);
+   PARM(float, 3, "fkcalfrightrotate", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(fkcalfrightrotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+fkfootrightrotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   fkfootrightrotate.label = PARM_LABEL("FK Foot Rotate", "fkfootrightrotate") WIDTH(1.5);
+   PARM(float, 3, "fkfootrightrotate", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(fkfootrightrotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+fktoerightrotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   fktoerightrotate.label = PARM_LABEL("FK Toe Rotate", "fktoerightrotate") WIDTH(1.5);
+   PARM(float, 3, "fktoerightrotate", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(fktoerightrotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+ctrlikfootrightspace.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ ctrlikfootrightspace.label = PARM_LABEL("Custom Space", "ctrlikfootrightspace") WIDTH(1.5);
+ PARM_FIELD(pathstring, "ctrlikfootrightspace") VALUE(ctrlikfootrightspace.val) 
+	LABELREF(ctrlikfootrightspace.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(ctrlikfootrightspace.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(ctrlikfootrightspace.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+ctrlikfootrightspaceblend.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ ctrlikfootrightspaceblend.label = PARM_LABEL("Custom Space Blend", "ctrlikfootrightspaceblend") WIDTH(1.5);
+ PARM(float, 1, "ctrlikfootrightspaceblend", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(ctrlikfootrightspaceblend.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+showbones.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("showbones", "Show Bones") toggle VALUE(showbones.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+showcontrols.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("showcontrols", "Show Controls") toggle VALUE(showcontrols.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+showdetailcontrols.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("showdetailcontrols", "Show Detail Controls") toggle VALUE(showdetailcontrols.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+keeppos.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+keeppos.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("keeppos", "Keep Position When Parenting") toggle VALUE(keeppos.val);
+
+    {  }
+
+    {  }
+}
+
+pre_xform.gad = ROW
+{
+    {  }
+
+    {  }
+    { WIDTH(0.099) }
+
+    pre_xform.menu;
+}
+}	// Template join.bot
+
+xOrd.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+xOrd.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Transform Order", "xOrd") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    xOrd.menu;
+
+    {  }
+
+    {  }
+}
+
+rOrd.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    rOrd.menu;
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+t.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   t.label = PARM_LABEL("Translate", "t") WIDTH(1.5);
+   PARM(float, 3, "t", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(t.label)
+	HSTRETCH;
+
+    ACTION_ICONBUTTON "BUTTONS_match_transform" VALUE(t.script_action)
+	HELP("Select an object to match the translation with.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+r.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   r.label = PARM_LABEL("Rotate", "r") WIDTH(1.5);
+   PARM(float, 3, "r", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(r.label)
+	HSTRETCH;
+
+    ACTION_ICONBUTTON "BUTTONS_match_rotation" VALUE(r.script_action)
+	HELP("Select an object to match the rotation with.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+s.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   s.label = PARM_LABEL("Scale", "s") WIDTH(1.5);
+   PARM(float, 3, "s", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(s.label)
+	HSTRETCH;
+
+    ACTION_ICONBUTTON "BUTTONS_match_scale" VALUE(s.script_action)
+	HELP("Select an object to match the scale with.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+p.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   p.label = PARM_LABEL("Pivot Translate", "p") WIDTH(1.5);
+   PARM(float, 3, "p", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(p.label)
+	HSTRETCH;
+
+    ACTION_ICONBUTTON "BUTTONS_match_pivot" VALUE(p.script_action)
+	HELP("Select an object to match the pivot with.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+scale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ scale.label = PARM_LABEL("Uniform Scale", "scale") WIDTH(1.5);
+ PARM(float, 1, "scale", none, none) RANGE(0,1)
+	 LABELREF(scale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+lookatpath.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ lookatpath.label = PARM_LABEL("Look At", "lookatpath") WIDTH(1.5);
+ PARM_FIELD(pathstring, "lookatpath") VALUE(lookatpath.val) 
+	LABELREF(lookatpath.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(lookatpath.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(lookatpath.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+lookup.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Look At Up Vector", "lookup") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    lookup.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+pathobjpath.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ pathobjpath.label = PARM_LABEL("Path Object", "pathobjpath") WIDTH(1.5);
+ PARM_FIELD(pathstring, "pathobjpath") VALUE(pathobjpath.val) 
+	LABELREF(pathobjpath.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(pathobjpath.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(pathobjpath.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+roll.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   roll.label = PARM_LABEL( "Roll", "roll" ) WIDTH(1.5);
+   PARM(float, 1, "roll", none, none) RANGE(-360, 360)
+	LABELREF( roll.label ) HSTRETCH;
+
+   { WIDTH(0.1) }
+}
+
+pos.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pos.label = PARM_LABEL("Position", "pos") WIDTH(1.5);
+ PARM(float, 1, "pos", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(pos.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+uparmtype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Parameterization", "uparmtype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    uparmtype.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+pathorient.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pathorient.label = PARM_LABEL("Orient Along Path", "pathorient") WIDTH(1.5);
+ PARM(integer, 1, "pathorient", none, none) RANGE(0,1)
+	 LABELREF(pathorient.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+up.gad = ROW 
+{
+    HSTRETCH
+   { WIDTH(0.18) }
+
+    up.label = PARM_LABEL("Orient Up Vector", "up") WIDTH(1.5);
+    PARM(float, 3, "up", none, none) LABELREF(up.label)
+	HSTRETCH;
+
+   { WIDTH(0.1) }
+}
+
+bank.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ bank.label = PARM_LABEL("Auto-Bank factor", "bank") WIDTH(1.5);
+ PARM(float, 1, "bank", none, none) RANGE(-1,1)
+	 LABELREF(bank.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+label1.gad = NULL { }
+label2.gad = NULL { }
+label3.gad = NULL { }
+label4.gad = NULL { }
+tdisplay.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+tdisplay.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+tdisplay.gad = PARM_BUTTON("tdisplay", "") toggle VALUE(tdisplay.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+display.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ display.label = PARM_LABEL("Display", "display") WIDTH(1.32);
+ PARM(integer, 1, "display", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(display.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+outputobj.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Output Transform", "outputobj") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    outputobj.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+visibleobjects.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ visibleobjects.label = PARM_LABEL("Visible Children", "visibleobjects") WIDTH(1.5);
+ PARM_FIELD (pathstring, "visibleobjects") LABELREF(visibleobjects.label) 
+	VALUE(visibleobjects.val) HSTRETCH;
+
+    visibleobjects.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(visibleobjects.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+picking.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("picking", "Viewport Selecting Enabled") toggle VALUE(picking.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+pickscript.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ pickscript.label = PARM_LABEL("Select Script", "pickscript") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "pickscript") LABELREF(pickscript.label)
+	VALUE(pickscript.val) HSTRETCH;
+
+    pickscript.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(pickscript.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+caching.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("caching", "Cache Object Transform") toggle VALUE(caching.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+use_dcolor.gad = NULL { }
+dcolor.gad = NULL { }
+pr.gad = NULL { }
+childcomp.gad = NULL { }
+constraints_on.gad = NULL { }
+constraints_path.gad = NULL { }
+lookupobjpath.gad = NULL { }
+
+leftleg.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "leftleg.gad"
+    { 
+	VALUE(leftleg.gad.val) STRETCH(1,0)
+
+	TAB "Left Leg"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    fkikleftleg.gad;		
+	    sepparm2.gad;		
+	    lefthiptranslate.gad;		
+	    ikfootlefttranslate.gad;		
+	    ikfootleftrotate.gad;		
+	    iktoetiplefttranslate.gad;		
+	    iktoetipleftrotate.gad;		
+	    ikfootballleftrotate.gad;		
+	    iktoeleftrotate.gad;		
+	    ikleglefttwisttranslate.gad;		
+	    ikleglefttwistblend.gad;		
+	    sepparm7.gad;		
+	    fkthighleftrotate.gad;		
+	    fkcalfleftrotate.gad;		
+	    fkfootleftrotate.gad;		
+	    fktoeleftrotate.gad;		
+	    ctrlikfootleftspace.gad;		
+	    ctrlikfootleftspaceblend.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Right Leg"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    fkikrightleg.gad;		
+	    sepparm3.gad;		
+	    righthiptranslate.gad;		
+	    ikfootrighttranslate.gad;		
+	    ikfootrightrotate.gad;		
+	    iktoetiprighttranslate.gad;		
+	    iktoetiprightrotate.gad;		
+	    ikfootballrightrotate.gad;		
+	    iktoerightrotate.gad;		
+	    iklegrighttwisttranslate.gad;		
+	    iklegrighttwistblend.gad;		
+	    sepparm4.gad;		
+	    fkthighrightrotate.gad;		
+	    fkcalfrightrotate.gad;		
+	    fkfootrightrotate.gad;		
+	    fktoerightrotate.gad;		
+	    ctrlikfootrightspace.gad;		
+	    ctrlikfootrightspaceblend.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+leftarm.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "leftarm.gad"
+    { 
+	VALUE(leftarm.gad.val) STRETCH(1,0)
+
+	TAB "Left Arm"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    fkikleftarm.gad;		
+	    sepparm5.gad;		
+	    shoulderlefttranslate.gad;		
+	    ikwristlefttranslate.gad;		
+	    ikwristleftrotate.gad;		
+	    ikwristleftspace.gad;		
+	    ikleftarmtwist.gad;		
+	    upperarmleftrotate.gad;		
+	    forearmleftrotate.gad;		
+	    handleftrotate.gad;		
+	    ctrlikwristleftspace.gad;		
+	    ctrlikwristleftspaceblend.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Right Arm"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    fkikrightarm.gad;		
+	    sepparm6.gad;		
+	    rightshouldertranslate.gad;		
+	    ikwristrighttranslate.gad;		
+	    ikwristrightrotate.gad;		
+	    ikwristrightspace.gad;		
+	    ikrightarmtwist.gad;		
+	    upperarmrightrotate.gad;		
+	    forearmrightrotate.gad;		
+	    handrightrotate.gad;		
+	    ctrlikwristrightspace.gad;		
+	    ctrlikwristrightspaceblend.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Left Hand"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    leftthumb2rotate.gad;		
+	    leftthumb3rotate.gad;		
+	    leftmiddle1rotate.gad;		
+	    leftmiddle2rotate.gad;		
+	    leftmiddle3rotate.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Right Hand"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    rightthumb2rotate.gad;		
+	    rightthumb3rotate.gad;		
+	    rightmiddle1rotate.gad;		
+	    rightmiddle2rotate.gad;		
+	    rightmiddle3rotate.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+spine.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "spine.gad"
+    { 
+	VALUE(spine.gad.val) STRETCH(1,0)
+
+	TAB "Spine"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    cogtranslate.gad;		
+	    cogrotate.gad;		
+	    hipstranslate.gad;		
+	    hipsrotate.gad;		
+	    spinerotate1.gad;		
+	    spinerotate2.gad;		
+	    spinerotate3.gad;		
+	    neckrotate.gad;		
+	    headrotate.gad;		
+	    ctrlheadspaceblend.gad;		
+	    eyeslookattranslate.gad;		
+	    eyeleftlookattranslate.gad;		
+	    eyerightlookattranslate.gad;		
+	    eyeleftlidrotate.gad;		
+	    eyerightlidrotate.gad;		
+	    eyelookatcustomspace.gad;		
+	    eyelookatcustomspaceblend.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Arms"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    leftarm.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Legs"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    leftleg.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Preferences"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    showbones.gad;		
+	    showcontrols.gad;		
+	    showdetailcontrols.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    mastertranslate.gad; 
+    masterrotate.gad; 
+    masterscale.gad; 
+    masteruniformscale.gad; 
+    ctrlmasterspace.gad; 
+    ctrlmasterspaceblend.gad; 
+    sepparm.gad; 
+    spine.gad; 
+    pr.gad; 
+    childcomp.gad; 
+    constraints_on.gad; 
+    constraints_path.gad; 
+    lookupobjpath.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

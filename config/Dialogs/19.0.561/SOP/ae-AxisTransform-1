@@ -1,0 +1,273 @@
+// Magic: 9d0bc548
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Wed May  4 11:45:33 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+showguide.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("showguide", "Show Guide") toggle VALUE(showguide.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+group.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    group.label = PARM_LABEL("Group", "group") WIDTH(1.5);
+    PARM_FIELD(string, "group") VALUE(group.val) 
+	LABELREF(group.label) HSTRETCH;
+
+    group.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+origin.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   origin.label = PARM_LABEL("Origin", "origin") WIDTH(1.5);
+   PARM(float, 3, "origin", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(origin.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+origin_attr.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    origin_attr.label = PARM_LABEL("Origin Attrib", "origin_attr") WIDTH(1.5);
+    PARM_FIELD(string, "origin_attr") VALUE(origin_attr.val) 
+	LABELREF(origin_attr.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+dir.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   dir.label = PARM_LABEL("Direction", "dir") WIDTH(1.5);
+   PARM(float, 3, "dir", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(dir.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+dir_attr.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    dir_attr.label = PARM_LABEL("Direction Attrib", "dir_attr") WIDTH(1.5);
+    PARM_FIELD(string, "dir_attr") VALUE(dir_attr.val) 
+	LABELREF(dir_attr.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+trans_tang.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ trans_tang.label = PARM_LABEL("Translate", "trans_tang") WIDTH(1.5);
+ PARM(float, 1, "trans_tang", none, none) RANGE(0,10)
+	 LABELREF(trans_tang.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+scale_tan.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ scale_tan.label = PARM_LABEL("Scale", "scale_tan") WIDTH(1.5);
+ PARM(float, 1, "scale_tan", none, none) RANGE(0,10)
+	 LABELREF(scale_tan.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+rot_tan.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ rot_tan.label = PARM_LABEL("Rotate (Deg)", "rot_tan") WIDTH(1.5);
+ PARM(float, 1, "rot_tan", none, none) RANGE(0,360)
+	 LABELREF(rot_tan.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+use_vex_tan.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("use_vex_tan", "Use VEXpression") toggle VALUE(use_vex_tan.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+vex_tan.gad = ROW
+{
+
+    HSTRETCH JUSTIFY(left, top) HMARGIN(0.18, 0.1)
+        NO_MARGIN_SPACING_SCALE
+
+    MULTILINE_PARM_FIELD ("vex_tan") 
+
+    	VALUE(vex_tan.val) 
+    	SYNTAX("vex") 
+    	LINES(5,25) 
+    	HSTRETCH;
+
+    {
+
+    vex_tan.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    }
+
+}
+
+trans_perp.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ trans_perp.label = PARM_LABEL("Translate", "trans_perp") WIDTH(1.5);
+ PARM(float, 1, "trans_perp", none, none) RANGE(0,10)
+	 LABELREF(trans_perp.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+scale_perp.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ scale_perp.label = PARM_LABEL("Scale", "scale_perp") WIDTH(1.5);
+ PARM(float, 1, "scale_perp", none, none) RANGE(0,10)
+	 LABELREF(scale_perp.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+use_vex_perp.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("use_vex_perp", "Use VEXpression") toggle VALUE(use_vex_perp.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+vex_perp.gad = ROW
+{
+
+    HSTRETCH JUSTIFY(left, top) HMARGIN(0.18, 0.1)
+        NO_MARGIN_SPACING_SCALE
+
+    MULTILINE_PARM_FIELD ("vex_perp") 
+
+    	VALUE(vex_perp.val) 
+    	SYNTAX("vex") 
+    	LINES(5,25) 
+    	HSTRETCH;
+
+    {
+
+    vex_perp.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    }
+
+}
+
+perp.gad = 
+
+GROUP simple "Perpendicular Transformation" flat 
+{ 
+    VALUE(perp.gad.val) LAYOUT(vertical) HSTRETCH 
+	    trans_perp.gad;		
+	    scale_perp.gad;		
+	    use_vex_perp.gad;		
+	    vex_perp.gad;		
+} 
+
+tan.gad = 
+
+GROUP simple "Tangential Transformation" flat 
+{ 
+    VALUE(tan.gad.val) LAYOUT(vertical) HSTRETCH 
+	    trans_tang.gad;		
+	    scale_tan.gad;		
+	    rot_tan.gad;		
+	    use_vex_tan.gad;		
+	    vex_tan.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    showguide.gad; 
+    group.gad; 
+    origin.gad; 
+    origin_attr.gad; 
+    dir.gad; 
+    dir_attr.gad; 
+    tan.gad; 
+    perp.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

@@ -1,0 +1,134 @@
+// Magic: d63f46e
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Wed May  4 20:45:55 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+enable_t.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    PARM_LABEL_SIMPLE("Translate", "enable_t") ;
+    { WIDTH(0.09) }
+
+    enable_t.menu;
+
+    {  }
+
+    {  }
+}
+
+enable_r.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    PARM_LABEL_SIMPLE("Rotate", "enable_r") ;
+    { WIDTH(0.09) }
+
+    enable_r.menu;
+
+    {  }
+
+    {  }
+}
+
+enable_s.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    PARM_LABEL_SIMPLE("Scale", "enable_s") ;
+    { WIDTH(0.09) }
+
+    enable_s.menu;
+
+    {  }
+
+    {  }
+}
+
+mode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    PARM_LABEL_SIMPLE("Mode", "mode") ;
+    { WIDTH(0.09) }
+
+    mode.menu;
+
+    {  }
+
+    {  }
+}
+
+tweak_mode.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("tweak_mode", "Tweak Rotate Links") toggle VALUE(tweak_mode.val);
+
+    {  }
+
+    {  }
+}
+
+use_motionpath.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("use_motionpath", "Motion Path") toggle VALUE(use_motionpath.val);
+
+    {  }
+
+    {  }
+}
+
+jump_to_keyframe.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("jump_to_keyframe", "Jump to Keyframe") toggle VALUE(jump_to_keyframe.val);
+
+    {  }
+
+    {  }
+}
+
+# warning cpp warning: "GenV3/subdialog.top.ui":11 Macro "PARMSPACING" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":12 Macro "LAYOUTDIR" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":13 Macro "DO_JUSTIFY" redefined.  Using later definition
+dialog_norm.gad = 
+{
+    LAYOUT(horizontal) SPACING(0.05) HSTRETCH JUSTIFY(left, center) UNSCALABLE
+    enable_t.gad; 
+    enable_r.gad; 
+    enable_s.gad; 
+    mode.gad; 
+    tweak_mode.gad; 
+    use_motionpath.gad; 
+    jump_to_keyframe.gad; 
+} 
+// dialog.bot.ui
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) VALUE(open.val_) HSTRETCH
+
+    dialog_norm.gad;
+}

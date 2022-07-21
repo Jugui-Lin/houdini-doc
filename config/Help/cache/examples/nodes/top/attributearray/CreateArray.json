@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["CreateArray"]}, {"type": "para", "indent": 0, "text": ["This example demonstrates how to create an array attribute."], "extent": [0, 60]}], "examplefor": "/nodes/top/attributearray", "examplefile": "/examples/nodes/top/attributearray/CreateArray.hda"}

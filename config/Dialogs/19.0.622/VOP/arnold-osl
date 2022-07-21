@@ -1,0 +1,140 @@
+// Magic: 319c89d3
+// Automatically generated PSI dialog (PSI version 19.0.622)
+// Sun Jun  5 17:24:52 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+_code.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+_code.gad = ROW
+{
+
+    HSTRETCH JUSTIFY(left, top) HMARGIN(0.18, 0)
+        NO_MARGIN_SPACING_SCALE
+
+    _code.label = PARM_LABEL("Code", "_code");
+
+    MULTILINE_PARM_FIELD ("_code") 
+
+    	LABELREF(_code.label) 
+
+    	VALUE(_code.val) 
+    	SYNTAX("osl") 
+    	LINES(8,40) 
+    	HSTRETCH;
+
+    {
+
+	LAYOUT(vertical)
+	{
+	    SIZE(0, 0.26)
+	}
+
+    _code.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(_code.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+}
+
+_load.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    PARM_BUTTON("_load", "", "BUTTONS_import_library")
+	push VALUE(_load.val) UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    {  }
+}
+
+_save.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    PARM_BUTTON("_save", "", "BUTTONS_render")
+	push VALUE(_save.val) UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+_errors.gad = ROW
+{
+
+    HSTRETCH JUSTIFY(left, top) HMARGIN(0.18, 0.1)
+        NO_MARGIN_SPACING_SCALE
+
+    _errors.label = PARM_LABEL("Errors", "_errors");
+
+    MULTILINE_PARM_FIELD ("_errors") 
+
+    	LABELREF(_errors.label) 
+
+    	VALUE(_errors.val) 
+    	SYNTAX("osl") 
+    	LINES(2,10) 
+    	HSTRETCH;
+
+    {
+
+	LAYOUT(vertical)
+	{
+	    SIZE(0, 0.26)
+	}
+
+    _errors.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(_errors.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+}
+
+_status.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Status", "_status") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    _status.menu;
+
+    { HSTRETCH }
+
+    _status.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(_status.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    _code.row.join; 
+    _errors.gad; 
+    _status.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

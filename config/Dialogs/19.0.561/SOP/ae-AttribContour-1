@@ -1,0 +1,99 @@
+// Magic: d296463b
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Wed May  4 11:42:07 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+clr_contours.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("clr_contours", "Visualise Contours") toggle VALUE(clr_contours.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+attr.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    attr.label = PARM_LABEL("Attribute", "attr") WIDTH(1.5);
+    PARM_FIELD(string, "attr") VALUE(attr.val) 
+	LABELREF(attr.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+check.gad = NULL { }
+
+input.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("input", "Create Open Lines") toggle VALUE(input.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+spacing.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ spacing.label = PARM_LABEL("Contour Spacing", "spacing") WIDTH(1.5);
+ PARM(float, 1, "spacing", none, none) RANGE(0,1)
+	 LABELREF(spacing.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+offset.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ offset.label = PARM_LABEL("Contour Offset", "offset") WIDTH(1.5);
+ PARM(float, 1, "offset", none, none) RANGE(-1,1)
+	 LABELREF(offset.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    clr_contours.gad; 
+    attr.gad; 
+    check.gad; 
+    input.gad; 
+    spacing.gad; 
+    offset.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

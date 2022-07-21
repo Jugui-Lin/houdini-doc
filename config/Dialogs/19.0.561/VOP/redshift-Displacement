@@ -1,0 +1,207 @@
+// Magic: 37a12e69
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Thu May 26 11:41:17 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+texMap.gad = NULL { }
+
+scale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ scale.label = PARM_LABEL("Scale", "scale") WIDTH(1.5);
+ PARM(float, 1, "scale", none, none) RANGE(-2,2)
+	 LABELREF(scale.label) HSTRETCH;
+
+    scale.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(scale.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+map_encoding.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Map Encoding", "map_encoding") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    map_encoding.menu;
+
+    { HSTRETCH }
+
+    map_encoding.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(map_encoding.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+space_type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Space Type", "space_type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    space_type.menu;
+
+    { HSTRETCH }
+
+    space_type.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(space_type.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+tangents.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    tangents.label = PARM_LABEL("Tangents Channel", "tangents") WIDTH(1.5);
+    PARM_FIELD(string, "tangents") VALUE(tangents.val) 
+	LABELREF(tangents.label) HSTRETCH;
+
+    tangents.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(tangents.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+oldrange_min.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ oldrange_min.label = PARM_LABEL("Old Range Min", "oldrange_min") WIDTH(1.5);
+ PARM(float, 1, "oldrange_min", none, none) RANGE(-2,2)
+	 LABELREF(oldrange_min.label) HSTRETCH;
+
+    oldrange_min.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(oldrange_min.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+oldrange_max.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ oldrange_max.label = PARM_LABEL("Old Range Max", "oldrange_max") WIDTH(1.5);
+ PARM(float, 1, "oldrange_max", none, none) RANGE(-2,2)
+	 LABELREF(oldrange_max.label) HSTRETCH;
+
+    oldrange_max.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(oldrange_max.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+newrange_min.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ newrange_min.label = PARM_LABEL("New Range Min", "newrange_min") WIDTH(1.5);
+ PARM(float, 1, "newrange_min", none, none) RANGE(-2,2)
+	 LABELREF(newrange_min.label) HSTRETCH;
+
+    newrange_min.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(newrange_min.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+newrange_max.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ newrange_max.label = PARM_LABEL("New Range Max", "newrange_max") WIDTH(1.5);
+ PARM(float, 1, "newrange_max", none, none) RANGE(-2,2)
+	 LABELREF(newrange_max.label) HSTRETCH;
+
+    newrange_max.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(newrange_max.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+shader_skipdefvalparms.gad = NULL { }
+
+Change_Range_2.gad = 
+
+GROUP simple "Change Range" flat 
+{ 
+    VALUE(Change_Range_2.gad.val) LAYOUT(vertical) HSTRETCH 
+	    oldrange_min.gad;		
+	    oldrange_max.gad;		
+	    newrange_min.gad;		
+	    newrange_max.gad;		
+} 
+
+Tangents_1.gad = 
+
+GROUP simple "Tangents" flat 
+{ 
+    VALUE(Tangents_1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    tangents.gad;		
+} 
+
+Texture_0.gad = 
+
+GROUP simple "Texture" flat 
+{ 
+    VALUE(Texture_0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    texMap.gad;		
+	    scale.gad;		
+	    map_encoding.gad;		
+	    space_type.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    Texture_0.gad; 
+    Tangents_1.gad; 
+    Change_Range_2.gad; 
+    shader_skipdefvalparms.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

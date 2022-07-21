@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["example_top_filecopy"]}, {"type": "para", "indent": 0, "text": ["This example demonstrates how to copy files using TOPs / PDG."], "extent": [0, 62]}], "examplefor": "/nodes/top/filecopy", "examplefile": "/examples/nodes/top/filecopy/example_top_filecopy.hda"}

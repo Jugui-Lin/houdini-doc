@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["Switch"]}, {"type": "para", "indent": 0, "text": ["This example demonstrates how to use the switch TOP node."], "extent": [0, 58]}], "examplefor": "/nodes/top/switch", "examplefile": "/examples/nodes/top/switch/Switch.hda"}

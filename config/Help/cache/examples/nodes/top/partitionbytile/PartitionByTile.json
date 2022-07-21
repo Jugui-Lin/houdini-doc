@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["PartitionByTile"]}, {"type": "para", "indent": 0, "text": ["This example demonstrates how to use the Partition by Tile TOP node."], "extent": [0, 69]}], "examplefor": "/nodes/top/partitionbytile", "examplefile": "/examples/nodes/top/partitionbytile/PartitionByTile.hda"}

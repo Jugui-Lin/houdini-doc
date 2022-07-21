@@ -1,0 +1,54 @@
+// Magic: dd8fe23b
+// Automatically generated PSI dialog (PSI version 19.0.622)
+// Fri Jul 15 17:04:31 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+selmodescp.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    PARM_LABEL_SIMPLE("Mode", "selmodescp") ;
+    { WIDTH(0.1) }
+
+    selmodescp.buttonstrip;
+
+    {  }
+
+    {  }
+}
+
+selmodeabf.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    PARM_LABEL_SIMPLE("Mode", "selmodeabf") ;
+    { WIDTH(0.1) }
+
+    selmodeabf.buttonstrip;
+
+    {  }
+
+    {  }
+}
+
+# warning cpp warning: "GenV3/subdialog.top.ui":11 Macro "PARMSPACING" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":12 Macro "LAYOUTDIR" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":13 Macro "DO_JUSTIFY" redefined.  Using later definition
+dialog_norm.gad = 
+{
+    LAYOUT(horizontal) SPACING(0.05) HSTRETCH JUSTIFY(left, center) UNSCALABLE
+    selmodescp.gad; 
+    selmodeabf.gad; 
+} 
+// dialog.bot.ui
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) VALUE(open.val_) HSTRETCH
+
+    dialog_norm.gad;
+}

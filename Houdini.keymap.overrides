@@ -1,6 +1,9 @@
+h.pane.wsheet.tool:spio_export	spio_export	"Shelf Tool: spio_export"	 Ctrl+Shift+C
+h.pane.wsheet.tool:spio_import	spio_import	"Shelf Tool: spio_import"	 Ctrl+Shift+V
 h.pane.wsheet.tool:labs::networkwalk_Right	labs::networkwalk_Right	"Walk Right along the connections in the Network View"	 Home
 h.pane.wsheet.tool:labs::networkwalk_Left	labs::networkwalk_Left	"Walk Left along the connections in the Network View"	 Insert
 h.pane.wsheet.tool:labs::networkwalk_Down	labs::networkwalk_Down	"Walk Down along the connections in the Network View"	 PageDown
 h.pane.wsheet.down	"Set Current Below"	"Set current below"	
 h.pane.wsheet.up	"Set Current Above"	"Set current above"	
+h.pane.wsheet.tool:shaderoutput	shaderoutput	"Shelf Tool: shaderoutput"	 Alt+Z
 h.pane.wsheet.tool:labs::networkwalk_Up	labs::networkwalk_Up	"Walk Up along the connections in the Network View"	 PageUp

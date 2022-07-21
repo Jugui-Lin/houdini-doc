@@ -1,0 +1,79 @@
+// Magic: 104eca51
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Tue May 31 15:05:16 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+voxel_size.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ voxel_size.label = PARM_LABEL("Voxel Size", "voxel_size") WIDTH(1.5);
+ PARM(float, 1, "voxel_size", none, none) RANGE(0,10)
+	 LABELREF(voxel_size.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+accuracy.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ accuracy.label = PARM_LABEL("Accuracy", "accuracy") WIDTH(1.5);
+ PARM(float, 1, "accuracy", none, none) RANGE(0,1)
+	 LABELREF(accuracy.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+iterations.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ iterations.label = PARM_LABEL("Iterations", "iterations") WIDTH(1.5);
+ PARM(integer, 1, "iterations", none, none) RANGE(0,10)
+	 LABELREF(iterations.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+fuse_distance.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ fuse_distance.label = PARM_LABEL("Fuse Distance", "fuse_distance") WIDTH(1.5);
+ PARM(float, 1, "fuse_distance", none, none) RANGE(0,5)
+	LOCK_RANGE_MIN LABELREF(fuse_distance.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    voxel_size.gad; 
+    accuracy.gad; 
+    iterations.gad; 
+    fuse_distance.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

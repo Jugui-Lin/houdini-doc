@@ -1,0 +1,1122 @@
+// Magic: 4072f71d
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Wed May 25 16:27:01 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+keeppos.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+keeppos.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("keeppos", "Keep Position When Parenting") toggle VALUE(keeppos.val);
+
+    {  }
+
+    {  }
+}
+
+pre_xform.gad = ROW
+{
+    {  }
+
+    {  }
+    { WIDTH(0.099) }
+
+    pre_xform.menu;
+}
+}	// Template join.bot
+
+xOrd.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+xOrd.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Transform Order", "xOrd") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    xOrd.menu;
+
+    {  }
+
+    {  }
+}
+
+rOrd.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    rOrd.menu;
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+t.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   t.label = PARM_LABEL("Translate", "t") WIDTH(1.5);
+   PARM(float, 3, "t", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(t.label)
+	HSTRETCH;
+
+    ACTION_ICONBUTTON "BUTTONS_match_transform" VALUE(t.script_action)
+	HELP("Select an object to match the translation with.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+r.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   r.label = PARM_LABEL("Rotate", "r") WIDTH(1.5);
+   PARM(float, 3, "r", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(r.label)
+	HSTRETCH;
+
+    ACTION_ICONBUTTON "BUTTONS_match_rotation" VALUE(r.script_action)
+	HELP("Select an object to match the rotation with.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+tdisplay.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+tdisplay.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+tdisplay.gad = PARM_BUTTON("tdisplay", "") toggle VALUE(tdisplay.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+display.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ display.label = PARM_LABEL("Display", "display") WIDTH(1.32);
+ PARM(integer, 1, "display", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(display.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+l_iconscale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ l_iconscale.label = PARM_LABEL("Icon Scale", "l_iconscale") WIDTH(1.5);
+ PARM(float, 1, "l_iconscale", none, none) RANGE(0,10)
+	 LABELREF(l_iconscale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+caching.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("caching", "Cache Object Transform") toggle VALUE(caching.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+picking.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("picking", "Viewport Selecting Enabled") toggle VALUE(picking.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+pickscript.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ pickscript.label = PARM_LABEL("Select Script", "pickscript") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "pickscript") LABELREF(pickscript.label)
+	VALUE(pickscript.val) HSTRETCH;
+
+    pickscript.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(pickscript.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+lookatpath.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ lookatpath.label = PARM_LABEL("Look At", "lookatpath") WIDTH(1.5);
+ PARM_FIELD(pathstring, "lookatpath") VALUE(lookatpath.val) 
+	LABELREF(lookatpath.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(lookatpath.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(lookatpath.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+lookup.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Look At Up Vector", "lookup") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    lookup.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+pathobjpath.gad = NULL { }
+roll.gad = NULL { }
+pos.gad = NULL { }
+uparmtype.gad = NULL { }
+pathorient.gad = NULL { }
+up.gad = NULL { }
+bank.gad = NULL { }
+
+light_enabled.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("light_enabled", "On") toggle VALUE(light_enabled.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+ogl_enablelight.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ogl_enablelight", "Enabled In Viewports") toggle VALUE(ogl_enablelight.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RSL_samples.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RSL_samples.label = PARM_LABEL("Samples", "RSL_samples") WIDTH(1.5);
+ PARM(integer, 1, "RSL_samples", none, none) RANGE(1,512)
+	 LABELREF(RSL_samples.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+RSL_affectDiffuse.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RSL_affectDiffuse", "Affect Diffuse") toggle VALUE(RSL_affectDiffuse.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RSL_affectSpecular.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RSL_affectSpecular", "Affect Specular") toggle VALUE(RSL_affectSpecular.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RSL_matteShadow.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RSL_matteShadow", "Matte Shadow Illuminator") toggle VALUE(RSL_matteShadow.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RSL_diffuseScale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RSL_diffuseScale.label = PARM_LABEL("Diffuse Scale", "RSL_diffuseScale") WIDTH(1.5);
+ PARM(float, 1, "RSL_diffuseScale", none, none) RANGE(0,1)
+	 LABELREF(RSL_diffuseScale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+RSL_specularScale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RSL_specularScale.label = PARM_LABEL("Specular Scale", "RSL_specularScale") WIDTH(1.5);
+ PARM(float, 1, "RSL_specularScale", none, none) RANGE(0,1)
+	 LABELREF(RSL_specularScale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+RSL_volumeScale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RSL_volumeScale.label = PARM_LABEL("Contribution Scale", "RSL_volumeScale") WIDTH(1.5);
+ PARM(float, 1, "RSL_volumeScale", none, none) RANGE(0,1)
+	 LABELREF(RSL_volumeScale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+RSL_volumeSamples.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RSL_volumeSamples.label = PARM_LABEL("Samples", "RSL_volumeSamples") WIDTH(1.5);
+ PARM(integer, 1, "RSL_volumeSamples", none, none) RANGE(1,512)
+	 LABELREF(RSL_volumeSamples.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+on.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("on", "On") toggle VALUE(on.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+tex0.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ tex0.label = PARM_LABEL("Dome Map", "tex0") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "tex0") LABELREF(tex0.label)
+	VALUE(tex0.val) HSTRETCH;
+
+    tex0.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(tex0.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+envType.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Map Type", "envType") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    envType.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+gamma0.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ gamma0.label = PARM_LABEL("Gamma", "gamma0") WIDTH(1.5);
+ PARM(float, 1, "gamma0", none, none) RANGE(0,2.2000000000000002)
+	 LABELREF(gamma0.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    color.label = PARM_LABEL("Tint", "color") WIDTH(1.5);
+    PARM(float, 3, "color", none, COLOR, "R,G,B") 
+	LABELREF(color.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+multiplier.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ multiplier.label = PARM_LABEL("Intensity Multiplier", "multiplier") WIDTH(1.5);
+ PARM(float, 1, "multiplier", none, none) RANGE(0,3.4028200000000001e+38)
+	 LABELREF(multiplier.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+RSL_exposure.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RSL_exposure.label = PARM_LABEL("Exposure", "RSL_exposure") WIDTH(1.5);
+ PARM(float, 1, "RSL_exposure", none, none) RANGE(0,2)
+	 LABELREF(RSL_exposure.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+RSL_hue.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RSL_hue.label = PARM_LABEL("Hue", "RSL_hue") WIDTH(1.5);
+ PARM(float, 1, "RSL_hue", none, none) RANGE(0,360)
+	 LABELREF(RSL_hue.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+RSL_saturation.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RSL_saturation.label = PARM_LABEL("Saturation", "RSL_saturation") WIDTH(1.5);
+ PARM(float, 1, "RSL_saturation", none, none) RANGE(0,100)
+	 LABELREF(RSL_saturation.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+background_enable.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("background_enable", "Enable Background") toggle VALUE(background_enable.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+tex0_gammaoverride.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("tex0_gammaoverride", "Enable") toggle VALUE(tex0_gammaoverride.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+tex0_gamma.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ tex0_gamma.label = PARM_LABEL("Gamma", "tex0_gamma") WIDTH(1.5);
+ PARM(float, 1, "tex0_gamma", none, none) RANGE(0,16)
+	 LABELREF(tex0_gamma.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+shadow.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("shadow", "Enable") toggle VALUE(shadow.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+shadowTransparency.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ shadowTransparency.label = PARM_LABEL("Transparency", "shadowTransparency") WIDTH(1.5);
+ PARM(float, 1, "shadowTransparency", none, none) RANGE(0,1)
+	 LABELREF(shadowTransparency.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+alphaReplaceEnable.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("alphaReplaceEnable", "Enable") toggle VALUE(alphaReplaceEnable.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+alphaReplaceValue.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ alphaReplaceValue.label = PARM_LABEL("Alpha", "alphaReplaceValue") WIDTH(1.5);
+ PARM(float, 1, "alphaReplaceValue", none, none) RANGE(0,1)
+	 LABELREF(alphaReplaceValue.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+backPlateEnabled.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("backPlateEnabled", "Enabled") toggle VALUE(backPlateEnabled.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+tex1.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ tex1.label = PARM_LABEL("Map", "tex1") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "tex1") LABELREF(tex1.label)
+	VALUE(tex1.val) HSTRETCH;
+
+    tex1.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(tex1.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+gamma1.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ gamma1.label = PARM_LABEL("Gamma", "gamma1") WIDTH(1.5);
+ PARM(float, 1, "gamma1", none, none) RANGE(0,2.2000000000000002)
+	 LABELREF(gamma1.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+backPlateAspect.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Back-plate Aspect Ratio", "backPlateAspect") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    backPlateAspect.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+applyExposureCompensation.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("applyExposureCompensation", "Apply Camera Exposure Compensation") toggle VALUE(applyExposureCompensation.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+tex1_gammaoverride.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("tex1_gammaoverride", "Enable") toggle VALUE(tex1_gammaoverride.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+tex1_srgb.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("tex1_srgb", "sRGB") toggle VALUE(tex1_srgb.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+tex1_gamma.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ tex1_gamma.label = PARM_LABEL("Gamma", "tex1_gamma") WIDTH(1.5);
+ PARM(float, 1, "tex1_gamma", none, none) RANGE(0,16)
+	 LABELREF(tex1_gamma.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+RSL_emitCausticPhotons.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RSL_emitCausticPhotons", "Emit Caustic Photons") toggle VALUE(RSL_emitCausticPhotons.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RSL_causticIntensity.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RSL_causticIntensity.label = PARM_LABEL("Intensity Multiplier", "RSL_causticIntensity") WIDTH(1.5);
+ PARM(float, 1, "RSL_causticIntensity", none, none) RANGE(0,2)
+	 LABELREF(RSL_causticIntensity.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+RSL_causticPhotons.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RSL_causticPhotons.label = PARM_LABEL("Number of Photons", "RSL_causticPhotons") WIDTH(1.5);
+ PARM(integer, 1, "RSL_causticPhotons", none, LOGSCALE) RANGE(10000,1000000)
+	 LABELREF(RSL_causticPhotons.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+RSL_emitGIPhotons.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RSL_emitGIPhotons", "Emit GI Photons") toggle VALUE(RSL_emitGIPhotons.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RSL_giIntensity.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RSL_giIntensity.label = PARM_LABEL("Intensity Multiplier", "RSL_giIntensity") WIDTH(1.5);
+ PARM(float, 1, "RSL_giIntensity", none, none) RANGE(0,2)
+	 LABELREF(RSL_giIntensity.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+RSL_giPhotons.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RSL_giPhotons.label = PARM_LABEL("Number of Photons", "RSL_giPhotons") WIDTH(1.5);
+ PARM(integer, 1, "RSL_giPhotons", none, LOGSCALE) RANGE(10000,1000000)
+	 LABELREF(RSL_giPhotons.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+RSL_setInclusive.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RSL_setInclusive", "Enable Light-Mesh Associations") toggle VALUE(RSL_setInclusive.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+RSL_lightLinking.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RSL_lightLinking.label = PARM_LABEL("Light Enabled For", "RSL_lightLinking") WIDTH(1.5);
+ PARM_FIELD (pathstring, "RSL_lightLinking") LABELREF(RSL_lightLinking.label) 
+	VALUE(RSL_lightLinking.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RSL_lightLinking.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+RSL_shadowLinking.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ RSL_shadowLinking.label = PARM_LABEL("Shadows Enabled For", "RSL_shadowLinking") WIDTH(1.5);
+ PARM_FIELD (pathstring, "RSL_shadowLinking") LABELREF(RSL_shadowLinking.label) 
+	VALUE(RSL_shadowLinking.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RSL_shadowLinking.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+light_enable.gad = NULL { }
+use_dcolor.gad = NULL { }
+dcolor.gad = NULL { }
+s.gad = NULL { }
+p.gad = NULL { }
+scale.gad = NULL { }
+dimmer.gad = NULL { }
+env_map.gad = NULL { }
+shadow_type.gad = NULL { }
+childcomp.gad = NULL { }
+lookupobjpath.gad = NULL { }
+pr.gad = NULL { }
+constraints_on.gad = NULL { }
+constraints_path.gad = NULL { }
+
+folder8.gad = 
+
+GROUP simple "Global Illumination" flat 
+{ 
+    VALUE(folder8.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RSL_emitGIPhotons.gad;		
+	    RSL_giIntensity.gad;		
+	    RSL_giPhotons.gad;		
+} 
+
+folder7.gad = 
+
+GROUP simple "Caustics" flat 
+{ 
+    VALUE(folder7.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RSL_emitCausticPhotons.gad;		
+	    RSL_causticIntensity.gad;		
+	    RSL_causticPhotons.gad;		
+} 
+
+Gamma_Override_3.gad = 
+
+GROUP simple "Gamma Override" flat 
+{ 
+    VALUE(Gamma_Override_3.gad.val) LAYOUT(vertical) HSTRETCH 
+	    tex1_gammaoverride.gad;		
+	    tex1_srgb.gad;		
+	    tex1_gamma.gad;		
+} 
+
+Environment_Alpha_Channel_Replace_2.gad = 
+
+GROUP simple "Environment Alpha Channel Replace" flat 
+{ 
+    VALUE(Environment_Alpha_Channel_Replace_2.gad.val) LAYOUT(vertical) HSTRETCH 
+	    alphaReplaceEnable.gad;		
+	    alphaReplaceValue.gad;		
+} 
+
+Shadow_1.gad = 
+
+GROUP simple "Shadow" flat 
+{ 
+    VALUE(Shadow_1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    shadow.gad;		
+	    shadowTransparency.gad;		
+} 
+
+Gamma_Override_0.gad = 
+
+GROUP simple "Gamma Override" flat 
+{ 
+    VALUE(Gamma_Override_0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    tex0_gammaoverride.gad;		
+	    tex0_gamma.gad;		
+} 
+
+RS_shaderNodeMainSwitcher.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "RS_shaderNodeMainSwitcher.gad"
+    { 
+	VALUE(RS_shaderNodeMainSwitcher.gad.val) STRETCH(1,0)
+
+	TAB "General"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    on.gad;		
+	    tex0.gad;		
+	    envType.gad;		
+	    gamma0.gad;		
+	    color.gad;		
+	    multiplier.gad;		
+	    RSL_exposure.gad;		
+	    RSL_hue.gad;		
+	    RSL_saturation.gad;		
+	    background_enable.gad;		
+	    Gamma_Override_0.gad;		
+	    Shadow_1.gad;		
+	    Environment_Alpha_Channel_Replace_2.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Back-Plate"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    backPlateEnabled.gad;		
+	    tex1.gad;		
+	    gamma1.gad;		
+	    backPlateAspect.gad;		
+	    applyExposureCompensation.gad;		
+	    Gamma_Override_3.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+folder5.gad = 
+
+GROUP simple "Volume" flat 
+{ 
+    VALUE(folder5.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RSL_volumeScale.gad;		
+	    RSL_volumeSamples.gad;		
+} 
+
+folder2.gad = 
+
+GROUP simple "Ray Contribution" flat 
+{ 
+    VALUE(folder2.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RSL_affectDiffuse.gad;		
+	    RSL_affectSpecular.gad;		
+	    RSL_matteShadow.gad;		
+	    RSL_diffuseScale.gad;		
+	    RSL_specularScale.gad;		
+} 
+
+folder3.gad = 
+
+GROUP simple "Light" flat 
+{ 
+    VALUE(folder3.gad.val) LAYOUT(vertical) HSTRETCH 
+	    light_enabled.gad;		
+	    ogl_enablelight.gad;		
+	    RSL_samples.gad;		
+} 
+
+folder1_2.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder1_2.gad"
+    { 
+	VALUE(folder1_2.gad.val) STRETCH(1,0)
+
+	TAB "Viewing Options"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    tdisplay.row.join;		
+	    l_iconscale.gad;		
+	    caching.gad;		
+	    picking.gad;		
+	    pickscript.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Lookat Options"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    lookatpath.gad;		
+	    lookup.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+folder0.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder0.gad"
+    { 
+	VALUE(folder0.gad.val) STRETCH(1,0)
+
+	TAB "Transform"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    keeppos.row.join;		
+	    xOrd.row.join;		
+	    t.gad;		
+	    r.gad;		
+	    folder1_2.gad;		
+	    pathobjpath.gad;		
+	    roll.gad;		
+	    pos.gad;		
+	    uparmtype.gad;		
+	    pathorient.gad;		
+	    up.gad;		
+	    bank.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Light"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    folder3.gad;		
+	    folder2.gad;		
+	    folder5.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Shader"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    RS_shaderNodeMainSwitcher.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Photon"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    folder7.gad;		
+	    folder8.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Objects"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    RSL_setInclusive.gad;		
+	    RSL_lightLinking.gad;		
+	    RSL_shadowLinking.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    folder0.gad; 
+    childcomp.gad; 
+    lookupobjpath.gad; 
+    pr.gad; 
+    constraints_on.gad; 
+    constraints_path.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

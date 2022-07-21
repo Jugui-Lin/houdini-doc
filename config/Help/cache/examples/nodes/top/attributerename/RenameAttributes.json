@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["RenameAttributes"]}, {"type": "para", "indent": 0, "text": ["This example file demonstrates how to rename work item attributes."], "extent": [0, 67]}], "examplefor": "/nodes/top/attributerename", "examplefile": "/examples/nodes/top/attributerename/RenameAttributes.hda"}

@@ -1,0 +1,719 @@
+// Magic: b9e5e591
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Wed May  4 11:40:57 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+enable.gad = NULL { }
+
+show_guide.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("show_guide", "Show Guide (When using P attrib)") toggle VALUE(show_guide.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+class.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Class", "class") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    class.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+group.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    group.label = PARM_LABEL("Group", "group") WIDTH(1.5);
+    PARM_FIELD(string, "group") VALUE(group.val) 
+	LABELREF(group.label) HSTRETCH;
+
+    group.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "BUTTONS_reselect" VALUE(group.script_action)
+	HELP("Select geometry from an available viewport.\nShift-click to turn on Select Groups.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+method.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Method", "method") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    method.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+chanscope.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    chanscope.label = PARM_LABEL("Channel Scope", "chanscope") WIDTH(1.5);
+    PARM_FIELD(string, "chanscope") VALUE(chanscope.val) 
+	LABELREF(chanscope.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+attscope.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+attscope.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    attscope.label = PARM_LABEL("Attribute Scope", "attscope") WIDTH(1.5);
+    PARM_FIELD(string, "attscope") VALUE(attscope.val) 
+	LABELREF(attscope.label) HSTRETCH;
+
+    {  }
+}
+
+orient_apply.gad = ROW
+{
+    
+    {  }
+
+    PARM_BUTTON("orient_apply", "Apply to p@orient attribute") toggle VALUE(orient_apply.val);
+
+    {  }
+
+    {  }
+}
+
+smoothrot.gad = ROW
+{
+    HSTRETCH
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("smoothrot", "Smoothrotation solve") toggle VALUE(smoothrot.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+organize.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    organize.label = PARM_LABEL("Organize by Attribute", "organize") WIDTH(1.5);
+    PARM_FIELD(string, "organize") VALUE(organize.val) 
+	LABELREF(organize.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+stiff.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ stiff.label = PARM_LABEL("Stiffness", "stiff") WIDTH(1.5);
+ PARM(float, 1, "stiff", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(stiff.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+damp.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ damp.label = PARM_LABEL("Damping", "damp") WIDTH(1.5);
+ PARM(float, 1, "damp", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(damp.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+limit.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ limit.label = PARM_LABEL("Limit", "limit") WIDTH(1.5);
+ PARM(float, 1, "limit", none, none) RANGE(0,40)
+	LOCK_RANGE_MIN LABELREF(limit.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+flex.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ flex.label = PARM_LABEL("Flex Amount", "flex") WIDTH(1.5);
+ PARM(float, 1, "flex", none, none) RANGE(0,1)
+	 LABELREF(flex.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+mult.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   mult.label = PARM_LABEL("Multiplier", "mult") WIDTH(1.5);
+   PARM(float, 3, "mult", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(mult.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+reference.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ reference.label = PARM_LABEL("Reference", "reference") WIDTH(1.5);
+ PARM_FIELD(pathstring, "reference") VALUE(reference.val) 
+	LABELREF(reference.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(reference.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(reference.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+springk.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ springk.label = PARM_LABEL("Spring Constant", "springk") WIDTH(1.5);
+ PARM(float, 1, "springk", none, none) RANGE(0,1000)
+	LOCK_RANGE_MIN LABELREF(springk.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+mass.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ mass.label = PARM_LABEL("Mass", "mass") WIDTH(1.5);
+ PARM(float, 1, "mass", none, none) RANGE(0.10000000000000001,10)
+	 LABELREF(mass.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+dampingk.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dampingk.label = PARM_LABEL("Damping Constant", "dampingk") WIDTH(1.5);
+ PARM(float, 1, "dampingk", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(dampingk.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+method2.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Input Effect", "method2") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    method2.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+condfromchan.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("condfromchan", "Initial Conditions From Channel") toggle VALUE(condfromchan.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+initpos.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ initpos.label = PARM_LABEL("Initial Position", "initpos") WIDTH(1.5);
+ PARM(float, 1, "initpos", none, none) RANGE(-10,10)
+	 LABELREF(initpos.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+initspeed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ initspeed.label = PARM_LABEL("Initial Speed", "initspeed") WIDTH(1.5);
+ PARM(float, 1, "initspeed", none, none) RANGE(-100,100)
+	 LABELREF(initspeed.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+lagmethod.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Method", "lagmethod") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    lagmethod.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+lag.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   lag.label = PARM_LABEL("Lag", "lag") WIDTH(1.5);
+   PARM(float, 2, "lag", none, none, "#1,#2")
+	RANGE(0,1) LOCK_RANGE_MIN LABELREF(lag.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+overshoot.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   overshoot.label = PARM_LABEL("Overshoot", "overshoot") WIDTH(1.5);
+   PARM(float, 2, "overshoot", none, none, "#1,#2")
+	RANGE(0,1) LOCK_RANGE_MIN LABELREF(overshoot.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+clamp.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("clamp", "Clamp Slope") toggle VALUE(clamp.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+slope.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   slope.label = PARM_LABEL("Max Slope", "slope") WIDTH(1.5);
+   PARM(float, 2, "slope", none, none, "#1,#2")
+	RANGE(0,2) LOCK_RANGE_MIN LABELREF(slope.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+aclamp.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("aclamp", "Clamp Acceleration") toggle VALUE(aclamp.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+accel.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   accel.label = PARM_LABEL("Max Acceleration", "accel") WIDTH(1.5);
+   PARM(float, 2, "accel", none, none, "#1,#2")
+	RANGE(0,2) LOCK_RANGE_MIN LABELREF(accel.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+numcopies.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ numcopies.label = PARM_LABEL("Number Of Copies", "numcopies") WIDTH(1.5);
+ PARM(integer, 1, "numcopies", none, none) RANGE(1,4)
+	LOCK_RANGE LABELREF(numcopies.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+remainder.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Remainder", "remainder") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    remainder.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+delay1.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ delay1.label = PARM_LABEL("Delay 1", "delay1") WIDTH(1.5);
+ PARM(float, 1, "delay1", none, none) RANGE(0,4)
+	LOCK_RANGE_MIN LABELREF(delay1.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+gain1.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ gain1.label = PARM_LABEL("Gain 1", "gain1") WIDTH(1.5);
+ PARM(float, 1, "gain1", none, none) RANGE(0,2)
+	 LABELREF(gain1.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+delay2.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ delay2.label = PARM_LABEL("Delay 2", "delay2") WIDTH(1.5);
+ PARM(float, 1, "delay2", none, none) RANGE(0,4)
+	LOCK_RANGE_MIN LABELREF(delay2.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+gain2.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ gain2.label = PARM_LABEL("Gain 2", "gain2") WIDTH(1.5);
+ PARM(float, 1, "gain2", none, none) RANGE(0,2)
+	 LABELREF(gain2.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Type", "type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    type.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+effect.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ effect.label = PARM_LABEL("Effect", "effect") WIDTH(1.5);
+ PARM(float, 1, "effect", none, none) RANGE(0,1)
+	 LABELREF(effect.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+width.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ width.label = PARM_LABEL("Filter Width", "width") WIDTH(1.5);
+ PARM(float, 1, "width", none, none) RANGE(0.001,2)
+	LOCK_RANGE_MIN LABELREF(width.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+spike.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ spike.label = PARM_LABEL("Spike Tolerance", "spike") WIDTH(1.5);
+ PARM(float, 1, "spike", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(spike.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+passes.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ passes.label = PARM_LABEL("Number of Passes", "passes") WIDTH(1.5);
+ PARM(integer, 1, "passes", none, none) RANGE(1,10)
+	LOCK_RANGE_MIN LABELREF(passes.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+code.gad = ROW
+{
+
+    HSTRETCH JUSTIFY(left, top) HMARGIN(0.18, 0.1)
+        NO_MARGIN_SPACING_SCALE
+
+    code.label = PARM_LABEL("Code Snippet", "code");
+
+    MULTILINE_PARM_FIELD ("code") 
+
+    	LABELREF(code.label) 
+
+    	VALUE(code.val) 
+    	SYNTAX("vex") 
+    	LINES(8,40) 
+    	HSTRETCH;
+
+    {
+
+	LAYOUT(vertical)
+	{
+	    SIZE(0, 0.26)
+	}
+
+    }
+
+}
+
+choice.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    { LOOK(none) SIZE(0, 0.05) }	
+
+    TABDIALOG radio
+    { 
+	VALUE(choice.gad.val) STRETCH(1,0)
+
+	TAB "Jiggle"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    stiff.gad;		
+	    damp.gad;		
+	    limit.gad;		
+	    flex.gad;		
+	    mult.gad;		
+	    reference.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Spring"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    springk.gad;		
+	    mass.gad;		
+	    dampingk.gad;		
+	    method2.gad;		
+	    condfromchan.gad;		
+	    initpos.gad;		
+	    initspeed.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Lag"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    lagmethod.gad;		
+	    lag.gad;		
+	    overshoot.gad;		
+	    clamp.gad;		
+	    slope.gad;		
+	    aclamp.gad;		
+	    accel.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Delay"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    numcopies.gad;		
+	    remainder.gad;		
+	    delay1.gad;		
+	    gain1.gad;		
+	    delay2.gad;		
+	    gain2.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Filter"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    type.gad;		
+	    effect.gad;		
+	    width.gad;		
+	    spike.gad;		
+	    passes.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Custom"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    code.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    enable.gad; 
+    show_guide.gad; 
+    class.gad; 
+    group.gad; 
+    method.gad; 
+    chanscope.gad; 
+    attscope.row.join; 
+    organize.gad; 
+    choice.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

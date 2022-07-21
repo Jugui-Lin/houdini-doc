@@ -1,0 +1,157 @@
+// Magic: 1f1b0452
+// Automatically generated PSI dialog (PSI version 19.0.622)
+// Fri Jul 15 16:52:16 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+group.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    group.label = PARM_LABEL("Group", "group") WIDTH(1.5);
+    PARM_FIELD(string, "group") VALUE(group.val) 
+	LABELREF(group.label) HSTRETCH;
+
+    group.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "BUTTONS_reselect" VALUE(group.script_action)
+	HELP("Select geometry from an available viewport.\nShift-click to turn on Select Groups.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+linkx.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("linkx", "Force xmax = 1 - xmin") toggle VALUE(linkx.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+xmin.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+xmin.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ xmin.label = PARM_LABEL("X Min", "xmin") WIDTH(1.5);
+ PARM(float, 1, "xmin", none, none) RANGE(0,1)
+	 LABELREF(xmin.label) HSTRETCH;
+
+  {  }
+}
+
+xmax.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ xmax.label = PARM_LABEL("X Max", "xmax") ;
+ PARM(float, 1, "xmax", none, none) RANGE(0,1)
+	 LABELREF(xmax.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+linky.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("linky", "Force ymax = 1 - ymin") toggle VALUE(linky.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+ymin.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+ymin.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ ymin.label = PARM_LABEL("Y Min", "ymin") WIDTH(1.5);
+ PARM(float, 1, "ymin", none, none) RANGE(0,1)
+	 LABELREF(ymin.label) HSTRETCH;
+
+  {  }
+}
+
+ymax.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ ymax.label = PARM_LABEL("Y Max", "ymax") ;
+ PARM(float, 1, "ymax", none, none) RANGE(0,1)
+	 LABELREF(ymax.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+xform_ver.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("xform_ver", "Transform instead of Carving") toggle VALUE(xform_ver.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    group.gad; 
+    linkx.gad; 
+    xmin.row.join; 
+    linky.gad; 
+    ymin.row.join; 
+    xform_ver.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

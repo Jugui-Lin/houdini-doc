@@ -19,6 +19,8 @@
     <memberTool name="qLib::AddStash"/>
     <memberTool name="qLib::ToggleIntegerFrames"/>
     <memberTool name="qLib::CrashRecovery"/>
+    <memberTool name="opHipFolder"/>
+    <memberTool name="CahceFolder"/>
   </toolshelf>
 
   <tool name="qLib::AccessShotNode" label="::shot::" icon="NETWORKS_scene">

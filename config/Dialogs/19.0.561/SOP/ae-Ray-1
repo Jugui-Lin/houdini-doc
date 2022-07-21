@@ -1,0 +1,327 @@
+// Magic: 247cae2e
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Wed May  4 11:48:22 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+show_guide.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("show_guide", "Show Guide") toggle VALUE(show_guide.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+grp.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    grp.label = PARM_LABEL("Group", "grp") WIDTH(1.5);
+    PARM_FIELD(string, "grp") VALUE(grp.val) 
+	LABELREF(grp.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+collision_grp.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    collision_grp.label = PARM_LABEL("Collision Group", "collision_grp") WIDTH(1.5);
+    PARM_FIELD(string, "collision_grp") VALUE(collision_grp.val) 
+	LABELREF(collision_grp.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+bidirectional.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("bidirectional", "Bi-directional") toggle VALUE(bidirectional.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+reverse.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("reverse", "Reverse rays") toggle VALUE(reverse.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+use_mindist.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("use_mindist", "Use Minimum distance if ray operation fails") toggle VALUE(use_mindist.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+del_missed.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("del_missed", "Delete point if ray operation fails") toggle VALUE(del_missed.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dir_menu.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Direction from", "dir_menu") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    dir_menu.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+ray_dir.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   ray_dir.label = PARM_LABEL("Direction", "ray_dir") WIDTH(1.5);
+   PARM(float, 3, "ray_dir", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(ray_dir.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+attrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    attrib.label = PARM_LABEL("Attrib", "attrib") WIDTH(1.5);
+    PARM_FIELD(string, "attrib") VALUE(attrib.val) 
+	LABELREF(attrib.label) HSTRETCH;
+
+    attrib.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+output_normal.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("output_normal", "Point Intersection Normal") toggle VALUE(output_normal.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+output_dist.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("output_dist", "Point Intersection Distance") toggle VALUE(output_dist.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+scale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ scale.label = PARM_LABEL("Scale", "scale") WIDTH(1.5);
+ PARM(float, 1, "scale", none, none) RANGE(0,10)
+	 LABELREF(scale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+lift.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ lift.label = PARM_LABEL("Lift", "lift") WIDTH(1.5);
+ PARM(float, 1, "lift", none, none) RANGE(0,10)
+	 LABELREF(lift.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+lift_attr.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    lift_attr.label = PARM_LABEL("Lift Attrib (Multiplier)", "lift_attr") WIDTH(1.5);
+    PARM_FIELD(string, "lift_attr") VALUE(lift_attr.val) 
+	LABELREF(lift_attr.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+bias.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ bias.label = PARM_LABEL("Bias", "bias") WIDTH(1.5);
+ PARM(float, 1, "bias", none, none) RANGE(0,10)
+	 LABELREF(bias.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm4.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+use_rayhitgrp.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+use_rayhitgrp.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+use_rayhitgrp.gad = PARM_BUTTON("use_rayhitgrp", "") toggle VALUE(use_rayhitgrp.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+rayhitgrp.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    rayhitgrp.label = PARM_LABEL("Ray Hit Group", "rayhitgrp") WIDTH(1.32);
+    PARM_FIELD(string, "rayhitgrp") VALUE(rayhitgrp.val) 
+	LABELREF(rayhitgrp.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+type.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    { LOOK(none) SIZE(0, 0.05) }	
+
+    TABDIALOG radio
+    { 
+	VALUE(type.gad.val) STRETCH(1,0)
+
+	TAB "Ray Intersect"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    bidirectional.gad;		
+	    reverse.gad;		
+	    use_mindist.gad;		
+	    del_missed.gad;		
+	    dir_menu.gad;		
+	    ray_dir.gad;		
+	    attrib.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    show_guide.gad; 
+    grp.gad; 
+    collision_grp.gad; 
+    type.gad; 
+    output_normal.gad; 
+    output_dist.gad; 
+    scale.gad; 
+    lift.gad; 
+    lift_attr.gad; 
+    bias.gad; 
+    sepparm4.gad; 
+    use_rayhitgrp.row.join; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

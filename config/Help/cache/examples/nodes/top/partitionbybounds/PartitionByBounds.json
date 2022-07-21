@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["PartitionByBounds"]}, {"type": "para", "indent": 0, "text": ["This example demonstrates how to use the partition by bounds TOP node."], "extent": [0, 71]}], "examplefor": "/nodes/top/partitionbybounds", "examplefile": "/examples/nodes/top/partitionbybounds/PartitionByBounds.hda"}

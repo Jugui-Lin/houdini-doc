@@ -1,0 +1,396 @@
+// Magic: df5b52b3
+// Automatically generated PSI dialog (PSI version 19.0.622)
+// Sun Jun 19 03:42:42 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+spacer.gad = NULL { }
+like_tool.gad = NULL { }
+dont_like.gad = NULL { }
+
+group.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    group.label = PARM_LABEL("Group", "group") WIDTH(1.5);
+    PARM_FIELD(string, "group") VALUE(group.val) 
+	LABELREF(group.label) HSTRETCH;
+
+    group.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "BUTTONS_reselect" VALUE(group.script_action)
+	HELP("Select geometry from an available viewport.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+uvattrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    uvattrib.label = PARM_LABEL("UV Attribute", "uvattrib") WIDTH(1.5);
+    PARM_FIELD(string, "uvattrib") VALUE(uvattrib.val) 
+	LABELREF(uvattrib.label) HSTRETCH;
+
+    uvattrib.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+method.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Method", "method") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    method.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+fuse_distance.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ fuse_distance.label = PARM_LABEL("Collapse Distance", "fuse_distance") WIDTH(1.5);
+ PARM(float, 1, "fuse_distance", none, none) RANGE(0,10)
+	 LABELREF(fuse_distance.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+num_points.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ num_points.label = PARM_LABEL("Number of Paths", "num_points") WIDTH(1.5);
+ PARM(integer, 1, "num_points", none, none) RANGE(1,100)
+	 LABELREF(num_points.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+convex_multiplier.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ convex_multiplier.label = PARM_LABEL("Convex Multiplier", "convex_multiplier") WIDTH(1.5);
+ PARM(float, 1, "convex_multiplier", none, none) RANGE(-10,10)
+	 LABELREF(convex_multiplier.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+occlusion_multiplier.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ occlusion_multiplier.label = PARM_LABEL("Occlusion Multiplier", "occlusion_multiplier") WIDTH(1.5);
+ PARM(float, 1, "occlusion_multiplier", none, none) RANGE(0,10)
+	 LABELREF(occlusion_multiplier.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+num_clusters.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ num_clusters.label = PARM_LABEL("Number of Clusters", "num_clusters") WIDTH(1.5);
+ PARM(integer, 1, "num_clusters", none, none) RANGE(1,100)
+	 LABELREF(num_clusters.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+normal_blur_cluster.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ normal_blur_cluster.label = PARM_LABEL("Normal Blur", "normal_blur_cluster") WIDTH(1.5);
+ PARM(integer, 1, "normal_blur_cluster", none, none) RANGE(0,10)
+	 LABELREF(normal_blur_cluster.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+random_seed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ random_seed.label = PARM_LABEL("Random Seed", "random_seed") WIDTH(1.5);
+ PARM(integer, 1, "random_seed", none, none) RANGE(0,10)
+	 LABELREF(random_seed.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+blur_amount.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ blur_amount.label = PARM_LABEL("Normal Blur Ammount", "blur_amount") WIDTH(1.5);
+ PARM(integer, 1, "blur_amount", none, none) RANGE(0,10)
+	 LABELREF(blur_amount.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+nplanes.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Planes", "nplanes") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    nplanes.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+graintol.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ graintol.label = PARM_LABEL("Grain Tolerance", "graintol") WIDTH(1.5);
+ PARM(float, 1, "graintol", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(graintol.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+mergethreshold.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ mergethreshold.label = PARM_LABEL("Merge Threshold", "mergethreshold") WIDTH(1.5);
+ PARM(float, 1, "mergethreshold", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(mergethreshold.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+merge_small_islands.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("merge_small_islands", "Merge Small Islands") toggle VALUE(merge_small_islands.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+small_island_cutoff.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ small_island_cutoff.label = PARM_LABEL("Small Island CutOff", "small_island_cutoff") WIDTH(1.5);
+ PARM(float, 1, "small_island_cutoff", none, none) RANGE(0,0.5)
+	 LABELREF(small_island_cutoff.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+optimize_uv_border.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("optimize_uv_border", "Optimize UV Border") toggle VALUE(optimize_uv_border.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+method2.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Flattening Method", "method2") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    method2.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+rotstep.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Island Rotation Step", "rotstep") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    rotstep.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+packing_iterations.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ packing_iterations.label = PARM_LABEL("Packing Iterations", "packing_iterations") WIDTH(1.5);
+ PARM(integer, 1, "packing_iterations", none, none) RANGE(0,10)
+	 LABELREF(packing_iterations.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+layout_padding.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+layout_padding.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ layout_padding.label = PARM_LABEL("Island Padding", "layout_padding") WIDTH(1.5);
+ PARM(integer, 1, "layout_padding", none, none) RANGE(0,10)
+	 LABELREF(layout_padding.label) HSTRETCH;
+
+  {  }
+}
+
+resolution.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    PARM_LABEL_SIMPLE("Padding Resolution", "resolution") ;
+    { WIDTH(0.09) }
+
+    resolution.menu;
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+udimtarget.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ udimtarget.label = PARM_LABEL("UDIM Target Tile", "udimtarget") WIDTH(1.5);
+ PARM(integer, 1, "udimtarget", none, none) RANGE(1001,1099)
+	LOCK_RANGE_MIN LABELREF(udimtarget.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+cusp_angle.gad = NULL { }
+
+folder0.gad = 
+
+GROUP simple "Packing Options" flat 
+{ 
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    merge_small_islands.gad;		
+	    small_island_cutoff.gad;		
+	    optimize_uv_border.gad;		
+	    method2.gad;		
+	    rotstep.gad;		
+	    packing_iterations.gad;		
+	    layout_padding.row.join;		
+	    udimtarget.gad;		
+} 
+
+folder1.gad = 
+
+GROUP simple "Method" flat 
+{ 
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    uvattrib.gad;		
+	    method.gad;		
+	    fuse_distance.gad;		
+	    num_points.gad;		
+	    convex_multiplier.gad;		
+	    occlusion_multiplier.gad;		
+	    num_clusters.gad;		
+	    normal_blur_cluster.gad;		
+	    random_seed.gad;		
+	    blur_amount.gad;		
+	    nplanes.gad;		
+	    graintol.gad;		
+	    mergethreshold.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    spacer.gad; 
+    like_tool.gad; 
+    dont_like.gad; 
+    group.gad; 
+    folder1.gad; 
+    folder0.gad; 
+    cusp_angle.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

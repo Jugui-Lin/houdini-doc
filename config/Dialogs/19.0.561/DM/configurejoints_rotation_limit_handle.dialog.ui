@@ -1,0 +1,472 @@
+// Magic: 58ffff54
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Wed May  4 20:45:55 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+anglestep.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ anglestep.label = PARM_LABEL("Angle Step", "anglestep") WIDTH(1.5);
+ PARM(float, 1, "anglestep", none, none) RANGE(0,180)
+	 LABELREF(anglestep.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+limittype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Limit Display Type", "limittype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    limittype.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+orientbyrord.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("orientbyrord", "Orient Circles by Rotation Order") toggle VALUE(orientbyrord.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+orienttwist.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("orienttwist", "Orient Twist Circle to Current Rotation") toggle VALUE(orienttwist.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+showcurrentrot.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("showcurrentrot", "Show Current Rotation") toggle VALUE(showcurrentrot.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+pivot_comp_tx.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pivot_comp_tx.label = PARM_LABEL("Pivot Comp Tx", "pivot_comp_tx") WIDTH(1.5);
+ PARM(float, 1, "pivot_comp_tx", none, none) RANGE(-10,10)
+	 LABELREF(pivot_comp_tx.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pivot_comp_ty.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pivot_comp_ty.label = PARM_LABEL("Pivot Comp Ty", "pivot_comp_ty") WIDTH(1.5);
+ PARM(float, 1, "pivot_comp_ty", none, none) RANGE(-10,10)
+	 LABELREF(pivot_comp_ty.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pivot_comp_tz.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pivot_comp_tz.label = PARM_LABEL("Pivot Comp Tz", "pivot_comp_tz") WIDTH(1.5);
+ PARM(float, 1, "pivot_comp_tz", none, none) RANGE(-10,10)
+	 LABELREF(pivot_comp_tz.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pivot_comp_rx.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pivot_comp_rx.label = PARM_LABEL("Pivot Comp Rx", "pivot_comp_rx") WIDTH(1.5);
+ PARM(float, 1, "pivot_comp_rx", none, none) RANGE(-360,360)
+	 LABELREF(pivot_comp_rx.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pivot_comp_ry.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pivot_comp_ry.label = PARM_LABEL("Pivot Comp Ry", "pivot_comp_ry") WIDTH(1.5);
+ PARM(float, 1, "pivot_comp_ry", none, none) RANGE(-360,360)
+	 LABELREF(pivot_comp_ry.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pivot_comp_rz.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pivot_comp_rz.label = PARM_LABEL("Pivot Comp Rz", "pivot_comp_rz") WIDTH(1.5);
+ PARM(float, 1, "pivot_comp_rz", none, none) RANGE(-360,360)
+	 LABELREF(pivot_comp_rz.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+rx.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ rx.label = PARM_LABEL("Rx", "rx") WIDTH(1.5);
+ PARM(float, 1, "rx", none, none) RANGE(-360,360)
+	 LABELREF(rx.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+ry.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ ry.label = PARM_LABEL("Ry", "ry") WIDTH(1.5);
+ PARM(float, 1, "ry", none, none) RANGE(-360,360)
+	 LABELREF(ry.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+rz.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ rz.label = PARM_LABEL("Rz", "rz") WIDTH(1.5);
+ PARM(float, 1, "rz", none, none) RANGE(-360,360)
+	 LABELREF(rz.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+rOrd.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ rOrd.label = PARM_LABEL("Rotation Order", "rOrd") WIDTH(1.5);
+ PARM(integer, 1, "rOrd", none, none) RANGE(0,5)
+	 LABELREF(rOrd.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+show_xaxis.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ show_xaxis.label = PARM_LABEL("Show X Axis", "show_xaxis") WIDTH(1.5);
+ PARM(integer, 1, "show_xaxis", none, none) RANGE(0,1)
+	 LABELREF(show_xaxis.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+show_yaxis.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ show_yaxis.label = PARM_LABEL("Show Y Axis", "show_yaxis") WIDTH(1.5);
+ PARM(integer, 1, "show_yaxis", none, none) RANGE(0,1)
+	 LABELREF(show_yaxis.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+show_zaxis.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ show_zaxis.label = PARM_LABEL("Show Z Axis", "show_zaxis") WIDTH(1.5);
+ PARM(integer, 1, "show_zaxis", none, none) RANGE(0,1)
+	 LABELREF(show_zaxis.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+lock_positivexaxis.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ lock_positivexaxis.label = PARM_LABEL("Disable Positive X Axis", "lock_positivexaxis") WIDTH(1.5);
+ PARM(integer, 1, "lock_positivexaxis", none, none) RANGE(0,1)
+	 LABELREF(lock_positivexaxis.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+lock_negativexaxis.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ lock_negativexaxis.label = PARM_LABEL("Disable Negative X Axis", "lock_negativexaxis") WIDTH(1.5);
+ PARM(integer, 1, "lock_negativexaxis", none, none) RANGE(0,1)
+	 LABELREF(lock_negativexaxis.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+lock_positiveyaxis.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ lock_positiveyaxis.label = PARM_LABEL("Disable Positive Y Axis", "lock_positiveyaxis") WIDTH(1.5);
+ PARM(integer, 1, "lock_positiveyaxis", none, none) RANGE(0,1)
+	 LABELREF(lock_positiveyaxis.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+lock_negativeyaxis.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ lock_negativeyaxis.label = PARM_LABEL("Disable Negative Y Axis", "lock_negativeyaxis") WIDTH(1.5);
+ PARM(integer, 1, "lock_negativeyaxis", none, none) RANGE(0,1)
+	 LABELREF(lock_negativeyaxis.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+lock_positivezaxis.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ lock_positivezaxis.label = PARM_LABEL("Disable Positive Z Axis", "lock_positivezaxis") WIDTH(1.5);
+ PARM(integer, 1, "lock_positivezaxis", none, none) RANGE(0,1)
+	 LABELREF(lock_positivezaxis.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+lock_negativezaxis.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ lock_negativezaxis.label = PARM_LABEL("Disable Negative Z Axis", "lock_negativezaxis") WIDTH(1.5);
+ PARM(integer, 1, "lock_negativezaxis", none, none) RANGE(0,1)
+	 LABELREF(lock_negativezaxis.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+flip_display.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ flip_display.label = PARM_LABEL("Flip Display", "flip_display") WIDTH(1.5);
+ PARM(integer, 1, "flip_display", none, none) RANGE(0,1)
+	 LABELREF(flip_display.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+r_positivexaxis.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ r_positivexaxis.label = PARM_LABEL("Rotate Positive XAxis", "r_positivexaxis") WIDTH(1.5);
+ PARM(float, 1, "r_positivexaxis", none, none) RANGE(-180,180)
+	 LABELREF(r_positivexaxis.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+r_negativexaxis.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ r_negativexaxis.label = PARM_LABEL("Rotate Negative XAxis", "r_negativexaxis") WIDTH(1.5);
+ PARM(float, 1, "r_negativexaxis", none, none) RANGE(-180,180)
+	 LABELREF(r_negativexaxis.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+r_positiveyaxis.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ r_positiveyaxis.label = PARM_LABEL("Rotate Positive YAxis", "r_positiveyaxis") WIDTH(1.5);
+ PARM(float, 1, "r_positiveyaxis", none, none) RANGE(-180,180)
+	 LABELREF(r_positiveyaxis.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+r_negativeyaxis.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ r_negativeyaxis.label = PARM_LABEL("Rotate Negative YAxis", "r_negativeyaxis") WIDTH(1.5);
+ PARM(float, 1, "r_negativeyaxis", none, none) RANGE(-180,180)
+	 LABELREF(r_negativeyaxis.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+r_positivezaxis.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ r_positivezaxis.label = PARM_LABEL("Rotate Positive ZAxis", "r_positivezaxis") WIDTH(1.5);
+ PARM(float, 1, "r_positivezaxis", none, none) RANGE(-180,180)
+	 LABELREF(r_positivezaxis.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+r_negativezaxis.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ r_negativezaxis.label = PARM_LABEL("Rotate Negative ZAxis", "r_negativezaxis") WIDTH(1.5);
+ PARM(float, 1, "r_negativezaxis", none, none) RANGE(-180,180)
+	 LABELREF(r_negativezaxis.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+handle_parameter_group.gad = 
+GROUP collapsible "Handle parameters" flat  
+{
+    VALUE(handle_parameter_group.gad.val) LAYOUT(vertical) HSTRETCH
+	    pivot_comp_tx.gad;		
+	    pivot_comp_ty.gad;		
+	    pivot_comp_tz.gad;		
+	    pivot_comp_rx.gad;		
+	    pivot_comp_ry.gad;		
+	    pivot_comp_rz.gad;		
+	    rx.gad;		
+	    ry.gad;		
+	    rz.gad;		
+	    rOrd.gad;		
+	    show_xaxis.gad;		
+	    show_yaxis.gad;		
+	    show_zaxis.gad;		
+	    lock_positivexaxis.gad;		
+	    lock_negativexaxis.gad;		
+	    lock_positiveyaxis.gad;		
+	    lock_negativeyaxis.gad;		
+	    lock_positivezaxis.gad;		
+	    lock_negativezaxis.gad;		
+	    flip_display.gad;		
+	    r_positivexaxis.gad;		
+	    r_negativexaxis.gad;		
+	    r_positiveyaxis.gad;		
+	    r_negativeyaxis.gad;		
+	    r_positivezaxis.gad;		
+	    r_negativezaxis.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    anglestep.gad; 
+    limittype.gad; 
+    orientbyrord.gad; 
+    orienttwist.gad; 
+    showcurrentrot.gad; 
+    handle_parameter_group.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

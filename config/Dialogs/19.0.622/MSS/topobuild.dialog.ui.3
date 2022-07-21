@@ -1,0 +1,135 @@
+// Magic: c72379db
+// Automatically generated PSI dialog (PSI version 19.0.622)
+// Wed Jul 20 09:41:21 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+mode.join =		
+{
+
+  LAYOUT(horizontal) JUSTIFY(left, center) UNSCALABLE
+
+mode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    PARM_LABEL_SIMPLE("Mode", "mode") ;
+    { WIDTH(0.1) }
+
+    mode.buttonstrip;
+
+    {  }
+
+    {  }
+}
+
+mode2.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    mode2.buttonstrip;
+
+    {  }
+
+    {  }
+}
+}	
+
+slide_modes.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    PARM_LABEL_SIMPLE("Slide Mode", "slide_modes") ;
+    { WIDTH(0.09) }
+
+    slide_modes.menu;
+
+    {  }
+
+    {  }
+}
+
+opacity.gad = 
+{
+
+ opacity.label = PARM_LABEL("Opacity", "opacity");
+ PARM(float, 1, "opacity", none, field) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(opacity.label) HSTRETCH;
+
+  {  }
+}
+
+flood.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    {  }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("flood", "Smooth All")
+	push VALUE(flood.val);
+
+    {  }
+}
+
+edgesnap.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("edgesnap", "Edge Snap") toggle VALUE(edgesnap.val);
+
+    {  }
+
+    {  }
+}
+
+divisions.gad = 
+{
+
+ divisions.label = PARM_LABEL("Divisions", "divisions");
+ PARM(integer, 1, "divisions", none, field) RANGE(2,50)
+	LOCK_RANGE_MIN LABELREF(divisions.label) HSTRETCH;
+
+  {  }
+}
+
+spans.gad = 
+{
+
+ spans.label = PARM_LABEL("Spans", "spans");
+ PARM(integer, 1, "spans", none, field) RANGE(-20,20)
+	LOCK_RANGE_MIN LABELREF(spans.label) HSTRETCH;
+
+  {  }
+}
+
+# warning cpp warning: "GenV3/subdialog.top.ui":11 Macro "PARMSPACING" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":12 Macro "LAYOUTDIR" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":13 Macro "DO_JUSTIFY" redefined.  Using later definition
+dialog_norm.gad = 
+{
+    LAYOUT(horizontal) SPACING(0.05) HSTRETCH JUSTIFY(left, center) UNSCALABLE
+    mode.join; 
+    slide_modes.gad; 
+    opacity.gad; 
+    flood.gad; 
+    edgesnap.gad; 
+    divisions.gad; 
+    spans.gad; 
+} 
+// dialog.bot.ui
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) VALUE(open.val_) HSTRETCH
+
+    dialog_norm.gad;
+}

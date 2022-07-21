@@ -1,0 +1,73 @@
+// Magic: 2cccde9d
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Wed May  4 07:32:23 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+rotation.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Rotation", "rotation") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    rotation.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+amount.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ amount.label = PARM_LABEL("Amount", "amount") WIDTH(1.5);
+ PARM(float, 1, "amount", none, none) RANGE(0,360)
+	 LABELREF(amount.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+folder0.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder0.gad"
+    { 
+	VALUE(folder0.gad.val) STRETCH(1,0)
+
+	TAB "Rotate Points"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    rotation.gad;		
+	    amount.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    folder0.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

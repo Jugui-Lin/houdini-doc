@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["WriteCSV"]}, {"type": "para", "indent": 0, "text": ["This example demonstrates how to create a csv file from pdg work item\u2019s attributes."], "extent": [0, 83]}], "examplefor": "/nodes/top/csvoutput", "examplefile": "/examples/nodes/top/csvoutput/WriteCSV.hda"}

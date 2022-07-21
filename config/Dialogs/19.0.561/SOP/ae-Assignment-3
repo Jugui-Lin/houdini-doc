@@ -1,0 +1,111 @@
+// Magic: cc6e34df
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Wed May  4 11:38:55 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+preview.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("preview", "Preview Matching") toggle VALUE(preview.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+attr.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    attr.label = PARM_LABEL("Position Attrib", "attr") WIDTH(1.5);
+    PARM_FIELD(string, "attr") VALUE(attr.val) 
+	LABELREF(attr.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+algo.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Algorithm", "algo") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    algo.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+seed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ seed.label = PARM_LABEL("Random Seed", "seed") WIDTH(1.5);
+ PARM(integer, 1, "seed", none, none) RANGE(0,10)
+	 LABELREF(seed.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+do_batch.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+do_batch.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+do_batch.gad = PARM_BUTTON("do_batch", "") toggle VALUE(do_batch.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+batch_size.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ batch_size.label = PARM_LABEL("Batch Size", "batch_size") WIDTH(1.32);
+ PARM(integer, 1, "batch_size", none, none) RANGE(0,50000)
+	 LABELREF(batch_size.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    preview.gad; 
+    attr.gad; 
+    algo.gad; 
+    seed.gad; 
+    do_batch.row.join; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

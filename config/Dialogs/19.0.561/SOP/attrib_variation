@@ -1,0 +1,236 @@
+// Magic: 37a156d6
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Tue May  3 08:25:12 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+drive_by_attrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    drive_by_attrib.label = PARM_LABEL("Drive by Attrib", "drive_by_attrib") WIDTH(1.5);
+    PARM_FIELD(string, "drive_by_attrib") VALUE(drive_by_attrib.val) 
+	LABELREF(drive_by_attrib.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+sepparm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+distribution_curve.si_rampedit = FLOAT_RAMP VALUE(distribution_curve.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+distribution_curve.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) WIDTH(1.5)
+	    LABEL "Point No.";
+	}
+
+	distribution_curve.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(distribution_curve.pointno.val) HSTRETCH;
+    }
+}
+
+distribution_curve.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(distribution_curve.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(distribution_curve.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    distribution_curve.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(distribution_curve.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    distribution_curve.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(distribution_curve.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+distribution_curve.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    distribution_curve.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	distribution_curve.buttons.gad VSTRETCH;
+
+	distribution_curve.si_rampedit HSTRETCH;
+    }
+}
+
+distribution_curve.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Distribution Curve", "distribution_curve");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(distribution_curve.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(distribution_curve.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	distribution_curve.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	distribution_curve.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(distribution_curve.hideparms.val) HSTRETCH
+	    distribution_curve.multiramp;
+	    {}
+	}
+    }
+}
+
+output_min.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ output_min.label = PARM_LABEL("Output Min", "output_min") WIDTH(1.5);
+ PARM(float, 1, "output_min", none, none) RANGE(0,1)
+	 LABELREF(output_min.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+output_max.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ output_max.label = PARM_LABEL("Output Max", "output_max") WIDTH(1.5);
+ PARM(float, 1, "output_max", none, none) RANGE(0,1)
+	 LABELREF(output_max.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+mix_noise.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ mix_noise.label = PARM_LABEL("Mix Noise", "mix_noise") WIDTH(1.5);
+ PARM(float, 1, "mix_noise", none, none) RANGE(0,1)
+	 LABELREF(mix_noise.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+seed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ seed.label = PARM_LABEL("Seed", "seed") WIDTH(1.5);
+ PARM(float, 1, "seed", none, none) RANGE(0,1)
+	 LABELREF(seed.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm2.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+set_attrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    set_attrib.label = PARM_LABEL("Set Attrib", "set_attrib") WIDTH(1.5);
+    PARM_FIELD(string, "set_attrib") VALUE(set_attrib.val) 
+	LABELREF(set_attrib.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    drive_by_attrib.gad; 
+    sepparm.gad; 
+    distribution_curve.gad; 
+    output_min.gad; 
+    output_max.gad; 
+    mix_noise.gad; 
+    seed.gad; 
+    sepparm2.gad; 
+    set_attrib.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

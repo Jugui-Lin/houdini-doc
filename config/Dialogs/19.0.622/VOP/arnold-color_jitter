@@ -1,0 +1,670 @@
+// Magic: ed20d7a7
+// Automatically generated PSI dialog (PSI version 19.0.622)
+// Sun Jun  5 00:59:59 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+input.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    input.label = PARM_LABEL("Input", "input") WIDTH(1.5);
+    PARM(float, 3, "input", none, COLOR, "R,G,B") 
+	LABELREF(input.label) HSTRETCH;
+
+    input.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(input.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+data_input.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ data_input.label = PARM_LABEL("Data", "data_input") WIDTH(1.5);
+ PARM(integer, 1, "data_input", none, none) RANGE(0,255)
+	 LABELREF(data_input.label) HSTRETCH;
+
+    data_input.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(data_input.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+data_gain_min.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ data_gain_min.label = PARM_LABEL("Min. Gain", "data_gain_min") WIDTH(1.5);
+ PARM(float, 1, "data_gain_min", none, none) RANGE(-1,1)
+	 LABELREF(data_gain_min.label) HSTRETCH;
+
+    data_gain_min.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(data_gain_min.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+data_gain_max.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ data_gain_max.label = PARM_LABEL("Max. Gain", "data_gain_max") WIDTH(1.5);
+ PARM(float, 1, "data_gain_max", none, none) RANGE(-1,1)
+	 LABELREF(data_gain_max.label) HSTRETCH;
+
+    data_gain_max.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(data_gain_max.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+data_hue_min.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ data_hue_min.label = PARM_LABEL("Min. Hue", "data_hue_min") WIDTH(1.5);
+ PARM(float, 1, "data_hue_min", none, none) RANGE(-1,1)
+	 LABELREF(data_hue_min.label) HSTRETCH;
+
+    data_hue_min.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(data_hue_min.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+data_hue_max.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ data_hue_max.label = PARM_LABEL("Max. Hue", "data_hue_max") WIDTH(1.5);
+ PARM(float, 1, "data_hue_max", none, none) RANGE(-1,1)
+	 LABELREF(data_hue_max.label) HSTRETCH;
+
+    data_hue_max.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(data_hue_max.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+data_saturation_min.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ data_saturation_min.label = PARM_LABEL("Min. Saturation", "data_saturation_min") WIDTH(1.5);
+ PARM(float, 1, "data_saturation_min", none, none) RANGE(-1,1)
+	 LABELREF(data_saturation_min.label) HSTRETCH;
+
+    data_saturation_min.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(data_saturation_min.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+data_saturation_max.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ data_saturation_max.label = PARM_LABEL("Max. Saturation", "data_saturation_max") WIDTH(1.5);
+ PARM(float, 1, "data_saturation_max", none, none) RANGE(-1,1)
+	 LABELREF(data_saturation_max.label) HSTRETCH;
+
+    data_saturation_max.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(data_saturation_max.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+data_seed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ data_seed.label = PARM_LABEL("Seed", "data_seed") WIDTH(1.5);
+ PARM(integer, 1, "data_seed", none, none) RANGE(0,255)
+	 LABELREF(data_seed.label) HSTRETCH;
+
+    data_seed.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(data_seed.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+proc_gain_min.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ proc_gain_min.label = PARM_LABEL("Min. Gain", "proc_gain_min") WIDTH(1.5);
+ PARM(float, 1, "proc_gain_min", none, none) RANGE(-1,1)
+	 LABELREF(proc_gain_min.label) HSTRETCH;
+
+    proc_gain_min.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(proc_gain_min.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+proc_gain_max.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ proc_gain_max.label = PARM_LABEL("Max. Gain", "proc_gain_max") WIDTH(1.5);
+ PARM(float, 1, "proc_gain_max", none, none) RANGE(-1,1)
+	 LABELREF(proc_gain_max.label) HSTRETCH;
+
+    proc_gain_max.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(proc_gain_max.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+proc_hue_min.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ proc_hue_min.label = PARM_LABEL("Min. Hue", "proc_hue_min") WIDTH(1.5);
+ PARM(float, 1, "proc_hue_min", none, none) RANGE(-1,1)
+	 LABELREF(proc_hue_min.label) HSTRETCH;
+
+    proc_hue_min.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(proc_hue_min.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+proc_hue_max.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ proc_hue_max.label = PARM_LABEL("Max. Hue", "proc_hue_max") WIDTH(1.5);
+ PARM(float, 1, "proc_hue_max", none, none) RANGE(-1,1)
+	 LABELREF(proc_hue_max.label) HSTRETCH;
+
+    proc_hue_max.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(proc_hue_max.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+proc_saturation_min.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ proc_saturation_min.label = PARM_LABEL("Min. Saturation", "proc_saturation_min") WIDTH(1.5);
+ PARM(float, 1, "proc_saturation_min", none, none) RANGE(-1,1)
+	 LABELREF(proc_saturation_min.label) HSTRETCH;
+
+    proc_saturation_min.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(proc_saturation_min.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+proc_saturation_max.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ proc_saturation_max.label = PARM_LABEL("Max. Saturation", "proc_saturation_max") WIDTH(1.5);
+ PARM(float, 1, "proc_saturation_max", none, none) RANGE(-1,1)
+	 LABELREF(proc_saturation_max.label) HSTRETCH;
+
+    proc_saturation_max.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(proc_saturation_max.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+proc_seed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ proc_seed.label = PARM_LABEL("Seed", "proc_seed") WIDTH(1.5);
+ PARM(integer, 1, "proc_seed", none, none) RANGE(0,255)
+	 LABELREF(proc_seed.label) HSTRETCH;
+
+    proc_seed.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(proc_seed.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+obj_gain_min.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ obj_gain_min.label = PARM_LABEL("Min. Gain", "obj_gain_min") WIDTH(1.5);
+ PARM(float, 1, "obj_gain_min", none, none) RANGE(-1,1)
+	 LABELREF(obj_gain_min.label) HSTRETCH;
+
+    obj_gain_min.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(obj_gain_min.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+obj_gain_max.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ obj_gain_max.label = PARM_LABEL("Max. Gain", "obj_gain_max") WIDTH(1.5);
+ PARM(float, 1, "obj_gain_max", none, none) RANGE(-1,1)
+	 LABELREF(obj_gain_max.label) HSTRETCH;
+
+    obj_gain_max.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(obj_gain_max.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+obj_hue_min.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ obj_hue_min.label = PARM_LABEL("Min. Hue", "obj_hue_min") WIDTH(1.5);
+ PARM(float, 1, "obj_hue_min", none, none) RANGE(-1,1)
+	 LABELREF(obj_hue_min.label) HSTRETCH;
+
+    obj_hue_min.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(obj_hue_min.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+obj_hue_max.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ obj_hue_max.label = PARM_LABEL("Max. Hue", "obj_hue_max") WIDTH(1.5);
+ PARM(float, 1, "obj_hue_max", none, none) RANGE(-1,1)
+	 LABELREF(obj_hue_max.label) HSTRETCH;
+
+    obj_hue_max.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(obj_hue_max.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+obj_saturation_min.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ obj_saturation_min.label = PARM_LABEL("Min. Saturation", "obj_saturation_min") WIDTH(1.5);
+ PARM(float, 1, "obj_saturation_min", none, none) RANGE(-1,1)
+	 LABELREF(obj_saturation_min.label) HSTRETCH;
+
+    obj_saturation_min.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(obj_saturation_min.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+obj_saturation_max.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ obj_saturation_max.label = PARM_LABEL("Max. Saturation", "obj_saturation_max") WIDTH(1.5);
+ PARM(float, 1, "obj_saturation_max", none, none) RANGE(-1,1)
+	 LABELREF(obj_saturation_max.label) HSTRETCH;
+
+    obj_saturation_max.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(obj_saturation_max.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+obj_seed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ obj_seed.label = PARM_LABEL("Seed", "obj_seed") WIDTH(1.5);
+ PARM(integer, 1, "obj_seed", none, none) RANGE(0,255)
+	 LABELREF(obj_seed.label) HSTRETCH;
+
+    obj_seed.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(obj_seed.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+face_gain_min.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ face_gain_min.label = PARM_LABEL("Min. Gain", "face_gain_min") WIDTH(1.5);
+ PARM(float, 1, "face_gain_min", none, none) RANGE(-1,1)
+	 LABELREF(face_gain_min.label) HSTRETCH;
+
+    face_gain_min.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(face_gain_min.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+face_gain_max.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ face_gain_max.label = PARM_LABEL("Max. Gain", "face_gain_max") WIDTH(1.5);
+ PARM(float, 1, "face_gain_max", none, none) RANGE(-1,1)
+	 LABELREF(face_gain_max.label) HSTRETCH;
+
+    face_gain_max.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(face_gain_max.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+face_hue_min.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ face_hue_min.label = PARM_LABEL("Min. Hue", "face_hue_min") WIDTH(1.5);
+ PARM(float, 1, "face_hue_min", none, none) RANGE(-1,1)
+	 LABELREF(face_hue_min.label) HSTRETCH;
+
+    face_hue_min.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(face_hue_min.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+face_hue_max.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ face_hue_max.label = PARM_LABEL("Max. Hue", "face_hue_max") WIDTH(1.5);
+ PARM(float, 1, "face_hue_max", none, none) RANGE(-1,1)
+	 LABELREF(face_hue_max.label) HSTRETCH;
+
+    face_hue_max.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(face_hue_max.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+face_saturation_min.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ face_saturation_min.label = PARM_LABEL("Min. Saturation", "face_saturation_min") WIDTH(1.5);
+ PARM(float, 1, "face_saturation_min", none, none) RANGE(-1,1)
+	 LABELREF(face_saturation_min.label) HSTRETCH;
+
+    face_saturation_min.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(face_saturation_min.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+face_saturation_max.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ face_saturation_max.label = PARM_LABEL("Max. Saturation", "face_saturation_max") WIDTH(1.5);
+ PARM(float, 1, "face_saturation_max", none, none) RANGE(-1,1)
+	 LABELREF(face_saturation_max.label) HSTRETCH;
+
+    face_saturation_max.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(face_saturation_max.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+face_seed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ face_seed.label = PARM_LABEL("Seed", "face_seed") WIDTH(1.5);
+ PARM(integer, 1, "face_seed", none, none) RANGE(0,255)
+	 LABELREF(face_seed.label) HSTRETCH;
+
+    face_seed.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(face_seed.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+face_mode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Face Mode", "face_mode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    face_mode.menu;
+
+    { HSTRETCH }
+
+    face_mode.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(face_mode.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+rgba.gad = NULL { }
+r.gad = NULL { }
+g.gad = NULL { }
+b.gad = NULL { }
+a.gad = NULL { }
+
+tabs.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "tabs.gad"
+    { 
+	VALUE(tabs.gad.val) STRETCH(1,0)
+
+	TAB "From Data"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    data_input.gad;		
+	    data_gain_min.gad;		
+	    data_gain_max.gad;		
+	    data_hue_min.gad;		
+	    data_hue_max.gad;		
+	    data_saturation_min.gad;		
+	    data_saturation_max.gad;		
+	    data_seed.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Per Procedural"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    proc_gain_min.gad;		
+	    proc_gain_max.gad;		
+	    proc_hue_min.gad;		
+	    proc_hue_max.gad;		
+	    proc_saturation_min.gad;		
+	    proc_saturation_max.gad;		
+	    proc_seed.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Per Object"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    obj_gain_min.gad;		
+	    obj_gain_max.gad;		
+	    obj_hue_min.gad;		
+	    obj_hue_max.gad;		
+	    obj_saturation_min.gad;		
+	    obj_saturation_max.gad;		
+	    obj_seed.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Per Face"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    face_gain_min.gad;		
+	    face_gain_max.gad;		
+	    face_hue_min.gad;		
+	    face_hue_max.gad;		
+	    face_saturation_min.gad;		
+	    face_saturation_max.gad;		
+	    face_seed.gad;		
+	    face_mode.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    input.gad; 
+    tabs.gad; 
+    rgba.gad; 
+    r.gad; 
+    g.gad; 
+    b.gad; 
+    a.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

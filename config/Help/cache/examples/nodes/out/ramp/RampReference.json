@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["RampReference"]}, {"type": "para", "indent": 0, "text": ["This example demonstrates the use of ramps and \nreferenced ramps which are animated over time."], "extent": [0, 96]}], "examplefor": "/nodes/out/ramp", "examplefile": "/examples/nodes/out/ramp/RampReference.otl"}

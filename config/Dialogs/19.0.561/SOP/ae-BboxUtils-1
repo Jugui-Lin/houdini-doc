@@ -1,0 +1,395 @@
+// Magic: 7c8e840f
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Wed May  4 11:45:48 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+input.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("input", "Show Guide") toggle VALUE(input.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+attrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    attrib.label = PARM_LABEL("Position Attribute", "attrib") WIDTH(1.5);
+    PARM_FIELD(string, "attrib") VALUE(attrib.val) 
+	LABELREF(attrib.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+add_rel_attr.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("add_rel_attr", "Add Relative Bounding Box Attrib (v@rel)") toggle VALUE(add_rel_attr.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+enable_del.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("enable_del", "Enable") toggle VALUE(enable_del.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+calc_bbox.gad = NULL { }
+
+op.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Operation", "op") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    op.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Element", "type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    type.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+method.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Promotion Method", "method") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    method.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+thresh.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ thresh.label = PARM_LABEL("Threshold Value", "thresh") WIDTH(1.5);
+ PARM(float, 1, "thresh", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(thresh.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+axes_buttons.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Axes", "axes_buttons") WIDTH(1.5);
+    { WIDTH(0.1) }
+
+    axes_buttons.buttonstrip;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+parm.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("parm", "Intersect Axis choices") toggle VALUE(parm.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+centre.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("centre", "Centre point") toggle VALUE(centre.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+xline.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+xline.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("xline", "X Line") toggle VALUE(xline.val);
+
+    {  }
+
+    {  }
+}
+
+xlinepos.gad = ROW
+{
+   HSTRETCH
+   {  }
+
+   xlinepos.label = PARM_LABEL("YZ Position", "xlinepos") ;
+   PARM(float, 2, "xlinepos", none, none, "X,Y")
+	RANGE(-1,1)  LABELREF(xlinepos.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+yline.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+yline.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("yline", "Y Line") toggle VALUE(yline.val);
+
+    {  }
+
+    {  }
+}
+
+ylinepos.gad = ROW
+{
+   HSTRETCH
+   {  }
+
+   ylinepos.label = PARM_LABEL("XZ Position", "ylinepos") ;
+   PARM(float, 2, "ylinepos", none, none, "X,Y")
+	RANGE(-1,1)  LABELREF(ylinepos.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+zline.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+zline.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("zline", "Z Line") toggle VALUE(zline.val);
+
+    {  }
+
+    {  }
+}
+
+zlinepos.gad = ROW
+{
+   HSTRETCH
+   {  }
+
+   zlinepos.label = PARM_LABEL("XY Position", "zlinepos") ;
+   PARM(float, 2, "zlinepos", none, none, "X,Y")
+	RANGE(-1,1)  LABELREF(zlinepos.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+bbsize.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   bbsize.label = PARM_LABEL("BB Size", "bbsize") WIDTH(1.5);
+   PARM(float, 3, "bbsize", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(bbsize.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+bbcenter.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   bbcenter.label = PARM_LABEL("BB Center", "bbcenter") WIDTH(1.5);
+   PARM(float, 3, "bbcenter", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(bbcenter.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+bbmin.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   bbmin.label = PARM_LABEL("BB Min", "bbmin") WIDTH(1.5);
+   PARM(float, 3, "bbmin", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(bbmin.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+bbmax.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   bbmax.label = PARM_LABEL("BB Max", "bbmax") WIDTH(1.5);
+   PARM(float, 3, "bbmax", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(bbmax.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+folder0.gad = 
+
+GROUP simple " " flat 
+{ 
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    calc_bbox.gad;		
+	    op.gad;		
+	    type.gad;		
+	    method.gad;		
+	    thresh.gad;		
+	    axes_buttons.gad;		
+	    parm.gad;		
+} 
+
+f.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "f.gad"
+    { 
+	VALUE(f.gad.val) STRETCH(1,0)
+
+	TAB "Delete by Relative Bounding Box"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    enable_del.gad;		
+	    folder0.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Useful Geo (2nd Output)"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    centre.gad;		
+	    xline.row.join;		
+	    yline.row.join;		
+	    zline.row.join;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "BBox Information"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    bbsize.gad;		
+	    bbcenter.gad;		
+	    bbmin.gad;		
+	    bbmax.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    input.gad; 
+    attrib.gad; 
+    add_rel_attr.gad; 
+    f.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

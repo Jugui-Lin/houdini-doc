@@ -1,0 +1,99 @@
+// Magic: 7bfb68f0
+// Automatically generated PSI dialog (PSI version 19.0.622)
+// Sat Jun 18 19:07:39 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+divisions.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   divisions.label = PARM_LABEL("Divisions", "divisions") WIDTH(1.5);
+   PARM(integer, 3, "divisions", none, none, "X,Y,Z")
+	RANGE(1,10) LOCK_RANGE_MIN LABELREF(divisions.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+cap.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("cap", "Fill Holes") toggle VALUE(cap.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+isolate_index.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("isolate_index", "Isolate Index") toggle VALUE(isolate_index.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+index.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ index.label = PARM_LABEL("Index", "index") WIDTH(1.5);
+ PARM(integer, 1, "index", none, none) RANGE(0,10)
+	 LABELREF(index.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+visualize_pieces.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("visualize_pieces", "Visualize Pieces") toggle VALUE(visualize_pieces.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    divisions.gad; 
+    cap.gad; 
+    isolate_index.gad; 
+    index.gad; 
+    visualize_pieces.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

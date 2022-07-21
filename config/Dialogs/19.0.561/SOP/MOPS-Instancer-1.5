@@ -1,0 +1,3706 @@
+// Magic: 7270e710
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Mon Apr 25 22:17:39 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+rotate.gad = NULL { }
+scale.gad = NULL { }
+id_gen_seed.gad = NULL { }
+
+index_mode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Indexing Mode", "index_mode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    index_mode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+index_attr.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    index_attr.label = PARM_LABEL("Index Attr", "index_attr") WIDTH(1.5);
+    PARM_FIELD(string, "index_attr") VALUE(index_attr.val) 
+	LABELREF(index_attr.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+index_seed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ index_seed.label = PARM_LABEL("Index Random Seed", "index_seed") WIDTH(1.5);
+ PARM(integer, 1, "index_seed", none, none) RANGE(0,10000)
+	 LABELREF(index_seed.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+quick_add.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ quick_add.label = PARM_LABEL("Quick Add Objects", "quick_add") WIDTH(1.5);
+ PARM_FIELD (pathstring, "quick_add") LABELREF(quick_add.label) 
+	VALUE(quick_add.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(quick_add.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+add_variants_btn.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("add_variants_btn", "Add from Variants...")
+	push VALUE(add_variants_btn.val);
+
+    { WIDTH(0.1) }
+}
+
+points_only.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("points_only", "Points Only (No Instances)") toggle VALUE(points_only.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+output_template_attrs.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("output_template_attrs", "Output Template Attributes") toggle VALUE(output_template_attrs.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+sepparm3.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+viewportlod.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Display As", "viewportlod") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    viewportlod.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+xformtype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Transform Type", "xformtype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    xformtype.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+xformpath.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ xformpath.label = PARM_LABEL("Transform Object", "xformpath") WIDTH(1.5);
+ PARM_FIELD(pathstring, "xformpath") VALUE(xformpath.val) 
+	LABELREF(xformpath.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(xformpath.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(xformpath.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+invertxform.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("invertxform", "Invert Transform") toggle VALUE(invertxform.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+packfromdefault.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Pack From Default", "packfromdefault") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    packfromdefault.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+sepparm2.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+do_material_overrides.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("do_material_overrides", "Enable Material Overrides") toggle VALUE(do_material_overrides.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+transfer_attributes.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    transfer_attributes.label = PARM_LABEL("Transfer Attributes", "transfer_attributes") WIDTH(1.5);
+    PARM_FIELD(string, "transfer_attributes") VALUE(transfer_attributes.val) 
+	LABELREF(transfer_attributes.label) HSTRETCH;
+
+    transfer_attributes.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+global_translate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   global_translate.label = PARM_LABEL("Translate", "global_translate") WIDTH(1.5);
+   PARM(float, 3, "global_translate", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(global_translate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+global_rotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   global_rotate.label = PARM_LABEL("Rotate", "global_rotate") WIDTH(1.5);
+   PARM(float, 3, "global_rotate", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(global_rotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+global_scale.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   global_scale.label = PARM_LABEL("Scale", "global_scale") WIDTH(1.5);
+   PARM(float, 3, "global_scale", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(global_scale.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+global_pscale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ global_pscale.label = PARM_LABEL("Uniform Scale", "global_pscale") WIDTH(1.5);
+ PARM(float, 1, "global_pscale", none, none) RANGE(0,10)
+	 LABELREF(global_pscale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+instanceobjects.parm =
+{
+    LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+    PARM_LABEL_SIMPLE("Instance Objects", "instanceobjects") WIDTH(1.5);
+    { WIDTH(0.1) }
+
+    ROW
+    {
+	HSTRETCH(0.5) JUSTIFY(left, center) VALUE(instanceobjects.val)
+
+        instanceobjects.field = PARM_FIELD (integer, "instanceobjects")
+				VALUE(instanceobjects.val) HSTRETCH(0.5)
+				 PREF_WIDTH(0.5);
+
+        ROW
+        {
+	     LOOK(lightline) VMARGIN(1p)
+
+   	     INCREMENT_ICONBUTTON VALUE(instanceobjects.more.val)	
+	    	HELP("Add Another Instance") SIZE(0.2, 0.24);
+	     DECREMENT_ICONBUTTON VALUE(instanceobjects.less.val)	
+	        HELP("Remove Last Instance") SIZE(0.2, 0.24);
+
+	}
+
+	ACTION_BUTTON "Clear" VALUE(instanceobjects.clear.val);
+    }
+
+    { HSTRETCH }
+}
+
+instanceobjects.multilist = 
+{
+    LAYOUT(vertical) HSTRETCH MARGIN(0.05)
+}
+
+instanceobjects.gad =
+{
+    LAYOUT(vertical) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    SWITCHER tight
+    {
+	LAYOUT(vertical) HSTRETCH
+
+	VALUE(instanceobjects.multilist_hide_buttons.val)
+	{
+	    LAYOUT(vertical) HSTRETCH
+	    instanceobjects.parm;
+	    {LOOK(none) HEIGHT(0.02)}
+	}
+	{
+	}
+    }
+    instanceobjects.multilist;
+}
+num_points_enabled.gad = NULL { }
+
+distro_type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Distribution Type", "distro_type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    distro_type.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+inputMesh.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ inputMesh.label = PARM_LABEL("Template Object", "inputMesh") WIDTH(1.5);
+ PARM_FIELD(pathstring, "inputMesh") VALUE(inputMesh.val) 
+	LABELREF(inputMesh.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(inputMesh.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(inputMesh.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+inputMeshGroup.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    inputMeshGroup.label = PARM_LABEL("Template Group", "inputMeshGroup") WIDTH(1.5);
+    PARM_FIELD(string, "inputMeshGroup") VALUE(inputMeshGroup.val) 
+	LABELREF(inputMeshGroup.label) HSTRETCH;
+
+    inputMeshGroup.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+do_interpolation.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("do_interpolation", "Enable Template Interpolation") toggle VALUE(do_interpolation.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+do_interpolate_scale.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("do_interpolate_scale", "Interpolate Scale Attrs") toggle VALUE(do_interpolate_scale.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+template_rest_frame.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ template_rest_frame.label = PARM_LABEL("Template Rest Frame", "template_rest_frame") WIDTH(1.5);
+ PARM(float, 1, "template_rest_frame", none, none) RANGE(0,10)
+	 LABELREF(template_rest_frame.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+do_copy_attrs.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("do_copy_attrs", "Copy Template Attributes") toggle VALUE(do_copy_attrs.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+attribname2.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    attribname2.label = PARM_LABEL("Attributes To Copy", "attribname2") WIDTH(1.5);
+    PARM_FIELD(string, "attribname2") VALUE(attribname2.val) 
+	LABELREF(attribname2.label) HSTRETCH;
+
+    attribname2.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+linear_npoints.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ linear_npoints.label = PARM_LABEL("Number of Points", "linear_npoints") WIDTH(1.5);
+ PARM(integer, 1, "linear_npoints", none, none) RANGE(1,10000)
+	LOCK_RANGE_MIN LABELREF(linear_npoints.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+linear_mode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Linear Mode", "linear_mode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    linear_mode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+linear_center_origin.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("linear_center_origin", "Center at Origin") toggle VALUE(linear_center_origin.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+pt0.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   pt0.label = PARM_LABEL("Point 0", "pt0") WIDTH(1.5);
+   PARM(float, 3, "pt0", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(pt0.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+pt1.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   pt1.label = PARM_LABEL("Point 1", "pt1") WIDTH(1.5);
+   PARM(float, 3, "pt1", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(pt1.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+origin.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   origin.label = PARM_LABEL("Origin", "origin") WIDTH(1.5);
+   PARM(float, 3, "origin", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(origin.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+dir.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   dir.label = PARM_LABEL("Direction", "dir") WIDTH(1.5);
+   PARM(float, 3, "dir", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(dir.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+dist.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dist.label = PARM_LABEL("Length", "dist") WIDTH(1.5);
+ PARM(float, 1, "dist", none, none) RANGE(0,10)
+	 LABELREF(dist.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+linear_align.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("linear_align", "Align") toggle VALUE(linear_align.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+sepparm6.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+distro_line_invert_N.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("distro_line_invert_N", "Invert Normal") toggle VALUE(distro_line_invert_N.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+distro_line_custom_first_tangent.gad = NULL { }
+distro_line_first_tangent.gad = NULL { }
+
+distro_line_twist_amount.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ distro_line_twist_amount.label = PARM_LABEL("Twist Amount", "distro_line_twist_amount") WIDTH(1.5);
+ PARM(float, 1, "distro_line_twist_amount", none, none) RANGE(-360,360)
+	 LABELREF(distro_line_twist_amount.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+distro_line_twist_ramp.si_rampedit = FLOAT_RAMP VALUE(distro_line_twist_ramp.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+distro_line_twist_ramp.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) WIDTH(1.5)
+	    LABEL "Point No.";
+	}
+
+	distro_line_twist_ramp.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(distro_line_twist_ramp.pointno.val) HSTRETCH;
+    }
+}
+
+distro_line_twist_ramp.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(distro_line_twist_ramp.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(distro_line_twist_ramp.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    distro_line_twist_ramp.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(distro_line_twist_ramp.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    distro_line_twist_ramp.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(distro_line_twist_ramp.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+distro_line_twist_ramp.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    distro_line_twist_ramp.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	distro_line_twist_ramp.buttons.gad VSTRETCH;
+
+	distro_line_twist_ramp.si_rampedit HSTRETCH;
+    }
+}
+
+distro_line_twist_ramp.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Twist Ramp", "distro_line_twist_ramp");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(distro_line_twist_ramp.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(distro_line_twist_ramp.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	distro_line_twist_ramp.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	distro_line_twist_ramp.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(distro_line_twist_ramp.hideparms.val) HSTRETCH
+	    distro_line_twist_ramp.multiramp;
+	    {}
+	}
+    }
+}
+
+radial_npoints.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ radial_npoints.label = PARM_LABEL("Number of Points", "radial_npoints") WIDTH(1.5);
+ PARM(integer, 1, "radial_npoints", none, none) RANGE(1,10000)
+	LOCK_RANGE_MIN LABELREF(radial_npoints.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+radial_orient.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Orientation", "radial_orient") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    radial_orient.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+radial_angle.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   radial_angle.label = PARM_LABEL( "Arc Angles", "radial_angle" ) WIDTH(1.5);
+   PARM(float, 2, "radial_angle", none, none) RANGE(0, 360)
+	LABELREF( radial_angle.label ) HSTRETCH;
+
+   { WIDTH(0.1) }
+}
+
+radial_radius.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   radial_radius.label = PARM_LABEL("Radius", "radial_radius") WIDTH(1.5);
+   PARM(float, 2, "radial_radius", none, none, "X,Y")
+	RANGE(-1,1)  LABELREF(radial_radius.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+radial_scale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ radial_scale.label = PARM_LABEL("Uniform Scale", "radial_scale") WIDTH(1.5);
+ PARM(float, 1, "radial_scale", none, none) RANGE(0,10)
+	 LABELREF(radial_scale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+radial_divisions.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ radial_divisions.label = PARM_LABEL("Divisions", "radial_divisions") WIDTH(1.5);
+ PARM(integer, 1, "radial_divisions", none, none) RANGE(1,100)
+	LOCK_RANGE_MIN LABELREF(radial_divisions.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+t.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   t.label = PARM_LABEL("Center", "t") WIDTH(1.5);
+   PARM(float, 3, "t", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(t.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+r.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   r.label = PARM_LABEL("Rotate", "r") WIDTH(1.5);
+   PARM(float, 3, "r", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(r.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+radial_jitter.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ radial_jitter.label = PARM_LABEL("Jitter", "radial_jitter") WIDTH(1.5);
+ PARM(float, 1, "radial_jitter", none, none) RANGE(0,1)
+	 LABELREF(radial_jitter.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+radial_seed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ radial_seed.label = PARM_LABEL("Seed", "radial_seed") WIDTH(1.5);
+ PARM(float, 1, "radial_seed", none, none) RANGE(0,1)
+	 LABELREF(radial_seed.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+radial_align.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("radial_align", "Align") toggle VALUE(radial_align.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+sepparm5.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+radial_align_type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Align Type", "radial_align_type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    radial_align_type.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+distro_radial_invert.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("distro_radial_invert", "Invert Normal") toggle VALUE(distro_radial_invert.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+distro_radial_do_custom_first_tangent.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("distro_radial_do_custom_first_tangent", "Custom First Tangent") toggle VALUE(distro_radial_do_custom_first_tangent.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+distro_radial_first_tangent.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   distro_radial_first_tangent.label = PARM_LABEL("First Tangent", "distro_radial_first_tangent") WIDTH(1.5);
+   PARM(float, 3, "distro_radial_first_tangent", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(distro_radial_first_tangent.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+distro_radial_twist_amount.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ distro_radial_twist_amount.label = PARM_LABEL("Twist Amount", "distro_radial_twist_amount") WIDTH(1.5);
+ PARM(float, 1, "distro_radial_twist_amount", none, none) RANGE(-360,360)
+	 LABELREF(distro_radial_twist_amount.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+distro_radial_twist_ramp.si_rampedit = FLOAT_RAMP VALUE(distro_radial_twist_ramp.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+distro_radial_twist_ramp.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) WIDTH(1.5)
+	    LABEL "Point No.";
+	}
+
+	distro_radial_twist_ramp.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(distro_radial_twist_ramp.pointno.val) HSTRETCH;
+    }
+}
+
+distro_radial_twist_ramp.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(distro_radial_twist_ramp.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(distro_radial_twist_ramp.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    distro_radial_twist_ramp.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(distro_radial_twist_ramp.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    distro_radial_twist_ramp.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(distro_radial_twist_ramp.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+distro_radial_twist_ramp.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    distro_radial_twist_ramp.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	distro_radial_twist_ramp.buttons.gad VSTRETCH;
+
+	distro_radial_twist_ramp.si_rampedit HSTRETCH;
+    }
+}
+
+distro_radial_twist_ramp.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Twist Ramp", "distro_radial_twist_ramp");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(distro_radial_twist_ramp.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(distro_radial_twist_ramp.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	distro_radial_twist_ramp.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	distro_radial_twist_ramp.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(distro_radial_twist_ramp.hideparms.val) HSTRETCH
+	    distro_radial_twist_ramp.multiramp;
+	    {}
+	}
+    }
+}
+
+sphere_npoints.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ sphere_npoints.label = PARM_LABEL("Number of Points", "sphere_npoints") WIDTH(1.5);
+ PARM(integer, 1, "sphere_npoints", none, none) RANGE(1,10000)
+	LOCK_RANGE_MIN LABELREF(sphere_npoints.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sphere_radius.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ sphere_radius.label = PARM_LABEL("Radius", "sphere_radius") WIDTH(1.5);
+ PARM(float, 1, "sphere_radius", none, none) RANGE(0,1)
+	 LABELREF(sphere_radius.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sphere_cone.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ sphere_cone.label = PARM_LABEL("Cone Angle", "sphere_cone") WIDTH(1.5);
+ PARM(float, 1, "sphere_cone", none, none) RANGE(0,360)
+	LOCK_RANGE LABELREF(sphere_cone.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sphere_cone_direction.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   sphere_cone_direction.label = PARM_LABEL("Cone Direction", "sphere_cone_direction") WIDTH(1.5);
+   PARM(float, 3, "sphere_cone_direction", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(sphere_cone_direction.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+sphere_align.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("sphere_align", "Align") toggle VALUE(sphere_align.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+sphere_cross_up.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("sphere_cross_up", "Align to Equator") toggle VALUE(sphere_cross_up.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+do_sphere_fill.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("do_sphere_fill", "Fill Sphere") toggle VALUE(do_sphere_fill.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+sepparm7.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+sphere_seed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ sphere_seed.label = PARM_LABEL("Scatter Seed", "sphere_seed") WIDTH(1.5);
+ PARM(integer, 1, "sphere_seed", none, none) RANGE(0,10000)
+	 LABELREF(sphere_seed.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+relaxpoints.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+relaxpoints.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+relaxpoints.gad = PARM_BUTTON("relaxpoints", "") toggle VALUE(relaxpoints.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+relaxiterations3.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ relaxiterations3.label = PARM_LABEL("Relax Iterations", "relaxiterations3") WIDTH(1.32);
+ PARM(integer, 1, "relaxiterations3", none, none) RANGE(0,100)
+	LOCK_RANGE_MIN LABELREF(relaxiterations3.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+scaleradiiby3.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ scaleradiiby3.label = PARM_LABEL("Scale Radii By", "scaleradiiby3") WIDTH(1.5);
+ PARM(float, 1, "scaleradiiby3", none, none) RANGE(0,2)
+	LOCK_RANGE_MIN LABELREF(scaleradiiby3.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+maxradius.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ maxradius.label = PARM_LABEL("Max Relax Radius", "maxradius") WIDTH(1.5);
+ PARM(float, 1, "maxradius", none, none) RANGE(0,100)
+	LOCK_RANGE_MIN LABELREF(maxradius.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+sphere_anim_speed.gad = NULL { }
+sphere_anim_amount.gad = NULL { }
+
+grid_distrib_type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Distribution Type", "grid_distrib_type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    grid_distrib_type.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+grid_x.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ grid_x.label = PARM_LABEL("Grid X", "grid_x") WIDTH(1.5);
+ PARM(integer, 1, "grid_x", none, none) RANGE(1,10)
+	LOCK_RANGE_MIN LABELREF(grid_x.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+grid_y.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ grid_y.label = PARM_LABEL("Grid Y", "grid_y") WIDTH(1.5);
+ PARM(integer, 1, "grid_y", none, none) RANGE(1,10)
+	LOCK_RANGE_MIN LABELREF(grid_y.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+grid_z.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ grid_z.label = PARM_LABEL("Grid Z", "grid_z") WIDTH(1.5);
+ PARM(integer, 1, "grid_z", none, none) RANGE(1,10)
+	LOCK_RANGE_MIN LABELREF(grid_z.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+grid_distance.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   grid_distance.label = PARM_LABEL("Distance", "grid_distance") WIDTH(1.5);
+   PARM(float, 3, "grid_distance", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(grid_distance.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+grid_size.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   grid_size.label = PARM_LABEL("Size", "grid_size") WIDTH(1.5);
+   PARM(float, 3, "grid_size", none, none, "X,Y,Z")
+	RANGE(0,1) LOCK_RANGE_MIN LABELREF(grid_size.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+grid_step.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   grid_step.label = PARM_LABEL("Step", "grid_step") WIDTH(1.5);
+   PARM(float, 3, "grid_step", none, none, "X,Y,Z")
+	RANGE(1.0000000000000001e-05,1) LOCK_RANGE_MIN LABELREF(grid_step.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+honeycomb_type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Honeycomb Type", "honeycomb_type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    honeycomb_type.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+honeycomb_dims.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   honeycomb_dims.label = PARM_LABEL("Dimensions", "honeycomb_dims") WIDTH(1.5);
+   PARM(integer, 3, "honeycomb_dims", none, none, "X,Y,Z")
+	RANGE(1,10) LOCK_RANGE_MIN LABELREF(honeycomb_dims.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+honeycomb_rad.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   honeycomb_rad.label = PARM_LABEL("Cell Radius", "honeycomb_rad") WIDTH(1.5);
+   PARM(float, 3, "honeycomb_rad", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(honeycomb_rad.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+do_resample_curve.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("do_resample_curve", "Resample Curve") toggle VALUE(do_resample_curve.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+do_curve_jitter.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("do_curve_jitter", "Enable Jitter") toggle VALUE(do_curve_jitter.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dolength.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dolength", "Maximum Segment Length") toggle VALUE(dolength.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+length.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ length.label = PARM_LABEL("Length", "length") WIDTH(1.5);
+ PARM(float, 1, "length", none, none) RANGE(0,5)
+	LOCK_RANGE_MIN LABELREF(length.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+dosegs.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dosegs", "Maximum Segments") toggle VALUE(dosegs.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+segs.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ segs.label = PARM_LABEL("Segments", "segs") WIDTH(1.5);
+ PARM(integer, 1, "segs", none, none) RANGE(1,50)
+	LOCK_RANGE_MIN LABELREF(segs.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm9.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+edge.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("edge", "Resample by Polygon Edge") toggle VALUE(edge.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+method.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Method", "method") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    method.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+measure.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Measure", "measure") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    measure.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+treatpolysas.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Treat Polygons As", "treatpolysas") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    treatpolysas.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+curve_align.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("curve_align", "Align") toggle VALUE(curve_align.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+sepparm8.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+do_orient_curve.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("do_orient_curve", "Reorient Curve") toggle VALUE(do_orient_curve.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+invert.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("invert", "Invert Normal") toggle VALUE(invert.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+custom_first_tangent.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("custom_first_tangent", "Custom First Tangent") toggle VALUE(custom_first_tangent.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+First_Tangent.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   First_Tangent.label = PARM_LABEL("First Tangent", "First_Tangent") WIDTH(1.5);
+   PARM(float, 3, "First_Tangent", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(First_Tangent.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+twist_amount.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ twist_amount.label = PARM_LABEL("Twist Amount", "twist_amount") WIDTH(1.5);
+ PARM(float, 1, "twist_amount", none, none) RANGE(-360,360)
+	 LABELREF(twist_amount.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+twist_ramp.si_rampedit = FLOAT_RAMP VALUE(twist_ramp.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+twist_ramp.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) WIDTH(1.5)
+	    LABEL "Point No.";
+	}
+
+	twist_ramp.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(twist_ramp.pointno.val) HSTRETCH;
+    }
+}
+
+twist_ramp.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(twist_ramp.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(twist_ramp.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    twist_ramp.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(twist_ramp.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    twist_ramp.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(twist_ramp.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+twist_ramp.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    twist_ramp.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	twist_ramp.buttons.gad VSTRETCH;
+
+	twist_ramp.si_rampedit HSTRETCH;
+    }
+}
+
+twist_ramp.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Twist Ramp", "twist_ramp");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(twist_ramp.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(twist_ramp.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	twist_ramp.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	twist_ramp.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(twist_ramp.hideparms.val) HSTRETCH
+	    twist_ramp.multiramp;
+	    {}
+	}
+    }
+}
+
+curve_jitter.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ curve_jitter.label = PARM_LABEL("Jitter", "curve_jitter") WIDTH(1.5);
+ PARM(float, 1, "curve_jitter", none, none) RANGE(0,1)
+	 LABELREF(curve_jitter.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+curve_jitter_seed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ curve_jitter_seed.label = PARM_LABEL("Seed", "curve_jitter_seed") WIDTH(1.5);
+ PARM(float, 1, "curve_jitter_seed", none, none) RANGE(0,1)
+	 LABELREF(curve_jitter_seed.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+wrap.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("wrap", "Wrap") toggle VALUE(wrap.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+mesh_distroMethod.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Mesh Distribution Method", "mesh_distroMethod") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    mesh_distroMethod.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+inputMeshPointGroup.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    inputMeshPointGroup.label = PARM_LABEL("Template Point Group", "inputMeshPointGroup") WIDTH(1.5);
+    PARM_FIELD(string, "inputMeshPointGroup") VALUE(inputMeshPointGroup.val) 
+	LABELREF(inputMeshPointGroup.label) HSTRETCH;
+
+    inputMeshPointGroup.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "BUTTONS_reselect" VALUE(inputMeshPointGroup.script_action)
+	HELP("Select geometry from an available viewport.\nShift-click to turn on Select Groups.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+do_mesh_point_limit.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+do_mesh_point_limit.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+do_mesh_point_limit.gad = PARM_BUTTON("do_mesh_point_limit", "") toggle VALUE(do_mesh_point_limit.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+mesh_point_limit.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ mesh_point_limit.label = PARM_LABEL("Point Limit", "mesh_point_limit") WIDTH(1.32);
+ PARM(integer, 1, "mesh_point_limit", none, none) RANGE(0,10)
+	 LABELREF(mesh_point_limit.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+sepparm10.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+sepparm11.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+generateby.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Generate", "generateby") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    generateby.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+densityscale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ densityscale.label = PARM_LABEL("Density Scale", "densityscale") WIDTH(1.5);
+ PARM(float, 1, "densityscale", none, none) RANGE(0.10000000000000001,10000)
+	 LABELREF(densityscale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+usedensityattrib.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+usedensityattrib.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+usedensityattrib.gad = PARM_BUTTON("usedensityattrib", "") toggle VALUE(usedensityattrib.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+densityattrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    densityattrib.label = PARM_LABEL("Density Attribute", "densityattrib") WIDTH(1.32);
+    PARM_FIELD(string, "densityattrib") VALUE(densityattrib.val) 
+	LABELREF(densityattrib.label) HSTRETCH;
+
+    densityattrib.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+useareaattrib.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+useareaattrib.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+useareaattrib.gad = PARM_BUTTON("useareaattrib", "") toggle VALUE(useareaattrib.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+areaattrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    areaattrib.label = PARM_LABEL("Override Prim Area", "areaattrib") WIDTH(1.32);
+    PARM_FIELD(string, "areaattrib") VALUE(areaattrib.val) 
+	LABELREF(areaattrib.label) HSTRETCH;
+
+    areaattrib.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+indepvoxel.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("indepvoxel", "Scatter on Voxels Independently") toggle VALUE(indepvoxel.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+useareaforvolumes.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("useareaforvolumes", "Use Area for 2D Volumes") toggle VALUE(useareaforvolumes.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+forcetotal.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+forcetotal.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+forcetotal.gad = PARM_BUTTON("forcetotal", "") toggle VALUE(forcetotal.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+npts.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ npts.label = PARM_LABEL("Force Total Count", "npts") WIDTH(1.32);
+ PARM(integer, 1, "npts", none, none) RANGE(1,100000)
+	 LABELREF(npts.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+usedensitytexture.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+usedensitytexture.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+usedensitytexture.gad = PARM_BUTTON("usedensitytexture", "") toggle VALUE(usedensitytexture.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+densitytexture.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ {  }
+
+ densitytexture.label = PARM_LABEL("Density Texture", "densitytexture") WIDTH(1.32);
+
+ PARM_FIELD (pathstring, "densitytexture") LABELREF(densitytexture.label)
+	VALUE(densitytexture.val) HSTRETCH;
+
+    densitytexture.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(densitytexture.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+primcountattrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    primcountattrib.label = PARM_LABEL("Count per Prim Attribute", "primcountattrib") WIDTH(1.5);
+    PARM_FIELD(string, "primcountattrib") VALUE(primcountattrib.val) 
+	LABELREF(primcountattrib.label) HSTRETCH;
+
+    primcountattrib.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+useemergencylimit.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+useemergencylimit.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+useemergencylimit.gad = PARM_BUTTON("useemergencylimit", "") toggle VALUE(useemergencylimit.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+emergencylimit.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ emergencylimit.label = PARM_LABEL("Max Points", "emergencylimit") WIDTH(1.32);
+ PARM(integer, 1, "emergencylimit", none, none) RANGE(1000,10000000)
+	 LABELREF(emergencylimit.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+seed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ seed.label = PARM_LABEL("Global Seed", "seed") WIDTH(1.5);
+ PARM(float, 1, "seed", none, none) RANGE(0,10)
+	 LABELREF(seed.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+overrideprimseed.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+overrideprimseed.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+overrideprimseed.gad = PARM_BUTTON("overrideprimseed", "") toggle VALUE(overrideprimseed.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+primseedattrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    primseedattrib.label = PARM_LABEL("Primitive Seed Attribute", "primseedattrib") WIDTH(1.32);
+    PARM_FIELD(string, "primseedattrib") VALUE(primseedattrib.val) 
+	LABELREF(primseedattrib.label) HSTRETCH;
+
+    primseedattrib.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+randomizeorder.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("randomizeorder", "Randomize Point Order") toggle VALUE(randomizeorder.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+relaxpoints2.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+relaxpoints2.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+relaxpoints2.gad = PARM_BUTTON("relaxpoints2", "") toggle VALUE(relaxpoints2.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+relaxiterations.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ relaxiterations.label = PARM_LABEL("Relax Iterations", "relaxiterations") WIDTH(1.32);
+ PARM(integer, 1, "relaxiterations", none, none) RANGE(0,100)
+	LOCK_RANGE_MIN LABELREF(relaxiterations.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+scaleradiiby.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ scaleradiiby.label = PARM_LABEL("Scale Radii By", "scaleradiiby") WIDTH(1.5);
+ PARM(float, 1, "scaleradiiby", none, none) RANGE(0,2)
+	LOCK_RANGE_MIN LABELREF(scaleradiiby.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+usemaxradius.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+usemaxradius.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+usemaxradius.gad = PARM_BUTTON("usemaxradius", "") toggle VALUE(usemaxradius.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+maxradius2.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ maxradius2.label = PARM_LABEL("Max Relax Radius", "maxradius2") WIDTH(1.32);
+ PARM(float, 1, "maxradius2", none, none) RANGE(0,100)
+	LOCK_RANGE_MIN LABELREF(maxradius2.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+voxelsize.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ voxelsize.label = PARM_LABEL("Voxel Size", "voxelsize") WIDTH(1.5);
+ PARM(float, 1, "voxelsize", none, none) RANGE(0,5)
+	LOCK_RANGE_MIN LABELREF(voxelsize.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+voxel_fill_method.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Volume Fill Method", "voxel_fill_method") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    voxel_fill_method.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+voxel_npoints.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ voxel_npoints.label = PARM_LABEL("Number of Points", "voxel_npoints") WIDTH(1.5);
+ PARM(integer, 1, "voxel_npoints", none, none) RANGE(1,100000)
+	LOCK_RANGE_MIN LABELREF(voxel_npoints.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+voxel_align.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("voxel_align", "Orient to Volume") toggle VALUE(voxel_align.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+sepparm13.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+voxel_align_method.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Align Method", "voxel_align_method") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    voxel_align_method.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+voxel_align_up.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   voxel_align_up.label = PARM_LABEL("Up Vector", "voxel_align_up") WIDTH(1.5);
+   PARM(float, 3, "voxel_align_up", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(voxel_align_up.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+N_volume_prim.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    N_volume_prim.label = PARM_LABEL("Normal Vector Volume", "N_volume_prim") WIDTH(1.5);
+    PARM_FIELD(string, "N_volume_prim") VALUE(N_volume_prim.val) 
+	LABELREF(N_volume_prim.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+use_volume_up.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+use_volume_up.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+use_volume_up.gad = PARM_BUTTON("use_volume_up", "") toggle VALUE(use_volume_up.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+up_volume_prim.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    up_volume_prim.label = PARM_LABEL("Up Vector Volume", "up_volume_prim") WIDTH(1.32);
+    PARM_FIELD(string, "up_volume_prim") VALUE(up_volume_prim.val) 
+	LABELREF(up_volume_prim.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+do_facet_mesh.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("do_facet_mesh", "Facet Input Mesh") toggle VALUE(do_facet_mesh.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+do_orient_mesh.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("do_orient_mesh", "Reorient Mesh") toggle VALUE(do_orient_mesh.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+sepparm12.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+compute_method.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Compute Method", "compute_method") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    compute_method.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+invert_N.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("invert_N", "Invert N") toggle VALUE(invert_N.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+invert_up.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("invert_up", "Invert Up") toggle VALUE(invert_up.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+do_cross.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("do_cross", "Cross Up Vector") toggle VALUE(do_cross.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+do_curl.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("do_curl", "Enable Curl Noise") toggle VALUE(do_curl.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+do_blur.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("do_blur", "Enable Blur") toggle VALUE(do_blur.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+group.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    group.label = PARM_LABEL("Group", "group") WIDTH(1.5);
+    PARM_FIELD(string, "group") VALUE(group.val) 
+	LABELREF(group.label) HSTRETCH;
+
+    group.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "BUTTONS_reselect" VALUE(group.script_action)
+	HELP("Select geometry from an available viewport.\nShift-click to turn on Select Groups.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+entity.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Entity", "entity") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    entity.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+style.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Style", "style") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    style.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+attribname.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    attribname.label = PARM_LABEL("Attribute Name", "attribname") WIDTH(1.5);
+    PARM_FIELD(string, "attribname") VALUE(attribname.val) 
+	LABELREF(attribname.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+Non.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+Non.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+Non.gad = PARM_BUTTON("Non", "") toggle VALUE(Non.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+N.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    N.label = PARM_LABEL("Normal Name", "N") WIDTH(1.32);
+    PARM_FIELD(string, "N") VALUE(N.val) 
+	LABELREF(N.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+tangentuon.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+tangentuon.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+tangentuon.gad = PARM_BUTTON("tangentuon", "") toggle VALUE(tangentuon.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+tangentu.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    tangentu.label = PARM_LABEL("Tangent Name", "tangentu") WIDTH(1.32);
+    PARM_FIELD(string, "tangentu") VALUE(tangentu.val) 
+	LABELREF(tangentu.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+tangentvon.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+tangentvon.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+tangentvon.gad = PARM_BUTTON("tangentvon", "") toggle VALUE(tangentvon.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+tangentv.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    tangentv.label = PARM_LABEL("Bitangent Name", "tangentv") WIDTH(1.32);
+    PARM_FIELD(string, "tangentv") VALUE(tangentv.val) 
+	LABELREF(tangentv.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+ortho.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ortho", "Make Frame Orthogonal") toggle VALUE(ortho.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+lefthanded.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("lefthanded", "Left-Handed Frame") toggle VALUE(lefthanded.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+do_normal.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("do_normal", "Compute Normals") toggle VALUE(do_normal.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+do_up.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("do_up", "Create Up ") toggle VALUE(do_up.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+auto_up.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("auto_up", "Auto Up") toggle VALUE(auto_up.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+up_vector2.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   up_vector2.label = PARM_LABEL("Up Vector", "up_vector2") WIDTH(1.5);
+   PARM(float, 3, "up_vector2", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(up_vector2.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+bias.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ bias.label = PARM_LABEL("Amount", "bias") WIDTH(1.5);
+ PARM(float, 1, "bias", none, none) RANGE(0,1)
+	 LABELREF(bias.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+use_rest.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("use_rest", "Use Rest Position") toggle VALUE(use_rest.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Noise Type", "type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    type.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+freq.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   freq.label = PARM_LABEL("Frequency", "freq") WIDTH(1.5);
+   PARM(float, 3, "freq", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(freq.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+offset.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   offset.label = PARM_LABEL("Offset", "offset") WIDTH(1.5);
+   PARM(float, 3, "offset", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(offset.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+amp.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ amp.label = PARM_LABEL("Amplitude", "amp") WIDTH(1.5);
+ PARM(float, 1, "amp", none, none) RANGE(-1,1)
+	 LABELREF(amp.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+rough.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ rough.label = PARM_LABEL("Roughness", "rough") WIDTH(1.5);
+ PARM(float, 1, "rough", none, none) RANGE(0,1)
+	 LABELREF(rough.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+atten.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ atten.label = PARM_LABEL("Attenuation", "atten") WIDTH(1.5);
+ PARM(float, 1, "atten", none, none) RANGE(0,1)
+	 LABELREF(atten.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+turb.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ turb.label = PARM_LABEL("Turbulence", "turb") WIDTH(1.5);
+ PARM(integer, 1, "turb", none, none) RANGE(1,12)
+	 LABELREF(turb.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+h.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ h.label = PARM_LABEL("Step Size", "h") WIDTH(1.5);
+ PARM(float, 1, "h", none, none) RANGE(0,1)
+	 LABELREF(h.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+iterations.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ iterations.label = PARM_LABEL("Blurring Iterations", "iterations") WIDTH(1.5);
+ PARM(integer, 1, "iterations", none, none) RANGE(0,100)
+	 LABELREF(iterations.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+stepsize.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ stepsize.label = PARM_LABEL("Step Size", "stepsize") WIDTH(1.5);
+ PARM(float, 1, "stepsize", none, none) RANGE(0,1)
+	 LABELREF(stepsize.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+influencetype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Influence Type", "influencetype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    influencetype.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+ptsort.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Point Sort", "ptsort") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    ptsort.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+pointseed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pointseed.label = PARM_LABEL("Seed", "pointseed") WIDTH(1.5);
+ PARM(integer, 1, "pointseed", none, none) RANGE(0,200)
+	 LABELREF(pointseed.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pointoffset.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pointoffset.label = PARM_LABEL("Offset", "pointoffset") WIDTH(1.5);
+ PARM(integer, 1, "pointoffset", none, none) RANGE(0,200)
+	 LABELREF(pointoffset.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pointprox.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   pointprox.label = PARM_LABEL("Point", "pointprox") WIDTH(1.5);
+   PARM(float, 3, "pointprox", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(pointprox.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+pointobjpath.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ pointobjpath.label = PARM_LABEL("Vector Object", "pointobjpath") WIDTH(1.5);
+ PARM_FIELD(pathstring, "pointobjpath") VALUE(pointobjpath.val) 
+	LABELREF(pointobjpath.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(pointobjpath.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(pointobjpath.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+pointdir.gad = ROW 
+{
+    HSTRETCH
+   { WIDTH(0.18) }
+
+    pointdir.label = PARM_LABEL("Vector", "pointdir") WIDTH(1.5);
+    PARM(float, 3, "pointdir", none, none) LABELREF(pointdir.label)
+	HSTRETCH;
+
+   { WIDTH(0.1) }
+}
+
+pointexpr.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pointexpr.label = PARM_LABEL("Expression", "pointexpr") WIDTH(1.5);
+ PARM(float, 1, "pointexpr", none, none) RANGE(0,200)
+	 LABELREF(pointexpr.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pointattrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    pointattrib.label = PARM_LABEL("Attribute", "pointattrib") WIDTH(1.5);
+    PARM_FIELD(string, "pointattrib") VALUE(pointattrib.val) 
+	LABELREF(pointattrib.label) HSTRETCH;
+
+    pointattrib.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+pointattribcomp.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pointattribcomp.label = PARM_LABEL("Component", "pointattribcomp") WIDTH(1.5);
+ PARM(integer, 1, "pointattribcomp", none, none) RANGE(0,10)
+	 LABELREF(pointattribcomp.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pointreverse.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("pointreverse", "Reverse Point Sort") toggle VALUE(pointreverse.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+primsort.gad = NULL { }
+primseed.gad = NULL { }
+primoffset.gad = NULL { }
+primprox.gad = NULL { }
+primobjpath.gad = NULL { }
+primdir.gad = NULL { }
+primexpr.gad = NULL { }
+primattrib.gad = NULL { }
+primattribcomp.gad = NULL { }
+primreverse.gad = NULL { }
+vertexprimorder.gad = NULL { }
+
+sepparm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+name_prefix.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    name_prefix.label = PARM_LABEL("Name Prefix", "name_prefix") WIDTH(1.5);
+    PARM_FIELD(string, "name_prefix") VALUE(name_prefix.val) 
+	LABELREF(name_prefix.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+name_start.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ name_start.label = PARM_LABEL("Name Start Number", "name_start") WIDTH(1.5);
+ PARM(integer, 1, "name_start", none, none) RANGE(0,10)
+	 LABELREF(name_start.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+id_offset.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ id_offset.label = PARM_LABEL("ID Start Number", "id_offset") WIDTH(1.5);
+ PARM(integer, 1, "id_offset", none, none) RANGE(0,10)
+	 LABELREF(id_offset.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+input_event.gad = NULL { }
+multiparm_event.gad = NULL { }
+
+folder4.gad = 
+
+GROUP simple "Up Vector" flat 
+{ 
+    VALUE(folder4.gad.val) LAYOUT(vertical) HSTRETCH 
+	    auto_up.gad;		
+	    up_vector2.gad;		
+} 
+
+folder9.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder9.gad"
+    { 
+	VALUE(folder9.gad.val) STRETCH(1,0)
+
+	TAB "Compute From Polygons"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    group.gad;		
+	    entity.gad;		
+	    style.gad;		
+	    attribname.gad;		
+	    Non.row.join;		
+	    tangentuon.row.join;		
+	    tangentvon.row.join;		
+	    ortho.gad;		
+	    lefthanded.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "N and Up"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    do_normal.gad;		
+	    do_up.gad;		
+	    folder4.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Curl Noise"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    bias.gad;		
+	    use_rest.gad;		
+	    type.gad;		
+	    freq.gad;		
+	    offset.gad;		
+	    amp.gad;		
+	    rough.gad;		
+	    atten.gad;		
+	    turb.gad;		
+	    h.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Blur"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    iterations.gad;		
+	    stepsize.gad;		
+	    influencetype.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+folder16.gad = 
+
+GROUP simple "Orient Options" flat 
+{ 
+    VALUE(folder16.gad.val) LAYOUT(vertical) HSTRETCH 
+	    compute_method.gad;		
+	    invert_N.gad;		
+	    invert_up.gad;		
+	    do_cross.gad;		
+	    do_curl.gad;		
+	    do_blur.gad;		
+	    folder9.gad;		
+} 
+
+folder10.gad = 
+
+GROUP simple "Voxel Orient" flat 
+{ 
+    VALUE(folder10.gad.val) LAYOUT(vertical) HSTRETCH 
+	    voxel_align_method.gad;		
+	    voxel_align_up.gad;		
+	    N_volume_prim.gad;		
+	    use_volume_up.row.join;		
+} 
+
+folder15.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder15.gad"
+    { 
+	VALUE(folder15.gad.val) STRETCH(1,0)
+
+	TAB "Scatter"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    sepparm11.gad;		
+	    generateby.gad;		
+	    densityscale.gad;		
+	    usedensityattrib.row.join;		
+	    useareaattrib.row.join;		
+	    indepvoxel.gad;		
+	    useareaforvolumes.gad;		
+	    forcetotal.row.join;		
+	    usedensitytexture.row.join;		
+	    primcountattrib.gad;		
+	    useemergencylimit.row.join;		
+	    seed.gad;		
+	    overrideprimseed.row.join;		
+	    randomizeorder.gad;		
+	    relaxpoints2.row.join;		
+	    scaleradiiby.gad;		
+	    usemaxradius.row.join;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Voxel"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    voxelsize.gad;		
+	    voxel_fill_method.gad;		
+	    voxel_npoints.gad;		
+	    voxel_align.gad;		
+	    sepparm13.gad;		
+	    folder10.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Orient"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    do_facet_mesh.gad;		
+	    do_orient_mesh.gad;		
+	    sepparm12.gad;		
+	    folder16.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+folder0_4.gad = 
+
+GROUP simple "Mesh" flat 
+{ 
+    VALUE(folder0_4.gad.val) LAYOUT(vertical) HSTRETCH 
+	    mesh_distroMethod.gad;		
+	    inputMeshPointGroup.gad;		
+	    do_mesh_point_limit.row.join;		
+	    sepparm10.gad;		
+	    folder15.gad;		
+} 
+
+folder4_2_1.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder4_2_1.gad"
+    { 
+	VALUE(folder4_2_1.gad.val) STRETCH(1,0)
+
+	TAB "Resample Options"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    dolength.gad;		
+	    length.gad;		
+	    dosegs.gad;		
+	    segs.gad;		
+	    sepparm9.gad;		
+	    edge.gad;		
+	    method.gad;		
+	    measure.gad;		
+	    treatpolysas.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Orient"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    curve_align.gad;		
+	    sepparm8.gad;		
+	    do_orient_curve.gad;		
+	    invert.gad;		
+	    custom_first_tangent.gad;		
+	    First_Tangent.gad;		
+	    twist_amount.gad;		
+	    twist_ramp.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Jitter"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    curve_jitter.gad;		
+	    curve_jitter_seed.gad;		
+	    wrap.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+folder3.gad = 
+
+GROUP simple "Curve" flat 
+{ 
+    VALUE(folder3.gad.val) LAYOUT(vertical) HSTRETCH 
+	    do_resample_curve.gad;		
+	    do_curve_jitter.gad;		
+	    folder4_2_1.gad;		
+} 
+
+folder6.gad = 
+
+GROUP simple "Honeycomb" flat 
+{ 
+    VALUE(folder6.gad.val) LAYOUT(vertical) HSTRETCH 
+	    honeycomb_type.gad;		
+	    honeycomb_dims.gad;		
+	    honeycomb_rad.gad;		
+} 
+
+folder5.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder5.gad"
+    { 
+	VALUE(folder5.gad.val) STRETCH(1,0)
+
+	TAB "Fixed Number"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    grid_x.gad;		
+	    grid_y.gad;		
+	    grid_z.gad;		
+	    grid_distance.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Fixed Size"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    grid_size.gad;		
+	    grid_step.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+folder0_3.gad = 
+
+GROUP simple "Grid" flat 
+{ 
+    VALUE(folder0_3.gad.val) LAYOUT(vertical) HSTRETCH 
+	    grid_distrib_type.gad;		
+	    folder5.gad;		
+} 
+
+folder12.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder12.gad"
+    { 
+	VALUE(folder12.gad.val) STRETCH(1,0)
+
+	TAB "Sphere Options"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    sphere_radius.gad;		
+	    sphere_cone.gad;		
+	    sphere_cone_direction.gad;		
+	    sphere_align.gad;		
+	    sphere_cross_up.gad;		
+	    do_sphere_fill.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Scatter Options"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    sepparm7.gad;		
+	    sphere_seed.gad;		
+	    relaxpoints.row.join;		
+	    scaleradiiby3.gad;		
+	    maxradius.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+folder0_2.gad = 
+
+GROUP simple "Spherical" flat 
+{ 
+    VALUE(folder0_2.gad.val) LAYOUT(vertical) HSTRETCH 
+	    sphere_npoints.gad;		
+	    folder12.gad;		
+	    sphere_anim_speed.gad;		
+	    sphere_anim_amount.gad;		
+} 
+
+folder11.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder11.gad"
+    { 
+	VALUE(folder11.gad.val) STRETCH(1,0)
+
+	TAB "Options"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    radial_orient.gad;		
+	    radial_angle.gad;		
+	    radial_radius.gad;		
+	    radial_scale.gad;		
+	    radial_divisions.gad;		
+	    t.gad;		
+	    r.gad;		
+	    radial_jitter.gad;		
+	    radial_seed.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Orient"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    radial_align.gad;		
+	    sepparm5.gad;		
+	    radial_align_type.gad;		
+	    distro_radial_invert.gad;		
+	    distro_radial_do_custom_first_tangent.gad;		
+	    distro_radial_first_tangent.gad;		
+	    distro_radial_twist_amount.gad;		
+	    distro_radial_twist_ramp.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+folder0_1.gad = 
+
+GROUP simple "Radial" flat 
+{ 
+    VALUE(folder0_1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    radial_npoints.gad;		
+	    folder11.gad;		
+} 
+
+folder8.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder8.gad"
+    { 
+	VALUE(folder8.gad.val) STRETCH(1,0)
+
+	TAB "Start - End "
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    pt0.gad;		
+	    pt1.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Distance - Direction"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    origin.gad;		
+	    dir.gad;		
+	    dist.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Orient"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    linear_align.gad;		
+	    sepparm6.gad;		
+	    distro_line_invert_N.gad;		
+	    distro_line_custom_first_tangent.gad;		
+	    distro_line_first_tangent.gad;		
+	    distro_line_twist_amount.gad;		
+	    distro_line_twist_ramp.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+folder0.gad = 
+
+GROUP simple "Linear" flat 
+{ 
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    linear_npoints.gad;		
+	    linear_mode.gad;		
+	    linear_center_origin.gad;		
+	    folder8.gad;		
+} 
+
+folder2.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder2.gad"
+    { 
+	VALUE(folder2.gad.val) STRETCH(1,0)
+
+	TAB "Global Options"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    points_only.gad;		
+	    output_template_attrs.gad;		
+	    sepparm3.gad;		
+	    viewportlod.gad;		
+	    xformtype.gad;		
+	    xformpath.gad;		
+	    invertxform.gad;		
+	    packfromdefault.gad;		
+	    sepparm2.gad;		
+	    do_material_overrides.gad;		
+	    transfer_attributes.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Global Transform"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    global_translate.gad;		
+	    global_rotate.gad;		
+	    global_scale.gad;		
+	    global_pscale.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+folder7.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder7.gad"
+    { 
+	VALUE(folder7.gad.val) STRETCH(1,0)
+
+	TAB "Instancing"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    index_mode.gad;		
+	    index_attr.gad;		
+	    index_seed.gad;		
+	    quick_add.gad;		
+	    add_variants_btn.gad;		
+	    folder2.gad;		
+	    instanceobjects.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Distribution"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    num_points_enabled.gad;		
+	    distro_type.gad;		
+	    inputMesh.gad;		
+	    inputMeshGroup.gad;		
+	    do_interpolation.gad;		
+	    do_interpolate_scale.gad;		
+	    template_rest_frame.gad;		
+	    do_copy_attrs.gad;		
+	    attribname2.gad;		
+	    folder0.gad;		
+	    folder0_1.gad;		
+	    folder0_2.gad;		
+	    folder0_3.gad;		
+	    folder6.gad;		
+	    folder3.gad;		
+	    folder0_4.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Sorting"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    ptsort.gad;		
+	    pointseed.gad;		
+	    pointoffset.gad;		
+	    pointprox.gad;		
+	    pointobjpath.gad;		
+	    pointdir.gad;		
+	    pointexpr.gad;		
+	    pointattrib.gad;		
+	    pointattribcomp.gad;		
+	    pointreverse.gad;		
+	    primsort.gad;		
+	    primseed.gad;		
+	    primoffset.gad;		
+	    primprox.gad;		
+	    primobjpath.gad;		
+	    primdir.gad;		
+	    primexpr.gad;		
+	    primattrib.gad;		
+	    primattribcomp.gad;		
+	    primreverse.gad;		
+	    vertexprimorder.gad;		
+	    sepparm.gad;		
+	    name_prefix.gad;		
+	    name_start.gad;		
+	    id_offset.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+folder1.gad = 
+
+GROUP simple "Transform" flat 
+{ 
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH 
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    id_gen_seed.gad; 
+    folder7.gad; 
+    input_event.gad; 
+    multiparm_event.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

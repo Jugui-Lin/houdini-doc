@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["PartitionByNode"]}, {"type": "para", "indent": 0, "text": ["This example demonstrates how to use the partition by node in PDG/TOPs."], "extent": [0, 73]}], "examplefor": "/nodes/top/partitionbynode", "examplefile": "/examples/nodes/top/partitionbynode/PartitionByNode.hda"}

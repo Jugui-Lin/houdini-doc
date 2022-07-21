@@ -1,0 +1,38 @@
+// Magic: 42ba169
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Thu May 12 05:34:21 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+mirror_axis_menu.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    PARM_LABEL_SIMPLE("Mirror Axis", "mirror_axis_menu") ;
+    { WIDTH(0.09) }
+
+    mirror_axis_menu.menu;
+
+    {  }
+
+    {  }
+}
+
+# warning cpp warning: "GenV3/subdialog.top.ui":11 Macro "PARMSPACING" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":12 Macro "LAYOUTDIR" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":13 Macro "DO_JUSTIFY" redefined.  Using later definition
+dialog_norm.gad = 
+{
+    LAYOUT(horizontal) SPACING(0.05) HSTRETCH JUSTIFY(left, center) UNSCALABLE
+    mirror_axis_menu.gad; 
+} 
+// dialog.bot.ui
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) VALUE(open.val_) HSTRETCH
+
+    dialog_norm.gad;
+}

@@ -1,0 +1,631 @@
+// Magic: 32dd9229
+// Automatically generated PSI dialog (PSI version 19.0.622)
+// Sat Jun 18 19:08:07 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+group.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    group.label = PARM_LABEL("Group", "group") WIDTH(1.5);
+    PARM_FIELD(string, "group") VALUE(group.val) 
+	LABELREF(group.label) HSTRETCH;
+
+    group.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "BUTTONS_reselect" VALUE(group.script_action)
+	HELP("Select geometry from an available viewport. Shift-click to turn on Select Groups.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+Mode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Mode", "Mode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    Mode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+userest.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+userest.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+userest.gad = PARM_BUTTON("userest", "") toggle VALUE(userest.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+rest.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    rest.label = PARM_LABEL("Use Rest ", "rest") WIDTH(1.32);
+    PARM_FIELD(string, "rest") VALUE(rest.val) 
+	LABELREF(rest.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+showguide.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("showguide", "Show Guide") toggle VALUE(showguide.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+visualize.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("visualize", "Color Slices") toggle VALUE(visualize.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+visualizerest.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("visualizerest", "Show Rest") toggle VALUE(visualizerest.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+numslices.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ numslices.label = PARM_LABEL("Number Of Slices", "numslices") WIDTH(1.5);
+ PARM(integer, 1, "numslices", none, none) RANGE(1,100)
+	 LABELREF(numslices.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+setbbox.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("setbbox", "Set To BBox")
+	push VALUE(setbbox.val);
+
+    { WIDTH(0.1) }
+}
+
+t2.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   t2.label = PARM_LABEL("Center", "t2") WIDTH(1.5);
+   PARM(float, 3, "t2", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(t2.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+size.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   size.label = PARM_LABEL("Size", "size") WIDTH(1.5);
+   PARM(float, 3, "size", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(size.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+scale2.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ scale2.label = PARM_LABEL("Uniform Scale", "scale2") WIDTH(1.5);
+ PARM(float, 1, "scale2", none, none) RANGE(0,10)
+	 LABELREF(scale2.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+r2.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   r2.label = PARM_LABEL("Rotate", "r2") WIDTH(1.5);
+   PARM(float, 3, "r2", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(r2.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+divideconvex.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+divideconvex.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+divideconvex.gad = PARM_BUTTON("divideconvex", "") toggle VALUE(divideconvex.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+plantol.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ plantol.label = PARM_LABEL("Divide Convex Threshold", "plantol") WIDTH(1.32);
+ PARM(float, 1, "plantol", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(plantol.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+connectivitymode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Slice Connectivity", "connectivitymode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    connectivitymode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+sliceborderedge.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("sliceborderedge", "Slice Group Border Edge") toggle VALUE(sliceborderedge.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+connectborderedge.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("connectborderedge", "Connect Group Border Edge") toggle VALUE(connectborderedge.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+exportsliceid.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+exportsliceid.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+exportsliceid.gad = PARM_BUTTON("exportsliceid", "") toggle VALUE(exportsliceid.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+sliceidname.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    sliceidname.label = PARM_LABEL("Export Slice ID", "sliceidname") WIDTH(1.32);
+    PARM_FIELD(string, "sliceidname") VALUE(sliceidname.val) 
+	LABELREF(sliceidname.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+exportnormalizedsliceid.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+exportnormalizedsliceid.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+exportnormalizedsliceid.gad = PARM_BUTTON("exportnormalizedsliceid", "") toggle VALUE(exportnormalizedsliceid.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+normalizedsliceidname.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    normalizedsliceidname.label = PARM_LABEL("Export Norm Slice ID", "normalizedsliceidname") WIDTH(1.32);
+    PARM_FIELD(string, "normalizedsliceidname") VALUE(normalizedsliceidname.val) 
+	LABELREF(normalizedsliceidname.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+exportslicegroup.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+exportslicegroup.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+exportslicegroup.gad = PARM_BUTTON("exportslicegroup", "") toggle VALUE(exportslicegroup.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+slicegroup.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    slicegroup.label = PARM_LABEL("Export Slice Group", "slicegroup") WIDTH(1.32);
+    PARM_FIELD(string, "slicegroup") VALUE(slicegroup.val) 
+	LABELREF(slicegroup.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+keepstartcap.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+keepstartcap.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+keepstartcap.gad = PARM_BUTTON("keepstartcap", "") toggle VALUE(keepstartcap.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+startcapgroupname.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    startcapgroupname.label = PARM_LABEL("Start Cap", "startcapgroupname") WIDTH(1.32);
+    PARM_FIELD(string, "startcapgroupname") VALUE(startcapgroupname.val) 
+	LABELREF(startcapgroupname.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+keependcap.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+keependcap.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+keependcap.gad = PARM_BUTTON("keependcap", "") toggle VALUE(keependcap.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+endcapgroupname.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    endcapgroupname.label = PARM_LABEL("End Cap", "endcapgroupname") WIDTH(1.32);
+    PARM_FIELD(string, "endcapgroupname") VALUE(endcapgroupname.val) 
+	LABELREF(endcapgroupname.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+slicethreshold.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ slicethreshold.label = PARM_LABEL("Point Slice Threshold", "slicethreshold") WIDTH(1.5);
+ PARM(float, 1, "slicethreshold", none, none) RANGE(9.9999999999999998e-13,0.10000000000000001)
+	LOCK_RANGE LABELREF(slicethreshold.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+tol3d.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ tol3d.label = PARM_LABEL("Fuse Distance Threshold", "tol3d") WIDTH(1.5);
+ PARM(float, 1, "tol3d", none, none) RANGE(0.001,10)
+	 LABELREF(tol3d.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+remapslice.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("remapslice", "Enable") toggle VALUE(remapslice.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+remap.si_rampedit = FLOAT_RAMP VALUE(remap.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+remap.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) WIDTH(1.5)
+	    LABEL "Point No.";
+	}
+
+	remap.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(remap.pointno.val) HSTRETCH;
+    }
+}
+
+remap.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(remap.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(remap.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    remap.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(remap.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    remap.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(remap.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+remap.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    remap.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	remap.buttons.gad VSTRETCH;
+
+	remap.si_rampedit HSTRETCH;
+    }
+}
+
+remap.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Remap", "remap");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(remap.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(remap.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	remap.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	remap.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(remap.hideparms.val) HSTRETCH
+	    remap.multiramp;
+	    {}
+	}
+    }
+}
+
+xn__SliceRemapFolder_hpaf.gad = 
+
+GROUP simple "Remap" flat 
+{ 
+    VALUE(xn__SliceRemapFolder_hpaf.gad.val) LAYOUT(vertical) HSTRETCH 
+	    remapslice.gad;		
+	    remap.gad;		
+} 
+
+Slice_Engine_Folder.gad = 
+GROUP collapsible "Advanced" flat  
+{
+    VALUE(Slice_Engine_Folder.gad.val) LAYOUT(vertical) HSTRETCH
+	    slicethreshold.gad;		
+	    tol3d.gad;		
+} 
+
+Cap_Folder.gad = 
+GROUP collapsible "Cap" flat  
+{
+    VALUE(Cap_Folder.gad.val) LAYOUT(vertical) HSTRETCH
+	    keepstartcap.row.join;		
+	    keependcap.row.join;		
+} 
+
+Connectivity_Folder.gad = 
+
+GROUP simple "Topology" flat 
+{ 
+    VALUE(Connectivity_Folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    divideconvex.row.join;		
+	    connectivitymode.gad;		
+	    sliceborderedge.gad;		
+	    connectborderedge.gad;		
+	    exportsliceid.row.join;		
+	    exportnormalizedsliceid.row.join;		
+	    exportslicegroup.row.join;		
+	    Cap_Folder.gad;		
+	    Slice_Engine_Folder.gad;		
+} 
+
+Slice_Transform_Folder.gad = 
+
+GROUP simple "Dimensions" flat 
+{ 
+    VALUE(Slice_Transform_Folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    numslices.gad;		
+	    setbbox.gad;		
+	    t2.gad;		
+	    size.gad;		
+	    scale2.gad;		
+	    r2.gad;		
+} 
+
+Visualise_Folder.gad = 
+
+GROUP simple "Visualise" flat 
+{ 
+    VALUE(Visualise_Folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    showguide.gad;		
+	    visualize.gad;		
+	    visualizerest.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    group.gad; 
+    Mode.gad; 
+    userest.row.join; 
+    Visualise_Folder.gad; 
+    Slice_Transform_Folder.gad; 
+    Connectivity_Folder.gad; 
+    xn__SliceRemapFolder_hpaf.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

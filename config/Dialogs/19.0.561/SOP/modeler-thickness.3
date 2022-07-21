@@ -1,0 +1,88 @@
+// Magic: e0ecae22
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Tue May 10 19:42:35 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+offset.gad = ROW
+{
+   HSTRETCH
+   {  }
+
+   offset.label = PARM_LABEL( "Offset", "offset" ) ;
+   PARM(float, 1, "offset", none, none) RANGE(-0.25, 0.25)
+	LABELREF( offset.label ) HSTRETCH;
+
+   {  }
+}
+
+keep.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("keep", "Keep Source") toggle VALUE(keep.val);
+
+    {  }
+
+    {  }
+}
+
+scale.gad = ROW
+{
+   HSTRETCH
+   {  }
+
+   scale.label = PARM_LABEL( "Scale", "scale" ) ;
+   PARM(float, 1, "scale", none, none) RANGE(0.001, 2)
+	LABELREF( scale.label ) HSTRETCH;
+
+   {  }
+}
+
+divisions.gad = 
+{
+
+ divisions.label = PARM_LABEL("Divisions", "divisions");
+ PARM(integer, 1, "divisions", none, field) RANGE(1,10)
+	LOCK_RANGE_MIN LABELREF(divisions.label) HSTRETCH;
+
+  {  }
+}
+
+crease.gad = ROW
+{
+   HSTRETCH
+   {  }
+
+   crease.label = PARM_LABEL( "Crease", "crease" ) ;
+   PARM(float, 1, "crease", none, none) RANGE(0, 0.10000000000000001)
+	LABELREF( crease.label ) HSTRETCH;
+
+   {  }
+}
+
+# warning cpp warning: "GenV3/subdialog.top.ui":11 Macro "PARMSPACING" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":12 Macro "LAYOUTDIR" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":13 Macro "DO_JUSTIFY" redefined.  Using later definition
+dialog_norm.gad = 
+{
+    LAYOUT(horizontal) SPACING(0.05) HSTRETCH JUSTIFY(left, center) UNSCALABLE
+    offset.gad; 
+    keep.gad; 
+    scale.gad; 
+    divisions.gad; 
+    crease.gad; 
+} 
+// dialog.bot.ui
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) VALUE(open.val_) HSTRETCH
+
+    dialog_norm.gad;
+}

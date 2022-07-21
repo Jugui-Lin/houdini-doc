@@ -1,0 +1,280 @@
+// Magic: d356a4e1
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Tue May 31 14:23:52 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+cook.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+cook.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("cook", "Cook")
+	push VALUE(cook.val);
+
+    {  }
+}
+
+manual_mode.gad = ROW
+{
+    
+    {  }
+
+    PARM_BUTTON("manual_mode", "Manual Mode") toggle VALUE(manual_mode.val);
+
+    {  }
+
+    {  }
+}
+
+bExportLog.gad = ROW
+{
+    HSTRETCH
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("bExportLog", "Use Log") toggle VALUE(bExportLog.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+proj.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    proj.label = PARM_LABEL("Project Name", "proj") WIDTH(1.5);
+    PARM_FIELD(string, "proj") VALUE(proj.val) 
+	LABELREF(proj.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+cache_dir.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ cache_dir.label = PARM_LABEL("Cache Directory", "cache_dir") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "cache_dir") LABELREF(cache_dir.label)
+	VALUE(cache_dir.val) HSTRETCH;
+
+    cache_dir.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(cache_dir.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+alice_dir.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ alice_dir.label = PARM_LABEL("Alicevision Directory", "alice_dir") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "alice_dir") LABELREF(alice_dir.label)
+	VALUE(alice_dir.val) HSTRETCH;
+
+    alice_dir.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(alice_dir.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+enablecustomenv.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+enablecustomenv.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+enablecustomenv.gad = PARM_BUTTON("enablecustomenv", "") toggle VALUE(enablecustomenv.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+customenv.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    customenv.label = PARM_LABEL("Environment", "customenv") WIDTH(1.32);
+    PARM_FIELD(string, "customenv") VALUE(customenv.val) 
+	LABELREF(customenv.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+add_img.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("add_img", "Add Images")
+	push VALUE(add_img.val);
+
+    { WIDTH(0.1) }
+}
+
+src_img.parm =
+{
+    LAYOUT(horizontal) SPACING(0.02) HSTRETCH JUSTIFY(left, center)
+
+    PARM_LABEL_SIMPLE("Images", "src_img") WIDTH(1.5);
+    { WIDTH(0.06) }
+
+    ROW
+    {
+	HSTRETCH(0.5) JUSTIFY(left, center) VALUE(src_img.val) 
+
+	src_img.field = PARM_FIELD(integer, "src_img") 
+		VALUE(src_img.val) HSTRETCH(0.5) PREF_WIDTH(0.5);
+
+        ROW
+        {
+	     LOOK(lightline) VMARGIN(1p)
+
+   	     INCREMENT_ICONBUTTON VALUE(src_img.more.val)	
+	    	HELP("Add Another Instance") SIZE(0.2, 0.24);
+	     DECREMENT_ICONBUTTON VALUE(src_img.less.val)	
+	        HELP("Remove Last Instance") SIZE(0.2, 0.24);
+	}
+
+	ACTION_BUTTON "Clear" VALUE(src_img.clear.val);
+    }
+
+    { HSTRETCH }
+}
+
+src_img.multiscroll = SCROLLREGION
+{
+    LAYOUT(vertical) HSTRETCH LOOK(line2) 
+	MARGIN(0.05) SCROLLVALUE(src_img.scrollx.val, src_img.scrolly.val)
+}
+
+src_img.gad =
+{
+    LAYOUT(vertical) STRETCH SPACING(0.02)
+    HMARGIN(0.18, 0.1)
+
+    src_img.parm;
+    {
+	LAYOUT(horizontal) STRETCH
+
+        src_img.multiscroll;
+
+	SCROLLBAR VALUE(src_img.scrolly.val) 
+	    LAYOUT(vertical) WIDTH(0.1) HSTRETCH;
+    }
+}
+
+defaultFieldOfView.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ defaultFieldOfView.label = PARM_LABEL("Default Field of View", "defaultFieldOfView") WIDTH(1.5);
+ PARM(float, 1, "defaultFieldOfView", none, none) RANGE(0,180)
+	 LABELREF(defaultFieldOfView.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+defaultFocalLengthPix.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ defaultFocalLengthPix.label = PARM_LABEL("Initial Focal Length", "defaultFocalLengthPix") WIDTH(1.5);
+ PARM(integer, 1, "defaultFocalLengthPix", none, none) RANGE(0,10)
+	 LABELREF(defaultFocalLengthPix.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+folder0.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder0.gad"
+    { 
+	VALUE(folder0.gad.val) STRETCH(1,0)
+
+	TAB "Images"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    add_img.gad;		
+	    src_img.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Camera Init"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    defaultFieldOfView.gad;		
+	    defaultFocalLengthPix.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+folder1.gad = 
+GROUP collapsible "Environment" flat  
+{
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH
+	    enablecustomenv.row.join;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    cook.row.join; 
+    proj.gad; 
+    cache_dir.gad; 
+    alice_dir.gad; 
+    folder1.gad; 
+    folder0.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

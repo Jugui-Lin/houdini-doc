@@ -1,0 +1,113 @@
+// Magic: 75b6b643
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Sat May  7 01:53:20 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+v_count.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ v_count.label = PARM_LABEL("Target Polygon Count", "v_count") WIDTH(1.5);
+ PARM(integer, 1, "v_count", none, none) RANGE(1,1000)
+	LOCK_RANGE_MIN LABELREF(v_count.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+cr_angle.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ cr_angle.label = PARM_LABEL("Crease Angle", "cr_angle") WIDTH(1.5);
+ PARM(float, 1, "cr_angle", none, none) RANGE(0,180)
+	LOCK_RANGE LABELREF(cr_angle.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+num_smooth_iter.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ num_smooth_iter.label = PARM_LABEL("Number of Smooth Iterations", "num_smooth_iter") WIDTH(1.5);
+ PARM(integer, 1, "num_smooth_iter", none, none) RANGE(1,5)
+	LOCK_RANGE_MIN LABELREF(num_smooth_iter.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+traceLines.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("traceLines", "Output Flowlines") toggle VALUE(traceLines.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+deterministic_parm.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("deterministic_parm", "Deterministic") toggle VALUE(deterministic_parm.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+advanced.gad = 
+
+GROUP simple "Advanced" flat 
+{ 
+    VALUE(advanced.gad.val) LAYOUT(vertical) HSTRETCH 
+	    traceLines.gad;		
+	    deterministic_parm.gad;		
+} 
+
+mesh_generation.gad = 
+
+GROUP simple "Mesh Generation" flat 
+{ 
+    VALUE(mesh_generation.gad.val) LAYOUT(vertical) HSTRETCH 
+	    v_count.gad;		
+	    cr_angle.gad;		
+	    num_smooth_iter.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    mesh_generation.gad; 
+    advanced.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

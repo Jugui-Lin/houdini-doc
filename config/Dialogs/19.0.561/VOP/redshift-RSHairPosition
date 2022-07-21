@@ -1,0 +1,96 @@
+// Magic: cd22c92d
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Sun May 29 09:35:42 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+outputToU.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("outputToU", "Output to u") toggle VALUE(outputToU.val);
+
+    { HSTRETCH }
+
+    outputToU.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(outputToU.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+outputToV.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("outputToV", "Output to v") toggle VALUE(outputToV.val);
+
+    { HSTRETCH }
+
+    outputToV.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(outputToV.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+outputToW.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("outputToW", "Output to w") toggle VALUE(outputToW.val);
+
+    { HSTRETCH }
+
+    outputToW.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(outputToW.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+shader_skipdefvalparms.gad = NULL { }
+
+Vector_Output_0.gad = 
+
+GROUP simple "Vector Output" flat 
+{ 
+    VALUE(Vector_Output_0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    outputToU.gad;		
+	    outputToV.gad;		
+	    outputToW.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    Vector_Output_0.gad; 
+    shader_skipdefvalparms.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

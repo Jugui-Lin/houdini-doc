@@ -1,0 +1,164 @@
+// Magic: 178d33e5
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Thu Apr 28 05:45:06 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+group.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+group.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    group.label = PARM_LABEL("Group", "group") WIDTH(1.5);
+    PARM_FIELD(string, "group") VALUE(group.val) 
+	LABELREF(group.label) HSTRETCH;
+
+    group.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "BUTTONS_reselect" VALUE(group.script_action)
+	HELP("Select geometry from an available viewport.\nShift-click to turn on Select Groups.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    {  }
+}
+
+grouptype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    grouptype.menu;
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+sepparm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+size.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   size.label = PARM_LABEL( "Size", "size" ) WIDTH(1.5);
+   PARM(float, 1, "size", none, none) RANGE(0, 1)
+	LABELREF( size.label ) HSTRETCH;
+
+   { WIDTH(0.1) }
+}
+
+iterations.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ iterations.label = PARM_LABEL("Iterations", "iterations") WIDTH(1.5);
+ PARM(integer, 1, "iterations", none, none) RANGE(0,100)
+	LOCK_RANGE_MIN LABELREF(iterations.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+project_to_src.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("project_to_src", "Project To Source") toggle VALUE(project_to_src.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+uniform.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("uniform", "Uniform") toggle VALUE(uniform.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+pin_borders.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("pin_borders", "Pin Borders") toggle VALUE(pin_borders.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+highlight_selection.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("highlight_selection", "Highlight Selection") toggle VALUE(highlight_selection.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    group.row.join; 
+    sepparm.gad; 
+    size.gad; 
+    iterations.gad; 
+    project_to_src.gad; 
+    uniform.gad; 
+    pin_borders.gad; 
+    highlight_selection.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

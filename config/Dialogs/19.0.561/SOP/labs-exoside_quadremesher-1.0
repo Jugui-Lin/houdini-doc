@@ -1,0 +1,349 @@
+// Magic: 4dec0613
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Sat May  7 01:53:25 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+CookNow.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+CookNow.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("CookNow", "Cook Now")
+	push VALUE(CookNow.val);
+
+    {  }
+}
+
+bAutoCook.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("bAutoCook", "Auto Cook") toggle VALUE(bAutoCook.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+TargetQuadCount.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ TargetQuadCount.label = PARM_LABEL("Target Quad Count", "TargetQuadCount") WIDTH(1.5);
+ PARM(integer, 1, "TargetQuadCount", none, LOGSCALE) RANGE(200,10000)
+	 LABELREF(TargetQuadCount.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+AdaptiveSize.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ AdaptiveSize.label = PARM_LABEL("Adaptive Size", "AdaptiveSize") WIDTH(1.5);
+ PARM(float, 1, "AdaptiveSize", none, none) RANGE(0,100)
+	 LABELREF(AdaptiveSize.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+AdaptiveQuadCount.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("AdaptiveQuadCount", "Adaptive Quad Count") toggle VALUE(AdaptiveQuadCount.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+UseVertexColors.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("UseVertexColors", "Use Vertex Colors") toggle VALUE(UseVertexColors.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+PaintedQuadDensity.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+PaintedQuadDensity.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ PaintedQuadDensity.label = PARM_LABEL("Painted Quad Density", "PaintedQuadDensity") WIDTH(1.5);
+ PARM(float, 1, "PaintedQuadDensity", none, LOGSCALE) RANGE(0.25,4)
+	 LABELREF(PaintedQuadDensity.label) HSTRETCH;
+
+  {  }
+}
+
+SetColor.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    {  }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("SetColor", "Setup 'Painting' SOP")
+	push VALUE(SetColor.val);
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+DensityAttribName.gad = NULL { }
+
+UseMaterialGroups.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("UseMaterialGroups", "Use Material Boundaries") toggle VALUE(UseMaterialGroups.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+DetectHardEdges.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("DetectHardEdges", "Detect Hard-Edges by angle") toggle VALUE(DetectHardEdges.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+UseNormalsSplitting.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("UseNormalsSplitting", "Use Normals Splitting") toggle VALUE(UseNormalsSplitting.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+UsePrimitiveGroups.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("UsePrimitiveGroups", "Use Primitive Groups Boundaries") toggle VALUE(UsePrimitiveGroups.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+PrimitiveAttribName.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    PrimitiveAttribName.label = PARM_LABEL("Use Primitive Attribute", "PrimitiveAttribName") WIDTH(1.5);
+    PARM_FIELD(string, "PrimitiveAttribName") VALUE(PrimitiveAttribName.val) 
+	LABELREF(PrimitiveAttribName.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+UseEdgeGroups.gad = NULL { }
+SymX.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+SymX.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("SymX", "X") toggle VALUE(SymX.val);
+
+    {  }
+
+    {  }
+}
+
+SymY.gad = ROW
+{
+    
+    {  }
+
+    PARM_BUTTON("SymY", "Y") toggle VALUE(SymY.val);
+
+    {  }
+
+    {  }
+}
+
+SymZ.gad = ROW
+{
+    HSTRETCH
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("SymZ", "Z") toggle VALUE(SymZ.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+out_cache.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ out_cache.label = PARM_LABEL("Cache File", "out_cache") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "out_cache") LABELREF(out_cache.label)
+	VALUE(out_cache.val) HSTRETCH;
+
+    out_cache.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(out_cache.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+LicenseMgr.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("LicenseMgr", "License Manager")
+	push VALUE(LicenseMgr.val);
+
+    { WIDTH(0.1) }
+}
+
+folder0.gad = 
+GROUP collapsible "Advanced" flat  
+{
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH
+	    out_cache.gad;		
+} 
+
+folder1.gad = 
+
+GROUP simple "Symmetry Axis" flat 
+{ 
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    SymX.row.join;		
+} 
+
+Misc.gad = 
+
+GROUP simple "Misc" flat 
+{ 
+    VALUE(Misc.gad.val) LAYOUT(vertical) HSTRETCH 
+	    folder1.gad;		
+	    folder0.gad;		
+	    LicenseMgr.gad;		
+} 
+
+Quads_sizing_1.gad = 
+
+GROUP simple "Edge Loops Control" flat 
+{ 
+    VALUE(Quads_sizing_1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    UseMaterialGroups.gad;		
+	    DetectHardEdges.gad;		
+	    UseNormalsSplitting.gad;		
+	    UsePrimitiveGroups.gad;		
+	    PrimitiveAttribName.gad;		
+	    UseEdgeGroups.gad;		
+} 
+
+Quads_sizing.gad = 
+
+GROUP simple "Quads Sizing" flat 
+{ 
+    VALUE(Quads_sizing.gad.val) LAYOUT(vertical) HSTRETCH 
+	    AdaptiveSize.gad;		
+	    AdaptiveQuadCount.gad;		
+	    UseVertexColors.gad;		
+	    PaintedQuadDensity.row.join;		
+	    DensityAttribName.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    CookNow.row.join; 
+    TargetQuadCount.gad; 
+    Quads_sizing.gad; 
+    Quads_sizing_1.gad; 
+    Misc.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

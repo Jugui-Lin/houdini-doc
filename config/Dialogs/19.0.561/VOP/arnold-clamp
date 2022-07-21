@@ -1,0 +1,144 @@
+// Magic: e3ffb278
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Fri Apr 29 23:17:00 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+input.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    input.label = PARM_LABEL("Input", "input") WIDTH(1.5);
+    PARM(float, 3, "input", none, COLOR, "R,G,B") 
+	LABELREF(input.label) HSTRETCH;
+
+    input.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(input.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+mode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Mode", "mode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    mode.menu;
+
+    { HSTRETCH }
+
+    mode.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(mode.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+min.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ min.label = PARM_LABEL("Min", "min") WIDTH(1.5);
+ PARM(float, 1, "min", none, none) RANGE(0,1)
+	 LABELREF(min.label) HSTRETCH;
+
+    min.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(min.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+max.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ max.label = PARM_LABEL("Max", "max") WIDTH(1.5);
+ PARM(float, 1, "max", none, none) RANGE(0,1)
+	 LABELREF(max.label) HSTRETCH;
+
+    max.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(max.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+min_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    min_color.label = PARM_LABEL("Min Color", "min_color") WIDTH(1.5);
+    PARM(float, 3, "min_color", none, COLOR, "R,G,B") 
+	LABELREF(min_color.label) HSTRETCH;
+
+    min_color.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(min_color.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+max_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    max_color.label = PARM_LABEL("Max Color", "max_color") WIDTH(1.5);
+    PARM(float, 3, "max_color", none, COLOR, "R,G,B") 
+	LABELREF(max_color.label) HSTRETCH;
+
+    max_color.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(max_color.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+rgb.gad = NULL { }
+r.gad = NULL { }
+g.gad = NULL { }
+b.gad = NULL { }
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    input.gad; 
+    mode.gad; 
+    min.gad; 
+    max.gad; 
+    min_color.gad; 
+    max_color.gad; 
+    rgb.gad; 
+    r.gad; 
+    g.gad; 
+    b.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

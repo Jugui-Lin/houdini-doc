@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["RenderIFD"]}, {"type": "para", "indent": 0, "text": ["This example demonstrates how to render .ifd files using the Render IFD TOP node."], "extent": [0, 82]}], "examplefor": "/nodes/top/renderifd", "examplefile": "/examples/nodes/top/renderifd/RenderIFD.hda"}

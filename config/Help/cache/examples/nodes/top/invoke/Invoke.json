@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["Invoke"]}, {"type": "para", "indent": 0, "text": ["This example demonstrates how to run compiled blocks using the Invoke TOP."], "extent": [0, 75]}], "examplefor": "/nodes/top/invoke", "examplefile": "/examples/nodes/top/invoke/Invoke.hda"}

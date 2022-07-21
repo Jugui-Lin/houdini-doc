@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["DownloadFile"]}, {"type": "para", "indent": 0, "text": ["This example demonstrates how to download a file using the downloadfile node."], "extent": [0, 77]}], "examplefor": "/nodes/top/downloadfile", "examplefile": "/examples/nodes/top/downloadfile/DownloadFile.hda"}

@@ -1,0 +1,121 @@
+// Magic: cfaf5dde
+// Automatically generated PSI dialog (PSI version 19.0.622)
+// Wed Jun  1 14:43:40 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+attribute.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    attribute.label = PARM_LABEL("Attribute", "attribute") WIDTH(1.5);
+    PARM_FIELD(string, "attribute") VALUE(attribute.val) 
+	LABELREF(attribute.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+srcmin.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ srcmin.label = PARM_LABEL("start frame", "srcmin") WIDTH(1.5);
+ PARM(float, 1, "srcmin", none, none) RANGE(0,1)
+	 LABELREF(srcmin.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+srcmax.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ srcmax.label = PARM_LABEL("end frame", "srcmax") WIDTH(1.5);
+ PARM(float, 1, "srcmax", none, none) RANGE(0,1)
+	 LABELREF(srcmax.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+soft.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ soft.label = PARM_LABEL("soft", "soft") WIDTH(1.5);
+ PARM(float, 1, "soft", none, none) RANGE(0,1)
+	 LABELREF(soft.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+destmin.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ destmin.label = PARM_LABEL("dest min frame", "destmin") WIDTH(1.5);
+ PARM(float, 1, "destmin", none, none) RANGE(0,1)
+	 LABELREF(destmin.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+destmax.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ destmax.label = PARM_LABEL("dest max frame", "destmax") WIDTH(1.5);
+ PARM(float, 1, "destmax", none, none) RANGE(0,1)
+	 LABELREF(destmax.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+outname.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    outname.label = PARM_LABEL("outname", "outname") WIDTH(1.5);
+    PARM_FIELD(string, "outname") VALUE(outname.val) 
+	LABELREF(outname.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    attribute.gad; 
+    srcmin.gad; 
+    srcmax.gad; 
+    soft.gad; 
+    destmin.gad; 
+    destmax.gad; 
+    outname.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

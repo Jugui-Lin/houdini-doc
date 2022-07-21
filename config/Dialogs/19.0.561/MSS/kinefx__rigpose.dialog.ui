@@ -1,0 +1,229 @@
+// Magic: a55fa700
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Wed May  4 20:45:55 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+enable_t.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Translate", "enable_t") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    enable_t.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+enable_r.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Rotate", "enable_r") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    enable_r.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+enable_s.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Scale", "enable_s") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    enable_s.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+mode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Mode", "mode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    mode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+config_attrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    config_attrib.label = PARM_LABEL("Configuration Attribute", "config_attrib") WIDTH(1.5);
+    PARM_FIELD(string, "config_attrib") VALUE(config_attrib.val) 
+	LABELREF(config_attrib.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+tweak_mode.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("tweak_mode", "Tweak Rotate Links") toggle VALUE(tweak_mode.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+use_motionpath.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("use_motionpath", "Motion Path") toggle VALUE(use_motionpath.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+jump_to_keyframe.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("jump_to_keyframe", "Jump to Keyframe") toggle VALUE(jump_to_keyframe.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+show_joints.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("show_joints", "Display Joints") toggle VALUE(show_joints.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+show_axes.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("show_axes", "Display Joint Axes") toggle VALUE(show_axes.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+show_links.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("show_links", "Display Links") toggle VALUE(show_links.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+solid_links.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("solid_links", "Solid Links") toggle VALUE(solid_links.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+show_scene_geo.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("show_scene_geo", "Show Geometry") toggle VALUE(show_scene_geo.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    enable_t.gad; 
+    enable_r.gad; 
+    enable_s.gad; 
+    mode.gad; 
+    config_attrib.gad; 
+    tweak_mode.gad; 
+    use_motionpath.gad; 
+    jump_to_keyframe.gad; 
+    show_joints.gad; 
+    show_axes.gad; 
+    show_links.gad; 
+    solid_links.gad; 
+    show_scene_geo.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

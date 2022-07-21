@@ -1,0 +1,422 @@
+// Magic: 4ec1fae7
+// Automatically generated PSI dialog (PSI version 19.0.622)
+// Fri Jul 15 17:04:31 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+showseams.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("showseams", "Show Seams") toggle VALUE(showseams.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+seamcolor.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    seamcolor.label = PARM_LABEL("Seams", "seamcolor") WIDTH(1.5);
+    PARM(float, 4, "seamcolor", none, COLOR, "R,G,B,A") 
+	LABELREF(seamcolor.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+locateislands.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("locateislands", "Locate Islands") toggle VALUE(locateislands.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+islandlocatecolor.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    islandlocatecolor.label = PARM_LABEL("Located Island Color", "islandlocatecolor") WIDTH(1.5);
+    PARM(float, 4, "islandlocatecolor", none, COLOR, "R,G,B,A") 
+	LABELREF(islandlocatecolor.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+showlocatedborder.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("showlocatedborder", "Locate Shared Borders") toggle VALUE(showlocatedborder.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+borderlocatecolor.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    borderlocatecolor.label = PARM_LABEL("Located Border Color", "borderlocatecolor") WIDTH(1.5);
+    PARM(float, 4, "borderlocatecolor", none, COLOR, "R,G,B,A") 
+	LABELREF(borderlocatecolor.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+showpattern.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("showpattern", "Show Texture Pattern") toggle VALUE(showpattern.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+patterncolor.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    patterncolor.label = PARM_LABEL("Pattern", "patterncolor") WIDTH(1.5);
+    PARM(float, 4, "patterncolor", none, COLOR, "R,G,B,A") 
+	LABELREF(patterncolor.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+pattern.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Texture Pattern", "pattern") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    pattern.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+patternsize.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ patternsize.label = PARM_LABEL("Pattern Size", "patternsize") WIDTH(1.5);
+ PARM(float, 1, "patternsize", none, none) RANGE(0.0001,1)
+	LOCK_RANGE_MIN LABELREF(patternsize.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+showglyph.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("showglyph", "Show Orientation Glyph") toggle VALUE(showglyph.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+invertpattern.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("invertpattern", "Invert Pattern") toggle VALUE(invertpattern.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+parm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+existingseamcolor.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    existingseamcolor.label = PARM_LABEL("Existing Seams", "existingseamcolor") WIDTH(1.5);
+    PARM(float, 4, "existingseamcolor", none, COLOR, "R,G,B,A") 
+	LABELREF(existingseamcolor.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+constraintcolor.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    constraintcolor.label = PARM_LABEL("Constraints", "constraintcolor") WIDTH(1.5);
+    PARM(float, 4, "constraintcolor", none, COLOR, "R,G,B,A") 
+	LABELREF(constraintcolor.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+rectifycolor.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    rectifycolor.label = PARM_LABEL("Recitfied Blocks", "rectifycolor") WIDTH(1.5);
+    PARM(float, 4, "rectifycolor", none, COLOR, "R,G,B,A") 
+	LABELREF(rectifycolor.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+reselect.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("reselect", "Reselect")
+	push VALUE(reselect.val);
+
+    { WIDTH(0.1) }
+}
+
+repack.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("repack", "Repack")
+	push VALUE(repack.val);
+
+    { WIDTH(0.1) }
+}
+
+selmodescp.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Mode", "selmodescp") WIDTH(1.5);
+    { WIDTH(0.1) }
+
+    selmodescp.buttonstrip;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+selmodeabf.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Mode", "selmodeabf") WIDTH(1.5);
+    { WIDTH(0.1) }
+
+    selmodeabf.buttonstrip;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+pinmarkersize.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pinmarkersize.label = PARM_LABEL("Pin Marker Size", "pinmarkersize") WIDTH(1.5);
+ PARM(integer, 1, "pinmarkersize", none, none) RANGE(3,12)
+	LOCK_RANGE_MIN LABELREF(pinmarkersize.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+colorislands.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("colorislands", "Color Islands") toggle VALUE(colorislands.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+blockrectify.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("blockrectify", "Block Rectify") toggle VALUE(blockrectify.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+clearconstraints.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("clearconstraints", "Clear Constraints")
+	push VALUE(clearconstraints.val);
+
+    { WIDTH(0.1) }
+}
+
+enablemirror.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("enablemirror", "Enable Mirroring") toggle VALUE(enablemirror.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+hidenongroup.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("hidenongroup", "Hide Nongroup") toggle VALUE(hidenongroup.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+setmirrorloops.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("setmirrorloops", "Set Mirroring Loops")
+	push VALUE(setmirrorloops.val);
+
+    { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    showseams.gad; 
+    seamcolor.gad; 
+    locateislands.gad; 
+    islandlocatecolor.gad; 
+    showlocatedborder.gad; 
+    borderlocatecolor.gad; 
+    showpattern.gad; 
+    patterncolor.gad; 
+    pattern.gad; 
+    patternsize.gad; 
+    showglyph.gad; 
+    invertpattern.gad; 
+    parm.gad; 
+    existingseamcolor.gad; 
+    constraintcolor.gad; 
+    rectifycolor.gad; 
+    reselect.gad; 
+    repack.gad; 
+    selmodescp.gad; 
+    selmodeabf.gad; 
+    pinmarkersize.gad; 
+    colorislands.gad; 
+    blockrectify.gad; 
+    clearconstraints.gad; 
+    enablemirror.gad; 
+    hidenongroup.gad; 
+    setmirrorloops.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

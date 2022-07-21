@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "node", "context": "vop", "internal": "properties", "since": "11.0", "version": null, "namespace": null}, "body": [{"level": 0, "type": "title", "indent": 0, "text": ["Properties"], "extent": [62, 77]}, {"type": "para", "indent": 0, "text": ["This VOP is the property container for materials."], "extent": [77, 127]}], "title": ["Properties"]}

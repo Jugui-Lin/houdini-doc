@@ -1,0 +1,155 @@
+// Magic: bef42be1
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Wed May  4 11:47:07 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+axis.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Orientation", "axis") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    axis.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+size.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   size.label = PARM_LABEL("Size", "size") WIDTH(1.5);
+   PARM(float, 2, "size", none, none, "X,Y")
+	RANGE(-1,1)  LABELREF(size.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+t.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   t.label = PARM_LABEL("Center", "t") WIDTH(1.5);
+   PARM(float, 3, "t", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(t.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+segments.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ segments.label = PARM_LABEL("End Segment Count", "segments") WIDTH(1.5);
+ PARM(integer, 1, "segments", none, none) RANGE(0,10)
+	 LABELREF(segments.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+radius.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ radius.label = PARM_LABEL("End Rounding Radius", "radius") WIDTH(1.5);
+ PARM(float, 1, "radius", none, none) RANGE(0,1)
+	 LABELREF(radius.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+segs.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ segs.label = PARM_LABEL("Straight Segment Count", "segs") WIDTH(1.5);
+ PARM(integer, 1, "segs", none, none) RANGE(1,50)
+	LOCK_RANGE_MIN LABELREF(segs.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+divs.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ divs.label = PARM_LABEL("Angular Divisions", "divs") WIDTH(1.5);
+ PARM(integer, 1, "divs", none, none) RANGE(1,50)
+	LOCK_RANGE_MIN LABELREF(divs.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+clean_caps.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("clean_caps", "Clean Caps") toggle VALUE(clean_caps.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+res_caps.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("res_caps", "Resample Caps (if necessary)") toggle VALUE(res_caps.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    axis.gad; 
+    size.gad; 
+    t.gad; 
+    segments.gad; 
+    radius.gad; 
+    segs.gad; 
+    divs.gad; 
+    clean_caps.gad; 
+    res_caps.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

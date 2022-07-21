@@ -1,0 +1,142 @@
+// Magic: 52e3a450
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Thu May 12 05:57:31 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+scalestep.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ scalestep.label = PARM_LABEL("Scale Step", "scalestep") WIDTH(1.5);
+ PARM(float, 1, "scalestep", none, none) RANGE(0.001,5)
+	 LABELREF(scalestep.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+s.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ s.label = PARM_LABEL("Scale", "s") WIDTH(1.5);
+ PARM(float, 1, "s", none, none) RANGE(0.01,10)
+	 LABELREF(s.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pivot_comp_tx.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pivot_comp_tx.label = PARM_LABEL("Pivot Comp Tx", "pivot_comp_tx") WIDTH(1.5);
+ PARM(float, 1, "pivot_comp_tx", none, none) RANGE(-10,10)
+	 LABELREF(pivot_comp_tx.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pivot_comp_ty.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pivot_comp_ty.label = PARM_LABEL("Pivot Comp Ty", "pivot_comp_ty") WIDTH(1.5);
+ PARM(float, 1, "pivot_comp_ty", none, none) RANGE(-10,10)
+	 LABELREF(pivot_comp_ty.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pivot_comp_tz.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pivot_comp_tz.label = PARM_LABEL("Pivot Comp Tz", "pivot_comp_tz") WIDTH(1.5);
+ PARM(float, 1, "pivot_comp_tz", none, none) RANGE(-10,10)
+	 LABELREF(pivot_comp_tz.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pivot_comp_rx.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pivot_comp_rx.label = PARM_LABEL("Pivot Comp Rx", "pivot_comp_rx") WIDTH(1.5);
+ PARM(float, 1, "pivot_comp_rx", none, none) RANGE(-360,360)
+	 LABELREF(pivot_comp_rx.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pivot_comp_ry.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pivot_comp_ry.label = PARM_LABEL("Pivot Comp Ry", "pivot_comp_ry") WIDTH(1.5);
+ PARM(float, 1, "pivot_comp_ry", none, none) RANGE(-360,360)
+	 LABELREF(pivot_comp_ry.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+pivot_comp_rz.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pivot_comp_rz.label = PARM_LABEL("Pivot Comp Rz", "pivot_comp_rz") WIDTH(1.5);
+ PARM(float, 1, "pivot_comp_rz", none, none) RANGE(-360,360)
+	 LABELREF(pivot_comp_rz.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+handle_parameter_group.gad = 
+GROUP collapsible "Handle parameters" flat  
+{
+    VALUE(handle_parameter_group.gad.val) LAYOUT(vertical) HSTRETCH
+	    s.gad;		
+	    pivot_comp_tx.gad;		
+	    pivot_comp_ty.gad;		
+	    pivot_comp_tz.gad;		
+	    pivot_comp_rx.gad;		
+	    pivot_comp_ry.gad;		
+	    pivot_comp_rz.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    scalestep.gad; 
+    handle_parameter_group.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

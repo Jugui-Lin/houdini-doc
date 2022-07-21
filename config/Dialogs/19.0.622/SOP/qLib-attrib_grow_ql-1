@@ -1,0 +1,126 @@
+// Magic: 59d8cf2c
+// Automatically generated PSI dialog (PSI version 19.0.622)
+// Wed Jun  1 13:22:03 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+attrib.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+attrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    attrib.label = PARM_LABEL("Attribute To Grow", "attrib") WIDTH(1.5);
+    PARM_FIELD(string, "attrib") VALUE(attrib.val) 
+	LABELREF(attrib.label) HSTRETCH;
+
+    {  }
+}
+
+signature.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    signature.menu;
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+iterations.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ iterations.label = PARM_LABEL("Iterations", "iterations") WIDTH(1.5);
+ PARM(float, 1, "iterations", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(iterations.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+damp.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ damp.label = PARM_LABEL("Damp", "damp") WIDTH(1.5);
+ PARM(float, 1, "damp", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(damp.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+do_weight.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+do_weight.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+do_weight.gad = PARM_BUTTON("do_weight", "") toggle VALUE(do_weight.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+weight_name.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    weight_name.label = PARM_LABEL("Weight Attrib", "weight_name") WIDTH(1.32);
+    PARM_FIELD(string, "weight_name") VALUE(weight_name.val) 
+	LABELREF(weight_name.label) HSTRETCH;
+
+    {  }
+}
+}	
+
+invert_weight.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("invert_weight", "Invert") toggle VALUE(invert_weight.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    attrib.row.join; 
+    iterations.gad; 
+    damp.gad; 
+    do_weight.row.join; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

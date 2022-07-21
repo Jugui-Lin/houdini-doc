@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["NestedLoop"]}, {"type": "para", "indent": 0, "text": ["This example demonstrates how to create a nested feedback loop."], "extent": [0, 64]}], "examplefor": "/nodes/top/feedbackend", "examplefile": "/examples/nodes/top/feedbackend/NestedLoop.hda"}

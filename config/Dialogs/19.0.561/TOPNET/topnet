@@ -1,0 +1,275 @@
+// Magic: 42bcac40
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Fri May 27 10:35:15 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+generatestatic.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+generatestatic.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("generatestatic", "Generate Static Work Items")
+	push VALUE(generatestatic.val);
+
+    {  }
+}
+
+cookbutton.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    PARM_BUTTON("cookbutton", "Cook Output Node")
+	push VALUE(cookbutton.val);
+
+    {  }
+}
+
+dirtybutton.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    PARM_BUTTON("dirtybutton", "Dirty All")
+	push VALUE(dirtybutton.val);
+
+    {  }
+}
+
+cancelbutton.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    {  }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("cancelbutton", "Cancel Cook")
+	push VALUE(cancelbutton.val);
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+savetaskgraph.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+savetaskgraph.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("savetaskgraph", "Save Task Graph")
+	push VALUE(savetaskgraph.val);
+
+    {  }
+}
+
+loadtaskgraph.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    {  }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("loadtaskgraph", "Load Task Graph")
+	push VALUE(loadtaskgraph.val);
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+taskgraphfile.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ taskgraphfile.label = PARM_LABEL("Task Graph File", "taskgraphfile") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "taskgraphfile") LABELREF(taskgraphfile.label)
+	VALUE(taskgraphfile.val) HSTRETCH;
+
+    taskgraphfile.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(taskgraphfile.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+taskgraphautosave.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+taskgraphautosave.gad = PARM_BUTTON("taskgraphautosave", "") toggle VALUE(taskgraphautosave.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+taskgraphsaverate.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ taskgraphsaverate.label = PARM_LABEL("Auto-Save Rate", "taskgraphsaverate") WIDTH(1.32);
+ PARM(integer, 1, "taskgraphsaverate", none, none) RANGE(1,100)
+	LOCK_RANGE_MIN LABELREF(taskgraphsaverate.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	
+
+topscheduler.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ topscheduler.label = PARM_LABEL("Default Scheduler", "topscheduler") WIDTH(1.5);
+ PARM_FIELD(pathstring, "topscheduler") VALUE(topscheduler.val) 
+	LABELREF(topscheduler.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(topscheduler.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(topscheduler.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+usedefaultlabel.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+usedefaultlabel.gad = PARM_BUTTON("usedefaultlabel", "") toggle VALUE(usedefaultlabel.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+defaultlabel.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    defaultlabel.label = PARM_LABEL("Default Item Label", "defaultlabel") WIDTH(1.32);
+    PARM_FIELD(string, "defaultlabel") VALUE(defaultlabel.val) 
+	LABELREF(defaultlabel.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	
+
+sep1.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+regenerationtype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("On Node Recook", "regenerationtype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    regenerationtype.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+evaluationtime.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Evaluation Time", "evaluationtime") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    evaluationtime.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+customtime.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ customtime.label = PARM_LABEL("Custom Time", "customtime") WIDTH(1.5);
+ PARM(integer, 1, "customtime", none, none) RANGE(0,10)
+	 LABELREF(customtime.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+schedulersection.gad = 
+
+GROUP simple "Work Items and Scheduling" flat 
+{ 
+    VALUE(schedulersection.gad.val) LAYOUT(vertical) HSTRETCH 
+	    topscheduler.gad;		
+	    usedefaultlabel.join;		
+	    sep1.gad;		
+} 
+
+taskgraphsection.gad = 
+
+GROUP simple "Save/Load Task Graph" flat 
+{ 
+    VALUE(taskgraphsection.gad.val) LAYOUT(vertical) HSTRETCH 
+	    savetaskgraph.row.join;		
+	    taskgraphfile.gad;		
+	    taskgraphautosave.join;		
+} 
+
+cookcontrolssection.gad = 
+
+GROUP simple "Cook Controls" flat 
+{ 
+    VALUE(cookcontrolssection.gad.val) LAYOUT(vertical) HSTRETCH 
+	    generatestatic.row.join;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    cookcontrolssection.gad; 
+    taskgraphsection.gad; 
+    schedulersection.gad; 
+    regenerationtype.gad; 
+    evaluationtime.gad; 
+    customtime.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

@@ -1,0 +1,180 @@
+// Magic: d21d94f4
+// Automatically generated PSI dialog (PSI version 19.0.622)
+// Sun Jun  5 01:22:34 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+slidemap.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    slidemap.label = PARM_LABEL("Slidemap", "slidemap") WIDTH(1.5);
+    PARM(float, 3, "slidemap", none, COLOR, "R,G,B") 
+	LABELREF(slidemap.label) HSTRETCH;
+
+    slidemap.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(slidemap.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+offset.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   offset.label = PARM_LABEL("Offset", "offset") WIDTH(1.5);
+   PARM(float, 2, "offset", none, none, "#1,#2")
+	RANGE(0,1)  LABELREF(offset.label)
+	HSTRETCH;
+
+    offset.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(offset.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+density.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ density.label = PARM_LABEL("Density", "density") WIDTH(1.5);
+ PARM(float, 1, "density", none, none) RANGE(0,1)
+	 LABELREF(density.label) HSTRETCH;
+
+    density.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(density.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+filter_mode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Filter Mode", "filter_mode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    filter_mode.menu;
+
+    { HSTRETCH }
+
+    filter_mode.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(filter_mode.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+swrap.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("S Wrap", "swrap") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    swrap.menu;
+
+    { HSTRETCH }
+
+    swrap.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(swrap.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+twrap.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("T Wrap", "twrap") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    twrap.menu;
+
+    { HSTRETCH }
+
+    twrap.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(twrap.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+sscale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ sscale.label = PARM_LABEL("S Scale", "sscale") WIDTH(1.5);
+ PARM(float, 1, "sscale", none, none) RANGE(0,1)
+	 LABELREF(sscale.label) HSTRETCH;
+
+    sscale.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(sscale.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+tscale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ tscale.label = PARM_LABEL("T Scale", "tscale") WIDTH(1.5);
+ PARM(float, 1, "tscale", none, none) RANGE(0,1)
+	 LABELREF(tscale.label) HSTRETCH;
+
+    tscale.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(tscale.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    slidemap.gad; 
+    offset.gad; 
+    density.gad; 
+    filter_mode.gad; 
+    swrap.gad; 
+    twrap.gad; 
+    sscale.gad; 
+    tscale.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["DeleteAttributes"]}, {"type": "para", "indent": 0, "text": ["This example demonstrates how to delete work item attributes."], "extent": [0, 63]}], "examplefor": "/nodes/top/attributedelete", "examplefile": "/examples/nodes/top/attributedelete/DeleteAttributes.hda"}

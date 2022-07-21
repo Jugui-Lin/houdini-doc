@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["CopyAttributes"]}, {"type": "para", "indent": 0, "text": ["This example demonstrates how to copy attributes from one workitem to another."], "extent": [0, 80]}], "examplefor": "/nodes/top/attributecopy", "examplefile": "/examples/nodes/top/attributecopy/CopyAttributes.hda"}

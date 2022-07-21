@@ -1,0 +1,2624 @@
+// Magic: 27c8a891
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Mon May 23 16:03:58 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+execute.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+execute.gad = NULL { }
+renderpreview.gad = NULL { }
+executebackground.gad = NULL { }
+renderdialog.gad = NULL { }
+}	// Template join.bot
+
+
+dl_Submit.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("dl_Submit", "Submit To Deadline")
+	push VALUE(dl_Submit.val);
+
+    { WIDTH(0.1) }
+}
+trange.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+trange.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Valid Frame Range", "trange") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    trange.menu;
+
+    {  }
+
+    {  }
+}
+
+dl_limit_frames_to_node.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_limit_frames_to_node", "Limit Render Frames to Deadline Node") toggle VALUE(dl_limit_frames_to_node.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+f.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   f.label = PARM_LABEL("Start/End/Inc", "f") WIDTH(1.5);
+   PARM(float, 3, "f", none, none, "#1,#2,#3")
+	RANGE(0,1)  LABELREF(f.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+take.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Render With Take", "take") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    take.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+soho_program.gad = NULL { }
+soho_outputmode.gad = NULL { }
+
+dl_job_name.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    dl_job_name.label = PARM_LABEL("Job Name", "dl_job_name") WIDTH(1.5);
+    PARM_FIELD(string, "dl_job_name") VALUE(dl_job_name.val) 
+	LABELREF(dl_job_name.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+dl_comment.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    dl_comment.label = PARM_LABEL("Comment", "dl_comment") WIDTH(1.5);
+    PARM_FIELD(string, "dl_comment") VALUE(dl_comment.val) 
+	LABELREF(dl_comment.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+dl_department.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    dl_department.label = PARM_LABEL("Department", "dl_department") WIDTH(1.5);
+    PARM_FIELD(string, "dl_department") VALUE(dl_department.val) 
+	LABELREF(dl_department.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+dl_pool.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+dl_pool.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Pool", "dl_pool") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    dl_pool.menu;
+
+    {  }
+
+    {  }
+}
+
+dl_secondary_pool.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    PARM_LABEL_SIMPLE("Secondary Pool", "dl_secondary_pool") ;
+    { WIDTH(0.09) }
+
+    dl_secondary_pool.menu;
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+dl_group.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Group", "dl_group") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    dl_group.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dl_priority.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dl_priority.label = PARM_LABEL("Priority", "dl_priority") WIDTH(1.5);
+ PARM(integer, 1, "dl_priority", none, none) RANGE(0,100)
+	LOCK_RANGE LABELREF(dl_priority.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+dl_task_timeout.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+dl_task_timeout.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dl_task_timeout.label = PARM_LABEL("Task Timeout", "dl_task_timeout") WIDTH(1.5);
+ PARM(integer, 1, "dl_task_timeout", none, none) RANGE(0,1000000)
+	LOCK_RANGE LABELREF(dl_task_timeout.label) HSTRETCH;
+
+  {  }
+}
+
+dl_auto_task_timeout.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_auto_task_timeout", "Enable Auto Task Timeout") toggle VALUE(dl_auto_task_timeout.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+dl_concurrent_tasks.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+dl_concurrent_tasks.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dl_concurrent_tasks.label = PARM_LABEL("Concurrent Tasks", "dl_concurrent_tasks") WIDTH(1.5);
+ PARM(integer, 1, "dl_concurrent_tasks", none, none) RANGE(1,16)
+	LOCK_RANGE LABELREF(dl_concurrent_tasks.label) HSTRETCH;
+
+  {  }
+}
+
+dl_slave_task_limit.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_slave_task_limit", "Limit Tasks to Worker's Task Limit") toggle VALUE(dl_slave_task_limit.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+dl_machine_limit.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+dl_machine_limit.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dl_machine_limit.label = PARM_LABEL("Machine Limit", "dl_machine_limit") WIDTH(1.5);
+ PARM(integer, 1, "dl_machine_limit", none, none) RANGE(0,1000000)
+	LOCK_RANGE LABELREF(dl_machine_limit.label) HSTRETCH;
+
+  {  }
+}
+
+dl_blacklist.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_blacklist", "Machine List Is A Deny List") toggle VALUE(dl_blacklist.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+dl_machine_list.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    dl_machine_list.label = PARM_LABEL("Machine List", "dl_machine_list") WIDTH(1.5);
+    PARM_FIELD(string, "dl_machine_list") VALUE(dl_machine_list.val) 
+	LABELREF(dl_machine_list.label) HSTRETCH;
+
+    ACTION_ICONBUTTON "BUTTONS_gear" VALUE(dl_machine_list.script_action)
+	HELP("")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+dl_limits.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    dl_limits.label = PARM_LABEL("Limits", "dl_limits") WIDTH(1.5);
+    PARM_FIELD(string, "dl_limits") VALUE(dl_limits.val) 
+	LABELREF(dl_limits.label) HSTRETCH;
+
+    ACTION_ICONBUTTON "BUTTONS_gear" VALUE(dl_limits.script_action)
+	HELP("")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+dl_dependencies.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    dl_dependencies.label = PARM_LABEL("Dependencies", "dl_dependencies") WIDTH(1.5);
+    PARM_FIELD(string, "dl_dependencies") VALUE(dl_dependencies.val) 
+	LABELREF(dl_dependencies.label) HSTRETCH;
+
+    ACTION_ICONBUTTON "BUTTONS_gear" VALUE(dl_dependencies.script_action)
+	HELP("")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+dl_on_complete.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+dl_on_complete.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("On Job Complete", "dl_on_complete") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    dl_on_complete.menu;
+
+    {  }
+
+    {  }
+}
+
+dl_submit_suspended.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_submit_suspended", "Submit Job as Suspended") toggle VALUE(dl_submit_suspended.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+dl_chunk_size.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dl_chunk_size.label = PARM_LABEL("Frames Per Task", "dl_chunk_size") WIDTH(1.5);
+ PARM(integer, 1, "dl_chunk_size", none, none) RANGE(1,1000000)
+	LOCK_RANGE LABELREF(dl_chunk_size.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+dl_submit_scene.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_submit_scene", "Submit Houdini Scene") toggle VALUE(dl_submit_scene.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dl_frame_dependent.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_frame_dependent", "Jobs are Frame Dependent") toggle VALUE(dl_frame_dependent.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dl_should_precache.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_should_precache", "Precache assets for AWS") toggle VALUE(dl_should_precache.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dl_gpu_desc.sval := 1;
+
+dl_gpu_desc.gad = 
+{
+    LAYOUT(vertical) SPACING(1p) HSTRETCH VMARGIN(0.05, 0)
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    SWITCHER tight
+    {
+	VALUE(dl_gpu_desc.sval) HSTRETCH
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(dl_gpu_desc.val[0]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(dl_gpu_desc.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[1]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(dl_gpu_desc.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[2]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(dl_gpu_desc.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[3]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(dl_gpu_desc.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[4]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(dl_gpu_desc.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[5]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(dl_gpu_desc.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[6]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(dl_gpu_desc.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[7]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(dl_gpu_desc.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[8]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(dl_gpu_desc.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[9]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(dl_gpu_desc.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[10]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(dl_gpu_desc.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[11]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(dl_gpu_desc.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[12]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(dl_gpu_desc.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[12]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[13]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(dl_gpu_desc.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[12]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[13]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[14]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(dl_gpu_desc.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[12]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[13]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[14]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_gpu_desc.val[15]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+    }
+}
+
+dl_gpu_opencl_enable.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_gpu_opencl_enable", "OpenCL: Force GPU Rendering") toggle VALUE(dl_gpu_opencl_enable.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dl_gpus_per_task.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dl_gpus_per_task.label = PARM_LABEL("GPUs Per Task", "dl_gpus_per_task") WIDTH(1.5);
+ PARM(integer, 1, "dl_gpus_per_task", none, none) RANGE(0,16)
+	LOCK_RANGE LABELREF(dl_gpus_per_task.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+dl_gpu_devices.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    dl_gpu_devices.label = PARM_LABEL("Select GPU Devices", "dl_gpu_devices") WIDTH(1.5);
+    PARM_FIELD(string, "dl_gpu_devices") VALUE(dl_gpu_devices.val) 
+	LABELREF(dl_gpu_devices.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+dl_tile_rendering_desc.sval := 1;
+
+dl_tile_rendering_desc.gad = 
+{
+    LAYOUT(vertical) SPACING(1p) HSTRETCH VMARGIN(0.05, 0)
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    SWITCHER tight
+    {
+	VALUE(dl_tile_rendering_desc.sval) HSTRETCH
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(dl_tile_rendering_desc.val[0]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(dl_tile_rendering_desc.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[1]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(dl_tile_rendering_desc.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[2]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(dl_tile_rendering_desc.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[3]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(dl_tile_rendering_desc.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[4]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(dl_tile_rendering_desc.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[5]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(dl_tile_rendering_desc.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[6]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(dl_tile_rendering_desc.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[7]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(dl_tile_rendering_desc.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[8]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(dl_tile_rendering_desc.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[9]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(dl_tile_rendering_desc.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[10]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(dl_tile_rendering_desc.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[11]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(dl_tile_rendering_desc.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[12]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(dl_tile_rendering_desc.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[12]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[13]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(dl_tile_rendering_desc.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[12]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[13]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[14]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(dl_tile_rendering_desc.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[12]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[13]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[14]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(dl_tile_rendering_desc.val[15]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+    }
+}
+
+dl_tiles_enabled.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_tiles_enabled", "Enable Tile Rendering") toggle VALUE(dl_tiles_enabled.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dl_tiles_in_x.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dl_tiles_in_x.label = PARM_LABEL("Tiles in X", "dl_tiles_in_x") WIDTH(1.5);
+ PARM(integer, 1, "dl_tiles_in_x", none, none) RANGE(1,10)
+	LOCK_RANGE_MIN LABELREF(dl_tiles_in_x.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+dl_tiles_in_y.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dl_tiles_in_y.label = PARM_LABEL("Tiles in Y", "dl_tiles_in_y") WIDTH(1.5);
+ PARM(integer, 1, "dl_tiles_in_y", none, none) RANGE(1,10)
+	LOCK_RANGE_MIN LABELREF(dl_tiles_in_y.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+dl_tiles_single_frame_enabled.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_tiles_single_frame_enabled", "Single Frame Tile Job Enabled") toggle VALUE(dl_tiles_single_frame_enabled.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dl_tiles_single_frame.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dl_tiles_single_frame.label = PARM_LABEL("Single Job Frame", "dl_tiles_single_frame") WIDTH(1.5);
+ PARM(integer, 1, "dl_tiles_single_frame", none, none) RANGE(0,10)
+	 LABELREF(dl_tiles_single_frame.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+dl_submit_dependent_assembly.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_submit_dependent_assembly", "Submit Dependent Assembly Job") toggle VALUE(dl_submit_dependent_assembly.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dl_cleanup_tiles.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_cleanup_tiles", "Cleanup Tiles After Assembly") toggle VALUE(dl_cleanup_tiles.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dl_error_on_missing_tiles.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_error_on_missing_tiles", "Error on Missing Tiles") toggle VALUE(dl_error_on_missing_tiles.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dl_error_on_missing_background.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_error_on_missing_background", "Error on Missing Background") toggle VALUE(dl_error_on_missing_background.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dl_background_option.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Assemble Over", "dl_background_option") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    dl_background_option.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dl_background_image.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ dl_background_image.label = PARM_LABEL("Background Image File", "dl_background_image") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "dl_background_image") LABELREF(dl_background_image.label)
+	VALUE(dl_background_image.val) HSTRETCH;
+
+    dl_background_image.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(dl_background_image.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+dl_mantra_job.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_mantra_job", "Submit Dependent Mantra Standalone Job") toggle VALUE(dl_mantra_job.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dl_mantra_local_export.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_mantra_local_export", "Export Mantra Locally") toggle VALUE(dl_mantra_local_export.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+dl_mantra_pool.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+dl_mantra_pool.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Pool", "dl_mantra_pool") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    dl_mantra_pool.menu;
+
+    {  }
+
+    {  }
+}
+
+dl_mantra_secondary_pool.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    PARM_LABEL_SIMPLE("Secondary Pool", "dl_mantra_secondary_pool") ;
+    { WIDTH(0.09) }
+
+    dl_mantra_secondary_pool.menu;
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+dl_mantra_group.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Group", "dl_mantra_group") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    dl_mantra_group.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dl_mantra_priority.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dl_mantra_priority.label = PARM_LABEL("Priority", "dl_mantra_priority") WIDTH(1.5);
+ PARM(integer, 1, "dl_mantra_priority", none, none) RANGE(0,100)
+	LOCK_RANGE LABELREF(dl_mantra_priority.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+dl_mantra_task_timeout.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+dl_mantra_task_timeout.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dl_mantra_task_timeout.label = PARM_LABEL("Task Timeout", "dl_mantra_task_timeout") WIDTH(1.5);
+ PARM(integer, 1, "dl_mantra_task_timeout", none, none) RANGE(0,1000000)
+	LOCK_RANGE LABELREF(dl_mantra_task_timeout.label) HSTRETCH;
+
+  {  }
+}
+
+dl_mantra_auto_timeout.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_mantra_auto_timeout", "Enable Auto Task Timeout") toggle VALUE(dl_mantra_auto_timeout.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+dl_mantra_concurrent.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+dl_mantra_concurrent.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dl_mantra_concurrent.label = PARM_LABEL("Concurrent Tasks", "dl_mantra_concurrent") WIDTH(1.5);
+ PARM(integer, 1, "dl_mantra_concurrent", none, none) RANGE(1,16)
+	LOCK_RANGE LABELREF(dl_mantra_concurrent.label) HSTRETCH;
+
+  {  }
+}
+
+dl_mantra_slave_limit.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_mantra_slave_limit", "Limit Tasks to Worker's Task Limit") toggle VALUE(dl_mantra_slave_limit.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+dl_mantra_machine_limit.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+dl_mantra_machine_limit.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dl_mantra_machine_limit.label = PARM_LABEL("Machine Limit", "dl_mantra_machine_limit") WIDTH(1.5);
+ PARM(integer, 1, "dl_mantra_machine_limit", none, none) RANGE(0,1000000)
+	LOCK_RANGE LABELREF(dl_mantra_machine_limit.label) HSTRETCH;
+
+  {  }
+}
+
+dl_mantra_is_blacklist.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_mantra_is_blacklist", "Machine List Is A Deny List") toggle VALUE(dl_mantra_is_blacklist.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+dl_mantra_machine_list.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    dl_mantra_machine_list.label = PARM_LABEL("Machine List", "dl_mantra_machine_list") WIDTH(1.5);
+    PARM_FIELD(string, "dl_mantra_machine_list") VALUE(dl_mantra_machine_list.val) 
+	LABELREF(dl_mantra_machine_list.label) HSTRETCH;
+
+    ACTION_ICONBUTTON "BUTTONS_gear" VALUE(dl_mantra_machine_list.script_action)
+	HELP("")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+dl_mantra_limits.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    dl_mantra_limits.label = PARM_LABEL("Limits", "dl_mantra_limits") WIDTH(1.5);
+    PARM_FIELD(string, "dl_mantra_limits") VALUE(dl_mantra_limits.val) 
+	LABELREF(dl_mantra_limits.label) HSTRETCH;
+
+    ACTION_ICONBUTTON "BUTTONS_gear" VALUE(dl_mantra_limits.script_action)
+	HELP("")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+dl_mantra_threads.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dl_mantra_threads.label = PARM_LABEL("Mantra Threads", "dl_mantra_threads") WIDTH(1.5);
+ PARM(integer, 1, "dl_mantra_threads", none, none) RANGE(0,256)
+	LOCK_RANGE LABELREF(dl_mantra_threads.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+dl_mantra_on_complete.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("On Job Complete", "dl_mantra_on_complete") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    dl_mantra_on_complete.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dl_arnold_job.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_arnold_job", "Submit Dependent Arnold Standalone Job") toggle VALUE(dl_arnold_job.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dl_arnold_local_export.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_arnold_local_export", "Export Arnold Locally") toggle VALUE(dl_arnold_local_export.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+dl_arnold_pool.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+dl_arnold_pool.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Pool", "dl_arnold_pool") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    dl_arnold_pool.menu;
+
+    {  }
+
+    {  }
+}
+
+dl_arnold_secondary_pool.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    PARM_LABEL_SIMPLE("Secondary Pool", "dl_arnold_secondary_pool") ;
+    { WIDTH(0.09) }
+
+    dl_arnold_secondary_pool.menu;
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+dl_arnold_group.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Group", "dl_arnold_group") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    dl_arnold_group.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dl_arnold_priority.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dl_arnold_priority.label = PARM_LABEL("Priority", "dl_arnold_priority") WIDTH(1.5);
+ PARM(integer, 1, "dl_arnold_priority", none, none) RANGE(0,100)
+	LOCK_RANGE LABELREF(dl_arnold_priority.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+dl_arnold_task_timeout.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+dl_arnold_task_timeout.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dl_arnold_task_timeout.label = PARM_LABEL("Task Timeout", "dl_arnold_task_timeout") WIDTH(1.5);
+ PARM(integer, 1, "dl_arnold_task_timeout", none, none) RANGE(0,1000000)
+	LOCK_RANGE LABELREF(dl_arnold_task_timeout.label) HSTRETCH;
+
+  {  }
+}
+
+dl_arnold_auto_timeout.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_arnold_auto_timeout", "Enable Auto Task Timeout") toggle VALUE(dl_arnold_auto_timeout.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+dl_arnold_concurrent.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+dl_arnold_concurrent.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dl_arnold_concurrent.label = PARM_LABEL("Concurrent Tasks", "dl_arnold_concurrent") WIDTH(1.5);
+ PARM(integer, 1, "dl_arnold_concurrent", none, none) RANGE(1,16)
+	LOCK_RANGE LABELREF(dl_arnold_concurrent.label) HSTRETCH;
+
+  {  }
+}
+
+dl_arnold_slave_limit.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_arnold_slave_limit", "Limit Tasks to Worker's Task Limit") toggle VALUE(dl_arnold_slave_limit.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+dl_arnold_machine_limit.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+dl_arnold_machine_limit.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dl_arnold_machine_limit.label = PARM_LABEL("Machine Limit", "dl_arnold_machine_limit") WIDTH(1.5);
+ PARM(integer, 1, "dl_arnold_machine_limit", none, none) RANGE(0,1000000)
+	LOCK_RANGE LABELREF(dl_arnold_machine_limit.label) HSTRETCH;
+
+  {  }
+}
+
+dl_arnold_is_blacklist.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_arnold_is_blacklist", "Machine List Is A Deny List") toggle VALUE(dl_arnold_is_blacklist.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+dl_arnold_machine_list.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    dl_arnold_machine_list.label = PARM_LABEL("Machine List", "dl_arnold_machine_list") WIDTH(1.5);
+    PARM_FIELD(string, "dl_arnold_machine_list") VALUE(dl_arnold_machine_list.val) 
+	LABELREF(dl_arnold_machine_list.label) HSTRETCH;
+
+    ACTION_ICONBUTTON "BUTTONS_gear" VALUE(dl_arnold_machine_list.script_action)
+	HELP("")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+dl_arnold_limits.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    dl_arnold_limits.label = PARM_LABEL("Limits", "dl_arnold_limits") WIDTH(1.5);
+    PARM_FIELD(string, "dl_arnold_limits") VALUE(dl_arnold_limits.val) 
+	LABELREF(dl_arnold_limits.label) HSTRETCH;
+
+    ACTION_ICONBUTTON "BUTTONS_gear" VALUE(dl_arnold_limits.script_action)
+	HELP("")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+dl_arnold_threads.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dl_arnold_threads.label = PARM_LABEL("Arnold Threads", "dl_arnold_threads") WIDTH(1.5);
+ PARM(integer, 1, "dl_arnold_threads", none, none) RANGE(0,256)
+	LOCK_RANGE LABELREF(dl_arnold_threads.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+dl_arnold_on_complete.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("On Job Complete", "dl_arnold_on_complete") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    dl_arnold_on_complete.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dl_renderman_job.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_renderman_job", "Submit Dependent RenderMan Standalone Job") toggle VALUE(dl_renderman_job.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dl_renderman_local_export.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_renderman_local_export", "Export RenderMan Locally") toggle VALUE(dl_renderman_local_export.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+dl_renderman_pool.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+dl_renderman_pool.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Pool", "dl_renderman_pool") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    dl_renderman_pool.menu;
+
+    {  }
+
+    {  }
+}
+
+dl_renderman_secondary_pool.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    PARM_LABEL_SIMPLE("Secondary Pool", "dl_renderman_secondary_pool") ;
+    { WIDTH(0.09) }
+
+    dl_renderman_secondary_pool.menu;
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+dl_renderman_group.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Group", "dl_renderman_group") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    dl_renderman_group.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dl_renderman_priority.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dl_renderman_priority.label = PARM_LABEL("Priority", "dl_renderman_priority") WIDTH(1.5);
+ PARM(integer, 1, "dl_renderman_priority", none, none) RANGE(0,100)
+	LOCK_RANGE LABELREF(dl_renderman_priority.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+dl_renderman_task_timeout.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dl_renderman_task_timeout.label = PARM_LABEL("Task Timeout", "dl_renderman_task_timeout") WIDTH(1.5);
+ PARM(integer, 1, "dl_renderman_task_timeout", none, none) RANGE(0,1000000)
+	LOCK_RANGE LABELREF(dl_renderman_task_timeout.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+dl_renderman_concurrent.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dl_renderman_concurrent.label = PARM_LABEL("Concurrent Tasks", "dl_renderman_concurrent") WIDTH(1.5);
+ PARM(integer, 1, "dl_renderman_concurrent", none, none) RANGE(1,16)
+	LOCK_RANGE LABELREF(dl_renderman_concurrent.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+dl_renderman_machine_limit.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+dl_renderman_machine_limit.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dl_renderman_machine_limit.label = PARM_LABEL("Machine Limit", "dl_renderman_machine_limit") WIDTH(1.5);
+ PARM(integer, 1, "dl_renderman_machine_limit", none, none) RANGE(0,1000000)
+	LOCK_RANGE LABELREF(dl_renderman_machine_limit.label) HSTRETCH;
+
+  {  }
+}
+
+dl_renderman_is_blacklist.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_renderman_is_blacklist", "Machine List Is A Deny List") toggle VALUE(dl_renderman_is_blacklist.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+dl_renderman_machine_list.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    dl_renderman_machine_list.label = PARM_LABEL("Machine List", "dl_renderman_machine_list") WIDTH(1.5);
+    PARM_FIELD(string, "dl_renderman_machine_list") VALUE(dl_renderman_machine_list.val) 
+	LABELREF(dl_renderman_machine_list.label) HSTRETCH;
+
+    ACTION_ICONBUTTON "BUTTONS_gear" VALUE(dl_renderman_machine_list.script_action)
+	HELP("")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+dl_renderman_limits.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    dl_renderman_limits.label = PARM_LABEL("Limit Groups", "dl_renderman_limits") WIDTH(1.5);
+    PARM_FIELD(string, "dl_renderman_limits") VALUE(dl_renderman_limits.val) 
+	LABELREF(dl_renderman_limits.label) HSTRETCH;
+
+    ACTION_ICONBUTTON "BUTTONS_gear" VALUE(dl_renderman_limits.script_action)
+	HELP("")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+dl_renderman_threads.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dl_renderman_threads.label = PARM_LABEL("RenderMan Threads", "dl_renderman_threads") WIDTH(1.5);
+ PARM(integer, 1, "dl_renderman_threads", none, none) RANGE(0,256)
+	LOCK_RANGE LABELREF(dl_renderman_threads.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+dl_renderman_on_complete.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("On Job Complete", "dl_renderman_on_complete") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    dl_renderman_on_complete.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dl_renderman_arguments.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    dl_renderman_arguments.label = PARM_LABEL("Command Line Args", "dl_renderman_arguments") WIDTH(1.5);
+    PARM_FIELD(string, "dl_renderman_arguments") VALUE(dl_renderman_arguments.val) 
+	LABELREF(dl_renderman_arguments.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+dl_redshift_job.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_redshift_job", "Submit Dependent Redshift Standalone Job") toggle VALUE(dl_redshift_job.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dl_redshift_local_export.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_redshift_local_export", "Export Redshift Locally") toggle VALUE(dl_redshift_local_export.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+dl_redshift_pool.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+dl_redshift_pool.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Pool", "dl_redshift_pool") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    dl_redshift_pool.menu;
+
+    {  }
+
+    {  }
+}
+
+dl_redshift_secondary_pool.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    PARM_LABEL_SIMPLE("Secondary Pool", "dl_redshift_secondary_pool") ;
+    { WIDTH(0.09) }
+
+    dl_redshift_secondary_pool.menu;
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+dl_redshift_group.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Group", "dl_redshift_group") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    dl_redshift_group.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dl_redshift_priority.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dl_redshift_priority.label = PARM_LABEL("Priority", "dl_redshift_priority") WIDTH(1.5);
+ PARM(integer, 1, "dl_redshift_priority", none, none) RANGE(0,100)
+	LOCK_RANGE LABELREF(dl_redshift_priority.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+dl_redshift_task_timeout.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+dl_redshift_task_timeout.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dl_redshift_task_timeout.label = PARM_LABEL("Task Timeout", "dl_redshift_task_timeout") WIDTH(1.5);
+ PARM(integer, 1, "dl_redshift_task_timeout", none, none) RANGE(0,1000000)
+	LOCK_RANGE LABELREF(dl_redshift_task_timeout.label) HSTRETCH;
+
+  {  }
+}
+
+dl_redshift_auto_timeout.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_redshift_auto_timeout", "Enable Auto Task Timeout") toggle VALUE(dl_redshift_auto_timeout.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+dl_redshift_concurrent.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+dl_redshift_concurrent.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dl_redshift_concurrent.label = PARM_LABEL("Concurrent Tasks", "dl_redshift_concurrent") WIDTH(1.5);
+ PARM(integer, 1, "dl_redshift_concurrent", none, none) RANGE(1,16)
+	LOCK_RANGE LABELREF(dl_redshift_concurrent.label) HSTRETCH;
+
+  {  }
+}
+
+dl_redshift_slave_limit.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_redshift_slave_limit", "Limit Tasks to Worker's Task Limit") toggle VALUE(dl_redshift_slave_limit.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+dl_redshift_machine_limit.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+dl_redshift_machine_limit.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dl_redshift_machine_limit.label = PARM_LABEL("Machine Limit", "dl_redshift_machine_limit") WIDTH(1.5);
+ PARM(integer, 1, "dl_redshift_machine_limit", none, none) RANGE(0,1000000)
+	LOCK_RANGE LABELREF(dl_redshift_machine_limit.label) HSTRETCH;
+
+  {  }
+}
+
+dl_redshift_is_blacklist.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_redshift_is_blacklist", "Machine List Is A Deny List") toggle VALUE(dl_redshift_is_blacklist.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+dl_redshift_machine_list.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    dl_redshift_machine_list.label = PARM_LABEL("Machine List", "dl_redshift_machine_list") WIDTH(1.5);
+    PARM_FIELD(string, "dl_redshift_machine_list") VALUE(dl_redshift_machine_list.val) 
+	LABELREF(dl_redshift_machine_list.label) HSTRETCH;
+
+    ACTION_ICONBUTTON "BUTTONS_gear" VALUE(dl_redshift_machine_list.script_action)
+	HELP("")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+dl_redshift_limits.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    dl_redshift_limits.label = PARM_LABEL("Limit Groups", "dl_redshift_limits") WIDTH(1.5);
+    PARM_FIELD(string, "dl_redshift_limits") VALUE(dl_redshift_limits.val) 
+	LABELREF(dl_redshift_limits.label) HSTRETCH;
+
+    ACTION_ICONBUTTON "BUTTONS_gear" VALUE(dl_redshift_limits.script_action)
+	HELP("")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+dl_redshift_on_complete.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("On Job Complete", "dl_redshift_on_complete") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    dl_redshift_on_complete.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dl_redshift_arguments.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    dl_redshift_arguments.label = PARM_LABEL("Command Line Args", "dl_redshift_arguments") WIDTH(1.5);
+    PARM_FIELD(string, "dl_redshift_arguments") VALUE(dl_redshift_arguments.val) 
+	LABELREF(dl_redshift_arguments.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+dl_vray_job.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_vray_job", "Submit Dependent V-Ray Standalone Job") toggle VALUE(dl_vray_job.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dl_vray_local_export.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_vray_local_export", "Export V-Ray Locally") toggle VALUE(dl_vray_local_export.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+dl_vray_pool.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+dl_vray_pool.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Pool", "dl_vray_pool") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    dl_vray_pool.menu;
+
+    {  }
+
+    {  }
+}
+
+dl_vray_secondary_pool.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    PARM_LABEL_SIMPLE("Secondary Pool", "dl_vray_secondary_pool") ;
+    { WIDTH(0.09) }
+
+    dl_vray_secondary_pool.menu;
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+dl_vray_group.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Group", "dl_vray_group") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    dl_vray_group.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dl_vray_priority.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dl_vray_priority.label = PARM_LABEL("Priority", "dl_vray_priority") WIDTH(1.5);
+ PARM(integer, 1, "dl_vray_priority", none, none) RANGE(0,100)
+	LOCK_RANGE LABELREF(dl_vray_priority.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+dl_vray_task_timeout.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+dl_vray_task_timeout.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dl_vray_task_timeout.label = PARM_LABEL("Task Timeout", "dl_vray_task_timeout") WIDTH(1.5);
+ PARM(integer, 1, "dl_vray_task_timeout", none, none) RANGE(0,1000000)
+	LOCK_RANGE LABELREF(dl_vray_task_timeout.label) HSTRETCH;
+
+  {  }
+}
+
+dl_vray_auto_timeout.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_vray_auto_timeout", "Enable Auto Task Timeout") toggle VALUE(dl_vray_auto_timeout.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+dl_vray_concurrent.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+dl_vray_concurrent.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dl_vray_concurrent.label = PARM_LABEL("Concurrent Tasks", "dl_vray_concurrent") WIDTH(1.5);
+ PARM(integer, 1, "dl_vray_concurrent", none, none) RANGE(1,16)
+	LOCK_RANGE LABELREF(dl_vray_concurrent.label) HSTRETCH;
+
+  {  }
+}
+
+dl_vray_slave_limit.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_vray_slave_limit", "Limit Tasks to Worker's Task Limit") toggle VALUE(dl_vray_slave_limit.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+dl_vray_machine_limit.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+dl_vray_machine_limit.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dl_vray_machine_limit.label = PARM_LABEL("Machine Limit", "dl_vray_machine_limit") WIDTH(1.5);
+ PARM(integer, 1, "dl_vray_machine_limit", none, none) RANGE(0,1000000)
+	LOCK_RANGE LABELREF(dl_vray_machine_limit.label) HSTRETCH;
+
+  {  }
+}
+
+dl_vray_is_blacklist.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dl_vray_is_blacklist", "Machine List Is A Deny List") toggle VALUE(dl_vray_is_blacklist.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+dl_vray_machine_list.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    dl_vray_machine_list.label = PARM_LABEL("Machine List", "dl_vray_machine_list") WIDTH(1.5);
+    PARM_FIELD(string, "dl_vray_machine_list") VALUE(dl_vray_machine_list.val) 
+	LABELREF(dl_vray_machine_list.label) HSTRETCH;
+
+    ACTION_ICONBUTTON "BUTTONS_gear" VALUE(dl_vray_machine_list.script_action)
+	HELP("")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+dl_vray_limits.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    dl_vray_limits.label = PARM_LABEL("Limits", "dl_vray_limits") WIDTH(1.5);
+    PARM_FIELD(string, "dl_vray_limits") VALUE(dl_vray_limits.val) 
+	LABELREF(dl_vray_limits.label) HSTRETCH;
+
+    ACTION_ICONBUTTON "BUTTONS_gear" VALUE(dl_vray_limits.script_action)
+	HELP("")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+dl_vray_threads.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dl_vray_threads.label = PARM_LABEL("V-Ray Threads", "dl_vray_threads") WIDTH(1.5);
+ PARM(integer, 1, "dl_vray_threads", none, none) RANGE(0,256)
+	LOCK_RANGE LABELREF(dl_vray_threads.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+dl_vray_on_complete.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("On Job Complete", "dl_vray_on_complete") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    dl_vray_on_complete.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dl_vray_arguments.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    dl_vray_arguments.label = PARM_LABEL("Command Line Args", "dl_vray_arguments") WIDTH(1.5);
+    PARM_FIELD(string, "dl_vray_arguments") VALUE(dl_vray_arguments.val) 
+	LABELREF(dl_vray_arguments.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+dl_job_description_5.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "dl_job_description_5.gad"
+    { 
+	VALUE(dl_job_description_5.gad.val) STRETCH(1,0)
+
+	TAB "Mantra Export"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    dl_mantra_job.gad;		
+	    dl_mantra_local_export.gad;		
+	    dl_mantra_pool.row.join;		
+	    dl_mantra_group.gad;		
+	    dl_mantra_priority.gad;		
+	    dl_mantra_task_timeout.row.join;		
+	    dl_mantra_concurrent.row.join;		
+	    dl_mantra_machine_limit.row.join;		
+	    dl_mantra_machine_list.gad;		
+	    dl_mantra_limits.gad;		
+	    dl_mantra_threads.gad;		
+	    dl_mantra_on_complete.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Arnold Export"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    dl_arnold_job.gad;		
+	    dl_arnold_local_export.gad;		
+	    dl_arnold_pool.row.join;		
+	    dl_arnold_group.gad;		
+	    dl_arnold_priority.gad;		
+	    dl_arnold_task_timeout.row.join;		
+	    dl_arnold_concurrent.row.join;		
+	    dl_arnold_machine_limit.row.join;		
+	    dl_arnold_machine_list.gad;		
+	    dl_arnold_limits.gad;		
+	    dl_arnold_threads.gad;		
+	    dl_arnold_on_complete.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "RenderMan Export"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    dl_renderman_job.gad;		
+	    dl_renderman_local_export.gad;		
+	    dl_renderman_pool.row.join;		
+	    dl_renderman_group.gad;		
+	    dl_renderman_priority.gad;		
+	    dl_renderman_task_timeout.gad;		
+	    dl_renderman_concurrent.gad;		
+	    dl_renderman_machine_limit.row.join;		
+	    dl_renderman_machine_list.gad;		
+	    dl_renderman_limits.gad;		
+	    dl_renderman_threads.gad;		
+	    dl_renderman_on_complete.gad;		
+	    dl_renderman_arguments.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Redshift Export"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    dl_redshift_job.gad;		
+	    dl_redshift_local_export.gad;		
+	    dl_redshift_pool.row.join;		
+	    dl_redshift_group.gad;		
+	    dl_redshift_priority.gad;		
+	    dl_redshift_task_timeout.row.join;		
+	    dl_redshift_concurrent.row.join;		
+	    dl_redshift_machine_limit.row.join;		
+	    dl_redshift_machine_list.gad;		
+	    dl_redshift_limits.gad;		
+	    dl_redshift_on_complete.gad;		
+	    dl_redshift_arguments.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "V-Ray Export"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    dl_vray_job.gad;		
+	    dl_vray_local_export.gad;		
+	    dl_vray_pool.row.join;		
+	    dl_vray_group.gad;		
+	    dl_vray_priority.gad;		
+	    dl_vray_task_timeout.row.join;		
+	    dl_vray_concurrent.row.join;		
+	    dl_vray_machine_limit.row.join;		
+	    dl_vray_machine_list.gad;		
+	    dl_vray_limits.gad;		
+	    dl_vray_threads.gad;		
+	    dl_vray_on_complete.gad;		
+	    dl_vray_arguments.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dl_job_description.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "dl_job_description.gad"
+    { 
+	VALUE(dl_job_description.gad.val) STRETCH(1,0)
+
+	TAB "Job Description"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    dl_job_name.gad;		
+	    dl_comment.gad;		
+	    dl_department.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Job Options"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    dl_pool.row.join;		
+	    dl_group.gad;		
+	    dl_priority.gad;		
+	    dl_task_timeout.row.join;		
+	    dl_concurrent_tasks.row.join;		
+	    dl_machine_limit.row.join;		
+	    dl_machine_list.gad;		
+	    dl_limits.gad;		
+	    dl_dependencies.gad;		
+	    dl_on_complete.row.join;		
+	    dl_chunk_size.gad;		
+	    dl_submit_scene.gad;		
+	    dl_frame_dependent.gad;		
+	    dl_should_precache.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "GPU Affinity Overrides"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    dl_gpu_desc.gad;		
+	    dl_gpu_opencl_enable.gad;		
+	    dl_gpus_per_task.gad;		
+	    dl_gpu_devices.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Tile Rendering"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    dl_tile_rendering_desc.gad;		
+	    dl_tiles_enabled.gad;		
+	    dl_tiles_in_x.gad;		
+	    dl_tiles_in_y.gad;		
+	    dl_tiles_single_frame_enabled.gad;		
+	    dl_tiles_single_frame.gad;		
+	    dl_submit_dependent_assembly.gad;		
+	    dl_cleanup_tiles.gad;		
+	    dl_error_on_missing_tiles.gad;		
+	    dl_error_on_missing_background.gad;		
+	    dl_background_option.gad;		
+	    dl_background_image.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Export Jobs"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    dl_job_description_5.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    execute.row.join; 
+    dl_Submit.gad; 
+    trange.row.join; 
+    f.gad; 
+    take.gad; 
+    soho_program.gad; 
+    soho_outputmode.gad; 
+    dl_job_description.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

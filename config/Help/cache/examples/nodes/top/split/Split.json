@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["Split"]}, {"type": "para", "indent": 0, "text": ["This example demonstrates how to use the Split TOP node to split a list of work items into two separate outputs."], "extent": [0, 113]}], "examplefor": "/nodes/top/split", "examplefile": "/examples/nodes/top/split/Split.hda"}

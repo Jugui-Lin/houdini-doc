@@ -1,0 +1,80 @@
+// Magic: 6bc8c889
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Sat May 28 10:15:58 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+parmname.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    parmname.label = PARM_LABEL("Name", "parmname") WIDTH(1.5);
+    PARM_FIELD(string, "parmname") VALUE(parmname.val) 
+	LABELREF(parmname.label) HSTRETCH;
+
+    parmname.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(parmname.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+ptnum.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ ptnum.label = PARM_LABEL("Point Number", "ptnum") WIDTH(1.5);
+ PARM(integer, 1, "ptnum", none, none) RANGE(0,10)
+	 LABELREF(ptnum.label) HSTRETCH;
+
+    ptnum.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(ptnum.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+numpt.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ numpt.label = PARM_LABEL("Number of Points", "numpt") WIDTH(1.5);
+ PARM(integer, 1, "numpt", none, none) RANGE(0,10)
+	 LABELREF(numpt.label) HSTRETCH;
+
+    numpt.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(numpt.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    parmname.gad; 
+    ptnum.gad; 
+    numpt.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

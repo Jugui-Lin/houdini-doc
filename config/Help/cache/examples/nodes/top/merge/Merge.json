@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["Merge"]}, {"type": "para", "indent": 0, "text": ["This example demonstrates how to use the merge TOP to combine work item lists from multiple nodes."], "extent": [0, 99]}], "examplefor": "/nodes/top/merge", "examplefile": "/examples/nodes/top/merge/Merge.hda"}

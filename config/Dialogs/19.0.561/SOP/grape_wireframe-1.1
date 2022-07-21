@@ -1,0 +1,430 @@
+// Magic: 6040f3e7
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Wed May 18 06:10:54 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+frameRange.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   frameRange.label = PARM_LABEL("Frame Range", "frameRange") WIDTH(1.5);
+   PARM(integer, 2, "frameRange", none, none, "X,Y")
+	RANGE(-1,1)  LABELREF(frameRange.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+generations.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ generations.label = PARM_LABEL("Generations", "generations") WIDTH(1.5);
+ PARM(float, 1, "generations", none, none) RANGE(0,5)
+	LOCK_RANGE_MIN LABELREF(generations.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+randscale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ randscale.label = PARM_LABEL("Random Scale", "randscale") WIDTH(1.5);
+ PARM(float, 1, "randscale", none, none) RANGE(-1,1)
+	 LABELREF(randscale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+randseed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ randseed.label = PARM_LABEL("Random Seed", "randseed") WIDTH(1.5);
+ PARM(integer, 1, "randseed", none, none) RANGE(0,10)
+	 LABELREF(randseed.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+seed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ seed.label = PARM_LABEL("Seed", "seed") WIDTH(1.5);
+ PARM(float, 1, "seed", none, none) RANGE(0,10)
+	 LABELREF(seed.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+varb.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ varb.label = PARM_LABEL("Variable b", "varb") WIDTH(1.5);
+ PARM(float, 1, "varb", none, none) RANGE(0,10)
+	 LABELREF(varb.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+varc.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ varc.label = PARM_LABEL("Variable c", "varc") WIDTH(1.5);
+ PARM(float, 1, "varc", none, none) RANGE(0,10)
+	 LABELREF(varc.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+vard.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ vard.label = PARM_LABEL("Variable d", "vard") WIDTH(1.5);
+ PARM(float, 1, "vard", none, none) RANGE(0,10)
+	 LABELREF(vard.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+varr.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ varr.label = PARM_LABEL("Variable r", "varr") WIDTH(1.5);
+ PARM(float, 1, "varr", none, none) RANGE(0,10)
+	 LABELREF(varr.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+varf.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ varf.label = PARM_LABEL("Varaible f", "varf") WIDTH(1.5);
+ PARM(float, 1, "varf", none, none) RANGE(0,10)
+	 LABELREF(varf.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+gravity.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ gravity.label = PARM_LABEL("Gravity", "gravity") WIDTH(1.5);
+ PARM(float, 1, "gravity", none, none) RANGE(-50,50)
+	 LABELREF(gravity.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm2.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+pscaleRange.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   pscaleRange.label = PARM_LABEL("Animation Size Range", "pscaleRange") WIDTH(1.5);
+   PARM(float, 2, "pscaleRange", none, none, "X,Y")
+	RANGE(-1,1)  LABELREF(pscaleRange.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+seedScale_profile.si_rampedit = FLOAT_RAMP VALUE(seedScale_profile.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+seedScale_profile.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) WIDTH(1.5)
+	    LABEL "Point No.";
+	}
+
+	seedScale_profile.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(seedScale_profile.pointno.val) HSTRETCH;
+    }
+}
+
+seedScale_profile.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(seedScale_profile.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(seedScale_profile.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    seedScale_profile.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(seedScale_profile.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    seedScale_profile.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(seedScale_profile.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+seedScale_profile.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    seedScale_profile.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	seedScale_profile.buttons.gad VSTRETCH;
+
+	seedScale_profile.si_rampedit HSTRETCH;
+    }
+}
+
+seedScale_profile.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Seed Size Remap", "seedScale_profile");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(seedScale_profile.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(seedScale_profile.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	seedScale_profile.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	seedScale_profile.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(seedScale_profile.hideparms.val) HSTRETCH
+	    seedScale_profile.multiramp;
+	    {}
+	}
+    }
+}
+
+outputmax.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ outputmax.label = PARM_LABEL("Top", "outputmax") WIDTH(1.5);
+ PARM(float, 1, "outputmax", none, none) RANGE(0,1)
+	 LABELREF(outputmax.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+outputmin.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ outputmin.label = PARM_LABEL("Bottom", "outputmin") WIDTH(1.5);
+ PARM(float, 1, "outputmin", none, none) RANGE(0,1)
+	 LABELREF(outputmin.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+min.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ min.label = PARM_LABEL("Min Value", "min") WIDTH(1.5);
+ PARM(float, 1, "min", none, none) RANGE(-1,1)
+	 LABELREF(min.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+max.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ max.label = PARM_LABEL("Max Value", "max") WIDTH(1.5);
+ PARM(float, 1, "max", none, none) RANGE(-1,1)
+	 LABELREF(max.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+seed3.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ seed3.label = PARM_LABEL("Global Seed", "seed3") WIDTH(1.5);
+ PARM(float, 1, "seed3", none, none) RANGE(0,10)
+	 LABELREF(seed3.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+random.gad = 
+
+GROUP simple "Random Size" flat 
+{ 
+    VALUE(random.gad.val) LAYOUT(vertical) HSTRETCH 
+	    min.gad;		
+	    max.gad;		
+	    seed3.gad;		
+} 
+
+folder0.gad = 
+
+GROUP simple "Remap along length" flat 
+{ 
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    outputmax.gad;		
+	    outputmin.gad;		
+} 
+
+seed2.gad = 
+
+GROUP simple "Seeds" flat 
+{ 
+    VALUE(seed2.gad.val) LAYOUT(vertical) HSTRETCH 
+	    pscaleRange.gad;		
+	    seedScale_profile.gad;		
+	    folder0.gad;		
+	    random.gad;		
+} 
+
+lsys.gad = 
+
+GROUP simple "Model" flat 
+{ 
+    VALUE(lsys.gad.val) LAYOUT(vertical) HSTRETCH 
+	    generations.gad;		
+	    randscale.gad;		
+	    randseed.gad;		
+	    sepparm.gad;		
+	    seed.gad;		
+	    varb.gad;		
+	    varc.gad;		
+	    vard.gad;		
+	    varr.gad;		
+	    varf.gad;		
+	    gravity.gad;		
+	    sepparm2.gad;		
+	    seed2.gad;		
+} 
+
+growth.gad = 
+
+GROUP simple "Sim growth frame range" flat 
+{ 
+    VALUE(growth.gad.val) LAYOUT(vertical) HSTRETCH 
+	    frameRange.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    growth.gad; 
+    lsys.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

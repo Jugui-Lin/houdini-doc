@@ -1,59 +1,82 @@
 HIP
 {
-D:/video tutorail/Houdini/vfx force/第60期团购  韩国dokak全13套教程大合集/H17.5升级教程/
-C:/Users/Jugui/Desktop/Vellum_Rubber_Band_Ball_01/
-D:/_Jugui/TDDownload/FFF Houdini Subject 071/_HIP/
-D:/_Project/Houdini/0420/
-C:/Users/Jugui/AppData/Local/Temp/BNZ.626062d12b7790/
-D:/video tutorail/Houdini/海啸教程 houdini/LZ0L106AC_Tsunami_Houdini/
-D:/video tutorail/Houdini/vfx force/142 Houdini MG Stop Being Afraid of Houdini/Lesson_12/A/
-D:/video tutorail/Houdini/vfx force/142 Houdini MG Stop Being Afraid of Houdini/Lesson_12/B/
-D:/video tutorail/Houdini/vfx force/142 Houdini MG Stop Being Afraid of Houdini/Lesson_11_Revised/B/
-D:/video tutorail/Houdini/vfx force/142 Houdini MG Stop Being Afraid of Houdini/Lesson_11_Revised/C/
-D:/video tutorail/Houdini/vfx force/142 Houdini MG Stop Being Afraid of Houdini/Lesson_10_Revised/B/
-D:/video tutorail/Houdini/vfx force/142 Houdini MG Stop Being Afraid of Houdini/Lesson_09/B/
+C:/Users/Jugui/AppData/Local/Temp/BNZ.62a5cc974ca693e/
+D:/_Jugui/电脑备份/
+C:/Users/Jugui/AppData/Local/Temp/BNZ.62a7269315744f/
+D:/_cache/_qq_cache/
+D:/video tutorail/Houdini/Entagma Kine fx 101 - 0 to 10/Project files/
+D:/_Project/Houdini/0525/
+C:/Users/Jugui/Desktop/Houder_Houdini_To_Blender_Alembic_Hack/
+D:/_Project/Houdini/0619/
+D:/_Project/Houdini/0616/
+D:/_Project/Houdini/0620/
+D:/BaiduNetdiskDownload/Pyro《陨石冲入大气层 Atmospheric entry》/
+D:/_Cache/_WX_Caches/WeChat Files/wxid_axlubwvehksr52/FileStorage/File/2022-07/
 }
 PIC
 {
 $HIP/
+$HIP/tex/hdri/
+D:/video tutorail/Houdini/Rebelway - Water FX in Houdini/WEEK5/water_fx_week05_scenes/scene/whale_jump/tex/hdri/
+D:/_Local_Library/_Billfish_Library/HDR库/a/
+$HIP/tex/
+D:/_Local_Library/_Billfish_Library/HDR/a/
+D:/_Local_Library/_Billfish_Library/参考/花参考/
+D:\_Local_Library\Megascans Library\Downloaded/atlas/plant_perennials_qgwlD2/
+D:/_Local_Library/Megascans Library/Downloaded/atlas/plant_perennials_qgwlD2/
+D:/_Local_Library/_Billfish_Library/HDR/
+$HIP/render/
 }
 GEO
 {
-$HIP/geo/buildings/
-$cache/
-/geo/$OS/
-$HIP/cache/$OS/$HIPNAME/
-D:/_Cache/_Houdini_Caches/lesson08B/
-D:/_Cache/_Houdini_Caches/lesson08B/$OS/
-D:/_Cache/_Houdini_Caches/lesson06/
-$HIP/models/
+$HIP/import/patrol_destroyer/source/
+$HIP/geo/
+$HIP/geo/b.spectra/v1/
+$HIP/geo/b.mask/v1/
+$cache./geo/$OS/
+D:/_Cache/_Houdini_Caches/geo/grow_v002.filecache2/v1/
+`chs("../filecache1/
+D:/_Cache/_Houdini_Caches/geo/
+$cache/geo/$OS/
 $HIP/
-$CCacheeo/
-$Cacheeo/
-$Cache/geo/
+D:/_Project/Maya/geo/
+$cache/geo/
+}
+CLIP
+{
+C:/Users/Jugui/Music/
+$HIP/Desktop/
+$HIP/
 }
 OTL
 {
-C:/PROGRA~1/SIDEEF~1/HOUDIN~1.455/houdini/otls/
-C:/Users/Jugui/Documents/houdini19.0/SideFXLabs/19.0.514/SideFXLabs19.0/otls/
-C:/PROGRA~1/SIDEEF~1/HOUDIN~1.455/packages/kinefx/otls/
-C:/Program Files/Side Effects Software/sidefx_packages/SideFXLabs19.0/otls/
-C:/ProgramData/redshift/Plugins/Houdini/19.0.455/otls/
 C:/PROGRA~1/SIDEEF~1/HOUDIN~1.455/houdini/help/examples/nodes/chop/copy/
 D:/video tutorail/淘宝houdini工程文件/Houdini18.5大型流体细节模拟工程HDA/Houdini18.5大型流体细节模拟工程HDA/Houdini18.5流体细节模拟工程HDA/
-C:/Users/Jugui/Documents/houdini19.0/otls/
 C:/PROGRA~1/SIDEEF~1/HOUDIN~1.561/houdini/help/examples/nodes/sop/findshortestpath/
 D:/_Project/test/00_Pipeline/HDAs/
+D:/video tutorail/Houdini/淘宝houdini工程文件/Houdini18.5新版本解算军舰航行工程文件/使用到的HDA/
+D:/video tutorail/Houdini/淘宝houdini工程文件/Houdini五种类型工程文件和资产/Houdini破碎资产文件/
+D:\BaiduNetdiskDownload\出水\week1\the-breach_week1-project-files\week_01/hda/
+C:/Users/Jugui/Desktop/ICE Blast System Tutorial Reference File/otl/
+D:/_Local_Library/houdini数字资产/PyroShader_PROJECTS/JK_PyroShaders_HDAs_1.0.1/
+C:/Users/Jugui/Documents/houdini19.0/otls/
+D:/_Jugui/下载/
+C:/Users/Jugui/htoa/htoa-6.1.2.0_re046489_houdini-19.0.622.py3/htoa-6.1.2.0_re046489_houdini-19.0.622.py3/otls/
 }
 MISC
 {
 D:/_Cache/_Houdini_Caches/jsonFile/exportPoint/
-$HIP/
 D:/CRTubeGet Downloaded/houdini多层衣服布料解算案例教程/Houdini人物服饰布料从入门到精通技术视频教程/
 D:/CRTubeGet Downloaded/houdini多层衣服布料解算案例教程/Houdini人物服饰布料从入门到精通技术视频教程/chapter_8_v2/
 D:/video tutorail/Houdini/vfx force/第154期团购  魔法光束和能量飞溅Houdini Beams and Blasts Tutorial/formOfSorcery_assets/hero/
 D:/video tutorail/Houdini/vfx force/第154期团购  魔法光束和能量飞溅Houdini Beams and Blasts Tutorial/formOfSorcery_assets/villain/
 D:/video tutorail/Houdini/vfx force/第154期团购  魔法光束和能量飞溅Houdini Beams and Blasts Tutorial/formOfSorcery_assets/layout/
+$HIP/anim_abc/
+$HIP/abc/
+$cache/sim/ocn_spectra/
+$HIP/
+$cache/
+$Cache/
 }
 FBX
 {
@@ -62,4 +85,5 @@ D:/_Project/Houdini/0311/geo/buildings/
 DIRECTORY
 {
 $HIP/Desktop/
+$cache/
 }

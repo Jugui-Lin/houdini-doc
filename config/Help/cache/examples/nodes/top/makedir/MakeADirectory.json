@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["MakeADirectory"]}, {"type": "para", "indent": 0, "text": ["This example demonstrates how to use Make Dir to create directories on the system."], "extent": [0, 83]}], "examplefor": "/nodes/top/makedir", "examplefile": "/examples/nodes/top/makedir/MakeADirectory.hda"}

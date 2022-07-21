@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["WaitForAll"]}, {"type": "para", "indent": 0, "text": ["This example demonstrates how to the Wait for All TOP node."], "extent": [0, 61]}], "examplefor": "/nodes/top/waitforall", "examplefile": "/examples/nodes/top/waitforall/WaitForAll.hda"}

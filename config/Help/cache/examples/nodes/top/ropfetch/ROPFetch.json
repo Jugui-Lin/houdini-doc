@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["ROPFetch"]}, {"type": "para", "indent": 0, "text": ["This example demonstrates how to use the ROP Fetch TOP node to create work items that cook a ROP node."], "extent": [0, 104]}], "examplefor": "/nodes/top/ropfetch", "examplefile": "/examples/nodes/top/ropfetch/ROPFetch.hda"}

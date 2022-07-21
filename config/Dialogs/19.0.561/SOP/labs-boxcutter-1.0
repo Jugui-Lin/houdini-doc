@@ -1,0 +1,322 @@
+// Magic: d2a68344
+// Automatically generated PSI dialog (PSI version 19.0.561)
+// Tue May 31 14:23:07 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+mBoxCutterMode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Drawing Mode", "mBoxCutterMode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    mBoxCutterMode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+sBooleanOperation.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Boolean Operation", "sBooleanOperation") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    sBooleanOperation.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+opShape.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ opShape.label = PARM_LABEL("Shape", "opShape") WIDTH(1.5);
+ PARM_FIELD(pathstring, "opShape") VALUE(opShape.val) 
+	LABELREF(opShape.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(opShape.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(opShape.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+iBevelDivisions.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ iBevelDivisions.label = PARM_LABEL("Bevel Divisions", "iBevelDivisions") WIDTH(1.5);
+ PARM(integer, 1, "iBevelDivisions", none, none) RANGE(0,10)
+	 LABELREF(iBevelDivisions.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+fBevelDistance.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ fBevelDistance.label = PARM_LABEL("Bevel Distance", "fBevelDistance") WIDTH(1.5);
+ PARM(float, 1, "fBevelDistance", none, none) RANGE(0,0.25)
+	 LABELREF(fBevelDistance.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+iNumCopies.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ iNumCopies.label = PARM_LABEL("Copies", "iNumCopies") WIDTH(1.5);
+ PARM(integer, 1, "iNumCopies", none, none) RANGE(0,20)
+	LOCK_RANGE_MIN LABELREF(iNumCopies.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+vCopyTranslate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   vCopyTranslate.label = PARM_LABEL("Translate", "vCopyTranslate") WIDTH(1.5);
+   PARM(float, 3, "vCopyTranslate", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(vCopyTranslate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+vPivotCopy.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   vPivotCopy.label = PARM_LABEL("Pivot Translate", "vPivotCopy") WIDTH(1.5);
+   PARM(float, 3, "vPivotCopy", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(vPivotCopy.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+vRotCopy.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   vRotCopy.label = PARM_LABEL("Rotate", "vRotCopy") WIDTH(1.5);
+   PARM(float, 3, "vRotCopy", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(vRotCopy.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+vPivot.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   vPivot.label = PARM_LABEL("Pivot", "vPivot") WIDTH(1.5);
+   PARM(float, 3, "vPivot", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(vPivot.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+vTranslate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   vTranslate.label = PARM_LABEL("Translate", "vTranslate") WIDTH(1.5);
+   PARM(float, 3, "vTranslate", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(vTranslate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+vRotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   vRotate.label = PARM_LABEL("Rotate", "vRotate") WIDTH(1.5);
+   PARM(float, 3, "vRotate", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(vRotate.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+vScale.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   vScale.label = PARM_LABEL("Scale", "vScale") WIDTH(1.5);
+   PARM(float, 3, "vScale", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(vScale.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+vShapeBound0.gad = NULL { }
+vShapeBound1.gad = NULL { }
+vShapeBound2.gad = NULL { }
+vShapeBound3.gad = NULL { }
+bDrawing.gad = NULL { }
+stash.gad = NULL { }
+
+sepparm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+multishapeboundlist.parm =
+{
+    LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+    PARM_LABEL_SIMPLE("Shapes", "multishapeboundlist") WIDTH(1.5);
+    { WIDTH(0.1) }
+
+    ROW
+    {
+	HSTRETCH(0.5) JUSTIFY(left, center) VALUE(multishapeboundlist.val)
+
+        multishapeboundlist.field = PARM_FIELD (integer, "multishapeboundlist")
+				VALUE(multishapeboundlist.val) HSTRETCH(0.5)
+				 PREF_WIDTH(0.5);
+
+        ROW
+        {
+	     LOOK(lightline) VMARGIN(1p)
+
+   	     INCREMENT_ICONBUTTON VALUE(multishapeboundlist.more.val)	
+	    	HELP("Add Another Instance") SIZE(0.2, 0.24);
+	     DECREMENT_ICONBUTTON VALUE(multishapeboundlist.less.val)	
+	        HELP("Remove Last Instance") SIZE(0.2, 0.24);
+
+	}
+
+	ACTION_BUTTON "Clear" VALUE(multishapeboundlist.clear.val);
+    }
+
+    { HSTRETCH }
+}
+
+multishapeboundlist.multilist = 
+{
+    LAYOUT(vertical) HSTRETCH MARGIN(0.05)
+}
+
+multishapeboundlist.gad =
+{
+    LAYOUT(vertical) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    SWITCHER tight
+    {
+	LAYOUT(vertical) HSTRETCH
+
+	VALUE(multishapeboundlist.multilist_hide_buttons.val)
+	{
+	    LAYOUT(vertical) HSTRETCH
+	    multishapeboundlist.parm;
+	    {LOOK(none) HEIGHT(0.02)}
+	}
+	{
+	}
+    }
+    multishapeboundlist.multilist;
+}
+
+folder0.gad = 
+
+GROUP simple "Folder Name 2" flat 
+{ 
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH 
+} 
+
+folder2.gad = 
+GROUP collapsible "Transforms" flat  
+{
+    VALUE(folder2.gad.val) LAYOUT(vertical) HSTRETCH
+	    vPivot.gad;		
+	    vTranslate.gad;		
+	    vRotate.gad;		
+	    vScale.gad;		
+} 
+
+duplicatesfolder.gad = 
+GROUP collapsible "Duplicates" flat  
+{
+    VALUE(duplicatesfolder.gad.val) LAYOUT(vertical) HSTRETCH
+	    iNumCopies.gad;		
+	    vCopyTranslate.gad;		
+	    vPivotCopy.gad;		
+	    vRotCopy.gad;		
+} 
+
+folder1.gad = 
+
+GROUP simple "Cutout Settings" flat 
+{ 
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    mBoxCutterMode.gad;		
+	    sBooleanOperation.gad;		
+	    opShape.gad;		
+	    iBevelDivisions.gad;		
+	    fBevelDistance.gad;		
+	    duplicatesfolder.gad;		
+	    folder2.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    folder1.gad; 
+    sepparm.gad; 
+    multishapeboundlist.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}
